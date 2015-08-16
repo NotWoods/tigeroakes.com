@@ -339,9 +339,9 @@ h1 {
 	.project {
 		margin-bottom: 330px;
 		margin-right: 0;
-		margin-left: 0;
 		min-height: 0;
 	}
+	.project:nth-child(even) {margin-left:0}
 	.project a {
 		top: 100%;
 		margin-top: 285px;
@@ -359,4 +359,5 @@ h1 {
 		right: auto;
 		left: 0;
 	}
+	#education div div{width:auto}
 }
