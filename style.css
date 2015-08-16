@@ -334,3 +334,29 @@ h1 {
 .target:target ~ .project > img {
 	opacity: 0;
 }
+
+@media (max-width: 700px) {
+	.project {
+		margin-bottom: 330px;
+		margin-right: 0;
+		margin-left: 0;
+		min-height: 0;
+	}
+	.project a {
+		top: 100%;
+		margin-top: 285px;
+		right: 0;
+	}
+	.project video,
+	.project > img {
+		top: 100%;
+		margin-top: 8px;
+		right: 0;
+	}
+	.project:nth-child(even) a,
+	.project:nth-child(even) video,
+	.project:nth-child(even) > img {
+		right: auto;
+		left: 0;
+	}
+}
