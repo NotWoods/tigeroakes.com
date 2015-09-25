@@ -352,6 +352,7 @@ h1 {
 		top: 100%;
 		margin-top: 8px;
 		right: 0;
+		max-width: 100%
 	}
 	.project:nth-child(even) a,
 	.project:nth-child(even) video,
