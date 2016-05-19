@@ -1,5 +1,6 @@
 ---
 title: OML Contracting Co
+subtitle: Construction Portfolio
 summary: >
   I worked with OML Contracting to redesign their portfolio. We settled on a 
   design using animation to direct attention to the building photos. The site 

@@ -37,6 +37,7 @@ defaults:
       path: ""
     values:
       author: Tiger Oakes
+      subtitle: ''
   - scope:
       path: ""
       type: projects
