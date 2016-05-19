@@ -24,3 +24,26 @@ gems:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
+
+collections:
+  projects:
+    output: true
+    permalink: /project/:path/
+  mini:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      author: Tiger Oakes
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
