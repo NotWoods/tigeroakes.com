@@ -43,9 +43,81 @@
 		{% include navigation.html local="true" %}
 	</header>
 	
-	<section id="projects"></section>
-	<section id="experience"></section>
-	<section id="contact"></section>
-	<section id="blog"></section>
+	<section id="projects">
+		{% for project in site.projects %}
+			<article class='post-summary'>
+				{% if project.image %}
+					{{ project.image | markdownify }}
+				{% endif %}
+				<a href="{{ project.url }}" class='invisible-link'>
+					<h2>project.title</h2>
+				</a>
+				<p class="subtitle">{{ project.subtitle }}</p>
+				<p>{{ project.summary }}</p>
+			</article>
+		{% endfor %}
+		
+		<a class="see-more" href="/projects">See more projects I've worked on</a>
+	</section>
+	<section id="experience">
+		{% capture jobs %}
+			
+		{% endcapture %}
+		
+		{% capture education %}
+			## Education
+			
+			### Undergraduate ###
+			
+			![](/images/edu-ubc.png)
+			**University of British Columbia**  
+			Computer Science - Bachelor of Science  
+			2015 to 2020 (expected)
+			
+			### High School ###
+			
+			![](/images/edu-mbta.png)
+			**Myron B. Thompson Academy**  
+			Graduated with Honours  
+			2011 to 2015
+		{% endcapture %}
+		
+		{% capture competitions %}
+			
+		{% endcapture %}
+		
+		<div class='experience-jobs'>
+			{{ jobs }}
+		</div>
+		<aside class='experience-aside'>
+			{{ education | markdownify }}
+			{{ competitions | markdownify }}
+		</aside>
+	</section>
+	<section id="contact">
+		
+	</section>
+	<section id="blog">
+		{% for post in site.posts %}
+			<article class='post-summary'>
+				{% if post.image %}
+					{{ post.image | markdownify }}
+				{% endif %}
+				<a href="{{ post.url }}" class='invisible-link'>
+					<h2>post.title</h2>
+				</a>
+				<p class="subtitle">
+					{{ page.date | date_to_long_string }} {{ post.subtitle }}
+				</p>
+				{{ post.excerpt }}
+			</article>
+			
+			{% if forloop.index > 4 %}
+				{% break %}
+			{% endif %}
+		{% endfor %}
+		
+		<a class="see-more" href="/blog">See more blog posts</a>
+	</section>
 </body>
 </html>
