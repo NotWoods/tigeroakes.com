@@ -1,4 +1,51 @@
 ---
-layout: default
 ---
-
+<!doctype html>
+<html>
+<head>
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Person",
+		"name": "Tiger Oakes",
+		"image": "/images/profile.jpg",
+		"url": "https://tigeroakes.com",
+		"email": "mailto:tigeroakes@gmail.com",
+		"telephone": "(253) 778-6251",
+		"mainEntityOfPage": {
+			"@type": "WebSite",
+			"name": "Tiger Oakes",
+			"url": "https://tigeroakes.com"
+		}
+		"sameAs": [
+			"https://twitter.com/Not_Woods",
+			"https://www.linkedin.com/in/tigeroakes",
+			"https://plus.google.com/+TigerOakes",
+			"https://github.com/NotWoods"
+		]
+	}
+	</script>
+	{% include analytics.html %}
+</head>
+<body>
+	<header class='banner'>
+		{% capture header %}
+		# Tiger Oakes
+		
+		(Yes, that is my name.) I am a programmer who creates software, websites and other things that appear on screens.
+		
+		I'm a student at the University of British Columbia in Vancouver. I've created a variety of projects, which have been featured in the Congressional App Challenge and news outlets such as the Star Advertiser, West Hawaii Today, and Hawaii Public Radio.
+		
+		If you need a hand, [get in touch](/#contact)
+		{% endcapture %}
+		{{ header | markdownify }}
+		
+		{% include navigation.html local="true" %}
+	</header>
+	
+	<section id="projects"></section>
+	<section id="experience"></section>
+	<section id="contact"></section>
+	<section id="blog"></section>
+</body>
+</html>
