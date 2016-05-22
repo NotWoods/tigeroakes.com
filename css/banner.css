@@ -1,6 +1,6 @@
 .banner {
 	text-align: center;
-	color: white;
+	color: #f8f9fa;
 	background: #274B98;
 }
 
@@ -10,24 +10,38 @@
 	font-size: 3em;
 }
 
-.navigation-link {
+.navigation {
+	padding: 0.5em 1em;
+	border-color: #f8f9fa;
+	border-width: 1px 0;
+	border-style: solid;
+}
+
+.banner a {
 	color: inherit;
 	text-decoration: none;
 	position: relative;
 }
 
-.navigation-link::after {
+.banner p a::after {
+	opacity: 0.8;
+}
+
+.banner a::after {
 	position: absolute;
+	content: '';
 	width: 100%;
+	height: 1px;
+	background: #f8f9fa;
 	bottom: 0; left: 0;
 	transition: opacity 0.1s ease;
 	opacity: 0;
 }
 
-.navigation-link:hover::after {
+.banner a:hover::after {
 	opacity: 0.9;
 }
 
-.navigation-link:active::after {
+.banner a:active::after {
 	opacity: 1;
 }

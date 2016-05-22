@@ -1,4 +1,16 @@
-.banner p {
+.banner {
+	padding: 2em 0;
+}
+
+.post-summary,
+.banner p,
+.navigation {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.banner p,
+.navigation {
 	max-width: 40em;
 }
 
