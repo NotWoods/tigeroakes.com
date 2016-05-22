@@ -3,6 +3,7 @@
 <!doctype html>
 <html>
 <head>
+	{% include head.html %}
 	<script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
@@ -25,23 +26,9 @@
 		]
 	}
 	</script>
-	{% include analytics.html %}
 </head>
 <body>
-	<header class='banner'>
-		{% capture header %}
-		# Tiger Oakes
-		
-		(Yes, that is my name.) I am a programmer who creates software, websites and other things that appear on screens.
-		
-		I'm a student at the University of British Columbia in Vancouver. I've created a variety of projects, which have been featured in the Congressional App Challenge and news outlets such as the Star Advertiser, West Hawaii Today, and Hawaii Public Radio.
-		
-		If you need a hand, [get in touch](/#contact)
-		{% endcapture %}
-		{{ header | markdownify }}
-		
-		{% include navigation.html local="true" %}
-	</header>
+	{% include banner.html local="true" full="true" %}
 	
 	<section id="projects">
 		{% for project in site.projects %}
@@ -50,7 +37,7 @@
 					{{ project.image | markdownify }}
 				{% endif %}
 				<a href="{{ project.url }}" class='invisible-link'>
-					<h2>project.title</h2>
+					<h2>{{ project.title }}</h2>
 				</a>
 				<p class="subtitle">{{ project.subtitle }}</p>
 				<p>{{ project.summary }}</p>
@@ -59,38 +46,16 @@
 		
 		<a class="see-more" href="/projects">See more projects I've worked on</a>
 	</section>
-	<section id="experience">
-		{% capture jobs %}
-			
-		{% endcapture %}
-		
-		{% capture education %}
-			## Education
-			
-			### Undergraduate ###
-			
-			![](/images/edu-ubc.png)
-			**University of British Columbia**  
-			Computer Science - Bachelor of Science  
-			2015 to 2020 (expected)
-			
-			### High School ###
-			
-			![](/images/edu-mbta.png)
-			**Myron B. Thompson Academy**  
-			Graduated with Honours  
-			2011 to 2015
-		{% endcapture %}
-		
-		{% capture competitions %}
-			
-		{% endcapture %}
-		
+	<section id="experience">		
 		<div class='experience-jobs'>
+			{% capture jobs %}{% include jobs.md %}{% endcapture %}
 			{{ jobs }}
 		</div>
+		
 		<aside class='experience-aside'>
+			{% capture education %}{% include education.md %}{% endcapture %}
 			{{ education | markdownify }}
+			{% capture competitions %}{% include competitions.md %}{% endcapture %}
 			{{ competitions | markdownify }}
 		</aside>
 	</section>
@@ -104,10 +69,10 @@
 					{{ post.image | markdownify }}
 				{% endif %}
 				<a href="{{ post.url }}" class='invisible-link'>
-					<h2>post.title</h2>
+					<h2>{{ post.title }}</h2>
 				</a>
 				<p class="subtitle">
-					{{ page.date | date_to_long_string }} {{ post.subtitle }}
+					{{ post.date | date_to_long_string }} {{ post.subtitle }}
 				</p>
 				{{ post.excerpt }}
 			</article>
