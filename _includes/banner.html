@@ -8,12 +8,12 @@
 	<p>I'm a student at the University of British Columbia in Vancouver. I've created a variety of projects, which have been featured in the Congressional App Challenge and news outlets such as the Star Advertiser, West Hawaii Today, and Hawaii Public Radio.</p>
 	
 	{% endif %}
-		
-	<p>If you need a hand, [get in touch](/#contact)</p>
 	
 	{% if include.local %}
+		<p>If you need a hand, <a href="#contact">get in touch</a></p>
 		{% include navigation.html local="true" %}
 	{% else %}
+		<p>If you need a hand, <a href="/#contact">get in touch</a></p>
 		{% include navigation.html %}
 	{% endif %}
 </header>

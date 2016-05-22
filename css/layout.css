@@ -1,0 +1,11 @@
+.banner p {
+	max-width: 40em;
+}
+
+.navigation-link {
+	margin: 0.75em;
+}
+
+.post-summary {
+	max-width: 50em;
+}
