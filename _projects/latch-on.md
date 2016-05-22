@@ -6,5 +6,5 @@ summary: >
   hook to navigate puzzles and platforms. Using the Unity engine, the game can 
   run quickly on a variety of platforms to accomodate the speedy gameplay.
 redirect_from:
-  = /gametest/
+  - /gametest/
 ---
