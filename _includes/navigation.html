@@ -1,15 +1,10 @@
-<nav class='navigation'>
-	<a class='navigation-link' href='/'>Home</a>
-	{% unless include.local %}
-		<a class='navigation-link' href='/projects'>Portfolio</a>
-	{% else %}
-		<a class='navigation-link' href='/#projects'>Portfolio</a>
-	{% endunless %}
-	<a class='navigation-link' href='/#experience'>Experience</a>
-	<a class='navigation-link' href='/#contact'>Contact</a>
-	{% unless include.local %}
-		<a class='navigation-link' href='/blog'>Blog</a>
-	{% else %}
-		<a class='navigation-link' href='/#blog'>Blog</a>
-	{% endunless %}
-</nav>
+<nav class='navigation'><div class="container">
+	<a class='navigation-link-main' href='/'>
+		<h1 class="navigation-header">Tiger Oakes</h1>
+	</a>
+	
+	<a class='navigation-link' href='/projects'>Work</a>
+	<a class='navigation-link' href='/about'>About</a>
+	<a class='navigation-link' href='/blog'>Blog</a>
+	<a class='navigation-link' href='/contact'>Contact</a>
+</div></nav>

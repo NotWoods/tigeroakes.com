@@ -20,18 +20,23 @@
 			"url": "https://tigeroakes.com"
 		}
 		"sameAs": [
+			"https://github.com/NotWoods",
 			"https://twitter.com/Not_Woods",
 			"https://www.linkedin.com/in/tigeroakes",
-			"https://plus.google.com/+TigerOakes",
-			"https://github.com/NotWoods"
+			"https://plus.google.com/+TigerOakes"
 		]
 	}
 	</script>
 </head>
 <body>
 	<link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/navigation.css" rel="stylesheet" type="text/css"/>
 	<link href="/css/banner.css" rel="stylesheet" type="text/css"/>
-	{% include banner.html local="true" full="true" %}
+	<header class="banner">
+		{% include navigation.html %}
+		
+		<p>(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
+	</header>
 	
 	<section id="projects">
 		{% for project in site.projects %}
@@ -49,43 +54,7 @@
 		
 		<a class="see-more" href="/projects">See more projects I've worked on</a>
 	</section>
-	<section id="experience">		
-		<div class='experience-jobs'>
-			{% capture jobs %}{% include jobs.md %}{% endcapture %}
-			{{ jobs }}
-		</div>
-		
-		<aside class='experience-aside'>
-			{% capture education %}{% include education.md %}{% endcapture %}
-			{{ education | markdownify }}
-			{% capture competitions %}{% include competitions.md %}{% endcapture %}
-			{{ competitions | markdownify }}
-		</aside>
-	</section>
-	<section id="contact">
-		
-	</section>
-	<section id="blog">
-		{% for post in site.posts %}
-			<article class='post-summary'>
-				{% if post.image %}
-					{{ post.image | markdownify }}
-				{% endif %}
-				<a href="{{ post.url }}" class='invisible-link'>
-					<h2>{{ post.title }}</h2>
-				</a>
-				<p class="subtitle">
-					{{ post.date | date_to_long_string }} {{ post.subtitle }}
-				</p>
-				{{ post.excerpt }}
-			</article>
-			
-			{% if forloop.index > 4 %}
-				{% break %}
-			{% endif %}
-		{% endfor %}
-		
-		<a class="see-more" href="/blog">See more blog posts</a>
-	</section>
+	
+	{% include footer.html %}
 </body>
 </html>

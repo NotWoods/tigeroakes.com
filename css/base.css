@@ -4,3 +4,14 @@ body {
 	background: #f8f9fa;
 	color: #343a45;
 }
+
+.container {
+	max-width: 50rem;
+	margin: auto;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+a {
+	text-decoration: none;
+}

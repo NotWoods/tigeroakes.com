@@ -1,0 +1,38 @@
+.navigation {
+	line-height: 4em;
+	font-size: 1.25em;
+	font-weight: 300;
+	text-align: right;
+}
+
+.navigation-link {
+	transition: opacity 0.2s ease;
+	opacity: 0.65;
+	color: inherit;
+	padding: 0 0.5em;
+}
+
+.navigation-link:hover {
+	opacity: 1;
+}
+
+.navigation-link-main {
+	float: left;
+	color: inherit;
+	padding-right: 1em;
+}
+
+.navigation-header {
+	font-size: 1.1em;
+	display: inline;
+	font-weight: 400;
+}
+
+nav.navigation {
+	color: #f8f9fa;
+}
+
+footer.navigation {
+	color: #343a45;
+	background: #ececee;
+}
