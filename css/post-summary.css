@@ -13,3 +13,19 @@
 	display: block;
 	margin-bottom: 1em;
 }
+
+.post-image {
+	float: left;
+	margin-right: 1em;
+}
+
+.post-with-image:nth-of-type(even) .post-image {
+	float: right;
+	margin-left: 1em;
+	margin-right: 0;
+}
+
+.post-summary {
+	clear: both;
+	padding-top: 3em;
+}

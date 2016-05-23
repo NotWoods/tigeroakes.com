@@ -25,9 +25,8 @@ permalink: /projects
 		{% for project in site.projects %}
 			{% if project.image %}
 			<article class='post-summary post-with-image'>
-				<a href="{{ project.url }}">
-					<img class="post-image" src="{{ project.image }}" alt="" 
-					     width="484" height="274">
+				<a href="{{ project.url }}" class="post-image">
+					<img src="{{ project.image }}" alt="" width="435" height="245">
 				</a>
 			{% else %}
 			<article class='post-summary'>
