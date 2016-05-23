@@ -35,4 +35,18 @@ nav.navigation {
 footer.navigation {
 	color: #343a45;
 	background: #ececee;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+}
+
+body::after {
+	height: 5em;
+	display: block;
+	content: '';
 }
