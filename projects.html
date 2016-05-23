@@ -20,23 +20,22 @@ permalink: /projects
 		{% include navigation.html %}
 	</header>
 	
-	<p class="container">(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
-	
 	<section id="projects" class="container">
 		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
 		{% for project in site.projects %}
 			{% if project.image %}
 			<article class='post-summary post-with-image'>
 				<a href="{{ project.url }}">
-					<img class="post-image" src="{{ project.image }}" alt="">
+					<img class="post-image" src="{{ project.image }}" alt="" 
+					     width="484" height="274">
 				</a>
 			{% else %}
 			<article class='post-summary'>
 			{% endif %}
 				<a href="{{ project.url }}" class="post-head-link">
-					<h2>{{ project.title }}</h2>
+					<h3 class="post-heading">{{ project.title }}</h3>
 				</a>
-				<p class="small-title">{{ project.subtitle }}</p>
+				<p class="small-title post-small">{{ project.subtitle }}</p>
 				<p>{{ project.summary }}</p>
 			</article>
 		{% endfor %}
