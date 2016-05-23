@@ -15,7 +15,8 @@
 		"email": "mailto:tigeroakes@gmail.com",
 		"telephone": "(253) 778-6251",
 		"mainEntityOfPage": {
-			"@type": "WebSite",
+			"@type": "WebPage",
+			"additionalType": "WebSite",
 			"name": "Tiger Oakes",
 			"url": "https://tigeroakes.com"
 		}
@@ -34,20 +35,25 @@
 	<link href="/css/banner.css" rel="stylesheet" type="text/css"/>
 	<header class="banner">
 		{% include navigation.html %}
-		
-		<p>(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
 	</header>
 	
-	<section id="projects">
+	<p class="container">(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
+	
+	<section id="projects" class="container">
+		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
 		{% for project in site.projects %}
-			<article class='post-summary'>
-				{% if project.image %}
-					{{ project.image | markdownify }}
-				{% endif %}
-				<a href="{{ project.url }}" class='invisible-link'>
-					<h2>{{ project.title }}</h2>
+			{% if project.image %}
+			<article class='post-summary post-with-image'>
+				<a href="{{ project.url }}">
+					<img class="post-image" src="{{ project.image }}" alt="">
 				</a>
-				<p class="subtitle">{{ project.subtitle }}</p>
+			{% else %}
+			<article class='post-summary'>
+			{% endif %}
+				<a href="{{ project.url }}" class="post-head-link">
+					<h3 class="post-heading">{{ project.title }}</h3>
+				</a>
+				<p class="small-title post-small">{{ project.subtitle }}</p>
 				<p>{{ project.summary }}</p>
 			</article>
 		{% endfor %}
