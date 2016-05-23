@@ -1,0 +1,53 @@
+---
+permalink: /contact
+---
+<!doctype html>
+<html>
+<head>
+	{% include head.html %}
+	<title>Tiger Oakes</title>
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "ContactPage",
+		"name": "Contact",
+		"url": "{{ site.url }}{{ page.url }}",
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@id": "{{ site.url }}{{ page.url }}",
+					"name": "Contact"
+				}
+			}]
+		},
+		"about": {
+			"@type": "Person",
+			"name": "Tiger Oakes",
+			"url": "{{ site.url }}",
+			"email": "mailto:tigeroakes@gmail.com",
+			"telephone": "(253) 778-6251",
+			"image": "/images/profile.jpg",
+			"sameAs": [
+				"https://github.com/NotWoods",
+				"https://twitter.com/Not_Woods",
+				"https://www.linkedin.com/in/tigeroakes",
+				"https://plus.google.com/+TigerOakes"
+			]
+		}
+	}
+	</script>
+</head>
+<body>
+	<link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/navigation.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/banner.css" rel="stylesheet" type="text/css"/>
+	<header class="banner">
+		{% include navigation.html %}
+	</header>
+	
+	
+</body>
+</html>

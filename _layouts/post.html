@@ -1,0 +1,76 @@
+---
+---
+<!doctype html>
+<html>
+<head>
+	{% include head.html %}
+	<title>Tiger Oakes</title>
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "BlogPosting",
+		"name": "{{ page.title }}",
+		"url": "{{ site.url }}{{ page.url }}",
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@id": "https://tigeroakes.com/contact",
+					"name": "Contact"
+				}
+			}]
+		},
+		"about": {
+			"@type": "Person",
+			"name": "Tiger Oakes",
+			"url": "https://tigeroakes.com",
+			"email": "mailto:tigeroakes@gmail.com",
+			"telephone": "(253) 778-6251",
+			"image": "/images/profile.jpg",
+			"sameAs": [
+				"https://github.com/NotWoods",
+				"https://twitter.com/Not_Woods",
+				"https://www.linkedin.com/in/tigeroakes",
+				"https://plus.google.com/+TigerOakes"
+			]
+		}
+	}
+	</script>
+</head>
+<body>
+	<link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/navigation.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/banner.css" rel="stylesheet" type="text/css"/>
+	<header class="banner">
+		{% include navigation.html %}
+	</header>
+	
+	<p class="container">(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
+	
+	<section id="projects" class="container">
+		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
+		{% for project in site.projects %}
+			{% if project.image %}
+			<article class='post-summary post-with-image'>
+				<a href="{{ project.url }}" class="post-image">
+					<img src="{{ project.image }}" alt="" width="435" height="245">
+				</a>
+			{% else %}
+			<article class='post-summary'>
+			{% endif %}
+				<a href="{{ project.url }}" class="post-head-link">
+					<h3 class="post-heading">{{ project.title }}</h3>
+				</a>
+				<p class="small-title post-small">{{ project.subtitle }}</p>
+				<p>{{ project.summary }}</p>
+			</article>
+		{% endfor %}
+		
+		<a class="see-more" href="/projects">See more projects I've worked on</a>
+	</section>
+	
+	{% include footer.html %}
+</body>
+</html>
