@@ -1,16 +1,16 @@
 ---
+title: Projects
 permalink: /projects
 ---
 <!doctype html>
 <html>
 <head>
 	{% include head.html %}
-	<title>Tiger Oakes</title>
 	<script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
 		"@type": "CollectionPage",
-		"name": "Projects",
+		"name": "{{ page.title }}",
 		"url": "{{ site.url }}{{ page.url }}",
 		"breadcrumb": {
 			"@type": "BreadcrumbList",
@@ -34,7 +34,7 @@ permalink: /projects
 		{% include navigation.html %}
 	</header>
 	
-	<section id="projects" class="container">
+	<main id="projects" class="container">
 		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
 		{% for project in site.projects %}
 			{% if project.image %}
@@ -54,7 +54,7 @@ permalink: /projects
 		{% endfor %}
 		
 		<a class="see-more" href="/projects">See more projects I've worked on</a>
-	</section>
+	</main>
 	
 	{% include footer.html %}
 </body>

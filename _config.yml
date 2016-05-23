@@ -41,10 +41,9 @@ defaults:
   - scope:
       path: ""
       type: projects
-    values:
-      layout: post
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+      permalink: /blog/:year/:title/

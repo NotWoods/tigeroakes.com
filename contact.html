@@ -1,16 +1,16 @@
 ---
+title: Contact
 permalink: /contact
 ---
 <!doctype html>
 <html>
 <head>
 	{% include head.html %}
-	<title>Tiger Oakes</title>
 	<script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
 		"@type": "ContactPage",
-		"name": "Contact",
+		"name": "{{ page.title }}",
 		"url": "{{ site.url }}{{ page.url }}",
 		"breadcrumb": {
 			"@type": "BreadcrumbList",
@@ -19,7 +19,7 @@ permalink: /contact
 				"position": 1,
 				"item": {
 					"@id": "{{ site.url }}{{ page.url }}",
-					"name": "Contact"
+					"name": "{{ page.title }}"
 				}
 			}]
 		},
