@@ -1,0 +1,49 @@
+---
+permalink: /projects
+---
+<!doctype html>
+<html>
+<head>
+	{% include head.html %}
+	<title>Tiger Oakes</title>
+	<script>
+	{
+		
+	}
+	</script>
+</head>
+<body>
+	<link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/navigation.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/banner.css" rel="stylesheet" type="text/css"/>
+	<header class="banner">
+		{% include navigation.html %}
+	</header>
+	
+	<p class="container">(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
+	
+	<section id="projects" class="container">
+		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
+		{% for project in site.projects %}
+			{% if project.image %}
+			<article class='post-summary post-with-image'>
+				<a href="{{ project.url }}">
+					<img class="post-image" src="{{ project.image }}" alt="">
+				</a>
+			{% else %}
+			<article class='post-summary'>
+			{% endif %}
+				<a href="{{ project.url }}" class="post-head-link">
+					<h2>{{ project.title }}</h2>
+				</a>
+				<p class="small-title">{{ project.subtitle }}</p>
+				<p>{{ project.summary }}</p>
+			</article>
+		{% endfor %}
+		
+		<a class="see-more" href="/projects">See more projects I've worked on</a>
+	</section>
+	
+	{% include footer.html %}
+</body>
+</html>

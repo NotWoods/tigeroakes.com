@@ -1,0 +1,15 @@
+.post-head-link {
+	color: inherit;
+}
+
+.post-small {
+	color: #178A86;
+}
+
+.see-more {
+	text-align: right;
+	font-size: 1.1em;
+	font-style: italic;
+	display: block;
+	margin-bottom: 1em;
+}
