@@ -11,14 +11,14 @@ permalink: /about
 		"@context": "http://schema.org",
 		"@type": "AboutPage",
 		"name": "About",
-		"url": "https://tigeroakes.com/about",
+		"url": "{{ site.url }}{{ page.url }}",
 		"breadcrumb": {
 			"@type": "BreadcrumbList",
 			"itemListElement": [{
 				"@type": "ListItem",
 				"position": 1,
 				"item": {
-					"@id": "https://tigeroakes.com/about",
+					"@id": "{{ site.url }}{{ page.url }}",
 					"name": "About"
 				}
 			}]
@@ -26,10 +26,10 @@ permalink: /about
 		"mainEntity": {
 			"@type": "Person",
 			"name": "Tiger Oakes",
-			"url": "https://tigeroakes.com",
+			"url": "{{ site.url }}",
 			"email": "mailto:tigeroakes@gmail.com",
 			"telephone": "(253) 778-6251",
-			"image": "/images/profile.jpg",
+			"image": "{{ site.url }}/images/profile.jpg",
 			"sameAs": [
 				"https://github.com/NotWoods",
 				"https://twitter.com/Not_Woods",

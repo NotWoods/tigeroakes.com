@@ -11,14 +11,14 @@ permalink: /projects
 		"@context": "http://schema.org",
 		"@type": "CollectionPage",
 		"name": "Projects",
-		"url": "https://tigeroakes.com/projects",
+		"url": "{{ site.url }}{{ page.url }}",
 		"breadcrumb": {
 			"@type": "BreadcrumbList",
 			"itemListElement": [{
 				"@type": "ListItem",
 				"position": 1,
 				"item": {
-					"@id": "https://tigeroakes.com/projects",
+					"@id": "{{ site.url }}{{ page.url }}",
 					"name": "Projects"
 				}
 			}]
