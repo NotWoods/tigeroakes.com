@@ -5,24 +5,34 @@
 <head>
 	{% include head.html %}
 	<title>Tiger Oakes</title>
+	<link rel="canonical" href="{{ site.url }}{{ page.url }}"/>
 	<script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
 		"@type": "BlogPosting",
-		"name": "{{ page.title }}",
+		"headline": "{{ page.title }}",
+		"datePublished": "{{ page.date | date_to_xmlschema }}"
 		"url": "{{ site.url }}{{ page.url }}",
+		"mainEntityOfPage": "{{ site.url }}{{ page.url }}",
 		"breadcrumb": {
 			"@type": "BreadcrumbList",
 			"itemListElement": [{
 				"@type": "ListItem",
 				"position": 1,
 				"item": {
-					"@id": "https://tigeroakes.com/contact",
-					"name": "Contact"
+					"@id": "{{ site.url }}/blog",
+					"name": "Blog Posts"
+				}
+			}, {
+				"@type": "ListItem",
+				"position": 2,
+				"item": {
+					"@id": "{{ site.url }}{{ page.url }}",
+					"name": "{{ page.title }}"
 				}
 			}]
 		},
-		"about": {
+		"author": {
 			"@type": "Person",
 			"name": "Tiger Oakes",
 			"url": "https://tigeroakes.com",
@@ -47,29 +57,22 @@
 		{% include navigation.html %}
 	</header>
 	
-	<p class="container">(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
-	
-	<section id="projects" class="container">
-		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
-		{% for project in site.projects %}
-			{% if project.image %}
-			<article class='post-summary post-with-image'>
-				<a href="{{ project.url }}" class="post-image">
-					<img src="{{ project.image }}" alt="" width="435" height="245">
-				</a>
-			{% else %}
-			<article class='post-summary'>
-			{% endif %}
-				<a href="{{ project.url }}" class="post-head-link">
-					<h3 class="post-heading">{{ project.title }}</h3>
-				</a>
-				<p class="small-title post-small">{{ project.subtitle }}</p>
-				<p>{{ project.summary }}</p>
-			</article>
-		{% endfor %}
+	<article>
+		<header>
+			<h1>{{ page.title }}</h1>
+			<p>
+				Posted
+				<time datetime="{{ page.date | date_to_xmlschema }}">
+					{{ page.date | date_to_string }}
+				</time>
+				{% if page.subtitle %}
+					{{ project.subtitle }}
+				{% endif %}
+			</p>
+		</header>
 		
-		<a class="see-more" href="/projects">See more projects I've worked on</a>
-	</section>
+		{{ page.content }}
+	</article>
 	
 	{% include footer.html %}
 </body>
