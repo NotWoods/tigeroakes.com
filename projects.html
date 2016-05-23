@@ -6,9 +6,23 @@ permalink: /projects
 <head>
 	{% include head.html %}
 	<title>Tiger Oakes</title>
-	<script>
+	<script type="application/ld+json">
 	{
-		
+		"@context": "http://schema.org",
+		"@type": "CollectionPage",
+		"name": "Projects",
+		"url": "https://tigeroakes.com/projects",
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@id": "https://tigeroakes.com/projects",
+					"name": "Projects"
+				}
+			}]
+		}
 	}
 	</script>
 </head>
