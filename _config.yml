@@ -29,7 +29,7 @@ collections:
   projects:
     output: true
     permalink: /project/:path/
-  mini:
+  ideas:
     output: false
 
 defaults:

@@ -14,14 +14,22 @@
 	margin-bottom: 1em;
 }
 
-.post-image {
+.post-image-link {
 	float: left;
-	margin-right: 1em;
+	margin-right: 2em;
+	width: 55%;
 }
 
-.post-with-image:nth-of-type(even) .post-image {
+.post-image {
+	height: auto;
+	width: 100%;
+	border: 1px solid #bbb;
+	border-radius: 0.125rem;
+}
+
+.post-with-image:nth-of-type(even) .post-image-link {
 	float: right;
-	margin-left: 1em;
+	margin-left: 2em;
 	margin-right: 0;
 }
 

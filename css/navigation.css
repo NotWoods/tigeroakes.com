@@ -1,8 +1,7 @@
 .navigation {
-	line-height: 4em;
-	font-size: 1.25em;
-	font-weight: 300;
+	line-height: 3em;
 	text-align: right;
+	font-size: 0.9em;
 }
 
 .navigation-link {
@@ -10,6 +9,8 @@
 	opacity: 0.65;
 	color: inherit;
 	padding: 0 0.5em;
+	height: 3em;
+	/* vertical-align: top; */
 }
 
 .navigation-link:hover {
@@ -20,33 +21,14 @@
 	float: left;
 	color: inherit;
 	padding-right: 1em;
+	/* vertical-align: top; */
+	/* height: 3em; */
 }
 
 .navigation-header {
 	font-size: 1.1em;
 	display: inline;
-	font-weight: 400;
-}
-
-nav.navigation {
-	color: #f8f9fa;
-}
-
-footer.navigation {
-	color: #343a45;
-	background: #ececee;
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-}
-
-body {
-	position: relative;
-	min-height: 100vh;
-}
-
-body::after {
-	height: 5em;
-	display: block;
-	content: '';
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 1em;
 }

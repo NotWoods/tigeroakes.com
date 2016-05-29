@@ -28,39 +28,45 @@ title: Tiger Oakes
 		]
 	}
 	</script>
-</head>
-<body>
 	<link href="/css/layout.css" rel="stylesheet" type="text/css"/>
 	<link href="/css/navigation.css" rel="stylesheet" type="text/css"/>
-	<link href="/css/banner.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/headfoot.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/line-link.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
 	<header class="banner">
-		{% include navigation.html %}
+		{% include navigation.html location="header" %}
 	</header>
-	
-	<p class="container">(Yes, Tiger is my name.) I program software, websites and other things that appear on screens.</p>
+	<div class="banner-padding"></div>
 	
 	<section id="projects" class="container">
 		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
 		{% for project in site.projects %}
 			{% if project.image %}
 			<article class='post-summary post-with-image'>
-				<a href="{{ project.url }}" class="post-image">
-					<img src="{{ project.image }}" alt="" width="435" height="245">
+				<a href="{{ project.url }}" class="post-image-link">
+					<img src="{{ project.image }}" alt="" width="640" height="360" 
+					     class="post-image">
 				</a>
 			{% else %}
 			<article class='post-summary'>
 			{% endif %}
-				<a href="{{ project.url }}" class="post-head-link">
-					<h3 class="post-heading">{{ project.title }}</h3>
-				</a>
+				<h3 class="post-heading">{{ project.title }}</h3>
 				<p class="small-title post-small">{{ project.subtitle }}</p>
 				<p>{{ project.summary }}</p>
+				<a href="{{ project.url }}" class="post-link button">Full project</a>
 			</article>
 		{% endfor %}
 		
-		<a class="see-more" href="/projects">See more projects I've worked on</a>
+		<a class="see-more" href="/ideas">See more projects I've worked on</a>
 	</section>
 	
-	{% include footer.html %}
+	<section id="about"><div class="container">
+		
+	</div></section>
+	
+	<footer class="footer" id="contact">
+		{% include navigation.html location="footer" %}
+	</footer>
 </body>
 </html>

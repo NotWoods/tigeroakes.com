@@ -1,16 +1,17 @@
 body {
 	margin: 0;
 	font-family: 'Lato', sans-serif;
-	background: #f8f9fa;
-	color: #343a45;
+	background: #f0f0f0;
+	color: #212121;
+	font-size: 1.25em;
 }
 
 .container {
-	max-width: 50rem;
+	max-width: 75rem;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding-left: 9em;
+	padding-right: 9em;
 }
 
 p {
@@ -22,14 +23,14 @@ a {
 }
 
 .post-heading {
-	font-weight: 300;
+	font-weight: 700;
 	font-size: 2em;
 	margin: 0.5em 0 0;
 }
 
 .small-title {
-	font-weight: 700;
-	font-size: 1em;
+	font-weight: 400;
+	font-size: 0.9em;
 	margin: 0.1em 0 0.5em;
 }
 
