@@ -1,0 +1,64 @@
+body {
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+	background: #f0f0f0;
+	color: #212121;
+	font-size: 1.25em;
+}
+
+.container {
+	max-width: 75rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 9em;
+	padding-right: 9em;
+}
+
+p {
+	margin: 0.7em 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.post-heading {
+	font-weight: 700;
+	font-size: 2em;
+	margin: 0.5em 0 0;
+}
+
+.small-title {
+	font-weight: 400;
+	font-size: 0.9em;
+	margin: 0.1em 0 0.5em;
+}
+
+.list-heading {
+	font-size: 0.9em;
+	color: #178A86;
+	font-weight: 400;
+	margin: 1.2em 0 0.1em;
+}
+
+.reset-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dark {
+	color: #f8f9fa;
+	background: #343a45;
+}
+
+.secondary-text {
+	opacity: 0.75;
+}
+
+.grid {
+	display: inline-block;
+	vertical-align: top;
+}
+.half {width: 50%}
+.third {width: 33%}

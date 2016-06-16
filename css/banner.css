@@ -1,0 +1,65 @@
+:root {--bio-width: 20rem}
+
+.logo,
+.banner {
+	line-height: 4rem;
+	background: var(--accent-color);
+}
+
+.banner {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	text-align: right;
+	padding: 0 0.5em 0 1em; 
+}
+
+.logo {
+	margin: 0;
+	font-family: 'PT Mono', sans-serif;
+	width: var(--bio-width);
+	display: inline-block;
+	vertical-align: top;
+}
+.logo-container {
+	color: inherit;
+	text-align: left;
+	float: left;
+}
+
+.whitespace {
+	opacity: 0.5;
+}
+
+.nav-link {
+	color: inherit;
+	position: relative;
+	transition: transform 0.1s ease;
+	text-transform: uppercase;
+	display: inline-block;
+	font-weight: bold;
+	padding: 0 1em;
+}
+.nav-link::after {
+	content: '';
+	position: absolute;
+	left: 0; right: 0;
+	bottom: -0.2em;
+	height: 0.2em;
+	transition: opacity 0.1s ease, transform 0.1s ease;
+	background: var(--text);
+	opacity: 0;
+	transform: scaleY(0);
+}
+.nav-link:hover {
+	transform: translateY(-0.2em);
+}
+.nav-link:hover::after {
+	opacity: 1;
+	transform: scaleY(1);
+}
+
+.bio {
+	
+}

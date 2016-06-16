@@ -1,0 +1,72 @@
+---
+title: Tiger Oakes
+---
+<!doctype html>
+<html>
+<head>
+	{% include head.html %}
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Person",
+		"name": "Tiger Oakes",
+		"image": "{{ site.url }}/images/profile.jpg",
+		"url": "{{ site.url }}",
+		"email": "mailto:tigeroakes@gmail.com",
+		"telephone": "(253) 778-6251",
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"additionalType": "WebSite",
+			"name": "{{ site.title }}",
+			"url": "{{ site.url }}"
+		}
+		"sameAs": [
+			"https://github.com/NotWoods",
+			"https://twitter.com/Not_Woods",
+			"https://www.linkedin.com/in/tigeroakes",
+			"https://plus.google.com/+TigerOakes"
+		]
+	}
+	</script>
+	<link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/navigation.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/headfoot.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/line-link.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<header class="banner">
+		{% include navigation.html location="header" %}
+	</header>
+	<div class="banner-padding"></div>
+	
+	<section id="projects" class="container">
+		<link href="/css/post-summary.css" rel="stylesheet" type="text/css"/>
+		{% for project in site.projects %}
+			{% if project.image %}
+			<article class='post-summary post-with-image'>
+				<a href="{{ project.url }}" class="post-image-link">
+					<img src="{{ project.image }}" alt="" width="640" height="360" 
+					     class="post-image">
+				</a>
+			{% else %}
+			<article class='post-summary'>
+			{% endif %}
+				<h3 class="post-heading">{{ project.title }}</h3>
+				<p class="small-title post-small">{{ project.subtitle }}</p>
+				<p>{{ project.summary }}</p>
+				<a href="{{ project.url }}" class="post-link button">Full project</a>
+			</article>
+		{% endfor %}
+		
+		<a class="see-more" href="/ideas">See more projects I've worked on</a>
+	</section>
+	
+	<section id="about"><div class="container">
+		
+	</div></section>
+	
+	<footer class="footer" id="contact">
+		{% include navigation.html location="footer" %}
+	</footer>
+</body>
+</html>
