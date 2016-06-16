@@ -1,0 +1,27 @@
+<header class='banner'>
+	<a class='logo-container' href='/'>
+		<h1 class='logo'>
+			<span class='whitespace'>-</span><!--
+			--><span class='whitespace'>-</span>
+			Tiger
+			<span class='whitespace'>·</span>
+			Oakes
+		</h1>
+	</a>
+
+	{% assign links = (site.data.nav | where:"location","header") %}
+	{% for link in links %}
+		{% if link.title == include.active %}
+			<a class='nav-link nav-link-active' 
+			   href='{{ link.href }}'>
+		{% else %}
+			<a class='nav-link' 
+			   href='{{ link.href }}'>
+		{% endif %}
+				{{ link.title }}
+			</a>
+	{% endfor %}
+</header>
+
+<aside class='bio'>
+</aside>

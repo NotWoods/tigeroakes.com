@@ -1,17 +1,17 @@
-- title: Work
-  href: /projects
+- title: Projects
+  href: /
   location: header
 
-- title: About
-  href: /about
+- title: Experience
+  href: /experience
   location: header
 
 - title: Blog
   href: /blog
   location: header
 
-- title: Contact
-  href: /contact
+- title: About
+  href: /about
   location: header
 # ================ #
 - icon: email
