@@ -7,10 +7,6 @@
 }
 
 .banner {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
 	text-align: right;
 	padding: 0 0.5em 0 1em; 
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
@@ -67,8 +63,4 @@
 .nav-link:hover::after {
 	opacity: 1;
 	transform: scaleY(1);
-}
-
-.bio {
-	
 }

@@ -41,6 +41,33 @@ title: Tiger Oakes
 			My name is Tiger (yes, really). I am a programer who creates 
 			software,	websites, and other things that appear on screens.
 		</p>
+		<div class='bio-item'>
+			<img src='/images/link-email.svg' class='bio-icon bio-side' 
+			     width='20' height='20'>
+			<span class='bio-subtitle'>Email</span>
+			<a href='mailto:tigeroakes@gmail.com' class='bio-text'>
+				tigeroakes@gmail.com
+			</a>
+		</div>
+		<div class='bio-item'>
+			<img src='/images/link-location.svg' class='bio-icon bio-side'
+			     width='20' height='20'>
+			<span class='bio-subtitle'>Located in</span>
+			<span class='bio-text'>
+				Vancouver, BC
+			</span>
+		</div>
+		<div class='bio-icon-list'>
+			{% include bio-icon.html href="github.com/NotWoods" 
+			           icon='github' title='GitHub · /NotWoods' %}
+			{% include bio-icon.html href="twitter.com/Not_Woods" 
+			           icon='twitter' title='Twitter · @Not_Woods' %}
+			{% include bio-icon.html href="linkedin.com/in/tigeroakes" 
+			           icon='linkedin' title='LinkedIn · in/tigeroakes' %}
+			{% include bio-icon.html href="plus.google.com/+TigerOakes" 
+			           icon='googleplus' title='Google+ · +TigerOakes' %}
+			</a>
+		</div>
 	</aside>
 </body>
 </html>
