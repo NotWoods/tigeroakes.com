@@ -41,6 +41,8 @@ defaults:
   - scope:
       path: ""
       type: projects
+    values:
+      image: null
   - scope:
       path: ""
       type: posts
