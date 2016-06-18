@@ -1,3 +1,32 @@
 .bio {
-	
+	max-width: 14em;
+	margin: 0 1em;
+	float: left;
+}
+
+.bio-subtitle {
+	font-size: 0.75em;
+	display: block;
+}
+
+.bio-text {
+	color: inherit;
+}
+
+.bio-side {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.bio-item,
+.bio-icon-list {
+	margin: 1em 0
+}
+
+.bio-side.bio-icon {margin-right: 0.5em}
+
+.bio-icon-list-item {
+	width: 25%;
+	text-align: center;
+	display: inline-block;
 }
