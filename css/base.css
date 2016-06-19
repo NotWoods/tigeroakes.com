@@ -1,5 +1,6 @@
 :root {
 	--accent-color: #c7412c;
+	--accent-color-fallback: #d65643;
 	--background: #303030;
 	--text: #eee;
 }
@@ -13,4 +14,11 @@ body {
 
 a {
 	text-decoration: none;
+}
+
+button {
+	border: 0;
+	background: transparent;
+	box-sizing: content-box;
+	cursor: pointer;
 }
