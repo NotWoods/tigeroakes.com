@@ -13,28 +13,3 @@
 - title: About
   href: /about
   location: header
-# ================ #
-- icon: email
-  title: Email
-  href: mailto:tigeroakes@gmail.com
-  location: footer
-
-- icon: github
-  title: GitHub
-  href: https://github.com/NotWoods
-  location: footer
-
-- icon: twitter
-  title: Twitter
-  href: https://twitter.com/Not_Woods
-  location: footer
-
-- icon: linkedin
-  title: LinkedIn
-  href: https://www.linkedin.com/in/tigeroakes
-  location: footer
-
-- icon: googleplus
-  title: Google+
-  href: https://plus.google.com/+TigerOakes
-  location: footer

@@ -9,9 +9,9 @@
 		</h1>
 	</a>
 
-	{% assign links = (site.data.nav | where:"location","header") %}
-	{% for link in links %}
 		{% if link.title == include.active %}
+	<nav class='nav-list'>
+	{% for link in site.data.nav %}
 			<a class='nav-link nav-link-active' 
 			   href='{{ link.href }}'>
 		{% else %}
@@ -21,4 +21,5 @@
 				{{ link.title }}
 			</a>
 	{% endfor %}
+	</nav>
 </header>
