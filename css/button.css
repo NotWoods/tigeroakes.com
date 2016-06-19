@@ -1,0 +1,41 @@
+.button-fill {
+	position: relative;
+}
+.button-fill::after {
+	background: white;
+	opacity: 0;
+	content: '';
+	transition: opacity 0.1s ease;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 0.125em;
+}
+.button-fill:focus {outline: none}
+.button-fill:focus::after {opacity: 0.1}
+.button-fill:hover::after {opacity: 0.05}
+.button-fill:active::after {opacity: 0.2}
+
+.button,
+button {
+	line-height: 2.25em;
+	padding: 0 1em;
+	text-transform: uppercase;
+	color: inherit;
+	font-weight: bold;
+}
+
+.icon-button {
+	padding: 8px;
+	height: 24px;
+}
+.icon-button::after {
+	border-radius: 50%;
+}
+
+.color-button {color: var(--accent-color-fallback)}
+.color-button::after {background: var(--accent-color-fallback)}
+.color-button:focus::after {opacity: 0.13}
+.color-button:active::after {opacity: 0.26}
