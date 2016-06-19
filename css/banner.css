@@ -8,23 +8,25 @@
 
 .banner {
 	text-align: right;
-	padding: 0 0.5em 0 1em; 
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
               0 1px 10px 0 rgba(0, 0, 0, 0.12),
-              0 2px 4px -1px rgba(0, 0, 0, 0.4)
+              0 2px 4px -1px rgba(0, 0, 0, 0.4);
+	/* padding-right: 0.5em; */
+	margin-bottom: 1em;
 }
 
 .logo {
 	margin: 0;
 	font-family: 'PT Mono', sans-serif;
-	width: var(--bio-width);
-	display: inline-block;
-	vertical-align: top;
+	/* width: var(--bio-width); */
+	/* display: inline-block; */
+	/* vertical-align: top; */
 }
 .logo-container {
 	color: inherit;
 	text-align: left;
 	float: left;
+	padding: 0 1em;
 }
 
 .whitespace {
@@ -45,6 +47,7 @@
 	display: inline-block;
 	font-weight: bold;
 	padding: 0 1em;
+	/* width: 25%; */
 }
 .nav-link::after {
 	content: '';
@@ -52,15 +55,32 @@
 	left: 0; right: 0;
 	bottom: -0.2em;
 	height: 0.2em;
-	transition: opacity 0.1s ease, transform 0.1s ease;
+	transition: opacity 0.1s ease;
 	background: var(--text);
 	opacity: 0;
-	transform: scaleY(0);
 }
 .nav-link:hover {
 	transform: translateY(-0.2em);
 }
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link-active::after {
 	opacity: 1;
-	transform: scaleY(1);
+}
+
+.nav-link-active::after {
+	transform: translateY(-0.2em);
+	transition: opacity 0.1s ease, transform 0.1s ease;
+}
+.nav-link-active:hover::after {
+	transform: translateY(0);
+}
+
+@media (max-width: 46em) {
+	.nav-list {
+		overflow-y: hidden;
+		overflow-x: auto;
+		width: 100%;
+		white-space: nowrap;
+		text-align: center;
+	}
 }
