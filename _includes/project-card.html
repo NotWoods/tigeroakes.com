@@ -1,0 +1,37 @@
+{% assign color = (include.color | default: "white") %}
+{% assign project = (include.data) %}
+<article class='project-card'>
+	{% if project.image %}
+		<img alt='' class='main-img' src='{{ project.image }}'>
+	{% endif %}
+	<div class='project-titles'>
+		<h2 class='title'>{{ project.title }}</h2>
+		<span class='subtitle'>{{ project.subtitle }}</span>
+	</div>
+	<div class='actions'>
+		{% if project.url %}
+		<a href='{{ project.url }}' 
+		   class='button-fill detail-link button color-button'>
+			Details
+		</a>
+		{% endif %}
+		{% if project.link %}
+		<a href='{{ project.link }}' class='button-fill icon-button' title='Link'>
+			<img src='/images/project-icon/link-{{color}}.svg' 
+			     alt='Link' width='24' height='24'>
+		</a>
+		{% endif %}
+		{% if project.code %}
+		<a href='{{ project.code }}' class='button-fill icon-button' 
+		   title='Source Code'>
+			<img src='/images/project-icon/code-{{color}}.svg' 
+			     alt='Source Code' width='24' height='24'>
+		</a>
+		{% endif %}
+		<button class='button-fill expand icon-button'>
+			<img src='/images/project-icon/expand-{{color}}.svg' 
+			     alt='Reduce summary' width='24' height='24'>
+		</button>
+	</div>
+	<p class='supporting-text'>{{ project.summary }}</p>
+</article>

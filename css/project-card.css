@@ -1,0 +1,54 @@
+.project-container {
+	-webkit-column-width: 22em;
+	-moz-column-width: 22em;
+	column-width: 22em;
+	-webkit-column-gap: 1em;
+	-moz-column-gap: 1em;
+	column-gap: 1em;
+	margin: 0 1em;
+}
+
+.project-card {
+	background: #424242;
+	border-radius: 0.125em;
+	overflow: hidden;
+	margin: 1em auto;
+	max-width: 30em;
+	break-inside: avoid;
+}
+
+.detail-link {float: left;}
+
+.main-img {
+	height: auto;
+	width: 100%;
+}
+
+.project-titles {
+	margin: 1.5em 1em 1em;
+}
+.title {
+	font-weight: normal;
+	font-size: 1.5em;
+	margin: 0;
+}
+.subtitle {
+	font-size: 0.9em;
+	opacity: 0.8;
+}
+
+.actions {
+	padding: 0.5em;
+	text-align: right;
+}
+.actions .icon-button {
+	margin: -2px 0;
+}
+
+.supporting-text {
+	margin: 1em 1em 1.5em;
+}
+
+.rotate {
+	transform: rotateZ(180deg);
+}

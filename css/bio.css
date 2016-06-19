@@ -1,7 +1,6 @@
 .bio {
 	max-width: 14em;
-	margin: 0 1em;
-	float: left;
+	margin: 2.5em auto;
 }
 
 .bio-subtitle {
