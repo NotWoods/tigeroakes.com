@@ -40,6 +40,7 @@
 .actions {
 	padding: 0.5em;
 	text-align: right;
+	min-height: 2.25em;
 }
 .actions .icon-button {
 	margin: -2px 0;
