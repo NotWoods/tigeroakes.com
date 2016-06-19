@@ -50,6 +50,9 @@
 	margin: 1em 1em 1.5em;
 }
 
+.rotator {
+	will-change: transform;
+}
 .rotate {
 	transform: rotateZ(180deg);
 }

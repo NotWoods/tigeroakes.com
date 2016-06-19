@@ -10,11 +10,11 @@
 		if (hidden) {
 			summary.removeAttribute(HIDDEN_ATTR);
 			img.setAttribute('alt', 'Reduce summary');
-			img.className = '';
+			img.className = 'rotator';
 		} else {
 			summary.setAttribute(HIDDEN_ATTR, '');
 			img.setAttribute('alt', 'Expand summary');
-			img.className = 'rotate';
+			img.className = 'rotator rotate';
 		}
 	}
 

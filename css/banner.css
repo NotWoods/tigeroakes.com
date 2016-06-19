@@ -47,7 +47,7 @@
 	display: inline-block;
 	font-weight: bold;
 	padding: 0 1em;
-	/* width: 25%; */
+	will-change: transform;
 }
 .nav-link::after {
 	content: '';
@@ -58,6 +58,7 @@
 	transition: opacity 0.1s ease;
 	background: var(--text);
 	opacity: 0;
+	will-change: opacity;
 }
 .nav-link:hover {
 	transform: translateY(-0.2em);

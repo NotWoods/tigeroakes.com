@@ -33,16 +33,14 @@ title: Tiger Oakes
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700"
 	      rel="stylesheet">
 	<link href="/css/button.css" rel="stylesheet">
-	
-	<link href="/css/banner.css" rel="stylesheet">
-	<link href="/css/bio.css" rel="stylesheet">
-	<link href="/css/project-card.css" rel="stylesheet">
 	<script src='/js/expand.js' async defer></script>
 	<noscript><style>.expand{display:none}</style></noscript>
 </head>
 <body>
+	<link href="/css/banner.css" rel="stylesheet">
 	{% include banner.html current="Projects" %}
 	<main class='project-container'>
+		<link href="/css/bio.css" rel="stylesheet">
 		<aside class='bio'>
 			<p>
 				My name is Tiger (yes, really). I am a programer who creates 
@@ -80,7 +78,7 @@ title: Tiger Oakes
 				</a>
 			</div>
 		</aside>
-
+		<link href="/css/project-card.css" rel="stylesheet">
 		{% for project in site.projects %}
 			{% include project-card.html data=project %}
 		{% endfor %}
