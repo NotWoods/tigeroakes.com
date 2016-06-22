@@ -52,9 +52,9 @@ title: Experience | Tiger Oakes
 			I'm a student at the University of British Columbia and currently working at the Centre for Sustainable Food Systems. I've created a variety of projects, which have been featured in the Congressional App Challenge and news outlets such as the Star Advertiser, West Hawaii Today, and Hawaii Public Radio.
 		</p>
 		<ul class='jobs'>
-			<li class='job-item'>
-				
-			</li>
+			{% for job in site.data.jobs %}
+				{% include job-item.html data=job %}
+			{% endfor %}
 		</ul>
 		<aside class='experience-aside'>
 			<div class='education'>
@@ -62,7 +62,7 @@ title: Experience | Tiger Oakes
 				
 				<section class="half grid">
 					<h3 class="med-title">Undergraduate</h3>
-					<img src="/images/edu-ubc.png" alt="" class="edu-image" 
+					<img src="/images/experience/edu-ubc.png" alt="" class="edu-image" 
 							width="58.33" height="80">
 					<p>University of British Columbia</p>
 					<p class="secondary-text">Computer Science - Bachelor of Science
@@ -71,7 +71,7 @@ title: Experience | Tiger Oakes
 				
 				--><section class="half grid">
 					<h3 class="med-title">High School</h3>
-					<img src="/images/edu-mbta.png" alt="" class="edu-image"
+					<img src="/images/experience/edu-mbta.png" alt="" class="edu-image"
 							width="58.33" height="80">
 					<p>Myron B. Thompson Academy</p>
 					<p class="secondary-text">Graduated with Honors

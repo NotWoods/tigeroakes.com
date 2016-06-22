@@ -1,0 +1,13 @@
+{% assign job = (include.data) %}
+<li class='job-item'>
+	<h2 class='title'>{{ job.title }}</h2>
+	<span class='subtitle'>
+		{{ job.company }} · 
+		<time>{{ job.date }}</time>
+	</span>
+	<ul class='job-detail-list'>
+		{% for detail in job.details %}
+			<li class='job-detail'>{{ detail | markdownify }}</li>
+		{% endfor %}
+	</ul>
+</li>
