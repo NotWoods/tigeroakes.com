@@ -27,9 +27,6 @@ gems:
 
 collections:
   projects:
-    output: true
-    permalink: /project/:path/
-  ideas:
     output: false
 
 defaults:

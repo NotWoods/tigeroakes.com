@@ -30,6 +30,7 @@ button {
 
 .icon-button {
 	padding: 8px;
+	display: inline-block;
 	height: 24px;
 }
 .icon-button::after {

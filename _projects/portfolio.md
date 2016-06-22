@@ -1,6 +1,8 @@
 ---
 title: Tiger Oakes.com
 subtitle: 
+link: /
+code: https://github.com/NotWoods/notwoods.github.io
 summary: >
   App for riders of the bus in Hawaii, upgrading their basic paper schedules 
   into digital form. The app is designed to load and run quickly, and cache 
