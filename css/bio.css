@@ -19,7 +19,8 @@
 
 .bio-item,
 .bio-icon-list {
-	margin: 1em 0
+	margin: 1em 0;
+	padding: 0;
 }
 
 .bio-side.bio-icon {margin-right: 0.5em}

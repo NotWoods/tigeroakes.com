@@ -1,8 +1,9 @@
 :root {
-	--accent-color: #c7412c;
-	--accent-color-fallback: #d65643;
-	--background: #303030;
-	--text: #eee;
+	--primary-color: #cd422d;
+	--accent-color: #333;
+	--background: #f6f6f6;
+	--text: #212121;
+	--light-text: #fff;
 }
 
 body {
