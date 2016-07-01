@@ -3,7 +3,8 @@
   location: header
 
 - title: Resume
-  href: /resume.pdf
+  href: /misc/resume.pdf
+  target: _blank
   location: header
 
 - title: Blog
