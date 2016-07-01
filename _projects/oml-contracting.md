@@ -3,6 +3,7 @@ title: OML Contracting Co
 subtitle: Construction Portfolio
 image: /images/oml-contracting/index.png
 link: http://omlhawaii.com
+color: "#2e3c55"
 summary: >
   I worked with OML Contracting to redesign their portfolio. We settled on a 
   design using animation to direct attention to the building photos. The site 

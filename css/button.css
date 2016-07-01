@@ -37,7 +37,7 @@ button {
 	border-radius: 50%;
 }
 
-.color-button {color: var(--accent-color-fallback)}
-.color-button::after {background: var(--accent-color-fallback)}
+.color-button {color: var(--accent-color);}
+.color-button::after {background: var(--accent-color);}
 .color-button:focus::after {opacity: 0.13}
 .color-button:active::after {opacity: 0.26}

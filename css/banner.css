@@ -1,7 +1,9 @@
 .logo,
 .banner {
 	line-height: 4rem;
-	background: var(--accent-color);
+	background: var(--primary-color);
+	--text: #fff;
+	color: var(--text);
 }
 
 .banner {

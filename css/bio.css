@@ -10,6 +10,7 @@
 .bio-subtitle {
 	font-size: 0.75em;
 	display: block;
+	color: var(--accent-color);
 }
 
 .bio-text {

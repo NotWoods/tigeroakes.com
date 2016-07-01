@@ -5,16 +5,16 @@
 	-webkit-column-gap: 1em;
 	-moz-column-gap: 1em;
 	column-gap: 1em;
-	margin: 0 1em;
+	margin: 1em;
 }
 
 .project-card {
-	background: #424242;
 	border-radius: 0.125em;
 	overflow: hidden;
 	margin: 1em auto;
 	max-width: 30em;
 	break-inside: avoid;
+	border: 1px solid #c3c3c3;
 }
 
 .detail-link {float: left;}
@@ -22,10 +22,11 @@
 .main-img {
 	height: auto;
 	width: 100%;
+	display: block;
 }
 
 .project-titles {
-	margin: 1.5em 1em 1em;
+	padding: 1em;
 }
 .title {
 	font-weight: normal;
@@ -35,6 +36,7 @@
 .subtitle {
 	font-size: 0.9em;
 	opacity: 0.8;
+	color: var(--accent-color);
 }
 
 .actions {

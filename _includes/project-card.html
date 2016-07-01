@@ -1,6 +1,10 @@
-{% assign color = (include.color | default: "white") %}
+{% assign color = (include.color | default: "black") %}
 {% assign project = (include.data) %}
+{% if project.color %}
+<article class='project-card' style='--accent-color: {{ project.color }}'>
+{% else %}
 <article class='project-card'>
+{% endif %}
 	{% if project.image %}
 		<img alt='' class='main-img' src='{{ project.image }}'>
 	{% endif %}
