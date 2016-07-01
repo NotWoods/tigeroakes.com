@@ -41,7 +41,7 @@ title: Tiger Oakes
 	{% include banner.html current="Projects" %}
 	<main class='project-container'>
 		<link href="/css/bio.css" rel="stylesheet">
-		<aside class='bio'>
+		<aside class='project-card bio'><div class='bio-inner'>
 			<p>
 				My name is Tiger (yes, really). I am a programer who creates 
 				software,	websites, and other things that appear on screens.
@@ -76,8 +76,8 @@ title: Tiger Oakes
 				-->{% include bio-icon.html href="plus.google.com/+TigerOakes" 
 									icon='googleplus' title='Google+  ·  +TigerOakes' %}
 				</a>
-		</aside>
 			</menu>
+		</div></aside>
 		<link href="/css/project-card.css" rel="stylesheet">
 		{% for project in site.projects %}
 			{% include project-card.html data=project %}
