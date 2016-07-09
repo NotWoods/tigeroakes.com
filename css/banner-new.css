@@ -9,11 +9,10 @@
 	--text: #fff;
 	color: var(--text);
 	text-align: center;
-
 	display: block;
 	position: relative;
 	margin: 0 4em;
-	padding: 1em 1em 3.5em;
+	padding: 1em 1em 2.5em;
 }
 
 .logo-container::before,
@@ -28,12 +27,12 @@
 }
 
 .logo-container::after {
-	border-top-width: 3em;
+	border-top-width: 2em;
 	border-color: transparent transparent transparent var(--background);
 	left: 0;
 }
 .logo-container::before {
-	border-bottom-width: 3em;
+	border-bottom-width: 2em;
 	border-color: transparent transparent var(--background) transparent;
 	right: 0;
 }
@@ -49,9 +48,9 @@
 }
 
 .banner {
-	--background: #eee;
+	/* --background: #eee; */
 	background: var(--background);
-	border-bottom: 1px solid #ccc;
+	/* border-bottom: 1px solid #ccc; */
 }
 
 .nav-link {

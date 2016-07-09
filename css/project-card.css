@@ -2,19 +2,20 @@
 	-webkit-column-width: 22em;
 	-moz-column-width: 22em;
 	column-width: 22em;
-	-webkit-column-gap: 1em;
-	-moz-column-gap: 1em;
-	column-gap: 1em;
-	margin: 1em;
+	-webkit-column-gap: 2em;
+	-moz-column-gap: 2em;
+	column-gap: 2em;
+	margin: 2em 5em;
 }
 
 .project-card {
 	border-radius: 0.125em;
 	overflow: hidden;
-	margin: 1em auto;
+	margin: 2em auto;
 	max-width: 30em;
 	break-inside: avoid;
-	border: 1px solid #c3c3c3;
+	/* border: 1px solid #c3c3c3; */
+	background: #fdfdfd;
 }
 
 .detail-link {float: left;}
@@ -32,11 +33,15 @@
 	font-weight: normal;
 	font-size: 1.5em;
 	margin: 0;
+	font-family: 'PT Mono';
+	text-align: center;
 }
 .subtitle {
 	font-size: 0.9em;
 	opacity: 0.8;
 	color: var(--accent-color);
+	text-align: center;
+	display: block;
 }
 
 .actions {
