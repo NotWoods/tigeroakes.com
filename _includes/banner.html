@@ -9,7 +9,6 @@
 		</h1>
 	</a>
 
-	<nav class='nav-list'>
 	{% for link in site.data.nav %}
 		{% if link.title == include.current %}
 			<a class='nav-link nav-link-active' 
@@ -21,5 +20,4 @@
 				{{ link.title }}
 			</a>
 	{% endfor %}
-	</nav>
 </header>

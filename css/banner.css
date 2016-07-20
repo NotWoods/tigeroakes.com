@@ -1,28 +1,35 @@
 .logo,
 .banner {
-	line-height: 4rem;
-	background: var(--primary-color);
-	--text: #fff;
+	line-height: 5rem;
+	background: white;
+	--text: var(--primary-color);
 	color: var(--text);
 }
 
 .banner {
-	text-align: right;
-	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+	/* text-align: right; */
+	/* box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
               0 1px 10px 0 rgba(0, 0, 0, 0.12),
-              0 2px 4px -1px rgba(0, 0, 0, 0.4);
+              0 2px 4px -1px rgba(0, 0, 0, 0.4); */
 	/* margin-bottom: 1em; */
+	display: flex;
+	justify-content: flex-start;
+	text-transform: uppercase;
 }
 
 .logo {
 	margin: 0;
 	font-family: 'PT Mono', sans-serif;
+	font-size: 2.5em;
 }
 .logo-container {
 	color: inherit;
-	text-align: left;
-	float: left;
+	/* text-align: left; */
+	/* float: left; */
 	padding: 0 1em;
+	margin-left: auto;
+	order: 2;
+	text-transform: none;
 }
 
 .whitespace {
@@ -36,19 +43,20 @@
 }
 
 .nav-link {
-	color: inherit;
-	position: relative;
+	color: #212121;
+	/* position: relative; */
 	transition: transform 0.1s ease;
-	text-transform: uppercase;
-	display: inline-block;
-	font-weight: bold;
-	padding: 0 1em;
+	/* text-transform: uppercase; */
+	/* display: inline-block; */
+	/* font-weight: bold; */
+	padding: 0 1.25em;
 	will-change: transform;
 }
 .nav-link::after {
 	content: '';
 	position: absolute;
-	left: 0; right: 0;
+	left: 0;
+	right: 0;
 	bottom: -0.2em;
 	height: 0.2em;
 	transition: opacity 0.1s ease;
