@@ -1,6 +1,6 @@
 .logo,
 .banner {
-	line-height: 5rem;
+	line-height: 4.5rem;
 	background: white;
 	--text: var(--primary-color);
 	color: var(--text);
@@ -15,12 +15,15 @@
 	display: flex;
 	justify-content: flex-start;
 	text-transform: uppercase;
+	/* align-items: stretch; */
+	flex-wrap: wrap;
 }
 
 .logo {
 	margin: 0;
-	font-family: 'PT Mono', sans-serif;
-	font-size: 2.5em;
+	/* font-family: 'PT Mono', sans-serif; */
+	/* font-size: 2.5em; */
+	/* line-height: 4rem; */
 }
 .logo-container {
 	color: inherit;
@@ -66,6 +69,8 @@
 }
 .nav-link:hover {
 	transform: translateY(-0.2em);
+	color: #212121;
+	text-decoration: none;
 }
 .nav-link:hover::after,
 .nav-link-active::after {
