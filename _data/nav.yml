@@ -1,5 +1,9 @@
-- title: Projects
-  href: /
+- title: Professional Portfolio
+  href: "/#portfolio"
+  location: header
+
+- title: Side Projects
+  href: "/#side-projects"
   location: header
 
 - title: Resume
@@ -8,5 +12,9 @@
   location: header
 
 - title: Blog
+  href: /blog
+  location: header
+
+- title: Contact
   href: /blog
   location: header
