@@ -211,6 +211,7 @@ input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
   color: #333;
+  text-decoration: none;
   border-color: #888;
   outline: 0; }
 .button.button-primary,
@@ -233,8 +234,12 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
   background-color: #1EAEDB;
+  text-decoration: none;
   border-color: #1EAEDB; }
 
+.button-icon {
+  vertical-align: middle;
+}
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

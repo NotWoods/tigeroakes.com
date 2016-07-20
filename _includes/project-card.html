@@ -1,42 +1,41 @@
 {% assign color = (include.color | default: "black") %}
 {% assign project = (include.data) %}
 {% if project.color %}
-<article class='project-card' style='--accent-color: {{ project.color }}'>
+<article class='project-card container' 
+	style='--accent-color: {{ project.color }}'>
 {% else %}
-<article class='project-card'>
+<article class='project-card container'>
 {% endif %}
-	{% if project.image %}
-		<img alt='' class='main-img' src='{{ project.image }}'>
-	{% endif %}
-	<div class='project-titles'>
-		<h2 class='title'>{{ project.title }}</h2>
-		<span class='subtitle'>{{ project.subtitle }}</span>
+	<div class='project-gallery six columns'>
+		<img alt='' class='project-main-img' src='{{ project.image }}'>
 	</div>
-	<div class='actions'>
-		{% if project.path %}
-		<a href='{{ project.path }}' 
-		   class='button-fill detail-link button color-button'>
-			Details
-		</a>
-		{% endif %}
-		{% if project.link %}
-		<a href='{{ project.link }}' class='button-fill icon-button' title='Link'>
-			<img src='/images/project-icon/link-{{color}}.svg' 
-			     alt='Link' width='24' height='24'>
-		</a>
-		{% endif %}
-		{% if project.code %}
-		<a href='{{ project.code }}' class='button-fill icon-button' 
-		   title='Source Code'>
-			<img src='/images/project-icon/code-{{color}}.svg' 
-			     alt='Source Code' width='24' height='24'>
-		</a>
-		{% endif %}
-		<button class='button-fill expand icon-button'>
-			<img src='/images/project-icon/expand-{{color}}.svg' 
-			     class='rotator'
-					 alt='Reduce summary' width='24' height='24'>
-		</button>
+
+	<div class='project-description six columns'>
+		<h2 class='project-title'>{{ project.title }}</h2>
+		<span class='project-subtitle'>{{ project.subtitle }}</span>
+
+		<p class='description'>{{ project.summary }}</p>
+
+		<div class='actions'>
+			{% if project.path %}
+			<a href='{{ project.path }}' class='button'>
+				Details
+			</a>
+			{% endif %}
+			{% if project.link %}
+			<a href='{{ project.link }}' class='button'>
+				<img src='/images/project-icon/link-{{color}}.svg' 
+					alt='' width='24' height='24' class='button-icon'>
+				Website
+			</a>
+			{% endif %}
+			{% if project.code %}
+			<a href='{{ project.code }}' class='button'>
+				<img src='/images/project-icon/code-{{color}}.svg' 
+						alt='' width='24' height='24' class='button-icon'>
+					Source Code
+			</a>
+			{% endif %}
+		</div>
 	</div>
-	<p class='supporting-text'>{{ project.summary }}</p>
 </article>

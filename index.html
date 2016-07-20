@@ -34,7 +34,9 @@ title: Tiger Oakes
 </head>
 <body>
 	{% include banner.html current="Professional Projects" %}
-	
-	
+	<link href='/css/project-card.css' rel='stylesheet'>
+	{% for project in site.projects %}
+		{% include project-card.html data=project %}
+	{% endfor %}
 </body>
 </html>
