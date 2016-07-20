@@ -1,0 +1,44 @@
+.full-width {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+label:not(.material-icons), legend {
+	display: block;
+	margin-bottom: .5rem;
+	font-weight: 600;
+}
+
+.label-body {
+	font-weight: normal;
+	display: inline-block;
+	margin-left: .5em;
+}
+
+input[type="email"], 
+input[type="number"], 
+input[type="search"], 
+input[type="text"], 
+input[type="tel"], 
+input[type="url"], 
+input[type="password"], 
+textarea,
+select {
+	padding: 0.4em 0.6em;
+	background: #fff;
+	border: 1px solid #d1d1d1;
+	border-radius: var(--rounding);
+}
+
+input[type="email"]:focus, 
+input[type="number"]:focus, 
+input[type="search"]:focus, 
+input[type="text"]:focus, 
+input[type="tel"]:focus, 
+input[type="url"]:focus, 
+input[type="password"]:focus, 
+textarea:focus,
+select:focus {
+	border-color: #888;
+	outline: 0;
+}

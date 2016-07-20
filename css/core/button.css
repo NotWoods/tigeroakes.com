@@ -1,0 +1,60 @@
+button, .button, 
+input[type="button"], input[type="submit"] {
+	background: none;
+	padding: 0.5em 1.75em;
+	border-radius: var(--rounding);
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	border: 1px solid #888;
+	color: #333;
+	opacity: 0.85;
+	font-weight: 500;
+}
+
+button:hover, .button:hover,
+input[type="button"]:hover, input[type="submit"]:hover {
+	opacity: 1;
+}
+
+.button-primary, input.button-primary {
+	background: var(--brand-primary);
+	border-color: var(--brand-primary);
+	color: white;
+	opacity: 1;
+	position: relative;
+}
+
+.button-primary::after {
+	content: '';
+	opacity: 0;
+	position: absolute;
+	top: -1px; left: -1px; right: -1px; bottom: -1px;
+	border-radius: var(--rounding);
+	background: rgba(0,0,0, 0.12);
+}
+
+.button-primary:hover::after {
+	opacity: 1;
+}
+
+input.button-primary:hover {
+	/* Manually apply the 12% darkening since input can't have psuedo-children */
+	border-color: #34923f;
+	background: #34923f;
+}
+
+.icon-button {
+	cursor: pointer;
+	border-radius: 50%;
+	padding: 0.15em;
+}
+
+.icon-button:hover {
+	background: rgba(0,0,0,0.1);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
