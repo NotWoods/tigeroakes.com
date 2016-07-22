@@ -26,7 +26,9 @@ gems:
   - jekyll-sitemap
 
 collections:
-  projects:
+  portfolio:
+    output: false
+  side_projects:
     output: false
 
 defaults:
@@ -37,7 +39,7 @@ defaults:
       subtitle: ''
   - scope:
       path: ""
-      type: projects
+      type: portfolio
     values:
       image: null
   - scope:

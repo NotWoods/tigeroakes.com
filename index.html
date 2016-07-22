@@ -34,9 +34,38 @@ title: Tiger Oakes
 </head>
 <body>
 	{% include banner.html current="Professional Projects" %}
+
+	<section id="about" class='container'>
+		<p>
+			Hello, I'm Tiger (yes, really). I am a programmer who creates software, websites, and other things that appear on screens. 
+		</p>
+		<p>
+			Currently I'm working at the Centre for Sustainable Food Systems at UBC Farm, developing database software for researchers. I currently study Computer Science at the University of British Columbia in Vancouver.  I've also created many projects in my free time, many of which are open source. Many of my recent projects were written in JavaScript, but I know a few different programming languages and can teach myself many more.
+		</p>
+		<p>
+			I'd love to <a href='/contact'>chat</a> about job opportunites, projects I've created, or whatever is on your mind.
+		</p>
+	</section>
+
+	<style>
+		.section-heading {
+			text-align: center;
+			padding: 1em;
+			background: white;
+			color: var(--primary-color);
+		}
+	</style>
+
+	<h1 id="portfolio" class='section-heading'>Professional Portfolio</h1>
 	<link href='/css/project-card.css' rel='stylesheet'>
-	{% for project in site.projects %}
+	{% for project in site.portfolio %}
 		{% include project-card.html data=project %}
+	{% endfor %}
+
+	<h1 id="side_projects" class='section-heading'>Side Projects</h1>
+	
+	{% for sideproject in site.side_projects %}
+		{% include project-card.html data=sideproject small='true' %}
 	{% endfor %}
 </body>
 </html>
