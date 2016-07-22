@@ -28,10 +28,10 @@
 	transform-origin: top center;
 }
 
-.project-card:nth-child(odd) > .project-gallery {
+.project-card:nth-of-type(odd) > .project-gallery {
 	float: right;
 	margin-left: 4%;
 }
-.project-card:nth-child(odd) > .project-description {
+.project-card:nth-of-type(odd) > .project-description {
 	margin-left: 0;
 }

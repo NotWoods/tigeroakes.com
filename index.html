@@ -63,9 +63,8 @@ title: Tiger Oakes
 	{% endfor %}
 
 	<h1 id="side_projects" class='section-heading'>Side Projects</h1>
-	
 	{% for sideproject in site.side_projects %}
-		{% include project-card.html data=sideproject small='true' %}
+		{% include project-card.html data=sideproject %}
 	{% endfor %}
 </body>
 </html>
