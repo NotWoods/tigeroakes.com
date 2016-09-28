@@ -1,7 +1,10 @@
 .project {
 	--border: #f0f0f0;
 	--fill: white;
+	--accent: #009688;
 }
+
+/** Header **/
 
 .project-header {
 	display: flex;
@@ -11,25 +14,37 @@
 
 .project-tag, .project-time {
 	border-right: 0.5rem var(--border) solid;
+	width: 6em;
+	justify-content: center;
 }
-.project-tag, .project-time,
-.project-title, .project-info-link {
+.project-tag, .project-time, .project-title,
+.project-info-link, .project-info-link::after {
 	background: var(--fill);
 	padding: 1em;
 	display: flex;
 	align-items: center;
 }
 
-.project-tag, .project-time {
-	width: 5em;
-	justify-content: center;
-}
-
 .project-title {
 	padding: 0.5rem 1rem;
 	flex: 1;
 	margin: 0;
+	color: var(--accent);
 }
+
+/** Tags **/
+.project-tag {color: white}
+.project-tag.personal {
+	background: #F44336;
+}
+.project-tag.collaborated {
+	background: #43A047;
+}
+.project-tag.professional {
+	background: #2196F3;
+}
+
+/** Info Link **/
 
 .project-info-link {
 	position: relative;
@@ -44,22 +59,38 @@
 	background: url('/images/info.svg') white
 		no-repeat calc(100% - 1rem) center/1.5rem 1.5rem;
 }
+.project-info-link::after {
+	position: absolute;
+	left: 0.5rem; right: 0;
+	top: 0; bottom: 0;
+
+	background-color: var(--accent);
+	color: white;
+	content: 'More info';
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
 
 .project-info-link::before {
 	content: '';
 	position: absolute;
-	transition: transform 0.2s ease;
+	transition: transform 0.2s ease-out;
 	top: 0;
 	bottom: 0;
 	right: 3.5rem;
 	width: calc(100% - 4.5rem);
 	border-right: 0.5rem var(--border) solid;
 	background: var(--fill);
+	z-index: 1;
 }
-
 .project:hover .project-info-link::before {
 	transform: translateX(-100%);
 }
+.project-info-link:hover::after {
+	opacity: 1;
+}
+
+/** Body **/
 
 .project-main {
 	display: flex;
@@ -72,6 +103,8 @@
 	border: 0 0.5rem 0.5rem var(--border) solid;
 	padding: 0.5rem;
 }
+
+/** Aside **/
 
 .project-aside {
 	width: 12.5rem;
@@ -90,6 +123,7 @@
 
 .project-tech::before {
 	content: 'tech';
+	font-family: Menlo, Consolas, "Roboto Mono", "Courier New", monospace;
 	display: block;
 	width: 5em;
 	background: var(--border);
