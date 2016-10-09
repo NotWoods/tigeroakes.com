@@ -3,6 +3,8 @@
 	padding: 1em;
 	margin: 0 auto;
 	max-width: 70em;
+	position: fixed;
+	left: 0; right: 0;
 }
 
 .dot {
@@ -32,6 +34,7 @@
 	color: white;
 	opacity: 0;
 	transition: opacity 0.1s ease;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
 .dot:focus > .hovertext {
 	opacity: 0.9;

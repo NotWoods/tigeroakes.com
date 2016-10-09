@@ -38,6 +38,7 @@
 	background: #333;
 	color: white;
 	padding: 3.5em 5em;
+	background-size: cover;
 }
 .featured-project-text {
 	max-width: 40em;
@@ -56,7 +57,7 @@
 .project-tech {
 	padding: 0;
 	margin-top: -1em;
-	opacity: 0.6;
+	opacity: 0.8;
 }
 .project-tech-item {
 	display: inline-block;
@@ -72,7 +73,7 @@
 .button-link {
 	color: inherit;
 	text-decoration: none;
-	background: rgba(0, 0, 0, 0.12);
+	background: rgba(36, 33, 32, 0.8);
 	padding: 0.6em 2em;
 	display: inline-block;
 	margin-right: 0.5em;

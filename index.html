@@ -28,7 +28,10 @@
 			<div class="about-text">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis risus non nisi sagittis blandit. Curabitur eget lacus est. Ut et mattis lacus. Aenean a congue eros. Donec ut ipsum et velit finibus ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque ornare quam sed pulvinar varius. Sed lobortis consectetur mattis. Morbi egestas orci nec sem porta dignissim. Sed tempus neque nisi, eget sollicitudin turpis tempor eu. Ut eget nisi libero. Praesent tellus tortor, viverra at lorem sit amet, egestas pellentesque est. Donec diam est, sodales vel lectus vel, aliquet efficitur tellus. Praesent accumsan, nunc sit amet scelerisque lacinia, tellus ligula lobortis nunc, id auctor sapien mi eu quam. Morbi faucibus magna viverra ante ultricies, id vehicula mi sollicitudin. Integer tellus massa, tincidunt non augue at, faucibus placerat mauris.</p>
 			</div>
-			<img class="profile" alt="" width="160" height="160">
+			<img class="profile" alt="" width="160" height="160"
+				src="{{ base }}/images/profile-1x.jpg"
+				srcset="{{ base }}/images/profile-2x.jpg 320w, {{ base }}/images/profile-3x.jpg 480w, {{ base }}/images/profile-4x.jpg 640w"
+			>
 		</div>
 	</section>
 
@@ -44,7 +47,7 @@
 					<li class="project-tech-item">{{ tech }}</li>
 				{% endfor %}
 			</ul>
-			<p class="featured-project-text">{{ proj.description }}</p>
+			<p class="featured-project-text">{{ proj.summary }}</p>
 			<a class="button-link shadow" href="{{ proj.url }}">Project details</a>
 			<a class="button-link shadow" href="{{ proj.link }}">View site</a>
 			<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
