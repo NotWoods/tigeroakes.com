@@ -1,12 +1,10 @@
 ---
 title: Big Island Buses
-image: /images/big-island-buses/index.png
 path: big-island-buses
 color: "#4d74ab"
-tags:
-  - projects
-  - personal
-time: 2014-2015
+bkgimage: '/images/big-island-buses/background.jpg'
+link: 'http://tigeroakes.com/big-island-buses'
+code: 'https://github.com/NotWoods/big-island-buses'
 tech:
   - JavaScript
   - AppCache
@@ -14,6 +12,9 @@ tech:
   - IndexedDB
   - Google Maps
   - GTFS
-links:
-  - alt: GitHub
+summary: >
+  Bus rider web app to replace Hawai’i paper bus schedules.
+  Uses JavaScript geolocation API to find nearby bus stops,
+  and the AppCache API to run offline.
+  Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District.
 ---

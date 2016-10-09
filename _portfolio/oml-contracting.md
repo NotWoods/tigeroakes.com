@@ -1,13 +1,14 @@
 ---
 title: OML Contracting Co
 subtitle: Construction Portfolio
-image: /images/oml-contracting/index.png
-link: http://omlhawaii.com
 color: "#2e3c55"
+bkgimage: '/images/oml-contracting/background.jpg'
+link: http://omlhawaii.com
+code: https://github.com/omlhawaii/omlhawaii.github.io
 summary: >
-  I worked with OML Contracting to redesign their portfolio. We settled on a 
-  design using animation to direct attention to the building photos. The site 
-  is designed to hide loading times by quickly downloading enough code to 
-  display the basic site, then running in the background to add on additional 
+  I worked with OML Contracting to redesign their portfolio. We settled on a
+  design using animation to direct attention to the building photos. The site
+  is designed to hide loading times by quickly downloading enough code to
+  display the basic site, then running in the background to add on additional
   functionality and design.
 ---
