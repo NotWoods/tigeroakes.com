@@ -1,13 +1,77 @@
 ---
-title: Tiger Oakes
 ---
+{% include base.liquid %}
 <!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" href="/css/root.css">
-	<link rel="stylesheet" href="/css/projects/item.css">
+	<link rel="stylesheet" href="{{ base }}/css/core.css">
+	<link rel="stylesheet" href="{{ base }}/css/banner.css">
+	<link rel="stylesheet" href="{{ base }}/css/home.css">
 </head>
 <body>
-	{% include project.liquid data=site.portfolio.first %}
+	<header class="banner">
+		<button class="dot shadow">
+			<span class="hovertext">Back to top</span>
+		</button>
+		{% include navigation.liquid %}
+	</header>
+
+	<section class="hero">
+		<h1 class="hero-header">Tiger Oakes</h1>
+		<p class="hero-sub">
+			Software Developer with 4 years of experience in functional and object-oriented programming.
+		</p>
+	</section>
+
+	<section class="about">
+		<div class="inner about-content">
+			<div class="about-text">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis risus non nisi sagittis blandit. Curabitur eget lacus est. Ut et mattis lacus. Aenean a congue eros. Donec ut ipsum et velit finibus ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque ornare quam sed pulvinar varius. Sed lobortis consectetur mattis. Morbi egestas orci nec sem porta dignissim. Sed tempus neque nisi, eget sollicitudin turpis tempor eu. Ut eget nisi libero. Praesent tellus tortor, viverra at lorem sit amet, egestas pellentesque est. Donec diam est, sodales vel lectus vel, aliquet efficitur tellus. Praesent accumsan, nunc sit amet scelerisque lacinia, tellus ligula lobortis nunc, id auctor sapien mi eu quam. Morbi faucibus magna viverra ante ultricies, id vehicula mi sollicitudin. Integer tellus massa, tincidunt non augue at, faucibus placerat mauris.</p>
+			</div>
+			<img class="profile" alt="" width="160" height="160">
+		</div>
+	</section>
+
+	<article class="featured-project">
+		<h2>Project title</h2>
+		<p class="featured-project-text">Lorem ipsum the description of the project.</p>
+		<a class="button-link shadow" href="">Project details</a>
+		<a class="button-link shadow" href="">View demo</a>
+		<a class="button-link shadow" href="">Source code</a>
+	</article>
+
+	<article class="featured-project">
+		<h2>Project title</h2>
+		<p class="featured-project-text">In interdum non sem ut tincidunt. Duis ut ultrices purus. Phasellus accumsan, ex vel luctus aliquam, nisi metus tempor tortor, non accumsan orci justo eu odio. </p>
+		<a class="button-link shadow" href="">Project details</a>
+		<a class="button-link shadow" href="">View demo</a>
+		<a class="button-link shadow" href="">Source code</a>
+	</article>
+
+	<div class="cta-wrap">
+		<a class="button-link cta shadow" href="/projects">See more projects</a>
+	</div>
+
+	<section class="contact">
+		<div class="inner">
+			<h2>Contact</h2>
+
+			<p>You can send an email to</p>
+			<a href="mailto:contact@tigeroakes.com" class="contact-link">
+				<b>contact</b>@<b>tigeroakes</b>.com
+			</a>
+
+			<p>You can find me at</p>
+			<a href="https://github.com/NotWoods" class="contact-link">
+				<b>github</b>.com/<b>NotWoods</b>
+			</a><br>
+			<a href="https://twitter.com/Not_Woods" class="contact-link">
+				<b>linked</b>.com/in/<b>tigeroakes</b>
+			</a><br>
+			<a href="https://twitter.com/Not_Woods" class="contact-link">
+				<b>twitter</b>.com/<b>Not_Woods</b>
+			</a>
+		</div>
+	</section>
 </body>
 </html>

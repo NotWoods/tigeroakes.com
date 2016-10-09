@@ -1,83 +1,77 @@
-.logo,
-.banner {
-	line-height: 4.5rem;
-	background: white;
-	--text: var(--primary-color);
-	color: var(--text);
-}
-
 .banner {
 	display: flex;
-	justify-content: flex-start;
-	text-transform: uppercase;
-	flex-wrap: wrap;
+	padding: 1em;
+	margin: 0 auto;
+	max-width: 70em;
 }
 
-.logo {
-	margin: 0;
-	font-size: 2.5em;
+.dot {
+	width: 1.2em;
+	height: 1.2em;
+	border: 0;
+	background: #e66d31;
+	position: relative;
+	font: inherit;
+	cursor: pointer;
 }
-.logo-container {
-	color: inherit;
-	padding: 0 1em;
-	margin-left: auto;
-	order: 2;
-	text-transform: none;
-}
-.logo-container:hover {text-decoration: none;}
-
-.whitespace {
-	opacity: 0.5;
-}
-.middot {
-	margin: 0 0.3em;
-}
-.dashlast {
-	margin-right: 0.5em;
-}
-
-.nav-link {
-	color: #212121;
-	transition: transform 0.1s ease;
-	padding: 0 1.25em;
-	will-change: transform;
-}
-.nav-link::after {
-	content: '';
+.hovertext {
 	position: absolute;
+	white-space: nowrap;
 	left: 0;
-	right: 0;
-	bottom: -0.2em;
-	height: 0.2em;
-	transition: opacity 0.1s ease;
-	background: var(--text);
+	top: 100%;
 	opacity: 0;
-	will-change: opacity;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
 }
-.nav-link:hover {
-	transform: translateY(-0.2em);
-	color: #212121;
-	text-decoration: none;
+.dot::after {
+	position: absolute;
+	content: '↑';
+	left: 0; top: 0;
+	width: 1.2em;
+	line-height: 1.1em;
+	color: white;
+	opacity: 0;
+	transition: opacity 0.1s ease;
 }
-.nav-link:hover::after,
-.nav-link-active::after {
+.dot:focus > .hovertext {
+	opacity: 0.9;
+	visibility: visible;
+}
+.dot:hover::after, .dot:focus::after {
 	opacity: 1;
 }
 
-.nav-link-active::after {
-	transform: translateY(-0.2em);
-	transition: opacity 0.1s ease, transform 0.1s ease;
+.navigation {
+	margin-left: auto;
 }
-.nav-link-active:hover::after {
-	transform: translateY(0);
+.nav-link {
+	margin-left: 1em;
+	color: inherit;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0 0.5em;
+	line-height: 1.3em;
+	position: relative;
 }
 
-@media (max-width: 46em) {
-	.nav-list {
-		overflow-y: hidden;
-		overflow-x: auto;
-		width: 100%;
-		white-space: nowrap;
-		text-align: center;
-	}
+.nav-link::before {
+	content: '';
+	position: absolute;
+	width: 0.5em;
+	height: 100%;
+	background: #e66d31;
+	left: -0.5em;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.1s ease;
+}
+.nav-link:hover::before {
+	transform: none;
+}
+
+.current-page {
+	font-weight: bold;
+}
+.current-page::before {
+	content: none;
 }

@@ -1,0 +1,28 @@
+{% include base.liquid %}
+<nav class="navigation">
+	{% assign home_abs = "/" | prepend: site.baseurl %}
+	{% if page.url == home_abs %}
+		<span class="current-page nav-link">
+			Home
+		</span>
+	{% else %}
+		<a href="{{ base }}/" class="nav-link">
+			Home
+		</a>
+	{% endif %}
+
+	{% assign nav = "Projects Resume Blog Contact" | split: ' ' %}
+	{% for text in nav %}
+		{% assign link = "/" | append: text | downcase %}
+		{% assign abs = link | prepend: site.baseurl %}
+		{% if page.url == abs %}
+			<span class="current-page nav-link">
+				{{ text }}
+			</span>
+		{% else %}
+			<a href="{{ base }}{{ link }}" class="nav-link">
+				{{ text }}
+			</a>
+		{% endif %}
+	{% endfor %}
+</nav>
