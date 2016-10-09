@@ -42,6 +42,32 @@
 .featured-project-text {
 	max-width: 40em;
 }
+.feature-project-header {
+	position: relative;
+}
+.feature-project-header::before {
+	position: absolute;
+	left: -1em;
+	width: 0.5em;
+	height: 100%;
+	background: var(--block);
+	content: '';
+}
+.project-tech {
+	padding: 0;
+	margin-top: -1em;
+	opacity: 0.6;
+}
+.project-tech-item {
+	display: inline-block;
+}
+.project-tech-item::after {
+	content: '|';
+	margin: 0 0.5em;
+}
+.project-tech-item:last-child::after {
+	content: none;
+}
 
 .button-link {
 	color: inherit;

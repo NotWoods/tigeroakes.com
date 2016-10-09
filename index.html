@@ -32,24 +32,27 @@
 		</div>
 	</section>
 
-	<article class="featured-project">
-		<h2>Project title</h2>
-		<p class="featured-project-text">Lorem ipsum the description of the project.</p>
-		<a class="button-link shadow" href="">Project details</a>
-		<a class="button-link shadow" href="">View demo</a>
-		<a class="button-link shadow" href="">Source code</a>
-	</article>
-
-	<article class="featured-project">
-		<h2>Project title</h2>
-		<p class="featured-project-text">In interdum non sem ut tincidunt. Duis ut ultrices purus. Phasellus accumsan, ex vel luctus aliquam, nisi metus tempor tortor, non accumsan orci justo eu odio. </p>
-		<a class="button-link shadow" href="">Project details</a>
-		<a class="button-link shadow" href="">View demo</a>
-		<a class="button-link shadow" href="">Source code</a>
-	</article>
+	{% for proj in site.portfolio %}
+		<article class="featured-project"
+			style="background-image:url({{proj.bkgimage}});background-color:{{proj.bkgcolor}}"
+		>
+			<h2 class="feature-project-header" style="--block: {{ proj.color }}">
+				{{ proj.title }}
+			</h2>
+			<ul class="project-tech">
+				{% for tech in proj.tech %}
+					<li class="project-tech-item">{{ tech }}</li>
+				{% endfor %}
+			</ul>
+			<p class="featured-project-text">{{ proj.description }}</p>
+			<a class="button-link shadow" href="{{ proj.url }}">Project details</a>
+			<a class="button-link shadow" href="{{ proj.link }}">View site</a>
+			<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
+		</article>
+	{% endfor %}
 
 	<div class="cta-wrap">
-		<a class="button-link cta shadow" href="/projects">See more projects</a>
+		<a class="button-link cta shadow" href="{{ base }}/projects">See more projects</a>
 	</div>
 
 	<section class="contact">
