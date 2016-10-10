@@ -9,11 +9,13 @@
 	<link rel="stylesheet" href="{{ base }}/css/home.css">
 </head>
 <body>
-	<header class="banner">
-		<button class="dot shadow">
-			<span class="hovertext">Back to top</span>
-		</button>
-		{% include navigation.liquid %}
+	<header class="banner-container">
+		<div class="inner banner">
+			<button class="dot shadow">
+				<span class="hovertext">Back to top</span>
+			</button>
+			{% include navigation.liquid %}
+		</div>
 	</header>
 
 	<section class="hero">
@@ -35,11 +37,12 @@
 		</div>
 	</section>
 
+	<section class="featured-projects">
 	{% for proj in site.portfolio %}
 		<article class="featured-project"
-			style="background-image:url({{proj.bkgimage}});background-color:{{proj.bkgcolor}}"
+			style="background-image:url({{ proj.bkgimage }})"
 		>
-			<h2 class="feature-project-header" style="--block: {{ proj.color }}">
+			<h2 class="featured-project-header" style="--block: {{ proj.color }}">
 				{{ proj.title }}
 			</h2>
 			<ul class="project-tech">
@@ -53,6 +56,7 @@
 			<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
 		</article>
 	{% endfor %}
+	</section>
 
 	<div class="cta-wrap">
 		<a class="button-link cta shadow" href="{{ base }}/projects">See more projects</a>

@@ -1,10 +1,13 @@
 .banner {
 	display: flex;
-	padding: 1em;
-	margin: 0 auto;
-	max-width: 70em;
+}
+.banner-container {
+	background: white;
+	z-index: 1;
 	position: fixed;
-	left: 0; right: 0;
+	padding: 1em;
+	left: 0;
+	right: 0;
 }
 
 .dot {
@@ -28,13 +31,16 @@
 .dot::after {
 	position: absolute;
 	content: '↑';
-	left: 0; top: 0;
+	left: 0;
+	top: 0;
 	width: 1.2em;
 	line-height: 1.1em;
 	color: white;
 	opacity: 0;
 	transition: opacity 0.1s ease;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+	z-index: 0;
+	background: none;
 }
 .dot:focus > .hovertext {
 	opacity: 0.9;

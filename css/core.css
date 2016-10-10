@@ -5,7 +5,7 @@ body {
 }
 
 .shadow {
-	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
 	position: relative;
 }
 .shadow::after {
@@ -15,9 +15,11 @@ body {
 	height: 100%;
 	left: 0;
 	top: 0;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.85);
 	opacity: 0;
 	transition: opacity 0.2s ease;
+	background: rgba(0, 0, 0, 0.2);
+	z-index: -1;
 }
 .shadow:hover::after, .shadow:focus::after {
 	opacity: 1;
