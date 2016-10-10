@@ -26,6 +26,7 @@
 .about-content {
 	display: flex;
 	align-items: center;
+	max-width: 60em;
 }
 .profile {
 	flex: 0 0 160px;
@@ -104,27 +105,48 @@
 
 .contact {
 	text-align: center;
-	padding: 1em 1em 6em;
+	padding: 2em 1em 10em;
+	background: #333;
+	color: white;
+}
+.contact-content {
+	display: flex;
+	justify-content: center;
+	font-size: 1.25em;
+	line-height: 1.6em;
+}
+.contact-icon {
+	height: 1.6em;
+	display: block;
 }
 .contact-link {
 	color: inherit;
 	text-decoration: none;
-	padding-bottom: 2px;
+	margin: 0 0.5em;
 	display: inline-block;
-	margin-bottom: 0.6em;
-	font-size: 1.2em;
 	position: relative;
 }
 .contact-link::after {
-	content: '';
 	position: absolute;
-	width: 100%;
-	border-bottom: #e66d31 solid 2px;
+	bottom: -1em;
 	left: 0;
-	transform: scaleY(0.5);
+	width: 100%;
+	background: #e66d31;
+	height: 0.5em;
+	content: '';
 	transform-origin: top;
-	transition: transform 0.1s ease;
+	transform: scaleY(0);
+	transition: transform 0.2s ease;
 }
-.contact-link:hover::after {
+.contact-link:hover::after, .contact-link:focus::after {
 	transform: none;
+}
+.contact-link:active::after {
+	transform: scaleY(0.5);
+}
+.email {
+	margin-right: 2.5em;
+}
+.contact-cta {
+	margin-top: 3em;
 }

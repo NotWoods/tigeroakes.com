@@ -8,9 +8,9 @@
 # Site settings
 title: Tiger Oakes
 email: tigeroakes@gmail.com
-description: > 
-  My name is Tiger Oakes (yes, really). I am a programmer who creates software, 
-  websites, and other things that appear on screens. 
+description: >
+  My name is Tiger Oakes (yes, really). I am a programmer who creates software,
+  websites, and other things that appear on screens.
 baseurl: ""
 url: "https://tigeroakes.com" # the base hostname & protocol for your site
 twitter_username: Not_Woods
@@ -27,9 +27,7 @@ gems:
 
 collections:
   portfolio:
-    output: false
-  side_projects:
-    output: false
+    output: true
 
 defaults:
   - scope:
@@ -46,5 +44,4 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: post
       permalink: /blog/:year/:title/

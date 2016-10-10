@@ -1,4 +1,5 @@
 ---
+feature: true
 title: Big Island Buses
 path: big-island-buses
 color:

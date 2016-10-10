@@ -1,0 +1,51 @@
+<style>
+
+.contact {
+	text-align: center;
+	padding: 1em 1em 6em;
+}
+.contact-link {
+	color: inherit;
+	text-decoration: none;
+	padding-bottom: 2px;
+	display: inline-block;
+	margin-bottom: 0.6em;
+	font-size: 1.2em;
+	position: relative;
+}
+.contact-link::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	border-bottom: #e66d31 solid 2px;
+	left: 0;
+	transform: scaleY(0.5);
+	transform-origin: top;
+	transition: transform 0.1s ease;
+}
+.contact-link:hover::after {
+	transform: none;
+}
+
+</style>
+
+<section class="contact">
+	<div class="inner">
+		<h2>Contact</h2>
+		<p>You can send an email to</p>
+		<a href="mailto:contact@tigeroakes.com" class="contact-link">
+			<b>contact</b>@<b>tigeroakes</b>.com
+		</a>
+
+		<p>You can find me at</p>
+		<a href="https://github.com/NotWoods" class="contact-link">
+			<b>github</b>.com/<b>NotWoods</b>
+		</a><br>
+		<a href="https://twitter.com/Not_Woods" class="contact-link">
+			<b>linked</b>.com/in/<b>tigeroakes</b>
+		</a><br>
+		<a href="https://twitter.com/Not_Woods" class="contact-link">
+			<b>twitter</b>.com/<b>Not_Woods</b>
+		</a>
+	</div>
+</section>

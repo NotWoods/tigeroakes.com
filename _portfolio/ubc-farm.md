@@ -1,4 +1,5 @@
 ---
+feature: true
 title: UBC Farm
 subtitle: Farm Research Database
 path: ubc-farm

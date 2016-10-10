@@ -74,8 +74,11 @@
 	transform-origin: right;
 	transition: transform 0.1s ease;
 }
-.nav-link:hover::before {
+.nav-link:hover::before, .nav-link:focus::before {
 	transform: none;
+}
+.nav-link:active::before {
+	transform: scaleX(0.5);
 }
 
 .current-page {

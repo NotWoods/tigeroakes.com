@@ -11,7 +11,7 @@
 <body>
 	<header class="banner-container">
 		<div class="inner banner">
-			<button class="dot shadow">
+			<button class="dot shadow" id="top">
 				<span class="hovertext">Back to top</span>
 			</button>
 			{% include navigation.liquid %}
@@ -38,7 +38,8 @@
 	</section>
 
 	<section class="featured-projects">
-	{% for proj in site.portfolio %}
+	{% assign featured_projects = site.portfolio | where: "feature", true %}
+	{% for proj in featured_projects %}
 		{% assign c = proj.color %}
 		<article class="featured-project"
 			style="background-image:url({{ proj.bkgimage }});
@@ -55,8 +56,8 @@
 			</ul>
 			<p class="featured-project-text">{{ proj.summary }}</p>
 			<a class="button-link shadow" href="{{ proj.url }}">Project details</a>
-			<a class="button-link shadow" href="{{ proj.link }}">View site</a>
-			<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
+			{% if proj.link %}<a class="button-link shadow" href="{{ proj.link }}">View site</a>{% endif %}
+			{% if proj.code %}<a class="button-link shadow" href="{{ proj.code }}">Source code</a>{% endif %}
 		</article>
 	{% endfor %}
 	</section>
@@ -66,24 +67,25 @@
 	</div>
 
 	<section class="contact">
-		<div class="inner">
-			<h2>Contact</h2>
+		<h2>Contact</h2>
+		<div class="contact-content">
+			<a href="mailto:contact@tigeroakes.com" class="contact-link email">
 
-			<p>You can send an email to</p>
-			<a href="mailto:contact@tigeroakes.com" class="contact-link">
-				<b>contact</b>@<b>tigeroakes</b>.com
+				contact@tigeroakes.com
 			</a>
 
-			<p>You can find me at</p>
-			<a href="https://github.com/NotWoods" class="contact-link">
-				<b>github</b>.com/<b>NotWoods</b>
-			</a><br>
-			<a href="https://twitter.com/Not_Woods" class="contact-link">
-				<b>linked</b>.com/in/<b>tigeroakes</b>
-			</a><br>
-			<a href="https://twitter.com/Not_Woods" class="contact-link">
-				<b>twitter</b>.com/<b>Not_Woods</b>
+			<a href="https://github.com/NotWoods" class="contact-link" title="GitHub">
+				<img class="contact-icon" alt="GitHub" src="{{ base }}/images/link-github.svg" width="32" height="32">
 			</a>
+			<a href="https://twitter.com/Not_Woods" class="contact-link" title="LinkedIn">
+				<img class="contact-icon" alt="LinkedIn" src="{{ base }}/images/link-linkedin.svg" width="32" height="32">
+			</a><br>
+			<a href="https://twitter.com/Not_Woods" class="contact-link" title="Twitter">
+				<img class="contact-icon" alt="Twitter" src="{{ base }}/images/link-twitter.svg" width="32" height="32">
+			</a>
+		</div>
+		<div class="cta-wrap contact-cta">
+			<a class="button-link cta shadow" href="{{ base }}/contact">Send a message</a>
 		</div>
 	</section>
 </body>
