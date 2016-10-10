@@ -1,13 +1,14 @@
 .banner {
 	display: flex;
+	flex-wrap: wrap;
 }
 .banner-container {
 	background: white;
 	z-index: 5;
-	position: fixed;
 	padding: 1em;
 	left: 0;
 	right: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .dot {
@@ -17,9 +18,11 @@
 	background: #e66d31;
 	position: relative;
 	font: inherit;
+	color: white;
 }
 .shadow.dot {
 	cursor: pointer;
+	box-shadow: none;
 }
 .hovertext {
 	position: absolute;
@@ -33,16 +36,9 @@
 .shadow.dot::after {
 	position: absolute;
 	content: '↑';
-	left: 0;
-	top: 0;
-	width: 1.2em;
 	line-height: 1.1em;
-	color: white;
-	opacity: 0;
 	transition: opacity 0.1s ease;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-	z-index: 0;
-	/* background: none; */
 }
 .shadow.dot:focus > .hovertext {
 	opacity: 0.9;
@@ -82,6 +78,7 @@
 	transform: scaleX(0);
 	transform-origin: right;
 	transition: transform 0.1s ease;
+	will-change: transform;
 }
 .nav-link:hover::before, .nav-link:focus::before {
 	transform: none;
@@ -95,4 +92,10 @@
 }
 .current-page::before {
 	content: none;
+}
+
+@media (max-width: 33em) {
+	.navigation {
+		line-height: 2em;
+	}
 }

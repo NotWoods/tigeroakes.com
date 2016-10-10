@@ -1,43 +1,35 @@
-.banner-container {
-	position: static;
+.projects {
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-
-.showcase {
-	display: flex;
-	flex-wrap: wrap;
-}
-
 .project {
-	display: inline-block;
-	border: 1px solid black;
-	margin: 0.5em;
-	background: darkgray;
-}
-.project-logo {
-	display: block;
-	min-height: 10em;
-	width: 100%;
-}
-
-.project-text {
-	background: white;
-	color: rgba(0, 0, 0, 0.7);
-	padding: 0.5em 1em;
+	background-size: cover;
 }
 .project-header {
-	color: rgba(0, 0, 0, 0.87);
-	margin: 0;
+	position: relative;
 }
-
-.project-links {
-	display: flex;
-	text-align: center;
-	background: white;
+.project-header::before {
+	position: absolute;
+	left: -1.15em;
+	width: 0.5em;
+	height: 100%;
+	background: var(--block);
+	content: '';
 }
-.project-link {
-	flex: 1;
-	color: inherit;
-	text-decoration: none;
-	display: inline-block;
-	padding: 0.5em;
+.project-tech {
+	padding: 0;
+	margin-top: -1.1em;
+	opacity: 0.8;
+	font-size: 0.95em;
+}
+.project-tech-item {
+	/* display: inline-block; */
+	display: inline;
+}
+.project-tech-item::after {
+	content: '|';
+	margin: 0 0.5em;
+}
+.project-tech-item:last-child::after {
+	content: none;
 }

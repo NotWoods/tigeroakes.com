@@ -18,63 +18,34 @@
 		</div>
 	</header>
 
-	<main class="showcase inner">
-		<article class="project">
-			<img alt="" src="" class="project-logo">
-			<div class="project-text">
-				<h3 class="project-header">Project</h3>
-				<p>Donec diam est, sodales vel lectus vel, aliquet efficitur tellus.</p>
-			</div>
-			<div class="project-links">
-				<a class="project-link" href="">GitHub</a>
-			</div>
-		</article>
-
-		<article class="project">
-			<img alt="" src="" class="project-logo">
-			<div class="project-text">
-				<h3 class="project-header">Project</h3>
-				<p>Donec diam est, sodales vel lectus vel, aliquet efficitur tellus.</p>
-			</div>
-			<div class="project-links">
-				<a class="project-link" href="">Download</a>
-				<a class="project-link" href="">GitHub</a>
-			</div>
-		</article>
-
-		<article class="project">
-			<img alt="" src="" class="project-logo">
-			<div class="project-text">
-				<h3 class="project-header">Project</h3>
-				<p>Donec diam est, sodales vel lectus vel, aliquet efficitur tellus.</p>
-			</div>
-			<div class="project-links">
-				<a class="project-link" href="">Details</a>
-				<a class="project-link" href="">GitHub</a>
-			</div>
-		</article>
-
-		<article class="project">
-			<img alt="" src="" class="project-logo">
-			<div class="project-text">
-				<h3 class="project-header">Project</h3>
-				<p>Donec diam est, sodales vel lectus vel, aliquet efficitur tellus.</p>
-			</div>
-			<div class="project-links">
-				<a class="project-link" href="">GitHub</a>
-			</div>
-		</article>
-
-		<article class="project">
-			<img alt="" src="" class="project-logo">
-			<div class="project-text">
-				<h3 class="project-header">Project</h3>
-				<p>Donec diam est, sodales vel lectus vel, aliquet efficitur tellus.</p>
-			</div>
-			<div class="project-links">
-				<a class="project-link" href="">GitHub</a>
-			</div>
-		</article>
+	<main class="projects inner">
+		{% for proj in site.portfolio %}
+			{% assign c = proj.color %}
+			<article class="project"
+				style="background-image:url({{ proj.bkgimage }});
+					--block:rgb({{c.r}},{{c.g}},{{c.b}});
+					--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
+			>
+				<h2 class="project-header">
+					{{ proj.title }}
+				</h2>
+				<ul class="project-tech">
+					{% for tech in proj.tech %}
+						<li class="project-tech-item">{{ tech }}</li>
+					{% endfor %}
+				</ul>
+				<p class="project-text">{{ proj.summary }}</p>
+				{% if proj.url %}
+					<a class="button-link shadow" href="{{ proj.url }}">Project details</a>
+				{% endif %}
+				{% if proj.link %}
+					<a class="button-link shadow" href="{{ proj.link }}">View site</a>
+				{% endif %}
+				{% if proj.code %}
+					<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
+				{% endif %}
+			</article>
+		{% endfor %}
 	</main>
 </body>
 </html>

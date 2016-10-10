@@ -1,32 +1,15 @@
 ---
+layout: default
+css:
+  - "/css/resume.css"
 ---
-{% include base.liquid %}
-<!doctype html>
-<html>
-<head>
-	{% include head.html %}
-	<link rel="stylesheet" href="{{ base }}/css/core.css">
-	<link rel="stylesheet" href="{{ base }}/css/banner.css">
-	<link rel="stylesheet" href="{{ base }}/css/resume.css">
-</head>
-<body>
-	<header class="banner-container">
-		<div class="inner banner">
-			<div class="dot"></div>
-			<h1 class="banner-title">Tiger Oakes</h1>
-			{% include navigation.liquid %}
-		</div>
-	</header>
+<div class="cta-wrap">
+	<a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_September_2016.pdf">
+		PDF
+	</a>
+</div>
 
-	<div class="cta-wrap">
-		<a class="pdf-button shadow" href="Tiger_Oakes_resume_-_September_2016.pdf">
-			PDF
-		</a>
-	</div>
-
-	<main class="resume">
-		{% capture resume %}{% include_relative content.md %}{% endcapture %}
-		{{ resume | markdownify }}
-	</main>
-</body>
-</html>
+<main class="resume">
+	{% capture resume %}{% include_relative content.md %}{% endcapture %}
+	{{ resume | markdownify }}
+</main>
