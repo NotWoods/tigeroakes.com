@@ -1,0 +1,53 @@
+.contact {
+	text-align: center;
+	padding: 1em 1em 6em;
+	display: flex;
+	flex-wrap: wrap;
+}
+.contact-links {
+	flex: 2;
+}
+.contact-link {
+	margin-bottom: 1em;
+	font-size: 1.2em;
+}
+.contact-link::after {
+	transform: scaleY(0.2);
+	bottom: -0.6em;
+	height: 0.4em;
+}
+
+.contact-header {
+	text-align: center;
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	flex: 3;
+	margin-left: 1em;
+}
+label, .submit {
+	margin-top: 1em;
+}
+
+.submit {
+	align-self: center;
+	padding: 0.6em 2em;
+	text-decoration: none;
+	color: white;
+	background: #e66d31;
+	font-weight: bold;
+	margin: 1em 0 0;
+	border: 0;
+	cursor: pointer;
+	font: inherit;
+}
+
+input, textarea {
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid black;
+	font: inherit;
+	padding: 0.2em;
+}

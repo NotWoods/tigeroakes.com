@@ -1,29 +1,12 @@
 ---
 layout: default
 nofooter: true
+css:
+  - /css/contact-page.css
 ---
-
-<style>
-
-.contact {
-	text-align: center;
-	padding: 1em 1em 6em;
-}
-.contact-link {
-	margin-bottom: 1em;
-	font-size: 1.2em;
-}
-.contact-link::after {
-	transform: scaleY(0.2);
-	bottom: -0.6em;
-	height: 0.4em;
-}
-
-</style>
-
-<section class="contact">
-	<h2>Contact</h2>
-	<div class="inner">
+<h2 class="contact-header">Contact</h2>
+<main class="contact">
+	<section class="contact-links">
 		<p>You can send an email to</p>
 		<a href="mailto:contact@tigeroakes.com" class="contact-link">
 			<b>contact</b>@<b>tigeroakes</b>.com
@@ -39,5 +22,17 @@ nofooter: true
 		<a href="https://twitter.com/Not_Woods" class="contact-link">
 			<b>twitter</b>.com/<b>Not_Woods</b>
 		</a>
-	</div>
-</section>
+	</section>
+	<form class="contact-form">
+		<label for="name">Name*</label>
+		<input type="text" name="name" id="name" required>
+
+		<label for="email">Email*</label>
+		<input type="email" name="email" id="email" required>
+
+		<label for="message">Say hi!</label>
+		<textarea name="message" id="message" rows="4"></textarea>
+
+		<button type="submit" id="submit" class="submit shadow button-link">Send</button>
+	</form>
+</main>
