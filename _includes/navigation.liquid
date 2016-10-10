@@ -14,7 +14,7 @@
 	{% assign nav = "Projects Resume Blog Contact" | split: ' ' %}
 	{% for text in nav %}
 		{% assign link = "/" | append: text | downcase %}
-		{% assign abs = link | prepend: site.baseurl %}
+		{% assign abs = link | prepend: site.baseurl | append: '/' %}
 		{% if page.url == abs %}
 			<span class="current-page nav-link">
 				{{ text }}
