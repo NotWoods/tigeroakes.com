@@ -4,6 +4,7 @@
 }
 .project {
 	background-size: cover;
+	background-color: #333333;
 }
 .project-header {
 	position: relative;
