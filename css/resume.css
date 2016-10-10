@@ -1,0 +1,91 @@
+.banner-container {
+	position: static;
+}
+.banner-title {
+	font-weight: 700;
+}
+
+.resume {
+	width: 7.5in;
+	/* height: 10in; */
+	padding: 0.5in;
+	margin: 2em auto;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	font-size: 11pt;
+}
+
+.resume-header {
+	display: flex;
+	padding-bottom: 0.125in;
+	border-bottom: 0.01in solid rgb(74, 102, 172);
+}
+.resume-header-main {
+	flex: 1;
+}
+.resume-title {
+	margin: 0;
+	font-size: 28pt;
+	color: rgb(55, 76, 128);
+}
+.resume-header-items {
+	margin: 0;
+	line-height: 1.4em;
+	text-align: right;
+	list-style: none;
+}
+
+.resume-summary {
+	font-style: italic;
+	color: rgba(64, 64, 64);
+	margin: 0;
+}
+
+h1 {
+	font-size: 18pt;
+	font-weight: 300;
+	color: rgb(55, 76, 128);
+	margin: 0.5em 0 0;
+}
+h2 {
+	font-size: 14pt;
+	font-weight: 400;
+	margin: 0;
+	line-height: 1.4em;
+}
+h3 {
+	font-size: 14pt;
+	font-weight: 300;
+	color: rgb(35, 79, 119);
+	margin: 0;
+	line-height: 1.4em;
+}
+h4 {
+	font-size: 10pt;
+	font-weight: 400;
+	color: rgb(74, 102, 172);
+	margin: 0;
+	line-height: 1.4em;
+	position: relative;
+}
+h4::before {
+	position: absolute;
+	background: rgb(41, 127, 213);
+	left: -0.5in;
+	width: 0.25in;
+	height: 0.69in;
+	content: '';
+}
+p {
+	margin: 0;
+}
+ul {
+	margin: 0 0 1em;
+	padding-left: 1.2em;
+}
+em {
+	font-size: 10pt;
+	font-style: normal;
+	color: rgb(90, 90, 90);
+}
+
+
