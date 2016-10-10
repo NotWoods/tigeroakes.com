@@ -20,6 +20,7 @@
 
 .about {
 	padding: 2em 0;
+	background: white;
 }
 .about-content {
 	display: flex;
@@ -58,6 +59,8 @@
 .contact {
 	padding: 2em 1em 10em;
 	--button: rgba(230, 109, 49, 0.2);
+	background: #333;
+	color:  white;
 }
 .contact-content {
 	font-size: 1.25em;
