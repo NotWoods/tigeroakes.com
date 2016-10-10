@@ -43,6 +43,7 @@
 	padding: 3.5em 5em;
 	background-size: cover;
 	position: relative;
+	/* border-top: 1px solid white; */
 }
 .featured-project-text {
 	max-width: 40em;
@@ -90,6 +91,10 @@
 	bottom: 0;
 	content: '';
 	border: 1px solid white;
+}
+.button-link::after {
+	z-index: -1;
+	background: var(--button);
 }
 
 .cta-wrap {

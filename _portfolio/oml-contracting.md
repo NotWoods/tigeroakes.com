@@ -1,10 +1,16 @@
 ---
 title: OML Contracting Co
 subtitle: Construction Portfolio
-color: "#2e3c55"
+color:
+  r: 46
+  g: 60
+  b: 85
 bkgimage: '/images/oml-contracting/background.jpg'
 link: http://omlhawaii.com
 code: https://github.com/omlhawaii/omlhawaii.github.io
+tech:
+  - CSS 3D
+  - JavaScript
 summary: >
   I worked with OML Contracting to redesign their portfolio. We settled on a
   design using animation to direct attention to the building photos. The site

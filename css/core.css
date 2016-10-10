@@ -18,8 +18,8 @@ body {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.85);
 	opacity: 0;
 	transition: opacity 0.2s ease;
-	background: rgba(0, 0, 0, 0.2);
 	z-index: -1;
+	background: var(--button);
 }
 .shadow:hover::after, .shadow:focus::after {
 	opacity: 1;

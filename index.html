@@ -39,10 +39,13 @@
 
 	<section class="featured-projects">
 	{% for proj in site.portfolio %}
+		{% assign c = proj.color %}
 		<article class="featured-project"
-			style="background-image:url({{ proj.bkgimage }})"
+			style="background-image:url({{ proj.bkgimage }});
+				--block:rgb({{c.r}},{{c.g}},{{c.b}});
+				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
 		>
-			<h2 class="featured-project-header" style="--block: {{ proj.color }}">
+			<h2 class="featured-project-header">
 				{{ proj.title }}
 			</h2>
 			<ul class="project-tech">

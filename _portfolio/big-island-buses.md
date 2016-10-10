@@ -1,7 +1,10 @@
 ---
 title: Big Island Buses
 path: big-island-buses
-color: "#4d74ab"
+color:
+  r: 77
+  g: 116
+  b: 171
 bkgimage: '/images/big-island-buses/background.jpg'
 link: 'http://tigeroakes.com/big-island-buses'
 code: 'https://github.com/NotWoods/big-island-buses'
