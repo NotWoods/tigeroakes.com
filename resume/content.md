@@ -21,14 +21,14 @@
 * Developed custom software with the UBC Work Learn International Undergraduate Research Award.
 *	JavaScript program stores data collected by farmers for researching and analyzing growing patterns.
 *	Used geometry calculations to let users draw farm fields and split them into grid based plots.
-*	Implemented UI with React and Redux using functional programing design.
+*	Implemented UI with **React** and **Redux** using functional programing design.
 
 #### 10/2009 – 08/2015 (omlhawaii.com)
 ## Web Developer and IT Manager
 ### OML Contracting Co.
 *Construction company building private resort residences in Hawai’i*
 *	Designed and developed portfolio to showcase completed residences.
-*	Implemented CSS 3D animations to create GPU accelerated parallax effect.
+*	Implemented **CSS** 3D animations to create GPU accelerated parallax effect.
 *	Applied lazy-loading CSS to speed up first render.
 
 
@@ -37,7 +37,7 @@
 #### 05/2014 – 05/2015 (goride.tigeroakes.com)
 ## Big Island Buses
 *Bus rider web app to replace Hawai’i paper bus schedules*
-*	Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District.
+*	Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District**.
 *	Used JavaScript geolocation API to locate nearby bus stops and routes.
 *	Implemented AppCache API to allow the web application to run offline.
 

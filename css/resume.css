@@ -3,6 +3,7 @@
 }
 .banner-title {
 	font-weight: 700;
+	color: inherit;
 }
 
 .resume {
@@ -88,4 +89,25 @@ em {
 	color: rgb(90, 90, 90);
 }
 
+.cta-wrap {
+	text-align: center;
+}
+.pdf-button {
+	padding: 0.6em 2em;
+	text-decoration: none;
+	color: white;
+	background: #cd372d;
+	font-weight: bold;
+	margin: 1em 0 0;
+	display: inline-block;
+}
 
+@media print {
+	.banner-container, .pdf-button {
+		display: none;
+	}
+	.resume {
+		padding: 0;
+		box-shadow: none;
+	}
+}
