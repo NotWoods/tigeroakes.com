@@ -17,6 +17,8 @@
 	background: #e66d31;
 	position: relative;
 	font: inherit;
+}
+.shadow.dot {
 	cursor: pointer;
 }
 .hovertext {
@@ -28,7 +30,7 @@
 	visibility: hidden;
 	transition: opacity 0.2s ease, visibility 0.2s ease;
 }
-.dot::after {
+.shadow.dot::after {
 	position: absolute;
 	content: '↑';
 	left: 0;
@@ -42,12 +44,19 @@
 	z-index: 0;
 	/* background: none; */
 }
-.dot:focus > .hovertext {
+.shadow.dot:focus > .hovertext {
 	opacity: 0.9;
 	visibility: visible;
 }
-.dot:hover::after, .dot:focus::after {
+.shadow.dot:hover::after, .dot:focus::after {
 	opacity: 1;
+}
+
+.banner-title {
+	margin: 0;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	margin-left: 0.75em;
 }
 
 .navigation {

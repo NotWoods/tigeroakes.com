@@ -1,0 +1,4 @@
+.showcase {
+	display: flex;
+	flex-wrap: wrap;
+}
