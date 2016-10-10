@@ -13,24 +13,28 @@ css:
 				--block:rgb({{c.r}},{{c.g}},{{c.b}});
 				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
 		>
+			<img src="{{ proj.logo }}" alt="" class="project-logo">
 			<h2 class="project-header">
 				{{ proj.title }}
 			</h2>
+			<p class="project-text">{{ proj.subtitle }}</p>
+
 			<ul class="project-tech">
 				{% for tech in proj.tech %}
 					<li class="project-tech-item">{{ tech }}</li>
 				{% endfor %}
 			</ul>
-			<p class="project-text">{{ proj.summary }}</p>
-			{% if proj.url %}
-				<a class="button-link shadow" href="{{ proj.url }}">Project details</a>
-			{% endif %}
-			{% if proj.link %}
-				<a class="button-link shadow" href="{{ proj.link }}">View site</a>
-			{% endif %}
-			{% if proj.code %}
-				<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
-			{% endif %}
+			<div class="project-links">
+				{% if proj.url %}
+					<a class="button-link shadow" href="{{ proj.url }}">Project details</a>
+				{% endif %}
+				{% if proj.link %}
+					<a class="button-link shadow" href="{{ proj.link }}">View site</a>
+				{% endif %}
+				{% if proj.code %}
+					<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
+				{% endif %}
+			</div>
 		</article>
 	{% endfor %}
 </main>

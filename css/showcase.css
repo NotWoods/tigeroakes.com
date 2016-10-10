@@ -1,3 +1,45 @@
+.projects {
+	font-size: 0.9em;
+	padding: 0;
+}
+
 .project {
-	padding: 1em 2.5em;
+	padding: 2em;
+	margin: 1em;
+	max-width: 27em;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.project-logo {
+	align-self: center;
+	margin-bottom: 2em;
+}
+
+.project-header {
+	margin: 0;
+}
+.project-header::before {
+	left: -1em;
+}
+.project-text {
+	margin: 0;
+	font-style: italic;
+}
+.project-tech {
+	margin: 0;
+}
+
+.project-links {
+	margin: 0.8em -0.2em -0.2em;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	font-size: 0.95em;
+}
+.button-link {
+	flex: 1;
+	margin: 0.2em;
+	max-width: 12em;
 }
