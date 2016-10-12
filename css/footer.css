@@ -29,7 +29,6 @@
 	transform-origin: top;
 	transform: scaleY(0);
 	transition: transform 0.2s ease;
-	will-change: transform;
 }
 .contact-link:hover::after, .contact-link:focus::after {
 	transform: none;

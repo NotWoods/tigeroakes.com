@@ -78,7 +78,6 @@
 	transform: scaleX(0);
 	transform-origin: right;
 	transition: transform 0.1s ease;
-	will-change: transform;
 }
 .nav-link:hover::before, .nav-link:focus::before {
 	transform: none;
