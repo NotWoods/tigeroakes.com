@@ -39,6 +39,7 @@
 	line-height: 1.1em;
 	transition: opacity 0.1s ease;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+	/* display: none; */
 }
 .shadow.dot:focus > .hovertext {
 	opacity: 0.9;
@@ -53,6 +54,7 @@
 	font-size: 1.1em;
 	text-transform: uppercase;
 	margin-left: 0.75em;
+	line-height: 1.1em;
 }
 
 .navigation {
@@ -88,6 +90,7 @@
 
 .current-page {
 	font-weight: bold;
+	cursor: default;
 }
 .current-page::before {
 	content: none;

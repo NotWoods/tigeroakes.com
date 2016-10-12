@@ -1,15 +1,22 @@
 .projects {
 	font-size: 0.9em;
-	padding: 0;
+	/* padding: 0; */
+	/* column-count: 3; */
+	column-width: 21em;
+	/* max-width: 78em; */
+	margin-top: 1em;
 }
 
 .project {
 	padding: 2em;
-	margin: 1em;
+	margin: 0 auto 1em;
 	max-width: 27em;
 	background-position: center;
 	display: flex;
 	flex-direction: column;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
 }
 
 .project-logo {
@@ -25,7 +32,7 @@
 }
 .project-text {
 	margin: 0;
-	font-style: italic;
+	/* font-style: italic; */
 }
 .project-tech {
 	margin: 0;
