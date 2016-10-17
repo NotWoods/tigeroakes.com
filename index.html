@@ -36,7 +36,8 @@ title: Tiger Oakes
 	<section class="about">
 		<div class="inner about-content">
 			<div class="about-text">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis risus non nisi sagittis blandit. Curabitur eget lacus est. Ut et mattis lacus. Aenean a congue eros. Donec ut ipsum et velit finibus ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque ornare quam sed pulvinar varius. Sed lobortis consectetur mattis. Morbi egestas orci nec sem porta dignissim. Sed tempus neque nisi, eget sollicitudin turpis tempor eu. Ut eget nisi libero. Praesent tellus tortor, viverra at lorem sit amet, egestas pellentesque est. Donec diam est, sodales vel lectus vel, aliquet efficitur tellus. Praesent accumsan, nunc sit amet scelerisque lacinia, tellus ligula lobortis nunc, id auctor sapien mi eu quam. Morbi faucibus magna viverra ante ultricies, id vehicula mi sollicitudin. Integer tellus massa, tincidunt non augue at, faucibus placerat mauris.</p>
+				{% capture about %}{% include about.md %}{% endcapture %}
+				{{ about | markdownify }}
 			</div>
 			<img class="profile" alt="" width="160" height="160"
 				src="{{ base }}/images/profile-1x.jpg"
