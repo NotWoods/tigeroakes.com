@@ -18,6 +18,3 @@ summary: >
   display the basic site, then running in the background to add on additional
   functionality and design.
 ---
-r: 46
-  g: 60
-  b: 85

@@ -8,6 +8,9 @@ color:
   r: 3
   g: 3
   b: 3
+tech:
+  - C#
+  - Unity
 summary: >
   Uses the PolygonCollider2D collider to generate a mesh for a gameobject, letting you draw polygonal platforms in the Unity edtior via the Edit Collider button. Just drag the script onto your platform GameObject and you're good to go.
 ---
