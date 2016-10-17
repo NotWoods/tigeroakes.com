@@ -36,7 +36,7 @@
 
 
 .featured-projects {
-	font-size: 1.1em;
+	font-size: 1.3em;
 }
 .featured-project {
 	padding: 3.5em 5em;
@@ -54,6 +54,7 @@
 }
 .cta {
 	margin-right: 0;
+	/* color: black; */
 }
 
 .contact {

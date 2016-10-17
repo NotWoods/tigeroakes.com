@@ -5,13 +5,14 @@
 .project {
 	background-size: cover;
 	background-color: #333333;
+	background-image: linear-gradient(to bottom, #333333 0%,#424242 25%,#424242 75%,#333333 100%);
 }
 .project-header {
 	position: relative;
 }
 .project-header::before {
 	position: absolute;
-	left: -1.15em;
+	left: -1em;
 	width: 0.5em;
 	height: 100%;
 	background: var(--block);
@@ -24,14 +25,13 @@
 	font-size: 0.9em;
 	line-height: 1.5em;
 }
-.project-tech-item {
-	/* display: inline-block; */
+.pt-item {
 	display: inline;
 }
-.project-tech-item::after {
-	content: '|';
-	margin: 0 0.5em;
+.pt-item::after {
+	content: ' | ';
+	margin: 0 0.2em;
 }
-.project-tech-item:last-child::after {
+.pt-item:last-child::after {
 	content: none;
 }

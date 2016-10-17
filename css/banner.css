@@ -32,14 +32,13 @@
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.2s ease, visibility 0.2s ease;
+	color: rgba(0,0,0,0.87);
 }
 .shadow.dot::after {
 	position: absolute;
 	content: '↑';
 	line-height: 1.1em;
-	transition: opacity 0.1s ease;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-	/* display: none; */
 }
 .shadow.dot:focus > .hovertext {
 	opacity: 0.9;
