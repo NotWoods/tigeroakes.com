@@ -27,7 +27,6 @@ gems:
 
 collections:
   portfolio:
-    output: true
 
 defaults:
   - scope:

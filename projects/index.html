@@ -21,13 +21,11 @@ css:
 			<p class="project-text">{{ proj.subtitle }}</p>
 
 			<ul class="project-tech">
-				{% for tech in proj.tech %}
-					<li class="project-tech-item">{{ tech }}</li>
-				{% endfor %}
+				{% for tech in proj.tech %}<li class="pt-item">{{ tech }}</li>{% endfor %}
 			</ul>
 			<div class="project-links">
-				{% if proj.url %}
-					<a class="button-link shadow" href="{{ proj.url }}">Details</a>
+				{% if proj.page %}
+					<a class="button-link shadow" href="{{ proj.page }}">Details</a>
 				{% endif %}
 				{% if proj.link %}
 					<a class="button-link shadow" href="{{ proj.link }}">View site</a>

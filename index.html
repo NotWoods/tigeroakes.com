@@ -59,12 +59,12 @@ title: Tiger Oakes
 			</h2>
 			<ul class="project-tech">
 				{% for tech in proj.tech %}
-					<li class="project-tech-item">{{ tech }}</li>
+					<li class="pt-item">{{ tech }}</li>
 				{% endfor %}
 			</ul>
 			<p class="featured-project-text">{{ proj.summary }}</p>
-			{% if proj.url %}
-				<a class="button-link shadow" href="{{ proj.url }}">Project details</a>
+			{% if proj.page %}
+				<a class="button-link shadow" href="{{ proj.page }}">Project details</a>
 			{% endif %}
 			{% if proj.link %}
 				<a class="button-link shadow" href="{{ proj.link }}">View site</a>
