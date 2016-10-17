@@ -9,7 +9,7 @@ css:
 <main class="projects inner">
 	{% for proj in site.portfolio %}
 		{% assign c = proj.color %}
-		<article class="project"
+		<article class="project{%if proj.feature %} feature{% endif %}"
 			style="background-image:url({{ proj.bkgimage }});
 				--block:rgb({{c.r}},{{c.g}},{{c.b}});
 				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
