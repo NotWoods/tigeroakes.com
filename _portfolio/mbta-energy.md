@@ -1,9 +1,10 @@
 ---
 title: MBTA Energy
 subtitle: Interactive Information
-image: /images/mbta-energy/index.png
 bkgimage: /images/mbta-energy/background.jpg
+logo: /images/mbta-energy/logo.png
 code: https://github.com/NotWoods/mbta-energy
+link: http://tigeroakes.com/mbta-energy
 color:
   r: 115
   g: 212

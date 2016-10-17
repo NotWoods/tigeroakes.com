@@ -1,8 +1,8 @@
 ---
 title: Latch On
 subtitle: Video Game
-image: /images/latch-on/index.png
 bkgimage: /images/latch-on/background.jpg
+logo: /images/latch-on/logo.png
 color:
   r: 107
   g: 159

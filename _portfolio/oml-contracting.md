@@ -6,7 +6,8 @@ color:
   r: 220
   g: 184
   b: 105
-bkgimage: '/images/oml-contracting/background.jpg'
+bkgimage: /images/oml-contracting/background.jpg
+logo: /images/oml-contracting/logo.svg
 link: http://omlhawaii.com
 code: https://github.com/omlhawaii/omlhawaii.github.io
 tech:
