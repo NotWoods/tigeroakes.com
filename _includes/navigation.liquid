@@ -11,7 +11,7 @@
 		</a>
 	{% endif %}
 
-	{% assign nav = "Projects Resume Blog Contact" | split: ' ' %}
+	{% assign nav = "Projects Resume Contact" | split: ' ' %}
 	{% for text in nav %}
 		{% assign link = "/" | append: text | downcase %}
 		{% assign abs = link | prepend: site.baseurl | append: '/' %}
