@@ -4,12 +4,14 @@ layout: default
 nofooter: true
 css:
   - /css/contact-page.css
+permalink: /contact/
 ---
-<h2 class="contact-header">Contact</h2>
-<main class="contact inner">
+<main class="contact">
+	<h2 class="contact-header">Contact</h2>
+	<hr>
 	<section class="contact-links">
 		<p>You can send an email to</p>
-		<a href="mailto:contact@tigeroakes.com" class="contact-link">
+		<a href="mailto:contact@tigeroakes.com" class="contact-link email-link">
 			<b>contact</b>@<b>tigeroakes</b>.com
 		</a>
 
@@ -24,16 +26,4 @@ css:
 			<b>twitter</b>.com/<b>Not_Woods</b>
 		</a>
 	</section>
-	<form class="contact-form">
-		<label for="name">Name*</label>
-		<input type="text" name="name" id="name" required>
-
-		<label for="email">Email*</label>
-		<input type="email" name="email" id="email" required>
-
-		<label for="message">Say hi!</label>
-		<textarea name="message" id="message" rows="4"></textarea>
-
-		<button type="submit" id="submit" class="submit shadow button-link">Send</button>
-	</form>
 </main>

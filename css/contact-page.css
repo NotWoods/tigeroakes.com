@@ -1,9 +1,30 @@
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
 .contact {
 	text-align: center;
-	padding: 1em 1em 6em;
-	display: flex;
-	flex-wrap: wrap;
+	padding: 1em 0 6em;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	background: url('/images/contact/background.jpg');
+	background-size: cover;
+	background-position: center;
+	/* min-height: calc(100vh - 5em); */
+	/* height: 100%; */
+	flex: 1;
 }
+
+hr {
+	max-width: 10em;
+	background: black;
+	border: 0;
+	height: 0.1em;
+	margin-bottom: 8vh;
+}
+
 .contact-links {
 	flex: 2;
 }
@@ -21,33 +42,6 @@
 	text-align: center;
 }
 
-.contact-form {
-	display: flex;
-	flex-direction: column;
-	text-align: left;
-	flex: 3;
-	margin-left: 1em;
-}
-label, .submit {
-	margin-top: 1em;
-}
-
-.submit {
-	align-self: center;
-	padding: 0.6em 2em;
-	text-decoration: none;
-	color: white;
-	background: #e66d31;
-	font-weight: bold;
-	margin: 1em 0 0;
-	border: 0;
-	cursor: pointer;
-	font: inherit;
-}
-
-input, textarea {
-	background: rgba(255, 255, 255, 0.5);
-	border: 1px solid black;
-	font: inherit;
-	padding: 0.2em;
+.email-link {
+	font-size: 1.6em;
 }
