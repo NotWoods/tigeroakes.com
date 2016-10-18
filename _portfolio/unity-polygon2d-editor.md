@@ -1,7 +1,7 @@
 ---
 title: Polygon2D Editor
 subtitle: Level-builing tool for Unity
-image: https://github.com/NotWoods/unity-polygon-2d-editor/raw/master/example.gif
+logo: /images/unity-polygon/logo.png
 bkgimage: '/images/unity-polygon/background.jpg'
 code: https://github.com/NotWoods/unity-polygon-2d-editor
 color:
