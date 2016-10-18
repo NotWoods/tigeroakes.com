@@ -1,7 +1,5 @@
 .contact {
-	/* background: #333; */
 	text-align: center;
-	/* color: white; */
 	padding: 2em;
 }
 
@@ -9,6 +7,7 @@
 	display: flex;
 	justify-content: center;
 	line-height: 1.6em;
+	flex-wrap: wrap;
 }
 
 .contact-link {
@@ -43,4 +42,11 @@
 .contact-icon {
 	height: 1.6em;
 	display: block;
+}
+
+@media (max-width: 28em) {
+	.email {
+		width: 100%;
+		margin: 0 0 1.5em;
+	}
 }

@@ -45,3 +45,15 @@
 	max-width: 7em;
 	white-space: nowrap;
 }
+
+@media (max-width: 26em) {
+	.project {
+		min-width: initial;
+	}
+	.project-header {
+		white-space: initial;
+	}
+	.project-links {
+		flex-wrap: wrap;
+	}
+}

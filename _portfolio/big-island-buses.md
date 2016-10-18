@@ -1,6 +1,7 @@
 ---
 feature: true
 title: Big Island Buses
+subtitle: Bus Schedule Software
 path: big-island-buses
 color:
   r: 77
