@@ -26,6 +26,9 @@
 	display: flex;
 	align-items: center;
 	max-width: 60em;
+	/* flex-wrap: wrap; */
+	/* align-items: center; */
+	justify-content: center;
 }
 .profile {
 	flex: 0 0 160px;
@@ -37,6 +40,7 @@
 
 .featured-projects {
 	font-size: 1.3em;
+	/* font-size: 1.2em; */
 }
 .featured-project {
 	padding: 3.5em 5em;
@@ -46,7 +50,9 @@
 }
 
 .button-link {
-	margin-right: 0.5em;
+	/* margin-right: 0.5em; */
+	/* margin-bottom: 0.5em; */
+	margin: 0 0.5em 0.5em 0;
 }
 .cta-wrap {
 	text-align: center;
@@ -67,4 +73,23 @@
 }
 .contact-cta {
 	margin-top: 3em;
+}
+
+@media (max-width: 45em) {
+	.about-content {
+		flex-wrap: wrap-reverse;
+	}
+	.profile {
+		margin: 0;
+	}
+
+	.featured-project {
+		padding: 2em;
+	}
+}
+
+@media (max-width: 30em) {
+	.featured-project {
+		font-size: 0.9em;
+	}
 }
