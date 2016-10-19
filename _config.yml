@@ -12,7 +12,7 @@ description: >
   I'm Tiger Oakes, and I'm a software developer studying computer science
   at the University of British Columbia.
 baseurl: ""
-url: "https://tigeroakes.com" # the base hostname & protocol for your site
+url: "http://tigeroakes.com" # the base hostname & protocol for your site
 twitter_username: Not_Woods
 github_username:  NotWoods
 

@@ -34,14 +34,14 @@
 
 # Personal Projects
 
-#### 05/2014 – 05/2015 (goride.tigeroakes.com)
+#### 05/2014 – 05/2015 (notwoods.github.io/big-island-buses)
 ## Big Island Buses
 *Bus rider web app to replace Hawai’i paper bus schedules*
 *	Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District**.
 *	Used JavaScript geolocation API to locate nearby bus stops and routes.
 *	Implemented AppCache API to allow the web application to run offline.
 
-#### 04/2014 – 05/2014 (tigeroakes.com/mbta-energy)
+#### 04/2014 – 05/2014 (notwoods.github.io/mbta-energy)
 ## MBTA Energy
 *Energy monitor program for Myron B. Thompson Academy*
 *	Volunteered to create tool to assist teacher and his class in aggregating data.
