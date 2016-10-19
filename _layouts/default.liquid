@@ -1,13 +1,16 @@
+---
+layout: compress
+---
 {% include base.liquid %}
 <!doctype html>
 <html>
 <head>
 	{% include head.html %}
 	<link rel="stylesheet" href="{{ base }}/css/core.css">
-	<link rel="stylesheet" href="{{ base }}/css/banner.css">
 	{{ page.head }}
 </head>
 <body>
+	<link rel="stylesheet" href="{{ base }}/css/banner.css">
 	<header class="banner-container">
 		<div class="inner banner">
 			<a class="home-link" href="{{ base }}/">

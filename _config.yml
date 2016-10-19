@@ -32,6 +32,27 @@ sass:
   sass_dir: css
   style: compressed
 
+compress_html:
+  clippings:
+    - div
+    - p
+    - ul
+    - h1
+    - h2
+    - h3
+    - h4
+    - section
+    - nav
+    - header
+    - footer
+    - meta
+    - article
+    - main
+    - hr
+    - link
+  endings: [li]
+  startings: [html, head, body]
+
 defaults:
   - scope:
       path: ""
