@@ -16,7 +16,9 @@
 # Work Experience #
 
 #### 05/2016 – Present (github.com/ubc-farm)
+
 ## Software Developer
+
 ### Centre for Sustainable Food Systems at UBC Farm
 * Developed custom software with the UBC Work Learn International Undergraduate Research Award.
 *	JavaScript program stores data collected by farmers for researching and analyzing growing patterns.
@@ -24,8 +26,11 @@
 *	Implemented UI with **React** and **Redux** using functional programming design.
 
 #### 10/2009 – 08/2015 (omlhawaii.com)
+
 ## Web Developer and IT Manager
+
 ### OML Contracting Co.
+
 *Construction company building private resort residences in Hawai’i*
 *	Designed and developed portfolio to showcase completed residences.
 *	Implemented **CSS** 3D animations to create GPU accelerated parallax effect.
@@ -35,6 +40,7 @@
 # Personal Projects
 
 #### 05/2014 – 05/2015 (notwoods.github.io/big-island-buses)
+
 ## Big Island Buses
 *Bus rider web app to replace Hawai’i paper bus schedules*
 *	Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District**.
@@ -42,6 +48,7 @@
 *	Implemented AppCache API to allow the web application to run offline.
 
 #### 04/2014 – 05/2014 (notwoods.github.io/mbta-energy)
+
 ## MBTA Energy
 *Energy monitor program for Myron B. Thompson Academy*
 *	Volunteered to create tool to assist teacher and his class in aggregating data.
@@ -51,8 +58,11 @@
 
 
 # Education
+
 #### 09/2015 – 04/2020 (expected with co-op)
+
 ## Bachelor of Science in Computer Science
+
 ### University of British Columbia
 
 # Awards
