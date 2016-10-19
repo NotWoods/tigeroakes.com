@@ -28,6 +28,10 @@ gems:
 collections:
   portfolio:
 
+sass:
+  sass_dir: css
+  style: compressed
+
 defaults:
   - scope:
       path: ""
