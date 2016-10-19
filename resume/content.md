@@ -21,7 +21,7 @@
 * Developed custom software with the UBC Work Learn International Undergraduate Research Award.
 *	JavaScript program stores data collected by farmers for researching and analyzing growing patterns.
 *	Used geometry calculations to let users draw farm fields and split them into grid based plots.
-*	Implemented UI with **React** and **Redux** using functional programing design.
+*	Implemented UI with **React** and **Redux** using functional programming design.
 
 #### 10/2009 – 08/2015 (omlhawaii.com)
 ## Web Developer and IT Manager
