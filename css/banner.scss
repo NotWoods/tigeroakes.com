@@ -1,0 +1,102 @@
+---
+---
+.banner {
+	display: flex;
+	flex-wrap: wrap;
+}
+.banner-container {
+	background: white;
+	z-index: 5;
+	padding: 1em;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.home-link {
+	color: inherit;
+}
+.dot {
+	width: 1.2em;
+	height: 1.2em;
+	border: 0;
+	background: #e66d31;
+	font: inherit;
+	text-align: center;
+	display: inline-block;
+	color: white;
+	box-shadow: none;
+}
+.dot::after {
+	content: '';
+	line-height: 1.1em;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+.home-dot::after {
+	content: '↑';
+}
+.home-link:hover .dot::after, .home-link:focus .dot::after {
+	opacity: 1;
+}
+.home-link::after {
+	content: none;
+}
+
+.banner-title {
+	margin: 0;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	margin-left: 0.75em;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.navigation {
+	margin-left: auto;
+}
+.nav-link {
+	margin-left: 1em;
+	color: inherit;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0 0.5em;
+	line-height: 1.3em;
+}
+
+.nav-link::before {
+	content: '';
+	position: absolute;
+	width: 0.5em;
+	height: 100%;
+	background: #e66d31;
+	left: -0.5em;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.1s ease;
+}
+.nav-link:hover::before, .nav-link:focus::before {
+	transform: none;
+}
+.nav-link:active::before {
+	transform: scaleX(0.5);
+}
+.nav-link::after {
+	content: none;
+}
+
+.banner:hover .nav-link::before { will-change: transform; }
+.banner:hover .dot::after { will-change: opacity; }
+
+.current-page {
+	font-weight: bold;
+	cursor: default;
+}
+.current-page::before {
+	content: none;
+}
+
+@media (max-width: 33em) {
+	.navigation {
+		line-height: 2em;
+	}
+}

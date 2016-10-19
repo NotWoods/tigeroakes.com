@@ -1,0 +1,40 @@
+---
+title: Projects - Tiger Oakes
+layout: default
+css:
+  - /css/projects.css
+  - /css/button.css
+  - /css/showcase.css
+---
+<main class="projects inner">
+	{% for proj in site.portfolio %}
+		{% assign c = proj.color %}
+		<article class="project{%if proj.feature %} feature{% endif %}"
+			style="background-image:url({{ proj.bkgimage }});
+				--block:rgb({{c.r}},{{c.g}},{{c.b}});
+				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
+		>
+			<img src="{{ proj.logo }}" alt="{{ proj.title }}" class="project-logo"
+				height="128" width="128">
+			<h2 class="project-header">
+				{{ proj.title }}
+			</h2>
+			<p class="project-text">{{ proj.subtitle }}</p>
+
+			<ul class="project-tech">
+				{% for tech in proj.tech %}<li class="pt-item">{{ tech }}</li>{% endfor %}
+			</ul>
+			<div class="project-links">
+				{% if proj.page %}
+					<a class="button-link shadow" href="{{ proj.page }}">Details</a>
+				{% endif %}
+				{% if proj.link %}
+					<a class="button-link shadow" href="{{ proj.link }}">View site</a>
+				{% endif %}
+				{% if proj.code %}
+					<a class="button-link shadow" href="{{ proj.code }}">Code</a>
+				{% endif %}
+			</div>
+		</article>
+	{% endfor %}
+</main>

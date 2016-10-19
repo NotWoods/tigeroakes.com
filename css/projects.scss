@@ -1,0 +1,39 @@
+---
+---
+.projects {
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.project {
+	background-size: cover;
+	background-color: #333333;
+	background-image: linear-gradient(to bottom, #333333 0%,#424242 25%,#424242 75%,#333333 100%);
+}
+.project-header {
+	position: relative;
+}
+.project-header::before {
+	position: absolute;
+	left: -1em;
+	width: 0.5em;
+	height: 100%;
+	background: var(--block);
+	content: '';
+}
+.project-tech {
+	padding: 0;
+	margin-top: -1.1em;
+	opacity: 0.8;
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+.pt-item {
+	display: inline;
+}
+.pt-item::after {
+	content: ' | ';
+	margin: 0 0.2em;
+}
+.pt-item:last-child::after {
+	content: none;
+}

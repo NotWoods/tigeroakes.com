@@ -1,0 +1,16 @@
+---
+title: Resume - Tiger Oakes
+layout: default
+css:
+  - "/css/resume.css"
+---
+<div class="cta-wrap">
+	<a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_September_2016.pdf">
+		PDF
+	</a>
+</div>
+
+<main class="resume">
+	{% capture resume %}{% include_relative content.md %}{% endcapture %}
+	{{ resume | markdownify }}
+</main>

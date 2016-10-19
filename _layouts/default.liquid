@@ -1,0 +1,70 @@
+---
+layout: compress
+---
+{% include base.liquid %}
+<!doctype html>
+<html>
+<head>
+	{% include head.html %}
+	<link rel="stylesheet" href="{{ base }}/css/core.css">
+	{{ page.head }}
+</head>
+<body>
+	<link rel="stylesheet" href="{{ base }}/css/banner.css">
+	<header class="banner-container">
+		<div class="inner banner">
+			<a class="home-link" href="{{ base }}/">
+				<div class="dot shadow"></div>
+				<h1 class="banner-title">Tiger Oakes</h1>
+			</a>
+			{% include navigation.liquid %}
+		</div>
+	</header>
+
+	{% if page.nofooter %}
+		<link rel="stylesheet" href="{{ base }}/css/footer.css">
+	{% endif %}
+	{% for css in page.css %}
+		<link rel="stylesheet" href="{{ base }}{{ css }}">
+	{% endfor %}
+
+	{{ content }}
+
+	{% unless page.nofooter %}
+		<footer class="contact" role="contentinfo">
+			<link rel="stylesheet" href="{{ base }}/css/footer.css">
+			<div class="contact-content">
+				<a href="mailto:contact@tigeroakes.com" class="contact-link email">
+					contact@tigeroakes.com
+				</a>
+
+				<a href="https://github.com/NotWoods"
+					class="contact-link" title="GitHub" aria-label="GitHub">
+					<img
+						class="contact-icon" alt="GitHub"
+						src="{{ base }}/images/contact/black-github.svg"
+						width="32" height="32"
+					>
+				</a>
+				<a href="https://twitter.com/Not_Woods"
+					class="contact-link" title="LinkedIn" aria-label="LinkedIn">
+					<img
+						class="contact-icon" alt="LinkedIn"
+						src="{{ base }}/images/contact/black-linkedin.svg"
+						width="32" height="32"
+					>
+				</a><br>
+				<a href="https://twitter.com/Not_Woods"
+					class="contact-link" title="Twitter" aria-label="Twitter">
+					<img
+						class="contact-icon" alt="Twitter"
+						src="{{ base }}/images/contact/black-twitter.svg"
+						width="32" height="32"
+					>
+				</a>
+			</div>
+		</footer>
+	{% endunless %}
+</body>
+{% include analytics.html %}
+</html>

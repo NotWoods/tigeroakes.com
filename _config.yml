@@ -1,0 +1,71 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Tiger Oakes
+email: tigeroakes@gmail.com
+description: >
+  I'm Tiger Oakes, and I'm a software developer studying computer science
+  at the University of British Columbia.
+baseurl: ""
+url: "https://tigeroakes.com" # the base hostname & protocol for your site
+twitter_username: Not_Woods
+github_username:  NotWoods
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+gems:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+collections:
+  portfolio:
+
+sass:
+  sass_dir: css
+  style: compressed
+
+compress_html:
+  clippings:
+    - div
+    - p
+    - ul
+    - h1
+    - h2
+    - h3
+    - h4
+    - section
+    - nav
+    - header
+    - footer
+    - meta
+    - article
+    - main
+    - hr
+    - link
+  endings: [li]
+  startings: [html, head, body]
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      author: Tiger Oakes
+      subtitle: ''
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      image: null
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: /blog/:year/:title/

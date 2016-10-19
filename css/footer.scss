@@ -1,0 +1,53 @@
+---
+---
+.contact {
+	text-align: center;
+	padding: 2em;
+}
+
+.contact-content {
+	display: flex;
+	justify-content: center;
+	line-height: 1.6em;
+	flex-wrap: wrap;
+}
+
+.contact-link {
+	color: inherit;
+	text-decoration: none;
+	margin: 0 0.5em;
+	display: inline-block;
+}
+.contact-link::after {
+	bottom: -1em;
+	background: #e66d31;
+	height: 0.5em;
+	transform-origin: top;
+	transform: scaleY(0);
+	transition: transform 0.2s ease;
+	top: auto;
+	opacity: 1;
+}
+.contact-link:hover::after, .contact-link:focus::after {
+	transform: none;
+}
+.contact-link:active::after {
+	transform: scaleY(0.5);
+}
+
+.contact:hover .contact-link::after { will-change: transform; }
+
+.email {
+	margin-right: 2.5em;
+}
+.contact-icon {
+	height: 1.6em;
+	display: block;
+}
+
+@media (max-width: 28em) {
+	.email {
+		width: 100%;
+		margin: 0 0 1.5em;
+	}
+}

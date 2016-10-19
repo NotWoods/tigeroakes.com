@@ -1,0 +1,55 @@
+---
+---
+body {
+	margin: 0;
+	font-family: Lato, sans-serif;
+	color: rgba(0, 0, 0, 0.87);
+	background: #f0f0f0;
+}
+
+.inner {
+	max-width: 70rem;
+	padding: 0 1em;
+	margin: 0 auto;
+}
+
+.shadow {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+	position: relative;
+}
+.shadow::after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.85);
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	right: 0;
+	bottom: 0;
+	background: transparent;
+}
+.shadow:hover::after, .shadow:focus::after {
+	opacity: 1;
+}
+.shadow:active::after {
+	opacity: 0.5;
+}
+
+a {
+	color: #e66d31;
+	text-decoration: none;
+	position: relative;
+}
+a::after {
+	opacity: 0;
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	right: 0;
+	background: currentColor;
+	top: 100%;
+	content: '';
+}
+a:hover::after {
+	opacity: 1;
+}
