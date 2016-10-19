@@ -102,6 +102,9 @@ em {
 	margin: 1em 0 0;
 	display: inline-block;
 }
+.pdf-button::after {
+	will-change: opacity;
+}
 
 @media (max-width: 6in) {
 	.resume {

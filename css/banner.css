@@ -82,6 +82,9 @@
 	content: none;
 }
 
+.banner:hover .nav-link::before { will-change: transform; }
+.banner:hover .dot::after { will-change: opacity; }
+
 .current-page {
 	font-weight: bold;
 	cursor: default;

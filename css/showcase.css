@@ -46,6 +46,8 @@
 	white-space: nowrap;
 }
 
+.project:hover .button-link::after { will-change: opacity; }
+
 @media (max-width: 26em) {
 	.project {
 		min-width: initial;

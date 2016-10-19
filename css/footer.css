@@ -33,6 +33,8 @@
 	transform: scaleY(0.5);
 }
 
+.contact:hover .contact-link::after { will-change: transform; }
+
 .email {
 	margin-right: 2.5em;
 }

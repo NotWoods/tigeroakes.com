@@ -50,8 +50,6 @@
 }
 
 .button-link {
-	/* margin-right: 0.5em; */
-	/* margin-bottom: 0.5em; */
 	margin: 0 0.5em 0.5em 0;
 }
 .cta-wrap {
@@ -61,6 +59,9 @@
 .cta {
 	margin-right: 0;
 }
+
+.featured-project:hover .button-link::after,
+.cta-wrap .button-link::after { will-change: opacity; }
 
 .contact {
 	padding: 2em 1em 10em;

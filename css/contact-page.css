@@ -32,6 +32,7 @@ hr {
 	transform: scaleY(0.2);
 	bottom: -0.6em;
 	height: 0.4em;
+	will-change: transform;
 }
 
 .contact-header {
