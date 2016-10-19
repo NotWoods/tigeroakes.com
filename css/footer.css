@@ -15,19 +15,16 @@
 	text-decoration: none;
 	margin: 0 0.5em;
 	display: inline-block;
-	position: relative;
 }
 .contact-link::after {
-	position: absolute;
-	content: '';
 	bottom: -1em;
-	left: 0;
-	right: 0;
 	background: #e66d31;
 	height: 0.5em;
 	transform-origin: top;
 	transform: scaleY(0);
 	transition: transform 0.2s ease;
+	top: auto;
+	opacity: 1;
 }
 .contact-link:hover::after, .contact-link:focus::after {
 	transform: none;

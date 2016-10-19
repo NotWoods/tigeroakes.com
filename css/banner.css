@@ -26,6 +26,7 @@
 	box-shadow: none;
 }
 .dot::after {
+	content: '';
 	line-height: 1.1em;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
@@ -34,6 +35,9 @@
 }
 .home-link:hover .dot::after, .home-link:focus .dot::after {
 	opacity: 1;
+}
+.home-link::after {
+	content: none;
 }
 
 .banner-title {
@@ -55,7 +59,6 @@
 	display: inline-block;
 	padding: 0 0.5em;
 	line-height: 1.3em;
-	position: relative;
 }
 
 .nav-link::before {
@@ -74,6 +77,9 @@
 }
 .nav-link:active::before {
 	transform: scaleX(0.5);
+}
+.nav-link::after {
+	content: none;
 }
 
 .current-page {
