@@ -8,9 +8,6 @@ title: Tiger Oakes
 	{% include head.html %}
 	<link rel="stylesheet" href="{{ base }}/css/core.css">
 	<link rel="stylesheet" href="{{ base }}/css/banner.css">
-	<link rel="stylesheet" href="{{ base }}/css/button.css">
-	<link rel="stylesheet" href="{{ base }}/css/projects.css">
-	<link rel="stylesheet" href="{{ base }}/css/footer.css">
 	<link rel="stylesheet" href="{{ base }}/css/home.css">
 	<script type="application/ld+json">
 	{% include schema.json %}
@@ -51,6 +48,8 @@ title: Tiger Oakes
 	</section>
 
 	<section class="featured-projects projects" id="featured">
+		<link rel="stylesheet" href="{{ base }}/css/button.css">
+		<link rel="stylesheet" href="{{ base }}/css/projects.css">
 	{% assign featured_projects = site.portfolio | where: "feature", true %}
 	{% for proj in featured_projects %}
 		{% assign c = proj.color %}
@@ -86,6 +85,7 @@ title: Tiger Oakes
 	</div>
 
 	<section class="contact" id="contact">
+		<link rel="stylesheet" href="{{ base }}/css/footer.css">
 		<h2>Contact</h2>
 		<div class="contact-content">
 			<a href="mailto:contact@tigeroakes.com" class="contact-link email">

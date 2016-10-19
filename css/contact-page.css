@@ -7,13 +7,9 @@ body {
 .contact {
 	text-align: center;
 	padding: 1em 0 6em;
-	/* display: flex; */
-	/* flex-wrap: wrap; */
 	background: url('/images/contact/background.jpg');
 	background-size: cover;
 	background-position: center;
-	/* min-height: calc(100vh - 5em); */
-	/* height: 100%; */
 	flex: 1;
 }
 
