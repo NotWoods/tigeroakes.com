@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Tiger oakes.
+Contact: contact@tigeroakes.com.
+Twitter: @Not_Woods.
+Location: Vancouver, British Columbia, Canada.
+
+/* SITE */
+Last update: 2016/10/19
+Doctype: HTML5
+Software: Visual Studio Code
