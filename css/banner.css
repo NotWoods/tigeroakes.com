@@ -11,40 +11,28 @@
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+.home-link {
+	color: inherit;
+}
 .dot {
 	width: 1.2em;
 	height: 1.2em;
 	border: 0;
 	background: #e66d31;
-	position: relative;
 	font: inherit;
+	text-align: center;
+	display: inline-block;
 	color: white;
-}
-.shadow.dot {
-	cursor: pointer;
 	box-shadow: none;
 }
-.hovertext {
-	position: absolute;
-	white-space: nowrap;
-	left: 0;
-	top: 100%;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.2s ease, visibility 0.2s ease;
-	color: rgba(0,0,0,0.87);
-}
-.shadow.dot::after {
-	position: absolute;
-	content: '↑';
+.dot::after {
 	line-height: 1.1em;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
-.shadow.dot:focus > .hovertext {
-	opacity: 0.9;
-	visibility: visible;
+.home-dot::after {
+	content: '↑';
 }
-.shadow.dot:hover::after, .dot:focus::after {
+.home-link:hover .dot::after, .home-link:focus .dot::after {
 	opacity: 1;
 }
 
@@ -53,7 +41,8 @@
 	font-size: 1.1em;
 	text-transform: uppercase;
 	margin-left: 0.75em;
-	line-height: 1.1em;
+	vertical-align: top;
+	display: inline-block;
 }
 
 .navigation {

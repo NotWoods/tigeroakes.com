@@ -17,11 +17,15 @@ title: Tiger Oakes
 	</script>
 </head>
 <body>
+	<div id="top"></div>
 	<header class="banner-container">
 		<div class="inner banner">
-			<button class="dot shadow" id="top">
-				<span class="hovertext">Back to top</span>
-			</button>
+			<a
+				class="home-link" href="#top" id="to-top"
+				aria-label="Back to top" title="Back to top"
+			>
+				<div class="dot shadow home-dot"></div>
+			</a>
 			{% include navigation.liquid %}
 		</div>
 	</header>
@@ -46,7 +50,7 @@ title: Tiger Oakes
 		</div>
 	</section>
 
-	<section class="featured-projects projects">
+	<section class="featured-projects projects" id="featured">
 	{% assign featured_projects = site.portfolio | where: "feature", true %}
 	{% for proj in featured_projects %}
 		{% assign c = proj.color %}
@@ -81,7 +85,7 @@ title: Tiger Oakes
 		<a class="button-link cta shadow" href="{{ base }}/projects">See more projects</a>
 	</div>
 
-	<section class="contact">
+	<section class="contact" id="contact">
 		<h2>Contact</h2>
 		<div class="contact-content">
 			<a href="mailto:contact@tigeroakes.com" class="contact-link email">
