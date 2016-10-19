@@ -4,7 +4,7 @@ subtitle: Interactive Information
 bkgimage: /images/mbta-energy/background.jpg
 logo: /images/mbta-energy/logo.png
 code: https://github.com/NotWoods/mbta-energy
-link: http://tigeroakes.com/mbta-energy
+link: https://notwoods.github.io/mbta-energy
 color:
   r: 115
   g: 212
