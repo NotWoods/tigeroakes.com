@@ -31,7 +31,7 @@ layout: compress
 	{{ content }}
 
 	{% unless page.nofooter %}
-		<footer class="contact">
+		<footer class="contact" role="contentinfo">
 			<link rel="stylesheet" href="{{ base }}/css/footer.css">
 			<div class="contact-content">
 				<a href="mailto:contact@tigeroakes.com" class="contact-link email">
@@ -39,7 +39,7 @@ layout: compress
 				</a>
 
 				<a href="https://github.com/NotWoods"
-					class="contact-link" title="GitHub">
+					class="contact-link" title="GitHub" aria-label="GitHub">
 					<img
 						class="contact-icon" alt="GitHub"
 						src="{{ base }}/images/contact/black-github.svg"
@@ -47,7 +47,7 @@ layout: compress
 					>
 				</a>
 				<a href="https://twitter.com/Not_Woods"
-					class="contact-link" title="LinkedIn">
+					class="contact-link" title="LinkedIn" aria-label="LinkedIn">
 					<img
 						class="contact-icon" alt="LinkedIn"
 						src="{{ base }}/images/contact/black-linkedin.svg"
@@ -55,7 +55,7 @@ layout: compress
 					>
 				</a><br>
 				<a href="https://twitter.com/Not_Woods"
-					class="contact-link" title="Twitter">
+					class="contact-link" title="Twitter" aria-label="Twitter">
 					<img
 						class="contact-icon" alt="Twitter"
 						src="{{ base }}/images/contact/black-twitter.svg"

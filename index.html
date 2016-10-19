@@ -1,5 +1,6 @@
 ---
 title: Tiger Oakes
+layout: compress
 ---
 {% include base.liquid %}
 <!doctype html>
@@ -7,7 +8,6 @@ title: Tiger Oakes
 <head>
 	{% include head.html %}
 	<link rel="stylesheet" href="{{ base }}/css/core.css">
-	<link rel="stylesheet" href="{{ base }}/css/banner.css">
 	<link rel="stylesheet" href="{{ base }}/css/home.css">
 	<script type="application/ld+json">
 	{% include schema.json %}
@@ -15,6 +15,7 @@ title: Tiger Oakes
 </head>
 <body>
 	<div id="top"></div>
+	<link rel="stylesheet" href="{{ base }}/css/banner.css">
 	<header class="banner-container">
 		<div class="inner banner">
 			<a
@@ -41,7 +42,7 @@ title: Tiger Oakes
 				{{ about | markdownify }}
 			</div>
 			<img class="profile" alt="" width="160" height="160"
-				src="{{ base }}/images/profile-1x.jpg"
+				src="{{ base }}/images/profile-1x.jpg" alt="Profile"
 				srcset="{{ base }}/images/profile-2x.jpg 320w, {{ base }}/images/profile-3x.jpg 480w, {{ base }}/images/profile-4x.jpg 640w"
 			>
 		</div>
@@ -84,7 +85,7 @@ title: Tiger Oakes
 		<a class="button-link cta shadow" href="{{ base }}/projects">See more projects</a>
 	</div>
 
-	<section class="contact" id="contact">
+	<section class="contact" id="contact" role="contentinfo">
 		<link rel="stylesheet" href="{{ base }}/css/footer.css">
 		<h2>Contact</h2>
 		<div class="contact-content">
