@@ -1,9 +1,5 @@
 ---
 ---
-.banner-container {
-	position: fixed;
-}
-
 .hero {
 	font-size: 1.2em;
 	text-align: center;
@@ -28,8 +24,6 @@
 	display: flex;
 	align-items: center;
 	max-width: 60em;
-	/* flex-wrap: wrap; */
-	/* align-items: center; */
 	justify-content: center;
 }
 .profile {
