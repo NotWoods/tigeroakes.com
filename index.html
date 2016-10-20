@@ -4,7 +4,7 @@ layout: compress
 ---
 {% include base.liquid %}
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 	{% include head.html %}
 	<link rel="stylesheet" href="{{ base }}/css/core.css">
@@ -41,8 +41,8 @@ layout: compress
 				{% capture about %}{% include about.md %}{% endcapture %}
 				{{ about | markdownify }}
 			</div>
-			<img class="profile" alt="" width="160" height="160"
-				src="{{ base }}/images/profile-1x.jpg" alt="Profile"
+			<img class="profile" width="160" height="160" sizes="160px"
+				src="{{ base }}/images/profile-1x.jpg" alt="Portrait of Tiger Oakes"
 				srcset="{{ base }}/images/profile-2x.jpg 320w, {{ base }}/images/profile-3x.jpg 480w, {{ base }}/images/profile-4x.jpg 640w"
 			>
 		</div>
