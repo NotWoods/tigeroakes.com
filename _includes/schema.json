@@ -6,6 +6,11 @@
 	"url": "{{ site.url }}{{ site.baseurl }}",
 	"email": "mailto:contact@tigeroakes.com",
 	"telephone": "(253) 778-6251",
+	"homeLocation": {
+		"@type": "Place",
+		"name": "University of British Columbia",
+		"address": "Box number 1033, 2205 Lower Mall, Vancouver, BC V6T 1W9"
+	},
 	"mainEntityOfPage": {
 		"@type": "WebPage",
 		"additionalType": "WebSite",
