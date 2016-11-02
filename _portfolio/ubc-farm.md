@@ -5,7 +5,7 @@ subtitle: Farm Research Database
 path: ubc-farm
 bkgimage: /images/ubc-farm/background.jpg
 logo: /images/ubc-farm/logo.png
-code: https://github.com/NotWoods/ubc-farm
+code: https://github.com/ubc-farm
 color:
   r: 59
   g: 116
