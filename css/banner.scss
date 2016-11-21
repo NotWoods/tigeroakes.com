@@ -32,9 +32,6 @@
 	line-height: 1.1em;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
-.home-dot::after {
-	content: '↑';
-}
 .home-link:hover .dot::after, .home-link:focus .dot::after {
 	opacity: 1;
 }
@@ -106,5 +103,8 @@
 	}
 	.nav-link {
 		margin: 0;
+	}
+	.nav-link::before {
+		left: -0.25em;
 	}
 }

@@ -18,11 +18,8 @@ layout: compress
 	<link rel="stylesheet" href="{{ base }}/css/banner.css">
 	<header class="banner-container">
 		<div class="inner banner">
-			<a
-				class="home-link" href="#top" id="to-top"
-				aria-label="Back to top" title="Back to top"
-			>
-				<div class="dot shadow home-dot"></div>
+			<a class="home-link">
+				<div class="dot shadow"></div>
 			</a>
 			{% include navigation.liquid %}
 		</div>
@@ -106,5 +103,4 @@ layout: compress
 	</section>
 </body>
 {% include analytics.html %}
-<script async defer src="{{ base }}/js/to-top.js"></script>
 </html>
