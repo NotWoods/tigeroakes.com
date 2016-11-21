@@ -53,6 +53,7 @@
 
 .navigation {
 	margin-left: auto;
+	line-height: 1.3em;
 }
 .nav-link {
 	margin-left: 1em;
@@ -60,7 +61,6 @@
 	text-decoration: none;
 	display: inline-block;
 	padding: 0 0.5em;
-	line-height: 1.3em;
 }
 
 .nav-link::before {
@@ -95,8 +95,16 @@
 	content: none;
 }
 
-@media (max-width: 33em) {
+@media (max-width: 36em) {
+	.banner {
+		flex-flow: column nowrap;
+		align-items: stretch;
+	}
 	.navigation {
-		line-height: 2em;
+		margin: 1em -1.9em 0;
+		text-align: center;
+	}
+	.nav-link {
+		margin: 0;
 	}
 }
