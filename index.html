@@ -56,6 +56,7 @@ layout: compress
 		{% assign c = proj.color %}
 		<article class="project featured-project"
 			style="background-image:url({{ proj.bkgimage }});
+				background-color:{{ proj.fallbackcolor }};
 				--block:rgb({{c.r}},{{c.g}},{{c.b}});
 				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
 		>

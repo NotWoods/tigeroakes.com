@@ -8,6 +8,7 @@ color:
   r: 3
   g: 3
   b: 3
+fallbackcolor: '#444'
 tech:
   - C#
   - Unity

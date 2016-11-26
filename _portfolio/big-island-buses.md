@@ -7,6 +7,7 @@ color:
   r: 77
   g: 116
   b: 171
+fallbackcolor: '#313d3f'
 bkgimage: /images/big-island-buses/background.jpg
 logo: /images/big-island-buses/logo.png
 link: https://notwoods.github.io/big-island-buses

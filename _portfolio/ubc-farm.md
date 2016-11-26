@@ -10,6 +10,7 @@ color:
   r: 59
   g: 116
   b: 72
+fallbackcolor: '#2d410b'
 tech:
   - JavaScript
   - Node.js

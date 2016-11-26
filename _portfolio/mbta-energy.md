@@ -9,6 +9,7 @@ color:
   r: 115
   g: 212
   b: 73
+fallbackcolor: '#040c0c'
 tech:
   - JavaScript
   - FileReader API
