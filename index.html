@@ -7,15 +7,20 @@ layout: compress
 <html lang="en">
 <head>
 	{% include head.html %}
-	<link rel="stylesheet" href="{{ base }}/css/core.css">
-	<link rel="stylesheet" href="{{ base }}/css/home.css">
 	<script type="application/ld+json">
 	{% include schema.json %}
 	</script>
+	<style>
+		{% include css/core.css %}
+		{% include css/home.css %}
+		{% include css/banner.css %}
+		{% include css/button.css %}
+		{% include css/projects.css %}
+		{% include css/footer.css %}
+	</style>
 </head>
 <body>
 	<div id="top"></div>
-	<link rel="stylesheet" href="{{ base }}/css/banner.css">
 	<header class="banner-container">
 		<div class="inner banner">
 			<a class="home-link">
@@ -46,8 +51,6 @@ layout: compress
 	</section>
 
 	<section class="featured-projects projects" id="featured">
-		<link rel="stylesheet" href="{{ base }}/css/button.css">
-		<link rel="stylesheet" href="{{ base }}/css/projects.css">
 	{% assign featured_projects = site.portfolio | where: "feature", true %}
 	{% for proj in featured_projects %}
 		{% assign c = proj.color %}
@@ -83,7 +86,6 @@ layout: compress
 	</div>
 
 	<section class="contact" id="contact" role="contentinfo">
-		<link rel="stylesheet" href="{{ base }}/css/footer.css">
 		<h2>Contact</h2>
 		<div class="contact-content">
 			<a href="mailto:contact@tigeroakes.com" class="contact-link email">

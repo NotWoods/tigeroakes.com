@@ -6,11 +6,19 @@ layout: compress
 <html lang="en">
 <head>
 	{% include head.html %}
-	<link rel="stylesheet" href="{{ base }}/css/core.css">
+	<style>
+		{% include css/core.css %}
+		{% include css/banner.css %}
+		{% if page.nofooter %}
+			{% include css/footer.css %}
+		{% endif %}
+		{% for css in page.css %}
+			{% include {{ css }} %}
+		{% endfor %}
+	</style>
 	{{ page.head }}
 </head>
 <body>
-	<link rel="stylesheet" href="{{ base }}/css/banner.css">
 	<header class="banner-container">
 		<div class="inner banner">
 			<a class="home-link" href="{{ base }}/">
@@ -21,18 +29,10 @@ layout: compress
 		</div>
 	</header>
 
-	{% if page.nofooter %}
-		<link rel="stylesheet" href="{{ base }}/css/footer.css">
-	{% endif %}
-	{% for css in page.css %}
-		<link rel="stylesheet" href="{{ base }}{{ css }}">
-	{% endfor %}
-
 	{{ content }}
 
 	{% unless page.nofooter %}
 		<footer class="contact" role="contentinfo">
-			<link rel="stylesheet" href="{{ base }}/css/footer.css">
 			<div class="contact-content">
 				<a href="mailto:contact@tigeroakes.com" class="contact-link email">
 					contact@tigeroakes.com
