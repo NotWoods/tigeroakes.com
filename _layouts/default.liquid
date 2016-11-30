@@ -9,9 +9,8 @@ layout: compress
 	<style>
 		{% include css/core.css %}
 		{% include css/banner.css %}
-		{% if page.nofooter %}
-			{% include css/footer.css %}
-		{% endif %}
+		{% include css/footer.css %}
+
 		{% for css in page.css %}
 			{% include {{ css }} %}
 		{% endfor %}
