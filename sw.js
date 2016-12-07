@@ -1,4 +1,4 @@
-const CACHE = 'cache-and-update';
+const CACHE = 'cache-if-missing';
 // https://serviceworke.rs/strategy-cache-and-update_service-worker_doc.html
 
 function precache() {
@@ -7,12 +7,12 @@ function precache() {
 			'./images/contact/white-github.svg',
 			'./images/contact/white-twitter.svg',
 			'./images/contact/white-linkedin.svg',
-			/*'./images/big-island-buses/logo.png',
+			'./images/big-island-buses/logo.png',
 			'./images/latch-on/logo.png',
 			'./images/mbta-energy/logo.png',
 			'./images/oml-contracting/logo.svg',
 			'./images/ubc-farm/logo.png',
-			'./images/unity-polygon/logo.png',*/
+			'./images/unity-polygon/logo.png',
 			'./images/profile-4x.jpg',
 		]);
 		return cache.addAll([
@@ -26,13 +26,11 @@ function precache() {
 
 function fromCache(request) {
 	return caches.open(CACHE).then(cache =>
-		cache.match(request).then(match => match || Promise.reject('no-match'))
-	);
-}
-
-function update(request) {
-	return caches.open(CACHE).then(cache =>
-		fetch(request).then(response => cache.put(request, response))
+		cache.match(request)
+			.then(response => response || fetch(request).then((res) => {
+				if (!res.url.startsWith('data:')) cache.put(request, res.clone());
+				return res;
+			}))
 	);
 }
 
@@ -41,8 +39,4 @@ self.addEventListener('install', (e) => {
 	e.waitUntil(precache());
 });
 
-self.addEventListener('fetch', (e) => {
-	console.log('The service worker is serving the asset.');
-	e.respondWith(fromCache(e.request));
-	e.waitUntil(update(e.request));
-});
+self.addEventListener('fetch', (e) => e.respondWith(fromCache(e.request)));
