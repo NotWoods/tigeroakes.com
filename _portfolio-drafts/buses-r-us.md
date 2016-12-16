@@ -1,4 +1,5 @@
 ---
+sortorder: 8
 title: "Buses 'R Us"
 subtitle: Term Project
 path: buses-r-us

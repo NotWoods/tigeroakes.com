@@ -7,7 +7,8 @@ css:
   - css/showcase.css
 ---
 <main class="projects inner">
-	{% for proj in site.portfolio %}
+	{% assign sorted = site.portfolio | sort: 'sortorder' %}
+	{% for proj in sorted %}
 		{% assign c = proj.color %}
 		<article class="project{%if proj.feature %} feature{% endif %}"
 			style="background-image:url({{ proj.bkgimage }});
@@ -26,15 +27,11 @@ css:
 				{% for tech in proj.tech %}<li class="pt-item">{{ tech }}</li>{% endfor %}
 			</ul>
 			<div class="project-links">
-				{% if proj.page %}
-					<a class="button-link shadow" href="{{ proj.page }}">Details</a>
-				{% endif %}
-				{% if proj.link %}
-					<a class="button-link shadow" href="{{ proj.link }}">View site</a>
-				{% endif %}
-				{% if proj.code %}
-					<a class="button-link shadow" href="{{ proj.code }}">Code</a>
-				{% endif %}
+				{% for hash in proj.links %}
+					<a class="button-link shadow" href="{{ hash[1] }}">
+						{{ hash[0] | replace: '_', ' ' }}
+					</a>
+				{% endfor %}
 			</div>
 		</article>
 	{% endfor %}

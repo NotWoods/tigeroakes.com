@@ -1,11 +1,13 @@
 ---
+sortorder: 6
 title: Polygon2D Editor
 subtitle: Level-builing tool for Unity
 logo: /images/unity-polygon/logo.png
 bkgimage: '/images/unity-polygon/background.jpg'
-code: https://github.com/NotWoods/unity-polygon-2d-editor
 color: {r: 3, g: 3, b: 3}
 fallbackcolor: '#444'
+links:
+  Code: https://github.com/NotWoods/unity-polygon-2d-editor
 tech:
   - C#
   - Unity

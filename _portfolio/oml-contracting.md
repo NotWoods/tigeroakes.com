@@ -1,13 +1,15 @@
 ---
 feature: true
+sortorder: 4
 title: OML Contracting Co
 subtitle: Construction Portfolio
 color: {r: 220, g: 184, b: 105}
 fallbackcolor: '#372008'
 bkgimage: /images/oml-contracting/background.jpg
 logo: /images/oml-contracting/logo.svg
-link: http://omlhawaii.com
-code: https://github.com/omlhawaii/omlhawaii.github.io
+links:
+  View_site: http://omlhawaii.com
+  Code: https://github.com/omlhawaii/omlhawaii.github.io
 tech:
   - CSS 3D
   - JavaScript

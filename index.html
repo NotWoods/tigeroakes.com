@@ -69,15 +69,11 @@ layout: compress
 				{% endfor %}
 			</ul>
 			<p class="featured-project-text">{{ proj.summary }}</p>
-			{% if proj.page %}
-				<a class="button-link shadow" href="{{ proj.page }}">Project details</a>
-			{% endif %}
-			{% if proj.link %}
-				<a class="button-link shadow" href="{{ proj.link }}">View site</a>
-			{% endif %}
-			{% if proj.code %}
-				<a class="button-link shadow" href="{{ proj.code }}">Source code</a>
-			{% endif %}
+			{% for hash in proj.links %}
+				<a class="button-link shadow" href="{{ hash[1] }}">
+					{{ hash[0] | replace: '_', ' ' }}
+				</a>
+			{% endfor %}
 		</article>
 	{% endfor %}
 	</section>

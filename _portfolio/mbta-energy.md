@@ -1,12 +1,14 @@
 ---
+sortorder: 3
 title: MBTA Energy
 subtitle: Interactive Information
 bkgimage: /images/mbta-energy/background.jpg
 logo: /images/mbta-energy/logo.png
-code: https://github.com/NotWoods/mbta-energy
-link: https://notwoods.github.io/mbta-energy
 color: {r: 155, g: 212, b: 73}
 fallbackcolor: '#040c0c'
+links:
+  View_site: https://notwoods.github.io/mbta-energy
+  Code: https://github.com/NotWoods/mbta-energy
 tech:
   - JavaScript
   - FileReader API
