@@ -54,8 +54,11 @@ layout: compress
 	{% assign featured_projects = site.portfolio | where: "feature", true %}
 	{% for proj in featured_projects %}
 		{% assign c = proj.color %}
+		{% assign slug = proj.slug | default: proj.title | slugify %}
+		{% assign bkg = proj.images.background | default: 'background.jpg' %}
+		{% assign logo = proj.images.logo | default: 'logo.png' %}
 		<article class="project featured-project"
-			style="background-image:url({{ proj.bkgimage }});
+			style="background-image:url(/images/{{ slug }}/{{ bkg }});
 				background-color:{{ proj.fallbackcolor }};
 				--block:rgb({{c.r}},{{c.g}},{{c.b}});
 				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"

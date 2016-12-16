@@ -2,8 +2,6 @@
 sortorder: 2
 title: Latch On
 subtitle: Video Game
-bkgimage: /images/latch-on/background.jpg
-logo: /images/latch-on/logo.png
 color: {r: 107, g: 159, b: 147}
 fallbackcolor: '#14576a'
 links:

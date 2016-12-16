@@ -3,14 +3,8 @@ feature: true
 sortorder: 1
 title: Big Island Buses
 subtitle: Bus Schedule Software
-path: big-island-buses
-color:
-  r: 77
-  g: 116
-  b: 171
+color: {r: 77, g: 116, b: 171}
 fallbackcolor: '#313d3f'
-bkgimage: /images/big-island-buses/background.jpg
-logo: /images/big-island-buses/logo.png
 links:
   View_site: https://notwoods.github.io/big-island-buses
   Code: https://github.com/NotWoods/big-island-buses

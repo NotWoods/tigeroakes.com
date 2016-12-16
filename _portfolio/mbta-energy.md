@@ -2,8 +2,6 @@
 sortorder: 3
 title: MBTA Energy
 subtitle: Interactive Information
-bkgimage: /images/mbta-energy/background.jpg
-logo: /images/mbta-energy/logo.png
 color: {r: 155, g: 212, b: 73}
 fallbackcolor: '#040c0c'
 links:
