@@ -2,10 +2,7 @@
 feature: true
 title: OML Contracting Co
 subtitle: Construction Portfolio
-color:
-  r: 220
-  g: 184
-  b: 105
+color: {r: 220, g: 184, b: 105}
 fallbackcolor: '#372008'
 bkgimage: /images/oml-contracting/background.jpg
 logo: /images/oml-contracting/logo.svg

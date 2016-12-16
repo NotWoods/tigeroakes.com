@@ -3,10 +3,7 @@ title: Latch On
 subtitle: Video Game
 bkgimage: /images/latch-on/background.jpg
 logo: /images/latch-on/logo.png
-color:
-  r: 107
-  g: 159
-  b: 147
+color: {r: 107, g: 159, b: 147}
 fallbackcolor: '#14576a'
 code: https://github.com/NotWoods/latch-on/tree/c03347a5fae886bdbb42db324d9967662922fa28
 tech:

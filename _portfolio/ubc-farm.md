@@ -6,10 +6,7 @@ path: ubc-farm
 bkgimage: /images/ubc-farm/background.jpg
 logo: /images/ubc-farm/logo.png
 code: https://github.com/ubc-farm
-color:
-  r: 59
-  g: 116
-  b: 72
+color: {r: 59, g: 116, b: 72}
 fallbackcolor: '#2d410b'
 tech:
   - JavaScript
