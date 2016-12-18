@@ -13,6 +13,8 @@ function precache() {
 			'./images/oml-contracting/logo.svg',
 			'./images/ubc-farm/logo.png',
 			'./images/unity-polygon/logo.png',
+			'./images/bit-ball/logo.png',
+			'./images/pass-the-bomb/logo.svg',
 			'./images/profile-4x.jpg',
 		]);
 		return cache.addAll([
@@ -39,4 +41,4 @@ self.addEventListener('install', (e) => {
 	e.waitUntil(precache());
 });
 
-self.addEventListener('fetch', (e) => e.respondWith(fromCache(e.request)));
+self.addEventListener('fetch', e => e.respondWith(fromCache(e.request)));
