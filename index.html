@@ -21,20 +21,11 @@ layout: compress
 </head>
 <body>
 	<div id="top"></div>
-	<header class="banner-container">
-		<div class="inner banner">
-			<a class="home-link">
-				<div class="dot shadow"></div>
-			</a>
-			{% include navigation.liquid %}
-		</div>
-	</header>
+	{% include banner.liquid notitle="" %}
 
 	<section class="hero">
-		<h1 class="hero-header">Tiger Oakes</h1>
-		<p class="hero-sub">
-			Software Developer with 4 years of experience in functional and object-oriented programming.
-		</p>
+		<h1 class="hero-header">{{ site.data.hero.header }}</h1>
+		<p class="hero-sub">{{ site.data.hero.sub }}</p>
 	</section>
 
 	<section class="about">
@@ -43,9 +34,11 @@ layout: compress
 				{% capture about %}{% include about.md %}{% endcapture %}
 				{{ about | markdownify }}
 			</div>
+
+			{% assign profile = base | append: "/images/profile-" %}
 			<img class="profile" width="160" height="160" sizes="160px"
-				src="{{ base }}/images/profile-1x.jpg" alt="Portrait of Tiger Oakes"
-				srcset="{{ base }}/images/profile-2x.jpg 320w, {{ base }}/images/profile-3x.jpg 480w, {{ base }}/images/profile-4x.jpg 640w"
+				src="{{ profile }}1x.jpg" alt="Portrait of Tiger Oakes"
+				srcset="{{ profile }}2x.jpg 320w, {{ profile }}3x.jpg 480w, {{ profile }}4x.jpg 640w"
 			>
 		</div>
 	</section>

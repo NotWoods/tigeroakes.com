@@ -1,0 +1,34 @@
+{% include base.liquid %}
+<header class="banner-container">
+	<div class="inner banner">
+		{% unless include.notitle %}
+			<a class="home-link" href="{{ base }}/">
+				<div class="dot shadow"></div>
+				<h1 class="banner-title">Tiger Oakes</h1>
+			</a>
+		{% else %}
+			<a class="home-link"><div class="dot shadow"></div></a>
+		{% endunless %}
+
+		<nav class="navigation">
+			{% for nav in site.data.nav %}
+				{% assign relative = nav.link | prepend: site.baseurl %}
+				{% if nav.single %}
+					{% if page.url == relative %}{% assign currentpage = true %}
+					{% else %}{% assign currentpage = false %}{% endif %}
+				{% else %}
+					{% if page.url contains relative %}{% assign currentpage = true %}
+					{% else %}{% assign currentpage = false %}{% endif %}
+				{% endif %}
+
+				{% if currentpage %}
+					<span class="current-page nav-link">{{ nav.title }}</span>
+				{% else %}
+					<a href="{{ nav.link | prepend: base }}" class="nav-link">
+						{{ nav.title }}
+					</a>
+				{% endif %}
+			{% endfor %}
+		</nav>
+	</div>
+</header>
