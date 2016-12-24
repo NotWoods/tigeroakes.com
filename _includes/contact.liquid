@@ -1,0 +1,19 @@
+<div class="contact-content">
+	<a href="mailto:contact@tigeroakes.com" class="contact-link email">
+		contact@tigeroakes.com
+	</a>
+	{% assign color = include.color | default: 'black' %}
+
+	{% for social in site.data.social %}
+		<a
+			href="{{ social.link }}" class="contact-link"
+			title="{{ social.name }}" aria-label="{{ social.name }}"
+		>
+			<img
+				class="contact-icon" alt="{{ social.name }}"
+				src="{{ base }}/images/contact/{{ color }}-{{ social.name | downcase }}.svg"
+				width="32" height="32"
+			>
+		</a>
+	{% endfor %}
+</div>

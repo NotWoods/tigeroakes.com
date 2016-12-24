@@ -1,5 +1,6 @@
 ---
-title: Projects - Tiger Oakes
+title: Projects
+titlesuffix: true
 layout: default
 css:
   - css/projects.css
@@ -7,20 +8,20 @@ css:
   - css/showcase.css
 ---
 <main class="projects inner">
+	{% include base.liquid %}
 	{% assign sorted = site.portfolio | sort: 'sortorder' %}
 	{% for proj in sorted %}
 		{% assign c = proj.color %}
 		{% assign slug = proj.slug | default: proj.title | slugify %}
-		{% assign bkg = proj.images.background | default: 'background.jpg' %}
-		{% assign logo = proj.images.logo | default: 'logo.png' %}
+		{% assign images = base | append: "/images/" | append: slug | append: "/" %}
 		<article class="project{%if proj.feature %} feature{% endif %}"
-			style="background-image:url(/images/{{ slug }}/{{ bkg }});
+			style="background-image:url({{ proj.images.background | prepend: images }});
 				background-color:{{ proj.fallbackcolor }};
 				--block:rgb({{c.r}},{{c.g}},{{c.b}});
 				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
 		>
 			<img
-				src="/images/{{ slug }}/{{ logo }}"
+				src="{{ proj.images.logo | prepend: images }}"
 				alt="{{ proj.title }}" class="project-logo"
 				height="128" width="128"
 			>

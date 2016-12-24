@@ -1,0 +1,12 @@
+- title: Home
+  link: /
+  single: true
+
+- title: Projects
+  link: /projects/
+
+- title: Resume
+  link: /resume/
+
+- title: Contact
+  link: /contact/

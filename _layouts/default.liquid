@@ -5,7 +5,7 @@ layout: compress
 <!doctype html>
 <html lang="en">
 <head>
-	{% include head.html %}
+	{% include head.liquid %}
 	<style>
 		{% include css/core.css %}
 		{% include css/banner.css %}
@@ -32,36 +32,7 @@ layout: compress
 
 	{% unless page.nofooter %}
 		<footer class="contact" role="contentinfo">
-			<div class="contact-content">
-				<a href="mailto:contact@tigeroakes.com" class="contact-link email">
-					contact@tigeroakes.com
-				</a>
-
-				<a href="https://github.com/NotWoods"
-					class="contact-link" title="GitHub" aria-label="GitHub">
-					<img
-						class="contact-icon" alt="GitHub"
-						src="{{ base }}/images/contact/black-github.svg"
-						width="32" height="32"
-					>
-				</a>
-				<a href="https://twitter.com/Not_Woods"
-					class="contact-link" title="LinkedIn" aria-label="LinkedIn">
-					<img
-						class="contact-icon" alt="LinkedIn"
-						src="{{ base }}/images/contact/black-linkedin.svg"
-						width="32" height="32"
-					>
-				</a><br>
-				<a href="https://twitter.com/Not_Woods"
-					class="contact-link" title="Twitter" aria-label="Twitter">
-					<img
-						class="contact-icon" alt="Twitter"
-						src="{{ base }}/images/contact/black-twitter.svg"
-						width="32" height="32"
-					>
-				</a>
-			</div>
+			{% include contact.liquid color="black" %}
 		</footer>
 	{% endunless %}
 </body>

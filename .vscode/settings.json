@@ -2,5 +2,8 @@
 	"search.exclude": {
 		"_site": true,
 		"**/Tiger_Oakes_resume*": true
+	},
+	"files.associations": {
+		"*.html": "liquid"
 	}
 }

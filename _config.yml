@@ -24,6 +24,7 @@ gems:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
+  # - jekyll-titles-from-headings
 
 collections:
   portfolio:
@@ -59,11 +60,16 @@ defaults:
     values:
       author: Tiger Oakes
       subtitle: ''
+
   - scope:
       path: ""
       type: portfolio
     values:
-      image: null
+      images:
+        logo: logo.png
+        background: background.jpg
+
+
   - scope:
       path: ""
       type: posts

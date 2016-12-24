@@ -6,7 +6,7 @@ layout: compress
 <!doctype html>
 <html lang="en">
 <head>
-	{% include head.html %}
+	{% include head.liquid nosuffix="" %}
 	<script type="application/ld+json">
 	{% include schema.json %}
 	</script>
@@ -55,10 +55,10 @@ layout: compress
 	{% for proj in featured_projects %}
 		{% assign c = proj.color %}
 		{% assign slug = proj.slug | default: proj.title | slugify %}
-		{% assign bkg = proj.images.background | default: 'background.jpg' %}
+		{% assign images = base | append: "/images/" | append: slug | append: "/" %}
 		{% assign logo = proj.images.logo | default: 'logo.png' %}
 		<article class="project featured-project"
-			style="background-image:url(/images/{{ slug }}/{{ bkg }});
+			style="background-image:url({{ proj.images.background | prepend: images }});
 				background-color:{{ proj.fallbackcolor }};
 				--block:rgb({{c.r}},{{c.g}},{{c.b}});
 				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
@@ -87,21 +87,7 @@ layout: compress
 
 	<section class="contact" id="contact" role="contentinfo">
 		<h2>Contact</h2>
-		<div class="contact-content">
-			<a href="mailto:contact@tigeroakes.com" class="contact-link email">
-				contact@tigeroakes.com
-			</a>
-
-			<a href="https://github.com/NotWoods" class="contact-link" title="GitHub">
-				<img class="contact-icon" alt="GitHub" src="{{ base }}/images/contact/white-github.svg" width="32" height="32">
-			</a>
-			<a href="https://twitter.com/Not_Woods" class="contact-link" title="LinkedIn">
-				<img class="contact-icon" alt="LinkedIn" src="{{ base }}/images/contact/white-linkedin.svg" width="32" height="32">
-			</a><br>
-			<a href="https://twitter.com/Not_Woods" class="contact-link" title="Twitter">
-				<img class="contact-icon" alt="Twitter" src="{{ base }}/images/contact/white-twitter.svg" width="32" height="32">
-			</a>
-		</div>
+		{% include contact.liquid color="white" %}
 	</section>
 </body>
 {% include analytics.html %}
