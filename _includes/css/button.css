@@ -18,3 +18,12 @@
 	background: rgba(255, 255, 255, 0.2);
 	background: var(--button);
 }
+
+.cta-wrap {
+	text-align: center;
+	margin: 1em 0;
+}
+.cta {
+	margin-right: 0;
+}
+.cta-wrap .cta::after { will-change: opacity; }
