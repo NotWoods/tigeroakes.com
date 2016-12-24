@@ -8,3 +8,9 @@
 .project-logo {
 	margin-right: 4em;
 }
+.project-header {
+	margin-bottom: 0.2em;
+}
+.project-text, .project-tech {
+	margin: 0;
+}
