@@ -4,57 +4,65 @@ layout: compress
 <!doctype html>
 <html lang="en">
 <head>
-	{% include head.html %}
+	{% include head.liquid %}
 	<style>
 		{% include css/core.css %}
 		{% include css/banner.css %}
 		{% include css/footer.css %}
+		{% include css/button.css %}
+		{% include css/projects.css %}
+		{% include css/portfolio-page.css %}
+	</style>
+	{% assign c = page.color %}
+	{% assign slug = page.slug | default: page.title | slugify %}
+	{% assign images = base | append: "/images/" | append: slug | append: "/" %}
+	<style>
+		.project-hero {
+			background-image: url({{ page.images.background | prepend: images }});
+			background-color: {{ page.fallbackcolor }};
+			--block: rgb({{c.r}}, {{c.g}}, {{c.b}});
+			--button: rgba({{c.r}}, {{c.g}}, {{c.b}}, 0.2);
+		}
 	</style>
 </head>
 <body>
-	<header class="banner-container">
-		<div class="inner banner">
-			<a class="home-link" href="{{ base }}/">
-				<div class="dot shadow"></div>
-				<h1 class="banner-title">Tiger Oakes</h1>
-			</a>
-			{% include navigation.liquid %}
-		</div>
-	</header>
+	{% include banner.liquid %}
 
-	{{ content }}
+	<main>
+		<header class="project project-hero">
+			<img
+				src="{{ page.images.logo | prepend: images }}"
+				alt="{{ page.title }}" class="project-logo"
+				height="128" width="128"
+			>
+			<div class="project-hero-text">
+				<h1 class="project-header">{{ page.title }}</h1>
+				<p class="project-text">{{ proj.subtitle }}</p>
+				<ul class="project-tech">
+					{% for tech in page.tech %}<li class="pt-item">{{ tech }}</li>{% endfor %}
+				</ul>
+			</div>
+		</header>
+
+		{{ output }}
+
+		<nav class="project-links">
+			{% for hash in page.links %}
+				{% unless hash[0] == 'Details' %}
+					<a class="button-link shadow" href="{{ hash[1] }}">
+						{{ hash[0] | replace: '_', ' ' }}
+					</a>
+				{% endunless %}
+			{% endfor %}
+		</nav>
+	</main>
+
+	<div class="cta-wrap">
+		<a class="button-link cta shadow" href="{{ base }}/projects/">Other projects</a>
+	</div>
 
 	<footer class="contact" role="contentinfo">
-		<div class="contact-content">
-			<a href="mailto:contact@tigeroakes.com" class="contact-link email">
-				contact@tigeroakes.com
-			</a>
-
-			<a href="https://github.com/NotWoods"
-				class="contact-link" title="GitHub" aria-label="GitHub">
-				<img
-					class="contact-icon" alt="GitHub"
-					src="{{ base }}/images/contact/black-github.svg"
-					width="32" height="32"
-				>
-			</a>
-			<a href="https://twitter.com/Not_Woods"
-				class="contact-link" title="LinkedIn" aria-label="LinkedIn">
-				<img
-					class="contact-icon" alt="LinkedIn"
-					src="{{ base }}/images/contact/black-linkedin.svg"
-					width="32" height="32"
-				>
-			</a><br>
-			<a href="https://twitter.com/Not_Woods"
-				class="contact-link" title="Twitter" aria-label="Twitter">
-				<img
-					class="contact-icon" alt="Twitter"
-					src="{{ base }}/images/contact/black-twitter.svg"
-					width="32" height="32"
-				>
-			</a>
-		</div>
+		{% include contact.liquid color="black" %}
 	</footer>
 </body>
 {% include analytics.html %}

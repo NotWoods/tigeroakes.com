@@ -28,6 +28,8 @@ gems:
 
 collections:
   portfolio:
+    output: true
+    permalink: /projects/:path/
 
 sass:
   sass_dir: css
@@ -68,7 +70,7 @@ defaults:
       images:
         logo: logo.png
         background: background.jpg
-
+      layout: portfolio
 
   - scope:
       path: ""
