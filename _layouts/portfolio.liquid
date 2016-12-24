@@ -30,17 +30,21 @@ layout: compress
 
 	<main>
 		<header class="project project-hero">
-			<img
-				src="{{ page.images.logo | prepend: images }}"
-				alt="{{ page.title }}" class="project-logo"
-				height="128" width="128"
-			>
-			<div class="project-hero-text">
-				<h1 class="project-header">{{ page.title }}</h1>
-				<p class="project-text">{{ page.subtitle }}</p>
-				<ul class="project-tech">
-					{% for tech in page.tech %}<li class="pt-item">{{ tech }}</li>{% endfor %}
-				</ul>
+			<div class="project-inner inner">
+				<img
+					src="{{ page.images.logo | prepend: images }}"
+					alt="{{ page.title }}" class="project-logo"
+					height="128" width="128"
+				>
+				<div class="project-hero-text">
+					<h1 class="project-header">{{ page.title }}</h1>
+					<p class="project-text">{{ page.subtitle }}</p>
+					<ul class="project-tech">
+						{% for tech in page.tech %}
+							<li class="pt-item">{{ tech }}</li>
+						{% endfor %}
+					</ul>
+				</div>
 			</div>
 		</header>
 
