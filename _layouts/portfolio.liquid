@@ -15,15 +15,29 @@ layout: compress
 	</style>
 	{% assign c = page.color %}
 	{% assign slug = page.slug | default: page.title | slugify %}
-	{% assign images = base | append: "/images/" | append: slug | append: "/" %}
+	{% assign images = "/images/" | append: slug | append: "/" %}
 	<style>
 		.project-hero {
-			background-image: url({{ page.images.background | prepend: images }});
+			background-image: url({{ page.images.background | prepend: images | relative_url }});
 			background-color: {{ page.fallbackcolor }};
 			--block: rgb({{c.r}}, {{c.g}}, {{c.b}});
 			--button: rgba({{c.r}}, {{c.g}}, {{c.b}}, 0.2);
 		}
 	</style>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@Not_Woods" />
+	<meta name="twitter:title" content="{{ page.title }} - {{ site.title }}" />
+	<meta name="twitter:description" content="{{ page.summary }}" />
+	<meta name="twitter:image" content="{{ page.images.logo | prepend: images | absolute_url }}" />
+	<meta property="og:type" content="product" />
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:site_name" content="{{ site.title }}" />
+	<meta property="og:url" content="{{ page.url }}" />
+	<meta property="og:image:secure_url" content="{{ page.images.logo | prepend: images | absolute_url }}" />
+	<meta property="og:image:url" content="{{ page.images.logo | prepend: images | absolute_url | replace: 'https', 'http' }}" />
+	{% for hash in page.ogp %}
+		<meta property="{{ hash[0] | replace: '.', ':' }}" content="{{ hash[1] }}" />
+	{% endfor %}
 </head>
 <body>
 	{% include banner.liquid %}
@@ -32,7 +46,7 @@ layout: compress
 		<header class="project project-hero">
 			<div class="project-inner inner">
 				<img
-					src="{{ page.images.logo | prepend: images }}"
+					src="{{ page.images.logo | prepend: images | relative_url }}"
 					alt="{{ page.title }}" class="project-logo"
 					height="128" width="128"
 				>

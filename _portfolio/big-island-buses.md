@@ -8,6 +8,8 @@ fallbackcolor: '#313d3f'
 links:
   View_site: https://notwoods.github.io/big-island-buses
   Code: https://github.com/NotWoods/big-island-buses
+ogp:
+  al.web.url: https://notwoods.github.io/big-island-buses
 tech:
   - JavaScript
   - AppCache
