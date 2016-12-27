@@ -52,3 +52,7 @@ a::after {
 a:hover::after {
 	opacity: 1;
 }
+
+.md-content {
+	max-width: 60em;
+}

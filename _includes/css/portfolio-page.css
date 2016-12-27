@@ -15,3 +15,10 @@
 .project-text, .project-tech {
 	margin: 0;
 }
+.project-links {
+	text-align: center;
+}
+
+.project-details-wrapper {
+	background: white;
+}
