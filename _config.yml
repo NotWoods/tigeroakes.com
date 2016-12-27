@@ -1,10 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: Tiger Oakes
 email: contact@tigeroakes.com
@@ -21,7 +14,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 gems:
-  - jekyll-feed
+  # - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
   # - jekyll-titles-from-headings

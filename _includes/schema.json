@@ -4,7 +4,7 @@
 	"name": "Tiger Oakes",
 	"image": "{{ site.url }}{{ site.baseurl }}/images/profile.jpg",
 	"url": "{{ site.url }}{{ site.baseurl }}",
-	"email": "mailto:contact@tigeroakes.com",
+	"email": "mailto:{{ site.email }}",
 	"telephone": "(253) 778-6251",
 	"homeLocation": {
 		"@type": "Place",
