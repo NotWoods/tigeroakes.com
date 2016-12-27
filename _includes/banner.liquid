@@ -12,16 +12,9 @@
 
 		<nav class="navigation">
 			{% for nav in site.data.nav %}
-				{% assign relative = nav.link | prepend: site.baseurl %}
-				{% if nav.single %}
-					{% if page.url == relative %}{% assign currentpage = true %}
-					{% else %}{% assign currentpage = false %}{% endif %}
-				{% else %}
-					{% if page.url contains relative %}{% assign currentpage = true %}
-					{% else %}{% assign currentpage = false %}{% endif %}
-				{% endif %}
+				{% assign relative = nav.link | relative_url %}
 
-				{% if currentpage %}
+				{% if page.url == relative %}
 					<span class="current-page nav-link">{{ nav.title }}</span>
 				{% else %}
 					<a href="{{ nav.link | prepend: base }}" class="nav-link">
