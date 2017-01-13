@@ -49,7 +49,6 @@ layout: compress
 		{% assign c = proj.color %}
 		{% assign slug = proj.slug | default: proj.title | slugify %}
 		{% assign images = base | append: "/images/" | append: slug | append: "/" %}
-		{% assign logo = proj.images.logo | default: 'logo.png' %}
 		<article class="project featured-project"
 			style="background-image:url({{ proj.images.background | prepend: images }});
 				background-color:{{ proj.fallbackcolor }};

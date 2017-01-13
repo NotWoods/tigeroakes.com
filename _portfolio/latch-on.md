@@ -15,3 +15,9 @@ summary: >
   hook to navigate puzzles and platforms. Using the Unity engine, the game can
   run quickly on a variety of platforms to accommodate the speedy gameplay.
 ---
+Latch On is a prototype game I developed, where the player uses a grappling hook
+to swing around and nagivate puzzles and platforms.
+The game uses the **Unity** engine.
+
+Since the initial prototype, I've been developing the idea into a full game as a
+side project. A demo of the newer game can also be found in [GitHub](https://github.com/NotWoods/latch-on/releases).

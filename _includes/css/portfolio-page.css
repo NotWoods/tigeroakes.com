@@ -1,0 +1,24 @@
+.project-hero {
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	padding: 2em;
+}
+.project-inner {
+	display: flex;
+}
+.project-logo {
+	margin-right: 4em;
+}
+.project-header {
+	margin-bottom: 0.2em;
+}
+.project-text, .project-tech {
+	margin: 0;
+}
+.project-links {
+	text-align: center;
+}
+
+.project-details-wrapper {
+	background: white;
+}
