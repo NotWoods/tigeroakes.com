@@ -20,3 +20,16 @@ summary: >
   display the basic site, then running in the background to add on additional
   functionality and design.
 ---
+I worked with OML Contracting to redesign their portfolio and showcase their
+completed residences. Using **3D CSS transformations**, the site has a depth effect
+that does not affect scrolling performance or rely on JavaScript, unlike other
+parallax websites.
+
+The site loads quickly despite the large images by **lazy-loading CSS**.
+Enough code is downloaded intially to render the basic site. In the background,
+the remaining code loads and is activated once complete.
+
+Other tricks are used to mask loading times. When a portfolio item is opened,
+the first few images shown are the same as those shown on the homepage. This
+provided a buffer for the remaning images to load in the background as the user
+views the first few in the page.
