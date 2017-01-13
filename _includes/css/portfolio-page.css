@@ -17,10 +17,21 @@
 }
 .project-links {
 	text-align: center;
+	font-size: 1.3em;
+}
+.button-link {
+	margin: 0 0.3em;
 }
 
 .project-details-wrapper {
 	background: white;
+}
+
+.project-gallery {
+	text-align: center;
+}
+.gallery-image {
+	max-width: 100%;
 }
 
 @media (max-width: 36em) {

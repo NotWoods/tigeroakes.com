@@ -5,6 +5,10 @@ layout: compress
 <html lang="en">
 <head>
 	{% include head.liquid %}
+	{% assign c = page.color %}
+	{% assign slug = page.slug | default: page.title | slugify %}
+	{% assign images = "/images/" | append: slug | append: "/" %}
+	{% assign logo = page.images.logo | prepend: images | absolute_url %}
 	<style>
 		{% include css/core.css %}
 		{% include css/banner.css %}
@@ -12,11 +16,7 @@ layout: compress
 		{% include css/button.css %}
 		{% include css/projects.css %}
 		{% include css/portfolio-page.css %}
-	</style>
-	{% assign c = page.color %}
-	{% assign slug = page.slug | default: page.title | slugify %}
-	{% assign images = "/images/" | append: slug | append: "/" %}
-	<style>
+
 		.project-hero {
 			background-image: url({{ page.images.background | prepend: images | relative_url }});
 			background-color: {{ page.fallbackcolor }};
@@ -24,7 +24,6 @@ layout: compress
 			--button: rgba({{c.r}}, {{c.g}}, {{c.b}}, 0.2);
 		}
 	</style>
-	{% assign logo = page.images.logo | prepend: images | absolute_url %}
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@Not_Woods" />
 	<meta name="twitter:title" content="{{ page.title }} - {{ site.title }}" />
@@ -78,6 +77,19 @@ layout: compress
 		<div class="project-details inner md-content">
 			{{ page.content }}
 		</div>
+
+		{% if page.gallery %}
+			<hr />
+			<section class="project-gallery">
+				{% for figure in page.gallery %}
+					<img
+						class="gallery-image"
+						src="{{ figure[0] }}"
+						{% if figure[1] %}alt="{{ figure[1] }}"{% endif %}
+					/>
+				{% endfor %}
+			</section>
+		{% endif %}
 
 		<footer class="cta-wrap">
 			<a class="button-link cta shadow" href="{{ base }}/projects/">
