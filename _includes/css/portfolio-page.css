@@ -22,3 +22,14 @@
 .project-details-wrapper {
 	background: white;
 }
+
+@media (max-width: 36em) {
+	.project-inner {
+		flex-flow: column;
+		align-items: center;
+		margin-bottom: 1em;
+	}
+	.project-logo {
+		margin-right: 0;
+	}
+}
