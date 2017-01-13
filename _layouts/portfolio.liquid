@@ -33,9 +33,11 @@ layout: compress
 	<meta property="og:type" content="product" />
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:site_name" content="{{ site.title }}" />
-	<meta property="og:url" content="{{ page.url }}" />
+	<meta property="og:url" content="{{ page.url | absolute_url }}" />
 	<meta property="og:image:url" content="{{ logo | replace: 'https:', 'http:' }}" />
 	<meta property="og:image:secure_url" content="{{ logo | replace: 'http:', 'https:' }}" />
+	<meta property="og:image:width" content="128" />
+	<meta property="og:image:height" content="128" />
 	{% for hash in page.ogp %}
 		<meta property="{{ hash[0] | replace: '.', ':' }}" content="{{ hash[1] }}" />
 	{% endfor %}
