@@ -1,22 +1,26 @@
 .hero {
 	font-size: 1.2em;
 	text-align: center;
+
 	padding: 7em 1em;
 }
 .hero-header {
 	font-size: 2.5em;
-	margin: 0;
 	text-transform: uppercase;
+
+	margin: 0;
 }
 .hero-sub {
-	margin: 0 auto;
 	color: #686868;
+
+	margin: 0 auto;
 	max-width: 25em;
 }
 
 .about {
-	padding: 2em 0;
 	background: white;
+
+	padding: 2em 0;
 }
 .about-content {
 	display: flex;
@@ -25,16 +29,16 @@
 	justify-content: center;
 }
 .profile {
-	flex: 0 0 160px;
-	margin-left: 5em;
 	border-radius: 50%;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+
+	flex: 0 0 160px;
+	margin-left: 5em;
 }
 
 
 .featured-projects {
 	font-size: 1.3em;
-	/* font-size: 1.2em; */
 }
 .featured-project {
 	padding: 3.5em 5em;
@@ -49,10 +53,11 @@
 .featured-project:hover .button-link::after { will-change: opacity; }
 
 .contact {
-	padding: 2em 1em 10em;
-	--button: #{rgba(230, 109, 49, 0.2)};
+	--button: rgba(230, 109, 49, 0.2);
 	background: #333;
 	color:  white;
+
+	padding: 2em 1em 10em;
 }
 .contact-content {
 	font-size: 1.25em;

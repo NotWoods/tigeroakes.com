@@ -5,18 +5,20 @@ body {
 }
 
 .contact {
-	text-align: center;
-	padding: 1em 0 6em;
 	background: url('/images/contact/background.jpg');
 	background-size: cover;
 	background-position: center;
+	text-align: center;
+
+	padding: 1em 0 6em;
 	flex: 1;
 }
 
 hr {
-	max-width: 10em;
 	background: black;
 	border: 0;
+
+	max-width: 10em;
 	height: 0.1em;
 	margin-bottom: 8vh;
 }
@@ -25,8 +27,9 @@ hr {
 	flex: 2;
 }
 .contact-link {
-	margin-bottom: 1em;
 	font-size: 1.2em;
+
+	margin-bottom: 1em;
 }
 .contact-link::after {
 	transform: scaleY(0.2);
