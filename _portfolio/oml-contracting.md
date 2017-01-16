@@ -33,3 +33,7 @@ Other tricks are used to mask loading times. When a portfolio item is opened,
 the first few images shown are the same as those shown on the homepage. This
 provided a buffer for the remaning images to load in the background as the user
 views the first few in the page.
+
+___
+
+![Screenshot of OML Contracting Co. Website](/images/oml-contracting/screenshot.png)
