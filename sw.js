@@ -20,7 +20,7 @@ function precache() {
 			'./projects/mbta-energy/',
 			'./projects/oml-contracting/',
 			'./projects/ubc-farm/',
-			'./projects/unity-polygon/',
+			'./projects/unity-polygon2d-editor/',
 		]);
 		return cache.addAll([
 			'./',
