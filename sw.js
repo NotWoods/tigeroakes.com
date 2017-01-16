@@ -26,7 +26,7 @@ function precache() {
 	});
 }
 
-function downloadAndSave(request) {
+function downloadAndSave(request, cache) {
 	return fetch(request).then((response) => {
 		if (response.ok && !response.url.startsWith('data:')) {
 			cache.put(request, response.clone());
@@ -39,7 +39,7 @@ function downloadAndSave(request) {
 function fromCacheAndUpdate(request) {
 	return caches.open(CACHE)
 		.then(cache => cache.match(request).then((response) => {
-			const networkResponse = downloadAndSave(request);
+			const networkResponse = downloadAndSave(request, cache);
 			return response || networkResponse;
 		}));
 }
