@@ -78,19 +78,6 @@ layout: compress
 			{{ page.content }}
 		</div>
 
-		{% if page.gallery %}
-			<hr />
-			<section class="project-gallery">
-				{% for figure in page.gallery %}
-					<img
-						class="gallery-image"
-						src="{{ figure[0] }}"
-						{% if figure[1] %}alt="{{ figure[1] }}"{% endif %}
-					/>
-				{% endfor %}
-			</section>
-		{% endif %}
-
 		<footer class="cta-wrap">
 			<a class="button-link cta shadow" href="{{ base }}/projects/">
 				Other projects

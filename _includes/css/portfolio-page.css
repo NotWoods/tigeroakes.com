@@ -27,10 +27,7 @@
 	background: white;
 }
 
-.project-gallery {
-	text-align: center;
-}
-.gallery-image {
+hr, img {
 	max-width: 100%;
 }
 

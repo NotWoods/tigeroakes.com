@@ -49,3 +49,7 @@ never released in the end.
 
 Big Island Buses was fairly popular in Hawai'i when it was first released, and had
 over a hundred visits each week, despite the limited target audience.
+
+___
+
+![Big Island Buses on different devices](/images/big-island-buses/multi-screen.png)
