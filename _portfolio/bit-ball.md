@@ -5,6 +5,7 @@ subtitle: 9th Grade Physics Game
 color: {r: 40, g: 160, b: 197}
 fallbackcolor: '#161616'
 links:
+  Details: /projects/bit-ball/
   Download: https://github.com/NotWoods/bit-ball#installation
   Code: https://github.com/NotWoods/bit-ball
 tech:
@@ -19,3 +20,7 @@ and [Hawaii Public Radio](http://www.bytemarkscafe.org/2012/07/23/episode-205-my
 
 The game is a simple physics puzzle game, built for **Android** using **Corona SDK** and **Lua**.
 You guide a ball to the goal in each level by timing its launch and tweaking the level, without directly controlling the ball.
+
+___
+
+![Bit Ball](/images/bit-ball/banner.jpg)

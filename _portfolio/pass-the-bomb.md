@@ -8,6 +8,7 @@ fallbackcolor: '#3c4438'
 images:
   logo: logo.svg
 links:
+  Details: /projects/pass-the-bomb/
   Devpost: https://devpost.com/software/passthebomb
   Code: https://github.com/NotWoods/local-hack-day
 tech:
@@ -24,3 +25,7 @@ I worked on the client-side aspect of the game, along with helping guide some
 of the other team members. The game includes **CSS animations** to indicate the
 remaining time with a fuse, and **Hammer.js** to let players submit their entry
 by swiping or "passing" the bomb away.
+
+___
+
+![Pass the Bomb screenshot](/images/pass-the-bomb/screenshot.jpg)
