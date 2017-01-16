@@ -1,5 +1,4 @@
-const CACHE = 'cache-if-missing';
-// https://serviceworke.rs/strategy-cache-and-update_service-worker_doc.html
+const CACHE = 'v2';
 
 function precache() {
 	return caches.open(CACHE).then((cache) => {
@@ -16,6 +15,7 @@ function precache() {
 			'./images/bit-ball/logo.png',
 			'./images/pass-the-bomb/logo.svg',
 			'./images/profile-4x.jpg',
+			'./projects/big-island-buses/',
 		]);
 		return cache.addAll([
 			'./',
@@ -26,17 +26,24 @@ function precache() {
 	});
 }
 
-function fromCache(request) {
-	return caches.open(CACHE).then(cache =>
-		cache.match(request)
-			.then(response => response || fetch(request).then((res) => {
-				if (res.ok && !res.url.startsWith('data:')) {
-					cache.put(request, res.clone());
-				}
+function downloadAndSave(request) {
+	return fetch(request).then((response) => {
+		if (response.ok && !response.url.startsWith('data:')) {
+			cache.put(request, response.clone());
+		}
 
-				return res;
-			}))
-	);
+		return response;
+	});
+}
+
+function fromCacheAndUpdate(request) {
+	return caches.open(CACHE)
+		.then(cache => cache.match(request).then((response) => {
+			const networkResponse = downloadAndSave(request);
+
+			if (response) return response;
+			else networkResponse;
+		}));
 }
 
 self.addEventListener('install', (e) => {
@@ -44,4 +51,4 @@ self.addEventListener('install', (e) => {
 	e.waitUntil(precache());
 });
 
-self.addEventListener('fetch', e => e.respondWith(fromCache(e.request)));
+self.addEventListener('fetch', e => e.respondWith(fromCacheAndUpdate(e.request)));
