@@ -30,7 +30,10 @@ function fromCache(request) {
 	return caches.open(CACHE).then(cache =>
 		cache.match(request)
 			.then(response => response || fetch(request).then((res) => {
-				if (!res.url.startsWith('data:')) cache.put(request, res.clone());
+				if (res.ok && !res.url.startsWith('data:')) {
+					cache.put(request, res.clone());
+				}
+
 				return res;
 			}))
 	);
