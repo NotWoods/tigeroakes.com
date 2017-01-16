@@ -16,6 +16,11 @@ function precache() {
 			'./images/pass-the-bomb/logo.svg',
 			'./images/profile-4x.jpg',
 			'./projects/big-island-buses/',
+			'./projects/latch-on/',
+			'./projects/mbta-energy/',
+			'./projects/oml-contracting/',
+			'./projects/ubc-farm/',
+			'./projects/unity-polygon/',
 		]);
 		return cache.addAll([
 			'./',
