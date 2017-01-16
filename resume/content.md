@@ -15,7 +15,8 @@
    </ul>
    <h1 class="resume-title">Tiger Oakes</h1>
   <p class="resume-summary">
-      Software Developer with 4 years of experience in functional and object-oriented programming. Proven success creating custom solutions for a variety of businesses.
+      Software Developer with 6 years of experience in functional and object-oriented programming.
+      Proven success creating custom solutions for a variety of businesses.
   </p>
 </header>
 
