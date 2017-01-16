@@ -25,7 +25,7 @@ summary: >
   Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District.
 ---
 A web app created for bus riders in the Big Island of Hawai'i'.
-The app was created to offer an alternative the the county's [paper-only bus schdules](http://www.heleonbus.org/schedules-and-maps).
+The app was created to offer an alternative the county's [paper-only bus schedules](http://www.heleonbus.org/schedules-and-maps).
 I built the [initial version](https://github.com/NotWoods/big-island-buses/tree/app-challenge) during my 11th grade in high school,
 where it won [**Grade Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District**](http://gabbard.house.gov/index.php/press-releases/339-rep-tulsi-gabbard-presents-congressional-awards-to-young-leaders-from-hawai-i-s-second-district).
 

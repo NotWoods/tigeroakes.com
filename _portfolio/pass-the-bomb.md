@@ -22,5 +22,5 @@ the server running **Node.js**.
 
 I worked on the client-side aspect of the game, along with helping guide some
 of the other team members. The game includes **CSS animations** to indicate the
-remaning time with a fuse, and **Hammer.js** to let players submit their entry
+remaining time with a fuse, and **Hammer.js** to let players submit their entry
 by swiping or "passing" the bomb away.

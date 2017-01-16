@@ -17,7 +17,7 @@ summary: >
   run quickly on a variety of platforms to accommodate the speedy gameplay.
 ---
 Latch On is a prototype game I developed, where the player uses a grappling hook
-to swing around and nagivate puzzles and platforms.
+to swing around and navigate puzzles and platforms.
 The game uses the **Unity** engine.
 
 Since the initial prototype, I've been developing the idea into a full game as a

@@ -27,12 +27,12 @@ that does not affect scrolling performance or rely on JavaScript, unlike other
 parallax websites.
 
 The site loads quickly despite the large images by **lazy-loading CSS**.
-Enough code is downloaded intially to render the basic site. In the background,
+Enough code is downloaded initially to render the basic site. In the background,
 the remaining code loads and is activated once complete.
 
 Other tricks are used to mask loading times. When a portfolio item is opened,
 the first few images shown are the same as those shown on the homepage. This
-provided a buffer for the remaning images to load in the background as the user
+provided a buffer for the remaining images to load in the background as the user
 views the first few in the page.
 
 ___
