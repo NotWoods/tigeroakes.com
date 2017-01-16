@@ -1,3 +1,11 @@
+hr, img {
+	max-width: 100%;
+}
+img {
+	margin: auto;
+	display: block;
+}
+
 .project-hero {
 	color: white;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -7,7 +15,7 @@
 	display: flex;
 }
 .project-logo {
-	margin-right: 4em;
+	margin: 0 4em 0 0;
 }
 .project-header {
 	margin-bottom: 0.2em;
@@ -25,10 +33,6 @@
 
 .project-details-wrapper {
 	background: white;
-}
-
-hr, img {
-	max-width: 100%;
 }
 
 @media (max-width: 36em) {
