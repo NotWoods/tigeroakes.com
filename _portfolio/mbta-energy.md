@@ -5,6 +5,7 @@ subtitle: Interactive Information
 color: {r: 155, g: 212, b: 73}
 fallbackcolor: '#040c0c'
 links:
+  Details: /projects/mbta-energy/
   View_site: https://notwoods.github.io/mbta-energy
   Code: https://github.com/NotWoods/mbta-energy
 tech:
@@ -31,3 +32,7 @@ a single average line, or only data from weekdays.
 
 The program implements the JavaScript **FileReader API** to import data,
 and a custom **CSV parser** to read it.
+
+___
+
+![An energy chart](/images/mbta-energy/chart.png)

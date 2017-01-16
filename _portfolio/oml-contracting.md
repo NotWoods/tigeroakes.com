@@ -9,6 +9,7 @@ fallbackcolor: '#372008'
 images:
   logo: logo.svg
 links:
+  Details: /projects/oml-contracting/
   View_site: http://omlhawaii.com
   Code: https://github.com/omlhawaii/omlhawaii.github.io
 tech:

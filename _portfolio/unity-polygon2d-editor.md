@@ -6,6 +6,7 @@ slug: unity-polygon
 color: {r: 3, g: 3, b: 3}
 fallbackcolor: '#444'
 links:
+  Details: /projects/unity-polygon/
   Code: https://github.com/NotWoods/unity-polygon-2d-editor
 tech:
   - C#
