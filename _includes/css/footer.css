@@ -15,6 +15,7 @@
 	text-decoration: none;
 	margin: 0 0.5em;
 	display: inline-block;
+	position: relative;
 }
 .contact-link::after {
 	bottom: -1em;
@@ -24,7 +25,8 @@
 	transform: scaleY(0);
 	transition: transform 0.2s ease;
 	top: auto;
-	opacity: 1;
+	content: '';
+	display: block;
 }
 .contact-link:hover::after, .contact-link:focus::after {
 	transform: none;

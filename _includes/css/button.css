@@ -3,6 +3,7 @@
 	padding: 0.5em 1.5em;
 	display: inline-block;
 	z-index: 1;
+	position: relative;
 }
 .button-link::before {
 	position: absolute;
@@ -14,9 +15,14 @@
 	border: 1px solid;
 }
 .button-link::after {
+	content: '';
 	z-index: -1;
 	background: rgba(255, 255, 255, 0.2);
 	background: var(--button);
+	opacity: 0;
+}
+.button-link:hover::after {
+	opacity: 1;
 }
 
 .cta-wrap {

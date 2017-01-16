@@ -36,21 +36,9 @@ body {
 a {
 	color: #e66d31;
 	text-decoration: none;
-	position: relative;
-	display: inline-block;
 }
-a::after {
-	opacity: 0;
-	position: absolute;
-	bottom: -1px;
-	left: 0;
-	right: 0;
-	background: currentColor;
-	top: 100%;
-	content: '';
-}
-a:hover::after {
-	opacity: 1;
+a:hover:not([class]) {
+	text-decoration: underline;
 }
 
 .md-content {

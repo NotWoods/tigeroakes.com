@@ -56,10 +56,12 @@
 	text-decoration: none;
 	display: inline-block;
 	padding: 0 0.5em;
+	position: relative;
 }
 
 .nav-link::before {
 	content: '';
+	opacity: 0;
 	position: absolute;
 	width: 0.5em;
 	height: 100%;
@@ -71,6 +73,7 @@
 }
 .nav-link:hover::before, .nav-link:focus::before {
 	transform: none;
+	opacity: 1;
 }
 .nav-link:active::before {
 	transform: scaleX(0.5);
