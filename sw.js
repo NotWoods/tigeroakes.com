@@ -40,9 +40,7 @@ function fromCacheAndUpdate(request) {
 	return caches.open(CACHE)
 		.then(cache => cache.match(request).then((response) => {
 			const networkResponse = downloadAndSave(request);
-
-			if (response) return response;
-			else networkResponse;
+			return response || networkResponse;
 		}));
 }
 

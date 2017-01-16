@@ -24,9 +24,10 @@
 	transform-origin: top;
 	transform: scaleY(0);
 	transition: transform 0.2s ease;
-	top: auto;
 	content: '';
-	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
 }
 .contact-link:hover::after, .contact-link:focus::after {
 	transform: none;
