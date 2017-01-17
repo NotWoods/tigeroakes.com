@@ -12,11 +12,11 @@
 	display: flex;
 	flex-direction: column;
 	margin: 0.5em;
-	flex: 2;
+	flex: 2 0 auto;
 	min-width: 19em;
 }
 .feature {
-	flex: 3;
+	flex-grow: 3;
 }
 
 .project-logo {
