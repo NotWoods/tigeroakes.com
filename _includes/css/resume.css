@@ -127,7 +127,8 @@ em {
 		flex-direction: column;
 	}
 	.resume-header-items {
-		margin-top: 0.125in;
+		margin-bottom: 0.125in;
+		float: none;
 	}
 }
 
