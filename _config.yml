@@ -22,7 +22,7 @@ gems:
 collections:
   portfolio:
     output: true
-    permalink: /projects/:path/
+    permalink: /projects/:path
 
 sass:
   sass_dir: css

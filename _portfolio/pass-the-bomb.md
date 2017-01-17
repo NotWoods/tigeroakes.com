@@ -8,7 +8,7 @@ fallbackcolor: '#3c4438'
 images:
   logo: logo.svg
 links:
-  Details: /projects/pass-the-bomb/
+  Details: /projects/pass-the-bomb
   Devpost: https://devpost.com/software/passthebomb
   Code: https://github.com/NotWoods/local-hack-day
 tech:
