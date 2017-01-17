@@ -14,6 +14,7 @@
 	margin: 0.5em;
 	flex: 2 0 auto;
 	min-width: 19em;
+	max-width: calc(100% - 5em);
 }
 .feature {
 	flex-grow: 3;
