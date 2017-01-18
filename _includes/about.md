@@ -7,7 +7,7 @@ languages in Hawai'i. Now, I work on complex web applications and
 software for various devices.
 
 Some of my side [projects](/projects/) have been featured in
-[Washington, DC](http://gabbard.house.gov/index.php/press-releases/339-rep-tulsi-gabbard-presents-congressional-awards-to-young-leaders-from-hawai-i-s-second-district)
+[Washington, DC](https://gabbard.house.gov/news/press-releases/rep-tulsi-gabbard-presents-congressional-awards-young-leaders-hawai-i-s-second)
 and news outlets such as the [Star Advertiser](http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/),
 [West Hawai'i Today](http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app),
 and [Hawai'i Public Radio](http://www.bytemarkscafe.org/2015/04/29/episode-348-sounding-rockets-apr-29-2015/).
