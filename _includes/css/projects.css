@@ -4,6 +4,7 @@
 }
 .project {
 	background-size: cover;
+	background-position: center;
 	background-color: #333333;
 	background-image: linear-gradient(to bottom, #333333 0%,#424242 25%,#424242 75%,#333333 100%);
 }
