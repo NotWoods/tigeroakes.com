@@ -28,4 +28,4 @@ by swiping or "passing" the bomb away.
 
 ___
 
-![Pass the Bomb screenshot](/images/pass-the-bomb/screenshot.jpg)
+![Playing a round of Pass the Bomb in two windows](/images/pass-the-bomb/demo.gif)
