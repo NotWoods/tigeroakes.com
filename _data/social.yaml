@@ -1,8 +1,11 @@
 - name: GitHub
   link: https://github.com/NotWoods
+  text: "**github**.com/**NotWoods**"
 
 - name: LinkedIn
   link: https://linkedin.com/in/tigeroakes
+  text: "**linkedin**.com/in/**tigeroakes**"
 
 - name: Twitter
   link: https://twitter.com/Not_Woods
+  text: "**twitter**.com/**Not_Woods**"
