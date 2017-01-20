@@ -38,3 +38,5 @@
 .pt-item:last-child::after {
 	content: none;
 }
+
+.project:hover .button-link::after { will-change: opacity; }

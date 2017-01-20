@@ -52,7 +52,6 @@
 .button-link {
 	margin: 0 0.5em 0.5em 0;
 }
-.featured-project:hover .button-link::after { will-change: opacity; }
 
 .contact {
 	--button: rgba(230, 109, 49, 0.2);
