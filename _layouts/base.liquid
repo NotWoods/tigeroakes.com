@@ -1,0 +1,32 @@
+---
+layout: compress
+---
+{% include base.liquid %}
+<!doctype html>
+<html lang="en">
+<head>
+	{% include head.liquid %}
+	<style>
+		{% include css/core.css %}
+		{% include css/banner.css %}
+		{% include css/footer.css %}
+
+		{% for css in page.css %}
+			{% include {{ css }} %}
+		{% endfor %}
+	</style>
+	{{ page.head }}
+</head>
+<body>
+	{% include banner.liquid %}
+
+	{{ content }}
+
+	{% unless page.nofooter %}
+		<footer class="contact" role="contentinfo">
+			{% include contact.liquid color="black" %}
+		</footer>
+	{% endunless %}
+</body>
+{% include analytics.html %}
+</html>
