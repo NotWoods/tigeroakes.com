@@ -49,7 +49,7 @@ layout: compress
 			<div class="project-inner inner">
 				<img
 					src="{{ page.images.logo | prepend: images | relative_url }}"
-					{% if proj.hd %}srcset="{{ images }}logo2x.png 256w, {{ images }}logo3x.png 384w, {{ images }}logo4x.png 512w"{% endif %}
+					{% if proj.hd %}srcset="{{ images }}logo2x.png 2x, {{ images }}logo3x.png 3x, {{ images }}logo4x.png 4x"{% endif %}
 					alt="{{ page.title }}" class="project-logo"
 					height="128" width="128"
 				>

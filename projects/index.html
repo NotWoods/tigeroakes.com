@@ -23,7 +23,7 @@ css:
 		<img
 			src="{{ proj.images.logo | prepend: images }}"
 			alt="{{ proj.title }}" class="project-logo"
-			{% if proj.hd %}srcset="{{ images }}logo2x.png 256w, {{ images }}logo3x.png 384w, {{ images }}logo4x.png 512w"{% endif %}
+			{% if proj.hd %}srcset="{{ images }}logo2x.png 2x, {{ images }}logo3x.png 3x, {{ images }}logo4x.png 4x"{% endif %}
 			height="128" width="128"
 		>
 		<h2 class="project-header">
