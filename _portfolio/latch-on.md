@@ -4,6 +4,7 @@ title: Latch On
 subtitle: Video Game
 color: {r: 107, g: 159, b: 147}
 fallbackcolor: '#14576a'
+hd: true
 links:
   Details: /projects/latch-on
   Code: https://github.com/NotWoods/latch-on/tree/c03347a5fae886bdbb42db324d9967662922fa28
