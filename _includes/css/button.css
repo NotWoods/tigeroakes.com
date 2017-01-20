@@ -30,10 +30,11 @@
 
 .cta-wrap {
 	text-align: center;
+	font-size: 1.25em;
 
 	padding: 1em 0;
 }
 .cta {
-	margin-right: 0;
+	margin: 1em 0;
 }
 .cta-wrap .cta::after { will-change: opacity; }
