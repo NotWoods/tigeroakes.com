@@ -1,6 +1,7 @@
 .hero {
 	font-size: 1.2em;
 	text-align: center;
+	text-shadow: 1px 1px 1px #b6b6b6;
 	background-image: url('images/hero.jpg');
 	background-size: cover;
 	background-position: center;
