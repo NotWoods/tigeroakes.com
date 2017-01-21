@@ -15,6 +15,9 @@ tech:
   - Node.js
   - Socket.io
   - Hammer.js
+summary: >
+  Online multiplayer word game created in a hackathon within 12 hours.
+  Socket.io is used to sync the client devices and the server, which runs Node.js.
 ---
 A multiplayer word game based on the board game [Pass the Bomb](https://en.wikipedia.org/wiki/Pass_the_Bomb).
 Pass the Bomb was created for the UBC Local Hack 12-hour hackathon.

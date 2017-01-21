@@ -27,6 +27,7 @@ layout: compress
 	<meta property="og:type" content="product" />
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:site_name" content="{{ site.title }}" />
+	<meta property="og:description" content="{{ page.summary }}" />
 	<meta property="og:url" content="{{ page.url | absolute_url }}" />
 	{% if page.hd %}
 		{% assign logo = "logo4x.png" | prepend: images | absolute_url %}

@@ -13,7 +13,9 @@ tech:
   - C#
   - Unity
 summary: >
-  Uses the PolygonCollider2D collider to generate a mesh for a gameobject, letting you draw polygonal platforms in the Unity editor via the Edit Collider button. Just drag the script onto your platform GameObject and you're good to go.
+  Uses the PolygonCollider2D collider to generate a mesh for a gameobject,
+  letting you draw polygonal platforms in the Unity editor via the Edit Collider button.
+  Just drag the script onto your platform GameObject and you're good to go.
 ---
 I created this tool to help me build levels in [one of my games](../latch-on).
 The script generates a freeform 2D mesh for level layout.
