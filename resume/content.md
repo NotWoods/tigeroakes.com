@@ -23,7 +23,7 @@
 Education
 =========
 
-#### 09/2015 – 04/2020	(expected with co-op)
+<h4 class="noblock">09/2015 – 04/2020	(expected with co-op)</h4>
 
 ## Bachelor of Science in Computer Science
 

@@ -101,6 +101,9 @@ em {
 	color: rgb(90, 90, 90);
 }
 
+.noblock::before {
+	content: none;
+}
 .cta-wrap {
 	text-align: center;
 }
