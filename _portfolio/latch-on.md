@@ -1,7 +1,7 @@
 ---
 sortorder: 2
 title: Latch On
-subtitle: Video Game
+subtitle: Video Game Prototype
 color: {r: 107, g: 159, b: 147}
 fallbackcolor: '#14576a'
 hd: true
