@@ -1,5 +1,5 @@
 ---
-sortorder: 6
+sortorder: 7
 title: Polygon2D Editor
 subtitle: Level-builing tool for Unity
 slug: unity-polygon
