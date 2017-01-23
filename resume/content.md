@@ -25,7 +25,7 @@ Education
 
 <h4 class="noblock">09/2015 – 04/2020	(expected with co-op)</h4>
 
-## Bachelor of Science in Computer Science
+## Bachelor of Science in Computer Science, 2nd Year
 
 ### University of British Columbia
 
