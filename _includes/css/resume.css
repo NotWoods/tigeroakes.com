@@ -21,47 +21,64 @@
 
 	padding-bottom: 0.2in;
 }
-.resume-header-main {
-	flex: 1;
-}
-.resume-title {
+.resume-header > h1 {
 	font-size: 28pt;
 	text-transform: uppercase;
 	font-weight: bold;
 
 	margin: 0;
 }
-.resume-header-items {
+.resume-header > ul {
 	line-height: 1.4em;
 	text-align: right;
 	font-size: 1em;
+	list-style: none;
+	padding: none;
 
 	float: right;
 	margin: 0;
 }
+.resume-header > ul a {
+	float: none;
+}
 
-.resume-summary {
+.resume-header > p {
 	color: rgb(64, 64, 64);
 
 	margin: 0;
 }
 
-a {
+.resume-body {
+	display: flex;
+}
+.resume-left-column {
+	width: 4.1in;
+	margin-right: 0.5in;
+}
+.resume-right-column {
+	width: 2.8in;
+}
+
+a, .right {
 	color: inherit;
+}
+a:not([class]), .right {
+	float: right;
 }
 h1 {
 	font-weight: 400;
-	font-size: 18pt;
+	font-size: 16pt;
 
 	margin: 1em 0 0;
 }
 h2 {
-	font-size: 14pt;
+	font-size: 12pt;
 
 	margin: 0;
+	clear: right;
 }
 h3 {
-	font-size: 14pt;
+	font-size: 12pt;
 	font-weight: normal;
 	line-height: 1.4em;
 
@@ -76,7 +93,7 @@ h4 {
 	margin: 0;
 	position: relative;
 }
-h4::before {
+.resume-left-column > h4::before {
 	background: #e66d31;
 
 	position: absolute;
@@ -90,10 +107,10 @@ p {
 }
 ul {
 	font-size: 10pt;
-	list-style: none;
+	list-style: square;
 
 	margin: 0 0 1em;
-	padding: 0;
+	padding: 0 0 0 1.2em;
 }
 em {
 	font-size: 11pt;
@@ -126,12 +143,17 @@ em {
 	.resume {
 		padding: 0.3in;
 	}
-	.resume-header {
-		flex-direction: column;
-	}
-	.resume-header-items {
+	.resume-header > ul {
 		margin-bottom: 0.125in;
 		float: none;
+	}
+
+	.resume-body {
+		display: block;
+	}
+	.resume-left-column, .resume-right-column {
+		width: auto;
+		margin: 0;
 	}
 }
 

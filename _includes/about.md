@@ -1,5 +1,5 @@
 I'm Tiger Oakes and I'm a software developer studying computer science at
-the University of British Columbia.
+the University of British Columbia. I'm currently in the co-op program.
 
 I started programming in secondary school and enjoyed it so much
 I'm still doing it! I started with robotics and visual programming

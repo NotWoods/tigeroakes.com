@@ -7,12 +7,26 @@ css:
 ---
 
 <div class="cta-wrap">
-	<a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_January_2017.pdf">
+	<a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_Febuary_2017.pdf">
 		PDF
 	</a>
 </div>
 
 <main class="resume">
-	{% capture resume %}{% include_relative content.md %}{% endcapture %}
-	{{ resume | markdownify }}
+	<header class="resume-header">
+		{% capture header %}{% include_relative header.md %}{% endcapture %}
+		{{ header | markdownify }}
+	</header>
+
+	<div class="resume-body">
+		<div class="resume-left-column">
+			{% capture left %}{% include_relative left_column.md %}{% endcapture %}
+			{{ left | markdownify }}
+		</div>
+
+		<div class="resume-right-column">
+			{% capture right %}{% include_relative right_column.md %}{% endcapture %}
+			{{ right | markdownify }}
+		</div>
+	</div>
 </main>
