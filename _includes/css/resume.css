@@ -118,7 +118,7 @@ em {
 	color: rgb(90, 90, 90);
 }
 
-.noblock::before {
+.resume-left-column > .noblock::before {
 	content: none;
 }
 .cta-wrap {
