@@ -27,7 +27,7 @@ layout: compress
 	<meta property="og:type" content="product" />
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:site_name" content="{{ site.title }}" />
-	<meta property="og:description" content="{{ page.summary }}" />
+	<meta property="og:description" content="{{ page.description | default: page.excerpt }}" />
 	<meta property="og:url" content="{{ page.url | absolute_url }}" />
 	{% if page.hd %}
 		{% assign logo = "logo4x.png" | prepend: images | absolute_url %}
@@ -47,7 +47,7 @@ layout: compress
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@Not_Woods" />
 	<meta name="twitter:title" content="{{ page.title }} - {{ site.title }}" />
-	<meta name="twitter:description" content="{{ page.summary }}" />
+	<meta name="twitter:description" content="{{ page.description | default: page.excerpt }}" />
 	<meta name="twitter:image" content="{{ logo }}" />
 </head>
 <body>

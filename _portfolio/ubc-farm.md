@@ -16,7 +16,7 @@ tech:
   - React
   - Redux
   - JSTS
-summary: >
+description: >
   My current project: a program designed to be used by the farmers and
   researchers at the Centre for Sustainable Food Systems at UBC Farm. The
   software allows researchers to analyze data inputted by users at the farm,

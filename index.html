@@ -63,7 +63,9 @@ layout: compress
 					<li class="pt-item">{{ tech }}</li>
 				{% endfor %}
 			</ul>
-			<p class="featured-project-text">{{ proj.summary }}</p>
+			<p class="featured-project-text">
+				{{ proj.description | default: proj.excerpt }}
+			</p>
 			{% for hash in proj.links %}
 				<a class="button-link shadow" href="{{ hash[1] }}">
 					{{ hash[0] | replace: '_', ' ' }}

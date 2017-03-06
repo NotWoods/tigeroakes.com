@@ -13,7 +13,7 @@ tech:
   - Lua
   - Corona SDK
   - Box2D
-summary: >
+description: >
   One of my first large programming projects, originally build in 2012.
   Featured in the Star Advertiser and Hawaii Public Radio, the game is
   a simple physics puzzle game build for Android with Corona SDK and Lua.

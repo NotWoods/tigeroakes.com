@@ -15,7 +15,7 @@ links:
 tech:
   - CSS 3D
   - JavaScript
-summary: >
+description: >
   I worked with OML Contracting to redesign their portfolio. The site
   is designed to hide loading times by quickly downloading enough code to
   display the basic site, then running in the background to add on additional

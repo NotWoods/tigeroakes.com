@@ -19,7 +19,7 @@ tech:
   - IndexedDB
   - Google Maps
   - GTFS
-summary: >
+description: >
   Bus rider web app to replace Hawai’i paper bus schedules.
   Uses JavaScript geolocation API to find nearby bus stops,
   and the AppCache API to run offline.
