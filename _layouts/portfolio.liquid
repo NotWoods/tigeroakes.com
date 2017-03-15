@@ -8,7 +8,11 @@ layout: compress
 	{% assign c = page.color %}
 	{% assign slug = page.slug | default: page.title | slugify %}
 	{% assign images = "/images/" | append: slug | append: "/" %}
-	{% assign logo = page.images.logo | prepend: images | absolute_url %}
+	{% if page.svg_logo %}
+		{% assign logo = 'logo.svg' | prepend: images %}
+	{% else %}
+		{% assign logo = "logo4x.png" | prepend: images %}
+	{% endif %}
 	<style>
 		{% include css/core.css %}
 		{% include css/banner.css %}
@@ -29,18 +33,16 @@ layout: compress
 	<meta property="og:site_name" content="{{ site.title }}" />
 	<meta property="og:description" content="{{ page.description | default: page.excerpt }}" />
 	<meta property="og:url" content="{{ page.url | absolute_url }}" />
-	{% if page.hd %}
-		{% assign logo = "logo4x.png" | prepend: images | absolute_url %}
-	{% endif %}
-	<meta property="og:image" content="{{ logo | replace: 'https:', 'http:' }}" />
-	<meta property="og:image:secure_url" content="{{ logo | replace: 'http:', 'https:' }}" />
-	{% if page.hd %}
-		<meta property="og:image:width" content="512" />
-		<meta property="og:image:height" content="512" />
-	{% else %}
-		<meta property="og:image:width" content="128" />
-		<meta property="og:image:height" content="128" />
-	{% endif %}
+	<meta
+		property="og:image"
+		content="{{ logo  | absolute_url | replace: 'https:', 'http:' }}"
+	/>
+	<meta
+		property="og:image:secure_url"
+		content="{{ logo  | absolute_url | replace: 'http:', 'https:' }}"
+	/>
+	<meta property="og:image:width" content="512" />
+	<meta property="og:image:height" content="512" />
 	{% for hash in page.ogp %}
 		<meta property="{{ hash[0] | replace: '.', ':' }}" content="{{ hash[1] }}" />
 	{% endfor %}
@@ -48,7 +50,7 @@ layout: compress
 	<meta name="twitter:site" content="@Not_Woods" />
 	<meta name="twitter:title" content="{{ page.title }} - {{ site.title }}" />
 	<meta name="twitter:description" content="{{ page.description | default: page.excerpt }}" />
-	<meta name="twitter:image" content="{{ logo }}" />
+	<meta name="twitter:image" content="{{ logo | absolute_url }}" />
 </head>
 <body>
 	{% include banner.liquid %}
@@ -57,8 +59,12 @@ layout: compress
 		<header class="project project-hero">
 			<div class="project-inner inner">
 				<img
-					src="{{ page.images.logo | prepend: images | relative_url }}"
-					{% if proj.hd %}srcset="{{ images }}logo2x.png 2x, {{ images }}logo3x.png 3x, {{ images }}logo4x.png 4x"{% endif %}
+					src="{{ logo | relative_url }}"
+					{% unless page.svg_logo %}
+						srcset="{{ images | relative_url }}logo2x.png 2x,
+										{{ images | relative_url }}logo3x.png 3x,
+										{{ images | relative_url }}logo4x.png 4x"
+					{% endif %}
 					alt="{{ page.title }}" class="project-logo"
 					height="128" width="128"
 				>
