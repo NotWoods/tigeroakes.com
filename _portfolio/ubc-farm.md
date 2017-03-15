@@ -5,7 +5,6 @@ title: UBC Farm
 subtitle: Farm Research Database
 color: {r: 59, g: 116, b: 72}
 fallbackcolor: '#2d410b'
-hd: true
 links:
   Details: /projects/ubc-farm
   Code: https://github.com/ubc-farm

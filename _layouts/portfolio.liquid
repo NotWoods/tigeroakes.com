@@ -64,7 +64,7 @@ layout: compress
 						srcset="{{ images | relative_url }}logo2x.png 2x,
 										{{ images | relative_url }}logo3x.png 3x,
 										{{ images | relative_url }}logo4x.png 4x"
-					{% endif %}
+					{% endunless %}
 					alt="{{ page.title }}" class="project-logo"
 					height="128" width="128"
 				>

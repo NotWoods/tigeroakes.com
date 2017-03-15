@@ -14,6 +14,11 @@ css:
 	{% assign c = proj.color %}
 	{% assign slug = proj.slug | default: proj.title | slugify %}
 	{% assign images = "/images/" | append: slug | append: "/" | relative_url %}
+	{% if page.svg_logo %}
+		{% assign logo = 'logo.svg' | prepend: images %}
+	{% else %}
+		{% assign logo = "logo4x.png" | prepend: images %}
+	{% endif %}
 	<article class="project{%if proj.feature %} feature{% endif %}"
 		style="background-image:url({{ proj.images.background | prepend: images }});
 			background-color:{{ proj.fallbackcolor }};
@@ -21,10 +26,13 @@ css:
 			--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
 	>
 		<img
-			src="{{ proj.images.logo | prepend: images }}"
-			alt="{{ proj.title }}" class="project-logo"
-			{% if proj.hd %}srcset="{{ images }}logo2x.png 2x, {{ images }}logo3x.png 3x, {{ images }}logo4x.png 4x"{% endif %}
-			height="128" width="128"
+			src="{{ logo | prepend: images }}" class="project-logo"
+			{% unless proj.svg_logo %}
+				srcset="{{ images }}logo2x.png 2x,
+								{{ images }}logo3x.png 3x,
+								{{ images }}logo4x.png 4x"
+			{% endunless %}
+			height="128" width="128" alt="{{ proj.title }}"
 		>
 		<h2 class="project-header">
 			{{ proj.title }}

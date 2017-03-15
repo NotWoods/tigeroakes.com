@@ -7,8 +7,6 @@ slug: oml-contracting
 color: {r: 220, g: 184, b: 105}
 fallbackcolor: '#372008'
 svg_logo: true
-images:
-  logo: logo.svg
 links:
   Details: /projects/oml-contracting
   View_site: http://omlhawaii.com

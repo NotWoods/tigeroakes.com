@@ -6,8 +6,6 @@ path: pass-the-bomb
 color: {r: 199, g: 154, b: 106}
 fallbackcolor: '#3c4438'
 svg_logo: true
-images:
-  logo: logo.svg
 links:
   Details: /projects/pass-the-bomb
   Devpost: https://devpost.com/software/passthebomb
