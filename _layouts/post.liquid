@@ -21,21 +21,32 @@ layout: compress
 
 	<article class="post-wrapper">
 		<header class="post-header">
-			{% if page.image %}
-				<img class="post-hero" src="{{ page.image }}">
-			{% endif %}
-
 			<h1 class="post-title">{{ page.title }}</h1>
 			{% if page.subtitle %}
 				<span class="post-subtitle">{{ page.subtitle }}</span>
 			{% endif %}
 
 			<div class="post-meta">
-				{% if page.author && page.author != 'tiger' %}
+				{% if page.author != 'tiger' %}
 					<a class="post-author" href="{{ author.link }}">{{ author.name }}</a>
 				{% endif %}
-				<time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+				<time
+					class="post-date" datetime="{{ page.date | date_to_xmlschema }}"
+				>
+					{{ page.date | date_to_long_string }}
+				</time>
 			</div>
+
+			{% if page.image %}
+				<figure class="post-hero-container">
+					<img class="post-hero" src="{{ page.image.path }}" alt="">
+					{% if page.image.caption %}
+						<figcaption class="post-hero-caption">
+							{{ page.image.caption }}
+						</figcaption>
+					{% endif %}
+				</figure>
+			{% endif %}
 		</header>
 
 		<div class="post-content inner md-content">
