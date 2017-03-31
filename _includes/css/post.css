@@ -1,3 +1,33 @@
+.post-wrapper {
+	max-width: 64rem;
+	padding: 0 0.75em;
+}
+
+.post-header {
+	padding: 2em;
+}
+
+.post-title {
+	font-size: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+
+.post-subtitle {
+	display: block;
+	font-size: 1.1em;
+	margin: 0.4em 0;
+}
+
+.post-meta {
+	font-size: 0.9em;
+	text-align: right;
+}
+
+.post-author {
+	font-weight: bold;
+}
+
 .post-content {
 	background: white;
 	padding: 2em;
