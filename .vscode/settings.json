@@ -4,7 +4,7 @@
 		"**/Tiger_Oakes_resume*": true
 	},
 	"files.associations": {
-		"*.html": "liquid"
+	//	"*.html": "liquid"
 	},
 	"files.exclude": {
 		"_site/**": true

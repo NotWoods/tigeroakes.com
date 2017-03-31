@@ -79,3 +79,8 @@ defaults:
       type: posts
     values:
       permalink: /blog/:year/:title/
+
+  - scope:
+      path: /pages
+    values:
+      permalink: /:title/

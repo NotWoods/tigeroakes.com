@@ -14,18 +14,18 @@ css:
 
 <main class="resume">
 	<header class="resume-header">
-		{% capture header %}{% include resume/header.md %}{% endcapture %}
+		{% capture header %}{% include_relative _data/header.md %}{% endcapture %}
 		{{ header | markdownify }}
 	</header>
 
 	<div class="resume-body">
 		<div class="resume-left-column">
-			{% capture left %}{% include resume/left_column.md %}{% endcapture %}
+			{% capture left %}{% include_relative _data/left_column.md %}{% endcapture %}
 			{{ left | markdownify }}
 		</div>
 
 		<div class="resume-right-column">
-			{% capture right %}{% include resume/right_column.md %}{% endcapture %}
+			{% capture right %}{% include_relative _data/right_column.md %}{% endcapture %}
 			{{ right | markdownify }}
 		</div>
 	</div>
