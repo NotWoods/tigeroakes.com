@@ -4,17 +4,18 @@ layout: compress
 <!doctype html>
 <html lang="en">
 <head>
-	{% include head.liquid %}
+	{% include head.liquid extrafont="true" %}
 	<style>
 		{% include css/core.css %}
 		{% include css/banner.css %}
 		{% include css/footer.css %}
 		{% include css/button.css %}
-
+		{% include css/post.css %}
 	</style>
 	{% assign author = site.data.authors[page.author] %}
 	{% seo %}
 	{% feed_meta %}
+	<link rel="stylesheet" href="{{ '/assets/highlight.css' | relative_url }}">
 </head>
 <body>
 	{% include banner.liquid %}
