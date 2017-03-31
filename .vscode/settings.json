@@ -5,5 +5,8 @@
 	},
 	"files.associations": {
 		"*.html": "liquid"
+	},
+	"files.exclude": {
+		"_site/**": true
 	}
 }
