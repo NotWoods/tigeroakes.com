@@ -5,14 +5,7 @@ layout: compress
 <html lang="en">
 <head>
 	{% include head.liquid %}
-	{% assign c = page.color %}
-	{% assign slug = page.slug | default: page.title | slugify %}
-	{% assign images = "/images/" | append: slug | append: "/" %}
-	{% if page.svg_logo %}
-		{% assign logo = 'logo.svg' | prepend: images %}
-	{% else %}
-		{% assign logo = "logo4x.png" | prepend: images %}
-	{% endif %}
+	{% include utils/project_vars.liquid project=page %}
 	<style>
 		{% include css/core.css %}
 		{% include css/banner.css %}
@@ -22,16 +15,13 @@ layout: compress
 		{% include css/portfolio-page.css %}
 
 		.project-hero {
-			background-image: url({{ page.images.background | prepend: images | relative_url }});
-			background-color: {{ page.fallbackcolor }};
-			--block: rgb({{c.r}}, {{c.g}}, {{c.b}});
-			--button: rgba({{c.r}}, {{c.g}}, {{c.b}}, 0.2);
+			{{ style }}
 		}
 	</style>
 	<meta property="og:type" content="product" />
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:site_name" content="{{ site.title }}" />
-	<meta property="og:description" content="{{ page.description | default: page.excerpt }}" />
+	<meta property="og:description" content="{{ description }}" />
 	<meta property="og:url" content="{{ page.url | absolute_url }}" />
 	<meta
 		property="og:image"
@@ -58,24 +48,11 @@ layout: compress
 	<article class="project-details-wrapper">
 		<header class="project project-hero">
 			<div class="project-inner inner">
-				<img
-					src="{{ logo | relative_url }}"
-					{% unless page.svg_logo %}
-						srcset="{{ images | relative_url }}logo2x.png 2x,
-										{{ images | relative_url }}logo3x.png 3x,
-										{{ images | relative_url }}logo4x.png 4x"
-					{% endunless %}
-					alt="{{ page.title }}" class="project-logo"
-					height="128" width="128"
-				>
+				{{ logo_img }}
 				<div class="project-hero-text">
 					<h1 class="project-header">{{ page.title }}</h1>
 					<p class="project-text">{{ page.subtitle }}</p>
-					<ul class="project-tech">
-						{% for tech in page.tech %}
-							<li class="pt-item">{{ tech }}</li>
-						{% endfor %}
-					</ul>
+					{{ tech_list }}
 				</div>
 			</div>
 

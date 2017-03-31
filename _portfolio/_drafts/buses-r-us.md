@@ -7,4 +7,5 @@ tech:
   - Java
   - Android
   - TransLink API
+output: false
 ---

@@ -7,4 +7,5 @@ tech:
   - Alexa SDK
 	- TypeScript
 	- Node.js
+output: false
 ---
