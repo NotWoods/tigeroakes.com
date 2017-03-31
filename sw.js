@@ -16,14 +16,14 @@ function precache() {
 			'./images/unity-polygon/logo.png',
 			'./images/bit-ball/logo.png',
 			'./images/pass-the-bomb/logo.svg',
-			'./projects/big-island-buses/',
-			'./projects/latch-on/',
-			'./projects/mbta-energy/',
-			'./projects/oml-contracting/',
-			'./projects/ubc-farm/',
-			'./projects/pass-the-bomb/',
-			'./projects/bit-ball/',
-			'./projects/unity-polygon2d-editor/',
+			'./projects/big-island-buses',
+			'./projects/latch-on',
+			'./projects/mbta-energy',
+			'./projects/oml-contracting',
+			'./projects/ubc-farm',
+			'./projects/pass-the-bomb',
+			'./projects/bit-ball',
+			'./projects/unity-polygon2d-editor',
 		]);
 		return cache.addAll([
 			'./',
@@ -54,7 +54,11 @@ function fromCacheAndUpdate(request) {
 
 self.addEventListener('install', (e) => {
 	console.log('The service worker is being installed');
-	e.waitUntil(precache());
+	e.waitUntil(
+		precache()
+			.then(() => console.log('Install complete'))
+			.catch(err => console.error(err))
+	);
 });
 
 self.addEventListener('fetch', e => e.respondWith(fromCacheAndUpdate(e.request)));

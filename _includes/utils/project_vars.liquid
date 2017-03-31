@@ -1,7 +1,7 @@
 {% assign p = include.project %}
 {% assign slug = p.slug | default: p.title | slugify %}
 {% assign images = "/images/" | append: slug | append: "/" | relative_url %}
-{% if page.svg_logo %}
+{% if p.svg_logo %}
 	{% assign logo = 'logo.svg' | prepend: images %}
 {% else %}
 	{% assign logo = "logo4x.png" | prepend: images %}

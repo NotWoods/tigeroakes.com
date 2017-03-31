@@ -2,7 +2,6 @@
 title: Tiger Oakes
 layout: compress
 ---
-{% include base.liquid %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,7 +32,7 @@ layout: compress
 				{{ about | markdownify }}
 			</div>
 
-			{% assign profile = base | append: "/images/profile-" %}
+			{% assign profile = "/images/profile-" | relative_url %}
 			<img class="profile" width="160" height="160" sizes="160px"
 				src="{{ profile }}1x.jpg" alt="Portrait of Tiger Oakes"
 				srcset="{{ profile }}2x.jpg 2x, {{ profile }}3x.jpg 3x, {{ profile }}4x.jpg 4x"
@@ -57,7 +56,9 @@ layout: compress
 	</section>
 
 	<div class="cta-wrap">
-		<a class="button-link cta shadow" href="{{ base }}/projects/">See more projects</a>
+		<a class="button-link cta shadow" href="{{ '/projects/' | relative_url }}">
+			See more projects
+		</a>
 	</div>
 
 	<section class="contact" id="contact" role="contentinfo">
@@ -68,6 +69,6 @@ layout: compress
 {% include analytics.html %}
 <script>
 	if ('serviceWorker' in navigator)
-		navigator.serviceWorker.register('sw.js', { scope: '/' });
+		navigator.serviceWorker.register('/sw.js', { scope: '/' });
 </script>
 </html>
