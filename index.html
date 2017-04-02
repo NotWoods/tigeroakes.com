@@ -41,7 +41,7 @@ layout: compress
 	</section>
 
 	<section class="featured-projects projects" id="featured">
-	{% assign featured_projects = site.portfolio | where: "feature", true %}
+	{% assign featured_projects = site.projects | where: "feature", true %}
 	{% for project in featured_projects %}
 		{% include utils/project_vars.liquid project=project %}
 		<article class="project featured-project" style="{{ style }}">

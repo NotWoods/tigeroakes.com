@@ -10,7 +10,7 @@ css:
   - css/button.css
   - css/showcase.css
 ---
-{% assign sorted = site.portfolio | sort: 'sortorder' %}
+{% assign sorted = site.projects | sort: 'sortorder' %}
 {% for project in sorted %}
 	{% include utils/project_vars.liquid project=project %}
 	<article class="project{%if p.feature %} feature{% endif %}" style="{{ style }}">
