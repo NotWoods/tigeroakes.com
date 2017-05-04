@@ -1,0 +1,24 @@
+---
+title: Projects
+titlesuffix: true
+layout: default
+main-class:
+  - projects
+permalink: /projects/
+css:
+  - css/projects.css
+  - css/button.css
+  - css/showcase.css
+---
+{% assign sorted = site.projects | sort: 'sortorder' %}
+{% for project in sorted %}
+	{% include utils/project_vars.liquid project=project %}
+	<article class="project{%if p.feature %} feature{% endif %}" style="{{ style }}">
+		{{ logo_img }}
+		<h2 class="project-header">{{ p.title }}</h2>
+		<p class="project-text">{{ p.subtitle }}</p>
+
+		{{ tech_list }}
+		{{ links }}
+	</article>
+{% endfor %}

@@ -1,4 +1,5 @@
 ---
+permalink: /humans.txt
 ---
 /* TEAM */
 Developer: Tiger Oakes.

@@ -49,3 +49,5 @@ Awards
 Grand Prize: Congressional App Challenge 2014, Hawaii’s 2nd Congressional District
 
 UBC Work Learn International Undergraduate Research Award
+
+UBC e-Portfolio Competition 2017 Finalist

@@ -5,8 +5,7 @@ subtitle: Hackathon Multiplayer Word Game
 path: pass-the-bomb
 color: {r: 199, g: 154, b: 106}
 fallbackcolor: '#3c4438'
-images:
-  logo: logo.svg
+svg_logo: true
 links:
   Details: /projects/pass-the-bomb
   Devpost: https://devpost.com/software/passthebomb
@@ -15,7 +14,7 @@ tech:
   - Node.js
   - Socket.io
   - Hammer.js
-summary: >
+description: >
   Online multiplayer word game created in a hackathon within 12 hours.
   Socket.io is used to sync the client devices and the server, which runs Node.js.
 ---

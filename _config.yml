@@ -8,19 +8,28 @@ baseurl: ""
 url: "https://tigeroakes.com" # the base hostname & protocol for your site
 twitter_username: Not_Woods
 github_username:  NotWoods
+twitter:
+  username: Not_Woods
+facebook:
+  publisher: tiger.oakes
+social:
+  links:
+    - https://github.com/NotWoods
+    - https://linkedin.com/in/tigeroakes
+    - https://twitter.com/Not_Woods
 
 # Build settings
 markdown: kramdown
 kramdown:
   input: GFM
 gems:
-  # - jekyll-feed
+  - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
-  # - jekyll-titles-from-headings
+  - jekyll-seo-tag
 
 collections:
-  portfolio:
+  projects:
     output: true
     permalink: /projects/:path
 
@@ -53,20 +62,21 @@ defaults:
   - scope:
       path: ""
     values:
-      author: Tiger Oakes
+      author: tiger
       subtitle: ''
 
   - scope:
       path: ""
-      type: portfolio
+      type: projects
     values:
       images:
         logo: logo.png
         background: background.jpg
-      layout: portfolio
+      layout: project
 
   - scope:
       path: ""
       type: posts
     values:
+      layout: post
       permalink: /blog/:year/:title/

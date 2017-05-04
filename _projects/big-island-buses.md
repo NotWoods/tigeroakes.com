@@ -5,7 +5,6 @@ title: Big Island Buses
 subtitle: Bus Schedule Software
 color: {r: 77, g: 116, b: 171}
 fallbackcolor: '#313d3f'
-hd: true
 links:
   Details: /projects/big-island-buses
   View_site: https://notwoods.github.io/big-island-buses/
@@ -19,7 +18,7 @@ tech:
   - IndexedDB
   - Google Maps
   - GTFS
-summary: >
+description: >
   Bus rider web app to replace Hawai’i paper bus schedules.
   Uses JavaScript geolocation API to find nearby bus stops,
   and the AppCache API to run offline.

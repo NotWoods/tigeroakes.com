@@ -15,7 +15,7 @@ Bachelor of Science in Computer Science, 2<sup>nd</sup> Year
 Work experience
 ===============
 
-#### 05/2016 – Present	[github.com/ubc-farm](https://github.com/ubc-farm)
+#### 05/2016 – 04/2017	[github.com/ubc-farm](https://github.com/ubc-farm)
 
 Software Developer
 ------------------

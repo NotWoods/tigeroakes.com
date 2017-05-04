@@ -4,7 +4,6 @@ title: Bit Ball
 subtitle: 9th Grade Physics Game
 color: {r: 40, g: 160, b: 197}
 fallbackcolor: '#161616'
-hd: true
 links:
   Details: /projects/bit-ball
   Download: https://github.com/NotWoods/bit-ball#installation
@@ -13,7 +12,7 @@ tech:
   - Lua
   - Corona SDK
   - Box2D
-summary: >
+description: >
   One of my first large programming projects, originally build in 2012.
   Featured in the Star Advertiser and Hawaii Public Radio, the game is
   a simple physics puzzle game build for Android with Corona SDK and Lua.

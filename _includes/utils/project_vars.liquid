@@ -1,0 +1,45 @@
+{% assign p = include.project %}
+{% assign slug = p.slug | default: p.title | slugify %}
+{% assign images = "/images/" | append: slug | append: "/" | relative_url %}
+{% if p.svg_logo %}
+	{% assign logo = 'logo.svg' | prepend: images %}
+{% else %}
+	{% assign logo = "logo4x.png" | prepend: images %}
+{% endif %}
+{% assign description = p.description | default: p.excerpt %}
+{% assign c = p.color %}
+
+{% capture style %}
+background-image:url({{ p.images.background | prepend: images }});
+background-color:{{ p.fallbackcolor }};
+--block:rgb({{c.r}}, {{c.g}}, {{c.b}});
+--button:rgba({{c.r}}, {{c.g}}, {{c.b}},0.2);
+{% endcapture %}
+
+{% capture logo_img %}
+<img
+	src="{{ logo }}" class="project-logo"
+	{% unless p.svg_logo %}
+		srcset="{{ images }}logo2x.png 2x,
+						{{ images }}logo3x.png 3x,
+						{{ images }}logo4x.png 4x"
+	{% endunless %}
+	height="128" width="128" alt="{{ p.title }}"
+>
+{% endcapture %}
+
+{% capture tech_list %}
+<ul class="project-tech">
+	{% for tech in p.tech %}<li class="pt-item">{{ tech }}</li>{% endfor %}
+</ul>
+{% endcapture %}
+
+{% capture links %}
+<div class="project-links">
+	{% for hash in p.links %}
+		<a class="button-link shadow" href="{{ hash[1] }}">
+			{{ hash[0] | replace: '_', ' ' }}
+		</a>
+	{% endfor %}
+</div>
+{% endcapture %}

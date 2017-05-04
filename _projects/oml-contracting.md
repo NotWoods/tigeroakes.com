@@ -6,8 +6,7 @@ subtitle: Construction Portfolio
 slug: oml-contracting
 color: {r: 220, g: 184, b: 105}
 fallbackcolor: '#372008'
-images:
-  logo: logo.svg
+svg_logo: true
 links:
   Details: /projects/oml-contracting
   View_site: http://omlhawaii.com
@@ -15,7 +14,7 @@ links:
 tech:
   - CSS 3D
   - JavaScript
-summary: >
+description: >
   I worked with OML Contracting to redesign their portfolio. The site
   is designed to hide loading times by quickly downloading enough code to
   display the basic site, then running in the background to add on additional

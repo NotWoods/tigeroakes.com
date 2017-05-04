@@ -2,14 +2,11 @@
 title: Tiger Oakes
 layout: compress
 ---
-{% include base.liquid %}
 <!doctype html>
 <html lang="en">
 <head>
 	{% include head.liquid nosuffix="" %}
-	<script type="application/ld+json">
-	{% include schema.json %}
-	</script>
+	<script type="application/ld+json">{% include data/schema.json %}</script>
 	<style>
 		{% include css/core.css %}
 		{% include css/home.css %}
@@ -31,11 +28,11 @@ layout: compress
 	<section class="about">
 		<div class="inner about-content">
 			<div class="about-text">
-				{% capture about %}{% include about.md %}{% endcapture %}
+				{% capture about %}{% include data/about.md %}{% endcapture %}
 				{{ about | markdownify }}
 			</div>
 
-			{% assign profile = base | append: "/images/profile-" %}
+			{% assign profile = "/images/profile-" | relative_url %}
 			<img class="profile" width="160" height="160" sizes="160px"
 				src="{{ profile }}1x.jpg" alt="Portrait of Tiger Oakes"
 				srcset="{{ profile }}2x.jpg 2x, {{ profile }}3x.jpg 3x, {{ profile }}4x.jpg 4x"
@@ -44,37 +41,24 @@ layout: compress
 	</section>
 
 	<section class="featured-projects projects" id="featured">
-	{% assign featured_projects = site.portfolio | where: "feature", true %}
-	{% for proj in featured_projects %}
-		{% assign c = proj.color %}
-		{% assign slug = proj.slug | default: proj.title | slugify %}
-		{% assign images = base | append: "/images/" | append: slug | append: "/" %}
-		<article class="project featured-project"
-			style="background-image:url({{ proj.images.background | prepend: images }});
-				background-color:{{ proj.fallbackcolor }};
-				--block:rgb({{c.r}},{{c.g}},{{c.b}});
-				--button:rgba({{c.r}},{{c.g}},{{c.b}},0.2)"
-		>
-			<h2 class="project-header">
-				{{ proj.title }}
-			</h2>
-			<ul class="project-tech">
-				{% for tech in proj.tech %}
-					<li class="pt-item">{{ tech }}</li>
-				{% endfor %}
-			</ul>
-			<p class="featured-project-text">{{ proj.summary }}</p>
-			{% for hash in proj.links %}
-				<a class="button-link shadow" href="{{ hash[1] }}">
-					{{ hash[0] | replace: '_', ' ' }}
-				</a>
-			{% endfor %}
+	{% assign featured_projects = site.projects | where: "feature", true %}
+	{% for project in featured_projects %}
+		{% include utils/project_vars.liquid project=project %}
+		<article class="project featured-project" style="{{ style }}">
+			<h2 class="project-header">{{ p.title }}</h2>
+			{{ tech_list }}
+			<p class="featured-project-text">
+				{{ description }}
+			</p>
+			{{ links }}
 		</article>
 	{% endfor %}
 	</section>
 
 	<div class="cta-wrap">
-		<a class="button-link cta shadow" href="{{ base }}/projects/">See more projects</a>
+		<a class="button-link cta shadow" href="{{ '/projects/' | relative_url }}">
+			See more projects
+		</a>
 	</div>
 
 	<section class="contact" id="contact" role="contentinfo">
@@ -83,5 +67,8 @@ layout: compress
 	</section>
 </body>
 {% include analytics.html %}
-{% include service-worker.html %}
+<script>
+	if ('serviceWorker' in navigator)
+		navigator.serviceWorker.register('/sw.js', { scope: '/' });
+</script>
 </html>
