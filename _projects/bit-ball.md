@@ -1,5 +1,5 @@
 ---
-sortorder: 7
+sortorder: 8
 title: Bit Ball
 subtitle: 9th Grade Physics Game
 color: {r: 40, g: 160, b: 197}
