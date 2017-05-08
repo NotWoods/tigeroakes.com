@@ -1,14 +1,50 @@
+{% comment %}
+	This include generates variables related to the provided `project` parameter.
+{% endcomment %}
+
+{% comment %}Shorthand for the `project` parameter{% endcomment %}
 {% assign p = include.project %}
+
+{% comment %}A slugified version of the title, which can be overwritten.{% endcomment %}
 {% assign slug = p.slug | default: p.title | slugify %}
+
+{% comment %}The image folder path for this page{% endcomment %}
 {% assign images = "/images/" | append: slug | append: "/" | relative_url %}
+
+{% comment %}
+	SVG logos have a single image, but PNG logos have different resolutions.
+	The logo variable is set to the largest image and is used in meta tags.
+	The img html tag is used in templates to represent the logo.
+{% endcomment %}
 {% if p.svg_logo %}
 	{% assign logo = 'logo.svg' | prepend: images %}
 {% else %}
 	{% assign logo = "logo4x.png" | prepend: images %}
 {% endif %}
-{% assign description = p.description | default: p.excerpt %}
-{% assign c = p.color %}
+{% capture logo_img %}
+<img
+	class="project-logo"
+	{% if p.svg_logo %}
+		src="{{ images }}logo.svg"
+	{% else %}
+		src="{{ images }}logo.png"
+		srcset="{{ images }}logo2x.png 2x,
+						{{ images }}logo3x.png 3x,
+						{{ images }}logo4x.png 4x"
+	{% endif %}
+	height="128" width="128" alt="{{ p.title }}"
+>
+{% endcapture %}
 
+{% comment %}Description defaults to the page excerpt{% endcomment %}
+{% assign description = p.description | default: p.excerpt %}
+
+{% comment %}
+	CSS rules applied to the project. The `block` custom property is used
+	to color the block to the left of the header, and the `button` custom property
+	is used for the background color of the buttons when hovered over.
+{% endcomment %}
+{% assign c = p.color %}
 {% capture style %}
 background-image:url({{ p.images.background | prepend: images }});
 background-color:{{ p.fallbackcolor }};
@@ -16,24 +52,20 @@ background-color:{{ p.fallbackcolor }};
 --button:rgba({{c.r}}, {{c.g}}, {{c.b}},0.2);
 {% endcapture %}
 
-{% capture logo_img %}
-<img
-	src="{{ logo }}" class="project-logo"
-	{% unless p.svg_logo %}
-		srcset="{{ images }}logo2x.png 2x,
-						{{ images }}logo3x.png 3x,
-						{{ images }}logo4x.png 4x"
-	{% endunless %}
-	height="128" width="128" alt="{{ p.title }}"
->
-{% endcapture %}
-
+{% comment %}
+	A list of technologies used in the project, displayed underneath the header.
+{% endcomment %}
 {% capture tech_list %}
 <ul class="project-tech">
 	{% for tech in p.tech %}<li class="pt-item">{{ tech }}</li>{% endfor %}
 </ul>
 {% endcapture %}
 
+{% comment %}
+	The buttons for the project. The `links` yaml property is parsed as a hash map,
+	where the keys are the button titles and the values are the links.
+	Underscores are replaced by spaces.
+{% endcomment %}
 {% capture links %}
 <div class="project-links">
 	{% for hash in p.links %}

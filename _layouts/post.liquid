@@ -13,7 +13,7 @@ layout: compress
 		{% include css/post.css %}
 	</style>
 	{% assign author = site.data.authors[page.author] %}
-	{% seo %}
+	{% seo title=false %}
 	{% feed_meta %}
 	<link rel="stylesheet" href="{{ '/assets/highlight.css' | relative_url }}">
 </head>
