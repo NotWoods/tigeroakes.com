@@ -15,6 +15,9 @@ layout: compress
 		{% include css/projects.css %}
 		{% include css/footer.css %}
 	</style>
+	{% include social/site-meta.liquid %}
+	<meta property="og:description" content="{{ site.description }}" />
+	<meta name="twitter:description" content="{{ site.description }}" />
 </head>
 <body>
 	<div id="top"></div>
