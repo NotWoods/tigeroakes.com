@@ -1,5 +1,5 @@
 ---
-sortorder: 8
+sortorder: 10
 title: "Buses 'R Us"
 subtitle: Term Project
 color: {r: 20, g: 99, b: 167}

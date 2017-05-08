@@ -1,5 +1,5 @@
 ---
-sortorder: 7
+sortorder: 8
 title: The Golden Quest
 subtitle: Alexa Adventure Game
 color: {r: 255, g: 200, b: 0}
