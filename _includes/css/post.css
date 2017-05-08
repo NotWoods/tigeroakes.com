@@ -4,7 +4,7 @@
 }
 
 .post-header {
-	padding: 2em;
+	padding: 1em 2em;
 }
 
 .post-title {
@@ -26,6 +26,14 @@
 
 .post-author {
 	font-weight: bold;
+}
+
+.post-hero-container {
+	margin: 2em 0 0;
+}
+.post-hero {
+	display: block;
+	width: 100%;
 }
 
 .post-content {

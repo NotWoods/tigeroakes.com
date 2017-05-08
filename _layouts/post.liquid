@@ -28,6 +28,7 @@ layout: compress
 			<div class="post-meta">
 				{% if page.author != 'tiger' %}
 					<a class="post-author" href="{{ author.link }}">{{ author.name }}</a>
+					-
 				{% endif %}
 				<time
 					class="post-date" datetime="{{ page.date | date_to_xmlschema }}"
