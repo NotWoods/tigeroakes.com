@@ -30,6 +30,7 @@
 
 .post-content {
 	background: white;
+	overflow-wrap: break-word;
 	padding: 2em;
 }
 
@@ -53,7 +54,6 @@ pre, code {
 pre {
 	padding: 1em;
 	overflow-x: auto;
-	overflow-wrap: break-word;
 }
 
 code {
