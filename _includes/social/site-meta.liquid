@@ -1,6 +1,6 @@
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ page.url }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
 {% assign header = "/images/header2x.png" | absolute_url %}
 <meta property="og:image:url" content="{{ header | replace: 'https:', 'http:' }}" />
 <meta property="og:image:secure_url" content="{{ header | replace: 'https:', 'http:' }}" />
