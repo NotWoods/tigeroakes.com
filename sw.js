@@ -17,7 +17,7 @@ function precache() {
 			'./images/pass-the-bomb/logo.svg',
 			'./images/the-golden-quest/logo.png',
 			'./images/ubc-farm/logo.png',
-			'./images/unity-polygon2d-editor/logo.png',
+			'./images/unity-polygon/logo.png',
 			'./projects/big-island-buses',
 			'./projects/bit-ball',
 			'./projects/buses-r-us',
