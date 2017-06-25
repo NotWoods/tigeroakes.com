@@ -8,12 +8,8 @@ layout: compress
 	{% include head.liquid nosuffix="" %}
 	<script type="application/ld+json">{% include data/schema.json %}</script>
 	<style>
-		{% include css/core.css %}
-		{% include css/home.css %}
-		{% include css/banner.css %}
-		{% include css/button.css %}
-		{% include css/projects.css %}
-		{% include css/footer.css %}
+		{% capture inline_styles %}{% include css/homepage.scss %}{% endcapture %}
+		{{ inline_styles | scssify }}
 	</style>
 	{% include social/site-meta.liquid %}
 	<meta property="og:description" content="{{ site.description }}" />

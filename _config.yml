@@ -34,7 +34,6 @@ collections:
     permalink: /projects/:path
 
 sass:
-  sass_dir: css
   style: compressed
 
 compress_html:

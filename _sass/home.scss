@@ -54,7 +54,7 @@
 }
 
 .contact {
-	--button: rgba(230, 109, 49, 0.2);
+	--button: #{rgba(230, 109, 49, 0.2)};
 	background: #333;
 	color:  white;
 

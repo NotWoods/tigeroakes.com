@@ -6,12 +6,14 @@ layout: compress
 <head>
 	{% include head.liquid %}
 	<style>
-		{% include css/core.css %}
-		{% include css/banner.css %}
-		{% include css/footer.css %}
+		{% capture inline_styles %}{% include css/base.scss %}{% endcapture %}
+		{{ inline_styles | scssify }}
 
 		{% for css in page.css %}
-			{% include {{ css }} %}
+			{% capture extra_style %}
+			@import "{{ css }}"
+			{% endcapture %}
+			{{ extra_style | scssify }}
 		{% endfor %}
 	</style>
 	{{ page.head }}

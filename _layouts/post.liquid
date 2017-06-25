@@ -6,11 +6,8 @@ layout: compress
 <head>
 	{% include head.liquid extrafont="true" %}
 	<style>
-		{% include css/core.css %}
-		{% include css/banner.css %}
-		{% include css/footer.css %}
-		{% include css/button.css %}
-		{% include css/post.css %}
+		{% capture inline_styles %}{% include css/post.scss %}{% endcapture %}
+		{{ inline_styles | scssify }}
 	</style>
 	{% assign author = site.data.authors[page.author] %}
 	{% seo title=false %}
