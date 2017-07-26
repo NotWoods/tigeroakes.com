@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+	font-family: "Roboto Slab";
+	background-color: #263238;
+	color: #eee;
+	font-size: 24px;
+}
+
+a, a:link, a:visited {
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	display: inline-block;
+	transition: transform 0.2s ease, text-shadow 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+a:hover, a:active {
+	text-shadow: 0 1px 1.5px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
+	transform: translateY(-0.1em);
+	-webkit-transform: translateY(-0.1em);
+}
+
+header {
+	background-color: #2e2e2e;
+	background-image: url('code.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 160px;
+}
+
+img {
+	border-radius: 50%;
+	margin-top: -50px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
+}
+
+main {
+	background-color: #263238;
+	text-align: center;
+	box-shadow: 0 -10px 10px rgba(0,0,0,0.19), 0 -6px 3px rgba(0,0,0,0.23);
+}
+
+.center {
+	padding: 0 16px;
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+#social {position: relative; padding-bottom: 64px;}
+#social a {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	box-shadow: none !important;
+	margin: 8px;
+	position: static;
+}
+
+#social a span {
+	position: absolute;
+	top: 100%;
+	padding: 16px;
+	width: 12em;
+	font-size: 16px;
+	font-weight: normal;
+	display: none;
+	left: calc(50% - 6em - 16px);
+	text-align: center;
+}
+#social a:hover span {
+	display: block;
+	transform: none;
+	-webkit-transform: none;
+}
+
+#gplus {background-image: url('gplus.png');}
+#twitter {background-image: url('twitter.png');}
+#github {background-image: url('github.png');}
+#phone {background-image: url('phone.png');}
+#email {background-image: url('email.png');}
+
+@media (max-width: 400px) {
+	#social #email span {left: 0;}
+	#social #phone span {left: auto; right: 0;}
+}

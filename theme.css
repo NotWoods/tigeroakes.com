@@ -1,0 +1,552 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300);
+
+#dropdown {
+    margin-left: 1.5rem !important;
+}
+
+#headermenus {
+    height: 4.4375rem !important; 
+    width: auto !important;
+}
+
+#logo {
+    background-image: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/mark.png) !important; /* http://i.imgur.com/GrND2Km.png*/
+    background-position: 0 !important;
+    height: 4.4375rem !important;
+    padding-top: 0 !important;
+        background-repeat:no-repeat !important;
+}
+
+#logo:after {
+    color: white;
+    content: "Myron B. Thompson Academy" !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 2rem !important;
+    font-weight: 200 !important;
+    line-height: 2em !important;
+    margin-left: 5rem !important;
+}
+
+#navigationbar {
+    background: #262626 !important;
+    box-shadow: 0rem 1px 1px #888888 !important;
+    /*padding-top:0.5em;
+  padding-bottom:0.5em;*/
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 0.875rem !important;
+    height: 2.25rem !important;
+    padding-top: 0.5rem !important;
+        overflow: hidden !important;
+}
+
+#navigationbar .yuimenubaritem {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 0.875rem !important;
+    line-height: 2em !important;
+}
+
+#navigationbar .yuimenubaritemlabel, #navigationbar .yuimenubaritemlabel:visited {
+        color:#FFFFFF !important;
+}
+#navigationbar .yuimenubaritemlabel:hover, #navigationbar .yuimenubaritemlabel:active {
+        color:#CCCCCC !important;
+}
+
+#navigationbar .sidebar-toggle {
+        float:right;
+}
+#navigationbar .sidebar-toggle:hover {
+        color:#CCCCCC;
+}
+
+#page-content-wrapper {
+    width: auto !important;
+}
+
+#page-footer {
+    display: none !important;
+}
+
+#page-header {
+    height: 7.1875rem !important;
+}
+
+#page-header a:hover {
+    color: #dddddd !important;
+}
+
+#page-header-wrapper1 {
+    background: #3B3B3B !important;
+    background-image: none !important;
+    height: 7.1875rem !important;
+}
+
+#page-content {
+
+}
+
+#region-main {
+    width: calc(100% - 315px) !important;
+	padding-left: 15px !important;
+}
+
+#region-main-box {
+    right: 0 !important;
+}
+
+#region-post {
+    /*Sidebar*/
+    width: 300px !important;
+}
+
+#region-post-wrap-1 {
+	margin-top: 2px !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+}
+
+#region-post-wrap-2 {
+	border: 0 !important;
+	border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+}
+
+#region-post-box {
+	right: 100% !important;
+}
+
+#resourceobject {
+        width:100% !important;
+        height:100% !important;
+}
+.resourcecontent {
+        height:100% !important;
+}
+
+p, div, a, li, ul, button {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.block_myprofile {
+    display: none !important;
+}
+
+.content-only #page-content #region-main {
+    width: 100% !important;
+}
+
+.date {
+    margin-right: 1.5rem !important;
+        padding:6px 20px !important;
+}
+
+.forumpost {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 3px !important;
+    box-shadow: 0 1px 3px #ccc !important;
+}
+
+.forumpost .author {
+    font-weight: 300 !important;
+}
+
+.forumpost .content {
+    border: 0 !important;
+}
+
+.forumpost .options {
+    background: #f5f5f5 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    webkit-border-raduis: 0 !important;
+}
+
+.forumpost .subject {
+    font-size: 1.2rem !important;
+    font-weight: 300 !important;
+}
+
+.forumpost .topic {
+    background: #f5f5f5 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    webkit-border-raduis: 0 !important;
+}
+
+.headermain {
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+}
+
+.homeButton {
+    padding-top: 0.3em !important;
+        /*padding-left:12px !important;*/
+}
+
+.langmenu {
+    /*Just for me*/
+    display: none !important;
+}
+
+.loginpanel {
+    background: #eeeeee !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 1px 3px #ccc !important;
+}
+
+.loginpanel #username, .loginpanel #password {
+    border: 1px solid #ddd !important;
+    border-radius: 0.25rem !important;
+}
+
+.loginpanel #username:focus, .loginpanel #password:focus {
+    border: 1px solid #ccc !important;
+    box-shadow: 0 0 3px #ccc !important;
+}
+
+.loginpanel .helplink {
+    display: none !important;
+}
+
+.profilename {
+    margin-right: 10px !important;
+	position: absolute !important;
+	right: 50px !important;
+	width: 180px  !important;
+	line-height: 1.5em !important;
+	padding: 0 0.5em !important;
+	top: 10px !important;
+	text-align: left !important;
+	font-size: 1rem !important;
+	float: none !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.profilename a {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: normal !important;
+    margin-top: 0.65625rem !important;
+	text-decoration: underline !important;
+}
+
+.profileoptions {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: normal !important;
+    margin-top: 0 !important;
+	
+	position: absolute !important;
+	width: 180px !important;
+	padding: 0 0.5em !important;
+	line-height: 1.5em !important;
+	right: 50px !important;
+	margin-right: 10px !important;
+	top: 37px !important;
+}
+
+.profileoptions ul {
+    margin:0 !important;
+}
+.profileoptions li {
+    margin:0 !important;
+    padding:0 !important;
+}
+.profileoptions li:first-child {
+    margin-right:0.5em !important;
+}
+
+.profilepic {
+    height: 3.125rem !important;
+    margin: 0.65625rem !important;
+    width: 3.125rem !important;
+}
+
+.profilepic img {
+    height: 3.125rem !important;
+    width: 3.125rem !important;
+}
+
+.subscribelink {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.7em !important;
+}
+
+h2 {
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+        color:#333 !important;
+}
+
+#inst399 li img {
+        vertical-align:bottom !important;
+}
+
+/***** Participants *****/
+
+#participants {
+        border: 0 !important;
+}
+
+#participants tbody tr:first-child { /*Table header row */
+        display:none !important;
+}
+
+#participants tr {
+        width: 267px !important;
+        height: 80px !important;
+        margin:9px !important;
+        margin-right: 44px !important;
+        display:inline-block;
+        background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 3px !important;
+    box-shadow: 0 1px 3px #ccc !important;
+        text-align:left !important;
+        float:left;
+}
+
+#participants tr .c0 { /*Picture container */
+        padding:0 !important;
+        line-height:0 !important;
+        border:0 !important;
+        width:35px !important;
+}
+#participants tr .c1 { /*Name*/
+        padding:0 !important;
+        line-height:35px !important;
+        border:0 !important;
+        width:202px !important;
+        padding:0 15px !important;
+        font-size: 16px !important;
+}
+#participants tr .c1 strong { 
+        font-weight:300 !important;
+}
+#participants tr .c1 a {
+        color:#444 !important;
+}
+#participants tr .c2 { /*City */
+        padding:0 !important;
+        display:inline-block !important;
+        border:0 !important;
+        padding-top:15px !important;
+        padding-left:15px !important;
+        margin-right:2px !important;
+}
+#participants tr .c2:after { 
+        content: "," !important;
+}
+#participants tr .c3 { /*Picture container */
+        padding:0 !important;
+        display:inline-block !important;
+        border:0 !important;
+        padding-top:15px !important;
+}
+#participants tr .c4 { /*Picture container */
+        padding:0 !important;
+        display:inline-block !important;
+        border:0 !important;
+        display:none !important;
+}
+
+/***** Menu Icons *****/
+[title=Elementary] img
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/elementary.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+[title=Secondary] img 
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/secondary.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+[title=TEA] img 
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/tea.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+[title=Webmail] img 
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/webmail.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+[title=Support] img 
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/support.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+[title="College & Career"] img 
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/college.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+[title="Home"] img 
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/home.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+[title="Powerschool"] img 
+{
+        display: block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/icons/powerschool.png) no-repeat !important;
+        width: 64px !important; /* Width of new image */
+        height: 64px !important; /* Height of new image */
+        padding-left: 64px !important; /* Equal to width of new image */
+}
+
+
+[title="Gmail"] img 
+{
+        display: inline-block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/gmail.png) no-repeat !important;
+        width: 20px !important; /* Width of new image */
+        height: 19px !important; /* Height of new image */
+        padding-left: 20px !important; /* Equal to width of new image */
+        vertical-align: middle !important;
+}
+
+[title="Calendar"] img 
+{
+        display: inline-block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/calendar.png) no-repeat !important;
+        width: 20px !important; /* Width of new image */
+        height: 19px !important; /* Height of new image */
+        padding-left: 20px !important; /* Equal to width of new image */
+        vertical-align: middle !important;
+}
+
+[title="Docs"] img 
+{
+        display: inline-block !important;
+        box-sizing: border-box !important;
+        background: url(chrome-extension://pchceompmdejbkdkeocijmgplpfkafjj/a/drive.png) no-repeat !important;
+        width: 20px !important; /* Width of new image */
+        height: 19px !important; /* Height of new image */
+        padding-left: 20px !important; /* Equal to width of new image */
+        vertical-align: middle !important;
+}
+
+[title=Grades]:before {
+        padding-right: 0.3em !important;
+        content: "A+" !important;
+        font-weight: bold !important;
+        font-style: italic !important;
+        color: green !important;
+}
+[title=Grades] {
+        margin-left: -16px !important;
+}
+
+
+/***** WebEx button *****/
+
+.groopex_gic_block_event_join_button_main {
+        border-radius: 5px !important;
+        background: #0081c6 !important;
+        box-shadow: inset 0 0 0 rgba(0,0,0,.27) !important;
+        transition: box-shadow 0.2s linear !important;
+        color: white !important;
+        font-weight: normal !important;
+        text-shadow: rgba(0,0,0,0.2);
+}
+
+.groopex_gic_block_event_join_button_main:hover {
+        border-radius: 5px !important;
+        background: #008ad4 !important;
+        color: white !important;
+        font-weight: normal !important;
+        text-shadow: rgba(0,0,0,0.2);
+        
+        box-shadow: inset 0 -0.2rem 0 rgba(0,0,0,.27) !important;
+}
+
+.groopex_gic_block_event_join_button_main:active {
+        border-radius: 5px !important;
+        background: #0079ba !important;
+        color: white !important;
+        font-weight: normal !important;
+        text-shadow: rgba(0,0,0,0.2);
+        
+        box-shadow: inset 0 0.2rem 0 rgba(0,0,0,.27) !important;
+}
+
+/***** Other *****/
+
+.yuimenuitem {
+        color:white;
+}
+.yuimenuitem a {
+        color:white;
+}
+
+@media screen and (max-width: 800px) {
+    #logo:after {
+           content: "MBTA" !important;
+    }
+	#region-post {
+		right: -290px !important;
+		left: auto !important;
+		position: fixed !important;
+		top: 0 !important;
+		background: white !important;
+		box-shadow: -5px 5px 5px 0px rgba(0,0,0,0.2) !important;
+		transition: right 0.2s linear !important;
+	}
+	#region-post:hover {
+		right: 0 !important;
+	}
+	#region-main {
+		width: calc(100% - 15px) !important;
+	}
+}
+
+@media screen and (max-width: 450px) {
+    #logo:after {
+            content: " " !important;
+    }
+}

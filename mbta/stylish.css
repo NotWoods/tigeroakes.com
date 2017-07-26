@@ -1,0 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300);
+
+.langmenu {
+	display:none; /*Just for me*/    
+}
+
+#page-header-wrapper1 {
+ 	background:#3B3B3B;
+    background-image:none;
+  	
+}
+#page-header {
+  height:7.1875rem;
+}
+
+#logo {
+  content: "Myron B. Thompson Academy";
+  font-family:'Open Sans', sans-serif;
+  font-weight:300;
+  background-image:url(https://dl.dropboxusercontent.com/u/11226349/MBTA%20Chrome%20App/header.png);
+  height:4.4375rem;
+  padding-top:0;
+  background-position:0;
+}
+
+#navigationbar {
+  background:#262626;
+  /*padding-top:0.5em;
+  padding-bottom:0.5em;*/
+  height:2.25rem;
+  padding-top:0.5em;
+  font-family:'Open Sans', sans-serif;
+  font-size:0.875rem;
+}
+#navigationbar .yuimenubaritem {
+  font-family:'Open Sans', sans-serif;
+  font-size:0.875rem;
+  line-height:2em;
+}

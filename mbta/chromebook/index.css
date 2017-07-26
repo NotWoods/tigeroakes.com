@@ -1,0 +1,71 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	font-size: 16px;
+}
+
+header {
+	/* Background Fallback */
+	background-color: #424342; /* Old browsers */
+	background-image: url('../../assets/images/header.png');
+	/* Background Gradient */
+	background-image: url('../header.png'), -moz-linear-gradient(top, #626262 0%, #232323 100%); /* FF3.6+ */
+	background-image: url('../header.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#626262), color-stop(100%,#232323)); /* Chrome,Safari4+ */
+	background-image: url('../header.png'), -webkit-linear-gradient(top, #626262 0%,#232323 100%); /* Chrome10+,Safari5.1+ */
+	background-image: url('../header.png'), -o-linear-gradient(top, #626262 0%,#232323 100%); /* Opera 11.10+ */
+	background-image: url('../header.png'), -ms-linear-gradient(top, #626262 0%,#232323 100%); /* IE10+ */
+	background-image: url('../header.png'), linear-gradient(to bottom, #626262, #232323); /* W3C */
+	/* Background Positioning */
+	background-repeat: no-repeat;
+	background-position: 15% 15%;
+	
+	color: white;
+	padding-top: 0.15em;
+	box-shadow: 0 0.15em 0.2em rgba(0,0,0,0.5);
+}
+
+header #logo {
+	color: white;
+	text-decoration: none;
+	font-size: 2em;
+	font-weight: 200;
+}
+
+header #logo img {
+	vertical-align: middle;
+	margin: 0 0.2em 0 0.5em;
+	height: 71px;
+}
+
+header .author {
+	color: white;
+	text-decoration: none;
+	float: right;
+	margin-right: 0.5em;
+	margin-top: 2.5em;
+}
+
+header .author:hover, header.author:active {
+	text-decoration: underline;
+}
+
+#cover {
+	width: 928px;
+	margin: 0 auto;
+}
+
+.line-container {
+	width: 600px;
+	height: 2px;
+	margin: 0 auto;
+	display: block;
+}
+.line {
+	width: 25%;
+	height: 100%;
+	display: inline-block;
+}
+.blue { background: #282885; }
+.red { background: #e0292e; }
+.yellow { background: #d9a21f; }
+.green { background: #61d91f; }

@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tiger Oakes</title>
+		<meta name="keywords" content="8 island, eight island, games, labs, play, bit ball, tiger oakes, it, web, lua, java, html, css, js, tiger, oakes, big island buses">
+		<meta name="description" content="I write software and games in Hawai'i using a variety of programming languages.  See my portfolio or contact me.">
+		<meta name="author" content="Tiger Oakes">
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-37324002-1', 'tigeroakes.com');
+			ga('require', 'linkid', 'linkid.js');
+			ga('require', 'displayfeatures');
+			ga('send', 'pageview');
+			
+		</script>
+		<script src="google.js"></script>
+	</head>
+	<body itemscope itemtype="http://schema.org/Person">
+		<header>
+			<img src="a/me.png" alt="Tiger Oakes" itemprop="image" />
+			<h1 itemprop="name"><span itemprop="givenName">Tiger</span> <span itemprop="familyName">Oakes</span></h1>
+		</header>
+		<nav>
+			<a class="portfolio" href="#portfolio">Portfolio</a><!--
+		 --><a class="contact" href="#contact">Contact</a><!--
+		 --><a class="stream" href="#stream">Stream</a><!--
+		 --><a class="eightisland" href="http://8islandlabs.com" itemprop="worksfor" itemtype="http://schema.org/Organization">
+		 			<span itemprop="name">8 Island Labs</span>
+		 			<meta itemprop="sameAs" content="http://8islandlabs.com">
+		 		</a>
+		</nav>
+
+		<section id="about">
+			<h2>I write software, websites, and video games</h2>
+			<meta itemprop="jobTitle" content="Software Programmer" />
+<pre class="blur"><code>
+xhr.onload = <span class="keyword">function</span>() {
+	<span class="keyword">var</span> feed = JSON.parse(xhr.responseText);
+	<span class="keyword">var</span> entries = [];
+	<span class="keyword">if</span> (feed.error) {
+		<span class="keyword">if</span> (console &#38;&#38; console.error) {
+			console.error(<span class="string">'Error loading Google+ stream.'</span>, feed.error);
+		}
+		<span class="keyword">return</span>;
+	}
+	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="int">0</span>; i &#60; feed.items.length; i++) {
+		<span class="keyword">var</span> item = feed.items[i];
+		<span class="keyword">var</span> object = item.object;
+		
+		<span class="keyword">var</span> thumbs = [];
+		<span class="keyword">var</span> article = {};
+		<span class="keyword">if</span> (object.attachments) {
+			<span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="int">0</span>; j &#60; object.attachments.length; j++) {
+				<span class="keyword">var</span> attachment = object.attachments[j];
+				<span class="keyword">switch</span> (attachment.objectType) {
+				<span class="keyword">case</span> <span class="string">'photo'</span>:
+					thumbs.push({
+						url: attachment.image.url,
+						link: attachment.fullImage.url
+					});
+					<span class="keyword">break</span>;
+					
+				<span class="keyword">case</span> <span class="string">'album'</span>:
+					for (<span class="keyword">var</span> m = <span class="int">0</span>; m &#60; attachment.thumbnails.length; m++) {
+						thumbs.push({
+							url: attachment.thumbnails[m].image.url,
+							link: attachment.url
+						});
+					}
+					<span class="keyword">break</span>;
+	
+				<span class="keyword">case</span> <span class="string">'video'</span>:
+					thumbs.push({
+						url: attachment.image.url,
+						link: attachment.url
+					});
+					<span class="keyword">break</span>;
+	
+				<span class="keyword">case</span> <span class="string">'article'</span>:
+					article[<span class="string">"displayName"</span>] = attachment.displayName;
+					article[<span class="string">"url"</span> = attachment.url;
+					<span class="keyword">if</span> (attachment.content) {
+						article[<span class="string">"content"</span>] = attachment.content;
+					}
+					<span class="keyword">break</span>;
+				}
+</code></pre>
+		</section>
+			
+		<section id="portfolio">
+			<h1 class="portfolio">Portfolio</h1>
+			<div class="wrapper">
+			<div class="software">
+				<img src="a/heleon.png">
+				<h2>Big Island Buses</h2>
+				<p>
+					I designed this software to enter into the Congressional App 
+					Challenge.  I've prototyped the idea in the past but only 
+					began this version after receiving design inspiration from 
+					the London Underground system.  It seperates the logic, data, 
+					and user interface into seperate files rather than keeping it
+					inside a single location.  This will allow me to easily expand
+					the program in the future with more features or information.
+				</p>
+				<a href="http://tigeroakes.com/heleon">Application</a>
+				<a href="http://youtu.be/yEezZ_Ii7Go">Video</a>
+				<a href="https://github.com/NotWoods/heleon">Source Code</a>
+				<span>Programmed with HTML5, CSS3, JavaScript, and JSON</span>
+			</div>
+			<div class="website">
+				<img src="a/oml.png">
+				<h2>Oakes Management, LLC</h2>
+				<p>
+					This was one of the first websites I created, and utilizes 
+					a horizontal view instead of a traditional vertical design.
+					It emphasizes images to showcase the buildings that the 
+					company constructed, and text is minimal.  
+				</p>
+				<a href="http://omlhawaii.com">Website</a>
+				<span>Programmed with HTML5 and CSS3</span>
+			</div>
+			<div class="website">
+				<img src="a/8island.png">
+				<h2>8 Island Labs</h2>
+				<p>
+					The website for my own company.  The current iteration of the
+					site shows the news at the frontpage, as it changes more than
+					other elements of the site would.  The games and applications
+					pages use a banner format for each item, drawing attention to
+					the logos and images.
+				</p>
+				<a href="http://8islandlabs.com">Website</a>
+				<span>Programmed with HTML5 and CSS3</span>
+			</div>
+			<div class="game">
+				<img src="a/bitball-classic.png">
+				<h2>Bit Ball (Original)</h2>
+				<p>
+					Bit Ball was one of my first programs.  It uses the Box2D
+					physics engine to power the 20 physics-based puzzles in the
+					game, which were based around timing the release of the ball
+					correctly or moved elements of the stage around.  Some crucial
+					code later ceased to function, and I retired the game from the
+					Google Play store.  I may revisit it in the future with a recreation.
+				</p>
+				<span>Programmed with Lua and the Corona SDK engine</span>
+			</div>
+			<div class="software">
+				<img src="a/mbta.png">
+				<h2>MBTA Upgrade</h2>
+				<p>
+					This Google Chrome Extension was created as a test-bed for
+					new styles on other websites.  I used it to alter the appearance
+					of my high school website, Myron B. Thompson Academy.  My intent
+					was to later integrate with some elements of the website to 
+					become a student planner software, but the project is on hold
+					as the school is moving to a new site and Content Management System.
+				</p>
+				<a href="http://tigeroakes.com/mbta/index.html">Website</a>
+				<a href="https://github.com/NotWoods/mbta-upgrade">Source Code</a>
+				<span>Programmed with CSS3 and JavaScript</span>
+			</div>
+			<div class="game">
+				<img src="a/ticket.png">
+				<h2>Ticket Terms</h2>
+				<p>
+					Ticket Terms is another proof-of-concept game with gameplay
+					based off Password and Catchphrase.  It's main draw is the
+					ability for users to enter their own dictionary of words,
+					which would then be utilized by the game.  
+				</p>
+				<a href="https://chrome.google.com/webstore/detail/ticket-terms/ngdpjkojkhbnmbnpjlmegdihcbabclne">Chrome Web Store</a>
+				<a href="https://github.com/NotWoods/ticket-terms">Source Code</a>
+				<span>Programmed with HTML5, CSS3, JavaScript, and Chrome APIs</span>
+			</div>
+			<div class="game">
+				<img src="a/wizard.png">
+				<h2>Wizard Brawl</h2>
+				<p>
+					Wizard Brawl is a video game prototype I worked on to test
+					mulitplayer features of the Unity3D engine.  The gameplay
+					is a Player-vs-Player game that uses magic spells instead of 
+					weapons.  
+				</p>
+				<span>Programmed with JavaScript and the Unity3D engine</span>
+			</div>
+			<div class="website">
+				<img src="a/play8.png">
+				<h2>Play @ 8 Island Labs</h2>
+				<p>
+					I created this website to organize video game competitions 
+					with friends, but later expanded it to showcase creations 
+					that my friends and I created in the game Minecraft.  I also
+					used the site to work with CSS3 animations, and an animation
+					of Minecraft characters being re-skinned can be seen near the
+					bottom of the site.  
+				</p>
+				<a href="http://play.8islandlabs.com">Website</a>
+				<span>Programmed with HTML5 and CSS3</span>
+			</div>
+			</div>
+		</section>
+			
+		<section id="contact">
+			<h1 class="contact">Contact</h1>
+			<a class="email" 	href="mailto:tigeroakes@gmail.com" itemprop="email">	<span>tigeroakes@gmail.com</span></a>
+			<a class="phone" 	href="tel:2537786251" itemprop="telephone">				<span>(253) 778-6251</span></a>
+			<a class="google"	href="https://google.com/+TigerOakes"></a>
+			<a class="twitter"	href="https://twitter.com/Not_Woods"></a>
+			<a class="github" 	href="https://github.com/NotWoods"></a>
+		</section>
+			
+		<section id="stream">
+			<h1 class="stream">Stream</h1>
+			<div id="news"></div>
+		</section>
+	</body>
+</html>

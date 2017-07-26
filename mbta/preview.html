@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel='shortcut icon' href='favicon.ico' />
+		<title>MBTA Upgrade</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+				height: 100%;
+				width: 100%;
+			}
+			#iframe {
+				height: 100%;
+				width: 100%;
+				border: 0;
+			}
+			#note {
+				font-family: sans-serif;
+				position: fixed;
+				top: 0;
+				left: 200px;
+				background: rgba(51,51,51,0.5);
+				color: white;
+				padding: 0.5em;
+				text-decoration: none;
+			}
+			#note:hover {
+				background: rgba(51,51,51,0.9);
+			}
+			.bold {
+				font-weight: bold;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				$($('#iframe').contents().find('head')).append('<link rel="stylesheet" href="http://tigeroakes.com/mbta/theme.css" type="text/css" />');
+			}
+		</script>
+		
+		<script type="text/javascript">
+			
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-37324002-1']);
+			_gaq.push(['_setDomainName', 'tigeroakes.com']);
+			_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			
+		</script>
+	</head>
+	<body>
+		<a id="note" href="http://tigeroakes.com/mbta/">
+			You're previewing <span class="bold">MBTA Upgrade</span>.  <br>Download it for Google Chrome now!
+		</a>
+		<iframe id="iframe" src="http://class.ethompson.org"></iframe>
+	</body>
+</html>

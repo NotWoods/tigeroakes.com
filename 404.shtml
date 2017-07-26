@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" media="screen" type="text/css" href="/style.css"/>
+		<link rel="icon" href="/favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<title>Tiger Oakes</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript">
+			
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-37324002-1']);
+			_gaq.push(['_setDomainName', 'tigeroakes.com']);
+			_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			
+		</script>
+	</head>
+	<body>
+		<header>
+			<img src="/a/me.png" alt="Tiger Oakes" />
+			<h1>Tiger Oakes</h1>
+		</header>
+		<nav>
+			<a class="portfolio" href="/#portfolio">Portfolio</a><!--
+		 --><a class="contact" href="/#contact">Contact</a><!--
+		 --><a class="stream" href="/#stream">Stream</a><!--
+		 --><a class="eightisland" href="http://8islandlabs.com">8 Island Labs</a>
+		</nav>
+
+		<section>
+			<h1 style="background-color: gray">Welcome to Area 404</h1>
+			<p style="margin:1em">We can neither confirm or deny the existence of the page you were looking for.</p>
+			<p style="margin:1em">You probably want to visit our <a href="index.html">main page</a>.</p>
+		</section>
+	</body>
+</html>
