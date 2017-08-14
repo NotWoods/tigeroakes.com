@@ -24,10 +24,10 @@ When the cursor travels to certain sections in a webpage, the buttons within the
 ## Developing
 
 ### Built With
-Jekyll v3.4
-jekyll-compress-html v3.0
-Sass
-CloudFlare
+* Jekyll v3.4
+* jekyll-compress-html v3.0
+* Sass
+* CloudFlare
 
 ## Licensing
 
