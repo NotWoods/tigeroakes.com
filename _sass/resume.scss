@@ -8,7 +8,7 @@
 
 .resume {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-	font-size: 11pt;
+	font-size: 10pt;
 	background: white;
 
 	max-width: 7.5in;
@@ -18,6 +18,7 @@
 
 .resume-header {
 	border-bottom: 0.01in solid #e66d31;
+	font-size: 11pt;
 
 	padding-bottom: 0.2in;
 }
@@ -106,7 +107,6 @@ p {
 	margin: 0;
 }
 ul {
-	font-size: 10pt;
 	list-style: square;
 
 	margin: 0 0 1em;
@@ -116,6 +116,9 @@ em {
 	font-size: 11pt;
 	font-weight: normal;
 	color: rgb(90, 90, 90);
+}
+sup {
+	font-size: 0.6em;
 }
 
 .resume-left-column > .noblock::before {

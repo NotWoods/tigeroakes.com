@@ -6,7 +6,7 @@ Education
   <span class="right">(expected with co-op)</span>
 </h4>
 
-Bachelor of Science in <br>Computer Science, 3<sup>nd</sup> Year
+Bachelor of Science in <br>Computer Science, 3<sup>rd</sup> Year
 -------------------------------------------------
 
 ### University of British Columbia
