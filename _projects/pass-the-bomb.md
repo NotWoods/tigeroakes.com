@@ -3,7 +3,7 @@ sortorder: 6
 title: Pass the Bomb
 subtitle: Hackathon Multiplayer Word Game
 path: pass-the-bomb
-color: {r: 199, g: 154, b: 106}
+color: '#c79a6a'
 fallbackcolor: '#3c4438'
 svg_logo: true
 links:

@@ -10,16 +10,18 @@
 }
 .project-header {
 	position: relative;
-}
-.project-header::before {
-	background: var(--block);
 
-	position: absolute;
-	left: -1em;
-	width: 0.5em;
-	height: 100%;
-	content: '';
+	&::before {
+		background: var(--block);
+
+		position: absolute;
+		left: -1em;
+		width: 0.5em;
+		height: 100%;
+		content: '';
+	}
 }
+
 .project-tech {
 	opacity: 0.8;
 	font-size: 0.9em;
@@ -30,13 +32,15 @@
 }
 .pt-item {
 	display: inline;
-}
-.pt-item::after {
-	content: ' | ';
-	margin: 0 0.2em;
-}
-.pt-item:last-child::after {
-	content: none;
+
+	&::after {
+		content: ' | ';
+		margin: 0 0.2em;
+	}
+
+	&:last-child::after {
+		content: none;
+	}
 }
 
 .project:hover .button-link::after { will-change: opacity; }

@@ -1,8 +1,8 @@
 ---
 sortorder: 2
 title: Latch On
-subtitle: Video Game Prototype
-color: {r: 107, g: 159, b: 147}
+subtitle: Rope Swinging Game
+color: '#6b9f93'
 fallbackcolor: '#14576a'
 links:
   Details: /projects/latch-on

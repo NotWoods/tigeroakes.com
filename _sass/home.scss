@@ -7,28 +7,31 @@
 	background-position: center;
 
 	padding: 7em 1em;
-}
-.hero-header {
-	font-size: 2.5em;
-	text-transform: uppercase;
 
-	margin: 0;
-}
-.hero-sub {
-	margin: 0 auto;
-	max-width: 25em;
+	&-header {
+		font-size: 2.5em;
+		text-transform: uppercase;
+
+		margin: 0;
+	}
+
+	&-sub {
+		margin: 0 auto;
+		max-width: 25em;
+	}
 }
 
 .about {
 	background: white;
 
 	padding: 2em 0;
-}
-.about-content {
-	display: flex;
-	align-items: center;
-	max-width: 60em;
-	justify-content: center;
+
+	&-content {
+		display: flex;
+		align-items: center;
+		max-width: 60em;
+		justify-content: center;
+	}
 }
 .profile {
 	border-radius: 50%;
@@ -44,6 +47,10 @@
 }
 .featured-project {
 	padding: 3.5em 5em;
+
+	@media (max-width: 30em) {
+		font-size: 0.9em;
+	}
 }
 .featured-project-text {
 	max-width: 40em;
@@ -59,12 +66,13 @@
 	color:  white;
 
 	padding: 2em 1em 10em;
-}
-.contact-content {
-	font-size: 1.25em;
-}
-.contact-cta {
-	margin-top: 3em;
+
+	&-content {
+		font-size: 1.25em;
+	}
+	&-cta {
+		margin-top: 3em;
+	}
 }
 
 @media (max-width: 45em) {
@@ -77,11 +85,5 @@
 
 	.featured-project {
 		padding: 2em;
-	}
-}
-
-@media (max-width: 30em) {
-	.featured-project {
-		font-size: 0.9em;
 	}
 }

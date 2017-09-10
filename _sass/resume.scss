@@ -21,32 +21,35 @@
 	font-size: 11pt;
 
 	padding-bottom: 0.2in;
-}
-.resume-header > h1 {
-	font-size: 28pt;
-	text-transform: uppercase;
-	font-weight: bold;
 
-	margin: 0;
-}
-.resume-header > ul {
-	line-height: 1.4em;
-	text-align: right;
-	font-size: 1em;
-	list-style: none;
-	padding: none;
+	& > h1 {
+		font-size: 28pt;
+		text-transform: uppercase;
+		font-weight: bold;
 
-	float: right;
-	margin: 0;
-}
-.resume-header > ul a {
-	float: none;
-}
+		margin: 0;
+	}
 
-.resume-header > p {
-	color: rgb(64, 64, 64);
+	& > ul {
+		line-height: 1.4em;
+		text-align: right;
+		font-size: 1em;
+		list-style: none;
+		padding: none;
 
-	margin: 0;
+		float: right;
+		margin: 0;
+
+		a {
+			float: none;
+		}
+	}
+
+	& > p {
+		color: #404040;
+
+		margin: 0;
+	}
 }
 
 .resume-body {
@@ -93,15 +96,16 @@ h4 {
 
 	margin: 0;
 	position: relative;
-}
-.resume-left-column > h4::before {
-	background: #e66d31;
 
-	position: absolute;
-	left: -0.5in;
-	width: 0.25in;
-	height: 0.69in;
-	content: '';
+	.resume-left-column > &::before {
+		background: #e66d31;
+
+		position: absolute;
+		left: -0.5in;
+		width: 0.25in;
+		height: 0.69in;
+		content: '';
+	}
 }
 p {
 	margin: 0;
@@ -115,7 +119,7 @@ ul {
 em {
 	font-size: 11pt;
 	font-weight: normal;
-	color: rgb(90, 90, 90);
+	color: #5a5a5a;
 }
 sup {
 	font-size: 0.6em;
@@ -136,10 +140,11 @@ sup {
 	padding: 0.6em 2em;
 	margin: 1em 0 0;
 	display: inline-block;
-}
-.pdf-button::after {
-	will-change: opacity;
-	content: '';
+
+	&::after {
+		will-change: opacity;
+		content: '';
+	}
 }
 
 @media (max-width: 6in) {

@@ -19,40 +19,39 @@
 	margin: 0 0.5em;
 	display: inline-block;
 	position: relative;
-}
-.contact-link::after {
-	background: #e66d31;
 
-	bottom: -1em;
-	height: 0.5em;
-	transform-origin: top;
-	transform: scaleY(0);
-	transition: transform 0.2s ease;
-	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-.contact-link:hover::after, .contact-link:focus::after {
-	transform: none;
-}
-.contact-link:active::after {
-	transform: scaleY(0.5);
+	&::after {
+		background: #e66d31;
+
+		bottom: -1em;
+		height: 0.5em;
+		transform-origin: top;
+		transform: scaleY(0);
+		transition: transform 0.2s ease;
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	&:hover::after, &:focus::after {
+		transform: none;
+	}
+	&:active::after {
+		transform: scaleY(0.5);
+	}
 }
 
 .contact:hover .contact-link::after { will-change: transform; }
 
 .email {
 	margin-right: 2.5em;
+
+	@media (max-width: 28em) {
+		width: 100%;
+		margin: 0 0 1.5em;
+	}
 }
 .contact-icon {
 	height: 1.6em;
 	display: block;
-}
-
-@media (max-width: 28em) {
-	.email {
-		width: 100%;
-		margin: 0 0 1.5em;
-	}
 }

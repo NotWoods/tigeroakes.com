@@ -28,12 +28,13 @@
 	font-weight: bold;
 }
 
-.post-hero-container {
-	margin: 2em 0 0;
-}
 .post-hero {
 	display: block;
 	width: 100%;
+
+	&-container {
+		margin: 2em 0 0;
+	}
 }
 
 .post-content {
@@ -44,14 +45,15 @@
 
 h2 {
 	position: relative;
-}
-h2::before {
-	background: #444;
-	position: absolute;
-	left: -1em;
-	width: 0.5em;
-	height: 100%;
-	content: '';
+
+	&::before {
+		background: #444;
+		position: absolute;
+		left: -1em;
+		width: 0.5em;
+		height: 100%;
+		content: '';
+	}
 }
 
 pre, code {
@@ -108,9 +110,10 @@ table {
 tr {
 	background: #fff;
 	border-top: 1px solid #c6cbd1;
-}
-tr:nth-child(2n) {
-	background: #f6f8fa;
+
+	&:nth-child(2n) {
+		background: #f6f8fa;
+	}
 }
 
 th {

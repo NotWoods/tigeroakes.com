@@ -2,8 +2,8 @@
 sortorder: 3
 title: MBTA Energy
 subtitle: Interactive Information
-color: {r: 155, g: 212, b: 73}
-fallbackcolor: '#040c0c'
+color: '#7dc36b'
+fallbackcolor: '#3d4a53'
 links:
   Details: /projects/mbta-energy
   View_site: https://notwoods.github.io/mbta-energy/

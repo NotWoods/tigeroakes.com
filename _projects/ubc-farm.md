@@ -3,7 +3,7 @@ feature: true
 sortorder: 5
 title: UBC Farm
 subtitle: Farm Research Database
-color: {r: 59, g: 116, b: 72}
+color: '#3b7448'
 fallbackcolor: '#2d410b'
 links:
   Details: /projects/ubc-farm

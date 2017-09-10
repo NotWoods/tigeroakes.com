@@ -3,7 +3,7 @@ feature: true
 sortorder: 1
 title: Big Island Buses
 subtitle: Bus Schedule Software
-color: {r: 77, g: 116, b: 171}
+color: '#4d74ab'
 fallbackcolor: '#313d3f'
 links:
   Details: /projects/big-island-buses

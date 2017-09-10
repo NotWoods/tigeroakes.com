@@ -4,7 +4,7 @@ sortorder: 4
 title: OML Contracting Co
 subtitle: Construction Portfolio
 slug: oml-contracting
-color: {r: 220, g: 184, b: 105}
+color: '#dcb869'
 fallbackcolor: '#372008'
 svg_logo: true
 links:

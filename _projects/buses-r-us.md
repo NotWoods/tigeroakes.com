@@ -2,7 +2,8 @@
 sortorder: 10
 title: "Buses 'R Us"
 subtitle: Term Project
-color: {r: 20, g: 99, b: 167}
+color: '#1463a7'
+fallbackcolor: '#6a9fbf'
 links:
   Details: /projects/buses-r-us
 tech:

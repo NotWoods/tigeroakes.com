@@ -2,7 +2,7 @@
 sortorder: 10
 title: Bit Ball
 subtitle: 9th Grade Physics Game
-color: {r: 40, g: 160, b: 197}
+color: '#28a0c5'
 fallbackcolor: '#161616'
 links:
   Details: /projects/bit-ball

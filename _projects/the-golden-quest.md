@@ -2,7 +2,8 @@
 sortorder: 8
 title: The Golden Quest
 subtitle: Alexa Adventure Game
-color: {r: 255, g: 200, b: 0}
+color: '#c3a242'
+fallbackcolor: '#503627'
 links:
   Details: /projects/the-golden-quest
   Amazon: https://www.amazon.com/Janet-Chen-The-Golden-Quest/dp/B06XW5JXXX

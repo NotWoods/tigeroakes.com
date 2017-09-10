@@ -30,12 +30,13 @@ hr {
 	font-size: 1.2em;
 
 	margin-bottom: 1em;
-}
-.contact-link::after {
-	transform: scaleY(0.2);
-	bottom: -0.6em;
-	height: 0.4em;
-	will-change: transform;
+
+	&::after {
+		transform: scaleY(0.2);
+		bottom: -0.6em;
+		height: 0.4em;
+		will-change: transform;
+	}
 }
 
 .contact-header {

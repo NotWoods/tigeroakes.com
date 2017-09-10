@@ -3,8 +3,8 @@ sortorder: 7
 title: Polygon2D Editor
 subtitle: Level-building tool for Unity
 slug: unity-polygon
-color: {r: 3, g: 3, b: 3}
-fallbackcolor: '#444'
+color: '#4d4d4d'
+fallbackcolor: '#1a1a1a'
 links:
   Details: /projects/unity-polygon2d-editor
   Code: https://github.com/NotWoods/unity-polygon-2d-editor
