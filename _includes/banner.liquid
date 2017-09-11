@@ -14,9 +14,9 @@
 				{% assign relative = nav.link | relative_url %}
 
 				{% if page.url == relative %}
-					<span class="current-page nav-link">{{ nav.title }}</span>
+					<span class="current-page nav-link side-block">{{ nav.title }}</span>
 				{% else %}
-					<a href="{{ nav.link }}" class="nav-link">
+					<a href="{{ nav.link }}" class="nav-link side-block">
 						{{ nav.title }}
 					</a>
 				{% endif %}

@@ -1,6 +1,6 @@
 .projects {
 	color: white;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px rgba(black, 0.5);
 }
 .project {
 	$edge: #333;
@@ -19,12 +19,6 @@
 
 	&::before {
 		background: var(--block);
-
-		position: absolute;
-		left: -1em;
-		width: 0.5em;
-		height: 100%;
-		content: '';
 	}
 }
 

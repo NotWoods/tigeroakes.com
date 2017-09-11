@@ -33,7 +33,7 @@ body {
 }
 
 a {
-	color: #e66d31;
+	color: $primary-color;
 	text-decoration: none;
 
 	&:hover:not([class]) {
@@ -43,4 +43,12 @@ a {
 
 .md-content {
 	max-width: 60em;
+}
+
+.side-block::before {
+	position: absolute;
+	left: -1em;
+	width: 0.5em;
+	height: 100%;
+	content: '';
 }

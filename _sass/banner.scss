@@ -24,7 +24,6 @@
 }
 .dot {
 	background: $primary-color;
-	color: white;
 	box-shadow: none;
 	text-align: center;
 	font: inherit;
@@ -73,11 +72,7 @@
 	&::before {
 		background: $primary-color;
 
-		content: '';
 		opacity: 0;
-		position: absolute;
-		width: 0.5em;
-		height: 100%;
 		left: -0.5em;
 		transform: scaleX(0) {
 			origin: right;
