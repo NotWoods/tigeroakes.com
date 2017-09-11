@@ -2,6 +2,7 @@
 
 .button-link {
 	color: inherit;
+	background: transparent !important;
 
 	padding: 0.5em 1.5em;
 	display: inline-block;
@@ -11,7 +12,7 @@
 	&::before {
 		border: 1px solid;
 
-		@extend %fill-parent;
+		@include fill-parent();
 		content: '';
 	}
 

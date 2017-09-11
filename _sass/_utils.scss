@@ -5,7 +5,7 @@ $primary-color: #e66d31;
 	height: $size;
 }
 
-%fill-parent {
+@mixin fill-parent() {
 	position: absolute;
 	left: 0;
 	right: 0;
