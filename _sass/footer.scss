@@ -1,3 +1,5 @@
+@import "_utils";
+
 .contact {
 	text-align: center;
 
@@ -21,12 +23,13 @@
 	position: relative;
 
 	&::after {
-		background: #e66d31;
+		background: $primary-color;
 
 		bottom: -1em;
 		height: 0.5em;
-		transform-origin: top;
-		transform: scaleY(0);
+		transform: scaleY(0) {
+			origin: top;
+		}
 		transition: transform 0.2s ease;
 		content: '';
 		position: absolute;

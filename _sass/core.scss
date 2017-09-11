@@ -1,7 +1,9 @@
+@import "_utils";
+
 body {
 	margin: 0;
 	font-family: Lato, 'Trebuchet MS', sans-serif;
-	color: rgba(0, 0, 0, 0.87);
+	color: rgba(black, 0.87);
 	background: #f0f0f0;
 }
 
@@ -12,18 +14,14 @@ body {
 }
 
 .shadow {
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 2px rgba(black, 0.24);
 	position: relative;
 
 	&::after {
-		position: absolute;
-		left: 0;
-		top: 0;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.85);
+		@extend %fill-parent;
+		box-shadow: 0 3px 6px rgba(black, 0.85);
 		opacity: 0;
 		transition: opacity 0.2s ease;
-		right: 0;
-		bottom: 0;
 		background: transparent;
 	}
 	&:hover::after, &:focus::after {

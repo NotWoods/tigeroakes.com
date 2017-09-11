@@ -1,3 +1,5 @@
+@import "_utils";
+
 .button-link {
 	color: inherit;
 
@@ -9,11 +11,7 @@
 	&::before {
 		border: 1px solid;
 
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		@extend %fill-parent;
 		content: '';
 	}
 
@@ -31,13 +29,15 @@
 	}
 }
 
-.cta-wrap {
-	text-align: center;
-	font-size: 1.25em;
-
-	padding: 1em 0;
-}
 .cta {
 	margin: 1em 0;
+
+	&-wrap {
+		text-align: center;
+		font-size: 1.25em;
+
+		padding: 1em 0;
+	}
+
+	&-wrap &::after { will-change: opacity; }
 }
-.cta-wrap .cta::after { will-change: opacity; }

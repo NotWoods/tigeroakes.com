@@ -3,10 +3,16 @@
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .project {
-	background-size: cover;
-	background-position: center;
-	background-color: #333333;
-	background-image: linear-gradient(to bottom, #333333 0%,#424242 25%,#424242 75%,#333333 100%);
+	$edge: #333;
+	$mid: #424242;
+	background: {
+		size: cover;
+		position: center;
+		color: $edge;
+		image: linear-gradient(to bottom, $edge 0%, $mid 25%, $mid 75%, $edge 100%);
+	}
+
+	&:hover .button-link::after { will-change: opacity; }
 }
 .project-header {
 	position: relative;
@@ -42,5 +48,3 @@
 		content: none;
 	}
 }
-
-.project:hover .button-link::after { will-change: opacity; }

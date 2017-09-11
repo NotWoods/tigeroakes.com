@@ -1,15 +1,18 @@
+@import "_utils";
+
 .banner {
 	display: flex;
 	flex-wrap: wrap;
-}
-.banner-container {
-	background: white;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 
-	z-index: 5;
-	padding: 1em;
-	left: 0;
-	right: 0;
+	&-container {
+		background: white;
+		border-bottom: 1px solid rgba(black, 0.5);
+
+		z-index: 5;
+		padding: 1em;
+		left: 0;
+		right: 0;
+	}
 }
 
 .home-link {
@@ -20,26 +23,28 @@
 	}
 }
 .dot {
-	background: #e66d31;
+	background: $primary-color;
 	color: white;
 	box-shadow: none;
 	text-align: center;
 	font: inherit;
 
-	width: 1.2em;
-	height: 1.2em;
+	@include square(1.2em);
 	border: 0;
 	display: inline-block;
 
 	&::after {
-		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 4px 4px rgba(black, 0.3);
 		line-height: 1.1em;
 
 		content: '';
+
+		.home-link:hover &, .home-link:focus & {
+			opacity: 1;
+		}
+
+		.banner:hover & { will-change: transform; }
 	}
-}
-.home-link:hover .dot::after, .home-link:focus .dot::after {
-	opacity: 1;
 }
 
 .banner-title {
@@ -66,7 +71,7 @@
 	position: relative;
 
 	&::before {
-		background: #e66d31;
+		background: $primary-color;
 
 		content: '';
 		opacity: 0;
@@ -74,9 +79,12 @@
 		width: 0.5em;
 		height: 100%;
 		left: -0.5em;
-		transform: scaleX(0);
-		transform-origin: right;
+		transform: scaleX(0) {
+			origin: right;
+		}
 		transition: transform 0.1s ease;
+
+		.banner:hover & { will-change: transform; }
 	}
 
 	&:hover::before, &:focus::before {
@@ -89,11 +97,6 @@
 	}
 
 	&::after { content: none; }
-}
-
-.banner:hover {
-	.nav-link::before { will-change: transform; }
-	.dot::after { will-change: opacity; }
 }
 
 .current-page {

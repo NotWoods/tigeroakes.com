@@ -1,10 +1,14 @@
 .hero {
 	font-size: 1.2em;
-	text-align: center;
-	text-shadow: 1px 1px 1px #b6b6b6;
-	background-image: url('images/hero.jpg');
-	background-size: cover;
-	background-position: center;
+	text: {
+		align: center;
+		shadow: 1px 1px 1px #b6b6b6;
+	}
+	background: {
+		image: url('images/hero.jpg');
+		size: cover;
+		position: center;
+	}
 
 	padding: 7em 1em;
 
@@ -35,7 +39,7 @@
 }
 .profile {
 	border-radius: 50%;
-	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 1px rgba(black, 0.2);
 
 	flex: 0 0 160px;
 	margin-left: 5em;
@@ -61,7 +65,6 @@
 }
 
 .contact {
-	--button: #{rgba(230, 109, 49, 0.2)};
 	background: #333;
 	color:  white;
 

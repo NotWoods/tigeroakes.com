@@ -1,3 +1,5 @@
+@import "_utils";
+
 .banner-container {
 	position: static;
 }
@@ -7,7 +9,7 @@
 }
 
 .resume {
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px rgba(black, 0.5);
 	font-size: 10pt;
 	background: white;
 
@@ -17,7 +19,7 @@
 }
 
 .resume-header {
-	border-bottom: 0.01in solid #e66d31;
+	border-bottom: 0.01in solid $primary-color;
 	font-size: 11pt;
 
 	padding-bottom: 0.2in;
@@ -70,8 +72,10 @@ a:not([class]), .right {
 	float: right;
 }
 h1 {
-	font-weight: 400;
-	font-size: 16pt;
+	font: {
+		weight: 400;
+		size: 16pt;
+	}
 
 	margin: 1em 0 0;
 }
@@ -82,23 +86,27 @@ h2 {
 	clear: right;
 }
 h3 {
-	font-size: 12pt;
-	font-weight: normal;
+	font: {
+		weight: 400;
+		size: 12pt;
+	}
 	line-height: 1.4em;
 
 	margin: 0;
 }
 h4 {
-	font-size: 10pt;
-	font-weight: 400;
-	color: #e66d31;
+	font: {
+		weight: 400;
+		size: 10pt;
+	}
+	color: $primary-color;
 	line-height: 1.4em;
 
 	margin: 0;
 	position: relative;
 
 	.resume-left-column > &::before {
-		background: #e66d31;
+		background: $primary-color;
 
 		position: absolute;
 		left: -0.5in;
@@ -117,8 +125,10 @@ ul {
 	padding: 0 0 0 1.2em;
 }
 em {
-	font-size: 11pt;
-	font-weight: normal;
+	font: {
+		weight: 400;
+		size: 11pt;
+	}
 	color: #5a5a5a;
 }
 sup {
@@ -175,6 +185,6 @@ sup {
 		padding: 0;
 	}
 	body {
-		background: none;
+		background: transparent;
 	}
 }
