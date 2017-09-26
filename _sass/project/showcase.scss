@@ -1,7 +1,10 @@
-$spacing: 1em;
+@import "_utils";
+
+$spacing: 1rem;
+$button-margin: 0.2em;
 
 .projects {
-	max-width: 71em;
+	max-width: $site-width + $spacing;
 	display: flex;
 	flex-wrap: wrap;
 	padding: $spacing / 2;
@@ -17,33 +20,33 @@ $spacing: 1em;
 	flex: 2 0 auto;
 	min-width: 19em;
 	max-width: calc(100% - 5em);
+
+	&-logo {
+		align-self: center;
+		margin-bottom: 2em;
+	}
+
+	&-header {
+		white-space: nowrap;
+		margin: 0;
+	}
+	&-text, &-tech {
+		margin: 0;
+	}
+
+	&-links {
+		text-align: center;
+		font-size: 0.95em;
+
+		margin: 0.8em (-$button-margin) (-$button-margin);
+		display: flex;
+		justify-content: center;
+	}
 }
 .feature {
 	flex-grow: 3;
 }
 
-.project-logo {
-	align-self: center;
-	margin-bottom: 2em;
-}
-
-.project-header {
-	white-space: nowrap;
-	margin: 0;
-}
-.project-text, .project-tech {
-	margin: 0;
-}
-
-$button-margin: 0.2em;
-.project-links {
-	text-align: center;
-	font-size: 0.95em;
-
-	margin: 0.8em (-$button-margin) (-$button-margin);
-	display: flex;
-	justify-content: center;
-}
 .button-link {
 	white-space: nowrap;
 

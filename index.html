@@ -44,12 +44,14 @@ layout: compress
 	{% for project in featured_projects %}
 		{% include utils/project_vars.liquid project=project %}
 		<article class="project featured-project" style="{{ style }}">
-			<h2 class="project-header side-block">{{ p.title }}</h2>
-			{{ tech_list }}
-			<p class="featured-project-text">
-				{{ description }}
-			</p>
-			{{ links }}
+			<div class="inner">
+				<h2 class="project-header side-block">{{ p.title }}</h2>
+				{{ tech_list }}
+				<p class="featured-project-text">
+					{{ description }}
+				</p>
+				{{ links }}
+			</div>
 		</article>
 	{% endfor %}
 	</section>

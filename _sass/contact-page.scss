@@ -5,10 +5,11 @@ body {
 }
 
 .contact {
-	background: url('/images/contact/background.jpg');
-	background-size: cover;
-	background-position: center;
 	text-align: center;
+	background: url('/images/contact/background.jpg') {
+		size: cover;
+		position: center;
+	};
 
 	padding: 1em 0 6em;
 	flex: 1;

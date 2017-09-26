@@ -8,7 +8,7 @@ body {
 }
 
 .inner {
-	max-width: 70rem;
+	max-width: $site-width;
 	padding: 0 1em;
 	margin: 0 auto;
 }
@@ -42,13 +42,17 @@ a {
 }
 
 .md-content {
-	max-width: 60em;
+	max-width: $site-width;
 }
 
-.side-block::before {
-	position: absolute;
-	left: -1em;
-	width: 0.5em;
-	height: 100%;
-	content: '';
+.side-block {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		left: -1em;
+		width: 0.5em;
+		height: 100%;
+		content: '';
+	}
 }

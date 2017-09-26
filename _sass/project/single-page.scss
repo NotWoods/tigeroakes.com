@@ -6,27 +6,34 @@ img {
 	display: block;
 }
 
-.project-hero {
-	color: white;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+.project {
+	&-hero {
+		color: white;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
-	padding: 2em;
-}
-.project-inner {
-	display: flex;
-}
-.project-logo {
-	margin: 0 4em 0 0;
-}
-.project-header {
-	margin-bottom: 0.2em;
-}
-.project-text, .project-tech {
-	margin: 0;
-}
-.project-links {
-	text-align: center;
-	font-size: 1.3em;
+		padding: 2em;
+	}
+
+	&-inner {
+		display: flex;
+	}
+
+	&-logo {
+		margin: 0 4em 0 0;
+	}
+
+	&-header {
+		margin-bottom: 0.2em;
+	}
+
+	&-text, &-tech {
+		margin: 0;
+	}
+
+	&-links {
+		text-align: center;
+		font-size: 1.3em;
+	}
 }
 .button-link {
 	margin: 0 0.3em 0.5em;
