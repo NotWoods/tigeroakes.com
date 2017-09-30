@@ -1,5 +1,4 @@
 ---
-sortorder: 10
 title: "Buses 'R Us"
 subtitle: Term Project
 color: '#1463a7'

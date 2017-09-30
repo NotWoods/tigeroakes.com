@@ -1,5 +1,4 @@
 ---
-sortorder: 10
 title: Bit Ball
 subtitle: 9th Grade Physics Game
 color: '#28a0c5'

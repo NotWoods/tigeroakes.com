@@ -10,8 +10,10 @@ css:
   - button
   - project/showcase
 ---
-{% assign sorted = site.projects | sort: 'sortorder' %}
-{% for project in sorted %}
+{% for key in site.data.showcase %}
+	{% assign project = site.projects[
+		| where_exp: 'project', 'project.id contains key'
+		| first %}
 	{% include utils/project_vars.liquid project=project %}
 	<article class="project{%if p.feature %} feature{% endif %}" style="{{ style }}">
 		{{ logo_img }}

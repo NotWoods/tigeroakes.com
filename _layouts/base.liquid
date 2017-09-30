@@ -11,7 +11,7 @@ layout: compress
 
 		{% for css in page.css %}
 			{% capture extra_style %}
-			@import "{{ css }}"
+			@import "{{ css }}";
 			{% endcapture %}
 			{{ extra_style | scssify }}
 		{% endfor %}

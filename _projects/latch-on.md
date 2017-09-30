@@ -1,5 +1,4 @@
 ---
-sortorder: 2
 title: Latch On
 subtitle: Rope Swinging Game
 color: '#6b9f93'

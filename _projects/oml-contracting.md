@@ -1,6 +1,5 @@
 ---
 feature: true
-sortorder: 4
 title: OML Contracting Co
 subtitle: Construction Portfolio
 slug: oml-contracting

@@ -1,6 +1,5 @@
 ---
 feature: true
-sortorder: 5
 title: UBC Farm
 subtitle: Farm Research Database
 color: '#3b7448'

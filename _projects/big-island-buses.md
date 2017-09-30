@@ -1,6 +1,5 @@
 ---
 feature: true
-sortorder: 1
 title: Big Island Buses
 subtitle: Bus Schedule Software
 color: '#4d74ab'

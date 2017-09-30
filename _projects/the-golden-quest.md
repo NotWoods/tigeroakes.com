@@ -1,5 +1,4 @@
 ---
-sortorder: 8
 title: The Golden Quest
 subtitle: Alexa Adventure Game
 color: '#c3a242'

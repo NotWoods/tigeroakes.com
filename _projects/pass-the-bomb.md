@@ -1,5 +1,4 @@
 ---
-sortorder: 6
 title: Pass the Bomb
 subtitle: Hackathon Multiplayer Word Game
 path: pass-the-bomb

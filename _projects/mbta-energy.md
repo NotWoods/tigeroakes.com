@@ -1,5 +1,4 @@
 ---
-sortorder: 3
 title: MBTA Energy
 subtitle: Interactive Information
 color: '#7dc36b'
