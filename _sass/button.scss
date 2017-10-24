@@ -1,38 +1,38 @@
 @import "_utils";
 
 .button-link {
-	color: inherit;
-	background: #000;
-	background: var(--block);
+  color: inherit;
+  background: #000;
+  background: var(--block);
 
-	padding: 0.5em 1.5em;
-	display: inline-block;
-	position: relative;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  position: relative;
 
-	&::after {
-		border: 1px solid;
-		opacity: 0;
+  &::after {
+    border: 1px solid;
+    opacity: 0;
 
-		content: '';
-		@include fill-parent();
-	}
+    content: '';
+    @include fill-parent();
+  }
 
-	&:hover::after {
-		opacity: 1;
-	}
+  &:hover::after {
+    opacity: 1;
+  }
 }
 
 .cta {
-	background: white;
+  background: white;
 
-	margin: 1em 0;
+  margin: 1em 0;
 
-	&-wrap {
-		text-align: center;
-		font-size: 1.5em;
+  &-wrap {
+    text-align: center;
+    font-size: 1.5em;
 
-		padding: 1em 0;
-	}
+    padding: 1em 0;
+  }
 
-	&-wrap &::after { will-change: opacity; }
+  &-wrap &::after { will-change: opacity; }
 }

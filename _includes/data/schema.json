@@ -1,26 +1,26 @@
 {
-	"@context": "http://schema.org",
-	"@type": "Person",
-	"name": "Tiger Oakes",
-	"image": "{{ site.url }}{{ site.baseurl }}/images/profile.jpg",
-	"url": "{{ site.url }}{{ site.baseurl }}",
-	"email": "mailto:{{ site.email }}",
-	"telephone": "(253) 778-6251",
-	"homeLocation": {
-		"@type": "Place",
-		"name": "University of British Columbia",
-		"address": "Box number 1033, 2205 Lower Mall, Vancouver, BC V6T 1W9"
-	},
-	"mainEntityOfPage": {
-		"@type": "WebPage",
-		"additionalType": "WebSite",
-		"name": "{{ site.title }}",
-		"url": "{{ site.url }}{{ site.baseurl }}"
-	},
-	"sameAs": [
-		"https://github.com/NotWoods",
-		"https://www.linkedin.com/in/tigeroakes",
-		"https://twitter.com/Not_Woods",
-		"https://plus.google.com/+TigerOakes"
-	]
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Tiger Oakes",
+  "image": "{{ site.url }}{{ site.baseurl }}/images/profile.jpg",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "email": "mailto:{{ site.email }}",
+  "telephone": "(253) 778-6251",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "University of British Columbia",
+    "address": "Box number 1033, 2205 Lower Mall, Vancouver, BC V6T 1W9"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "additionalType": "WebSite",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}{{ site.baseurl }}"
+  },
+  "sameAs": [
+    "https://github.com/NotWoods",
+    "https://www.linkedin.com/in/tigeroakes",
+    "https://twitter.com/Not_Woods",
+    "https://plus.google.com/+TigerOakes"
+  ]
 }

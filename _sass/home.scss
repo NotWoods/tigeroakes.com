@@ -1,94 +1,94 @@
 @import "_utils";
 
 .hero {
-	font-size: 1.2em;
-	text: {
-		align: center;
-		shadow: 1px 1px 1px #b6b6b6;
-	}
-	background: {
-		image: url('images/hero.jpg');
-		size: cover;
-		position: center;
-	}
+  font-size: 1.2em;
+  text: {
+    align: center;
+    shadow: 1px 1px 1px #b6b6b6;
+  }
+  background: {
+    image: url('images/hero.jpg');
+    size: cover;
+    position: center;
+  }
 
-	padding: 7em 1em;
+  padding: 7em 1em;
 
-	&-header {
-		font-size: 2.5em;
-		text-transform: uppercase;
+  &-header {
+    font-size: 2.5em;
+    text-transform: uppercase;
 
-		margin: 0;
-	}
+    margin: 0;
+  }
 
-	&-sub {
-		margin: 0 auto;
-		max-width: 25em;
-	}
+  &-sub {
+    margin: 0 auto;
+    max-width: 25em;
+  }
 }
 
 .about {
-	background: white;
+  background: white;
 
-	padding: 2em 0;
+  padding: 2em 0;
 
-	&-content {
-		display: flex;
-		align-items: center;
-		max-width: $site-width;
-		justify-content: center;
-	}
+  &-content {
+    display: flex;
+    align-items: center;
+    max-width: $site-width;
+    justify-content: center;
+  }
 }
 .profile {
-	border-radius: 50%;
-	box-shadow: 0 2px 1px rgba(black, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px rgba(black, 0.2);
 
-	flex: 0 0 160px;
-	margin-left: 5em;
+  flex: 0 0 160px;
+  margin-left: 5em;
 }
 
 
 .featured-projects {
-	font-size: 1.1em;
+  font-size: 1.1em;
 }
 .featured-project {
-	padding: 3.5em 5em;
+  padding: 3.5em 5em;
 
-	@media (max-width: 30em) {
-		font-size: 0.9em;
-	}
+  @media (max-width: 30em) {
+    font-size: 0.9em;
+  }
 }
 .featured-project-text {
-	max-width: 40em;
+  max-width: 40em;
 }
 
 .button-link {
-	margin: 0 0.5em 0.5em 0;
+  margin: 0 0.5em 0.5em 0;
 }
 
 .contact {
-	background: #333;
-	color:  white;
+  background: #333;
+  color:  white;
 
-	padding: 2em 1em 10em;
+  padding: 2em 1em 10em;
 
-	&-content {
-		font-size: 1.25em;
-	}
-	&-cta {
-		margin-top: 3em;
-	}
+  &-content {
+    font-size: 1.25em;
+  }
+  &-cta {
+    margin-top: 3em;
+  }
 }
 
 @media (max-width: 45em) {
-	.about-content {
-		flex-wrap: wrap-reverse;
-	}
-	.profile {
-		margin: 0;
-	}
+  .about-content {
+    flex-wrap: wrap-reverse;
+  }
+  .profile {
+    margin: 0;
+  }
 
-	.featured-project {
-		padding: 2em;
-	}
+  .featured-project {
+    padding: 2em;
+  }
 }

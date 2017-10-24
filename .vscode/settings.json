@@ -1,14 +1,14 @@
 {
-	"search.exclude": {
-		"_site": true,
-		"**/Tiger_Oakes_resume*": true
-	},
-	"files.associations": {
-	//	"*.html": "liquid"
-	},
-	"files.exclude": {
-		"_site/**": true
-	},
-	"terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\bash.exe",
-	"editor.insertSpaces": true
+  "search.exclude": {
+    "_site": true,
+    "**/Tiger_Oakes_resume*": true
+  },
+  "files.associations": {
+  //	"*.html": "liquid"
+  },
+  "files.exclude": {
+    "_site/**": true
+  },
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\bash.exe",
+  "editor.insertSpaces": true
 }

@@ -11,16 +11,16 @@ css:
   - project/showcase
 ---
 {% for key in site.data.showcase %}
-	{% assign project = site.projects[
-		| where_exp: 'project', 'project.id contains key'
-		| first %}
-	{% include utils/project_vars.liquid project=project %}
-	<article class="project{%if p.feature %} feature{% endif %}" style="{{ style }}">
-		{{ logo_img }}
-		<h2 class="project-header side-block">{{ p.title }}</h2>
-		<p class="project-text">{{ p.subtitle }}</p>
+  {% assign project = site.projects[
+    | where_exp: 'project', 'project.id contains key'
+    | first %}
+  {% include utils/project_vars.liquid project=project %}
+  <article class="project{%if p.feature %} feature{% endif %}" style="{{ style }}">
+    {{ logo_img }}
+    <h2 class="project-header side-block">{{ p.title }}</h2>
+    <p class="project-text">{{ p.subtitle }}</p>
 
-		{{ tech_list }}
-		{{ links }}
-	</article>
+    {{ tech_list }}
+    {{ links }}
+  </article>
 {% endfor %}

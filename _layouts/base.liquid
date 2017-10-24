@@ -4,31 +4,31 @@ layout: compress
 <!doctype html>
 <html lang="en">
 <head>
-	{% include head.liquid %}
-	<style>
-		{% capture inline_styles %}{% include css/base.scss %}{% endcapture %}
-		{{ inline_styles | scssify }}
+  {% include head.liquid %}
+  <style>
+    {% capture inline_styles %}{% include css/base.scss %}{% endcapture %}
+    {{ inline_styles | scssify }}
 
-		{% for css in page.css %}
-			{% capture extra_style %}
-			@import "{{ css }}";
-			{% endcapture %}
-			{{ extra_style | scssify }}
-		{% endfor %}
-	</style>
-	{{ page.head }}
-	{% include social/site-meta.liquid %}
+    {% for css in page.css %}
+      {% capture extra_style %}
+      @import "{{ css }}";
+      {% endcapture %}
+      {{ extra_style | scssify }}
+    {% endfor %}
+  </style>
+  {{ page.head }}
+  {% include social/site-meta.liquid %}
 </head>
 <body>
-	{% include banner.liquid %}
+  {% include banner.liquid %}
 
-	{{ content }}
+  {{ content }}
 
-	{% unless page.nofooter %}
-		<footer class="contact" role="contentinfo">
-			{% include contact.liquid color="black" %}
-		</footer>
-	{% endunless %}
+  {% unless page.nofooter %}
+    <footer class="contact" role="contentinfo">
+      {% include contact.liquid color="black" %}
+    </footer>
+  {% endunless %}
 </body>
 {% include analytics.html %}
 </html>

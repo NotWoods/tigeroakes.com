@@ -1,27 +1,27 @@
 {
-	"version": "2.0.0",
-	"type": "shell",
-	"tasks": [
-		{
-			"taskName": "jekyll: serve",
-			"command": "jekyll serve",
-			"group": "build",
-			"isBackground": true,
-			"presentation": {
-				"reveal": "silent"
-			},
-			"problemMatcher": []
-		},
-		{
-			"taskName": "jekyll: build",
-			"command": "jekyll build",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"presentation": {
-				"reveal": "silent"
-			}
-		}
-	]
+  "version": "2.0.0",
+  "type": "shell",
+  "tasks": [
+    {
+      "taskName": "jekyll: serve",
+      "command": "jekyll serve",
+      "group": "build",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": []
+    },
+    {
+      "taskName": "jekyll: build",
+      "command": "jekyll build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "silent"
+      }
+    }
+  ]
 }

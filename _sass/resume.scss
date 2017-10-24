@@ -1,185 +1,185 @@
 @import "_utils";
 
 .banner-container {
-	position: static;
+  position: static;
 }
 .banner-title {
-	font-weight: 700;
-	color: inherit;
+  font-weight: 700;
+  color: inherit;
 }
 
 .resume {
-	box-shadow: 0 2px 4px rgba(black, 0.5);
-	font-size: 10pt;
-	background: white;
+  box-shadow: 0 2px 4px rgba(black, 0.5);
+  font-size: 10pt;
+  background: white;
 
-	max-width: 7.5in;
-	padding: 0.5in;
-	margin: 2em auto;
+  max-width: 7.5in;
+  padding: 0.5in;
+  margin: 2em auto;
 }
 
 .resume-header {
-	border-bottom: 0.01in solid $primary-color;
-	font-size: 11pt;
+  border-bottom: 0.01in solid $primary-color;
+  font-size: 11pt;
 
-	padding-bottom: 0.2in;
+  padding-bottom: 0.2in;
 
-	& > h1 {
-		font-size: 28pt;
-		text-transform: uppercase;
-		font-weight: bold;
+  & > h1 {
+    font-size: 28pt;
+    text-transform: uppercase;
+    font-weight: bold;
 
-		margin: 0;
-	}
+    margin: 0;
+  }
 
-	& > ul {
-		line-height: 1.4em;
-		text-align: right;
-		font-size: 1em;
-		list-style: none;
-		padding: none;
+  & > ul {
+    line-height: 1.4em;
+    text-align: right;
+    font-size: 1em;
+    list-style: none;
+    padding: none;
 
-		float: right;
-		margin: 0;
+    float: right;
+    margin: 0;
 
-		a {
-			float: none;
-		}
-	}
+    a {
+      float: none;
+    }
+  }
 
-	& > p {
-		color: #404040;
+  & > p {
+    color: #404040;
 
-		margin: 0;
-	}
+    margin: 0;
+  }
 }
 
 .resume-body {
-	display: flex;
+  display: flex;
 }
 .resume-left-column {
-	width: 4.1in;
-	margin-right: 0.5in;
+  width: 4.1in;
+  margin-right: 0.5in;
 }
 .resume-right-column {
-	width: 2.8in;
+  width: 2.8in;
 }
 
 a, .right {
-	color: inherit;
+  color: inherit;
 }
 a:not([class]), .right {
-	float: right;
+  float: right;
 }
 h1 {
-	font: {
-		weight: 400;
-		size: 16pt;
-	}
+  font: {
+    weight: 400;
+    size: 16pt;
+  }
 
-	margin: 1em 0 0;
+  margin: 1em 0 0;
 }
 h2 {
-	font-size: 12pt;
+  font-size: 12pt;
 
-	margin: 0;
-	clear: right;
+  margin: 0;
+  clear: right;
 }
 h3 {
-	font: {
-		weight: 400;
-		size: 12pt;
-	}
-	line-height: 1.4em;
+  font: {
+    weight: 400;
+    size: 12pt;
+  }
+  line-height: 1.4em;
 
-	margin: 0;
+  margin: 0;
 }
 h4 {
-	font: {
-		weight: 400;
-		size: 10pt;
-	}
-	color: $primary-color;
-	line-height: 1.4em;
+  font: {
+    weight: 400;
+    size: 10pt;
+  }
+  color: $primary-color;
+  line-height: 1.4em;
 
-	margin: 0;
-	position: relative;
+  margin: 0;
+  position: relative;
 
-	.resume-left-column > &::before {
-		background: $primary-color;
+  .resume-left-column > &::before {
+    background: $primary-color;
 
-		position: absolute;
-		left: -0.5in;
-		width: 0.25in;
-		height: 0.69in;
-		content: '';
-	}
+    position: absolute;
+    left: -0.5in;
+    width: 0.25in;
+    height: 0.69in;
+    content: '';
+  }
 }
 p {
-	margin: 0;
+  margin: 0;
 }
 ul {
-	list-style: square;
+  list-style: square;
 
-	margin: 0 0 1em;
-	padding: 0 0 0 1.2em;
+  margin: 0 0 1em;
+  padding: 0 0 0 1.2em;
 }
 em {
-	font: {
-		weight: 400;
-		size: 11pt;
-	}
-	color: #5a5a5a;
+  font: {
+    weight: 400;
+    size: 11pt;
+  }
+  color: #5a5a5a;
 }
 sup {
-	font-size: 0.6em;
+  font-size: 0.6em;
 }
 
 .resume-left-column > .noblock::before {
-	content: none;
+  content: none;
 }
 .pdf-button {
-	color: white;
-	background: #cd372d;
-	font-weight: bold;
-	font-size: 1rem;
+  color: white;
+  background: #cd372d;
+  font-weight: bold;
+  font-size: 1rem;
 
-	padding: 0.6em 2em;
+  padding: 0.6em 2em;
 
-	&::after {
-		will-change: opacity;
-		content: '';
-	}
+  &::after {
+    will-change: opacity;
+    content: '';
+  }
 }
 
 @media (max-width: 6in) {
-	.resume {
-		padding: 0.3in;
-	}
-	.resume-header > ul {
-		margin-bottom: 0.125in;
-		float: none;
-	}
+  .resume {
+    padding: 0.3in;
+  }
+  .resume-header > ul {
+    margin-bottom: 0.125in;
+    float: none;
+  }
 
-	.resume-body {
-		display: block;
-	}
-	.resume-left-column, .resume-right-column {
-		width: auto;
-		margin: 0;
-	}
+  .resume-body {
+    display: block;
+  }
+  .resume-left-column, .resume-right-column {
+    width: auto;
+    margin: 0;
+  }
 }
 
 @media print {
-	.banner-container, .pdf-button, .contact {
-		display: none;
-	}
-	.resume {
-		box-shadow: none;
+  .banner-container, .pdf-button, .contact {
+    display: none;
+  }
+  .resume {
+    box-shadow: none;
 
-		padding: 0;
-	}
-	body {
-		background: transparent;
-	}
+    padding: 0;
+  }
+  body {
+    background: transparent;
+  }
 }

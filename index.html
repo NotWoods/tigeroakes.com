@@ -5,71 +5,71 @@ layout: compress
 <!doctype html>
 <html lang="en">
 <head>
-	{% include head.liquid nosuffix="" %}
-	<script type="application/ld+json">{% include data/schema.json %}</script>
-	<style>
-		{% capture inline_styles %}{% include css/homepage.scss %}{% endcapture %}
-		{{ inline_styles | scssify }}
-	</style>
-	{% include social/site-meta.liquid %}
-	<meta property="og:description" content="{{ site.description }}" />
-	<meta name="twitter:description" content="{{ site.description }}" />
+  {% include head.liquid nosuffix="" %}
+  <script type="application/ld+json">{% include data/schema.json %}</script>
+  <style>
+    {% capture inline_styles %}{% include css/homepage.scss %}{% endcapture %}
+    {{ inline_styles | scssify }}
+  </style>
+  {% include social/site-meta.liquid %}
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta name="twitter:description" content="{{ site.description }}" />
 </head>
 <body>
-	<div id="top"></div>
-	{% include banner.liquid %}
+  <div id="top"></div>
+  {% include banner.liquid %}
 
-	<section class="hero">
-		<h1 class="hero-header">{{ site.data.hero.header }}</h1>
-		<p class="hero-sub">{{ site.data.hero.sub }}</p>
-	</section>
+  <section class="hero">
+    <h1 class="hero-header">{{ site.data.hero.header }}</h1>
+    <p class="hero-sub">{{ site.data.hero.sub }}</p>
+  </section>
 
-	<section class="about">
-		<div class="inner about-content">
-			<div class="about-text">
-				{% capture about %}{% include data/about.md %}{% endcapture %}
-				{{ about | markdownify }}
-			</div>
+  <section class="about">
+    <div class="inner about-content">
+      <div class="about-text">
+        {% capture about %}{% include data/about.md %}{% endcapture %}
+        {{ about | markdownify }}
+      </div>
 
-			{% assign profile = "/images/profile-" | relative_url %}
-			<img class="profile" width="160" height="160" sizes="160px"
-				src="{{ profile }}1x.jpg" alt="Portrait of Tiger Oakes"
-				srcset="{{ profile }}2x.jpg 2x, {{ profile }}3x.jpg 3x, {{ profile }}4x.jpg 4x"
-			>
-		</div>
-	</section>
+      {% assign profile = "/images/profile-" | relative_url %}
+      <img class="profile" width="160" height="160" sizes="160px"
+        src="{{ profile }}1x.jpg" alt="Portrait of Tiger Oakes"
+        srcset="{{ profile }}2x.jpg 2x, {{ profile }}3x.jpg 3x, {{ profile }}4x.jpg 4x"
+      >
+    </div>
+  </section>
 
-	<section class="featured-projects projects" id="featured">
-	{% assign featured_projects = site.projects | where: "feature", true %}
-	{% for project in featured_projects %}
-		{% include utils/project_vars.liquid project=project %}
-		<article class="project featured-project" style="{{ style }}">
-			<div class="inner">
-				<h2 class="project-header side-block">{{ p.title }}</h2>
-				{{ tech_list }}
-				<p class="featured-project-text">
-					{{ description }}
-				</p>
-				{{ links }}
-			</div>
-		</article>
-	{% endfor %}
-	</section>
+  <section class="featured-projects projects" id="featured">
+  {% assign featured_projects = site.projects | where: "feature", true %}
+  {% for project in featured_projects %}
+    {% include utils/project_vars.liquid project=project %}
+    <article class="project featured-project" style="{{ style }}">
+      <div class="inner">
+        <h2 class="project-header side-block">{{ p.title }}</h2>
+        {{ tech_list }}
+        <p class="featured-project-text">
+          {{ description }}
+        </p>
+        {{ links }}
+      </div>
+    </article>
+  {% endfor %}
+  </section>
 
-	<div class="cta-wrap">
-		<a class="button-link cta shadow" href="{{ '/projects/' | relative_url }}">
-			See more projects
-		</a>
-	</div>
+  <div class="cta-wrap">
+    <a class="button-link cta shadow" href="{{ '/projects/' | relative_url }}">
+      See more projects
+    </a>
+  </div>
 
-	<section class="contact" id="contact" role="contentinfo">
-		<h2>Contact</h2>
-		{% include contact.liquid color="white" %}
-	</section>
+  <section class="contact" id="contact" role="contentinfo">
+    <h2>Contact</h2>
+    {% include contact.liquid color="white" %}
+  </section>
 </body>
 {% include analytics.html %}
 <script>
-	if ('serviceWorker' in navigator)
-		navigator.serviceWorker.register('/sw.js', { scope: '/' });
+  if ('serviceWorker' in navigator)
+    navigator.serviceWorker.register('/sw.js', { scope: '/' });
 </script>
 </html>

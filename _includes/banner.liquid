@@ -1,26 +1,26 @@
 <header class="banner-container">
-	<div class="inner banner">
-		{% unless include.notitle %}
-			<a class="home-link" href="/">
-				<div class="dot shadow"></div>
-				<h1 class="banner-title">{{ site.title }}</h1>
-			</a>
-		{% else %}
-			<a class="home-link"><div class="dot shadow"></div></a>
-		{% endunless %}
+  <div class="inner banner">
+    {% unless include.notitle %}
+      <a class="home-link" href="/">
+        <div class="dot shadow"></div>
+        <h1 class="banner-title">{{ site.title }}</h1>
+      </a>
+    {% else %}
+      <a class="home-link"><div class="dot shadow"></div></a>
+    {% endunless %}
 
-		<nav class="navigation">
-			{% for nav in site.data.nav %}
-				{% assign relative = nav.link | relative_url %}
+    <nav class="navigation">
+      {% for nav in site.data.nav %}
+        {% assign relative = nav.link | relative_url %}
 
-				{% if page.url == relative %}
-					<span class="current-page nav-link side-block">{{ nav.title }}</span>
-				{% else %}
-					<a href="{{ nav.link }}" class="nav-link side-block">
-						{{ nav.title }}
-					</a>
-				{% endif %}
-			{% endfor %}
-		</nav>
-	</div>
+        {% if page.url == relative %}
+          <span class="current-page nav-link side-block">{{ nav.title }}</span>
+        {% else %}
+          <a href="{{ nav.link }}" class="nav-link side-block">
+            {{ nav.title }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
 </header>

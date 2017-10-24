@@ -1,44 +1,44 @@
 @import "_utils";
 
 .projects {
-	color: white;
-	text-shadow: 1px 1px 1px rgba(black, 0.75);
+  color: white;
+  text-shadow: 1px 1px 1px rgba(black, 0.75);
 }
 .project {
-	background: {
-		size: cover;
-		position: center;
-		color: $default-project-background;
-	}
+  background: {
+    size: cover;
+    position: center;
+    color: $default-project-background;
+  }
 
-	&:hover .button-link::after { will-change: opacity; }
+  &:hover .button-link::after { will-change: opacity; }
 
-	&-header {
-		background: transparent !important; // Edge 15 hack
+  &-header {
+    background: transparent !important; // Edge 15 hack
 
-		&::before {
-			background: var(--block);
-		}
-	}
+    &::before {
+      background: var(--block);
+    }
+  }
 
-	&-tech {
-		opacity: 0.8;
-		font-size: 0.9em;
-		line-height: 1.5em;
+  &-tech {
+    opacity: 0.8;
+    font-size: 0.9em;
+    line-height: 1.5em;
 
-		padding: 0;
-		margin-top: -1.1em;
-	}
+    padding: 0;
+    margin-top: -1.1em;
+  }
 }
 .pt-item {
-	display: inline;
+  display: inline;
 
-	&::after {
-		content: ' | ';
-		margin: 0 0.2em;
-	}
+  &::after {
+    content: ' | ';
+    margin: 0 0.2em;
+  }
 
-	&:last-child::after {
-		content: none;
-	}
+  &:last-child::after {
+    content: none;
+  }
 }

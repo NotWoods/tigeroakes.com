@@ -4,65 +4,65 @@ $spacing: 1rem;
 $button-margin: 0.2em;
 
 .projects {
-	max-width: $site-width + $spacing;
-	display: flex;
-	flex-wrap: wrap;
-	padding: $spacing / 2;
+  max-width: $site-width + $spacing;
+  display: flex;
+  flex-wrap: wrap;
+  padding: $spacing / 2;
 }
 
 .project {
-	background-position: center;
+  background-position: center;
 
-	padding: 1.5em 2em;
-	display: flex;
-	flex-direction: column;
-	margin: $spacing / 2;
-	flex: 2 0 auto;
-	min-width: 19em;
-	max-width: calc(100% - 5em);
+  padding: 1.5em 2em;
+  display: flex;
+  flex-direction: column;
+  margin: $spacing / 2;
+  flex: 2 0 auto;
+  min-width: 19em;
+  max-width: calc(100% - 5em);
 
-	&-logo {
-		align-self: center;
-		margin-bottom: 2em;
-	}
+  &-logo {
+    align-self: center;
+    margin-bottom: 2em;
+  }
 
-	&-header {
-		white-space: nowrap;
-		margin: 0;
-	}
-	&-text, &-tech {
-		margin: 0;
-	}
+  &-header {
+    white-space: nowrap;
+    margin: 0;
+  }
+  &-text, &-tech {
+    margin: 0;
+  }
 
-	&-links {
-		text-align: center;
-		font-size: 0.95em;
+  &-links {
+    text-align: center;
+    font-size: 0.95em;
 
-		margin: 0.8em (-$button-margin) (-$button-margin);
-		display: flex;
-		justify-content: center;
-	}
+    margin: 0.8em (-$button-margin) (-$button-margin);
+    display: flex;
+    justify-content: center;
+  }
 }
 .feature {
-	flex-grow: 3;
+  flex-grow: 3;
 }
 
 .button-link {
-	white-space: nowrap;
+  white-space: nowrap;
 
-	flex: 1;
-	margin: $button-margin;
-	max-width: 7em;
+  flex: 1;
+  margin: $button-margin;
+  max-width: 7em;
 }
 
 @media (max-width: 26em) {
-	.project {
-		min-width: initial;
-	}
-	.project-header {
-		white-space: initial;
-	}
-	.project-links {
-		flex-wrap: wrap;
-	}
+  .project {
+    min-width: initial;
+  }
+  .project-header {
+    white-space: initial;
+  }
+  .project-links {
+    flex-wrap: wrap;
+  }
 }
