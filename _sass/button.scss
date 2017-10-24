@@ -2,27 +2,19 @@
 
 .button-link {
 	color: inherit;
-	background: transparent !important;
+	background: #000;
+	background: var(--block);
 
 	padding: 0.5em 1.5em;
 	display: inline-block;
-	z-index: 1;
 	position: relative;
 
-	&::before {
-		border: 1px solid;
-
-		@include fill-parent();
-		content: '';
-	}
-
 	&::after {
-		background: #000;
-		background: var(--block);
+		border: 1px solid;
 		opacity: 0;
 
 		content: '';
-		z-index: -1;
+		@include fill-parent();
 	}
 
 	&:hover::after {
@@ -31,11 +23,13 @@
 }
 
 .cta {
+	background: white;
+
 	margin: 1em 0;
 
 	&-wrap {
 		text-align: center;
-		font-size: 1.25em;
+		font-size: 1.5em;
 
 		padding: 1em 0;
 	}

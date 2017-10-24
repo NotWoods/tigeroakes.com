@@ -9,5 +9,6 @@
 	"files.exclude": {
 		"_site/**": true
 	},
-	"terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\bash.exe"
+	"terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\bash.exe",
+	"editor.insertSpaces": true
 }

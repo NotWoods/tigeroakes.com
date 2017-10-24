@@ -138,18 +138,13 @@ sup {
 .resume-left-column > .noblock::before {
 	content: none;
 }
-.cta-wrap {
-	text-align: center;
-}
 .pdf-button {
-	text-decoration: none;
 	color: white;
 	background: #cd372d;
 	font-weight: bold;
+	font-size: 1rem;
 
 	padding: 0.6em 2em;
-	margin: 1em 0 0;
-	display: inline-block;
 
 	&::after {
 		will-change: opacity;

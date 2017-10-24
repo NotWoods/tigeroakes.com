@@ -3,30 +3,31 @@ title: Resume
 layout: base
 extrafont: true
 css:
+  - button
   - resume
 ---
 
 <div class="cta-wrap">
-	<a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_September_2017.pdf">
-		PDF
-	</a>
+  <a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_September_2017.pdf">
+    PDF
+  </a>
 </div>
 
 <main class="resume">
-	<header class="resume-header">
-		{% capture header %}{% include_relative _data/header.md %}{% endcapture %}
-		{{ header | markdownify }}
-	</header>
+  <header class="resume-header">
+    {% capture header %}{% include_relative _data/header.md %}{% endcapture %}
+    {{ header | markdownify }}
+  </header>
 
-	<div class="resume-body">
-		<div class="resume-left-column">
-			{% capture left %}{% include_relative _data/left_column.md %}{% endcapture %}
-			{{ left | markdownify }}
-		</div>
+  <div class="resume-body">
+    <div class="resume-left-column">
+      {% capture left %}{% include_relative _data/left_column.md %}{% endcapture %}
+      {{ left | markdownify }}
+    </div>
 
-		<div class="resume-right-column">
-			{% capture right %}{% include_relative _data/right_column.md %}{% endcapture %}
-			{{ right | markdownify }}
-		</div>
-	</div>
+    <div class="resume-right-column">
+      {% capture right %}{% include_relative _data/right_column.md %}{% endcapture %}
+      {{ right | markdownify }}
+    </div>
+  </div>
 </main>
