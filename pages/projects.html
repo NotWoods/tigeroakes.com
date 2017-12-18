@@ -11,7 +11,7 @@ css:
   - project/showcase
 ---
 {% for key in site.data.showcase %}
-  {% assign project = site.projects[
+  {% assign project = site.projects
     | where_exp: 'project', 'project.id contains key'
     | first %}
   {% include utils/project_vars.liquid project=project %}
