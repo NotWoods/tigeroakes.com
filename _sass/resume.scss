@@ -71,6 +71,8 @@ a, .right {
 a:not([class]), .right {
   float: right;
 }
+
+// Heading 1: Section headers
 h1 {
   font: {
     weight: 400;
@@ -79,12 +81,16 @@ h1 {
 
   margin: 1em 0 0;
 }
+
+// Heading 2: Job and Project titles
 h2 {
   font-size: 12pt;
 
   margin: 0;
   clear: right;
 }
+
+// Heading 3: Company titles
 h3 {
   font: {
     weight: 400;
@@ -94,6 +100,8 @@ h3 {
 
   margin: 0;
 }
+
+// Heading 4: Dates and URLs
 h4 {
   font: {
     weight: 400;
@@ -115,22 +123,27 @@ h4 {
     content: '';
   }
 }
+
 p {
   margin: 0;
 }
+
 ul {
   list-style: square;
 
   margin: 0 0 1em;
   padding: 0 0 0 1.2em;
 }
+
+// Subtitle
 em {
   font: {
     weight: 400;
-    size: 11pt;
+    size: 10pt;
   }
   color: #5a5a5a;
 }
+
 sup {
   font-size: 0.6em;
 }
@@ -138,6 +151,7 @@ sup {
 .resume-left-column > .noblock::before {
   content: none;
 }
+
 .pdf-button {
   color: white;
   background: #cd372d;

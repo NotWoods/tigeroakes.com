@@ -6,6 +6,6 @@
 Tiger Oakes
 ===========
 
-Software Developer with 6 years of experience
+Software Developer with 7 years of experience
 in functional and object-oriented programming.
 Proven success creating custom solutions for a variety of businesses.
