@@ -17,7 +17,7 @@ layout: compress
   <meta property="og:type" content="product" />
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:description" content="{{ page.description | default: page.excerpt }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta
     property="og:image"
