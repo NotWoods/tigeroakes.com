@@ -1,6 +1,16 @@
 Work experience
 ===============
 
+#### 01/2018 - 04/2018	[vitalmechanics.com](http://vitalmechanics.com)
+
+3D Graphics & Simulation Developer
+--------------------------------------------
+
+### Vital Mechanics
+*Simulating skin for visual effects and prototyping clothing*
+
++ Refactoring **JavaScript** client that interfaces with **C++** server.
+
 #### 08/2017 - 12/2017	[yelp.com](https://yelp.com)
 
 Software Engineering Intern – Messaging

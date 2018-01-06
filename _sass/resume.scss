@@ -118,8 +118,8 @@ h4 {
 
     position: absolute;
     left: -0.5in;
-    width: 0.25in;
-    height: 0.69in;
+    width: 0.2in;
+    height: 0.4in;
     content: '';
   }
 }
@@ -131,7 +131,7 @@ p {
 ul {
   list-style: square;
 
-  margin: 0 0 1em;
+  margin: 0 0 0.3em;
   padding: 0 0 0 1.2em;
 }
 
@@ -181,6 +181,9 @@ sup {
   .resume-left-column, .resume-right-column {
     width: auto;
     margin: 0;
+  }
+  .resume-left-column > h4::before {
+    width: 0.3in;
   }
 }
 
