@@ -1,66 +1,50 @@
-Education
-=========
+# Extracurricular Projects
 
-<h4 class="noblock">
-  09/2015 – 04/2020
-  <span class="right">(expected with co-op)</span>
-</h4>
+#### 01/2018
 
-Bachelor of Science in <br>Computer Science, 3<sup>rd</sup> Year
--------------------------------------------------
+## μzm
 
-### University of British Columbia
+_Enhancing learning and interactions at museums_
 
+* **Finalist, nwHacks 2018** out of 800+ people.
+* Helped write **Android** app in **Java** to scan NFC badges on exhibits and patrons.
+* Built server less backend with stdlib.
 
-Personal Projects
-=================
+#### 03/2017
 
-#### 05/2014 – 05/2015	[notwoods.github.io/big-island-buses](https://notwoods.github.io/big-island-buses)
+## The Golden Quest
 
-Big Island Buses
-----------------
+_Voice based choose-your-own adventure_
 
-+	Continued project after contest.
-+	Implemented **AppCache API** to allow the web application to run offline.
-+ Worked with the **County of Hawai'i** to integrate the app with the bus system.
+* Built **Amazon Alexa** skill with Node for nwHacks 2017 Hackathon.
+* Used **regular expressions** to create custom file format for story.
 
+#### 12/2016
 
-#### 04/2014 – 05/2014	[notwoods.github.io/mbta-energy](https://notwoods.github.io/mbta-energy)
+## Pass the Bomb
 
-MBTA Energy
------------
-*Energy Monitor Program*
+_Online multiplayer word game_
 
-+	Volunteered to create tool to assist teacher and his class in aggregating data.
-+ Automatically parsed data from Belkin WeMo Insight Switches and TED monitor.
-+	Implemented **FileReader API** and CSV parser.
+* **Selected by Microsft as an outstanding project** in UBC Local Hack Day (12-hour hackathon).
+* Developed online multiplayer with **Socket.io** in Node.js.
+* Oversaw team while writing client portion of the game.
 
+#### 05/2014 - 05/2015
 
-#### 02/2015 – 07/2017	[notwoods.github.io/latch-on](https://notwoods.github.io/latch-on)
+## Big Island Buses
 
-Latch-On
---------
-*Rope swinging game*
+_Web app to replace Hawai’i paper bus schedules_
 
-+	Built platformer game in **C#** with **Unity**.
-+ Programmed custom grappling hook and swinging movement using **ray-casting**.
+* Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District**.
+* Used JavaScript geolocation to find nearby bus stops and routes.
+* Implemented **AppCache API** to allow the web application to run offline.
+* Worked with the **County of Hawai'i** to integrate the app with the bus system.
 
+#### 02/2015 – 07/2017
 
-Academic Projects
-=================
+## Latch-On
 
-#### 10/2016 - 12/2016
+_Rope swinging game_
 
-Buses 'R Us
------------
-
-+	Created **Android** application in **Java** for Software Construction course.
-+ Wrote geometry calculations to filter bus route shapes and only display portions visible to users.
-
-
-Awards
-======
-* Grand Prize: Congressional App Challenge 2014, Hawaii’s 2nd Congressional District  
-* UBC Work Learn International Undergraduate Research Award
-* UBC e-Portfolio Competition 2017 Finalist
-* Hardcore Top 3, Yelp Hackathon 24.0
+* Built platformer game in **C#** with **Unity**.
+* Programmed custom grappling hook and swinging movement using **ray-casting**.

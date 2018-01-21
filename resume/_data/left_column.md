@@ -1,79 +1,62 @@
-Work experience
-===============
+# Education
 
-#### 01/2018 - 04/2018	[vitalmechanics.com](http://vitalmechanics.com)
+<h4 class="noblock">
+  09/2015 – 04/2020
+  <span class="right">(expected with co-op)</span>
+</h4>
 
-3D Graphics & Simulation Developer
---------------------------------------------
+## Bachelor of Science in Computer Science, 3<sup>rd</sup> Year
+
+### University of British Columbia
+
+# Work experience
+
+#### 01/2018 - 04/2018 [vitalmechanics.com](http://vitalmechanics.com)
+
+## 3D Graphics & Simulation Developer
 
 ### Vital Mechanics
-*Simulating skin for visual effects and prototyping clothing*
 
-+ Refactoring **JavaScript** client that interfaces with **C++** server.
+_Simulating skin for visual effects and prototyping clothing_
 
-#### 08/2017 - 12/2017	[yelp.com](https://yelp.com)
+* Refactoring **JavaScript** client that interfaces with **C++** server.
 
-Software Engineering Intern – Messaging
---------------------------------------------
+#### 08/2017 - 12/2017 [yelp.com](https://yelp.com)
+
+## Software Engineering Intern – Messaging
 
 ### Yelp
 
-+ Built Describe Your Project, a feature to make it easier for users to request quotes from home services businesses.
-+ Created backend **Python** package and routes.
-+ Implemented UI with **React** and **Redux** using functional design.
-+ Wrote tree structure to track flows of questions to ask users.
+* Built Describe Your Project, a feature to make it easier for users to request quotes from home services businesses.
+* Created backend **Python** package and routes.
+* Implemented UI with **React** and **Redux** using functional design.
+* Wrote tree structure to track flows of questions to ask users.
 
-#### 05/2016 – 04/2017	[github.com/ubc-farm](https://github.com/ubc-farm)
+#### 05/2016 – 04/2017 [github.com/ubc-farm](https://github.com/ubc-farm)
 
-Software Developer
-------------------
+## Software Developer
 
 ### Centre for Sustainable Food Systems at UBC Farm
 
-+ Developed custom software with the **UBC Work Learn International Undergraduate Research Award**.
-+	JavaScript program manages data for analyzing growth patterns.
-+	Used geometry calculations to let users draw out farm fields.
+* Developed custom software with the **UBC Work Learn International Undergraduate Research Award**.
+* JavaScript program manages data for analyzing growth patterns.
+* Used geometry calculations to let users draw out farm fields.
 
+#### 10/2009 – 08/2015 [omlhawaii.com](http://omlhawaii.com)
 
-#### 10/2009 – 08/2015	[omlhawaii.com](http://omlhawaii.com)
-
-Web Developer and IT Manager
-----------------------------
+## Web Developer and IT Manager
 
 ### OML Contracting Co.
-*Construction company building private resort residences in Hawai’i*
 
-+	Designed and developed portfolio to showcase residences.
-+	Implemented CSS 3D animations to create GPU accelerated parallax effect.
+_Construction company building private resort residences in Hawai’i_
 
+* Designed and developed portfolio to showcase residences.
+* Implemented CSS 3D animations to create GPU accelerated parallax effect.
 
-Extracurricular
-===============
+# Awards
 
-#### 03/2017	[github.com/notwoods/the-golden-quest](https://github.com/notwoods/the-golden-quest)
-
-The Golden Quest
--------------
-*Voice based choose-your-own adventure*
-
-+	Built **Amazon Alexa** skill with Node for nwHacks 2017 Hackathon.
-+ Used **regular expressions** to create custom file format for story.
-
-#### 12/2016	[github.com/notwoods/local-hack-day](https://github.com/NotWoods/local-hack-day)
-
-Pass the Bomb
--------------
-*Online multiplayer word game*
-
-+	**Selected by Microsft as an outstanding project** in UBC Local Hack Day (12-hour hackathon).
-+ Developed online multiplayer with **Socket.io** in Node.js.
-+ Oversaw team while writing client portion of the game.
-
-#### 05/2014  [notwoods.github.io/big-island-buses](https://notwoods.github.io/big-island-buses)
-
-Big Island Buses
-----------------
-*Bus rider web app to replace Hawai’i paper bus schedules*
-
-+	Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District**.
-+	Used JavaScript geolocation API to locate nearby bus stops and routes.
+* Grand Prize: Congressional App Challenge 2014, Hawaii’s 2nd Congressional District
+* UBC Work Learn International Undergraduate Research Award
+* Finalist: UBC e-Portfolio Competition 2017
+* Hardcore Top 3: Yelp Hackathon 24.0 (out of 44)
+* Finalist: nwHacks 2018 (out of 800+)

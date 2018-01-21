@@ -79,7 +79,7 @@ h1 {
     size: 16pt;
   }
 
-  margin: 1em 0 0;
+  margin: 0.75em 0 0;
 }
 
 // Heading 2: Job and Project titles
@@ -118,8 +118,8 @@ h4 {
 
     position: absolute;
     left: -0.5in;
-    width: 0.2in;
-    height: 0.4in;
+    width: 0.25in;
+    height: 0.7in;
     content: '';
   }
 }
@@ -131,8 +131,8 @@ p {
 ul {
   list-style: square;
 
-  margin: 0 0 0.3em;
-  padding: 0 0 0 1.2em;
+  margin: 0 0 1em;
+  padding: 0 0 0 1em;
 }
 
 // Subtitle

@@ -22,7 +22,7 @@ social:
 markdown: kramdown
 kramdown:
   input: GFM
-gems:
+plugins:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
