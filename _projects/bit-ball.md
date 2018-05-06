@@ -1,6 +1,6 @@
 ---
 title: Bit Ball
-subtitle: 9th Grade Physics Game
+subtitle: 9th grade physics game
 color: '#28a0c5'
 fallbackcolor: '#161616'
 links:

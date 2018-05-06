@@ -1,7 +1,7 @@
 ---
 feature: true
 title: UBC Farm
-subtitle: Farm Research Database
+subtitle: Farm research database
 color: '#3b7448'
 fallbackcolor: '#2d410b'
 links:

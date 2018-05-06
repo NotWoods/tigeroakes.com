@@ -1,6 +1,6 @@
 ---
 title: "Buses 'R Us"
-subtitle: Term Project
+subtitle: Term project
 color: '#1463a7'
 fallbackcolor: '#6a9fbf'
 links:

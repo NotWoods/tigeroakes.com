@@ -1,6 +1,6 @@
 ---
 title: Latch On
-subtitle: Rope Swinging Game
+subtitle: Rope swinging game
 color: '#6b9f93'
 fallbackcolor: '#14576a'
 links:

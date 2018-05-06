@@ -1,7 +1,7 @@
 ---
 feature: true
 title: Big Island Buses
-subtitle: Bus Schedule Software
+subtitle: Bus schedule software
 color: '#4d74ab'
 fallbackcolor: '#313d3f'
 links:

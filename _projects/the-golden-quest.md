@@ -1,6 +1,6 @@
 ---
 title: The Golden Quest
-subtitle: Alexa Adventure Game
+subtitle: Alexa adventure game
 color: '#c3a242'
 fallbackcolor: '#503627'
 links:

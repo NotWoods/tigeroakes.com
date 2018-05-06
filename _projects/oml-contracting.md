@@ -1,6 +1,6 @@
 ---
 title: OML Contracting Co
-subtitle: Construction Portfolio
+subtitle: Construction portfolio
 slug: oml-contracting
 color: '#dcb869'
 fallbackcolor: '#372008'
