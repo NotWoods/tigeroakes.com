@@ -36,6 +36,7 @@ collections:
 sass:
   style: compressed
 
+# Options for the Liquid HTML compressor layout
 compress_html:
   clippings:
     - div

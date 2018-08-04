@@ -36,7 +36,7 @@ _Online multiplayer word game_
 _Web app to replace Hawai’i paper bus schedules_
 
 * Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District**.
-* Used JavaScript geolocation to find nearby bus stops and routes.
+* Used Javascript geolocation to find nearby bus stops and routes.
 * Implemented **AppCache API** to allow the web application to run offline.
 * Worked with the **County of Hawai'i** to integrate the app with the bus system.
 

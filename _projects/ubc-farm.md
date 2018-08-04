@@ -1,5 +1,4 @@
 ---
-feature: true
 title: UBC Farm
 subtitle: Farm research database
 color: '#3b7448'
@@ -8,7 +7,7 @@ links:
   Details: /projects/ubc-farm
   Code: https://github.com/ubc-farm
 tech:
-  - JavaScript
+  - Javascript
   - Node.js
   - SQL
   - React

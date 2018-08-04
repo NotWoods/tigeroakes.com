@@ -11,7 +11,7 @@ links:
 ogp:
   al.web.url: https://notwoods.github.io/big-island-buses/
 tech:
-  - JavaScript
+  - Javascript
   - AppCache
   - Node.js
   - IndexedDB
@@ -19,7 +19,7 @@ tech:
   - GTFS
 description: >
   Bus rider web app to replace Hawai’i paper bus schedules.
-  Uses JavaScript geolocation API to find nearby bus stops,
+  Uses Javascript geolocation API to find nearby bus stops,
   and the AppCache API to run offline.
   Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District.
 ---
@@ -35,7 +35,7 @@ The program went on to be featured in [West Hawaii Today](http://westhawaiitoday
 and [Hawaii](https://www.youtube.com/watch?v=MHPlJsosHDc) [TechWorks](https://www.youtube.com/watch?v=yl_3d7PSKMY).
 
 The app implements the AppCache API to allow it to run offline,
-and uses the JavaScript geolocation API to locate nearby bus stops and routes for the user.
+and uses the Javascript geolocation API to locate nearby bus stops and routes for the user.
 Updates to the UI don't use a library and are instead hand-coded.
 
 In addition to the app, I worked to manually port all the paper schedules into

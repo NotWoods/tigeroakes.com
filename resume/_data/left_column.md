@@ -19,7 +19,7 @@
 
 _Simulating skin for visual effects and prototyping clothing_
 
-* Refactoring **JavaScript** client that interfaces with **C++** server.
+* Refactoring **Javascript** client that interfaces with **C++** server.
 
 #### 08/2017 - 12/2017 [yelp.com](https://yelp.com)
 
@@ -39,7 +39,7 @@ _Simulating skin for visual effects and prototyping clothing_
 ### Centre for Sustainable Food Systems at UBC Farm
 
 * Developed custom software with the **UBC Work Learn International Undergraduate Research Award**.
-* JavaScript program manages data for analyzing growth patterns.
+* Javascript program manages data for analyzing growth patterns.
 * Used geometry calculations to let users draw out farm fields.
 
 #### 10/2009 – 08/2015 [omlhawaii.com](http://omlhawaii.com)
