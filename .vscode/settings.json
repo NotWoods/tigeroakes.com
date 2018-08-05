@@ -10,5 +10,6 @@
     "_site/**": true
   },
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\bash.exe",
-  "editor.insertSpaces": true
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": false
 }

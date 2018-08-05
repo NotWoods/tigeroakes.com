@@ -22,53 +22,51 @@
   border-bottom: 0.01in solid $primary-color;
   font-size: 11pt;
 
+  display: table;
   padding-bottom: 0.2in;
+}
+.name-container {
+  display: table-cell;
+}
+.name {
+  font-size: 28pt;
+  text-transform: uppercase;
+  font-weight: bold;
 
-  & > h1 {
-    font-size: 28pt;
-    text-transform: uppercase;
-    font-weight: bold;
+  margin: 0;
+}
+.summary {
+  color: #404040;
 
-    margin: 0;
-  }
+  margin: 0;
+}
+.resume-contact {
+  line-height: 1.4em;
+  text-align: right;
+  list-style: none;
+  vertical-align: top;
 
-  & > ul {
-    line-height: 1.4em;
-    text-align: right;
-    font-size: 1em;
-    list-style: none;
-    padding: none;
-
-    float: right;
-    margin: 0;
-
-    a {
-      float: none;
-    }
-  }
-
-  & > p {
-    color: #404040;
-
-    margin: 0;
-  }
+  padding: 0;
+  display: table-cell;
 }
 
 .resume-body {
-  display: flex;
+  display: table;
 }
 .resume-left-column {
+  display: table-cell;
   width: 4.1in;
-  margin-right: 0.5in;
+  padding-right: 0.5in;
 }
 .resume-right-column {
+  display: table-cell;
   width: 2.8in;
 }
 
 a, .right {
   color: inherit;
 }
-a:not([class]), .right {
+.right {
   float: right;
 }
 
@@ -76,7 +74,7 @@ a:not([class]), .right {
 h1 {
   font: {
     weight: 400;
-    size: 16pt;
+    size: 14pt;
   }
 
   margin: 0.75em 0 0;
@@ -94,7 +92,7 @@ h2 {
 h3 {
   font: {
     weight: 400;
-    size: 12pt;
+    size: 11pt;
   }
   line-height: 1.4em;
 
@@ -105,7 +103,7 @@ h3 {
 h4 {
   font: {
     weight: 400;
-    size: 10pt;
+    size: 9pt;
   }
   color: $primary-color;
   line-height: 1.4em;
@@ -117,9 +115,9 @@ h4 {
     background: $primary-color;
 
     position: absolute;
-    left: -0.5in;
-    width: 0.25in;
-    height: 0.7in;
+    left: -1cm;
+    width: 0.4cm;
+    height: 1.3cm;
     content: '';
   }
 }
@@ -148,6 +146,10 @@ sup {
   font-size: 0.6em;
 }
 
+.tight {
+  letter-spacing: -0.2pt;
+}
+
 .resume-left-column > .noblock::before {
   content: none;
 }
@@ -170,25 +172,26 @@ sup {
   .resume {
     padding: 0.3in;
   }
-  .resume-header > ul {
-    margin-bottom: 0.125in;
-    float: none;
+  .name-container {
+    display: block;
+  }
+  .resume-contact {
+    margin-top: 0.125in;
+    display: block;
   }
 
   .resume-body {
     display: block;
   }
   .resume-left-column, .resume-right-column {
+    display: block;
     width: auto;
-    margin: 0;
-  }
-  .resume-left-column > h4::before {
-    width: 0.3in;
+    padding: 0;
   }
 }
 
 @media print {
-  .banner-container, .pdf-button, .contact {
+  .banner-container, .cta-wrap, .contact {
     display: none;
   }
   .resume {

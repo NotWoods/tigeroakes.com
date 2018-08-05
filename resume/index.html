@@ -7,27 +7,120 @@ css:
   - resume
 ---
 
+{%comment%}
+Button linking to the PDF download of my resume.
+{%endcomment%}
 <div class="cta-wrap">
-  <a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_July_2018.pdf">
+  <a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_August_2018.pdf">
     PDF
   </a>
 </div>
 
+{% assign resume = site.data.resume %}
 <main class="resume">
+  {%comment%}
+  Header of the resume, including my name, summary, and contact info.
+  {%endcomment%}
   <header class="resume-header">
-    {% capture header %}{% include_relative _data/header.md %}{% endcapture %}
-    {{ header | markdownify }}
+    <div class="name-container">
+      <h1 class="name">{{resume.basics.name}}</h1>
+      <p class="summary">{{resume.basics.summary}}</p>
+    </div>
+
+    <ul class="resume-contact">
+      <li>
+        <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a>
+      </li>
+      <li>
+        <a href="{{resume.basics.website}}">
+          {{resume.basics.website | remove: "https://" | remove: "http://"}}
+        </a>
+      </li>
+      <li>
+        {{resume.basics.location.city}}, {{resume.basics.location.region}}
+      </li>
+      <li>
+        {% assign github = resume.basics.profiles | where_exp:"p", "p.network == 'GitHub'" | first %}
+          <a href="{{github.url}}">github.com/{{github.username}}</a>
+      </li>
+    </ul>
   </header>
 
   <div class="resume-body">
+    {%comment%}
+    The left body column includes Education and Work Experience.
+    {%endcomment%}
     <div class="resume-left-column">
-      {% capture left %}{% include_relative _data/left_column.md %}{% endcapture %}
-      {{ left | markdownify }}
+      <h1>Education</h1>
+      {% for e in resume.education %}
+        <h4 class="noblock">
+          {{e.startDate | split: "-" | reverse | join: "/"}}
+          -
+          {{e.endDate | split: "-" | reverse | join: "/"}}
+          <span class="right">(expected with co-op)</span>
+        </h4>
+        <h2>{{e.institution}}</h2>
+        <h3>
+          {{e.studyType}} in {{e.area}},
+          3<sup>rd</sup> year
+        </h3>
+      {% endfor %}
+
+      <h1>Work Experience</h1>
+      {% for w in resume.work %}
+        <h4>
+          {{w.startDate | split: "-" | reverse | join: "/"}}
+          -
+          {{w.endDate | split: "-" | reverse | join: "/"}}
+          {% assign length = w.website | split: "" | size %}
+          <a class="right{% if length > 35 %} tight{% endif %}" href="{{w.website}}">
+            {{w.website | remove: "https://" | remove: "http://"}}
+          </a>
+        </h4>
+        <h2>{{w.company}}</h2>
+        <h3>{{w.position}}</h3>
+        {% if w.summary %}<em>{{w.summary}}</em>{% endif %}
+        <ul>
+          {% for h in w.highlights %}
+            <li>{{ h | markdownify }}</li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
     </div>
 
+    {%comment%}
+    The right body column includes Skills, Awards, and Projects.
+    {%endcomment%}
     <div class="resume-right-column">
-      {% capture right %}{% include_relative _data/right_column.md %}{% endcapture %}
-      {{ right | markdownify }}
+      <h1>Skills</h1>
+      <p>
+        {{resume.skills | map: "name" | join: " | "}}
+      </p>
+
+      <h1>Awards</h1>
+      <ul>
+        {% for a in resume.awards %}
+          <li>{{a.title}}</li>
+        {% endfor %}
+      </ul>
+
+      <h1>Extracurricular Projects</h1>
+      {% for p in resume.projects %}
+        <h4>
+          {{p.startDate | split: "-" | reverse | join: "/"}}
+          {% if p.startDate != p.endDate %}
+            -
+            {{p.endDate | split: "-" | reverse | join: "/"}}
+          {% endif %}
+        </h4>
+        <h2>{{p.name}}</h2>
+        {% if p.description %}<em>{{p.description}}</em>{% endif %}
+        <ul>
+          {% for h in p.highlights %}
+            <li>{{ h | markdownify }}</li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
     </div>
   </div>
 </main>

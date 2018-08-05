@@ -1,0 +1,181 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Tiger Oakes",
+        "label": "Software Developer",
+        "picture": "https://tigeroakes.com/images/profile-1x.jpg",
+        "email": "contact@tigeroakes.com",
+        "phone": "1 (253) 778-6251",
+        "website": "https://tigeroakes.com",
+        "summary": "Software Developer with 7 years of experience in functional and object-oriented programming. Proven success creating custom solutions for a variety of businesses. ",
+        "location": {
+            "city": "Vancouver",
+            "region": "BC",
+            "countryCode": "CA"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "NotWoods",
+                "url": "https://github.com/NotWoods"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "tigeroakes",
+                "url": "https://linkedin.com/in/tigeroakes"
+            },
+            {
+                "network": "Twitter",
+                "username": "Not_Woods",
+                "url": "https://twitter.com/Not_Woods"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "Google",
+            "position": "Chrome for Android - Software Developer Intern",
+            "website": "https://storage.googleapis.com/chrome-supersize/index.html",
+            "startDate": "2018-05",
+            "endDate": "2018-07",
+            "highlights": [
+                "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after its release.",
+                "Utilized Web Worker, ReadableStream to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
+                "Updated Android Java bytecode compiler tools, shrinking Chrome by 29 KB."
+            ]
+        },
+        {
+            "company": "Vital Mechanics",
+            "position": "3D Graphics & Simulation Developer Intern",
+            "website": "http://vitalmechanics.com",
+            "startDate": "2018-01",
+            "endDate": "2018-04",
+            "summary": "Simulates skin for visual effects and prototyping clothing",
+            "highlights": [
+                "Built Typescript Electron client that interfaces with C++ server to display real-time 3D simulations using WebGL and React."
+            ]
+        },
+        {
+            "company": "Yelp",
+            "position": "Messaging - Software Engineering Intern",
+            "website": "https://yelp.com",
+            "startDate": "2017-08",
+            "endDate": "2017-12",
+            "highlights": [
+                "Built \"Describe Your Project\" with Python, a feature to make it easier for users to request quotes from home services businesses.",
+                "Implemented UI for branching question flows with React and Redux and wrote tree structure to track questions to ask users.",
+                "Led hackathon team to build new product for in-restaurant experience. Placed in Top 3 of Hardcore category out of 44 projects and was picked up by sales team afterwards."
+            ]
+        },
+        {
+            "company": "Centre for Sustainable Food Systems at UBC Farm",
+            "position": "Software Developer Intern",
+            "website": "https://github.com/ubc-farm",
+            "startDate": "2016-05",
+            "endDate": "2017-04",
+            "highlights": [
+                "Developed custom Javascript software with the UBC Work Learn International Undergraduate Research Award.",
+                "Wrote fill algorithm to classify sections of farm fields."
+            ]
+        },
+        {
+            "company": "OML Contracting Co.",
+            "position": "Web Developer and IT Manager",
+            "website": "https://omlhawaii.com",
+            "startDate": "2009-10",
+            "endDate": "2015-08",
+            "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
+            "highlights": [
+                "Designed and developed web portfolio to showcase residences."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Soil TopARgraphy",
+            "url": "",
+            "startDate": "2018-01",
+            "endDate": "2018-04",
+            "description": "Teaches soil topography through AR",
+            "highlights": [
+                "Wrote script to process Mapbox heightmaps to generate Blender 3D model.",
+                "Programmed Android AR viewer in Unity with C#, exposed fields to Unity inspector so teammates could quickly manipulate views."
+            ]
+        },
+        {
+            "name": "μzm",
+            "url": "",
+            "startDate": "2018-01",
+            "endDate": "2018-01",
+            "description": "Enhances museum immersion with gamification",
+            "highlights": [
+                "Finalist, nwHacks 2018 out of 800+ people.",
+                "Helped write Android app in Java to scan NFC badges on exhibits and patrons."
+            ]
+        },
+        {
+            "name": "Pass the Bomb",
+            "url": "",
+            "startDate": "2016-12",
+            "endDate": "2016-12",
+            "description": "Online multiplayer word game",
+            "highlights": [
+                "Selected by Microsoft as an outstanding project in UBC Local Hack Day.",
+                "Developed online multiplayer with Socket.io in Node.js from scratch in 12 hours."
+            ]
+        },
+        {
+            "name": "Big Island Buses",
+            "url": "https://notwoods.github.io/big-island-buses",
+            "startDate": "2014-05",
+            "endDate": "2015-05",
+            "description": "Web app to replace Hawai'i paper bus schedules",
+            "highlights": [
+                "Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District.",
+                "Implemented Application Cache API allow the web application to run offline.",
+                "Contacted and worked with the County of Hawai’i to integrate the app with the island’s bus system."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "University of British Columbia",
+            "area": "Computer Science",
+            "studyType": "Bachelor of Science",
+            "startDate": "2015-09",
+            "endDate": "2020-04"
+        }
+    ],
+    "awards": [
+        {
+            "title": "Finalist: nwHacks 2018 (out of 800+)",
+            "date": "2018-01",
+            "awarder": "StartupStorm"
+        },
+        {
+            "title": "Hardcore Top 3: Yelp Hackathon 24.0 (out of 44)",
+            "date": "2017-11",
+            "awarder": "Yelp"
+        },
+        {
+            "title": "UBC Work Learn International Undergraduate Reasearch Award",
+            "date": "2016-05",
+            "awarder": "University of British Columbia"
+        },
+        {
+            "title": "Grand Prize: Congressional App Challenge 2014, Hawaii’s 2nd Congressional District",
+            "date": "2014-05",
+            "awarder": "United States Congress"
+        }
+    ],
+    "skills": [
+        { "name": "Typescript" },
+        { "name": "Javascript" },
+        { "name": "Python" },
+        { "name": "C#" },
+        { "name": "Java" },
+        { "name": "Node.js" },
+        { "name": "Android" },
+        { "name": "React" }
+    ]
+}
