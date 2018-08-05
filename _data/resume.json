@@ -40,8 +40,8 @@
             "endDate": "2018-07",
             "highlights": [
                 "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after its release.",
-                "Utilized Web Worker, ReadableStream to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
-                "Updated Android Java bytecode compiler tools, shrinking Chrome by 29 KB."
+                "Utilized **Web Worker**, **ReadableStream** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
+                "Updated Android **Java bytecode** compiler tools, shrinking Chrome by 29 KB."
             ]
         },
         {
@@ -52,7 +52,7 @@
             "endDate": "2018-04",
             "summary": "Simulates skin for visual effects and prototyping clothing",
             "highlights": [
-                "Built Typescript Electron client that interfaces with C++ server to display real-time 3D simulations using WebGL and React."
+                "Built **Typescript** Electron client that interfaces with C++ server to display real-time 3D simulations using **WebGL** and **React**."
             ]
         },
         {
@@ -62,9 +62,9 @@
             "startDate": "2017-08",
             "endDate": "2017-12",
             "highlights": [
-                "Built \"Describe Your Project\" with Python, a feature to make it easier for users to request quotes from home services businesses.",
-                "Implemented UI for branching question flows with React and Redux and wrote tree structure to track questions to ask users.",
-                "Led hackathon team to build new product for in-restaurant experience. Placed in Top 3 of Hardcore category out of 44 projects and was picked up by sales team afterwards."
+                "Built \"Describe Your Project\" with **Python**, a feature to make it easier for users to request quotes from home services businesses.",
+                "Implemented UI for branching question flows with **React** and **Redux** and wrote tree structure to track questions to ask users.",
+                "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
             ]
         },
         {
@@ -74,7 +74,7 @@
             "startDate": "2016-05",
             "endDate": "2017-04",
             "highlights": [
-                "Developed custom Javascript software with the UBC Work Learn International Undergraduate Research Award.",
+                "Developed custom **Javascript** software with the **UBC Work Learn International Undergraduate Research Award**.",
                 "Wrote fill algorithm to classify sections of farm fields."
             ]
         },
@@ -93,35 +93,32 @@
     "projects": [
         {
             "name": "Soil TopARgraphy",
-            "url": "",
             "startDate": "2018-01",
             "endDate": "2018-04",
             "description": "Teaches soil topography through AR",
             "highlights": [
                 "Wrote script to process Mapbox heightmaps to generate Blender 3D model.",
-                "Programmed Android AR viewer in Unity with C#, exposed fields to Unity inspector so teammates could quickly manipulate views."
+                "Programmed **Android AR** viewer in **Unity** with **C#**, exposed fields to Unity inspector so teammates could quickly manipulate views."
             ]
         },
         {
             "name": "μzm",
-            "url": "",
             "startDate": "2018-01",
             "endDate": "2018-01",
             "description": "Enhances museum immersion with gamification",
             "highlights": [
-                "Finalist, nwHacks 2018 out of 800+ people.",
-                "Helped write Android app in Java to scan NFC badges on exhibits and patrons."
+                "**Finalist, nwHacks 2018** out of 800+ people.",
+                "Helped write **Android** app in **Java** to scan NFC badges on exhibits and patrons."
             ]
         },
         {
             "name": "Pass the Bomb",
-            "url": "",
             "startDate": "2016-12",
             "endDate": "2016-12",
             "description": "Online multiplayer word game",
             "highlights": [
-                "Selected by Microsoft as an outstanding project in UBC Local Hack Day.",
-                "Developed online multiplayer with Socket.io in Node.js from scratch in 12 hours."
+                "**Selected by Microsoft as an outstanding project** in UBC Local Hack Day.",
+                "Developed online multiplayer with **Socket.io** in **Node.js** from scratch in 12 hours."
             ]
         },
         {
@@ -131,9 +128,9 @@
             "endDate": "2015-05",
             "description": "Web app to replace Hawai'i paper bus schedules",
             "highlights": [
-                "Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District.",
-                "Implemented Application Cache API allow the web application to run offline.",
-                "Contacted and worked with the County of Hawai’i to integrate the app with the island’s bus system."
+                "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
+                "Implemented **Application Cache API** allow the web application to run offline.",
+                "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
             ]
         }
     ],
