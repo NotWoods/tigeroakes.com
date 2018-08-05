@@ -8,6 +8,9 @@ css:
   - button
   - project/showcase
 ---
+{% comment %}
+See site.data.showcase for the order of the projects
+{% endcomment %}
 <main class="projects">
   {% for key in site.data.showcase %}
     {% assign project = site.projects

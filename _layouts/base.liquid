@@ -6,7 +6,12 @@ layout: compress
 <head>
   {% include head.liquid %}
   <style>
-    {% capture inline_styles %}{% include css/base.scss %}{% endcapture %}
+    {% capture inline_styles %}
+    @import "_utils";
+    @import "core";
+    @import "banner";
+    @import "footer";
+    {% endcapture %}
     {{ inline_styles | scssify }}
 
     {% for css in page.css %}

@@ -7,7 +7,15 @@ layout: compress
   {% include head.liquid %}
   {% include utils/project_vars.liquid project=page %}
   <style>
-    {% capture inline_styles %}{% include css/project.scss %}{% endcapture %}
+    {% capture inline_styles %}
+    @import "_utils";
+    @import "core";
+    @import "banner";
+    @import "footer";
+    @import "button";
+    @import "project/collection-base";
+    @import "project/single-page";
+    {% endcapture %}
     {{ inline_styles | scssify }}
 
     .project-hero {

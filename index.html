@@ -6,9 +6,17 @@ layout: compress
 <html lang="en">
 <head>
   {% include head.liquid nosuffix="" %}
-  <script type="application/ld+json">{% include data/schema.json %}</script>
+  <script type="application/ld+json">{% include schema.json %}</script>
   <style>
-    {% capture inline_styles %}{% include css/homepage.scss %}{% endcapture %}
+    {% capture inline_styles %}
+    @import "_utils";
+    @import "core";
+    @import "home";
+    @import "banner";
+    @import "button";
+    @import "project/collection-base";
+    @import "footer";
+    {% endcapture %}
     {{ inline_styles | scssify }}
   </style>
   {% include social/site-meta.liquid %}
@@ -20,14 +28,31 @@ layout: compress
   {% include banner.liquid %}
 
   <section class="hero">
-    <h1 class="hero-header">{{ site.data.hero.header }}</h1>
-    <p class="hero-sub">{{ site.data.hero.sub }}</p>
+    <h1 class="hero-header">{{ site.title }}</h1>
+    <p class="hero-sub">{{ site.subtitle }}</p>
   </section>
 
   <section class="about">
     <div class="inner about-content">
       <div class="about-text">
-        {% capture about %}{% include data/about.md %}{% endcapture %}
+        {% capture about %}
+I'm Tiger Oakes and I'm a software developer studying computer science at
+the University of British Columbia. I'm currently in the co-op program.
+
+I started programming in secondary school and enjoyed it so much
+I'm still doing it! I started with robotics and visual programming
+languages in Hawai'i. Now, I work on complex web applications and
+software for various devices.
+
+Some of my side [projects](/projects/) have been featured in
+[Washington, DC](https://gabbard.house.gov/news/press-releases/rep-tulsi-gabbard-presents-congressional-awards-young-leaders-hawai-i-s-second)
+and news outlets such as the [Star-Advertiser](/featured-in/star-advertiser),
+[West Hawai'i Today](/featured-in/west-hawaii-today)
+and [Hawai'i Public Radio](http://www.bytemarkscafe.org/2015/04/29/episode-348-sounding-rockets-apr-29-2015/).
+
+Below is a portfolio of my projects. If you'd like to get in touch or if you
+have questions about my work, don't hesitate to [contact me](/contact/).
+        {% endcapture %}
         {{ about | markdownify }}
       </div>
 
