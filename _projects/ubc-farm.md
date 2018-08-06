@@ -7,7 +7,7 @@ links:
   Details: /projects/ubc-farm
   Code: https://github.com/ubc-farm
 tech:
-  - Javascript
+  - JavaScript
   - Node.js
   - SQL
   - React

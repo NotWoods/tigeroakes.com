@@ -11,7 +11,7 @@ links:
   Code: https://github.com/omlhawaii/omlhawaii.github.io
 tech:
   - CSS 3D
-  - Javascript
+  - JavaScript
 description: >
   I worked with OML Contracting to redesign their portfolio. The site
   is designed to hide loading times by quickly downloading enough code to
@@ -20,7 +20,7 @@ description: >
 ---
 I worked with OML Contracting to redesign their portfolio and showcase their
 completed residences. Using **3D CSS transformations**, the site has a depth effect
-that does not affect scrolling performance or rely on Javascript, unlike other
+that does not affect scrolling performance or rely on JavaScript, unlike other
 parallax websites.
 
 The site loads quickly despite the large images by **lazy-loading CSS**.

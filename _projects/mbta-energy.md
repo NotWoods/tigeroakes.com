@@ -8,7 +8,7 @@ links:
   View_site: https://notwoods.github.io/mbta-energy/
   Code: https://github.com/NotWoods/mbta-energy
 tech:
-  - Javascript
+  - JavaScript
   - FileReader API
   - CSV Parsing
 description: >
@@ -30,7 +30,7 @@ Using this tool, students found abnormal energy fluctuations, such as a spike
 in power from the copy machine at 4am. The data could also be filtered to show
 a single average line, or only data from weekdays.
 
-The program implements the Javascript **FileReader API** to import data,
+The program implements the JavaScript **FileReader API** to import data,
 and a custom **CSV parser** to read it.
 
 ___

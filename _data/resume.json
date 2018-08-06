@@ -74,7 +74,7 @@
             "startDate": "2016-05",
             "endDate": "2017-04",
             "highlights": [
-                "Developed custom **Javascript** software with the **UBC Work Learn International Undergraduate Research Award**.",
+                "Developed custom **JavaScript** software with the **UBC Work Learn International Undergraduate Research Award**.",
                 "Wrote fill algorithm to classify sections of farm fields."
             ]
         },
@@ -167,7 +167,7 @@
     ],
     "skills": [
         { "name": "Typescript" },
-        { "name": "Javascript" },
+        { "name": "JavaScript" },
         { "name": "Python" },
         { "name": "C#" },
         { "name": "Java" },
