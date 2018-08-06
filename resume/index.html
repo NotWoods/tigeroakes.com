@@ -12,7 +12,7 @@ Button linking to the PDF download of my resume.
 {%endcomment%}
 <div class="cta-wrap">
   <a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_August_2018.pdf">
-    PDF
+    {{site.data.strings.pdf}}
   </a>
 </div>
 
@@ -51,7 +51,7 @@ Button linking to the PDF download of my resume.
     The left body column includes Education and Work Experience.
     {%endcomment%}
     <div class="resume-left-column">
-      <h1>Education</h1>
+      <h1>{{site.data.strings.resume_education}}</h1>
       {% for e in resume.education %}
         <h4 class="noblock">
           {{e.startDate | split: "-" | reverse | join: "/"}}
@@ -66,7 +66,7 @@ Button linking to the PDF download of my resume.
         </h3>
       {% endfor %}
 
-      <h1>Work Experience</h1>
+      <h1>{{site.data.strings.resume_work}}</h1>
       {% for w in resume.work %}
         <h4>
           {{w.startDate | split: "-" | reverse | join: "/"}}
@@ -92,7 +92,7 @@ Button linking to the PDF download of my resume.
     The right body column includes Skills, Awards, and Projects.
     {%endcomment%}
     <div class="resume-right-column">
-      <h1>Skills</h1>
+      <h1>{{site.data.strings.resume_skills}}</h1>
       <p>
         {{resume.skills | map: "name" | join: " | "}}
       </p>
@@ -104,7 +104,7 @@ Button linking to the PDF download of my resume.
         {% endfor %}
       </ul>
 
-      <h1>Extracurricular Projects</h1>
+      <h1>{{site.data.strings.resume_projects}}</h1>
       {% for p in resume.projects %}
         <h4>
           {{p.startDate | split: "-" | reverse | join: "/"}}
