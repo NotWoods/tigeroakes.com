@@ -1,5 +1,6 @@
 ---
 feature: true
+priority: 2 # Feature 3
 title: Big Island Buses
 subtitle: Bus schedule software
 color: '#4d74ab'
@@ -23,7 +24,7 @@ description: >
   and the AppCache API to run offline.
   Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District.
 ---
-Universally accesible bus schedules for Hawaii's limited connectivity
+_Universally accesible bus schedules for Hawaii's limited connectivity_
 
 ### Background
 Bus riders on the Big Island of Hawai'i are only offered [paper schedules](http://www.heleonbus.org/schedules-and-maps), which limit how much information they can display. Patrons need to attempt to locate unmarked bus stations using only a short description (such as "Town Intersection") and a simplified map. Wanting a better experience, I built a Progressive Web Application (PWA) to view the schedule in my 11th grade of high school for the Congressional App Challenge contest. My win in the contest later led to gaining the County of Hawaii's official support for the project.

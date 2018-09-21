@@ -74,6 +74,7 @@ defaults:
         logo: logo.png
         background: background.jpg
       layout: project
+      priority: 10
 
   - scope:
       path: ""
