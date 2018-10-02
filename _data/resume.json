@@ -40,7 +40,7 @@
             "endDate": "2018-07",
             "highlights": [
                 "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after release.",
-                "Utilized **Web Worker**, **ReadableStream** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds. Used **vanilla JavaScript** with no frameworks.",
+                "Utilized **Web Worker**, **ReadableStream** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
                 "Updated **AndroidJava bytecode** compiler tools, shrinking Chrome by 29 KB."
             ]
         },
@@ -63,7 +63,7 @@
             "startDate": "2017-08",
             "endDate": "2017-12",
             "highlights": [
-                "Built \"Describe Your Project\" package with **Python**, a feature to make it easier for users to request quotes from home services businesses. Graduated to microservice.",
+                "Built \"Describe Your Project\" package with **Python**, so users to easily request quotes from home services businesses.",
                 "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
                 "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
             ]
@@ -114,7 +114,7 @@
             "highlights": [
                 "Published **Progressive Web App** on **Microsoft Store**.",
                 "Used **JavaScript** file API to open images for parsing, clipboard API to copy hex values.",
-                "Stored user data in **IndexedDB**, used cursors to stream out saved data."
+                "Stored user data in **IndexedDB**, used cursors to stream out saved data and reduce time to display by 1 second."
             ]
         },
         {
@@ -124,7 +124,8 @@
             "description": "Enhances museum immersion with gamification",
             "highlights": [
                 "**Finalist, nwHacks 2018** out of 800+ people.",
-                "Helped write **Android** app in **Java** to scan NFC badges on exhibits and patrons."
+                "Helped write **Android** app in **Java** to scan NFC badges on exhibits and patrons.",
+                "Built serverless backend with **stdlib** using **Node.js** and **MongoDB**."
             ]
         },
         {
