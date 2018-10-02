@@ -39,9 +39,9 @@
             "startDate": "2018-05",
             "endDate": "2018-07",
             "highlights": [
-                "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after its release.",
-                "Utilized **Web Worker**, **ReadableStream** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
-                "Updated Android **Java bytecode** compiler tools, shrinking Chrome by 29 KB."
+                "Redesigned & added new features to \"Super Size\", **JavaScript** tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after its release.",
+                "Utilized **Web Worker**, **ReadableStream** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds. Used vanilla JavaScript with no frameworks.",
+                "Updated **AndroidJava bytecode** compiler tools, shrinking Chrome by 29 KB."
             ]
         },
         {
@@ -52,7 +52,8 @@
             "endDate": "2018-04",
             "summary": "Simulates skin for visual effects and prototyping clothing",
             "highlights": [
-                "Built **Typescript** Electron client that interfaces with C++ server to display real-time 3D simulations using **WebGL** and **React**."
+                "Built **Typescript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
+                "Migrated large program from **jQuery** to **React** and **Redux**."
             ]
         },
         {
@@ -62,8 +63,8 @@
             "startDate": "2017-08",
             "endDate": "2017-12",
             "highlights": [
-                "Built \"Describe Your Project\" with **Python**, a feature to make it easier for users to request quotes from home services businesses.",
-                "Implemented UI for branching question flows with **React** and **Redux** and wrote tree structure to track questions to ask users.",
+                "Built \"Describe Your Project\" package with **Python**, a feature to make it easier for users to request quotes from home services businesses. Graduated to microservice.",
+                "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
                 "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
             ]
         },
@@ -74,7 +75,8 @@
             "startDate": "2016-05",
             "endDate": "2017-04",
             "highlights": [
-                "Developed custom **JavaScript** software with the **UBC Work Learn International Undergraduate Research Award**.",
+                "Developed custom **TypeScript** software with the **UBC Work Learn International Undergraduate Research Award**.",
+                "Designed UI and built with **React** and **Redux**.",
                 "Wrote fill algorithm to classify sections of farm fields."
             ]
         },
@@ -86,19 +88,32 @@
             "endDate": "2015-08",
             "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
             "highlights": [
-                "Designed and developed web portfolio to showcase residences."
+                "Designed and developed web portfolio to showcase residences.",
+                "Implemented GPU accelerated parallax using **CSS 3D** transformations."
             ]
         }
     ],
     "projects": [
         {
-            "name": "Soil TopARgraphy",
-            "startDate": "2018-01",
-            "endDate": "2018-04",
-            "description": "Teaches soil topography through AR",
+            "name": "Big Island Buses",
+            "url": "https://notwoods.github.io/big-island-buses",
+            "startDate": "2014-05",
+            "endDate": "2015-05",
+            "description": "Web app to replace Hawai'i paper bus schedules",
             "highlights": [
-                "Wrote script to process Mapbox heightmaps to generate Blender 3D model.",
-                "Programmed **Android AR** viewer in **Unity** with **C#**, exposed fields to Unity inspector so teammates could quickly manipulate views."
+                "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
+                "Implemented **Application Cache API** allow the web application to run offline.",
+                "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
+            ]
+        },
+        {
+            "name": "Color Breakdown",
+            "startDate": "2018-04",
+            "endDate": "2018-08",
+            "description": "GUI to analyze image color palette",
+            "highlights": [
+                "Published **Progressive Web App** on **Microsoft Store**",
+                "Used **JavaScript** file API to open images for parsing."
             ]
         },
         {
@@ -119,18 +134,6 @@
             "highlights": [
                 "**Selected by Microsoft as an outstanding project** in UBC Local Hack Day.",
                 "Developed online multiplayer with **Socket.io** in **Node.js** from scratch in 12 hours."
-            ]
-        },
-        {
-            "name": "Big Island Buses",
-            "url": "https://notwoods.github.io/big-island-buses",
-            "startDate": "2014-05",
-            "endDate": "2015-05",
-            "description": "Web app to replace Hawai'i paper bus schedules",
-            "highlights": [
-                "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
-                "Implemented **Application Cache API** allow the web application to run offline.",
-                "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
             ]
         }
     ],
@@ -166,7 +169,7 @@
         }
     ],
     "skills": [
-        { "name": "Typescript" },
+        { "name": "TypeScript" },
         { "name": "JavaScript" },
         { "name": "Python" },
         { "name": "C#" },
