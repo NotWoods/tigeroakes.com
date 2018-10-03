@@ -27,4 +27,4 @@ From there, I was able to import the processed heightmap to Blender and reduce d
 
 ___
 
-![Screenshot](/images/soil-topargraphy/satellite.png)
+![Screenshot](/images/soil-topargraphy/heightmap.png)

@@ -12,6 +12,12 @@ tech:
   - Service Workers
   - Canvas API
   - PWA
+description: >
+  Color Breakdown is a wrapper around a JavaScript port of Android’s Palette API.
+  In various projects I’ve worked on, I’ve wanted complementary colors to pair with images.
+  The Palette API automatically extracts prominent colors from images for designs, but is only avaliable in Android.
+  The JavaScript port is for Node.js so it requires a script.
+  I wanted a simple GUI to handle images for me, so I wrote a Progressive Web App for it.
 ---
 Color Breakdown is a wrapper around a JavaScript port of [Android's Palette API](https://developer.android.com/training/material/palette-colors).
 In various projects I've worked on, I've wanted complementary colors to pair with images.
