@@ -40,7 +40,7 @@
             "endDate": "2018-07",
             "highlights": [
                 "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after release.",
-                "Utilized **streams** and **worker threads** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
+                "Utilized **Web Worker**, **ReadableStream** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
                 "Updated **Android Java bytecode** compiler tools, shrinking Chrome by 29 KB."
             ]
         },

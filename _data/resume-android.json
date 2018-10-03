@@ -34,14 +34,15 @@
     "work": [
         {
             "company": "Google",
-            "position": "Chrome for Android - Software Developer Intern",
+            "position": "Chrome for Android - Software Engineering Intern",
             "website": "https://storage.googleapis.com/chrome-supersize/index.html",
             "startDate": "2018-05",
             "endDate": "2018-07",
             "highlights": [
+                "Updated **Android Java bytecode** compiler tools, shrinking Chrome by 29 KB.",
+                "Wrote **Java** bytecode rewriter to insert code automatically.",
                 "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after release.",
-                "Utilized **streams** and **worker threads** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
-                "Updated **Android Java bytecode** compiler tools, shrinking Chrome by 29 KB."
+                "Utilized **streams** and **worker threads** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds."
             ]
         },
         {
@@ -53,12 +54,12 @@
             "summary": "Simulates skin for visual effects and prototyping clothing",
             "highlights": [
                 "Built **TypeScript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
-                "Migrated large program from **jQuery** to **React** and **Redux**, saving time and effort for future programmers through reactive design."
+                "Migrated large program to **React**/**Redux** architecture, saving time and effort for future programmers through reactive design."
             ]
         },
         {
             "company": "Yelp",
-            "position": "Local Services - Software Engineering Intern",
+            "position": "Local Services - Software Engineer Intern",
             "website": "https://yelp.com/describe_your_project?category=movers",
             "startDate": "2017-08",
             "endDate": "2017-12",
@@ -76,7 +77,6 @@
             "endDate": "2017-04",
             "highlights": [
                 "Developed custom **TypeScript** software with the **UBC Work Learn International Undergraduate Research Award**.",
-                "Designed UI and built with **React** and **Redux**.",
                 "Wrote fill algorithm to classify sections of farm fields."
             ]
         },
@@ -89,7 +89,7 @@
             "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
             "highlights": [
                 "Designed and developed web portfolio to showcase residences.",
-                "Applied GPU-accelerated parallax using **CSS 3D** transformations."
+                "Applied GPU-accelerated parallax using CSS 3D transformations."
             ]
         }
     ],
@@ -102,19 +102,19 @@
             "description": "Web app to replace Hawai'i paper bus schedules",
             "highlights": [
                 "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
-                "Implemented **Application Cache API** allow the web application to run offline.",
+                "Optimized site for mobile offline viewing.",
                 "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
             ]
         },
         {
-            "name": "Color Breakdown",
-            "startDate": "2018-04",
-            "endDate": "2018-08",
-            "description": "GUI to analyze image color palette",
+            "name": "Soil TopARgraphy",
+            "startDate": "2018-01",
+            "endDate": "2019-01",
+            "description": "Teaches soil topography through AR",
             "highlights": [
-                "Published **Progressive Web App** on **Microsoft Store**.",
-                "Used **JavaScript** file API to open images for parsing, clipboard API to copy hex values.",
-                "Stored user data in **IndexedDB**, used cursors to stream out saved data and reduce time to display by 1 second."
+                "Will be **published on Google Play** in 2019.",
+                "Programmed **Android AR** viewer in **Unity** with **C#**, exposed fields to inspector so teammates could quickly manipulate views.",
+                "Wrote script to process Mapbox heightmaps to generate Blender 3D model."
             ]
         },
         {
@@ -129,13 +129,14 @@
             ]
         },
         {
-            "name": "Pass the Bomb",
-            "startDate": "2016-12",
-            "endDate": "2016-12",
-            "description": "Online multiplayer word game",
+            "name": "CellWall",
+            "startDate": "2018-02",
+            "endDate": "2018-10",
+            "description": "Interactive display made of cell phones",
             "highlights": [
-                "**Selected by Microsoft as an outstanding project** in UBC Local Hack Day.",
-                "Developed online multiplayer with **Socket.io** in **Node.js** from scratch in 12 hours."
+                "Working on new **Kotlin Android** app to display data sent from **Node.js** server with **Socket.io** Android client.",
+                "Built display using many **Android** devices attached to foam panel.",
+                "Wrote **adb** script to change power state using physical Amazon Dash button remote."
             ]
         }
     ],
@@ -173,12 +174,12 @@
     "skills": [
         { "name": "TypeScript" },
         { "name": "JavaScript" },
-        { "name": "Python" },
         { "name": "Kotlin" },
-        { "name": "C#" },
         { "name": "Java" },
-        { "name": "Node.js" },
+        { "name": "C#" },
+        { "name": "Python" },
         { "name": "Android" },
+        { "name": "Node.js" },
         { "name": "React" }
     ]
 }
