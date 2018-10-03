@@ -111,7 +111,7 @@ h4 {
   margin: 0;
   position: relative;
 
-  .resume-left-column > &::before {
+  .work-experience &::before {
     background: $primary-color;
 
     position: absolute;
@@ -148,10 +148,6 @@ sup {
 
 .tight {
   letter-spacing: -0.2pt;
-}
-
-.resume-left-column > .noblock::before {
-  content: none;
 }
 
 .pdf-button {

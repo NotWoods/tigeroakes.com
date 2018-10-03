@@ -41,7 +41,7 @@
             "highlights": [
                 "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after release.",
                 "Utilized **Web Worker**, **ReadableStream** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
-                "Updated **AndroidJava bytecode** compiler tools, shrinking Chrome by 29 KB."
+                "Updated **Android Java bytecode** compiler tools, shrinking Chrome by 29 KB."
             ]
         },
         {
@@ -52,14 +52,14 @@
             "endDate": "2018-04",
             "summary": "Simulates skin for visual effects and prototyping clothing",
             "highlights": [
-                "Built **Typescript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
+                "Built **TypeScript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
                 "Migrated large program from **jQuery** to **React** and **Redux**, saving time and effort for future programmers through reactive design."
             ]
         },
         {
             "company": "Yelp",
             "position": "Local Services - Software Engineering Intern",
-            "website": "https://yelp.com",
+            "website": "https://www.yelp.com/describe_your_project?category=movers",
             "startDate": "2017-08",
             "endDate": "2017-12",
             "highlights": [
@@ -174,6 +174,7 @@
         { "name": "TypeScript" },
         { "name": "JavaScript" },
         { "name": "Python" },
+        { "name": "Kotlin" },
         { "name": "C#" },
         { "name": "Java" },
         { "name": "Node.js" },
