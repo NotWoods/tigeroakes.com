@@ -1,15 +1,17 @@
 ---
 feature: true
 priority: 0 # Feature 1
-title: Google Chrome - Super Size
-subtitle: Using web workers and native JavaScript for better visualizations, faster load times, and better user experience
+title: Google Chrome
+subtitle: Chrome APK size breakdown
 color: '#4885ed'
-fallbackcolor: '#000'
+fallbackcolor: '#9ba3ac'
+svg_logo: true
 links:
   Details: /projects/google
-  View_site: https://storage.googleapis.com/chrome-supersize/index.html
+  Open_app: https://storage.googleapis.com/chrome-supersize/index.html
   Code: https://chromium.googlesource.com/chromium/src.git/+/master/tools/binary_size/
 tech:
+    - Android
     - JavaScript
     - Accessibility
     - Web Workers
@@ -46,3 +48,7 @@ The new user interface allowed the Google Chrome team to discover size savings a
 
 ## Conclusion
 Armed with a better tool for analyzing the Android app, the Google Chrome team is able to improve the app for all its users.
+
+___
+
+![Screenshot of Super Size](/images/google/screenshot.png)

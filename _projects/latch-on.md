@@ -22,4 +22,4 @@ The game uses the **Unity** engine.
 
 ___
 
-![An energy chart](/images/latch-on/action.png)
+![Screenshot](/images/latch-on/action.png)
