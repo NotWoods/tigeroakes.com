@@ -7,7 +7,7 @@ color: '#4885ed'
 fallbackcolor: '#9ba3ac'
 svg_logo: true
 links:
-  Details: /projects/google
+  Case_study: /projects/google
   Open_app: https://storage.googleapis.com/chrome-supersize/index.html
   Code: https://chromium.googlesource.com/chromium/src.git/+/master/tools/binary_size/
 tech:

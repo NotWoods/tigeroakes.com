@@ -6,7 +6,7 @@ subtitle: Bus schedule software
 color: '#4d74ab'
 fallbackcolor: '#313d3f'
 links:
-  Details: /projects/big-island-buses
+  Case_study: /projects/big-island-buses
   Open_app: https://notwoods.github.io/big-island-buses/
   Code: https://github.com/NotWoods/big-island-buses
 ogp:

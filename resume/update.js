@@ -88,4 +88,4 @@ function editMode() {
 // https://stackoverflow.com/questions/7798748/find-out-whether-chrome-console-is-open
 const devtools = /./;
 devtools.toString = editMode;
-console.log('%c', devtools);
+console.log('%cReady to paste in JSON resume data', devtools);
