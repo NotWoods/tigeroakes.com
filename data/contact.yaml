@@ -1,0 +1,17 @@
+# Defines links for the contact page and footer
+email:
+  name: contact@tigeroakes.com
+  link: mailto:contact@tigeroakes.com
+  text: "**contact**@**tigeroakes**.com"
+social:
+  - name: GitHub
+    link: https://github.com/NotWoods
+    text: "**github**.com/**NotWoods**"
+
+  - name: LinkedIn
+    link: https://linkedin.com/in/tigeroakes
+    text: "**linkedin**.com/in/**tigeroakes**"
+
+  - name: Twitter
+    link: https://twitter.com/Not_Woods
+    text: "**twitter**.com/**Not_Woods**"

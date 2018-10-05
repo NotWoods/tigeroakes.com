@@ -1,0 +1,72 @@
+{{ define "head" }}
+    <!-- TODO -->
+{{ end }}
+{{ define "main" }}
+    <section class="hero">
+        <h1 class="hero-header">{{.Title}}</h1>
+        <p class="hero-sub">{{.Params.subtitle}}</p>
+    </section>
+
+    <section class="about">
+        <div class="inner about-content">
+            <div class="about-text">
+                {{.Content}}
+            </div>
+
+            {{ $profile := "/images/profile-" | relURL }}
+            <img class="profile" width="160" height="160" sizes="160px" src="{{$profile}}1x.jpg" alt="Portrait of Tiger Oakes"
+                srcset="{{$profile}}2x.jpg 2x, {{$profile}}3x.jpg 3x, {{$profile}}4x.jpg 4x">
+        </div>
+    </section>
+
+    <section class="featured-projects projects" id="featured">
+    {{ range $path := .Site.Data.showcase }}
+        {{ with $.GetPage $path }}
+        {{ if .Params.feature }}
+        <article class="project featured-project" style='background:{{.Params.fallbackcolor}} url({{.Resources.GetMatch "background.jpg"}});--block:{{.Params.color}}'>
+            <div class="inner">
+                <h2 class="project-header side-block">{{.Title}}</h2>
+                <ul class="project-tech">
+                    {{ range $tech := .Params.tech }}
+                    <li class="pt-item">{{$tech}}</li>
+                    {{ end }}
+                </ul>
+                <p class="featured-project-text">
+                    {{.Description | default .Summary}}
+                </p>
+                <div class="project-links">
+                    {{ range $name, $link := .Params.links }}
+                    <a class="button-link shadow" href="{{$link}}">
+                        {{ humanize $name }}
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </article>
+        {{ end }}
+        {{ end }}
+    {{end}}
+    </section>
+
+    <div class="cta-wrap">
+        <a class="button-link cta shadow" href='{{ "/projects/" | relURL }}'>
+            {{ i18n "see_more" }}
+        </a>
+    </div>
+{{ end }}
+{{ define "footer" }}
+    <h2>{{ i18n "contact" }}</h2>
+    <div class="contact-content">
+        {{ with .Site.Data.contact.email }}
+        <a href="{{.link}}" class="contact-link email">
+            {{.name}}
+        </a>
+        {{ end }}
+        {{ range .Site.Data.contact.social }}
+        <a href="{{.link}}" class="contact-link" title="{{.name}}" aria-label="{{.name}}">
+            <img class="contact-icon" alt="{{.name}}" src='/images/contact/white-{{.name | lower}}.svg' width="32"
+                height="32">
+        </a>
+        {{ end }}
+    </div>
+{{ end }}
