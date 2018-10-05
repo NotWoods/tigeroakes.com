@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <article class="project-details-wrapper">
+        <header class="project project-hero">
+            <div class="project-inner inner">
+                {{ partial "project/image.html" . }}
+                <div class="project-hero-text">
+                    <h1 class="project-header side-block">{{.Title}}</h1>
+                    <p class="project-text">{{.Params.subtitle}}</p>
+                </div>
+            </div>
+
+            {{ partial "project/buttons.html" .Params.links }}
+        </header>
+
+        <div class="project-details inner md-content">
+            {{ .Content }}
+        </div>
+
+        {{ partial "project/cta.html" "other_projects" }}
+    </article>
+{{ end }}

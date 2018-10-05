@@ -3,6 +3,8 @@
 other = "PDF"
 [see_more]
 other = "See more projects"
+[other_projects]
+other = "Other projects"
 [contact]
 other = "Contact"
 [resume_education]

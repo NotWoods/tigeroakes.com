@@ -6,7 +6,7 @@
             {{ partial "project/image.html" . }}
             <div class="inner">
                 <h2 class="project-header side-block">{{.Title}}</h2>
-                <p class="project-text">{{ .Params.subtitle }}</p>
+                <p class="project-text">{{.Params.subtitle}}</p>
                 {{ partial "project/tech_list.html" .Params.tech }}
                 {{ partial "project/buttons.html" .Params.links }}
             </div>

@@ -21,7 +21,7 @@
     </section>
 
     <section class="featured-projects projects" id="featured">
-    {{ range $path := .Site.Data.showcase }}
+        {{ range $path := .Site.Data.showcase }}
         {{ with $.GetPage $path }}
         {{ if .Params.feature }}
         <article class="project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
@@ -36,14 +36,10 @@
         </article>
         {{ end }}
         {{ end }}
-    {{end}}
-    </section>
+        {{end}}
 
-    <div class="cta-wrap">
-        <a class="button-link cta shadow" href='{{ "/projects/" | relURL }}'>
-            {{ i18n "see_more" }}
-        </a>
-    </div>
+        {{ partial "project/cta.html" "see_more" }}
+    </section>
 {{ end }}
 {{ define "footer" }}
     <h2>{{ i18n "contact" }}</h2>
