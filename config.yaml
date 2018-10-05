@@ -2,3 +2,22 @@ baseURL: "https://tigeroakes.com/"
 languageCode: "en-ca"
 title: "Tiger Oakes"
 googleAnalytics: UA-37324002-1
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: -130
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: -120
+    - identifier: resume
+      name: Resume
+      url: /resume
+      weight: -110
+    - identifier: contact
+      name: Contact
+      url: /contact
+      weight: -100

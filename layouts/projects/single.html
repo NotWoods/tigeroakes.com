@@ -1,6 +1,6 @@
 {{ define "main" }}
     <article class="project-details-wrapper">
-        <header class="project project-hero">
+        <header class="project project-hero" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="project-inner inner">
                 {{ partial "project/image.html" . }}
                 <div class="project-hero-text">

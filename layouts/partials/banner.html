@@ -7,6 +7,12 @@
         </a>
 
         <nav class="navigation">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+            <a class='sidebar-nav-item{{if $currentPage.IsMenuCurrent "main" . }} current-page{{end}}'
+                href="{{ .URL }}"
+                title="{{ .Title }}">{{ .Name }}</a>
+            {{ end }}
         </nav>
     </div>
 </header>

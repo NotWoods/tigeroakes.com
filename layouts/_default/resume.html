@@ -1,0 +1,130 @@
+{{ define "main" }}
+{{/* Button linking to the PDF download of my resume. */}}
+<div class="cta-wrap">
+    <a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_October_2018.pdf">
+        {{ i18n "pdf" }}
+    </a>
+</div>
+
+
+{{ with .Site.Data.resume.default }}
+<main class="resume">
+    {{/* Header of the resume, including my name, summary, and contact info. */}}
+    <header class="resume-header">
+        <div class="name-container">
+            <h1 class="name">{{.basics.name}}</h1>
+            <p class="summary">{{.basics.summary}}</p>
+        </div>
+
+        <ul class="resume-contact">
+            <li>
+                <a class="resume-email" href="mailto:{{.basics.email}}">{{.basics.email}}</a>
+            </li>
+            <li>
+                <a class="resume-website" href="{{.basics.website}}">
+                {{ .basics.website | replaceRE "^https?://" "" }}
+                </a>
+            </li>
+            <li class="resume-city">
+                {{.basics.location.city}}, {{.basics.location.region}}
+            </li>
+            <li>
+                {{ range .basics.profiles }}
+                {{ if eq .network "GitHub" }}
+                <a class="resume-github" href="{{.url}}">github.com/{{.username}}</a>
+                {{ end }}
+                {{ end }}
+            </li>
+        </ul>
+    </header>
+
+    <div class="resume-body">
+        {{ $format := "01/2006" }}
+        {{/* The left body column includes Education and Work Experience. */}}
+        <div class="resume-left-column">
+            <h1>{{ i18n "resume_education" }}</h1>
+            <div class="education">
+                {{ range .education }}
+                <h4>
+                    {{ dateFormat $format .startDate }}
+                    -
+                    {{ dateFormat $format .endDate }}
+                    <span class="right">(expected with co-op)</span>
+                </h4>
+                <h2>{{.institution}}</h2>
+                <h3>
+                    {{.studyType}} in {{.area}},
+                    3<sup>rd</sup> year
+                </h3>
+                {{ end }}
+            </div>
+
+            <h1>{{ i18n "resume_work" }}</h1>
+            <div class="work-experience">
+                {{ range .work }}
+                <h4>
+                    {{ dateFormat $format .startDate }}
+                    -
+                    {{ dateFormat $format .endDate }}
+                    <a class="right{{if gt (len .website) 35}} tight{{end}}" href="{{.website}}">
+                        {{ .website | replaceRE "^https?://" "" }}
+                    </a>
+                </h4>
+                <h2>{{ .company }}</h2>
+                <h3>{{ .position }}</h3>
+                {{ if .summary }}
+                <em>{{ .summary }}</em>
+                {{ end }}
+                <ul>
+                    {{ range .highlights }}
+                    <li>{{ markdownify . }}</li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+        </div>
+
+        {{/* The right body column includes Skills, Awards, and Projects. */}}
+        <div class="resume-right-column">
+            <h1>{{ i18n "resume_skills" }}</h1>
+            <p class="skills">
+                {{ $len := (len .skills) }}
+                {{ range $idx, $skill := .skills }}
+                {{ $skill.name }}
+                {{ if lt (add $idx 1) $len }} | {{ end }}
+                {{ end }}
+            </p>
+
+            <h1>{{ i18n "resume_awards" }}</h1>
+            <ul class="awards">
+                {{ range .awards }}
+                <li>{{.title}}</li>
+                {{ end }}
+            </ul>
+
+            <h1>{{ i18n "resume_projects" }}</h1>
+            <div class="resume-projects">
+                {{ range .projects }}
+                <h4>
+                    {{ dateFormat $format .startDate }}
+                    {{ if not (eq .startDate .endDate) }}
+                    -
+                    {{ dateFormat $format .endDate }}
+                    {{ end }}
+                </h4>
+                <h2>{{.name}}</h2>
+                {{ if .description }}
+                <em>{{.description}}</em>
+                {{ end }}
+                <ul>
+                    {{ range .highlights }}
+                    <li>{{ markdownify . }}</li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</main>
+{{ end }}
+{{ end }}

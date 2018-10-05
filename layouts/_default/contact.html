@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ with .Site.Data.contact }}
+<main class="contact">
+    <p>{{ i18n "send_email_to" }}</p>
+    <a href="{{.email.link}}" class="contact-link email-link">
+        {{ .email.text | markdownify }}
+    </a>
+
+    <p>{{ i18n "find_at" }}</p>
+    {{ range .social }}
+    <a href="{{.link}}" class="contact-link">
+        {{ .email.text | markdownify }}
+    </a>
+    {{ end }}
+</main>
+{{ end }}
+{{ end }}
+{{ define "footer "}}{{ end }}
