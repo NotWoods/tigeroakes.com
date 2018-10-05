@@ -6,10 +6,10 @@
             <h1 class="banner-title">{{ .Site.Title }}</h1>
         </a>
 
-        <nav class="navigation">
+        <nav class="nav">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
-            <a class='sidebar-nav-item{{if $currentPage.IsMenuCurrent "main" . }} current-page{{end}}'
+            <a class='nav-link highlight-title{{if $currentPage.IsMenuCurrent "main" . }} current-page{{end}}'
                 href="{{ .URL }}"
                 title="{{ .Title }}">{{ .Name }}</a>
             {{ end }}

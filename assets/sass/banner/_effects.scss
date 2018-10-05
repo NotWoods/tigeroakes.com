@@ -1,0 +1,37 @@
+@import "../_utils";
+
+// Some styles are in _main
+.dot {
+  box-shadow: none;
+
+  &::after {
+    box-shadow: 0 4px 4px rgba(black, 0.3);
+  }
+}
+
+// Requires .highlight-title class
+.nav-link {
+  // Side block
+  &::before {
+    background: $primary-color;
+
+    // opacity: 0; // Set in _main
+    left: -0.5em;
+    transform: scaleX(0) {
+      origin: right;
+    }
+    transition: transform 0.1s ease;
+
+    .banner:hover & {
+      will-change: transform;
+    }
+  }
+  &:hover::before,
+  &:focus::before {
+    transform: none;
+    opacity: 1;
+  }
+  &:active::before {
+    transform: scaleX(0.5);
+  }
+}

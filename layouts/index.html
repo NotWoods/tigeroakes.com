@@ -1,11 +1,14 @@
 {{ define "title" }}{{.Site.Title}}{{ end }}
 {{ define "head" }}
-    <!-- TODO -->
+    {{ partial "css.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
+    {{ partial "async-css.html" "sass/extra.scss" }}
 {{ end }}
 {{ define "main" }}
-    <section class="hero">
-        <h1 class="hero-header">{{.Title}}</h1>
-        <p class="hero-sub">{{.Params.subtitle}}</p>
+    <section class="hero-container">
+        <div class="hero">
+            <h1 class="hero-header">{{.Title}}</h1>
+            <p class="hero-sub">{{.Params.subtitle}}</p>
+        </div>
     </section>
 
     <section class="about">
@@ -14,19 +17,27 @@
                 {{.Content}}
             </div>
 
-            {{ $profile := "/images/profile-" | relURL }}
-            <img class="profile" width="160" height="160" sizes="160px" src="{{$profile}}1x.jpg" alt="Portrait of Tiger Oakes"
-                srcset="{{$profile}}2x.jpg 2x, {{$profile}}3x.jpg 3x, {{$profile}}4x.jpg 4x">
+            {{ with .Resources.GetMatch "profile.jpg" }}
+            {{ $1x := .Resize "160x" }}
+            {{ $2x := .Resize "320x" }}
+            {{ $3x := .Resize "480x" }}
+            {{ $4x := .Resize "640x" }}
+            <img class="profile" width="160" height="160" sizes="160px" alt="Portrait of Tiger Oakes"
+                src="{{$1x.RelPermalink}}"
+                srcset="{{$2x.RelPermalink}} 2x,
+                        {{$3x.RelPermalink}} 3x,
+                        {{$4x.RelPermalink}} 4x">
+            {{ end }}
         </div>
     </section>
 
-    <section class="featured-projects projects" id="featured">
+    <section class="featured-projects projects project-text" id="featured">
         {{ range $path := .Site.Data.showcase }}
         {{ with $.GetPage $path }}
         {{ if .Params.feature }}
         <article class="project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="inner">
-                <h2 class="project-header side-block">{{.Title}}</h2>
+                <h3 class="project-header highlight-title">{{.Title}}</h3>
                 {{ partial "project/tech_list.html" .Params.tech }}
                 <p class="featured-project-text">
                     {{.Description | default .Summary}}
@@ -42,6 +53,8 @@
     </section>
 {{ end }}
 {{ define "footer" }}
-    <h2>{{ i18n "contact" }}</h2>
-    {{ partialCached "footer.html" . }}
+    <footer class="contact" id="contact" role="contentinfo">
+        <h2>{{ i18n "contact" }}</h2>
+        {{ partial "footer.html" . }}
+    </footer>
 {{ end }}

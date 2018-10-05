@@ -15,10 +15,10 @@
     {{ partial "banner.html" . }}
 
     {{ block "main" . }}{{ end }}
+    {{ block "footer" . }}
     <footer class="contact" id="contact" role="contentinfo">
-        {{ block "footer" . }}
         {{ partialCached "footer.html" . }}
-        {{ end }}
     </footer>
+    {{ end }}
     {{ template "_internal/google_analytics_async.html" . }}
 </body>

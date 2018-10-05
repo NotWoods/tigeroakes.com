@@ -23,15 +23,15 @@ function update(data) {
   document.querySelector(".education").innerHTML = data.education
     .map(
       e => `
-    <h4 class="noblock">
+    <h5>
       ${formatDate(e.startDate)} - ${formatDate(e.endDate)}
       <span class="right">(expected with co-op)</span>
-    </h4>
+    </h5>
     <h2>${e.institution}</h2>
-    <h3>
+    <h4>
       ${e.studyType} in ${e.area},
       3<sup>rd</sup> year
-    </h3>
+    </h4>
   `
     )
     .join("");
@@ -40,16 +40,16 @@ function update(data) {
   document.querySelector(".work-experience").innerHTML = data.work
     .map(
       w => `
-    <h4>
+    <h5>
       ${formatDate(w.startDate)} - ${formatDate(w.endDate)}
       <a class="right${w.website.length > 35 ? " tight" : ""}" href="${
         w.website
       }">
         ${w.website.replace(/https?:\/\//, "")}
       </a>
-    </h4>
+    </h5>
     <h2>${w.company}</h2>
-    <h3>${w.position}</h3>
+    <h4>${w.position}</h4>
     ${w.summary ? `<em>${w.summary}</em>` : ""}
     ${highlights(w.highlights)}
   `
@@ -70,10 +70,10 @@ function update(data) {
   document.querySelector(".resume-projects").innerHTML = data.projects
     .map(
       p => `
-    <h4>
+    <h5>
       ${formatDate(p.startDate)}
       ${p.endDate == p.startDate ? "" : `- ${formatDate(p.endDate)}`}
-    </h4>
+    </h5>
     <h2>${p.name}</h2>
     ${p.description ? `<em>${p.description}</em>` : ""}
     ${highlights(p.highlights)}

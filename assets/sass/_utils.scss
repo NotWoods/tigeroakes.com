@@ -1,0 +1,27 @@
+// Primary colors for the site
+$primary-color: #e66d31;
+$font-color: rgba(black, 0.87);
+$background-color: #f0f0f0;
+// Content width
+$site-width: 60rem;
+// Background for projects without their own background set
+$default-project-background: #333;
+
+// Set equal width and height
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+// Fill a relative parent element
+@mixin fill-parent($width: true, $height: true) {
+  position: absolute;
+  @if $width {
+    left: 0;
+    right: 0;
+  }
+  @if $height {
+    top: 0;
+    bottom: 0;
+  }
+}

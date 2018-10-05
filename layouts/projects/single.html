@@ -1,18 +1,23 @@
+{{ define "head" }}
+    {{ partial "css.html" (resources.Get "sass/project/page.scss") }}
+    {{ partial "async-css.html" "sass/extra.scss" }}
+{{ end }}
 {{ define "main" }}
     <article class="project-details-wrapper">
-        <header class="project project-hero" style='{{ partial "project/style.css" . | safeCSS }}'>
-            <div class="project-inner inner">
+        <header class="project hero-container project-text" style='{{ partial "project/style.css" . | safeCSS }}'>
+            <div class="hero inner">
                 {{ partial "project/image.html" . }}
                 <div class="project-hero-text">
-                    <h1 class="project-header side-block">{{.Title}}</h1>
+                    <h1 class="project-header highlight-title">{{.Title}}</h1>
                     <p class="project-text">{{.Params.subtitle}}</p>
+                    {{ partial "project/tech_list.html" .Params.tech }}
                 </div>
-            </div>
 
-            {{ partial "project/buttons.html" .Params.links }}
+                {{ partial "project/buttons.html" .Params.links }}
+            </div>
         </header>
 
-        <div class="project-details inner md-content">
+        <div class="project-details inner text-container">
             {{ .Content }}
         </div>
 

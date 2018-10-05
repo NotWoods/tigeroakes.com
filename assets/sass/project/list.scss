@@ -1,4 +1,6 @@
-@import "_utils";
+@import "../_utils";
+@import "../_core";
+@import "./_main";
 
 $spacing: 1rem;
 $button-margin: 0.2em;
@@ -10,8 +12,6 @@ $button-margin: 0.2em;
 }
 
 .project {
-  background-position: center;
-
   padding: 1.5em 2em;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,10 @@ $button-margin: 0.2em;
   min-width: 19em;
   max-width: calc(100% - 5em);
 
+  &.feature {
+    flex-grow: 3;
+  }
+
   &-logo {
     align-self: center;
     margin-bottom: 2em;
@@ -27,9 +31,6 @@ $button-margin: 0.2em;
 
   &-header {
     white-space: nowrap;
-    margin: 0;
-  }
-  &-text, &-tech {
     margin: 0;
   }
 
@@ -41,9 +42,6 @@ $button-margin: 0.2em;
     display: flex;
     justify-content: center;
   }
-}
-.feature {
-  flex-grow: 3;
 }
 
 .button-link {

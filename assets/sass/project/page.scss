@@ -1,0 +1,44 @@
+@import "../_utils";
+@import "../_core";
+@import "./_main";
+
+.project {
+  & .hero {
+    display: grid;
+    grid-template:
+      "image text" min-content
+      "buttons buttons" min-content
+      / min-content auto;
+    grid-column-gap: 4em;
+  }
+
+  &-header {
+    margin-bottom: 0.2em;
+  }
+
+  &-links {
+    --link-space: 0.3em;
+
+    grid-area: buttons;
+    justify-self: center;
+
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 36em) {
+  .project.hero {
+    grid-template:
+      "image" auto
+      "text" auto
+      "buttons" min-content
+      / auto;
+    justify-items: center;
+  }
+  .project-links {
+    margin-top: 1em;
+
+    font-size: 1em;
+    text-align: center;
+  }
+}

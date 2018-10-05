@@ -1,0 +1,33 @@
+@import "./_utils";
+
+body {
+  margin: 0;
+
+  font-family: Lato, "Trebuchet MS", sans-serif;
+  color: $font-color;
+  background: $background-color;
+}
+
+.inner {
+  max-width: $site-width;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+
+.hero-container {
+  padding: 2em;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  // On hover, show an underline. Only for markdown-generated classes.
+  &:hover:not([class]) {
+    text-decoration: underline;
+  }
+}
+
+@import "./_button";
+@import "./_text";
+@import "./banner/_main";

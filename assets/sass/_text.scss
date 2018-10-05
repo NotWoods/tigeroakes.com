@@ -1,0 +1,19 @@
+.text-container {
+  padding: 1em 3em;
+
+  background: white;
+}
+
+// Turns text white with a small drop shadow
+// Should be set on .project or a container of .project elements.
+.project-text {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(black, 0.75);
+}
+
+hr {
+  max-width: 10em;
+  margin: 3vh auto 5vh;
+
+  border-color: black;
+}

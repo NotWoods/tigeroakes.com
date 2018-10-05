@@ -1,0 +1,34 @@
+@import "./_utils";
+
+// Requires .shadow class
+.button-link {
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  position: relative;
+
+  color: inherit;
+  background: #000;
+  background: var(--block);
+
+  &::after {
+    border: 1px solid;
+  }
+}
+
+// Requires .button-link
+.cta {
+  margin: 2em 0;
+
+  background: white;
+  color: black;
+  text-shadow: none;
+}
+// Wrapper element for .cta
+.cta-wrap {
+  text-align: center;
+  font-size: 1.5em;
+
+  & .cta::after {
+    will-change: opacity;
+  }
+}

@@ -1,3 +1,12 @@
+@import "../_utils";
+@import "../_core";
+
+.post.hero-container {
+  --block: #ddd;
+  background: #333;
+}
+
+/*
 .post-wrapper {
   max-width: 64rem;
   padding: 0 0.75em;
@@ -54,11 +63,12 @@ h2 {
     left: -1em;
     width: 0.5em;
     height: 100%;
-    content: '';
+    content: "";
   }
 }
 
-pre, code {
+pre,
+code {
   border-radius: 3px;
   font-size: 1.1em;
 }
@@ -125,7 +135,9 @@ tr {
 th {
   font-weight: bold;
 }
-th, td {
+th,
+td {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
 }
+*/

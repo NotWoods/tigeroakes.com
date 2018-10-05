@@ -1,3 +1,18 @@
+{{ define "head" }}
+    {{ partial "css.html" (resources.Get "sass/posts/single.scss") }}
+    {{ partial "async-css.html" "sass/extra.scss" }}
+{{ end }}
 {{ define "main" }}
-    {{.Content}}
+    <article>
+        <header class="hero-container post no-hero-image project-text">
+            <div class="hero inner">
+                <h1 class="highlight-title">{{.Title}}</h1>
+                <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>
+            </div>
+        </header>
+
+        <div class="inner text-container">
+            {{ .Content }}
+        </div>
+    </article>
 {{ end }}

@@ -1,12 +1,7 @@
-@import "_utils";
-
-.banner-container {
-  position: static;
-}
-.banner-title {
-  font-weight: 700;
-  color: inherit;
-}
+@import "../_utils";
+@import "../_core";
+@import "../_effects";
+@import "../contact/_main";
 
 .resume {
   box-shadow: 0 2px 4px rgba(black, 0.5);
@@ -63,7 +58,8 @@
   width: 2.8in;
 }
 
-a, .right {
+a,
+.right {
   color: inherit;
 }
 .right {
@@ -71,7 +67,7 @@ a, .right {
 }
 
 // Heading 1: Section headers
-h1 {
+.resume-body h1 {
   font: {
     weight: 400;
     size: 14pt;
@@ -89,7 +85,7 @@ h2 {
 }
 
 // Heading 3: Company titles
-h3 {
+h4 {
   font: {
     weight: 400;
     size: 11pt;
@@ -100,7 +96,7 @@ h3 {
 }
 
 // Heading 4: Dates and URLs
-h4 {
+h5 {
   font: {
     weight: 400;
     size: 9pt;
@@ -118,7 +114,7 @@ h4 {
     left: -1cm;
     width: 0.4cm;
     height: 1.3cm;
-    content: '';
+    content: "";
   }
 }
 
@@ -157,10 +153,11 @@ sup {
   font-size: 1rem;
 
   padding: 0.6em 2em;
+  margin: 1.5em;
 
   &::after {
     will-change: opacity;
-    content: '';
+    content: "";
   }
 }
 
@@ -179,7 +176,8 @@ sup {
   .resume-body {
     display: block;
   }
-  .resume-left-column, .resume-right-column {
+  .resume-left-column,
+  .resume-right-column {
     display: block;
     width: auto;
     padding: 0;
@@ -187,7 +185,9 @@ sup {
 }
 
 @media print {
-  .banner-container, .cta-wrap, .contact {
+  .banner-container,
+  .cta-wrap,
+  .contact {
     display: none;
   }
   .resume {

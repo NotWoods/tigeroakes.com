@@ -1,0 +1,28 @@
+// Displays an underline that grows on hover.
+.contact a {
+  margin: 1em 0.5em;
+  display: inline-block;
+  position: relative;
+
+  color: inherit;
+
+  &::after {
+    content: "";
+    height: 0.5rem;
+    bottom: -1rem;
+    @include fill-parent($width: true, $height: false);
+
+    transform: scaleY(0) {
+      origin: top;
+    }
+    transition: transform 0.2s ease;
+    background: $primary-color;
+  }
+  &:hover::after,
+  &:focus::after {
+    transform: none;
+  }
+  &:active::after {
+    transform: scaleY(0.5);
+  }
+}
