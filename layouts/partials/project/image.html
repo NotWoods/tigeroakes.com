@@ -1,15 +1,15 @@
-{{ with .Resources.GetMatch "logo.*" }}
-    {{ if (in .MediaType.Suffixes "svg") }}
-        <img src="{{.RelPermalink}}" height="128" width="128" alt="{{$.Title}} Logo">
-    {{ else }}
-        {{ $1x := .Resize "128x" }}
-        {{ $2x := .Resize "256x" }}
-        {{ $3x := .Resize "384x" }}
-        {{ $4x := .Resize "512x" }}
-        <img src="{{$1x.RelPermalink}}"
-            srcset="{{$2x.RelPermalink}} 2x,
-                    {{$3x.RelPermalink}} 3x,
-                    {{$4x.RelPermalink}} 4x"
-            height="128" width="128" alt="{{.Title}}">
-    {{ end }}
+{{ $logo := .Resources.GetMatch "logo.svg" }}
+{{ if $logo }}
+<img src="{{$logo.RelPermalink}}" height="128" width="128" alt="{{.Title}} Logo">
+{{ else }}
+{{ $logo := .Resources.GetMatch "logo.png" }}
+{{ $1x := $logo.Resize "128x" }}
+{{ $2x := $logo.Resize "256x" }}
+{{ $3x := $logo.Resize "384x" }}
+{{ $4x := $logo.Resize "512x" }}
+<img src="{{$1x.RelPermalink}}"
+    srcset="{{$2x.RelPermalink}} 2x,
+            {{$3x.RelPermalink}} 3x,
+            {{$4x.RelPermalink}} 4x"
+    height="128" width="128" alt="{{.Title}}">
 {{ end }}
