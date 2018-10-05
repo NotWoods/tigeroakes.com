@@ -1,0 +1,2 @@
+{{ $bkg := .Resources.GetMatch "background.*" }}
+background:{{.Params.fallbackcolor}} url({{$bkg.RelPermalink}});--block:{{.Params.color}}

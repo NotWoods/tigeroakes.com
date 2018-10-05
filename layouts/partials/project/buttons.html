@@ -1,0 +1,8 @@
+{{/* Input should be dict of button name to button link */}}
+<div class="project-links">
+    {{ range $name, $link := . }}
+    <a class="button-link shadow" href="{{$link}}">
+        {{ humanize $name }}
+    </a>
+    {{ end }}
+</div>

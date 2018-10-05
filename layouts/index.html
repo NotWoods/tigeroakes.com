@@ -1,3 +1,4 @@
+{{ define "title" }}{{.Site.Title}}{{ end }}
 {{ define "head" }}
     <!-- TODO -->
 {{ end }}
@@ -23,24 +24,14 @@
     {{ range $path := .Site.Data.showcase }}
         {{ with $.GetPage $path }}
         {{ if .Params.feature }}
-        <article class="project featured-project" style='background:{{.Params.fallbackcolor}} url({{.Resources.GetMatch "background.jpg"}});--block:{{.Params.color}}'>
+        <article class="project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="inner">
                 <h2 class="project-header side-block">{{.Title}}</h2>
-                <ul class="project-tech">
-                    {{ range $tech := .Params.tech }}
-                    <li class="pt-item">{{$tech}}</li>
-                    {{ end }}
-                </ul>
+                {{ partial "project/tech_list.html" .Params.tech }}
                 <p class="featured-project-text">
                     {{.Description | default .Summary}}
                 </p>
-                <div class="project-links">
-                    {{ range $name, $link := .Params.links }}
-                    <a class="button-link shadow" href="{{$link}}">
-                        {{ humanize $name }}
-                    </a>
-                    {{ end }}
-                </div>
+                {{ partial "project/buttons.html" .Params.links }}
             </div>
         </article>
         {{ end }}
