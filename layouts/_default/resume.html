@@ -1,11 +1,10 @@
 {{ define "main" }}
 {{/* Button linking to the PDF download of my resume. */}}
 <div class="cta-wrap">
-    <a class="pdf-button button-link shadow" href="Tiger_Oakes_resume_-_October_2018.pdf">
+    <a class="pdf-button button-link shadow" href="{{.Params.pdf}}">
         {{ i18n "pdf" }}
     </a>
 </div>
-
 
 {{ with .Site.Data.resume.default }}
 <main class="resume">
@@ -126,5 +125,7 @@
         </div>
     </div>
 </main>
+
+<script defer async src="update.js"></script>
 {{ end }}
 {{ end }}

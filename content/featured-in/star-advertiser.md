@@ -1,8 +1,6 @@
 ---
 title: "For teenager, buds of life bloom without boundaries."
-layout: post
 date: 2012-07-31
-permalink: /featured-in/star-advertiser
 author: mtsai
 seo:
   type: NewsArticle
@@ -15,9 +13,10 @@ description: >
   project - provided, of course, the office systems are running smoothly and
   he's done all his homework.
 ---
-*Posted from [Honolulu Star-Advertiser](http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/)*
 
-___
+_Posted from [Honolulu Star-Advertiser](http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/)_
+
+---
 
 It's generally not a problem when the IT manager/webmaster/telecommunications
 adviser for Oakes Management needs an afternoon off to attend to a personal

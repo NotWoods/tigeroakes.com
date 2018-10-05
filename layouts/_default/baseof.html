@@ -17,19 +17,7 @@
     {{ block "main" . }}{{ end }}
     <footer class="contact" id="contact" role="contentinfo">
         {{ block "footer" . }}
-        <div class="contact-content">
-            {{ with .Site.Data.contact.email }}
-            <a href="{{.link}}" class="contact-link email">
-                {{.name}}
-            </a>
-            {{ end }}
-            {{ range $social := .Site.Data.contact.social }}
-            <a href="{{$social.link}}" class="contact-link" title="{{$social.name}}" aria-label="{{$social.name}}">
-                    <img class="contact-icon" alt="{{$social.name}}" src='/images/contact/black-{{$social.name | lower}}.svg' width="32"
-                        height="32">
-                </a>
-            {{ end }}
-        </div>
+        {{ partialCached "footer.html" . }}
         {{ end }}
     </footer>
     {{ template "_internal/google_analytics_async.html" . }}
