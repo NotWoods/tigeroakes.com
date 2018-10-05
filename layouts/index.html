@@ -43,17 +43,5 @@
 {{ end }}
 {{ define "footer" }}
     <h2>{{ i18n "contact" }}</h2>
-    <div class="contact-content">
-        {{ with .Site.Data.contact.email }}
-        <a href="{{.link}}" class="contact-link email">
-            {{.name}}
-        </a>
-        {{ end }}
-        {{ range .Site.Data.contact.social }}
-        <a href="{{.link}}" class="contact-link" title="{{.name}}" aria-label="{{.name}}">
-            <img class="contact-icon" alt="{{.name}}" src='/images/contact/white-{{.name | lower}}.svg' width="32"
-                height="32">
-        </a>
-        {{ end }}
-    </div>
+    {{ partialCached "footer.html" . }}
 {{ end }}

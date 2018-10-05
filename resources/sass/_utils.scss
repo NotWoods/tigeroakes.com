@@ -1,0 +1,16 @@
+$primary-color: #e66d31;
+$site-width: 60rem;
+$default-project-background: #333;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin fill-parent() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

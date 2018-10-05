@@ -1,6 +1,7 @@
 ---
 title: Tiger Oakes
 subtitle: Software Developer with 7 years of experience in functional and object-oriented programming.
+contact_color: white
 ---
 
 I'm Tiger Oakes and I'm a software developer studying computer science at

@@ -5,9 +5,10 @@
     </a>
     {{ end }}
     {{ $contact := .Site.GetPage "/contact" }}
+    {{ $color := (default .Params.contact_color "black") }}
     {{ range .Site.Data.contact.social }}
     <a href="{{.link}}" class="contact-link" title="{{.name}}" aria-label="{{.name}}">
-        {{ $image_name := (string (delimit (slice "black-" (lower .name) ".*") "")) }}
+        {{ $image_name := (string (delimit (slice $color "-" (lower .name) ".*") "")) }}
         {{ $image := ($contact.Resources.GetMatch $image_name) }}
         <img class="contact-icon" alt="{{.name}}" width="32" height="32"
             src='{{ $image.RelPermalink }}'>
