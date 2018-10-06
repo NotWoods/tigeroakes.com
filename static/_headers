@@ -1,0 +1,4 @@
+/*
+    Feature-Policy: animations 'none'
+    Feature-Policy: sync-xhr 'none'
+    Feature-Policy: legacy-image-formats 'none'
