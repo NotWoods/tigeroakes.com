@@ -4,9 +4,11 @@ subtitle: Interactive information
 color: "#7dc36b"
 fallbackcolor: "#3d4a53"
 links:
-  Details: /projects/mbta-energy
-  View_site: https://notwoods.github.io/mbta-energy/
-  Code: https://github.com/NotWoods/mbta-energy
+  - title: Details
+  - title: Open app
+    link: https://notwoods.github.io/mbta-energy/
+  - title: Code
+    github: NotWoods/mbta-energy
 tech:
   - JavaScript
   - FileReader API

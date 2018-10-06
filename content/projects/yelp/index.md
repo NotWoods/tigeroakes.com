@@ -6,8 +6,9 @@ subtitle: Describe Your Project
 color: "#d32323"
 fallbackcolor: "#594134"
 links:
-  Case_study: /projects/yelp
-  View_site: https://www.yelp.com/describe_your_project?category=movers
+  - title: Case study
+  - title: View site
+    link: https://www.yelp.com/describe_your_project?category=movers
 tech:
   - Python
   - React

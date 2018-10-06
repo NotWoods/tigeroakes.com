@@ -6,9 +6,11 @@ color: "#c79a6a"
 fallbackcolor: "#3c4438"
 svg_logo: true
 links:
-  Details: /projects/pass-the-bomb
-  Devpost: https://devpost.com/software/passthebomb
-  Code: https://github.com/NotWoods/local-hack-day
+  - title: Details
+  - title: Devpost
+    link: https://devpost.com/software/passthebomb
+  - title: Code
+    github: NotWoods/local-hack-day
 tech:
   - Node.js
   - Socket.io

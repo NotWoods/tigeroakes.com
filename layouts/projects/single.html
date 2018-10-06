@@ -13,7 +13,7 @@
                     {{ partial "project/tech_list.html" .Params.tech }}
                 </div>
 
-                {{ partial "project/buttons.html" .Params.links }}
+                {{ partial "project/buttons.html" (dict "links" (after 1 .Params.links) "page" .RelPermalink) }}
             </div>
         </header>
 

@@ -1,13 +1,16 @@
 ---
 title: The Golden Quest
 subtitle: Alexa adventure game
-color: '#c3a242'
-fallbackcolor: '#503627'
+color: "#c3a242"
+fallbackcolor: "#503627"
 links:
-  Details: /projects/the-golden-quest
-  Amazon: https://www.amazon.com/Janet-Chen-The-Golden-Quest/dp/B06XW5JXXX
-  Devpost: https://devpost.com/software/nwhacks-2017-s2acyf
-  Code: https://github.com/NotWoods/the-golden-quest
+  - title: Details
+  - title: Amazon
+    link: https://www.amazon.com/Janet-Chen-The-Golden-Quest/dp/B06XW5JXXX
+  - title: Devpost
+    link: https://devpost.com/software/nwhacks-2017-s2acyf
+  - title: Code
+    github: NotWoods/the-golden-quest
 tech:
   - Alexa SDK
   - TypeScript
@@ -19,6 +22,7 @@ description: >
   and ease of use means anyone can play -- all you need to do is say
   "Alexa, open the Golden Quest".
 ---
+
 The Golden Quest is a voice-only, interactive Choose Your Own Adventure game.
 Created in 24 hours at the nwHacks 2017 hackathon,
 using the Node.js **Amazon Alexa API**.

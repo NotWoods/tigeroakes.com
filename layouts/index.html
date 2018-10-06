@@ -42,7 +42,7 @@
                 <p class="featured-project-text">
                     {{.Description | default .Summary}}
                 </p>
-                {{ partial "project/buttons.html" .Params.links }}
+                {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
             </div>
         </article>
         {{ end }}

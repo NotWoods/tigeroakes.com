@@ -7,9 +7,11 @@ color: "#4885ed"
 fallbackcolor: "#9ba3ac"
 svg_logo: true
 links:
-  Case_study: /projects/google
-  Open_app: https://storage.googleapis.com/chrome-supersize/index.html
-  Code: https://chromium.googlesource.com/chromium/src.git/+/master/tools/binary_size/
+  - title: Case study
+  - title: Open app
+    link: https://storage.googleapis.com/chrome-supersize/index.html
+  - title: Code
+    link: https://chromium.googlesource.com/chromium/src.git/+/master/tools/binary_size/
 tech:
   - Android
   - JavaScript

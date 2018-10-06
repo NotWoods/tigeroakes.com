@@ -5,7 +5,7 @@ color: "#4db6ac"
 fallbackcolor: "#1c3455"
 svg_logo: true
 links:
-  Details: /projects/soil-topargraphy
+  - title: Details
 tech:
   - C#
   - Unity

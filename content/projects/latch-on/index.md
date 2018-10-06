@@ -4,9 +4,11 @@ subtitle: Rope swinging game
 color: "#6b9f93"
 fallbackcolor: "#14576a"
 links:
-  Details: /projects/latch-on
-  Download: https://notwoods.github.io/latch-on/
-  Code: https://github.com/NotWoods/latch-on
+  - title: Details
+  - title: Open app
+    link: https://notwoods.github.io/latch-on/
+  - title: Code
+    github: NotWoods/latch-on
 tech:
   - C#
   - Unity

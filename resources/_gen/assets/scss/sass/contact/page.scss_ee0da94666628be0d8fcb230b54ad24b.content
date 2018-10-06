@@ -41,7 +41,7 @@ a {
     will-change: opacity; }
 
 .text-container {
-  padding: 1em 3em;
+  padding: 1em 3em 3em;
   background: white; }
 
 .project-text {
@@ -52,6 +52,12 @@ hr {
   max-width: 10em;
   margin: 3vh auto 5vh;
   border-color: black; }
+
+img,
+video {
+  margin: auto;
+  display: block;
+  max-width: 100%; }
 
 .banner {
   display: flex;

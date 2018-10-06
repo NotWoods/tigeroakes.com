@@ -4,8 +4,9 @@ subtitle: Farm research database
 color: "#3b7448"
 fallbackcolor: "#2d410b"
 links:
-  Details: /projects/ubc-farm
-  Code: https://github.com/ubc-farm
+  - title: Details
+  - title: Code
+    link: https://github.com/ubc-farm
 tech:
   - JavaScript
   - Node.js

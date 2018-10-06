@@ -11,7 +11,7 @@
             <h3 class="project-header highlight-title">{{.Title}}</h3>
             <p class="project-text">{{.Params.subtitle}}</p>
             {{ partial "project/tech_list.html" .Params.tech }}
-            {{ partial "project/buttons.html" .Params.links }}
+            {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
         </article>
         {{ end }}
     {{ end }}

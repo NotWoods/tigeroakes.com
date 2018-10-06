@@ -1,8 +1,16 @@
 {{/* Input should be dict of button name to button link */}}
 <div class="project-links">
-    {{ range $name, $link := . }}
-    <a class="button-link shadow" href="{{$link}}">
-        {{ humanize $name }}
+    {{ range .links }}
+    {{ $scratch := newScratch }}
+    {{ if (isset . "link") }}
+        {{ $scratch.Set "link" .link }}
+    {{ else if isset . "github" }}
+        {{ $scratch.Set "link" (print "https://github.com/" .github) }}
+    {{ else }}
+        {{ $scratch.Set "link" $.page }}
+    {{ end }}
+    <a class="button-link shadow" href='{{$scratch.Get "link"}}'>
+        {{ .title }}
     </a>
     {{ end }}
 </div>

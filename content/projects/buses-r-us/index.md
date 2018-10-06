@@ -5,7 +5,7 @@ subtitle: Term project
 color: "#1463a7"
 fallbackcolor: "#6a9fbf"
 links:
-  Details: /projects/buses-r-us
+  - title: Details
 tech:
   - Java
   - Android

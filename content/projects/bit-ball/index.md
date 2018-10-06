@@ -5,9 +5,11 @@ subtitle: 9th grade physics game
 color: "#28a0c5"
 fallbackcolor: "#161616"
 links:
-  Details: /projects/bit-ball
-  Download: https://github.com/NotWoods/bit-ball#installation
-  Code: https://github.com/NotWoods/bit-ball
+  - title: Details
+  - title: Download
+    link: https://github.com/NotWoods/bit-ball#installation
+  - title: Code
+    github: NotWoods/bit-ball
 tech:
   - Lua
   - Corona SDK

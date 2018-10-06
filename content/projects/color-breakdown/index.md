@@ -4,9 +4,11 @@ subtitle: Color-identifying Progressive Web App
 color: "#37474f"
 fallbackcolor: "#6f3d10"
 links:
-  Details: /projects/color-breakdown
-  Open_app: https://notwoods.github.io/color-breakdown/
-  Code: https://github.com/NotWoods/color-breakdown
+  - title: Details
+  - title: Open app
+    link: https://notwoods.github.io/color-breakdown/
+  - title: Code
+    github: NotWoods/color-breakdown
 tech:
   - JavaScript
   - Service Workers

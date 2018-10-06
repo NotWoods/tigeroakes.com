@@ -6,9 +6,11 @@ color: "#dcb869"
 fallbackcolor: "#372008"
 svg_logo: true
 links:
-  Details: /projects/oml-contracting
-  View_site: http://omlhawaii.com
-  Code: https://github.com/omlhawaii/omlhawaii.github.io
+  - title: Details
+  - title: Open app
+    link: https://omlhawaii.com/
+  - title: Code
+    github: omlhawaii/omlhawaii.github.io
 tech:
   - CSS 3D
   - JavaScript
