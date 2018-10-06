@@ -2,6 +2,7 @@
 {{ define "head" }}
     {{ partial "css.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
     {{ partial "async-css.html" "sass/extra.scss" }}
+    {{ partial "social/twitter-summary.html" . }}
 {{ end }}
 {{ define "main" }}
     <section class="hero-container">
@@ -57,4 +58,9 @@
         <h2>{{ i18n "contact" }}</h2>
         {{ partial "footer.html" . }}
     </footer>
+{{ end }}
+{{ define "end" }}
+    <script>
+        if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
+    </script>
 {{ end }}

@@ -1,0 +1,17 @@
+{
+  "name": "tigeroakes.com",
+  "version": "3.0.0",
+  "description": "My portfolio website. Designed to work offline, load quickly, and showcase some of my favorite projects.",
+  "repository": "https://github.com/NotWoods/tigeroakes.com.git",
+  "author": "Tiger Oakes <tigeroakes@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "sw-precache": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/sw-precache": "^5.2.0"
+  },
+  "scripts": {
+    "sw": "sw-precache --root=public --config sw-precache-config.js"
+  }
+}
