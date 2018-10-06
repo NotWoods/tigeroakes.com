@@ -8,7 +8,8 @@ const config = {
     "public/**/*.html",
     "public/**/*.svg",
     "public/contact/background*.jpg",
-    "public/projects/*/logo_*_128x*.png"
+    "public/projects/*/logo_*_128x*.png",
+    "public/projects/*/background*.jpg"
   ]
 };
 
