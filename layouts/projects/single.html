@@ -2,6 +2,7 @@
     {{ partial "css.html" (resources.Get "sass/project/page.scss") }}
     {{ partial "async-css.html" "sass/extra.scss" }}
     {{ partial "social/twitter-summary.html" . }}
+    {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
     <article class="project-details-wrapper">

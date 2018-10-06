@@ -3,6 +3,7 @@
     {{ partial "css.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
     {{ partial "async-css.html" "sass/extra.scss" }}
     {{ partial "social/twitter-summary.html" . }}
+    {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
     <section class="hero-container">
