@@ -39,4 +39,4 @@ and a custom **CSV parser** to read it.
 
 ---
 
-![An energy chart](/images/mbta-energy/chart.png)
+{{<img src="chart.png" alt="Energy chart from application">}}

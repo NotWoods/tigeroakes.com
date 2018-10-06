@@ -1,0 +1,2 @@
+{{ $video := $.Page.Resources.GetMatch (.Get "src") }}
+<video autoplay loop muted src='{{$video.RelPermalink}}'></video>

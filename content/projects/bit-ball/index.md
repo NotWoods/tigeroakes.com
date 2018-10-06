@@ -30,4 +30,4 @@ You guide a ball to the goal in each level by timing its launch and tweaking the
 
 ---
 
-![Bit Ball](/images/bit-ball/banner.jpg)
+{{<img src="banner.jpg" alt="Bit Ball promotional artwork">}}

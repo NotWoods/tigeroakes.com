@@ -58,4 +58,4 @@ The new Describe your Project feature shows Yelp's commitment to helping users c
 
 ---
 
-<video autoplay loop muted src="/images/yelp/demo.mp4"></video>
+{{<video src="demo.mp4">}}

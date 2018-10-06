@@ -58,4 +58,4 @@ Armed with a better tool for analyzing the Android app, the Google Chrome team i
 
 ---
 
-![Screenshot of Super Size](/images/google/screenshot.png)
+{{<img src="screenshot.*" alt="Screenshot">}}

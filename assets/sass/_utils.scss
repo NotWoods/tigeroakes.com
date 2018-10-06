@@ -2,10 +2,9 @@
 $primary-color: #e66d31;
 $font-color: rgba(black, 0.87);
 $background-color: #f0f0f0;
+$dark-background: #333;
 // Content width
 $site-width: 60rem;
-// Background for projects without their own background set
-$default-project-background: #333;
 
 // Set equal width and height
 @mixin square($size) {

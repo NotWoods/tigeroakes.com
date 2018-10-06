@@ -1,8 +1,8 @@
 ---
 title: Soil TopARgraphy
 subtitle: Educational AR application
-color: '#4db6ac'
-fallbackcolor: '#1c3455'
+color: "#4db6ac"
+fallbackcolor: "#1c3455"
 svg_logo: true
 links:
   Details: /projects/soil-topargraphy
@@ -13,6 +13,7 @@ tech:
   - Vuforia
   - Mapbox
 ---
+
 Soil TopARgraphy allows UBC students, enrolled in the _APBI 200 – Introduction to Soil Science_ course,
 to view topographical distribution of different soil types.
 Using Augmented Reality, this app shows terrain inside the classroom so students
@@ -25,6 +26,6 @@ I created the model by downloading heightmaps from the Mapbox API,
 then [converting their format into a standard grayscale heightmap](https://github.com/NotWoods/mapbox-elevation).
 From there, I was able to import the processed heightmap to Blender and reduce detail in the model.
 
-___
+---
 
-![Screenshot](/images/soil-topargraphy/heightmap.png)
+{{<img src="heightmap.*" alt="Terrain heightmap model I created for the application">}}

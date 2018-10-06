@@ -26,4 +26,4 @@ The game uses the **Unity** engine.
 
 ---
 
-![Screenshot](/images/latch-on/action.png)
+{{<img src="action.png" alt="Screenshot">}}

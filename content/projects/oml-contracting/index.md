@@ -2,8 +2,8 @@
 title: OML Contracting Co
 subtitle: Construction portfolio
 slug: oml-contracting
-color: '#dcb869'
-fallbackcolor: '#372008'
+color: "#dcb869"
+fallbackcolor: "#372008"
 svg_logo: true
 links:
   Details: /projects/oml-contracting
@@ -18,6 +18,7 @@ description: >
   display the basic site, then running in the background to add on additional
   functionality and design.
 ---
+
 I worked with OML Contracting to redesign their portfolio and showcase their
 completed residences. Using **3D CSS transformations**, the site has a depth effect
 that does not affect scrolling performance or rely on JavaScript, unlike other
@@ -32,6 +33,6 @@ the first few images shown are the same as those shown on the homepage. This
 provided a buffer for the remaining images to load in the background as the user
 views the first few in the page.
 
-___
+---
 
-![Screenshot of OML Contracting Co. Website](/images/oml-contracting/screenshot.png)
+{{<img src="screenshot.*" alt="Screenshot">}}

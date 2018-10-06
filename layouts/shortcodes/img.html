@@ -1,0 +1,4 @@
+{{ $img := $.Page.Resources.Match (.Get "src") }}
+{{ range $img }}
+<img src='{{ .RelPermalink }}' alt='(.Get "alt")'>
+{{ end }}
