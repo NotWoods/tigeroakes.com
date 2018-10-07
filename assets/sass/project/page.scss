@@ -27,7 +27,7 @@
 }
 
 @media (max-width: 36em) {
-  .project.hero {
+  .project .hero {
     grid-template:
       "image" auto
       "text" auto
