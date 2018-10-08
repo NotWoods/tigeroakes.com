@@ -20,10 +20,6 @@ $button-margin: 0.2em;
   min-width: 19em;
   max-width: calc(100% - 5em);
 
-  &.feature {
-    flex-grow: 3;
-  }
-
   &-logo {
     align-self: center;
     margin-bottom: 2em;
