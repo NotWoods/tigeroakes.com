@@ -14,7 +14,9 @@
 <body>
     {{ partial "banner.html" . }}
 
+    <div>
     {{ block "main" . }}{{ end }}
+    </div>
     {{ block "footer" . }}
     <footer class="contact" id="contact" role="contentinfo">
         {{ partialCached "footer.html" . }}

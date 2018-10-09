@@ -4,7 +4,6 @@ subtitle: Hackathon multiplayer word game
 path: pass-the-bomb
 color: "#c79a6a"
 fallbackcolor: "#3c4438"
-svg_logo: true
 links:
   - title: Details
   - title: Devpost

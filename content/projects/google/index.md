@@ -5,7 +5,6 @@ title: Google Chrome
 subtitle: Chrome APK size breakdown
 color: "#4885ed"
 fallbackcolor: "#9ba3ac"
-svg_logo: true
 links:
   - title: Case study
   - title: Open app

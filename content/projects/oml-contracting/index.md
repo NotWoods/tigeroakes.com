@@ -1,9 +1,8 @@
 ---
 title: Oakes Management LLC
 subtitle: Construction portfolio
-color: "#dcb869"
+color: "#d4a745"
 fallbackcolor: "#372008"
-svg_logo: true
 links:
   - title: Details
   - title: View site
