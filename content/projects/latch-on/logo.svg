@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <ellipse cx="258" cy="425.5" fill="#3f3f3f" rx="66" ry="1.5" transform="matrix(1 0 0 44 0 -18296)"/>
+    <ellipse cx="258" cy="431.5" fill="#313131" rx="46" ry="5.5" transform="matrix(1 0 0 8.36364 0 -3183)"/>
+    <path fill="#818492" d="M217.2 187.7l37.8 65.5-22.6 13-37.8-65.4z"/>
+    <path fill="#878b9a" d="M217.2 187.7l37.8 65.5-6.6 3.8-37.8-65.5z"/>
+    <path fill="#818492" d="M244 360v-36h24v36z"/>
+    <path fill="#878b9a" d="M244 360v-36h8v36z"/>
+    <path fill="#818492" d="M245.3 438.7l-.9-.8L224 416l.1-.1-.1.1h-36v-20l36-36h64v36h-36l17.7 16.3a18 18 0 1 1-24.4 26.4z"/>
+    <path fill="#878b9a" d="M252 396l17.7 16.3A18 18 0 0 1 275 432a17.9 17.9 0 0 0-5.3-7.7L252.1 408v-12zm36-24h-64l-36 36v-12l36-36h64v12z"/>
+    <path fill="#89d7bf" d="M352 20H164v184h188v-64h-12V68h12V20z"/>
+    <path fill="#a1ead3" d="M164 20h188v16H164z"/>
+    <path fill="#282828" d="M340 68h-80v92h36l19-20h25V68z"/>
+    <path fill="#141414" d="M260 68v92h8V76h72v-8h-80z"/>
+    <path fill="#e64440" d="M312 88h28v28h-28z"/>
+    <ellipse cx="224" cy="94" fill="#6ab29b" rx="20" ry="10" transform="matrix(1 0 0 2 0 -84)"/>
+    <path fill="#6ab29b" d="M188 156h20v28h-20zm24 0h8v28h-8z"/>
+    <path fill="#818492" d="M228 108v-8L132 4l-8 8 96 96h8z"/>
+    <ellipse cx="267" cy="293" fill="#818492" rx="18" ry="16" transform="matrix(1.77846 0 0 2 -218.8 -298)"/>
+    <path fill="#86d6bd" d="M268 270v-18h-32c-11 0-20 9-20 20v32c0 11 9 20 20 20h32v-54z"/>
+    <path fill="#75c6ad" d="M268 282v-14h-32c-11 0-20 7-20 15.6v24.8c0 8.6 9 15.6 20 15.6h32v-42z"/>
+    <ellipse cx="332" cy="281" fill="#98a5b4" rx="8" ry="5" transform="matrix(1 0 0 2 0 -276)"/>
+    <path fill="#7a8795" d="M379.4 303.4l6.6 6.7-30 30-52-52 52-52.1 30 30-6.6 6.6A28 28 0 0 0 328 288a28 28 0 0 0 51.4 15.4z"/>
+    <path fill="#98a5b4" d="M268 268h44v36h-44z"/>
+    <path fill="#a7b7c8" d="M268 268h44v8h-44z"/>
+    <path fill="#bdccdc" d="M300 268h12v8h-12z"/>
+    <path fill="#a7b7c8" d="M300 276h12v28h-12z"/>
+    <path fill="#86d6bd" d="M332 272c0-11-9-20-20-20v72c11 0 20-9 20-20v-32z"/>
+    <path fill="#75c6ad" d="M332 283.6c0-8.6-9-15.6-20-15.6v56c11 0 20-7 20-15.6v-24.8z"/>
+</svg>
