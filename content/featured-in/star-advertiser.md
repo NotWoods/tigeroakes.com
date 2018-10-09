@@ -30,17 +30,17 @@ Myron B. Thompson Academy, Oakes is a budding high-tech entrepreneur.
 
 Just this year, Oakes' first go at a mobile application,
 a multilevel puzzle game called BitBall - found a place on the virtual shelf next
-to Angry Birds and Solitare in the Android marketplace. Oakes is collaborating
+to Angry Birds and Solitaire in the Android marketplace. Oakes is collaborating
 with friends to develop a detective game.
 
 "I try to come up with ideas that are unique," Oakes says after a thoughtful pause.
 "There are a lot of games out there, and it doesn't make sense to repeat what is
-already avaliable."
+already available."
 
-To be sure, Oakes is as much a savvy businessman as he is a precocious techical
+To be sure, Oakes is as much a savvy businessman as he is a precocious technical
 talent, as much as Jobs as a Wozniak.
 
-Oakes says he's been facinated by computers since he was a toddler.
+Oakes says he's been fascinated by computers since he was a toddler.
 From the beginning his interest went far deeper than the dancing pixels on the
 screen.
 
@@ -49,13 +49,13 @@ screen.
 Oakes used to hang out at a computer recycling center where a friend would
 pass along still-usable parts from which Oakes would construct his own computers.
 
-At Thompson Academy, Oakes found a ideal enviornment in which to develop his
+At Thompson Academy, Oakes found a ideal environment in which to develop his
 interests, working closely with teacher Derrick Lord to learn programming and
 to eventually design his own projects.
 
-A self-described nerd, Oakes is hardly one-dimensional. He enjoys conputer games,
+A self-described nerd, Oakes is hardly one-dimensional. He enjoys computer games,
 yes, but he also enjoys cycling and playing golf. He is an avid reader and a
-two-time finallist in the annual Hawaii Botball Robotics competition.
+two-time finalist in the annual Hawaii Botball Robotics competition.
 
 Tall and lanky, with a careful, measured manner of speaking broken by the
 occasional self-conscious smile, Oakes on a summer visit to the school's new

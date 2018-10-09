@@ -1,5 +1,5 @@
 ---
-title: "Hele-On schedule to be avaliable via app"
+title: "Hele-On schedule to be available via app"
 date: 2015-04-23
 seo:
   type: NewsArticle
@@ -24,7 +24,7 @@ Now, the schedule data will also be found in Google Maps, where it can be
 accessed easily to find directions for a wide range of users.
 Users of Google Maps will be able to find directions for the Hele-On Bus through
 Google's existing websites and mobile apps. Hele-On Bus directions in Google Maps
-will be avaliable in a few weeks.
+will be available in a few weeks.
 
 Accompanying Google Maps integration is the online app "Big Island Buses".
 The app can be used from the website [goride.io](https://notwoods.github.io/big-island-buses),
@@ -45,7 +45,7 @@ yearlong student project by Oakes. Thousands of hours and more than 100,000
 lines of code have been contributed to the application, as he manually digitized
 the existing paper schedules and developed the software.
 
-"Bis Island Buses" has already received an award for the House of Represenatives,
+"Bis Island Buses" has already received an award for the House of Representatives,
 as the best application submitted to the House App Challenge. The app has been
 featured by Rep. Tulsi Gabbard and the local tech community Hawaii TechWorks,
-and is avaliable to the public at [goride.io](https://notwoods.github.io/big-island-buses).
+and is available to the public at [goride.io](https://notwoods.github.io/big-island-buses).

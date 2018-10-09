@@ -28,7 +28,7 @@ description: >
   Won Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd Congressional District.
 ---
 
-_Universally accesible bus schedules for Hawaii's limited connectivity_
+_Universally accessible bus schedules for Hawaii's limited connectivity_
 
 ## Background
 
@@ -52,7 +52,7 @@ The completed application provided a full replacement for the paper schedules. B
 
 ## Benefits
 
-Despited the limited target audience of bus riders on the Big Island, the PWA gained popularity and received over a hundred visits each week. The project [won Grand Prize in the pilot Congressional App Challenge](http://gabbard.house.gov/index.php/press-releases/339-rep-tulsi-gabbard-presents-congressional-awards-to-young-leaders-from-hawai-i-s-second-district), and was adapted to my high school senior project. The award gained the attention of the mayor and led to my involvement with the County of Hawaii. In 2015, the web application was featured in [West Hawaii Today](http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app), [Hawaii Public Radio](http://www.bytemarkscafe.org/2015/04/29/episode-348-sounding-rockets-apr-29-2015/), and [Hawaii](https://www.youtube.com/watch?v=MHPlJsosHDc) [TechWorks](https://www.youtube.com/watch?v=yl_3d7PSKMY). To this day, despite the fact I haven't updated the app's schedule data, it still has dedicated users.
+Despite the limited target audience of bus riders on the Big Island, the PWA gained popularity and received over a hundred visits each week. The project [won Grand Prize in the pilot Congressional App Challenge](http://gabbard.house.gov/index.php/press-releases/339-rep-tulsi-gabbard-presents-congressional-awards-to-young-leaders-from-hawai-i-s-second-district), and was adapted to my high school senior project. The award gained the attention of the mayor and led to my involvement with the County of Hawaii. In 2015, the web application was featured in [West Hawaii Today](http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app), [Hawaii Public Radio](http://www.bytemarkscafe.org/2015/04/29/episode-348-sounding-rockets-apr-29-2015/), and [Hawaii](https://www.youtube.com/watch?v=MHPlJsosHDc) [TechWorks](https://www.youtube.com/watch?v=yl_3d7PSKMY). To this day, despite the fact I haven't updated the app's schedule data, it still has dedicated users.
 
 ## Conclusion
 

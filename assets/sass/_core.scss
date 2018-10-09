@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: $primary-color;
+  color: darken($primary-color, 12%);
   text-decoration: none;
 
   // On hover, show an underline. Only for markdown-generated classes.

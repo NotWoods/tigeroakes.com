@@ -51,7 +51,7 @@ I successfully built the Describe your Project with React, Redux, Python and Typ
 
 ## Benefits
 
-The new feature has since grown to replace the original contact form for connecting with local services. Since I left Yelp, the scope of the project scaled tremendously. The team doubled and the package was expanded from a small Python package to a full microservice! More question logic and more branching paths were added. With impr oved React knowledge, the Local Services team can apply React best practices to their entire code base, giving them the opportunity to increase performance across the board.
+The new feature has since grown to replace the original contact form for connecting with local services. Since I left Yelp, the scope of the project scaled tremendously. The team doubled and the package was expanded from a small Python package to a full microservice! More question logic and more branching paths were added. With improved React knowledge, the Local Services team can apply React best practices to their entire code base, giving them the opportunity to increase performance across the board.
 
 ## Conclusion
 
