@@ -5,7 +5,7 @@ color: "#6b9f93"
 fallbackcolor: "#14576a"
 links:
   - title: Details
-  - title: Open app
+  - title: Download
     link: https://notwoods.github.io/latch-on/
   - title: Code
     github: NotWoods/latch-on

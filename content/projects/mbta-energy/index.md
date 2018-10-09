@@ -5,7 +5,7 @@ color: "#7dc36b"
 fallbackcolor: "#3d4a53"
 links:
   - title: Details
-  - title: Open app
+  - title: View site
     link: https://notwoods.github.io/mbta-energy/
   - title: Code
     github: NotWoods/mbta-energy

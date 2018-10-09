@@ -34,7 +34,7 @@
   "work": [
     {
       "company": "Google",
-      "position": "Chrome for Android - Software Developer Intern",
+      "position": "Chrome for Android - Software Engineering Intern",
       "website": "https://storage.googleapis.com/chrome-supersize/index.html",
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
@@ -58,7 +58,7 @@
     },
     {
       "company": "Yelp",
-      "position": "Local Services - Software Engineering Intern",
+      "position": "Local Services - Software Engineer Intern",
       "website": "https://yelp.com/describe_your_project?category=movers",
       "startDate": "2017-08-27",
       "endDate": "2017-12-17",
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "company": "OML Contracting Co.",
+      "company": "Oakes Management LLC",
       "position": "Web Developer and IT Manager",
       "website": "https://omlhawaii.com",
       "startDate": "2009-10-01",
@@ -145,7 +145,7 @@
       "area": "Computer Science",
       "studyType": "Bachelor of Science",
       "startDate": "2015-09-15",
-      "endDate": "2020-04-25"
+      "endDate": "2020-05-25"
     }
   ],
   "awards": [
@@ -179,6 +179,7 @@
     { "name": "Java" },
     { "name": "Node.js" },
     { "name": "Android" },
-    { "name": "React" }
+    { "name": "React" },
+    { "name": "Design" }
   ]
 }

@@ -7,6 +7,24 @@ other = "See more projects"
 other = "Other projects"
 [contact]
 other = "Contact"
+
+[project_case_study]
+other = "Case study"
+[project_details]
+other = "Details"
+[project_open_app]
+other = "Open app"
+[project_view_site]
+other = "View site"
+[project_code]
+other = "Code"
+[project_devpost]
+other = "Devpost"
+[project_amazon]
+other = "Amazon"
+[project_microsoft]
+other = "Microsoft Store"
+
 [resume_education]
 other = "Education"
 [resume_work]
@@ -17,6 +35,7 @@ other = "Skills"
 other = "Awards"
 [resume_projects]
 other = "Selected Projects"
+
 [send_email_to]
 other = "You can send an email to"
 [find_at]

@@ -1,13 +1,12 @@
 ---
-title: OML Contracting Co
+title: Oakes Management LLC
 subtitle: Construction portfolio
-slug: oml-contracting
 color: "#dcb869"
 fallbackcolor: "#372008"
 svg_logo: true
 links:
   - title: Details
-  - title: Open app
+  - title: View site
     link: https://omlhawaii.com/
   - title: Code
     github: omlhawaii/omlhawaii.github.io
@@ -15,13 +14,15 @@ tech:
   - CSS 3D
   - JavaScript
 description: >
-  I worked with OML Contracting to redesign their portfolio. The site
+  I worked with Oakes Management to redesign their portfolio. The site
   is designed to hide loading times by quickly downloading enough code to
   display the basic site, then running in the background to add on additional
   functionality and design.
 ---
 
-I worked with OML Contracting to redesign their portfolio and showcase their
+Oakes Management, also known as OML Contracting, is a construction management company that was selected as
+the [best custom home builder in Hawai'i](https://www.homebuilderdigest.com/the-best-custom-home-builders-in-hawaii/).
+I worked with Oakes Management to redesign their portfolio and showcase their
 completed residences. Using **3D CSS transformations**, the site has a depth effect
 that does not affect scrolling performance or rely on JavaScript, unlike other
 parallax websites.
