@@ -16,7 +16,7 @@ body {
   padding: 2em; }
 
 a {
-  color: #e66d31;
+  color: #c25018;
   text-decoration: none; }
   a:hover:not([class]) {
     text-decoration: underline; }
@@ -280,14 +280,12 @@ h2 {
 h4 {
   font-weight: 400;
   font-size: 11pt;
-  line-height: 1.4em;
   margin: 0; }
 
 h5 {
   font-weight: 400;
   font-size: 9pt;
   color: #e66d31;
-  line-height: 1.4em;
   margin: 0;
   position: relative; }
   .work-experience h5::before {

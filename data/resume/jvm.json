@@ -102,7 +102,7 @@
       "description": "Web app to replace Hawai'i paper bus schedules",
       "highlights": [
         "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
-        "Optimized site for mobile offline viewing.",
+        "Optimized site for mobile **offline** viewing.",
         "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
       ]
     },

@@ -16,7 +16,7 @@ body {
   padding: 2em; }
 
 a {
-  color: #e66d31;
+  color: #c25018;
   text-decoration: none; }
   a:hover:not([class]) {
     text-decoration: underline; }
