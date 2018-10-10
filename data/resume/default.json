@@ -135,7 +135,7 @@
       "description": "Online multiplayer word game",
       "highlights": [
         "**Selected by Microsoft as an outstanding project** in UBC Local Hack Day.",
-        "Developed online multiplayer with **Socket.io** in **Node.js** from scratch in 12 hours."
+        "Developed online multiplayer in **Node.js** with **Socket.io** from scratch in 12 hours."
       ]
     }
   ],
