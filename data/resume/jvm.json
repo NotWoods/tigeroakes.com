@@ -39,9 +39,9 @@
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
-        "Updated **Android Java bytecode** compiler tools, shrinking Chrome by 29 KB.",
+        "Updated **Android Java bytecode** compiler tools, shrinking Google Chrome by 29 KB.",
         "Wrote **Java** bytecode rewriter to insert code automatically.",
-        "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Google Chrome's size. Team used tool to save 30 KB in the first week after release.",
+        "Redesigned & added new features to \"Super Size\", **Python** tool with HTML output used to analyze millions of files contributing to Chrome's size. Tool saved 30 KB in the first week after release.",
         "Utilized **streams** and **worker threads** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds."
       ]
     },
@@ -65,6 +65,7 @@
       "endDate": "2017-12-17",
       "highlights": [
         "Built \"Describe Your Project\" package with **Python**, so users to easily request quotes from home services businesses.",
+        "Developed **Python** package to encapsulate API with RST docs.",
         "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
         "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
       ]
@@ -88,8 +89,7 @@
       "endDate": "2015-08-10",
       "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
       "highlights": [
-        "Designed and developed web portfolio to showcase residences.",
-        "Applied GPU-accelerated parallax using CSS 3D transformations."
+        "Designed and developed web portfolio to showcase residences."
       ]
     }
   ],
@@ -174,10 +174,10 @@
   "skills": [
     { "name": "TypeScript" },
     { "name": "JavaScript" },
+    { "name": "Python" },
     { "name": "Kotlin" },
     { "name": "Java" },
     { "name": "C#" },
-    { "name": "Python" },
     { "name": "Android" },
     { "name": "Node.js" },
     { "name": "React" },

@@ -14,6 +14,7 @@ links:
 tech:
   - Android
   - JavaScript
+  - Python
   - Accessibility
   - Web Workers
   - Streams
@@ -29,7 +30,7 @@ _Using web workers and native JavaScript for better visualizations, faster load 
 
 ## Background
 
-To build a web browser for devices in both established and emerging markets, Google Chrome built an internal tool to analyze the byte size of the Chrome for Android app. The tool, called Super Size, collects data about every function and file in the Chrome APK then archives it so the data can be analyzed later. The tool was available through the command line and a rudimentary UI, but Google wanted a more user-friendly web application that offered more features and better performance. As an intern on the Google Chrome team, I created a performant app.
+To build a web browser for devices in both established and emerging markets, Google Chrome built an internal tool with Python to analyze the byte size of the Chrome for Android app. The tool, called Super Size, collects data about every function and file in the Chrome APK then archives it so the data can be analyzed later. The tool was available through the command line and a rudimentary UI, but Google wanted a more user-friendly web application that offered more features and better performance. As an intern on the Google Chrome team, I created a performant app.
 
 ## Challenge
 
