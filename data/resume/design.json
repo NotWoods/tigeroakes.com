@@ -7,7 +7,7 @@
     "email": "contact@tigeroakes.com",
     "phone": "1 (253) 778-6251",
     "website": "https://tigeroakes.com",
-    "summary": "Software Developer with 7 years of experience in functional and object-oriented programming. Proven success creating custom solutions for a variety of businesses.",
+    "summary": "Designer and Software Developer with 7 years of experience. Proven success creating custom solutions for a variety of businesses.",
     "location": {
       "city": "Vancouver",
       "region": "BC",
@@ -39,10 +39,9 @@
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
-        "Updated **Android Java bytecode** compiler tools, shrinking Google Chrome by 29 KB.",
-        "Wrote **Java** bytecode rewriter to insert code automatically.",
-        "Redesigned & added new features to \"Super Size\", **Python** tool with HTML output used to analyze millions of files contributing to Chrome's size. Tool saved 30 KB in the first week after release.",
-        "Utilized **streams** and **worker threads** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds."
+        "Redesigned & added new features to \"Super Size\", web tool used to analyze millions of files contributing to Chrome's size. Tool saved 30 KB in the first week after release.",
+        "Created design following the **Google Material Theme**.",
+        "Implemented features to improve **user experience**, including keyboard shortcuts and pie charts to break down folder sizes."
       ]
     },
     {
@@ -53,8 +52,8 @@
       "endDate": "2018-04-25",
       "summary": "Simulates skin for visual effects and prototyping clothing",
       "highlights": [
-        "Built **TypeScript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
-        "Migrated large program to **React**/**Redux** architecture, saving time and effort for future programmers through **reactive** design."
+        "Designed and developed **new user interface** for VitalFit Adobe Illustrator plugin using Blueprint.js and **React**.",
+        "**Produced brand materials** for VitalFit installer."
       ]
     },
     {
@@ -65,9 +64,8 @@
       "endDate": "2017-12-17",
       "highlights": [
         "Built \"Describe Your Project\" package with **Python**, so users to easily request quotes from home services businesses.",
-        "Ported **Android** business logic to desktop website.",
-        "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
-        "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
+        "Implemented UI for branching question flows with **React** following the Yelp design guidelines.",
+        "Led hackathon team to build new product for in-restaurant experience. Created presentation materials and **presented to the entire company**. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
       ]
     },
     {
@@ -77,8 +75,8 @@
       "startDate": "2016-05-14",
       "endDate": "2017-04-14",
       "highlights": [
-        "Developed custom **TypeScript** software with the **UBC Work Learn International Undergraduate Research Award**.",
-        "Wrote fill algorithm to classify sections of farm fields."
+        "Designed and developed custom TypeScript software with the **UBC Work Learn International Undergraduate Research Award**.",
+        "Iterated designs with manager through **wireframes, prototypes**."
       ]
     },
     {
@@ -90,11 +88,21 @@
       "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
       "highlights": [
         "Designed and developed web portfolio to showcase residences.",
-        "Applied GPU-accelerated parallax using CSS 3D transformations."
+        "Built design to take advantage of **GPU-accleration for a better user experience**."
       ]
     }
   ],
   "projects": [
+    {
+      "name": "Pass the Bomb",
+      "startDate": "2016-12-13",
+      "endDate": "2016-12-13",
+      "description": "Online multiplayer word game",
+      "highlights": [
+        "**Selected by Microsoft as an outstanding project** in UBC Local Hack Day.",
+        "Created **animations** to delight users and **represent important game data**, such as time remaining and win/loss state."
+      ]
+    },
     {
       "name": "Big Island Buses",
       "url": "https://notwoods.github.io/big-island-buses",
@@ -103,19 +111,9 @@
       "description": "Web app to replace Hawai'i paper bus schedules",
       "highlights": [
         "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
-        "Optimized site for mobile **offline** viewing.",
-        "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
-      ]
-    },
-    {
-      "name": "Soil TopARgraphy",
-      "startDate": "2018-02-01",
-      "endDate": "2019-01-31",
-      "description": "Teaches soil topography through AR",
-      "highlights": [
-        "Will be **published on Google Play** in 2019.",
-        "Programmed **Android AR** viewer in **Unity** with **C#**, exposed fields to inspector so teammates could quickly manipulate views.",
-        "Wrote script to process Mapbox heightmaps to generate Blender 3D model."
+        "Designed schedule displays inspired by **Material Design** and London Underground.",
+        "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system.",
+        "Designed promotional posters and distributed to reach target audience."
       ]
     },
     {
@@ -125,19 +123,18 @@
       "description": "Enhances museum immersion with gamification",
       "highlights": [
         "**Finalist, nwHacks 2018** out of 800+ people.",
-        "Helped write **Android** app in **Java** to scan NFC badges on exhibits and patrons.",
-        "Built backend with **Node.js**/**MongoDB**."
+        "Designed **Android** app to scan NFC badges on exhibits and patrons.",
+        "Created sample data to present in application."
       ]
     },
     {
-      "name": "CellWall",
-      "startDate": "2018-02-01",
-      "endDate": "2018-10-31",
-      "description": "Interactive display made of cell phones",
+      "name": "Color Breakdown",
+      "startDate": "2018-04-01",
+      "endDate": "2018-08-31",
+      "description": "Design tool to analyze image color palette",
       "highlights": [
-        "Working on new **Kotlin Android** app to display data sent from **Node.js** server with **Socket.io** Android client.",
-        "Built display using many **Android** devices attached to foam panel.",
-        "Wrote **adb** script to change power state using physical Amazon Dash button remote."
+        "Published **Progressive Web App** on **Microsoft Store**.",
+        "Designed interface to **emphasize important information** for users."
       ]
     }
   ],
@@ -174,34 +171,31 @@
   ],
   "skills": [
     {
+      "name": "Front-end"
+    },
+    {
+      "name": "Design"
+    },
+    {
+      "name": "UX"
+    },
+    {
       "name": "TypeScript"
-    },
-    {
-      "name": "Kotlin"
-    },
-    {
-      "name": "Java"
-    },
-    {
-      "name": "Android"
-    },
-    {
-      "name": "Python"
-    },
-    {
-      "name": "C#"
     },
     {
       "name": "JavaScript"
     },
     {
-      "name": "Node.js"
+      "name": "Python"
+    },
+    {
+      "name": "Kotlin"
+    },
+    {
+      "name": "Android"
     },
     {
       "name": "React"
-    },
-    {
-      "name": "Design"
     }
   ]
 }

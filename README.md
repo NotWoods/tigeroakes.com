@@ -8,6 +8,7 @@ The site is generated with **Hugo** and hosted through Netlify.
 The site uses a **Service Worker** to run offline, and on subsequent visits the website is loaded from the user's cache
 rather than waiting for the network to respond.
 
+To load quickly, critical CSS is kept below 10 kb and is inlined in each page.
 All animations in the website are performed with `translate`, `scale`, or `opacity`.
 These properties can be animated cheaply by web browsers, letting the page run fast on mobile devices.
 
