@@ -72,6 +72,7 @@ a,
     weight: 400;
     size: 14pt;
   }
+  text-transform: uppercase;
 
   margin: 0.75em 0 0;
 }
@@ -109,9 +110,10 @@ h5 {
     background: $primary-color;
 
     position: absolute;
-    left: -1cm;
-    width: 0.4cm;
-    height: 1.3cm;
+    top: 0.45cm;
+    left: -0.6cm;
+    width: 0.3cm;
+    height: 0.8cm;
     content: "";
   }
 }

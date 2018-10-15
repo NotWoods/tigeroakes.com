@@ -70,10 +70,10 @@ function update(data) {
   document.querySelector(".resume-projects").innerHTML = data.projects
     .map(
       p => `
-    <h5>
-      ${formatDate(p.startDate)}
-      ${p.endDate == p.startDate ? "" : `- ${formatDate(p.endDate)}`}
-    </h5>
+      ${p.startDate ? `<h5>
+        ${formatDate(p.startDate)}
+        ${p.endDate == p.startDate ? "" : `- ${formatDate(p.endDate)}`}
+      </h5>` : ''}
     <h2>${p.name}</h2>
     ${p.description ? `<em>${p.description}</em>` : ""}
     ${highlights(p.highlights)}
