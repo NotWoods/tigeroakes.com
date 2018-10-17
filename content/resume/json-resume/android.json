@@ -54,7 +54,7 @@
       "summary": "Vancouver startup simulating skin for VFX and prototyping clothing",
       "highlights": [
         "Built **TypeScript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
-        "Migrated large program to **React**/**Redux** architecture, saving time and effort for future programmers through reactive design."
+        "Migrated large program to **React**/**Redux** architecture, saving time and effort for future programmers through **reactive** design."
       ]
     },
     {
@@ -65,7 +65,7 @@
       "endDate": "2017-12-17",
       "highlights": [
         "Built \"Describe Your Project\" package with **Python**, so users to easily request quotes from home services businesses.",
-        "Developed **Python** package to encapsulate API with RST docs.",
+        "Ported **Android** business logic to desktop website.",
         "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
         "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
       ]
@@ -89,7 +89,8 @@
       "endDate": "2015-08-10",
       "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
       "highlights": [
-        "Designed and developed web portfolio to showcase residences."
+        "Designed and developed web portfolio to showcase residences.",
+        "Applied GPU-accelerated parallax using CSS 3D transformations."
       ]
     }
   ],
@@ -108,6 +109,7 @@
     },
     {
       "name": "Soil TopARgraphy",
+      "url": "http://eml.ubc.ca/projects/soil-topargraphy/",
       "startDate": "2018-02-01",
       "endDate": "2019-01-31",
       "description": "Teaches soil topography through AR",
@@ -119,6 +121,7 @@
     },
     {
       "name": "μzm",
+      "url": "https://devpost.com/software/tag-it-gpzhuq",
       "startDate": "2018-01-19",
       "endDate": "2018-01-19",
       "description": "Enhances museum immersion with gamification",
@@ -130,6 +133,7 @@
     },
     {
       "name": "CellWall",
+      "url": "https://github.com/NotWoods/cell-wall",
       "startDate": "2018-02-01",
       "endDate": "2018-10-31",
       "description": "Interactive display made of cell phones",
@@ -172,15 +176,35 @@
     }
   ],
   "skills": [
-    { "name": "TypeScript" },
-    { "name": "JavaScript" },
-    { "name": "Python" },
-    { "name": "Kotlin" },
-    { "name": "Java" },
-    { "name": "C#" },
-    { "name": "Android" },
-    { "name": "Node.js" },
-    { "name": "React" },
-    { "name": "Design" }
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Kotlin"
+    },
+    {
+      "name": "Java"
+    },
+    {
+      "name": "Android"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "C#"
+    },
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "Node.js"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Design"
+    }
   ]
 }

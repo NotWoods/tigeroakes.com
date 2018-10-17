@@ -9,7 +9,7 @@
         </a>
     </div>
 
-    {{ with .Site.Data.resume.default }}
+    {{ with (getJSON .Params.json_resume) }}
     <main class="resume">
         {{/* Header of the resume, including my name, summary, and contact info. */}}
         <header class="resume-header">
@@ -68,11 +68,11 @@
                         {{ dateFormat $format .startDate }}
                         -
                         {{ dateFormat $format .endDate }}
-                        <a class="right{{if gt (len .website) 35}} tight{{end}}" href="{{.website}}">
+                        <a class="resume-link right{{if gt (len .website) 35}} tight{{end}}" href="{{.website}}">
                             {{ .website | replaceRE "^https?://" "" }}
                         </a>
                     </h5>
-                    <h2>{{ .company }}</h2>
+                    <h2><a href="{{.website}}">{{ .company }}</a></h2>
                     <h4>{{ .position }}</h4>
                     {{ if .summary }}
                     <em>{{ .summary }}</em>
@@ -114,7 +114,7 @@
                         {{ dateFormat $format .endDate }}
                         {{ end }}
                     </h5>
-                    <h2>{{.name}}</h2>
+                    <h2><a href="{{.url}}">{{ .name }}</a></h2>
                     {{ if .description }}
                     <em>{{.description}}</em>
                     {{ end }}
@@ -129,6 +129,11 @@
         </div>
     </main>
 
-    <script defer async src="update.js"></script>
+    <script type="module">
+        if (location.search.includes('edit')) {
+            // Secret special editor mode
+            import("./edit.js")
+        }
+    </script>
     {{ end }}
 {{ end }}

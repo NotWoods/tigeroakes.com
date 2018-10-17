@@ -161,6 +161,10 @@ sup {
   }
 }
 
+.hide-links .resume-link {
+  display: none;
+}
+
 @media (max-width: 6in) {
   .resume {
     padding: 0.3in;

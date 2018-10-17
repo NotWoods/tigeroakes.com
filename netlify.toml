@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo && npm run sw"
+command = "hugo --minify && npm run sw"
 
 [context.production.environment]
 HUGO_VERSION = "0.49"

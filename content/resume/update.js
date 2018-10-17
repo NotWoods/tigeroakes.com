@@ -1,7 +1,7 @@
 /**
  * Script to update the resume UI client side
  */
-function update(data) {
+export function update(data) {
   // Header
   document.querySelector(".name").textContent = data.basics.name;
   document.querySelector(".summary").textContent = data.basics.summary;
@@ -13,7 +13,7 @@ function update(data) {
   website.href = data.basics.website;
   document.querySelector(".resume-city").textContent = `${
     data.basics.location.city
-  }, ${data.basics.location.region}`;
+    }, ${data.basics.location.region}`;
   const github = document.querySelector(".resume-github");
   const githubData = data.basics.profiles.find(p => p.network === "GitHub");
   github.textContent = `github.com/${githubData.username}`;
@@ -40,20 +40,19 @@ function update(data) {
   document.querySelector(".work-experience").innerHTML = data.work
     .map(
       w => `
-    <h5>
-      ${formatDate(w.startDate)} - ${formatDate(w.endDate)}
-      <a class="right${w.website.length > 35 ? " tight" : ""}" href="${
-        w.website
-      }">
-        ${w.website.replace(/https?:\/\//, "")}
-      </a>
-    </h5>
-    <h2>${w.company}</h2>
-    <h4>${w.position}</h4>
-    ${w.summary ? `<em>${w.summary}</em>` : ""}
-    ${highlights(w.highlights)}
-  `
-    )
+      <h5>
+        ${formatDates(w.startDate, w.endDate)}
+        <a class="right resume-link${w.website.length > 35 ? " tight" : ""}" href="${
+          w.website
+          }">
+          ${w.website.replace(/https?:\/\//, "")}
+        </a>
+      </h5>
+      ${title(w.company, w.website)}
+      <h4>${w.position}</h4>
+      ${w.summary ? `<em>${w.summary}</em>` : ""}
+      ${highlights(w.highlights)}
+    `)
     .join("");
 
   // Skills
@@ -70,15 +69,11 @@ function update(data) {
   document.querySelector(".resume-projects").innerHTML = data.projects
     .map(
       p => `
-      ${p.startDate ? `<h5>
-        ${formatDate(p.startDate)}
-        ${p.endDate == p.startDate ? "" : `- ${formatDate(p.endDate)}`}
-      </h5>` : ''}
-    <h2>${p.name}</h2>
-    ${p.description ? `<em>${p.description}</em>` : ""}
-    ${highlights(p.highlights)}
-  `
-    )
+      ${p.startDate ? `<h5>${formatDates(p.startDate, p.endDate)}</h5>` : ''}
+      ${title(p.name, p.url)}
+      ${p.description ? `<em>${p.description}</em>` : ""}
+      ${highlights(p.highlights)}
+    `)
     .join("");
 }
 
@@ -87,6 +82,15 @@ function formatDate(date) {
     .split("-", 2)
     .reverse()
     .join("/");
+}
+function formatDates(start, end) {
+  if (end === start) {
+    return `${formatDate(start)}`;
+  } else if (!end) {
+    return `${formatDate(start)} - Present`;
+  } else {
+    return `${formatDate(start)} - ${formatDate(end)}`;
+  }
 }
 
 function markdownify(md) {
@@ -99,13 +103,6 @@ function highlights(data) {
   </ul>`;
 }
 
-Object.defineProperty(window, "resume", { set: update });
-function editMode() {
-  document.onpaste = e =>
-    update(JSON.parse(e.clipboardData.getData("text/plain")));
+function title(name, url) {
+  return `<h2><a href="${url}">${name}</a></h2>`
 }
-
-// https://stackoverflow.com/questions/7798748/find-out-whether-chrome-console-is-open
-const devtools = /./;
-devtools.toString = editMode;
-console.log("%cReady to paste in JSON resume data", devtools);
