@@ -36,8 +36,16 @@ window.options = Object.freeze({
      * Object that calls `update()` when any properties are changed.
      */
     window.resume = new Proxy(jsonResume, proxyHandler);
-    console.log('Done!')
+    console.log('Done!');
   },
+});
+
+window.Source = Object.freeze({
+  ANDROID: 'json-resume/android.json',
+  DEFAULT: 'json-resume/default.json',
+  DESIGN: 'json-resume/design.json',
+  JVM: 'json-resume/jvm.json',
+  WEB: 'json-resume/web.json',
 });
 
 (async function editMode() {
@@ -47,6 +55,6 @@ window.options = Object.freeze({
   console.log("Editor mode ready. Options:");
   console.log("- Paste in a JSON resume.");
   console.log("- Set display properties on `options` object.");
-  await window.options.source('json-resume/default.json');
+  await window.options.source(window.Source.DEFAULT);
   console.log("- Edit the `resume` object properties.");
 })();
