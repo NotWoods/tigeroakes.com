@@ -64,7 +64,7 @@
       "startDate": "2017-08-27",
       "endDate": "2017-12-17",
       "highlights": [
-        "Built \"Describe Your Project\" package with **Python**, so users to easily request quotes from home services businesses.",
+        "Built \"Describe Your Project\" package with **Python**, so users may easily request quotes from home services businesses.",
         "Developed **Python** package to encapsulate API with RST docs.",
         "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
         "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
