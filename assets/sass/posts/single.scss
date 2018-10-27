@@ -6,6 +6,36 @@
   background: $dark-background;
 }
 
+pre {
+  padding: 1em;
+
+  white-space: pre-wrap;
+}
+
+code {
+  background-color: rgba(27, 31, 35, 0.05);
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 36rem) {
+  pre {
+    margin: 0 -3rem;
+  }
+}
+
+@media (max-width: 19rem) {
+  .text-container {
+    padding: {
+      left: 1rem;
+      right: 1rem;
+    };
+  }
+
+  pre {
+    margin: 0 -1rem;
+  }
+}
+
 /*
 .post-wrapper {
   max-width: 64rem;

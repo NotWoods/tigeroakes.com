@@ -1,0 +1,22 @@
+@import "../_utils";
+@import "../_core";
+@import "./single";
+
+.post-summary {
+    margin: 1em 0;
+    padding: 2em 3em;
+
+    background: white;
+    --block: #{lighten(#e66d31, 8%)};
+}
+
+.post-header {
+    margin: 0 0 .2em;
+
+    font-size: 1.5em;
+    --block: #333;
+
+    &-link {
+        color: inherit;
+    }
+}

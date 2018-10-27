@@ -2,6 +2,8 @@ baseURL: "https://tigeroakes.com/"
 languageCode: "en-ca"
 title: "Tiger Oakes"
 googleAnalytics: UA-37324002-1
+pygmentsCodeFences: true
+pygmentsStyle: dracula
 
 menu:
   main:
@@ -17,6 +19,10 @@ menu:
       name: Resume
       url: /resume
       weight: -110
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: -105
     - identifier: contact
       name: Contact
       url: /contact
