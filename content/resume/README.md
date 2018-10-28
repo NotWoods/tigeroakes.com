@@ -10,5 +10,5 @@ The resume content is defined in JSON, following the [JSON resume schema](https:
 with a slight alteration to allow bold text in project highlights.
 
 ## See also
-- [Layout file](../layouts/_default/resume.html)
-- [SCSS styles](../assets/sass/resume)
+- [Layout file](../../layouts/_default/resume.html)
+- [SCSS styles](../../assets/sass/resume)
