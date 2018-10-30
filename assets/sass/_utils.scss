@@ -6,6 +6,8 @@ $dark-background: #333;
 // Content width
 $site-width: 60rem;
 
+$text-line-height: 1.5em;
+
 // Set equal width and height
 @mixin square($size) {
   width: $size;
