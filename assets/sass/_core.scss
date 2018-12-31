@@ -19,10 +19,15 @@ body {
 
 .hero-container {
   padding: 2em;
+  background: {
+    color: $dark-background;
+    size: cover;
+    position: center;
+  }
 }
 
 a {
-  color: darken($primary-color, 12%);
+  color: $primary-dark;
   text-decoration: none;
 
   // On hover, show an underline. Only for markdown-generated classes.

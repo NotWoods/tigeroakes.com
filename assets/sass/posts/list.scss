@@ -2,19 +2,26 @@
 @import "../_core";
 @import "./single";
 
+.posts {
+  font-size: 1.1em;
+
+  @media (max-width: 30em) {
+    font-size: 0.9em;
+  }
+}
+
 .post-summary {
     margin: 1em 0;
     padding: 2em 3em;
 
-    background: white;
-    --block: #{lighten(#e66d31, 8%)};
+    --block: #{$primary-dark};
 }
 
 .post-header {
     margin: 0 0 .2em;
 
     font-size: 1.5em;
-    --block: #333;
+    --block: #ddd;
 
     &-link {
         color: inherit;

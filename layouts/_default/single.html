@@ -4,7 +4,8 @@
 {{ end }}
 {{ define "main" }}
     <article>
-        <header class="hero-container post no-hero-image project-text">
+        {{ $bkg := .Resources.GetMatch "background.*" }}
+        <header class="hero-container post project-text"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
             <div class="hero inner">
                 <h1 class="highlight-title">{{.Title}}</h1>
                 <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>

@@ -2,12 +2,6 @@ $large-button-margin: 0.5em;
 
 // Core project styles for the boxes with blurred backgrounds around the site.
 .project {
-  background: {
-    size: cover;
-    position: center;
-    // color and image are set as inline styles
-  }
-
   // Header text. Expects .highlight-title as well.
   &-header {
     margin-bottom: 0.2em;

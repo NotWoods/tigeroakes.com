@@ -6,17 +6,20 @@
     {{ range .Site.Author }}
         {{ . }}
     {{ end }}
-    <main class="inner posts">
+    <main class="posts project-text">
         {{ range .Pages }}
-        <article class="post-summary">
-            <h3 class="post-header highlight-title">
-                <a class="post-header-link" href='{{.RelPermalink}}'>{{.Title}}</a>
-            </h3>
-            <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>
-            <p class="post-text">{{ markdownify .Description | default .Summary }}</p>
-            {{ if .Truncated }}
-            <a class="button-link shadow" href='{{.RelPermalink}}'>Read on</a>
-            {{ end }}
+        {{ $bkg := .Resources.GetMatch "background.*" }}
+        <article class="hero-container post-summary" style='background-image:url({{$bkg.RelPermalink}})'>
+            <div class="inner">
+                <h3 class="post-header highlight-title">
+                    <a class="post-header-link" href='{{.RelPermalink}}'>{{.Title}}</a>
+                </h3>
+                <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>
+                <p class="post-text">{{ .Description }}</p>
+                {{ if .Truncated }}
+                <a class="button-link shadow" href='{{.RelPermalink}}'>Read</a>
+                {{ end }}
+            </div>
         </article>
         {{ end }}
     </main>

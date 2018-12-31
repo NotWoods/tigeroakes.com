@@ -1,5 +1,6 @@
 ---
 title: Resume editor
+description: How I automated formatting my resume.
 date: 2018-10-30
 author: tiger
 editor: daphne
