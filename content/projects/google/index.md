@@ -3,7 +3,7 @@ feature: true
 weight: 0 # Feature 1
 title: Google Chrome
 subtitle: Chrome APK size breakdown
-color: "#4885ed"
+color: "#2a70ea"
 fallbackcolor: "#9ba3ac"
 links:
   - title: Case study
