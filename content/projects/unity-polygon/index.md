@@ -16,7 +16,7 @@ description: >
   Just drag the script onto your platform GameObject and you're good to go.
 ---
 
-<a class="github-button" href="https://github.com/NotWoods/unity-polygon-2d-editor" data-size="large" data-show-count="true" aria-label="Star NotWoods/unity-polygon-2d-editor on GitHub">Star</a>
+[![](https://img.shields.io/github/stars/NotWoods/unity-polygon-2d-editor.svg?style=social)](https://github.com/NotWoods/unity-polygon-2d-editor)
 
 I created this tool to help me build levels in [one of my games](./latch-on).
 The script generates a freeform 2D mesh for level layout.
@@ -26,5 +26,3 @@ using Unity's PolygonCollider2D component.
 ---
 
 {{<img src="example.gif" alt="Demonstation of building a level using the tool">}}
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
