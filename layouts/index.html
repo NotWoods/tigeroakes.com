@@ -61,7 +61,6 @@
     </footer>
 {{ end }}
 {{ define "end" }}
-    <script>
-        if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
-    </script>
+    {{ $swRegistration := resources.Get "js/service-worker-registration.js" | minify }}
+    <script async defer src="{{ $swRegistration.RelPermalink }}"></script>
 {{ end }}
