@@ -17,7 +17,7 @@ menu:
       weight: -120
     - identifier: resume
       name: Resume
-      url: /resume
+      url: /resume/
       weight: -110
     - identifier: blog
       name: Blog
@@ -25,5 +25,12 @@ menu:
       weight: -105
     - identifier: contact
       name: Contact
-      url: /contact
+      url: /contact/
       weight: -100
+
+outputs:
+  home: [HTML]
+  page: [HTML]
+  section: [HTML]
+  taxonomy: [HTML]
+  taxonomyTerm: [HTML]
