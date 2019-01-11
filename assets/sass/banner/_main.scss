@@ -30,11 +30,13 @@
 // Square dot to the side of title
 // Expects .shadow class as well
 .dot {
-  background: $primary-color;
-
-  @include square(1.2em);
   display: inline-block;
   margin-right: 0.75rem;
+  vertical-align: text-top;
+
+  &-inner {
+    display: block;
+  }
 }
 
 .home-link {
