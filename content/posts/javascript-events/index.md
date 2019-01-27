@@ -186,11 +186,21 @@ Here are some additional examples to demonstrate how to take advantage of a sing
 
 ### Lists
 
-A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with Javascript. If you 
+A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with Javascript. If you have event listeners attached to each item, then your code has to deal with event listeners every time you generate a new element.
+
+```html
+<div id="buttons"></div>
+
+<button id="add">Add new button</button>
+```
+
+```js
+
+```
 
 ### Forms
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDk5NzI2ODEsLTM4Mzk0NDE4OV19
+eyJoaXN0b3J5IjpbMTExNDc5NTM2LC0zODM5NDQxODldfQ==
 -->
