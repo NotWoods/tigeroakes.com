@@ -73,6 +73,9 @@ document
 
 ### Taking advantage of the `Event` object
 
+The key to simplifying your listeners is the [`Event` object](https://developer.mozilla.org/en-US/docs/Web/API/Event).
+
+
 When an event listener is called, it also sends an `Event` object as the first
 argument. This object has some data to describe the event that occurred, such as
 the time the event occurred. For simplifying our code, we can use the
@@ -182,3 +185,6 @@ Now we can use a single listener for `click` events.
 ### Forms
 
 ### React
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTE4MjMxODE1OV19
+-->
