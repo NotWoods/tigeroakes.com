@@ -105,11 +105,11 @@ parent of that link, calling any event listeners on those parents.
 This will continue until the root document is reached. This process is called
 "bubbling", as the event rises through the document tree like a bubble.
 
-![
+![Animation of event bubbling]()
 
 By attaching an event listener to the list, the focus event will bubble from the
 link that was focused up to the parent list. We can also take advantage of the
-`evt.target` property, which contains the starting element of the event.
+`evt.target` property, which contains the element that fired the event (one of the links) rather than the element that the event listener is attached to (the `<nav>` element).
 
 ```js
 const preview = evt => {
@@ -185,5 +185,5 @@ Now we can use a single listener for `click` events.
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMzY3OTQwXX0=
+eyJoaXN0b3J5IjpbLTIwNjgwNTMyNzJdfQ==
 -->
