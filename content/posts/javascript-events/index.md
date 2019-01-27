@@ -210,7 +210,7 @@ document.getElementById('button').addEventListener('click', evt => {
 });
 ```
 
-By taking advantage of bubbling, you can just have a single event listener on the container.
+By taking advantage of bubbling, you can just have a single event listener on the container. If you create many elements in your app, this reduces the number of listeners from _n_ to 2.
 
 ```js
 let buttonCounter = 0;
@@ -235,5 +235,6 @@ document.getElementById('buttons').addEventListener('click', evt => {
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0OTk1OTE1MiwtMzgzOTQ0MTg5XX0=
+eyJoaXN0b3J5IjpbNzI5MjI4Nzg1LDE2NDk5NTkxNTIsLTM4Mz
+k0NDE4OV19
 -->
