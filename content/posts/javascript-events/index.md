@@ -77,7 +77,7 @@ The key to simplifying your listeners is the [`Event` object](https://developer.
 When an event listener is called, it also sends an `Event` object as the first
 argument. This object has some data to describe the event that occurred, such as
 the time the event happened. To simplify our code, we can use the
-`evt.currentTarget` property. `currentTarget` refers to the element that the
+[`evt.currentTarget` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget). `currentTarget` refers to the element that the
 event listener is attached to. In our example, it will be one of the 3 links.
 
 ```js
@@ -92,7 +92,7 @@ document.querySelector('a[href="#second"]').addEventListener('focus', preview);
 document.querySelector('a[href="#third"]').addEventListener('focus', preview);
 ```
 
-Now there is only 1 function instead of 4.
+Now there is only 1 function instead of 4. We can re-use the exact sa
 
 ### Using bubbling
 
@@ -184,5 +184,5 @@ Now we can use a single listener for `click` events.
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjE5NDIxNzNdfQ==
+eyJoaXN0b3J5IjpbNTA3ODc1MzkxXX0=
 -->
