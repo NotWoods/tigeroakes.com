@@ -198,9 +198,10 @@ A common pattern is to have a list of items that can be interacted with, where n
 let buttonCounter = 0;
 document.getElementById('button').addEventListener('click', evt => {
 	const newButton = document.createElement('button');
-	newButton.datalist.number = buttonCounter;
+	newButton.dataset.number = buttonCounter;
 	newButton.addEventListener('click', evt => {
-		
+		// When clicked, log the clicked button's number.
+		console.log(`Clicked button #${newButton.dataset.number}`);
 	});
 	buttonCounter++;
 	
@@ -209,9 +210,11 @@ document.getElementById('button').addEventListener('click', evt => {
 });
 ```
 
+By taking advantage of bubbling, you can just
+
 ### Forms
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDA0MDU3MzYsLTM4Mzk0NDE4OV19
+eyJoaXN0b3J5IjpbODc1MjUyMzQ5LC0zODM5NDQxODldfQ==
 -->
