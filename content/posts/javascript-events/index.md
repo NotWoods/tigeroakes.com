@@ -217,10 +217,6 @@ let buttonCounter = 0;
 document.getElementById('button').addEventListener('click', evt => {
 	const newButton = document.createElement('button');
 	newButton.dataset.number = buttonCounter;
-	newButton.addEventListener('click', evt => {
-		// When clicked, log the clicked button's number.
-		console.log(`Clicked button #${newButton.dataset.number}`);
-	});
 	buttonCounter++;
 	
 	const container = document.getElementById('buttons');
@@ -229,7 +225,8 @@ document.getElementById('button').addEventListener('click', evt => {
 document.getElementById('buttons').addEventListener('click', evt => {
 	const clickedButton = evt.target.closest('button');
 	if (clickedButton != null) {
-		
+		// When clicked, log the clicked button's number.
+		console.log(`Clicked button #${clickedButton.dataset.number}`);
 	}
 });
 ```
@@ -238,5 +235,5 @@ document.getElementById('buttons').addEventListener('click', evt => {
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxNzQ4NzI4OCwtMzgzOTQ0MTg5XX0=
+eyJoaXN0b3J5IjpbMTY0OTk1OTE1MiwtMzgzOTQ0MTg5XX0=
 -->
