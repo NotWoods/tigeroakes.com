@@ -195,12 +195,15 @@ A common pattern is to have a list of items that can be interacted with, where n
 ```
 
 ```js
-
+let buttonCounter = 0;
+document.getElementById('button').addEventListener('click', evt => {
+	const button = document.createElement('button');
+});
 ```
 
 ### Forms
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNDc5NTM2LC0zODM5NDQxODldfQ==
+eyJoaXN0b3J5IjpbODIzMTk1NjksLTM4Mzk0NDE4OV19
 -->
