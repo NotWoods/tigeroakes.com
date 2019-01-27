@@ -237,12 +237,17 @@ Perhaps you have a form with lots of inputs, and you want to collect all the use
 
 ```html
 <form>
-	<label>Name
+	<label>Name: <input name="name" type="text"></label>
+	<label>Email: <input name="email" type="email"></label>
+	<label>Password: <input name="password" type="password"></label>
 </form>
+```
+```js
+let in
 ```
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODMxOTAzNzcsMTY0OTk1OTE1MiwtMz
-gzOTQ0MTg5XX0=
+eyJoaXN0b3J5IjpbMTk1MjI3NTk1NywxNjQ5OTU5MTUyLC0zOD
+M5NDQxODldfQ==
 -->
