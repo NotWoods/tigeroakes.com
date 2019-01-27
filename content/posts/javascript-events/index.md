@@ -210,11 +210,33 @@ document.getElementById('button').addEventListener('click', evt => {
 });
 ```
 
-By taking advantage of bubbling, you can just
+By taking advantage of bubbling, you can just have a single event listener on the container.
+
+```js
+let buttonCounter = 0;
+document.getElementById('button').addEventListener('click', evt => {
+	const newButton = document.createElement('button');
+	newButton.dataset.number = buttonCounter;
+	newButton.addEventListener('click', evt => {
+		// When clicked, log the clicked button's number.
+		console.log(`Clicked button #${newButton.dataset.number}`);
+	});
+	buttonCounter++;
+	
+	const container = document.getElementById('buttons');
+	container.appendChild(newButton);
+});
+document.getElementById('buttons').addEventListener('click', evt => {
+	const clickedButton = evt.target.closest('button');
+	if (clickedButton != null) {
+		
+	}
+});
+```
 
 ### Forms
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODc1MjUyMzQ5LC0zODM5NDQxODldfQ==
+eyJoaXN0b3J5IjpbLTUxNzQ4NzI4OCwtMzgzOTQ0MTg5XX0=
 -->
