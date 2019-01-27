@@ -12,13 +12,14 @@ changes the text in a form. When I first started learning Javascript, I wrote
 complicated event listeners. More recently I've learned how to reduce both the
 amount of code I write and the number of listeners I need.
 
-Let's start with a simple example - a list of links. We want to change the
+Let's start with a simple example - a navigation element with a few links. We want to change the
 `preview` element to show where a hyperlink goes when the user focuses on it.
 
 ```html
 <nav>
     <a href="#first"><strong>First link</strong>.</a>
-    <a href="#second">Second link.</a> <a href="#third">Third link.</a>
+    <a href="#second">Second link.</a> 
+    <a href="#third">Third link.</a>
 </nav>
 
 <div id="preview">TODO</div>
@@ -92,13 +93,14 @@ document.querySelector('a[href="#second"]').addEventListener('focus', preview);
 document.querySelector('a[href="#third"]').addEventListener('focus', preview);
 ```
 
-Now there is only 1 function instead of 4. We can re-use the exact sa
+Now there is only 1 function instead of 4. We can re-use the exact same function as an event listener
+and `evt.currentTarget.href` will have a different value depending on the element that fired the event.
 
 ### Using bubbling
 
 One final change can be made to reduce the number of lines in our code. Rather
 than attaching an event listener to each link, we can just attach a single event
-listener to the list that contains all the links.
+listener to the `<nav>` element that contains all the links.
 
 When an event is fired, it starts off at the element where the event originated
 (one of the links). However, it won't stop there. The browser goes to each
@@ -184,5 +186,5 @@ Now we can use a single listener for `click` events.
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA3ODc1MzkxXX0=
+eyJoaXN0b3J5IjpbLTc1MTY5NjI3N119
 -->
