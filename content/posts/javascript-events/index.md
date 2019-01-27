@@ -124,6 +124,8 @@ document.querySelector('nav').addEventListener('focus', preview);
 Now we just have 1 listener! The 14 lines of code from above have been reduced
 to 7. With more complicated code, the effect will be greater.
 
+---
+
 ## What about click events?
 
 `evt.target` works great with events like `focus` and `change`, where there are
@@ -185,5 +187,5 @@ Now we can use a single listener for `click` events.
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjgwNTMyNzJdfQ==
+eyJoaXN0b3J5IjpbLTM4Mzk0NDE4OV19
 -->
