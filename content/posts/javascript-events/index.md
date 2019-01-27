@@ -109,7 +109,7 @@ This will continue until the root document is reached. This process is called
 
 By attaching an event listener to the list, the focus event will bubble from the
 link that was focused up to the parent list. We can also take advantage of the
-`evt.target` property, which contains the element that fired the event (one of the links) rather than the element that the event listener is attached to (the `<nav>` element).
+[`evt.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target), which contains the element that fired the event (one of the links) rather than the element that the event listener is attached to (the `<nav>` element).
 
 ```js
 const preview = evt => {
@@ -122,7 +122,8 @@ document.querySelector('nav').addEventListener('focus', preview);
 ```
 
 Now we just have 1 listener! The 14 lines of code from above have been reduced
-to 7. With more complicated code, the effect will be greater.
+to 7. With more complicated code, the effect will be greater. By utilizing the `Event` object
+and bubbling, you can master 
 
 ---
 
@@ -187,5 +188,5 @@ Now we can use a single listener for `click` events.
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4Mzk0NDE4OV19
+eyJoaXN0b3J5IjpbMTQwNDY2NTkxNiwtMzgzOTQ0MTg5XX0=
 -->
