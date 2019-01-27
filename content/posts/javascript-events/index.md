@@ -233,8 +233,16 @@ document.getElementById('buttons').addEventListener('click', evt => {
 
 ### Forms
 
+Perhaps you have a form with lots of inputs, and you want to collect all the user responses into a single object.
+
+```html
+<form>
+	<label>Name
+</form>
+```
+
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI5MjI4Nzg1LDE2NDk5NTkxNTIsLTM4Mz
-k0NDE4OV19
+eyJoaXN0b3J5IjpbLTEzODMxOTAzNzcsMTY0OTk1OTE1MiwtMz
+gzOTQ0MTg5XX0=
 -->
