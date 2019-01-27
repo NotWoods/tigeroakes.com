@@ -61,14 +61,11 @@ function preview(text) {
     element.textContent = text;
 }
 
-document
-    .querySelector('a[href="#first"]')
+document.querySelector('a[href="#first"]')
     .addEventListener('focus', evt => preview('#first'));
-document
-    .querySelector('a[href="#second"]')
+document.querySelector('a[href="#second"]')
     .addEventListener('focus', evt => preview('#second'));
-document
-    .querySelector('a[href="#third"]')
+document.querySelector('a[href="#third"]')
     .addEventListener('focus', evt => preview('#third'));
 ```
 
@@ -104,9 +101,11 @@ listener to the `<nav>` element that contains all the links.
 
 When an event is fired, it starts off at the element where the event originated
 (one of the links). However, it won't stop there. The browser goes to each
-parent of the starting element, calling any event listeners on those parents.
+parent of that link, calling any event listeners on those parents.
 This will continue until the root document is reached. This process is called
 "bubbling", as the event rises through the document tree like a bubble.
+
+![
 
 By attaching an event listener to the list, the focus event will bubble from the
 link that was focused up to the parent list. We can also take advantage of the
@@ -123,7 +122,7 @@ document.querySelector('nav').addEventListener('focus', preview);
 ```
 
 Now we just have 1 listener! The 14 lines of code from above have been reduced
-to 8. With more complicated code, the effect will be greater.
+to 7. With more complicated code, the effect will be greater.
 
 ## What about click events?
 
@@ -186,5 +185,5 @@ Now we can use a single listener for `click` events.
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MTY5NjI3N119
+eyJoaXN0b3J5IjpbLTYzMzY3OTQwXX0=
 -->
