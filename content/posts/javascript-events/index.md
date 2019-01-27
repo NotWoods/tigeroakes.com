@@ -197,7 +197,15 @@ A common pattern is to have a list of items that can be interacted with, where n
 ```js
 let buttonCounter = 0;
 document.getElementById('button').addEventListener('click', evt => {
-	const button = document.createElement('button');
+	const newButton = document.createElement('button');
+	newButton.datalist.number = buttonCounter;
+	newButton.addEventListener('click', evt => {
+		
+	});
+	buttonCounter++;
+	
+	const container = document.getElementById('buttons');
+	container.appendChild(newButton);
 });
 ```
 
@@ -205,5 +213,5 @@ document.getElementById('button').addEventListener('click', evt => {
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIzMTk1NjksLTM4Mzk0NDE4OV19
+eyJoaXN0b3J5IjpbLTEwNDA0MDU3MzYsLTM4Mzk0NDE4OV19
 -->
