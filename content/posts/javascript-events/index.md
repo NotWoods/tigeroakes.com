@@ -123,7 +123,7 @@ document.querySelector('nav').addEventListener('focus', preview);
 
 Now we just have 1 listener! The 14 lines of code from above have been reduced
 to 7. With more complicated code, the effect will be greater. By utilizing the `Event` object
-and bubbling, you can master 
+and bubbling, you can master Javascript events and simplify your event handler code.
 
 ---
 
@@ -182,11 +182,15 @@ Now we can use a single listener for `click` events.
 
 ## Extra examples addendum:
 
+Here are some additional examples to demonstrate how to take advantage of a single event listener.
+
 ### Lists
+
+A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with Javascript. If you 
 
 ### Forms
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNDY2NTkxNiwtMzgzOTQ0MTg5XX0=
+eyJoaXN0b3J5IjpbLTEyNDk5NzI2ODEsLTM4Mzk0NDE4OV19
 -->
