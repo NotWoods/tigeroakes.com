@@ -243,11 +243,19 @@ Perhaps you have a form with lots of inputs, and you want to collect all the use
 </form>
 ```
 ```js
-let in
+let responses = {
+	name: '',
+	email: '',
+	password: '',
+};
+
+document.querySelector('input[name="name"]').addEventListener('change', evt => {
+	responses.name = document.querySelector('input[name="name"]').value;
+});
 ```
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MjI3NTk1NywxNjQ5OTU5MTUyLC0zOD
-M5NDQxODldfQ==
+eyJoaXN0b3J5IjpbNTYyNDIxNTEsMTY0OTk1OTE1MiwtMzgzOT
+Q0MTg5XX0=
 -->
