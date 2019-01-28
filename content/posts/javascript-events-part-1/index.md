@@ -12,8 +12,9 @@ changes the text in a form. When I first started learning Javascript, I wrote
 complicated event listeners. More recently I've learned how to reduce both the
 amount of code I write and the number of listeners I need.
 
-Let's start with a simple example - a navigation element with a few links. We want to change the
-`preview` element to show where a hyperlink goes when the user focuses on it.
+Let's start with a simple example - a navigation element with a few links. We
+want to change the `preview` element to show where a hyperlink goes when the
+user focuses on it.
 
 ```html
 <nav>
@@ -71,12 +72,14 @@ document.querySelector('a[href="#third"]')
 
 ## Taking advantage of the `Event` object
 
-The key to simplifying your listeners is the [`Event` object](https://developer.mozilla.org/en-US/docs/Web/API/Event).
-When an event listener is called, it also sends an `Event` object as the first
+The key to simplifying your listeners is the
+[`Event` object](https://developer.mozilla.org/en-US/docs/Web/API/Event). When
+an event listener is called, it also sends an `Event` object as the first
 argument. This object has some data to describe the event that occurred, such as
 the time the event happened. To simplify our code, we can use the
-[`evt.currentTarget` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget). `currentTarget` refers to the element that the
-event listener is attached to. In our example, it will be one of the 3 links.
+[`evt.currentTarget` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget).
+`currentTarget` refers to the element that the event listener is attached to. In
+our example, it will be one of the 3 links.
 
 ```js
 const preview = evt => {
@@ -90,8 +93,9 @@ document.querySelector('a[href="#second"]').addEventListener('focusin', preview)
 document.querySelector('a[href="#third"]').addEventListener('focusin', preview);
 ```
 
-Now there is only 1 function instead of 4. We can re-use the exact same function as an event listener
-and `evt.currentTarget.href` will have a different value depending on the element that fired the event.
+Now there is only 1 function instead of 4. We can re-use the exact same function
+as an event listener and `evt.currentTarget.href` will have a different value
+depending on the element that fired the event.
 
 ## Using bubbling
 
@@ -101,15 +105,17 @@ listener to the `<nav>` element that contains all the links.
 
 When an event is fired, it starts off at the element where the event originated
 (one of the links). However, it won't stop there. The browser goes to each
-parent of that link, calling any event listeners on those parents.
-This will continue until the root document is reached. This process is called
-"bubbling", as the event rises through the document tree like a bubble.
+parent of that link, calling any event listeners on those parents. This will
+continue until the root document is reached. This process is called "bubbling",
+as the event rises through the document tree like a bubble.
 
 ![Animation of event bubbling]()
 
 By attaching an event listener to the list, the focus event will bubble from the
 link that was focused up to the parent list. We can also take advantage of the
-[`evt.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target), which contains the element that fired the event (one of the links) rather than the element that the event listener is attached to (the `<nav>` element).
+[`evt.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target),
+which contains the element that fired the event (one of the links) rather than
+the element that the event listener is attached to (the `<nav>` element).
 
 ```js
 const preview = evt => {
@@ -122,9 +128,11 @@ document.querySelector('nav').addEventListener('focusin', preview);
 ```
 
 Now we just have 1 listener! The 14 lines of code from above have been reduced
-to 7. With more complicated code, the effect will be greater. By utilizing the `Event` object
-and bubbling, you can master Javascript events and simplify your event handler code.
+to 7. With more complicated code, the effect will be greater. By utilizing the
+`Event` object and bubbling, you can master Javascript events and simplify your
+event handler code.
 
 ---
 
-In this post I covered working with `Event` objects and bubbling to use 1 event listener to handle related elements.
+In this post I covered working with `Event` objects and bubbling to use 1 event
+listener to handle related elements.

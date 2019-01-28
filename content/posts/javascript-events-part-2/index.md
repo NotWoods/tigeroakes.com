@@ -6,8 +6,9 @@ author: tiger
 editor: daphne
 ---
 
-`evt.target` works great with events like `focusin` and `change`, where there are
-only a small number of elements that can receive focus or have input changed.
+`evt.target` works great with events like `focusin` and `change`, where there
+are only a small number of elements that can receive focus or have input
+changed.
 
 However, usually you want to listen for `click` events so you can respond to a
 user clicking on a button in your application. `click` events fire for _any_

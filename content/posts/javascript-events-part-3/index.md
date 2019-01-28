@@ -8,11 +8,15 @@ editor: daphne
 
 # Extra examples addendum:
 
-Here are some additional examples to demonstrate how to take advantage of a single event listener.
+Here are some additional examples to demonstrate how to take advantage of a
+single event listener.
 
 ## Lists
 
-A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with Javascript. If you have event listeners attached to each item, then your code has to deal with event listeners every time you generate a new element.
+A common pattern is to have a list of items that can be interacted with, where
+new items are inserted dynamically with Javascript. If you have event listeners
+attached to each item, then your code has to deal with event listeners every
+time you generate a new element.
 
 ```html
 <div id="buttons"></div>
@@ -36,7 +40,9 @@ document.getElementById('button').addEventListener('click', evt => {
 });
 ```
 
-By taking advantage of bubbling, you can just have a single event listener on the container. If you create many elements in your app, this reduces the number of listeners from _n_ to 2.
+By taking advantage of bubbling, you can just have a single event listener on
+the container. If you create many elements in your app, this reduces the number
+of listeners from _n_ to 2.
 
 ```js
 let buttonCounter = 0;
@@ -61,20 +67,22 @@ document.getElementById('buttons').addEventListener('click', evt => {
 
 ## Forms
 
-Perhaps you have a form with lots of inputs, and you want to collect all the user responses into a single object.
+Perhaps you have a form with lots of inputs, and you want to collect all the
+user responses into a single object.
 
 ```html
 <form>
-	<label>Name: <input name="name" type="text"></label>
-	<label>Email: <input name="email" type="email"></label>
-	<label>Password: <input name="password" type="password"></label>
+    <label>Name: <input name="name" type="text"/></label>
+    <label>Email: <input name="email" type="email"/></label>
+    <label>Password: <input name="password" type="password"/></label>
 </form>
 ```
+
 ```js
 let responses = {
 	name: '',
 	email: '',
-	password: '',
+    password: ''
 };
 
 document.querySelector('input[name="name"]').addEventListener('change', evt => {
@@ -97,7 +105,7 @@ Let's switch to a single listener on the parent `<form>` element instead.
 let responses = {
 	name: '',
 	email: '',
-	password: '',
+    password: ''
 };
 
 document.querySelector('form').addEventListener('change', evt => {
