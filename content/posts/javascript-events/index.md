@@ -266,10 +266,19 @@ document.querySelector('input[name="password"]').addEventListener('change', evt 
 Let's switch to a single listener on the parent `<form>` element instead.
 
 ```js
+let responses = {
+	name: '',
+	email: '',
+	password: '',
+};
+
+document.querySelector('form').addEventListener('change', evt => {
+	responses[evt.target.name] = evt.target.value;
+});
 ```
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDk2MzA0NDksNTYyNDIxNTEsMTY0OT
-k1OTE1MiwtMzgzOTQ0MTg5XX0=
+eyJoaXN0b3J5IjpbNTcwMjU4MjgsNTYyNDIxNTEsMTY0OTk1OT
+E1MiwtMzgzOTQ0MTg5XX0=
 -->
