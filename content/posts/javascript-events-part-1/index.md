@@ -70,6 +70,8 @@ document.querySelector('a[href="#third"]')
     .addEventListener('focusin', evt => preview('#third'));
 ```
 
+This is much cleaner, but we still need many functions and event listeners.
+
 ## Taking advantage of the `Event` object
 
 The key to simplifying your listeners is the
@@ -135,4 +137,7 @@ event handler code.
 ---
 
 In this post I covered working with `Event` objects and bubbling to use 1 event
-listener to handle related elements.
+listener to handle related elements. In the next post, I will talk about
+dealing with `click` events where many elements may fire.
+
+**Next in the series: [What about click events?](/posts/javascript-events-part-2/)**
