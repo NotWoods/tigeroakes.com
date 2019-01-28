@@ -250,12 +250,26 @@ let responses = {
 };
 
 document.querySelector('input[name="name"]').addEventListener('change', evt => {
-	responses.name = document.querySelector('input[name="name"]').value;
+	const inputElement = document.querySelector('input[name="name"]');
+	responses.name = inputElement.value;
 });
+document.querySelector('input[name="email"]').addEventListener('change', evt => {
+	const inputElement = document.querySelector('input[name="email"]');
+	responses.email = inputElement.value;
+});
+document.querySelector('input[name="password"]').addEventListener('change', evt => {
+	const inputElement = document.querySelector('input[name="password"]');
+	responses.password = inputElement.value;
+});
+```
+
+Let's switch to a single listener on the parent `<form>` element instead.
+
+```js
 ```
 
 ### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYyNDIxNTEsMTY0OTk1OTE1MiwtMzgzOT
-Q0MTg5XX0=
+eyJoaXN0b3J5IjpbLTE3NDk2MzA0NDksNTYyNDIxNTEsMTY0OT
+k1OTE1MiwtMzgzOTQ0MTg5XX0=
 -->
