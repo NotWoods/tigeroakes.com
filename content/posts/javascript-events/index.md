@@ -33,17 +33,17 @@ the simplest way to start - we want specific behavior for each link, so we can
 use specific code for each.
 
 ```js
-document.querySelector('a[href="#first"]').addEventListener('focus', evt => {
+document.querySelector('a[href="#first"]').addEventListener('focusin', evt => {
     const element = document.getElementById('preview');
     element.textContent = '#first';
 });
 
-document.querySelector('a[href="#second"]').addEventListener('focus', evt => {
+document.querySelector('a[href="#second"]').addEventListener('focusin', evt => {
     const element = document.getElementById('preview');
     element.textContent = '#second';
 });
 
-document.querySelector('a[href="#third"]').addEventListener('focus', evt => {
+document.querySelector('a[href="#third"]').addEventListener('focusin', evt => {
     const element = document.getElementById('preview');
     element.textContent = '#third';
 });
@@ -62,11 +62,11 @@ function preview(text) {
 }
 
 document.querySelector('a[href="#first"]')
-    .addEventListener('focus', evt => preview('#first'));
+    .addEventListener('focusin', evt => preview('#first'));
 document.querySelector('a[href="#second"]')
-    .addEventListener('focus', evt => preview('#second'));
+    .addEventListener('focusin', evt => preview('#second'));
 document.querySelector('a[href="#third"]')
-    .addEventListener('focus', evt => preview('#third'));
+    .addEventListener('focusin', evt => preview('#third'));
 ```
 
 ### Taking advantage of the `Event` object
@@ -85,9 +85,9 @@ const preview = evt => {
     element.textContent = text;
 };
 
-document.querySelector('a[href="#first"]').addEventListener('focus', preview);
-document.querySelector('a[href="#second"]').addEventListener('focus', preview);
-document.querySelector('a[href="#third"]').addEventListener('focus', preview);
+document.querySelector('a[href="#first"]').addEventListener('focusin', preview);
+document.querySelector('a[href="#second"]').addEventListener('focusin', preview);
+document.querySelector('a[href="#third"]').addEventListener('focusin', preview);
 ```
 
 Now there is only 1 function instead of 4. We can re-use the exact same function as an event listener
@@ -118,7 +118,7 @@ const preview = evt => {
     element.textContent = text;
 };
 
-document.querySelector('nav').addEventListener('focus', preview);
+document.querySelector('nav').addEventListener('focusin', preview);
 ```
 
 Now we just have 1 listener! The 14 lines of code from above have been reduced
@@ -129,7 +129,7 @@ and bubbling, you can master Javascript events and simplify your event handler c
 
 ## What about click events?
 
-`evt.target` works great with events like `focus` and `change`, where there are
+`evt.target` works great with events like `focusin` and `change`, where there are
 only a small number of elements that can receive focus or have input changed.
 
 However, usually you want to listen for `click` events so you can respond to a
@@ -145,7 +145,7 @@ const preview = evt => {
     element.textContent = text;
 };
 
-document.querySelector('nav').addEventListener('focus', preview);
+document.querySelector('nav').addEventListener('focusin', preview);
 ```
 
 When you test this code, you may notice that when you click on the first link,
@@ -280,6 +280,6 @@ document.querySelector('form').addEventListener('change', evt => {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjYwNDk5MDMsNTYyNDIxNTEsMTY0OT
-k1OTE1MiwtMzgzOTQ0MTg5XX0=
+eyJoaXN0b3J5IjpbNzg3ODU0MzUzLC0xMDY2MDQ5OTAzLDU2Mj
+QyMTUxLDE2NDk5NTkxNTIsLTM4Mzk0NDE4OV19
 -->
