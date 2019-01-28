@@ -1,0 +1,25 @@
+{{ define "head" }}
+{{ partial "css.html" (resources.Get "sass/posts/single.scss") }}
+{{ partial "async-css.html" "sass/extra.scss" }}
+{{ end }}
+{{ define "main" }}
+<article>
+    {{ $bkg := .Resources.GetMatch "background.*" }}
+    <header class="hero-container post project-text" {{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
+        <div class="hero inner">
+            <h1 class="highlight-title">{{.Title}}</h1>
+            <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>
+        </div>
+    </header>
+
+    <div class="text-body inner text-container">
+        {{ .Content }}
+    </div>
+
+    <footer class="cta-wrap">
+        <a class="button-link cta shadow" href='{{ "/posts/" | relURL }}'>
+            {{ i18n "other_posts" }}
+        </a>
+    </footer>
+</article>
+{{ end }}
