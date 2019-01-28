@@ -180,6 +180,8 @@ function preview(evt) {
 
 Now we can use a single listener for `click` events.
 
+---
+
 ## Extra examples addendum:
 
 Here are some additional examples to demonstrate how to take advantage of a single event listener.
@@ -277,8 +279,7 @@ document.querySelector('form').addEventListener('change', evt => {
 });
 ```
 
-### React
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTcwMjU4MjgsNTYyNDIxNTEsMTY0OTk1OT
-E1MiwtMzgzOTQ0MTg5XX0=
+eyJoaXN0b3J5IjpbLTEwNjYwNDk5MDMsNTYyNDIxNTEsMTY0OT
+k1OTE1MiwtMzgzOTQ0MTg5XX0=
 -->
