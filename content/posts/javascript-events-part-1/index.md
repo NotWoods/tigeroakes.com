@@ -111,7 +111,7 @@ parent of that link, calling any event listeners on those parents. This will
 continue until the root document is reached. This process is called "bubbling",
 as the event rises through the document tree like a bubble.
 
-![Animation of event bubbling]()
+<img src="event_anim.svg" alt="Animation of event bubbling" height="250" width="265">
 
 By attaching an event listener to the list, the focus event will bubble from the
 link that was focused up to the parent list. We can also take advantage of the
