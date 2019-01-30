@@ -1,14 +1,14 @@
 ---
 title: Mastering the Javascript event system (Part 2)
 description: What about click events?
-date: 2019-01-27
+date: 2019-01-30 01:00:00
 author: tiger
 editor: daphne
 ---
 
 This is the second post in a series about working with Javascript events and
-using 1 event listener to handle related elements. **Be sure to read through
-[Part 1](/posts/javascript-events-part-1/) first.**
+using just one event listener to handle related elements. **Be sure to read
+through [Part 1](/posts/javascript-events-part-1/) first.**
 
 ---
 

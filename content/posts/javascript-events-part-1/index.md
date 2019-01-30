@@ -1,7 +1,7 @@
 ---
 title: Mastering the Javascript event system (Part 1)
 description: How to simplify your listener code.
-date: 2019-01-26
+date: 2019-01-30 00:00:00
 author: tiger
 editor: daphne
 ---
@@ -18,7 +18,7 @@ user focuses on it.
 
 ```html
 <nav>
-    <a href="#first"><strong>First link</strong>.</a>
+    <a href="#first">​<strong>First link</strong>.​</a>
     <a href="#second">Second link.</a>
     <a href="#third">Third link.</a>
 </nav>
@@ -108,8 +108,9 @@ listener to the `<nav>` element that contains all the links.
 When an event is fired, it starts off at the element where the event originated
 (one of the links). However, it won't stop there. The browser goes to each
 parent of that link, calling any event listeners on those parents. This will
-continue until the root document is reached. This process is called "bubbling",
-as the event rises through the document tree like a bubble.
+continue until the **root** of the document is reached (the `<body>` tag in HTML).
+This process is called "bubbling", as the event rises through the document tree
+like a bubble.
 
 <img src="event_anim.svg" alt="Animation of event bubbling" height="250" width="265">
 
@@ -129,15 +130,16 @@ const preview = evt => {
 document.querySelector('nav').addEventListener('focusin', preview);
 ```
 
-Now we just have 1 listener! The 14 lines of code from above have been reduced
+Now we have just 1 listener! The 14 lines of code from above have been reduced
 to 7. With more complicated code, the effect will be greater. By utilizing the
 `Event` object and bubbling, you can master Javascript events and simplify your
 event handler code.
 
 ---
 
-In this post I covered working with `Event` objects and bubbling to use 1 event
-listener to handle related elements. In the next post, I will talk about
-dealing with `click` events where many elements may fire.
+In this post I covered working with `Event` objects and bubbling to use a
+single event listener to handle related elements. In the next post, I will talk
+about dealing with `click` events where many elements may fire.
 
-**Next in the series: [What about click events?](/posts/javascript-events-part-2/)**
+**Next in the series:
+[What about click events?](/posts/javascript-events-part-2/)**

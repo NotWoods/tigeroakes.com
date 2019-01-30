@@ -1,7 +1,7 @@
 ---
 title: Mastering the Javascript event system (Part 3)
 description: Additional examples for handling events.
-date: 2019-01-28
+date: 2019-01-30 02:00:00
 author: tiger
 editor: daphne
 ---

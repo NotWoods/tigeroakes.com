@@ -12,12 +12,17 @@
 pre {
   padding: 1em;
 
+  overflow: auto;
   white-space: pre-wrap;
 }
 
 code {
   background-color: rgba(27, 31, 35, 0.05);
   overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
 }
 
 blockquote {
@@ -30,6 +35,7 @@ blockquote {
 @media (max-width: 36rem) {
   pre {
     margin: 0 -3rem;
+    max-width: calc(100vw - 2em);
   }
 }
 
@@ -45,139 +51,3 @@ blockquote {
     margin: 0 -1rem;
   }
 }
-
-/*
-.post-wrapper {
-  max-width: 64rem;
-  padding: 0 0.75em;
-}
-
-.post-header {
-  padding: 1em 2em;
-}
-
-.post-title {
-  font-size: 2em;
-  margin: {
-    top: 0.5em;
-    bottom: 0;
-  }
-}
-
-.post-subtitle {
-  display: block;
-  font-size: 1.1em;
-  margin: 0.4em 0;
-}
-
-.post-meta {
-  font-size: 0.9em;
-  text-align: right;
-}
-
-.post-author {
-  font-weight: bold;
-}
-
-.post-hero {
-  display: block;
-  width: 100%;
-
-  &-container {
-    margin: 2em 0 0;
-  }
-}
-
-.post-content {
-  background: white;
-  overflow-wrap: break-word;
-  padding: 2em;
-}
-
-h2 {
-  position: relative;
-
-  &::before {
-    background: #444;
-    position: absolute;
-    left: -1em;
-    width: 0.5em;
-    height: 100%;
-    content: "";
-  }
-}
-
-pre,
-code {
-  border-radius: 3px;
-  font-size: 1.1em;
-}
-
-pre {
-  padding: 1em;
-  overflow-x: auto;
-}
-
-code {
-  padding: 0.2em;
-  background: #eee;
-}
-
-pre code {
-  font-size: inherit;
-  background: transparent;
-}
-
-blockquote {
-  margin: 0;
-  margin-bottom: 1em;
-  padding: 0 1em;
-  color: #626971;
-  border-left: 0.25em solid #dfe2e5;
-}
-
-dt {
-  margin-top: 1em;
-  font-weight: bold;
-}
-
-hr {
-  margin: 1.5em 0 1.25em;
-  height: 0.25em;
-  padding: 0;
-  background: #e1e4e8;
-  border: 0;
-}
-
-table {
-  margin: {
-    top: 0;
-    bottom: 1em;
-  }
-  border: {
-    spacing: 0;
-    collapse: collapse;
-  }
-  display: block;
-  width: 100%;
-  overflow: auto;
-}
-
-tr {
-  background: #fff;
-  border-top: 1px solid #c6cbd1;
-
-  &:nth-child(2n) {
-    background: #f6f8fa;
-  }
-}
-
-th {
-  font-weight: bold;
-}
-th,
-td {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
-}
-*/
