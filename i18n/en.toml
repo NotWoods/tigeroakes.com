@@ -5,6 +5,8 @@ other = "PDF"
 other = "See more projects"
 [other_projects]
 other = "Other projects"
+[other_posts]
+other = "More blog posts"
 [contact]
 other = "Contact"
 
