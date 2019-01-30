@@ -6,11 +6,13 @@ author: tiger
 editor: daphne
 ---
 
-This is the second post in a series about working with Javascript events and
-using 1 event listener to handle related elements.
+This is the third post in a series about working with Javascript events and
+using a single event listener to handle related elements.
 
-- [**Part 1: Simplify your listener code**](/posts/javascript-events-part-1/)
-- [**Part 2: What about click events?**](/posts/javascript-events-part-2/)
+-   [**Part 1: Simplify your listener code**](/posts/javascript-events-part-1/)
+-   [**Part 2: What about click events?**](/posts/javascript-events-part-2/)
+
+---
 
 # Extra examples addendum
 
@@ -25,24 +27,25 @@ attached to each item, then your code has to deal with event listeners every
 time you generate a new element.
 
 ```html
-<div id="buttons"></div>
+<div id="buttons-container"></div>
 
 <button id="add">Add new button</button>
 ```
 
 ```js
 let buttonCounter = 0;
-document.getElementById('button').addEventListener('click', evt => {
-	const newButton = document.createElement('button');
-	newButton.dataset.number = buttonCounter;
-	newButton.addEventListener('click', evt => {
-		// When clicked, log the clicked button's number.
-		console.log(`Clicked button #${newButton.dataset.number}`);
-	});
-	buttonCounter++;
+document.getElementById('add').addEventListener('click', evt => {
+    const newButton = document.createElement('button');
+    newButton.dataset.number = buttonCounter;
+    // Make a new event listener every time "Add new button" is clicked
+    newButton.addEventListener('click', evt => {
+        // When clicked, log the clicked button's number.
+        console.log(`Clicked button #${newButton.dataset.number}`);
+    });
+    buttonCounter++;
 
-	const container = document.getElementById('buttons');
-	container.appendChild(newButton);
+    const container = document.getElementById('buttons-container');
+    container.appendChild(newButton);
 });
 ```
 
@@ -52,20 +55,20 @@ of listeners from _n_ to 2.
 
 ```js
 let buttonCounter = 0;
-document.getElementById('button').addEventListener('click', evt => {
-	const newButton = document.createElement('button');
-	newButton.dataset.number = buttonCounter;
-	buttonCounter++;
+document.getElementById('add').addEventListener('click', evt => {
+    const newButton = document.createElement('button');
+    newButton.dataset.number = buttonCounter;
+    buttonCounter++;
 
-	const container = document.getElementById('buttons');
-	container.appendChild(newButton);
+    const container = document.getElementById('buttons-container');
+    container.appendChild(newButton);
 });
-document.getElementById('buttons').addEventListener('click', evt => {
-	const clickedButton = evt.target.closest('button');
-	if (clickedButton != null) {
-		// When clicked, log the clicked button's number.
-		console.log(`Clicked button #${clickedButton.dataset.number}`);
-	}
+document.getElementById('buttons-container').addEventListener('click', evt => {
+    const clickedButton = evt.target.closest('button');
+    if (clickedButton != null) {
+        // When clicked, log the clicked button's number.
+        console.log(`Clicked button #${clickedButton.dataset.number}`);
+    }
 });
 ```
 
@@ -86,35 +89,41 @@ user responses into a single object.
 
 ```js
 let responses = {
-	name: '',
-	email: '',
+    name: '',
+    email: '',
     password: ''
 };
 
-document.querySelector('input[name="name"]').addEventListener('change', evt => {
-	const inputElement = document.querySelector('input[name="name"]');
-	responses.name = inputElement.value;
-});
-document.querySelector('input[name="email"]').addEventListener('change', evt => {
-	const inputElement = document.querySelector('input[name="email"]');
-	responses.email = inputElement.value;
-});
-document.querySelector('input[name="password"]').addEventListener('change', evt => {
-	const inputElement = document.querySelector('input[name="password"]');
-	responses.password = inputElement.value;
-});
+document
+	.querySelector('input[name="name"]')
+	.addEventListener('change', evt => {
+		const inputElement = document.querySelector('input[name="name"]');
+		responses.name = inputElement.value;
+	});
+document
+    .querySelector('input[name="email"]')
+    .addEventListener('change', evt => {
+        const inputElement = document.querySelector('input[name="email"]');
+        responses.email = inputElement.value;
+    });
+document
+    .querySelector('input[name="password"]')
+    .addEventListener('change', evt => {
+        const inputElement = document.querySelector('input[name="password"]');
+        responses.password = inputElement.value;
+    });
 ```
 
 Let's switch to a single listener on the parent `<form>` element instead.
 
 ```js
 let responses = {
-	name: '',
-	email: '',
+    name: '',
+    email: '',
     password: ''
 };
 
 document.querySelector('form').addEventListener('change', evt => {
-	responses[evt.target.name] = evt.target.value;
+    responses[evt.target.name] = evt.target.value;
 });
 ```

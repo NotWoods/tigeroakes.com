@@ -13,17 +13,15 @@ complicated event listeners. More recently I've learned how to reduce both the
 amount of code I write and the number of listeners I need.
 
 Let's start with a simple example - a navigation element with a few links. We
-want to change the `preview` element to show where a hyperlink goes when the
+want to print a message to the console showing where a hyperlink goes when the
 user focuses on it.
 
 ```html
 <nav>
-    <a href="#first">​<strong>First link</strong>.​</a>
+    <a href="#first">​First link.​</a>
     <a href="#second">Second link.</a>
     <a href="#third">Third link.</a>
 </nav>
-
-<div id="preview">TODO</div>
 ```
 
 ## The intuitive way
@@ -35,39 +33,37 @@ use specific code for each.
 
 ```js
 document.querySelector('a[href="#first"]').addEventListener('focusin', evt => {
-    const element = document.getElementById('preview');
-    element.textContent = '#first';
+    console.log('#first');
 });
 
 document.querySelector('a[href="#second"]').addEventListener('focusin', evt => {
-    const element = document.getElementById('preview');
-    element.textContent = '#second';
+    console.log('#second');
 });
 
 document.querySelector('a[href="#third"]').addEventListener('focusin', evt => {
-    const element = document.getElementById('preview');
-    element.textContent = '#third';
+    console.log('#third');
 });
 ```
 
 ## Reducing duplicate code
 
-The above event listeners are all very similar. Each function changes the
-`preview` element to show some text. This duplicate code can be collapsed into a
-helper function.
+The above event listeners are all very similar. Each function prints some text.
+This duplicate code can be collapsed into a helper function.
 
 ```js
-function preview(text) {
-    const element = document.getElementById('preview');
-    element.textContent = text;
+function print(text) {
+    console.log(text);
 }
 
-document.querySelector('a[href="#first"]')
-    .addEventListener('focusin', evt => preview('#first'));
-document.querySelector('a[href="#second"]')
-    .addEventListener('focusin', evt => preview('#second'));
-document.querySelector('a[href="#third"]')
-    .addEventListener('focusin', evt => preview('#third'));
+document
+    .querySelector('a[href="#first"]')
+    .addEventListener('focusin', evt => print('#first'));
+document
+    .querySelector('a[href="#second"]')
+    .addEventListener('focusin', evt => print('#second'));
+document
+    .querySelector('a[href="#third"]')
+    .addEventListener('focusin', evt => print('#third'));
 ```
 
 This is much cleaner, but we still need many functions and event listeners.
@@ -84,15 +80,14 @@ the time the event happened. To simplify our code, we can use the
 our example, it will be one of the 3 links.
 
 ```js
-const preview = evt => {
+const print = evt => {
     const text = evt.currentTarget.href;
-    const element = document.getElementById('preview');
-    element.textContent = text;
+    console.log(text);
 };
 
-document.querySelector('a[href="#first"]').addEventListener('focusin', preview);
-document.querySelector('a[href="#second"]').addEventListener('focusin', preview);
-document.querySelector('a[href="#third"]').addEventListener('focusin', preview);
+document.querySelector('a[href="#first"]').addEventListener('focusin', print);
+document.querySelector('a[href="#second"]').addEventListener('focusin', print);
+document.querySelector('a[href="#third"]').addEventListener('focusin', print);
 ```
 
 Now there is only 1 function instead of 4. We can re-use the exact same function
@@ -108,9 +103,9 @@ listener to the `<nav>` element that contains all the links.
 When an event is fired, it starts off at the element where the event originated
 (one of the links). However, it won't stop there. The browser goes to each
 parent of that link, calling any event listeners on those parents. This will
-continue until the **root** of the document is reached (the `<body>` tag in HTML).
-This process is called "bubbling", as the event rises through the document tree
-like a bubble.
+continue until the **root** of the document is reached (the `<body>` tag in
+HTML). This process is called "bubbling", as the event rises through the
+document tree like a bubble.
 
 <img src="event_anim.svg" alt="Animation of event bubbling" height="250" width="265">
 
@@ -121,25 +116,24 @@ which contains the element that fired the event (one of the links) rather than
 the element that the event listener is attached to (the `<nav>` element).
 
 ```js
-const preview = evt => {
+const print = evt => {
     const text = evt.target.href;
-    const element = document.getElementById('preview');
-    element.textContent = text;
+    console.log(text);
 };
 
-document.querySelector('nav').addEventListener('focusin', preview);
+document.querySelector('nav').addEventListener('focusin', print);
 ```
 
-Now we have just 1 listener! The 14 lines of code from above have been reduced
-to 7. With more complicated code, the effect will be greater. By utilizing the
-`Event` object and bubbling, you can master Javascript events and simplify your
-event handler code.
+Now the many event listeners have been collapsed to just one! With more
+complicated code, the effect will be greater. By utilizing the `Event` object
+and bubbling, you can master Javascript events and simplify your event handler
+code.
 
 ---
 
-In this post I covered working with `Event` objects and bubbling to use a
-single event listener to handle related elements. In the next post, I will talk
-about dealing with `click` events where many elements may fire.
+In this post I covered working with `Event` objects and bubbling to use a single
+event listener to handle related elements. In the next post, I will talk about
+dealing with `click` events where many elements may fire.
 
 **Next in the series:
 [What about click events?](/posts/javascript-events-part-2/)**
