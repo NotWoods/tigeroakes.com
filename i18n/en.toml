@@ -30,13 +30,13 @@ other = "Microsoft Store"
 [resume_education]
 other = "Education"
 [resume_work]
-other = "Work Experience"
+other = "Experience"
 [resume_skills]
 other = "Skills"
 [resume_awards]
 other = "Awards"
 [resume_projects]
-other = "Selected Projects"
+other = "Community"
 
 [send_email_to]
 other = "You can send an email to"

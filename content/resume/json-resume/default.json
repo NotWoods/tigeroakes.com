@@ -6,7 +6,7 @@
     "email": "contact@tigeroakes.com",
     "phone": "1 (253) 778-6251",
     "website": "https://tigeroakes.com",
-    "summary": "Software Developer with 7 years of experience in functional and object-oriented programming. Proven success creating custom solutions for a variety of businesses.",
+    "summary": "Software Developer with 8+ years experience, specializing in high performance web and mobile applications.",
     "location": {
       "city": "Vancouver",
       "region": "BC",
@@ -32,16 +32,26 @@
   },
   "work": [
     {
+      "company": "Mozilla",
+      "position": "Firefox Android Developer Intern",
+      "website": "https://github.com/mozilla-mobile/fenix",
+      "startDate": "2019-05-14",
+      "endDate": "2018-08-30",
+      "highlights": [
+        "Helped team build and ship web browser to **over 100,000 users on Google Play Store**.",
+        "Added **Progressive Web App** support to Firefox Preview, providing a native feel to thousands of web apps.",
+        "Designed and implemented over 15 animations to polish app experience with **SVG** paths and **Kotlin**."
+      ]
+    },
+    {
       "company": "Google",
-      "position": "Chrome for Android - Software Engineering Intern",
+      "position": "Chrome Software Engineering Intern",
       "website": "https://storage.googleapis.com/chrome-supersize/index.html",
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
-        "Redesigned & added new features to \"Super Size\", **Python** tool with **web output** used to analyze millions of files contributing to Chrome's size. Tool saved 30 KB in the first week after release.",
-        "Utilized **streams** and **worker threads** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds.",
-        "Updated **Android** bytecode compiler, shrunk Chrome by 29 KB.",
-        "Wrote **Java** bytecode rewriter to insert code automatically."
+        "Built internal tool now in use by entire Google Chrome for Android team with **JavaScript** and **Python**.",
+        "Used **streams** and **worker threads** to handle 180 MB downloads, rendering partial data in under 1 second"
       ]
     },
     {
@@ -52,21 +62,20 @@
       "endDate": "2018-04-25",
       "summary": "Vancouver startup simulating skin for VFX and prototyping clothing",
       "highlights": [
-        "Built **TypeScript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
-        "Migrated large program from **jQuery** to **React** and **Redux**, saving time and effort for future programmers through reactive design."
+        "Built **TypeScript Electron** client that interfaces with **C++** server to display 3D simulations with **WebGL**.",
+        "Migrated large program from **jQuery** to **React**, **Redux**, saving time and effort for future programmers."
       ]
     },
     {
       "company": "Yelp",
-      "position": "Local Services - Software Engineer Intern",
-      "website": "https://yelp.com/describe_your_project?category=movers",
+      "position": "Software Engineer Intern",
+      "website": "https://www.yelp.com/search?find_desc=Handyman+Services",
       "startDate": "2017-08-27",
       "endDate": "2017-12-17",
       "highlights": [
-        "Built \"Describe Your Project\" package with **Python**, so users may easily request quotes from home services businesses.",
-        "Developed **Python** package to encapsulate API with RST docs.",
-        "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
-        "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
+        "Built new website feature in **Flow**, **React**, **Redux**, and **Python** for contacting local service businesses.",
+        "Feature is shown on search page and displayed to approximately **1,000,000 users monthly**.",
+        "Led hackathon team to build new product for in-restaurant experience which was picked up by sales team."
       ]
     },
     {
@@ -76,8 +85,7 @@
       "startDate": "2016-05-14",
       "endDate": "2017-04-14",
       "highlights": [
-        "Developed custom **TypeScript** software with the **UBC Work Learn International Undergraduate Research Award**.",
-        "Wrote fill algorithm to classify sections of farm fields."
+        "Developed custom **TypeScript** software and wrote fill algorithm to classify farm fields."
       ]
     },
     {
@@ -88,58 +96,19 @@
       "endDate": "2015-08-10",
       "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
       "highlights": [
-        "Designed and developed web portfolio to showcase residences.",
-        "Applied GPU-accelerated parallax using CSS 3D transformations."
+        "Designed and developed web portfolio, including GPU-accelerated parallax using **CSS** 3D transformations."
       ]
     }
   ],
   "projects": [
     {
-      "name": "Big Island Buses",
-      "url": "https://notwoods.github.io/big-island-buses",
-      "startDate": "2014-05-01",
-      "endDate": "2015-05-31",
-      "description": "Web app to replace Hawai'i paper bus schedules",
+      "name": "Open Source",
       "highlights": [
-        "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
-        "Optimized site for mobile **offline** viewing.",
-        "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
-      ]
-    },
-    {
-      "name": "Soil TopARgraphy",
-      "url": "http://eml.ubc.ca/projects/soil-topargraphy/",
-      "startDate": "2018-02-01",
-      "endDate": "2019-01-31",
-      "description": "Teaches soil topography through AR",
-      "highlights": [
-        "Will be **published on Google Play** in 2019.",
-        "Programmed **Android AR** viewer in **Unity** with **C#**, exposed fields to inspector so teammates could quickly manipulate views.",
-        "Wrote script to process Mapbox heightmaps to generate Blender 3D model."
-      ]
-    },
-    {
-      "name": "μzm",
-      "url": "https://devpost.com/software/tag-it-gpzhuq",
-      "startDate": "2018-01-19",
-      "endDate": "2018-01-19",
-      "description": "Enhances museum immersion with gamification",
-      "highlights": [
-        "**Finalist, nwHacks 2018** out of 800+ people.",
-        "Helped write **Android** app in **Java** to scan NFC badges on exhibits and patrons.",
-        "Built backend with **Node.js**/**MongoDB**."
-      ]
-    },
-    {
-      "name": "Color Breakdown",
-      "url": "https://notwoods.github.io/color-breakdown/",
-      "startDate": "2018-04-01",
-      "endDate": "2018-08-31",
-      "description": "Design tool to analyze image color palette",
-      "highlights": [
-        "Published **Progressive Web App** on **Microsoft Store**.",
-        "Used **JavaScript** file API to open images for parsing, clipboard API to copy hex values.",
-        "Stored user data in **IndexedDB**, used cursors to stream out saved data and reduce time to display by 1 second."
+        "Contributed **TypeScript** typings to 15+ libraries, including **three.js**, **Rollup**, and Comlink.",
+        "Wrote **MDN** documentation on FileReader and Web Share JavaScript APIs.",
+        "Implemented advanced configuration feature with **JavaScript** in Google's Travis Size Report.",
+        "Added support for new commands with **Node.js** to appium-adb.",
+        "Documented new Hugo features, such as social graph and resource metadata."
       ]
     }
   ],

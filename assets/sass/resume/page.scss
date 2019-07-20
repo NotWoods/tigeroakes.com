@@ -4,7 +4,7 @@
 @import "../contact/_main";
 
 .resume {
-  font-size: 10pt;
+  font-size: 11pt;
   background: white;
 
   max-width: 7.5in;
@@ -13,48 +13,28 @@
 }
 
 .resume-header {
-  border-bottom: 0.01in solid $primary-color;
   font-size: 11pt;
-
-  display: table;
-  padding-bottom: 0.2in;
-}
-.name-container {
-  display: table-cell;
 }
 .name {
-  font-size: 28pt;
+  font-size: 22pt;
   text-transform: uppercase;
   font-weight: bold;
 
   margin: 0;
 }
 .summary {
+  font-size: 12pt;
   color: #404040;
+  font-style: italic;
 
-  margin: 0;
+  margin: 0 0 8pt;
 }
 .resume-contact {
-  line-height: 1.4em;
-  text-align: right;
-  list-style: none;
-  vertical-align: top;
-
-  padding: 0;
-  display: table-cell;
+  margin: 0 0 8pt;
 }
 
-.resume-body {
-  display: table;
-}
-.resume-left-column {
-  display: table-cell;
-  width: 4.1in;
-  padding-right: 0.5in;
-}
-.resume-right-column {
-  display: table-cell;
-  width: 2.8in;
+.pipe-list {
+  margin: 0 0 8pt;
 }
 
 a,
@@ -67,31 +47,31 @@ a,
 
 // Heading 1: Section headers
 .resume-body h1 {
-  font: {
-    weight: 400;
-    size: 14pt;
-  }
-  text-transform: uppercase;
+  font-size: 14pt;
 
-  margin: 0.75em 0 0;
+  margin: 0;
+  position: relative;
+
+  &::before {
+    background: $primary-color;
+
+    position: absolute;
+    top: -0.025cm;
+    left: -0.5cm;
+    width: 0.25cm;
+    height: 0.65cm;
+    content: "";
+  }
 }
 
 // Heading 2: Job and Project titles
 h2 {
   font-size: 12pt;
 
-  margin: 0;
-  clear: right;
+  margin: 4pt 0 0;
 }
-
-// Heading 3: Company titles
-h4 {
-  font: {
-    weight: 400;
-    size: 11pt;
-  }
-
-  margin: 0;
+.position {
+  font-weight: 400;
 }
 
 // Heading 4: Dates and URLs
@@ -102,19 +82,8 @@ h5 {
   }
   color: $primary-color;
 
+  float: right;
   margin: 0;
-  position: relative;
-
-  .work-experience &::before {
-    background: $primary-color;
-
-    position: absolute;
-    top: 0.45cm;
-    left: -0.6cm;
-    width: 0.3cm;
-    height: 0.8cm;
-    content: "";
-  }
 }
 
 p {
@@ -123,9 +92,11 @@ p {
 
 ul {
   list-style: square;
+  line-height: 1.25em;
 
-  margin: 0 0 1em;
+  margin: 2pt 0 8pt;
   padding: 0 0 0 1em;
+  clear: right;
 }
 
 // Subtitle
@@ -139,6 +110,10 @@ em {
 
 sup {
   font-size: 0.6em;
+}
+
+.education {
+  margin-bottom: 12pt;
 }
 
 .tight {
