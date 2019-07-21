@@ -20,13 +20,6 @@ const proxyHandler = {
 
 window.options = Object.freeze({
   /**
-   * Show or hide the orange links on the resume.
-   * Headers are still clickable.
-   */
-  toggleVisibleLinks() {
-    document.body.classList.toggle("hide-links");
-  },
-  /**
    * Import a new JSON Resume and display it.
    */
   async source(url, hideMessage = false) {
@@ -56,6 +49,6 @@ window.Source = Object.freeze({
   console.log("Editor mode ready. Options:");
   console.log("- Paste in a JSON resume.");
   console.log("- Set display properties on `options` object.");
-  await window.options.source(window.Source.DEFAULT);
+  await window.options.source(window.Source.DEFAULT, true);
   console.log("- Edit the `resume` object properties.");
 })();

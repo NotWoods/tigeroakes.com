@@ -8,12 +8,9 @@ export function update(data) {
   const email = document.querySelector(".resume-email");
   email.textContent = data.basics.email;
   email.href = `mailto:${data.basics.email}`;
-  const website = document.querySelector(".resume-website");
-  website.textContent = data.basics.website.replace(/https?:\/\//, "");
-  website.href = data.basics.website;
   document.querySelector(".resume-city").textContent = `${
     data.basics.location.city
-    }, ${data.basics.location.region}`;
+    }, ${data.basics.location.region} (US Citizen)`;
   const github = document.querySelector(".resume-github");
   const githubData = data.basics.profiles.find(p => p.network === "GitHub");
   github.textContent = `github.com/${githubData.username}`;
@@ -23,16 +20,12 @@ export function update(data) {
   document.querySelector(".education").innerHTML = data.education
     .map(
       e => `
-    <h5>
-      ${formatDate(e.startDate)} - ${formatDate(e.endDate)}
-      <span class="right">(expected with co-op)</span>
-    </h5>
-    <h2>${e.institution}</h2>
-    <h4>
-      ${e.studyType} in ${e.area},
-      3<sup>rd</sup> year
-    </h4>
-  `
+      <h5>${formatDates(e.startDate, e.endDate)}</h5>
+      <h2>
+        <span class="institution">${e.institution}</span>
+        <span class="position">${e.studyType} in ${e.area}, 4<sup>th</sup> year</span>
+      </h2>
+    `
     )
     .join("");
 
@@ -40,16 +33,11 @@ export function update(data) {
   document.querySelector(".work-experience").innerHTML = data.work
     .map(
       w => `
-      <h5>
-        ${formatDates(w.startDate, w.endDate)}
-        <a class="right resume-link${w.website.length > 35 ? " tight" : ""}" href="${
-          w.website
-          }">
-          ${w.website.replace(/https?:\/\//, "")}
-        </a>
-      </h5>
-      ${title(w.company, w.website)}
-      <h4>${w.position}</h4>
+      <h5>${formatDates(w.startDate, w.endDate)}</h5>
+      <h2>
+        <a href="${w.website}" class="company">${w.company}</a>,
+        <span class="position">${w.position}</span>
+      </h2>
       ${w.summary ? `<em>${w.summary}</em>` : ""}
       ${highlights(w.highlights)}
     `)
@@ -69,8 +57,8 @@ export function update(data) {
   document.querySelector(".resume-projects").innerHTML = data.projects
     .map(
       p => `
-      ${p.startDate ? `<h5>${formatDates(p.startDate, p.endDate)}</h5>` : ''}
-      ${title(p.name, p.url)}
+      <h5>${formatDates(p.startDate, p.endDate)}</h5>
+      <h2><a href="${p.url}" class="company">${p.name}</a></h2>
       ${p.description ? `<em>${p.description}</em>` : ""}
       ${highlights(p.highlights)}
     `)
@@ -84,7 +72,9 @@ function formatDate(date) {
     .join("/");
 }
 function formatDates(start, end) {
-  if (end === start) {
+  if (!start) {
+    return ''
+  } else if (end === start) {
     return `${formatDate(start)}`;
   } else if (!end) {
     return `${formatDate(start)} - Present`;

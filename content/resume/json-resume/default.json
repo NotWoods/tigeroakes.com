@@ -153,6 +153,7 @@
     { "name": "Android" },
     { "name": "Node.js" },
     { "name": "React" },
-    { "name": "Design" }
+    { "name": "Design" },
+    { "name": "Vector Animation" }
   ]
 }

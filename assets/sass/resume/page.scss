@@ -36,13 +36,12 @@
 .pipe-list {
   margin: 0 0 8pt;
 }
-
-a,
-.right {
-  color: inherit;
+.resume-email, .resume-github, .resume-city {
+  display: inline-block;
 }
-.right {
-  float: right;
+
+a {
+  color: inherit;
 }
 
 // Heading 1: Section headers
@@ -116,10 +115,6 @@ sup {
   margin-bottom: 12pt;
 }
 
-.tight {
-  letter-spacing: -0.2pt;
-}
-
 .pdf-button {
   color: white;
   background: #cd372d;
@@ -135,30 +130,9 @@ sup {
   }
 }
 
-.hide-links .resume-link {
-  display: none;
-}
-
 @media (max-width: 6in) {
   .resume {
     padding: 0.3in;
-  }
-  .name-container {
-    display: block;
-  }
-  .resume-contact {
-    margin-top: 0.125in;
-    display: block;
-  }
-
-  .resume-body {
-    display: block;
-  }
-  .resume-left-column,
-  .resume-right-column {
-    display: block;
-    width: auto;
-    padding: 0;
   }
 }
 
