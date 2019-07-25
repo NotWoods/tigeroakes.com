@@ -6,9 +6,9 @@ fallbackcolor: "#3d4a53"
 links:
   - title: Details
   - title: View site
-    link: https://notwoods.github.io/mbta-energy/
+    link: https://notwoods.github.io/insightful-energy/
   - title: Code
-    github: NotWoods/mbta-energy
+    github: NotWoods/insightful-energy
 tech:
   - JavaScript
   - FileReader API
