@@ -32,5 +32,7 @@ outputs:
   home: [HTML]
   page: [HTML]
   section: [HTML]
-  taxonomy: [HTML]
-  taxonomyTerm: [HTML]
+
+disableKinds:
+  - taxonomy
+  - taxonomyTerm

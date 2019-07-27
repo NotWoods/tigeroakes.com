@@ -1,4 +1,5 @@
-# Defines order to display projects
+# Defines order to display projects.
+# If a project isn't listed here, it won't be displayed.
 - /projects/google
 - /projects/yelp
 - /projects/big-island-buses
@@ -10,7 +11,7 @@
 - /projects/oml-contracting
 - /projects/ubc-farm
 - /projects/pass-the-bomb
-- /projects/mbta-energy
+- /projects/insightful-energy
 - /projects/bit-ball
 - /projects/buses-r-us
 - /projects/the-golden-quest
