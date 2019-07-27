@@ -1,5 +1,5 @@
 ---
 outputs:
-- HTML
-- RSS
+  - HTML
+  - RSS
 ---

@@ -1,8 +1,8 @@
 ---
 title: Spherical Geometry
 subtitle: Library for latitude/longitude math
-color: '#5575FF'
-fallbackcolor: '#051022'
+color: "#5575FF"
+fallbackcolor: "#051022"
 links:
   - title: Details
   - title: Code

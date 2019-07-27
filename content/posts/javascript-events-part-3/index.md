@@ -9,8 +9,8 @@ editor: daphne
 This is the third post in a series about working with Javascript events and
 using a single event listener to handle related elements.
 
--   [**Part 1: Simplify your listener code**](/posts/javascript-events-part-1/)
--   [**Part 2: What about click events?**](/posts/javascript-events-part-2/)
+- [**Part 1: Simplify your listener code**](/posts/javascript-events-part-1/)
+- [**Part 2: What about click events?**](/posts/javascript-events-part-2/)
 
 ---
 
