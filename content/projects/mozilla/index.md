@@ -25,7 +25,3 @@ I work on the Mozilla Android Components team to bring support for
 Progressive Web Apps to Firefox Preview and other Mozilla Android browsers.
 We shipped the browser to over 100,000 users on Google Play Store and I've
 worked on various features and polish throughout the entire app.
-
----
-
-{{<img src="screenshot.*" alt="Screenshot">}}
