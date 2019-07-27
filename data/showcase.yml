@@ -1,5 +1,6 @@
 # Defines order to display projects.
 # If a project isn't listed here, it won't be displayed.
+- /projects/mozilla
 - /projects/google
 - /projects/yelp
 - /projects/big-island-buses
