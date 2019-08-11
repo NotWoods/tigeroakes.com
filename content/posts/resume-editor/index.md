@@ -1,6 +1,6 @@
 ---
-title: Resume editor
-description: How I automated formatting my resume.
+title: Automatic resume editor
+description: How I built my resume with web technologies then automated the formatting.
 date: 2018-10-30
 author: tiger
 editor: daphne

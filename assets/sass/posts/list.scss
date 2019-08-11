@@ -1,29 +1,61 @@
-@import "../_utils";
-@import "../_core";
-@import "./single";
+@import '../_utils';
+@import '../_core';
+@import './single';
+
+.about {
+    background: #b6b6b6;
+    background-image: url(/hero.jpg);
+    background-size: cover;
+    background-position: 50%;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 1px #b6b6b6;
+
+    margin-bottom: 2em;
+    padding: 2em 0;
+
+    &-content {
+        display: flex;
+    }
+}
+
+.profile {
+    border-radius: 50%;
+    box-shadow: 0 2px 1px rgba(0,0,0,.2);
+
+    flex: 0 0 80px;
+    margin-right: 1em;
+}
 
 .posts {
-  font-size: 1.1em;
+    font-size: 1.1em;
 
-  @media (max-width: 30em) {
-    font-size: 0.9em;
-  }
+    @media (max-width: 30em) {
+        font-size: 0.9em;
+    }
 }
 
 .post-summary {
     margin: 1em 0;
-    padding: 2em 3em;
+    padding: 0.1em 3em;
 
-    --block: #{$primary-dark};
+    --block: #{$primary-color};
 }
 
 .post-header {
-    margin: 0 0 .2em;
+    margin: 0 0 0.2em;
 
     font-size: 1.5em;
-    --block: #ddd;
 
     &-link {
         color: inherit;
+
+        &::before {
+            transform: scaleX(0.5);
+            transform-origin: right;
+            transition: transform .2s ease;
+        }
+        &:hover::before, &:focus::before {
+            transform: none;
+        }
     }
 }

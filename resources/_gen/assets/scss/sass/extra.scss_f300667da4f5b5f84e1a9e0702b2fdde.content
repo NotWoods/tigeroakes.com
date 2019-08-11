@@ -17,11 +17,9 @@
   .shadow:active::after {
     opacity: 0.5; }
 
-.highlight-title,
-h3 {
+.highlight-title {
   position: relative; }
-  .highlight-title::before,
-  h3::before {
+  .highlight-title::before {
     content: "";
     position: absolute;
     left: -1em;

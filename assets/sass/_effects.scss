@@ -25,8 +25,7 @@
 
 // Displays a small block to the left side of the title.
 // h3 selector is used for markdown.
-.highlight-title,
-h3 {
+.highlight-title {
   position: relative;
 
   &::before {

@@ -3,22 +3,42 @@
     {{ partial "async-css.html" "sass/extra.scss" }}
 {{ end }}
 {{ define "main" }}
+    <section class="about">
+        <div class="inner about-content">
+            {{ with .Site.GetPage "/" }}
+            {{ with .Resources.GetMatch "profile.jpg" }}
+            {{ $Half := .Resize "80x" }}
+            {{ $1x := .Resize "160x" }}
+            {{ $2x := .Resize "320x" }}
+            {{ $3x := .Resize "480x" }}
+            {{ $4x := .Resize "640x" }}
+            <img class="profile" width="80" height="80" sizes="80px" alt="Portrait of Tiger Oakes"
+                src="{{$Half.RelPermalink}}"
+                srcset="{{$1x.RelPermalink}} 2x
+                        {{$2x.RelPermalink}} 3x,
+                        {{$3x.RelPermalink}} 4x,
+                        {{$4x.RelPermalink}} 5x">
+            {{ end }}
+            {{ end }}
+
+            <div class="about-text">
+                {{.Content}}
+            </div>
+        </div>
+    </section>
     {{ range .Site.Author }}
         {{ . }}
     {{ end }}
-    <main class="posts project-text">
+    <main class="posts">
         {{ range .Pages }}
         {{ $bkg := .Resources.GetMatch "background.*" }}
-        <article class="hero-container post-summary" style='background-image:url({{$bkg.RelPermalink}})'>
+        <article class="post-summary">
             <div class="inner">
-                <h3 class="post-header highlight-title">
-                    <a class="post-header-link" href='{{.RelPermalink}}'>{{.Title}}</a>
+                <h3 class="post-header">
+                    <a class="post-header-link highlight-title" href='{{.RelPermalink}}'>{{.Title}}</a>
                 </h3>
-                <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>
+                <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="metadata">{{ .PublishDate.Format "2 January 2006" }}</time>
                 <p class="post-text">{{ .Description }}</p>
-                {{ if .Truncated }}
-                <a class="button-link shadow" href='{{.RelPermalink}}'>Read</a>
-                {{ end }}
             </div>
         </article>
         {{ end }}
