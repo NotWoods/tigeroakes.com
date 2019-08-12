@@ -1,2 +1,9 @@
 {{ $video := $.Page.Resources.GetMatch (.Get "src") }}
-<video class="center" autoplay loop muted src='{{$video.RelPermalink}}'></video>
+<video
+    class="center"
+    autoplay
+    loop
+    muted
+    src='{{$video.RelPermalink}}'
+    {{with .Get "style"}}style="{{.}}"{{end}}
+></video>

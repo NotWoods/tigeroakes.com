@@ -1,4 +1,11 @@
 {{ $img := $.Page.Resources.Match (.Get "src") }}
 {{ range $img }}
-<img class="center" src='{{ .RelPermalink }}' alt='{{$.Get "alt"}}' width="{{.Width}}" height="{{.Height}}">
+<img
+    class="center"
+    src='{{ .RelPermalink }}'
+    alt='{{$.Get "alt"}}'
+    width="{{.Width}}"
+    height="{{.Height}}"
+    {{with $.Get "style"}}style="{{.|safeCSS}}"{{end}}
+>
 {{ end }}
