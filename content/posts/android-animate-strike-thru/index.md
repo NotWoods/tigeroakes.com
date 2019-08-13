@@ -4,6 +4,8 @@ description: Putting together Android drawable XML files to create animations fo
 date: 2019-08-12
 author: tiger
 editor: daphne
+images:
+- /posts/android-animate-strike-thru/static_icon_with_gap.png
 ---
 
 With 1.6K views, my most popular tweet at the time of writing is about a little feature I added to Firefox Preview:

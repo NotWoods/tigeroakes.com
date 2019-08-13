@@ -4,6 +4,8 @@ description: How I built my resume with web technologies then automated the form
 date: 2018-10-30
 author: tiger
 editor: daphne
+images:
+- /posts/resume-editor/flex-fail.png
 ---
 
 {{<video src="resume-editor.mp4">}}
