@@ -193,7 +193,7 @@ We create two [ObjectAnimators](https://developer.android.com/reference/android/
 
 To change the shape of the clip path, create another ObjectAnimator like before. Instead of animating between two colors, we now animate between two paths.
 
-`res/animator/strike_thru_gap_enabled_to_disabled.xml`
+`res/animator/strike_thru_gap_​enabled_to_disabled.xml`
 
 ```xml
 <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
@@ -210,7 +210,7 @@ The `valueType` is now `"pathType"` as the values represent shape paths rather t
 
 Finally we create animators for the color and shape of the line. Since there are two values to animate, we use a [AnimatorSet](https://developer.android.com/reference/android/animation/AnimatorSet.html). The set is just a simple container for other animation elements.
 
-`res/animator/strike_thru_path_enabled_to_disabled.xml`
+`res/animator/strike_thru_path_​enabled_to_disabled.xml`
 
 ```xml
 <set xmlns:android="http://schemas.android.com/apk/res/android">
@@ -237,8 +237,9 @@ Again, the corresponding animator for the reverse direction is left as an exerci
 
 At this point we’ve created the icon, and created animators for each part of the icon we want to animate. Now it’s time to start putting them together.
 
-We create two [AnimatedVectorDrawables](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable) to represent the enable → disable animation and disable → enable animation.
-`res/drawable/ic_protection_enabled_to_disabled.xml`
+We create two [Animated&#x200B;Vector&#x200B;Drawables](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable) to represent the enable → disable animation and disable → enable animation.
+
+`res/drawable/ic_protection_​enabled_to_disabled.xml`
 
 ```xml
 <animated-vector
@@ -250,7 +251,7 @@ We create two [AnimatedVectorDrawables](https://developer.android.com/reference/
 </animated-vector>
 ```
 
-`res/drawable/ic_protection_disabled_to_enabled.xml`
+`res/drawable/ic_protection_​disabled_to_enabled.xml`
 
 ```xml
 <animated-vector
@@ -266,13 +267,13 @@ These `<animated-vector>` tag has an `android:drawable` attribute where we speci
 
 Inside the tag, we create `<target>` tags for each path we want to animate. The `android:name` field indicates the name of the path to animate, as specified in the VectorDrawables. The `android:animator` tag references one of the property animators we created. Each animator is matched to its corresponding animation and target.
 
-## The AnimatedStateListDrawable
+## The Animated​State​List​Drawable
 
 Now we have two assets that contain all our animation code. Now, we create one final asset that references these two.
 
 Android has a built in concept of “states” for its views, such as `pressed` when a user presses on a view or `checked` when a checkbox is selected. The `enabled` state is a nice general-purpose state that we’ll use to represent whether or not the icon should have the line drawn through it.
 
-The [StateListDrawable](https://developer.android.com/reference/android/graphics/drawable/StateListDrawable.html) is a special drawable type that changes the drawable displayed within depending on the state of its container. We can reference our static [VectorDrawables](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html) again for the enabled and disabled states.
+The [State​List​Drawable](https://developer.android.com/reference/android/graphics/drawable/StateListDrawable.html) is a special drawable type that changes the drawable displayed within depending on the state of its container. We can reference our static [VectorDrawables](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html) again for the enabled and disabled states.
 
 ```xml
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
@@ -288,7 +289,7 @@ The [StateListDrawable](https://developer.android.com/reference/android/graphics
 
 The `android:state_enabled` attribute specifies which drawable corresponds to the enabled state. The item with no modifier will automatically be used for the disabled state.
 
-While this will change the displayed icon, there’s no animation when switching between the two. For that, we need to use an [AnimatedStateListDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedStateListDrawable). This drawable enhances the StateListDrawable by allowing you to specify transitions between states.
+While this will change the displayed icon, there’s no animation when switching between the two. For that, we need to use an [Animated​State​List​Drawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedStateListDrawable). This drawable enhances the StateListDrawable by allowing you to specify transitions between states.
 
 `res/drawable/ic_protection.xml`
 

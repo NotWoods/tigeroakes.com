@@ -5,7 +5,7 @@
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
-<article>
+<article class="post-container">
     {{ $bkg := .Resources.GetMatch "background.*" }}
     <header class="hero-container post project-text" {{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
         <div class="hero inner">
