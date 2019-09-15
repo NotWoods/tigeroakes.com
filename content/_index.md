@@ -12,7 +12,8 @@ I've previously interned as a developer at [Mozilla](/projects/mozilla),
 I started programming in secondary school and enjoyed it so much
 I'm still doing it! I started with robotics and visual programming
 languages in Hawai'i. Now, I work on complex web applications and
-software for various devices.
+software for various devices. I've worked on 2 different web browsers and
+many different web applications.
 
 Some of my side [projects](/projects/) have been featured in
 [Washington, DC](https://gabbard.house.gov/news/press-releases/rep-tulsi-gabbard-presents-congressional-awards-young-leaders-hawai-i-s-second)
