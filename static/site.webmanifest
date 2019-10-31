@@ -1,0 +1,21 @@
+{
+  "name": "Tiger Oakes",
+  "short_name": "Tiger Oakes",
+  "start_url": ".",
+  "display": "browser",
+  "theme_color": "#e66d31",
+  "background_color": "#f0f0f0",
+  "icons": [
+    {
+      "src": "/favicon_32.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/maskable_32.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
