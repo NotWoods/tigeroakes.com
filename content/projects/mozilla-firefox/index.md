@@ -14,8 +14,10 @@ links:
 tech:
   - Android
   - Kotlin
-  - Progressive Web Apps
+  - PWA
   - Trusted Web Activities
+aliases:
+  - /projects/mozilla
 description: >
   At Mozilla, I was trusted with bringing support for Progressive Web Apps
   to the new Firefox Preview browser for Android. I shipped support for maskable
@@ -28,7 +30,7 @@ Firefox Preview is a rewrite of Mozilla's Firefox browser for Android. On the Mo
 
 My main project at Mozilla was to support installing and running Progressive Web Apps in Firefox Preview. Progressive Web Apps are websites using new features on the web platform, letting them be installed like regular native apps on your phone. I implemented an enhanced app-like experience for web apps, with themed system bars and customized entries in the recent app switcher. I acted as a feature lead on this project and implemented most of the core functionality.
 
-Firefox Preview is the first browser to support "maskable icons", letting websites specify a full-bleed Android icon that takes up the entire icon area on Android. Previously, all web app icons were placed inside a white background when added to the device home screen. Maskable icons are a new API to specify an icon with a custom background to display. I implemented maskable icon support in Mozilla's Android web browsers and published an article about it on [CSS Tricks](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/).
+Firefox Preview is the first browser to support ["maskable icons"](/projects/maskable), letting websites specify a full-bleed Android icon that takes up the entire icon area on Android. Previously, all web app icons were placed inside a white background when added to the device home screen. Maskable icons are a new API to specify an icon with a custom background to display. I implemented maskable icon support in Mozilla's Android web browsers and published an article about it on [CSS Tricks](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/).
 
 ## Trusted Web Activities
 

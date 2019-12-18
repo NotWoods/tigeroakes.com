@@ -1,8 +1,9 @@
 # Defines order to display projects.
 # If a project isn't listed here, it won't be displayed.
-- /projects/mozilla
+- /projects/mozilla-firefox
 - /projects/google
 - /projects/yelp
+- /projects/maskable
 - /projects/big-island-buses
 - /projects/unity-polygon
 - /projects/color-breakdown
