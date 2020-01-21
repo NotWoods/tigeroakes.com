@@ -2,11 +2,11 @@
   "basics": {
     "name": "Tiger Oakes",
     "label": "Software Developer",
-    "picture": "https://tigeroakes.com/images/profile-1x.jpg",
+    "picture": "https://tigeroakes.com/profile.jpg",
     "email": "contact@tigeroakes.com",
     "phone": "1 (253) 778-6251",
     "website": "https://tigeroakes.com",
-    "summary": "Software Developer with 8+ years experience, specializing in high performance web and mobile applications.",
+    "summary": "Web developer with experience building 2 mobile web browsers. Specializing in high performance apps.",
     "location": {
       "city": "Vancouver",
       "region": "BC",
@@ -33,14 +33,25 @@
   "work": [
     {
       "company": "Mozilla",
+      "position": "Part-Time Android Student Worker",
+      "website": "https://github.com/mozilla-mobile/fenix",
+      "startDate": "2019-09-09",
+      "endDate": "2020-02-07",
+      "highlights": [
+        "Wrote specifications for new web features as member of the **World Wide Web Consortium**.",
+        "Managed communication and collaboration with **over 50 open source contributors** and returning volunteers.",
+        "Collaborated with several global teams such as GeckoView, Platform, and UX to ship a finished product."
+      ]
+    },
+    {
+      "company": "Mozilla",
       "position": "Firefox Android Developer Intern",
       "website": "https://github.com/mozilla-mobile/fenix",
       "startDate": "2019-05-14",
-      "endDate": "2018-08-30",
+      "endDate": "2019-08-30",
       "highlights": [
-        "Helped team build and ship web browser to **over 100,000 users on Google Play Store**.",
-        "Added **Progressive Web App** support to Firefox Preview, providing a native feel to thousands of web apps.",
-        "Designed and implemented over 15 animations to polish app experience with **SVG** paths and **Kotlin**."
+        "Helped team build and ship brand new web browser to **over 500,000 users on Google Play Store**.",
+        "Engineer and one of the **feature leads for Progressive Web App support** in Firefox Preview, <br>providing a native feel to **thousands of web apps**."
       ]
     },
     {
@@ -104,11 +115,11 @@
     {
       "name": "Open Source",
       "highlights": [
-        "Contributed **TypeScript** typings to 15+ libraries, including **three.js**, **Rollup**, and Comlink.",
-        "Wrote **MDN** documentation on FileReader and Web Share JavaScript APIs.",
+        "Maintainer for **Rollup**, a popular JavaScript bundler written in TypeScript with **900,000 weekly downloads**.",
+        "Built **Maskable.app** developer tool, recommended by Google, CSS Tricks, and industry veterans.",
+        "Wrote web development articles for **CSS Tricks**, **MDN**, and **Google web.dev**.",
         "Implemented advanced configuration feature with **JavaScript** in Google's Travis Size Report.",
-        "Added support for new commands with **Node.js** to appium-adb.",
-        "Documented new Hugo features, such as social graph and resource metadata."
+        "Added support for new commands with **Node.js** to appium-adb."
       ]
     }
   ],
@@ -131,11 +142,6 @@
       "title": "Hardcore Top 3: Yelp Hackathon 24.0 (out of 44)",
       "date": "2017-11-15",
       "awarder": "Yelp"
-    },
-    {
-      "title": "UBC Work Learn International Undergraduate Reasearch Award",
-      "date": "2016-05-14",
-      "awarder": "University of British Columbia"
     },
     {
       "title": "Grand Prize: Congressional App Challenge 2014, Hawaii’s 2nd Congressional District",
