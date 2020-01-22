@@ -1,6 +1,7 @@
 ---
 title: Color Breakdown
 subtitle: Color-identifying Progressive Web App
+weight: 5
 color: "#37474f"
 fallbackcolor: "#6f3d10"
 links:

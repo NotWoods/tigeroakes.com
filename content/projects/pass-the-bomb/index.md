@@ -1,6 +1,7 @@
 ---
 title: Pass the Bomb
 subtitle: Hackathon multiplayer word game
+weight: 9
 path: pass-the-bomb
 color: "#c79a6a"
 fallbackcolor: "#3c4438"

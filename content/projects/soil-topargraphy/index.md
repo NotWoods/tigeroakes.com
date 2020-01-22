@@ -1,6 +1,7 @@
 ---
 title: Soil TopARgraphy
 subtitle: Educational AR application
+weight: 7
 color: "#4db6ac"
 fallbackcolor: "#1c3455"
 links:

@@ -1,6 +1,7 @@
 ---
 title: Maskable.app
 subtitle: Implementing, writing about, and creating tooling for new web feature
+weight: 3
 color: "#DBA824"
 fallbackcolor: "#252525"
 links:

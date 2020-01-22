@@ -1,6 +1,7 @@
 ---
 title: Insightful Energy
 subtitle: Interactive information
+weight: 10
 color: "#7dc36b"
 fallbackcolor: "#3d4a53"
 links:

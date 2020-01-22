@@ -4,8 +4,7 @@
 {{ end }}
 {{ define "main" }}
     <main class="projects project-text">
-    {{ range $path := .Site.Data.showcase }}
-        {{ with $.GetPage $path }}
+    {{ range .Pages }}
         <article class="project{{ if .Params.feature }} feature{{ end }}" style='{{ partial "project/style.css" . | safeCSS }}'>
             {{ partial "project/image.html" . }}
             <h3 class="project-header highlight-title">{{.Title}}</h3>
@@ -13,7 +12,6 @@
             {{ partial "project/tech_list.html" .Params.tech }}
             {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
         </article>
-        {{ end }}
     {{ end }}
     </main>
 {{ end }}

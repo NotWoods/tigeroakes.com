@@ -1,6 +1,7 @@
 ---
 title: UBC Farm
 subtitle: Farm research database
+weight: 8
 color: "#3b7448"
 fallbackcolor: "#2d410b"
 links:

@@ -1,6 +1,6 @@
 ---
 feature: true
-weight: 0 # Feature 1
+weight: 1
 title: Mozilla Firefox
 subtitle: Firefox Preview PWA and TWA support
 color: "#FF7139"

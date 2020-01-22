@@ -1,6 +1,7 @@
 ---
 title: Latch On
 subtitle: Rope swinging game
+weight: 7
 color: "#6b9f93"
 fallbackcolor: "#14576a"
 links:

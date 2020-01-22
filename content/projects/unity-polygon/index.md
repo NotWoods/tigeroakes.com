@@ -1,6 +1,7 @@
 ---
 title: Polygon2D Editor
 subtitle: Level-building tool for Unity
+weight: 4
 color: "#4d4d4d"
 fallbackcolor: "#1a1a1a"
 links:

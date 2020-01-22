@@ -1,6 +1,6 @@
 ---
 feature: true
-weight: 2 # Feature 3
+weight: 4
 title: Big Island Buses
 subtitle: Bus schedule software
 color: "#4d74ab"

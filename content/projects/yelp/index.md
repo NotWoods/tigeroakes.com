@@ -1,6 +1,6 @@
 ---
 feature: true
-weight: 1 # Feature 2
+weight: 2
 title: Yelp
 subtitle: Describe Your Project
 color: "#d32323"

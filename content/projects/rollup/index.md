@@ -1,14 +1,13 @@
 ---
 title: Rollup
 subtitle: JavaScript module bundler
+weight: 6
 color: "#ff3333"
 fallbackcolor: "#372008"
 links:
   - title: Details
-  - title: View site
-    link: https://omlhawaii.com/
   - title: Code
-    github: omlhawaii/omlhawaii.github.io
+    github: rollup/plugins
 tech:
   - TypeScript
   - JavaScript

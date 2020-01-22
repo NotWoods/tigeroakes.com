@@ -1,6 +1,6 @@
 ---
 feature: true
-weight: 0 # Feature 1
+weight: 2
 title: Google Chrome
 subtitle: Chrome APK size breakdown
 color: "#2a70ea"
