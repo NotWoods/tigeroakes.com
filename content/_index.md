@@ -5,7 +5,7 @@ contact_color: white
 ---
 
 I'm Tiger Oakes and I'm a software developer studying computer science at
-the University of British Columbia. 
+the University of British Columbia.
 I'm currently looking for 2021 new grad positions.
 I've previously interned as a developer at [Mozilla](/projects/mozilla),
 [Google](/projects/google), [Yelp](/projects/yelp), and [more](/resume).

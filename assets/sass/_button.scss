@@ -18,6 +18,7 @@
 // Requires .button-link
 .cta {
   margin: 2em 0;
+  grid-area: button;
 
   background: white;
   color: black;
@@ -30,5 +31,25 @@
 
   & .cta::after {
     will-change: opacity;
+  }
+}
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "navprev button navnext";
+  align-items: center;
+
+  gap: 1em;
+
+  &-link {
+    font-size: 0.7em;
+
+    &:first-child {
+      grid-area: navprev;
+    }
+    &:last-child {
+      grid-area: navnext;
+    }
   }
 }

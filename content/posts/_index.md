@@ -5,6 +5,7 @@ outputs:
   - RSS
 aliases:
   - /blog
+other: More blog posts
 ---
 
 My personal blog. \

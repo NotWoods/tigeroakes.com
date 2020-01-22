@@ -17,7 +17,9 @@
         <nav class="nav">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
-            <a class='nav-link highlight-title{{if $currentPage.IsMenuCurrent "main" . }} current-page{{end}}'
+            {{ $url := strings.TrimSuffix "/" .URL }}
+            {{ $menuPage := $currentPage.Site.GetPage $url }}
+            <a class='nav-link highlight-title{{if $currentPage.InSection $menuPage }} current-page{{end}}'
                 href="{{ .URL }}"
                 title="{{ .Title }}">{{ .Name }}</a>
             {{ end }}

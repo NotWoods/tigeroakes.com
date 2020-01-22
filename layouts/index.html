@@ -34,8 +34,7 @@
     </section>
 
     <section class="featured-projects projects project-text" id="featured">
-        {{ range $path := .Site.Data.showcase }}
-        {{ with $.GetPage $path }}
+        {{ range .Pages }}
         {{ if .Params.feature }}
         <article class="project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="inner">
@@ -47,7 +46,6 @@
                 {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
             </div>
         </article>
-        {{ end }}
         {{ end }}
         {{ end }}
 

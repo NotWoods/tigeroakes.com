@@ -1,0 +1,15 @@
+<footer class="cta-wrap post-nav inner">
+    {{with .NextInSection}}
+        <a class="post-nav-link" href='{{ .RelPermalink }}'>
+            {{.Title}}
+        </a>
+    {{end}}
+    <a class="button-link cta shadow" href='{{.CurrentSection.RelPermalink}}'>
+        {{ .CurrentSection.Params.other }}
+    </a>
+    {{with .PrevInSection}}
+        <a class="post-nav-link" href='{{ .RelPermalink }}'>
+            {{.Title}}
+        </a>
+    {{end}}
+</footer>

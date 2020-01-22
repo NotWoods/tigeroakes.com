@@ -18,10 +18,6 @@
         {{ .Content }}
     </div>
 
-    <footer class="cta-wrap">
-        <a class="button-link cta shadow" href='{{ "/posts/" | relURL }}'>
-            {{ i18n "other_posts" }}
-        </a>
-    </footer>
+    {{ partial "cta_nav.html" . }}
 </article>
 {{ end }}
