@@ -14,12 +14,12 @@ tech:
   - Node.js
 description: >
   A library I created as a drop-in replacement for some of Google Maps'
-  geometry APIs for Node.js servers. This library has gained over 23,000
-  downloads as of January, 2019 and continues to grow.
+  geometry APIs for Node.js servers. This library has gained over 75,000
+  downloads as of January, 2020 and continues to grow.
 ---
 
 [![Download count of Spherical Geometry Library](https://img.shields.io/npm/dt/spherical-geometry-js.svg)](https://www.npmjs.com/package/spherical-geometry-js)
 
 A library I created as a drop-in replacement for some of Google Maps' geometry
-APIs for Node.js servers. This library has gained over 23,000 downloads as of
-January, 2019 and continues to grow.
+APIs for Node.js servers. This library has gained over 75,000 downloads as of
+January, 2020 and continues to grow.
