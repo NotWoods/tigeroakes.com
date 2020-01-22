@@ -6,6 +6,7 @@
 
 .hero {
   font-size: 1.2em;
+  color: $dark-text;
   text: {
     align: center;
     shadow: 1px 1px 1px #b6b6b6;
@@ -31,7 +32,7 @@
 }
 
 .about {
-  background: white;
+  background: var(--light-background);
 
   padding: 2em 0;
 
@@ -48,6 +49,11 @@
   flex: 0 0 160px;
   margin-left: 5em;
 }
+@media (prefers-color-scheme: dark) {
+  .profile {
+    box-shadow: 0 2px 1px rgba(white, 0.2);
+  }
+}
 
 .featured-projects {
   font-size: 1.1em;
@@ -61,7 +67,7 @@
 }
 
 .contact {
-  background: $dark-background;
+  background: var(--dark-background);
   color: white;
 
   &-content {

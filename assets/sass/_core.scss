@@ -1,5 +1,28 @@
 @import "./_utils";
 
+$primary-color: #e66d31;
+:root {
+  // Primary colors for the site
+  --primary-color: #{$primary-color};
+  --link-color: #{darken($primary-color, 12%)};
+  --font-color: #{$dark-text};
+  --inverse-font-color: #{$light-text};
+  --background-color: #f0f0f0;
+  --light-background: #fff;
+  --dark-background: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link-color: #{lighten($primary-color, 10%)};
+    --font-color: #{$light-text};
+    --inverse-font-color: #{$dark-text};
+    --background-color: #333;
+    --light-background: #242424;
+    --dark-background: #111;
+  }
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -7,8 +30,8 @@ body {
   grid-template-rows: auto 1fr auto;
 
   font-family: Lato, "Trebuchet MS", sans-serif;
-  color: $font-color;
-  background: $background-color;
+  color: var(--font-color);
+  background: var(--background-color);
 }
 
 .inner {
@@ -20,14 +43,14 @@ body {
 .hero-container, .project {
   padding: 2em;
   background: {
-    color: $dark-background;
+    color: #b7b7b7;
     size: cover;
     position: center;
   }
 }
 
 a {
-  color: $primary-dark;
+  color: var(--link-color);
   text-decoration: none;
 
   // On hover, show an underline. Only for markdown-generated classes.

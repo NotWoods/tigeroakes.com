@@ -8,6 +8,7 @@
     background-size: cover;
     background-position: 50%;
     font-size: 1.2em;
+    color: $dark-text;
     text-shadow: 1px 1px 1px #b6b6b6;
 
     margin-bottom: 2em;
@@ -38,7 +39,7 @@
     margin: 1em 0;
     padding: 0.1em 3em;
 
-    --block: #{$primary-color};
+    --block: var(--primary-color);
 }
 
 .post-header {

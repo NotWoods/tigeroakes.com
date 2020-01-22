@@ -4,6 +4,7 @@
 @import "../contact/_main";
 
 .resume {
+  color: $dark-text;
   font-size: 11pt;
   background: white;
 
@@ -52,7 +53,7 @@ a {
   position: relative;
 
   &::before {
-    background: $primary-color;
+    background: var(--primary-color);
 
     position: absolute;
     top: -0.025cm;
@@ -79,7 +80,7 @@ h5 {
     weight: 400;
     size: 9pt;
   }
-  color: $primary-color;
+  color: var(--primary-color);
 
   float: right;
   margin: 0;

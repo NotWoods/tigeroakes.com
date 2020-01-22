@@ -16,7 +16,7 @@
       origin: top;
     }
     transition: transform 0.2s ease;
-    background: $primary-color;
+    background: var(--primary-color);
   }
   &:hover::after,
   &:focus::after {

@@ -13,7 +13,7 @@
 .nav-link {
   // Side block
   &::before {
-    background: $primary-color;
+    background: var(--primary-color);
 
     // opacity: 0; // Set in _main
     left: -0.5em;

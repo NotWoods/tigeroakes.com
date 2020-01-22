@@ -3,8 +3,8 @@
 .text-container {
   padding: 1em 3em 3em;
 
-  background: white;
-  line-height: $text-line-height
+  background: var(--light-background);
+  line-height: 1.5em;
 }
 .text-container h2 {
   margin: 1.5em 0 .5em;
