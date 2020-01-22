@@ -129,7 +129,7 @@
       "area": "Computer Science",
       "studyType": "Bachelor of Science",
       "startDate": "2015-09-15",
-      "endDate": "2020-05-25"
+      "endDate": "2021-05-25"
     }
   ],
   "awards": [
@@ -152,11 +152,11 @@
   "skills": [
     { "name": "TypeScript" },
     { "name": "JavaScript" },
-    { "name": "Python" },
     { "name": "Kotlin" },
     { "name": "Java" },
-    { "name": "C#" },
     { "name": "Android" },
+    { "name": "Python" },
+    { "name": "C#" },
     { "name": "Node.js" },
     { "name": "React" },
     { "name": "Design" },
