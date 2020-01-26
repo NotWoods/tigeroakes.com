@@ -6,7 +6,7 @@
     "email": "contact@tigeroakes.com",
     "phone": "1 (253) 778-6251",
     "website": "https://tigeroakes.com",
-    "summary": "Web developer with experience building 2 mobile web browsers. Specializing in high performance apps.",
+    "summary": "Web developer with experience building 2 mobile web browsers and hundreds of open source projects.",
     "location": {
       "city": "Vancouver",
       "region": "BC",
@@ -50,8 +50,9 @@
       "startDate": "2019-05-14",
       "endDate": "2019-08-30",
       "highlights": [
-        "Helped team build and ship brand new web browser to **over 500,000 users on Google Play Store**.",
-        "Engineer and one of the **feature leads for Progressive Web App support** in Firefox Preview, <br>providing a native feel to **thousands of web apps**."
+        "Built and shipped brand new web browser to **over 500,000 users on Google Play Store**.",
+        "Served as one of the **feature leads for Progressive Web App support** in Firefox Preview, <br>providing a native look and feel to **thousands of web apps**.",
+        "Added Trusted Web Activity support to Firefox, **featured in Chrome Dev Summit 2019 keynote**."
       ]
     },
     {
@@ -61,7 +62,7 @@
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
-        "Built internal tool now in use by entire Google Chrome for Android team with **JavaScript** and **Python**.",
+        "Built internal tool used by entire Google Chrome for Android team with **JavaScript** and **Python**.",
         "Used **streams** and **worker threads** to handle 180 MB downloads, rendering partial data in under 1 second"
       ]
     },
@@ -84,8 +85,7 @@
       "startDate": "2017-08-27",
       "endDate": "2017-12-17",
       "highlights": [
-        "Built new website feature in **Flow**, **React**, **Redux**, and **Python** for contacting local service businesses.",
-        "Feature is shown on search page and displayed to approximately **1,000,000 users monthly**.",
+        "Built new web search page feature in **Flow**, **React**, **Redux**, and **Python** displayed to **1,000,000 users monthly**.",
         "Led hackathon team to build new product for in-restaurant experience which was picked up by sales team."
       ]
     },
@@ -117,9 +117,9 @@
       "highlights": [
         "Maintainer for **Rollup**, a popular JavaScript bundler written in TypeScript with **900,000 weekly downloads**.",
         "Built **Maskable.app** developer tool, recommended by Google, CSS Tricks, and industry veterans.",
-        "Wrote web development articles for **CSS Tricks**, **MDN**, and **Google web.dev**.",
+        "Wrote web development articles for **CSS Tricks**, **MDN**, and **Google web.dev** with thousands of views.",
         "Implemented advanced configuration feature with **JavaScript** in Google's Travis Size Report.",
-        "Added support for new commands with **Node.js** to appium-adb."
+        "Added support for new commands with **Node.js** to appium-adb to interface with **Android** devices over USB."
       ]
     }
   ],

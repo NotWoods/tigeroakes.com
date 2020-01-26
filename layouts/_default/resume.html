@@ -30,21 +30,6 @@
 
         <div class="resume-body">
             {{ $format := "2006-01" }}
-            <h1>{{ i18n "resume_education" }}</h1>
-            <div class="education">
-                {{ range .education }}
-                <h5>
-                    {{ dateFormat $format .startDate }}
-                    —
-                    {{ dateFormat $format .endDate }}
-                </h5>
-                <h2>
-                    <span class="institution">{{.institution}}</span>,
-                    <span class="position">{{.studyType}} in {{.area}}, 4<sup>th</sup> year</span>
-                </h2>
-                {{ end }}
-            </div>
-
             <h1>{{ i18n "resume_work" }}</h1>
             <div class="work-experience">
                 {{ range .work }}
@@ -103,6 +88,21 @@
                 {{ if lt (add $idx 1) $len }} | {{ end }}
                 {{ end }}
             </p>
+
+            <h1>{{ i18n "resume_education" }}</h1>
+            <div class="education">
+                {{ range .education }}
+                <h5>
+                    {{ dateFormat $format .startDate }}
+                    —
+                    {{ dateFormat $format .endDate }}
+                </h5>
+                <h2>
+                    <span class="institution">{{.institution}}</span>,
+                    <span class="position">{{.studyType}} in {{.area}}, 4<sup>th</sup> year</span>
+                </h2>
+                {{ end }}
+            </div>
 
             <h1>{{ i18n "resume_awards" }}</h1>
             <ul class="awards">
