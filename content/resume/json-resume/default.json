@@ -36,12 +36,7 @@
       "position": "Part-Time Android Student Worker",
       "website": "https://github.com/mozilla-mobile/fenix",
       "startDate": "2019-09-09",
-      "endDate": "2020-02-07",
-      "highlights": [
-        "Wrote specifications for new web features as member of the **World Wide Web Consortium**.",
-        "Managed communication and collaboration with **over 50 open source contributors** and returning volunteers.",
-        "Collaborated with several global teams such as GeckoView, Platform, and UX to ship a finished product."
-      ]
+      "endDate": "2020-02-07"
     },
     {
       "company": "Mozilla",
@@ -50,9 +45,10 @@
       "startDate": "2019-05-14",
       "endDate": "2019-08-30",
       "highlights": [
-        "Built and shipped brand new web browser to **over 500,000 users on Google Play Store**.",
-        "Served as one of the **feature leads for Progressive Web App support** in Firefox Preview, <br>providing a native look and feel to **thousands of web apps**.",
-        "Added Trusted Web Activity support to Firefox, **featured in Chrome Dev Summit 2019 keynote**."
+        "Built and shipped brand new web browser in **Kotlin** to **over 500,000 users on Google Play Store**.",
+        "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
+        "Added Trusted Web Activity support to Firefox Preview, **featured in Chrome Dev Summit 2019 keynote**.",
+        "Wrote specifications for new web app features as member of the **World Wide Web Consortium**."
       ]
     },
     {
@@ -63,7 +59,7 @@
       "endDate": "2018-07-27",
       "highlights": [
         "Built internal tool used by entire Google Chrome for Android team with **JavaScript** and **Python**.",
-        "Used **streams** and **worker threads** to handle 180 MB downloads, rendering partial data in under 1 second"
+        "Used **streams** and **worker threads** to handle 180 MB downloads, rendering partial data in under 1 second."
       ]
     },
     {
@@ -113,9 +109,15 @@
   ],
   "projects": [
     {
+      "name": "Rollup",
+      "highlights": [
+        "Maintainer for Rollup, a popular JavaScript bundler written in TypeScript with **900,000 weekly downloads**.",
+        "Used **Typescript compiler API** to compile and typecheck Typescript code for all users of Rollup plugin."
+      ]
+    },
+    {
       "name": "Open Source",
       "highlights": [
-        "Maintainer for **Rollup**, a popular JavaScript bundler written in TypeScript with **900,000 weekly downloads**.",
         "Built Maskable.app developer tool. Recommended by Google & CSS Tricks and is **used over 2,500 times/month**.",
         "Wrote web development articles for **CSS Tricks**, **MDN**, and **Google web.dev** with thousands of views.",
         "Implemented advanced configuration feature with **JavaScript** in Google's Travis Size Report.",
