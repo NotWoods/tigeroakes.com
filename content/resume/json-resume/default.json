@@ -116,7 +116,7 @@
       "name": "Open Source",
       "highlights": [
         "Maintainer for **Rollup**, a popular JavaScript bundler written in TypeScript with **900,000 weekly downloads**.",
-        "Built **Maskable.app** developer tool, recommended by Google, CSS Tricks, and industry veterans.",
+        "Built Maskable.app developer tool. Recommended by Google & CSS Tricks and is **used over 2,500 times/month**.",
         "Wrote web development articles for **CSS Tricks**, **MDN**, and **Google web.dev** with thousands of views.",
         "Implemented advanced configuration feature with **JavaScript** in Google's Travis Size Report.",
         "Added support for new commands with **Node.js** to appium-adb to interface with **Android** devices over USB."
