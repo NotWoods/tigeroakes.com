@@ -6,3 +6,6 @@
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
+
+/posts/index.xml
+    Content-Type: application/rss+xml
