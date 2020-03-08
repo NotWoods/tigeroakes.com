@@ -14,7 +14,7 @@
 }
 
 pre {
-  margin: 1em -1em;
+  margin: 1em -1rem;
   position: relative;
 
   overflow: auto;
@@ -22,13 +22,12 @@ pre {
 }
 
 code {
-  padding: 1em;
-
   background: rgba(27, 31, 35, 0.05);
   overflow-wrap: anywhere;
 }
 pre code {
   display: block;
+  padding: 1em;
 
   background: none;
 }
@@ -72,13 +71,6 @@ blockquote {
   }
   &__source {
     font-size: 0.9em;
-  }
-}
-
-@media (max-width: 36rem) {
-  pre {
-    margin: 0 -3rem;
-    max-width: calc(100vw - 3em);
   }
 }
 

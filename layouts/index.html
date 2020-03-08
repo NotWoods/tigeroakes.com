@@ -34,7 +34,7 @@
     </section>
 
     <section class="featured-projects projects project-text" id="featured">
-        {{ range .Pages }}
+        {{ range (.GetPage "projects").Pages }}
         {{ if .Params.feature }}
         <article class="project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="inner">

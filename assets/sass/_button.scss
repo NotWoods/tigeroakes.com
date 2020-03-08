@@ -25,7 +25,10 @@
 }
 // Wrapper element for .cta
 .cta-wrap {
-  margin: 2em 0;
+  margin: {
+    top: 2em;
+    bottom: 2em;
+  }
   text-align: center;
   font-size: 1.5em;
 
