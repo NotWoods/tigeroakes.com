@@ -58,9 +58,9 @@ _**Warning**: If you already have an Android app, avoid copying and pasting the 
 
 # Adding the icon to your Web App Manifest
 
-Once the icons are created, you can add an entry to your [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) similar to other icon assets. The Web App Manifest provides information about your web app in a JSON file, and includes an ` "``icons``" ` array.
+Once the icons are created, you can add an entry to your [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) similar to other icon assets. The Web App Manifest provides information about your web app in a JSON file, and includes an `icons` array.
 
-```js
+```json {hl_lines=[9]}
 {
     ...
     "icons": [
@@ -76,9 +76,11 @@ Once the icons are created, you can add an entry to your [Web App Manifest](http
 }
 ```
 
-Maskable icons use a special new key, ` "``purpose``" `, to indicate that they are meant to be used with icon masks. Icons with transparent backgrounds have a default ` "``purpose``" ` of ` "``any``" `, and icons can be used for multiple purposes by separating each option with a space.
+Maskable icons use a special new key, `purpose`, to indicate that they are meant to be used with icon masks. Icons with transparent backgrounds have a default `purpose` of `any`, and icons can be used for multiple purposes by separating each option with a space.
 
-    "purpose": "maskable any"
+```json
+"purpose": "maskable any"
+```
 
 # Preview your icons
 

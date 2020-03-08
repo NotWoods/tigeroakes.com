@@ -14,7 +14,9 @@
 }
 
 pre {
+  margin: 1em -1em;
   padding: 1em;
+  position: relative;
 
   overflow: auto;
   white-space: pre-wrap;
@@ -23,6 +25,19 @@ pre {
 code {
   background-color: rgba(27, 31, 35, 0.05);
   overflow-wrap: break-word;
+}
+pre code {
+  display: block;
+}
+pre code::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  right: 0.25em;
+
+  color: var(--light-color);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 img {
