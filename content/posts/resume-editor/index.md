@@ -167,3 +167,5 @@ needs some tweaking to properly handle lists and emphasis.
 
 You can see all of my source code on my
 [GitHub repository for my website](https://github.com/NotWoods/tigeroakes.com/tree/master/content/resume).
+
+{{<external/github repo="NotWoods/tigeroakes.com">}}

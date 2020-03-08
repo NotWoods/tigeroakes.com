@@ -19,14 +19,6 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5",
-    "proseWrap": "always",
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "printWidth": 120
-        }
-      }
-    ]
+    "proseWrap": "always"
   }
 }

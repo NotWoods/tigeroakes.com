@@ -133,7 +133,8 @@ Android devices. I hope this tool helps you create unique icons for your
 Progressive Web Apps.
 
 [Use it online](https://maskable.app) or checkout the source on GitHub:
-https://github.com/NotWoods/maskable/
+
+{{<external/github repo="NotWoods/maskable">}}
 
 Once you’re satisfied with the results, you can start testing your app with
 Mozilla’s

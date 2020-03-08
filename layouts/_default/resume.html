@@ -42,11 +42,13 @@
                 {{ if .summary }}
                 <em>{{ .summary }}</em>
                 {{ end }}
+                {{ if .highlights }}
                 <ul>
                     {{ range .highlights }}
                     <li>{{ markdownify . }}</li>
                     {{ end }}
                 </ul>
+                {{ end }}
                 {{ end }}
             </div>
 

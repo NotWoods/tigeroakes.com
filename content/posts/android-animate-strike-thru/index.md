@@ -122,6 +122,8 @@ states and how to transition between them. The finished files are available to
 [download from GitHub](https://github.com/NotWoods/android-strikethru-animation-sample)
 too.
 
+{{<external/github repo="NotWoods/android-strikethru-animation-sample">}}
+
 First of all we start with a Vector Drawable, which contains the icons and the
 paths we designed before. This goes inside the Android project’s `drawables`
 folder.

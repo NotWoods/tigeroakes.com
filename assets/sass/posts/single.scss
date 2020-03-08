@@ -51,6 +51,27 @@ blockquote {
   border-left: 0.25em solid #dfe2e5;
 }
 
+.external-link {
+  display: block;
+  margin: 0 -1em;
+  padding: 1em;
+
+  color: inherit;
+  border: 1px solid var(--dark-background);
+
+  &__logo {
+    float: right;
+  }
+  &__title {
+    margin: 0;
+
+    font-size: 1.1em;
+  }
+  &__source {
+    font-size: 0.9em;
+  }
+}
+
 @media (max-width: 36rem) {
   pre {
     margin: 0 -3rem;
