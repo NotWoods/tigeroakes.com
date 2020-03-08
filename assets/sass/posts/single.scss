@@ -15,7 +15,6 @@
 
 pre {
   margin: 1em -1em;
-  padding: 1em;
   position: relative;
 
   overflow: auto;
@@ -23,11 +22,15 @@ pre {
 }
 
 code {
-  background-color: rgba(27, 31, 35, 0.05);
-  overflow-wrap: break-word;
+  padding: 1em;
+
+  background: rgba(27, 31, 35, 0.05);
+  overflow-wrap: anywhere;
 }
 pre code {
   display: block;
+
+  background: none;
 }
 pre code::before {
   content: attr(data-lang);
@@ -57,7 +60,7 @@ blockquote {
   padding: 1em;
 
   color: inherit;
-  border: 1px solid var(--dark-background);
+  border: 1px solid var(--font-color);
 
   &__logo {
     float: right;
@@ -75,7 +78,7 @@ blockquote {
 @media (max-width: 36rem) {
   pre {
     margin: 0 -3rem;
-    max-width: calc(100vw - 2em);
+    max-width: calc(100vw - 3em);
   }
 }
 
@@ -85,9 +88,5 @@ blockquote {
       left: 1rem;
       right: 1rem;
     }
-  }
-
-  pre {
-    margin: 0 -1rem;
   }
 }
