@@ -14,7 +14,7 @@
 }
 
 pre {
-  margin: 1em -1em;
+  margin: 1em -1rem;
   position: relative;
 
   overflow: auto;
@@ -72,13 +72,6 @@ blockquote {
   }
   &__source {
     font-size: 0.9em;
-  }
-}
-
-@media (max-width: 36rem) {
-  pre {
-    margin: 0 -3rem;
-    max-width: calc(100vw - 3em);
   }
 }
 
