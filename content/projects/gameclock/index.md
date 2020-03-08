@@ -2,8 +2,8 @@
 title: GameClock
 weight: 19
 subtitle: Chess clocker timer web app
-color: "#F59B31"
-fallbackcolor: "#1F333E"
+color: '#F59B31'
+fallbackcolor: '#1F333E'
 links:
   - title: Details
   - title: Open app
@@ -15,7 +15,10 @@ tech:
   - JavaScript
 ---
 
-This is a simple web app I built for [Chess Clock Jenga](https://www.youtube.com/watch?v=YN_F9bNuF0I) in a few hours one night. I reverse-engineered code from similar apps to run timers that can be paused and reset.
+This is a simple web app I built for
+[Chess Clock Jenga](https://www.youtube.com/watch?v=YN_F9bNuF0I) in a few hours
+one night. I reverse-engineered code from similar apps to run timers that can be
+paused and reset.
 
 ---
 

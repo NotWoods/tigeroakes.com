@@ -1,6 +1,6 @@
-@import "../_utils";
-@import "../_core";
-@import "../project/_main";
+@import '../_utils';
+@import '../_core';
+@import '../project/_main';
 
 // {{ $image := .Resources.GetMatch "hero.jpg" }}
 
@@ -14,7 +14,7 @@
 
   &-container {
     background: {
-      image: url("{{ $image.RelPermalink }}");
+      image: url('{{ $image.RelPermalink }}');
     }
   }
   padding: 5em 0em;

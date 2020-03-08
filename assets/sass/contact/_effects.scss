@@ -7,7 +7,7 @@
   color: inherit;
 
   &::after {
-    content: "";
+    content: '';
     height: 0.5rem;
     bottom: -1rem;
     @include fill-parent($width: true, $height: false);

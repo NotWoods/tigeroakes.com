@@ -1,21 +1,21 @@
 export function merge(base, partial) {
-    return {
-        basics: mergeBasics(base.basics, partial.basics),
-        work: mergeWork(base.work, partial.work),
-        projects: mergeProjects(base.projects, partial.projects),
-        volunteer: mergeProjects(base.volunteer, partial.volunteer),
-        education: partial.education || base.education,
-        awards: partial.awards || base.awards,
-        publications: partial.publications || base.publications,
-        skills: partial.skills || base.skills,
-        languages: partial.languages || base.languages,
-        interests: partial.interests || base.interests,
-        references: partial.references || base.references,
-    };
+  return {
+    basics: mergeBasics(base.basics, partial.basics),
+    work: mergeWork(base.work, partial.work),
+    projects: mergeProjects(base.projects, partial.projects),
+    volunteer: mergeProjects(base.volunteer, partial.volunteer),
+    education: partial.education || base.education,
+    awards: partial.awards || base.awards,
+    publications: partial.publications || base.publications,
+    skills: partial.skills || base.skills,
+    languages: partial.languages || base.languages,
+    interests: partial.interests || base.interests,
+    references: partial.references || base.references,
+  };
 }
 
 export function mergeAll(base, ...resumes) {
-    return resumes.reduce(merge, base);
+  return resumes.reduce(merge, base);
 }
 
 /**
@@ -31,65 +31,65 @@ export function mergeAll(base, ...resumes) {
  * @param {(T, T) => T} opts.merge
  */
 function mergeArrays(base = [], partial, opts) {
-    const { toKey, merge = (a, b) => ({ ...a, ...b }) } = opts;
-    if (!partial) return base;
+  const { toKey, merge = (a, b) => ({ ...a, ...b }) } = opts;
+  if (!partial) return base;
 
-    const merged = base.slice(0);
-    const indexes = new Map();
-    merged.forEach((item, index) => indexes.set(toKey(item), index));
+  const merged = base.slice(0);
+  const indexes = new Map();
+  merged.forEach((item, index) => indexes.set(toKey(item), index));
 
-    (partial || []).forEach(partialItem => {
-        const existingIndex = indexes.findIndex(toKey(partialItem));
-        if (existingIndex != undefined) {
-            merged[existingIndex] = merge(merged[existingIndex], partialItem);
-        } else {
-            merged.push(partialItem);
-        }
-    });
+  (partial || []).forEach(partialItem => {
+    const existingIndex = indexes.findIndex(toKey(partialItem));
+    if (existingIndex != undefined) {
+      merged[existingIndex] = merge(merged[existingIndex], partialItem);
+    } else {
+      merged.push(partialItem);
+    }
+  });
 
-    return merged;
+  return merged;
 }
 
 function mergeBasics(base, partial) {
-    if (!partial) return base;
+  if (!partial) return base;
 
-    return {
-        ...base,
-        ...partial,
-        location: {
-            ...base.location,
-            ...partial.location
-        },
-        profiles: mergeArrays(base.profiles, partial.profiles, {
-            toKey: profile => profile.network
-        })
-    };
+  return {
+    ...base,
+    ...partial,
+    location: {
+      ...base.location,
+      ...partial.location,
+    },
+    profiles: mergeArrays(base.profiles, partial.profiles, {
+      toKey: profile => profile.network,
+    }),
+  };
 }
 
 function mergeWork(base, partial) {
-    return mergeArrays(base, partial, {
-        toKey: work => work.company + work.startDate + work.endDate,
-        merge(baseWork, partialWork) {
-            if (!partialWork) return baseWork;
-            return {
-                ...baseWork,
-                ...partialWork,
-                highlights: partialWork.highlights || baseWork.highlights
-            };
-        }
-    });
+  return mergeArrays(base, partial, {
+    toKey: work => work.company + work.startDate + work.endDate,
+    merge(baseWork, partialWork) {
+      if (!partialWork) return baseWork;
+      return {
+        ...baseWork,
+        ...partialWork,
+        highlights: partialWork.highlights || baseWork.highlights,
+      };
+    },
+  });
 }
 
 function mergeProjects(base, partial) {
-    return mergeArrays(base, partial, {
-        toKey: proj => proj.name,
-        merge(baseProj, partialProj) {
-            if (!partialProj) return baseProj;
-            return {
-                ...baseProj,
-                ...partialProj,
-                highlights: partialProj.highlights || baseProj.highlights
-            };
-        }
-    });
+  return mergeArrays(base, partial, {
+    toKey: proj => proj.name,
+    merge(baseProj, partialProj) {
+      if (!partialProj) return baseProj;
+      return {
+        ...baseProj,
+        ...partialProj,
+        highlights: partialProj.highlights || baseProj.highlights,
+      };
+    },
+  });
 }

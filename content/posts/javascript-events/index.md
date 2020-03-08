@@ -1,6 +1,8 @@
 ---
 title: The Thinking Behind Simplifying Event Handlers
-description: How to reduce both the amount of code written and the number of listeners needed for Javascript event handlers.
+description:
+  How to reduce both the amount of code written and the number of listeners
+  needed for Javascript event handlers.
 date: 2019-05-09 00:00:00
 author: tiger
 editor: chris_coyier
@@ -29,9 +31,9 @@ user focuses on it.
 
 ```html
 <nav>
-    <a href="#first">​First link.​</a>
-    <a href="#second">Second link.</a>
-    <a href="#third">Third link.</a>
+  <a href="#first">​First link.​</a>
+  <a href="#second">Second link.</a>
+  <a href="#third">Third link.</a>
 </nav>
 ```
 
@@ -44,15 +46,15 @@ use specific code for each.
 
 ```js
 document.querySelector('a[href="#first"]').addEventListener('focusin', evt => {
-    console.log('#first');
+  console.log('#first');
 });
 
 document.querySelector('a[href="#second"]').addEventListener('focusin', evt => {
-    console.log('#second');
+  console.log('#second');
 });
 
 document.querySelector('a[href="#third"]').addEventListener('focusin', evt => {
-    console.log('#third');
+  console.log('#third');
 });
 ```
 
@@ -63,18 +65,18 @@ This duplicate code can be collapsed into a helper function.
 
 ```js
 function print(text) {
-    console.log(text);
+  console.log(text);
 }
 
 document
-    .querySelector('a[href="#first"]')
-    .addEventListener('focusin', evt => print('#first'));
+  .querySelector('a[href="#first"]')
+  .addEventListener('focusin', evt => print('#first'));
 document
-    .querySelector('a[href="#second"]')
-    .addEventListener('focusin', evt => print('#second'));
+  .querySelector('a[href="#second"]')
+  .addEventListener('focusin', evt => print('#second'));
 document
-    .querySelector('a[href="#third"]')
-    .addEventListener('focusin', evt => print('#third'));
+  .querySelector('a[href="#third"]')
+  .addEventListener('focusin', evt => print('#third'));
 ```
 
 This is much cleaner, but we still need many functions and event listeners.
@@ -92,8 +94,8 @@ our example, it will be one of the 3 links.
 
 ```js
 const print = evt => {
-    const text = evt.currentTarget.href;
-    console.log(text);
+  const text = evt.currentTarget.href;
+  console.log(text);
 };
 
 document.querySelector('a[href="#first"]').addEventListener('focusin', print);
@@ -128,8 +130,8 @@ the element that the event listener is attached to (the `<nav>` element).
 
 ```js
 const print = evt => {
-    const text = evt.target.href;
-    console.log(text);
+  const text = evt.target.href;
+  console.log(text);
 };
 
 document.querySelector('nav').addEventListener('focusin', print);
@@ -157,9 +159,9 @@ Let's make a variant where parts of the links are bold.
 
 ```html
 <nav>
-    <a href="#first"><strong>First</strong> link.</a>
-    <a href="#second"><strong>Second</strong> link.</a>
-    <a href="#third"><strong>Third</strong> link.</a>
+  <a href="#first"><strong>First</strong> link.</a>
+  <a href="#second"><strong>Second</strong> link.</a>
+  <a href="#third"><strong>Third</strong> link.</a>
 </nav>
 ```
 
@@ -168,8 +170,8 @@ keyboard focus.
 
 ```js
 const print = evt => {
-    const text = evt.target.href;
-    console.log(text);
+  const text = evt.target.href;
+  console.log(text);
 };
 
 document.querySelector('nav').addEventListener('click', print);
@@ -188,11 +190,11 @@ a link element, we need to find the parent link. We can use
 
 ```js
 const print = evt => {
-    let element = evt.target.closest('a');
-    if (element != null) {
-        const text = element.href;
-        console.log(text);
-    }
+  let element = evt.target.closest('a');
+  if (element != null) {
+    const text = element.href;
+    console.log(text);
+  }
 };
 ```
 
@@ -223,17 +225,17 @@ time you generate a new element.
 ```js
 let buttonCounter = 0;
 document.getElementById('add').addEventListener('click', evt => {
-    const newButton = document.createElement('button');
-    newButton.dataset.number = buttonCounter;
-    // Make a new event listener every time "Add new button" is clicked
-    newButton.addEventListener('click', evt => {
-        // When clicked, log the clicked button's number.
-        console.log(`Clicked button #${newButton.dataset.number}`);
-    });
-    buttonCounter++;
+  const newButton = document.createElement('button');
+  newButton.dataset.number = buttonCounter;
+  // Make a new event listener every time "Add new button" is clicked
+  newButton.addEventListener('click', evt => {
+    // When clicked, log the clicked button's number.
+    console.log(`Clicked button #${newButton.dataset.number}`);
+  });
+  buttonCounter++;
 
-    const container = document.getElementById('buttons-container');
-    container.appendChild(newButton);
+  const container = document.getElementById('buttons-container');
+  container.appendChild(newButton);
 });
 ```
 
@@ -244,19 +246,19 @@ of listeners from _n_ to 2.
 ```js
 let buttonCounter = 0;
 document.getElementById('add').addEventListener('click', evt => {
-    const newButton = document.createElement('button');
-    newButton.dataset.number = buttonCounter;
-    buttonCounter++;
+  const newButton = document.createElement('button');
+  newButton.dataset.number = buttonCounter;
+  buttonCounter++;
 
-    const container = document.getElementById('buttons-container');
-    container.appendChild(newButton);
+  const container = document.getElementById('buttons-container');
+  container.appendChild(newButton);
 });
 document.getElementById('buttons-container').addEventListener('click', evt => {
-    const clickedButton = evt.target.closest('button');
-    if (clickedButton != null) {
-        // When clicked, log the clicked button's number.
-        console.log(`Clicked button #${clickedButton.dataset.number}`);
-    }
+  const clickedButton = evt.target.closest('button');
+  if (clickedButton != null) {
+    // When clicked, log the clicked button's number.
+    console.log(`Clicked button #${clickedButton.dataset.number}`);
+  }
 });
 ```
 
@@ -267,49 +269,47 @@ user responses into a single object.
 
 ```html
 <form>
-    <label>Name: <input name="name" type="text"/></label>
-    <label>Email: <input name="email" type="email"/></label>
-    <label>Password: <input name="password" type="password"/></label>
+  <label>Name: <input name="name" type="text"/></label>
+  <label>Email: <input name="email" type="email"/></label>
+  <label>Password: <input name="password" type="password"/></label>
 </form>
 ```
 
 ```js
 let responses = {
-    name: '',
-    email: '',
-    password: ''
+  name: '',
+  email: '',
+  password: '',
 };
 
+document.querySelector('input[name="name"]').addEventListener('change', evt => {
+  const inputElement = document.querySelector('input[name="name"]');
+  responses.name = inputElement.value;
+});
 document
-	.querySelector('input[name="name"]')
-	.addEventListener('change', evt => {
-		const inputElement = document.querySelector('input[name="name"]');
-		responses.name = inputElement.value;
-	});
+  .querySelector('input[name="email"]')
+  .addEventListener('change', evt => {
+    const inputElement = document.querySelector('input[name="email"]');
+    responses.email = inputElement.value;
+  });
 document
-    .querySelector('input[name="email"]')
-    .addEventListener('change', evt => {
-        const inputElement = document.querySelector('input[name="email"]');
-        responses.email = inputElement.value;
-    });
-document
-    .querySelector('input[name="password"]')
-    .addEventListener('change', evt => {
-        const inputElement = document.querySelector('input[name="password"]');
-        responses.password = inputElement.value;
-    });
+  .querySelector('input[name="password"]')
+  .addEventListener('change', evt => {
+    const inputElement = document.querySelector('input[name="password"]');
+    responses.password = inputElement.value;
+  });
 ```
 
 Let's switch to a single listener on the parent `<form>` element instead.
 
 ```js
 let responses = {
-    name: '',
-    email: '',
-    password: ''
+  name: '',
+  email: '',
+  password: '',
 };
 
 document.querySelector('form').addEventListener('change', evt => {
-    responses[evt.target.name] = evt.target.value;
+  responses[evt.target.name] = evt.target.value;
 });
 ```

@@ -1,13 +1,13 @@
-@import "../_utils";
-@import "../_core";
-@import "./_main";
+@import '../_utils';
+@import '../_core';
+@import './_main';
 
 .project {
   & .hero {
     display: grid;
     grid-template:
-      "image text" min-content
-      "buttons buttons" min-content
+      'image text' min-content
+      'buttons buttons' min-content
       / min-content auto;
     grid-column-gap: 4em;
   }
@@ -26,16 +26,16 @@
   }
 
   &-details {
-    margin-top: -.5em;
+    margin-top: -0.5em;
   }
 }
 
 @media (max-width: 36em) {
   .project .hero {
     grid-template:
-      "image" auto
-      "text" auto
-      "buttons" min-content
+      'image' auto
+      'text' auto
+      'buttons' min-content
       / auto;
     justify-items: center;
   }

@@ -1,5 +1,5 @@
-@import "../_utils";
-@import "../_core";
+@import '../_utils';
+@import '../_core';
 
 .post.hero-container {
   --block: #ddd;
@@ -10,7 +10,7 @@
 }
 
 .text-body {
-  margin-top: -.5em;
+  margin-top: -0.5em;
 }
 
 pre {
@@ -63,7 +63,7 @@ blockquote {
     padding: {
       left: 1rem;
       right: 1rem;
-    };
+    }
   }
 
   pre {

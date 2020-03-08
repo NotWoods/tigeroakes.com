@@ -1,4 +1,4 @@
-@import "./_utils";
+@import './_utils';
 
 // Requires .shadow class
 .button-link {
@@ -37,7 +37,7 @@
 .post-nav {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-areas: "navprev button navnext";
+  grid-template-areas: 'navprev button navnext';
   align-items: center;
 
   gap: 1em;

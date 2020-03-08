@@ -1,7 +1,7 @@
-@import "../_utils";
-@import "../_core";
-@import "../_effects";
-@import "../contact/_main";
+@import '../_utils';
+@import '../_core';
+@import '../_effects';
+@import '../contact/_main';
 
 .resume {
   color: $dark-text;
@@ -37,7 +37,9 @@
 .pipe-list {
   margin: 0 0 8pt;
 }
-.resume-email, .resume-github, .resume-city {
+.resume-email,
+.resume-github,
+.resume-city {
   display: inline-block;
 }
 
@@ -60,7 +62,7 @@ a {
     left: -0.5cm;
     width: 0.25cm;
     height: 0.65cm;
-    content: "";
+    content: '';
   }
 }
 
@@ -127,7 +129,7 @@ sup {
 
   &::after {
     will-change: opacity;
-    content: "";
+    content: '';
   }
 }
 

@@ -1,12 +1,12 @@
-@import "../_utils";
-@import "../_core";
-@import "../_effects";
-@import "./_main";
+@import '../_utils';
+@import '../_core';
+@import '../_effects';
+@import './_main';
 
 // {{ $background := .Resources.GetMatch "background.*" }}
 
 body {
-  background: url("{{ $background.RelPermalink }}") {
+  background: url('{{ $background.RelPermalink }}') {
     size: cover;
     position: center;
   }
@@ -34,6 +34,6 @@ h2 {
     transform: scaleY(0.2);
   }
 }
-a[href*="mailto"] {
+a[href*='mailto'] {
   font-size: 1.6em;
 }

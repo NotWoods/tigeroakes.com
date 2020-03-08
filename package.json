@@ -9,9 +9,24 @@
     "sw-precache": "^5.2.1"
   },
   "devDependencies": {
-    "@types/sw-precache": "^5.2.0"
+    "@types/sw-precache": "^5.2.0",
+    "prettier": "^1.19.1"
   },
   "scripts": {
-    "sw": "sw-precache --root=public --config sw-precache-config.js"
+    "sw": "sw-precache --root=public --config sw-precache-config.js",
+    "format": "prettier --write **/*.{md,js,yml,yaml,scss} content/**/*.json --ignore-path .gitignore"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "proseWrap": "always",
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "printWidth": 120
+        }
+      }
+    ]
   }
 }

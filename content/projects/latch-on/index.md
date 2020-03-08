@@ -2,8 +2,8 @@
 title: Latch On
 subtitle: Rope swinging game
 weight: 7
-color: "#6b9f93"
-fallbackcolor: "#14576a"
+color: '#6b9f93'
+fallbackcolor: '#14576a'
 links:
   - title: Details
   - title: Download
@@ -23,9 +23,9 @@ description: >
   run quickly on a variety of platforms to accommodate the speedy gameplay.
 ---
 
-Latch On is a game I'm developing, where the player uses a grappling
-hook to swing around and navigate puzzles and platforms.
-The game uses the **Unity** engine.
+Latch On is a game I'm developing, where the player uses a grappling hook to
+swing around and navigate puzzles and platforms. The game uses the **Unity**
+engine.
 
 ---
 

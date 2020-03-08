@@ -1,4 +1,4 @@
-@import "./_utils";
+@import './_utils';
 
 $primary-color: #e66d31;
 :root {
@@ -30,7 +30,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 
-  font-family: Lato, "Trebuchet MS", sans-serif;
+  font-family: Lato, 'Trebuchet MS', sans-serif;
   color: var(--font-color);
   background: var(--background-color);
 }
@@ -41,7 +41,8 @@ body {
   margin: 0 auto;
 }
 
-.hero-container, .project {
+.hero-container,
+.project {
   padding: 2em;
   background: {
     color: #b7b7b7;
@@ -69,6 +70,6 @@ a {
   line-height: 1.5em;
 }
 
-@import "./_button";
-@import "./_text";
-@import "./banner/_main";
+@import './_button';
+@import './_text';
+@import './banner/_main';
