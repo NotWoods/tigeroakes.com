@@ -125,7 +125,7 @@ folder, and began working on additional tools.
 
 Now that I had a list of public HTML pages, I could create a command-line script
 to download the HTML then convert it. I used
-`[fs-extra](https://www.npmjs.com/package/fs-extra)` to read the downloaded JSON
+[`fs-extra`](https://www.npmjs.com/package/fs-extra) to read the downloaded JSON
 files, since it adds promise support to Node JS’
 [file system module](https://nodejs.org/api/fs.html).
 
