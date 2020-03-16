@@ -3,7 +3,7 @@
 @import './_main';
 
 .project {
-  & .hero {
+  & .hero__content {
     display: grid;
     grid-template:
       'image text' min-content
@@ -31,7 +31,7 @@
 }
 
 @media (max-width: 36em) {
-  .project .hero {
+  .project .hero__content {
     grid-template:
       'image' auto
       'text' auto

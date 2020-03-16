@@ -1,3 +1,4 @@
+{{ if .CurrentSection.Params.other }}
 <footer class="cta-wrap post-nav inner">
     {{with .NextInSection}}
         <a class="post-nav-link" href='{{ .RelPermalink }}'>
@@ -13,3 +14,4 @@
         </a>
     {{end}}
 </footer>
+{{end}}

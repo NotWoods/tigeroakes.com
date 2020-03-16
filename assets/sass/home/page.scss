@@ -5,27 +5,27 @@
 // {{ $image := .Resources.GetMatch "hero.jpg" }}
 
 .hero {
-  font-size: 1.2em;
-  color: $dark-text;
-  text: {
-    align: center;
-    shadow: 1px 1px 1px #b6b6b6;
-  }
+  background-image: url('{{ $image.RelPermalink }}');
 
-  &-container {
-    background: {
-      image: url('{{ $image.RelPermalink }}');
+  &__content {
+    font-size: 1.2em;
+    color: $dark-text;
+    text: {
+      align: center;
+      shadow: 1px 1px 1px #b6b6b6;
     }
+    padding: 5em 0em;
   }
-  padding: 5em 0em;
+}
 
-  &-header {
+.home {
+  &__heading {
     font-size: 2.5em;
     text-transform: uppercase;
   }
 
-  &-header,
-  &-sub {
+  &__heading,
+  &__subtitle {
     margin: 0 auto;
     max-width: 25em;
   }

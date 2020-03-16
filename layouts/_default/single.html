@@ -1,19 +1,23 @@
 {{ define "head" }}
     {{ partial "css.html" (resources.Get "sass/posts/single.scss") }}
     {{ partial "async-css.html" "sass/extra.scss" }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
-    <article>
+    <article class="article">
         {{ $bkg := .Resources.GetMatch "background.*" }}
-        <header class="hero-container post project-text"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
-            <div class="hero inner">
+        <header class="article__header hero post project-text"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
+            <div class="hero__content inner">
                 <h1 class="highlight-title">{{.Title}}</h1>
                 <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>
             </div>
         </header>
 
-        <div class="text-body inner text-container">
+        <div class="article__body inner">
             {{ .Content }}
         </div>
+
+        {{ partial "cta_nav.html" . }}
     </article>
 {{ end }}

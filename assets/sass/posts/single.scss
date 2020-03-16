@@ -1,7 +1,7 @@
 @import '../_utils';
 @import '../_core';
 
-.post.hero-container {
+.article__header {
   --block: #ddd;
 }
 
@@ -9,7 +9,7 @@
   max-width: 100vw;
 }
 
-.text-body {
+.article__body {
   margin-top: -0.5em;
 }
 
@@ -75,7 +75,7 @@ blockquote {
 }
 
 @media (max-width: 19rem) {
-  .text-container {
+  .article__body {
     padding: {
       left: 1rem;
       right: 1rem;

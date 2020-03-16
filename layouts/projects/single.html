@@ -5,9 +5,9 @@
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
-    <article class="project-details-wrapper">
-        <header class="project hero-container project-text" style='{{ partial "project/style.css" . | safeCSS }}'>
-            <div class="hero inner">
+    <article class="article">
+        <header class="article__header post project hero project-text" style='{{ partial "project/style.css" . | safeCSS }}'>
+            <div class="hero__content inner">
                 {{ partial "project/image.html" . }}
                 <div class="project-hero-text">
                     <h1 class="project-header highlight-title">{{.Title}}</h1>
@@ -19,7 +19,7 @@
             </div>
         </header>
 
-        <div class="project-details inner text-container">
+        <div class="article__body inner">
             {{ .Content }}
         </div>
 

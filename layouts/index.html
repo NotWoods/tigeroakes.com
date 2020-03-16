@@ -6,10 +6,10 @@
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
-    <section class="hero-container">
-        <div class="hero">
-            <h1 class="hero-header">{{.Title}}</h1>
-            <p class="hero-sub">{{.Params.subtitle}}</p>
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="home__heading">{{.Title}}</h1>
+            <p class="home__subtitle">{{.Params.subtitle}}</p>
         </div>
     </section>
 
