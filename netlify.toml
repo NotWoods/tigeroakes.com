@@ -1,23 +1,16 @@
 [build]
 publish = "public"
-command = "hugo --minify && npm run sw"
+command = "npm run build"
+
+[build.environment]
+HUGO_VERSION = "0.66.0"
+HUGO_ENABLEGITINFO = "true"
 
 [context.production.environment]
-HUGO_VERSION = "0.66.0"
 HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-command = "hugo  --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
-
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.66.0"
+command = "npm run build -- --gc --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
-command = "hugo  --gc --minify -b $DEPLOY_PRIME_URL"
-
-[context.branch-deploy.environment]
-HUGO_VERSION = "0.66.0"
-
-[context.next.environment]
-HUGO_ENABLEGITINFO = "true"
+command = "npm run build -- --gc -b $DEPLOY_PRIME_URL"

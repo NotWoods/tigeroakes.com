@@ -1,7 +1,7 @@
 {{ define "head" }}
-    {{ partial "css.html" (resources.Get "sass/project/page.scss") }}
-    {{ partial "async-css.html" "sass/extra.scss" }}
-    {{ partial "social/twitter-summary.html" . }}
+    {{ partial "meta/css.html" (resources.Get "sass/project/page.scss") }}
+    {{ partial "meta/async-css.html" "sass/extra.scss" }}
+    {{ partial "meta/twitter-summary.html" . }}
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
