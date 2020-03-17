@@ -1,6 +1,6 @@
 {{ define "head" }}
-    {{ partial "css.html" (resources.Get "sass/project/list.scss") }}
-    {{ partial "async-css.html" "sass/extra.scss" }}
+    {{ partial "meta/css.html" (resources.Get "sass/project/list.scss") }}
+    {{ partial "meta/async-css.html" "sass/extra.scss" }}
 {{ end }}
 {{ define "main" }}
     <main class="projects project-text">

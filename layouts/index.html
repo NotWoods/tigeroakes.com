@@ -1,8 +1,7 @@
-{{ define "title" }}{{.Site.Title}}{{ end }}
 {{ define "head" }}
-    {{ partial "css.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
-    {{ partial "async-css.html" "sass/extra.scss" }}
-    {{ partial "social/twitter-summary.html" . }}
+    {{ partial "meta/css.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
+    {{ partial "meta/async-css.html" "sass/extra.scss" }}
+    {{ partial "meta/twitter-summary.html" . }}
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
