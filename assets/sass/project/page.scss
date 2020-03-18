@@ -1,21 +1,7 @@
-@import '../_utils';
-@import '../_core';
+@import '../_article';
 @import './_main';
 
 .project {
-  & .hero__content {
-    display: grid;
-    grid-template:
-      'image text' min-content
-      'buttons buttons' min-content
-      / min-content auto;
-    grid-column-gap: 4em;
-  }
-
-  &-header {
-    margin-bottom: 0.2em;
-  }
-
   &-links {
     --link-space: 0.3em;
 
@@ -24,14 +10,10 @@
 
     font-size: 1.2em;
   }
-
-  &-details {
-    margin-top: -0.5em;
-  }
 }
 
 @media (max-width: 36em) {
-  .project .hero__content {
+  .project .header__content {
     grid-template:
       'image' auto
       'text' auto

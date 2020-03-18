@@ -5,6 +5,9 @@ seo:
   type: NewsArticle
   links:
     - http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app
+links:
+  - title: Original post
+    link: http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app
 description: >
   Article from West Hawaii Today: Google Maps will soon offer transit directions
   for the Hawaii County's bus system, Hele-On Bus, as part of a new community

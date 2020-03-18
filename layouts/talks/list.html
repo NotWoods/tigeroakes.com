@@ -1,0 +1,32 @@
+{{ define "head" }}
+    {{ partial "meta/css.html" (resources.Get "sass/talks/list.scss") }}
+    {{ partial "meta/async-css.html" "sass/extra.scss" }}
+{{ end }}
+{{ define "main" }}
+    <header class="header about">
+        <div class="header__content header__content--with-image inner">
+            {{ partial "small_profile.html" . }}
+            <div class="header__text about-text">
+                {{.Content}}
+            </div>
+
+            {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
+        </div>
+    </header>
+
+    <main class="talks inner">
+        {{ range .Pages }}
+        {{ if (.Params.talk | default true) }}
+        {{ $bkg := .Resources.GetMatch "background.*" }}
+        <article class="talk" style="--block:{{.Params.color}}">
+            {{ $thumbnail := $.Resources.GetMatch (printf "%s.png" .File.ContentBaseName) }}
+            <img src="{{$thumbnail.RelPermalink}}" width="960" height="540" alt="" class="talk__thumbnail">
+            <h3 class="talk__title highlight-title">{{.Title}}</h3>
+            <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="talk__subtitle">{{ .PublishDate.Format "2 January 2006" }}</time>
+            {{ partial "project/tech_list.html" .Params.tags }}
+            {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
+        </article>
+        {{ end }}
+        {{ end }}
+    </main>
+{{ end }}

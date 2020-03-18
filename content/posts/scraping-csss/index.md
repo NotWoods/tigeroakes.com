@@ -4,6 +4,10 @@ description: Moving from Drupal to Jamstack...without any server passwords
 date: 2020-03-07
 author: tiger
 editor: daphne
+tags:
+  - Web
+  - JavaScript
+  - Jamstack
 images:
   - /posts/scraping-csss/drupal.png
 ---

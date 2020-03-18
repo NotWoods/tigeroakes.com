@@ -6,6 +6,9 @@ seo:
   type: NewsArticle
   links:
     - http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/
+links:
+  - title: Original post
+    link: http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/
 description: >
   Article from Honolulu Star-Advertiser: It's generally not a problem when the
   IT manager/webmaster/telecommunications adviser for Oakes Management needs an

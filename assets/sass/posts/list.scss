@@ -3,11 +3,11 @@
 @import './single';
 
 .about {
+  --block: #ddd;
   background: #b6b6b6;
   background-image: url(/hero.jpg);
   background-size: cover;
   background-position: 50%;
-  font-size: 1.2em;
   color: $dark-text;
   text-shadow: 1px 1px 1px #b6b6b6;
 
@@ -17,14 +17,18 @@
   &-content {
     display: flex;
   }
+
+  &-text {
+    font-size: 1.2em;
+  }
 }
 
 .profile {
   border-radius: 50%;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+  max-width: none;
 
   flex: 0 0 80px;
-  margin-right: 1em;
 }
 
 .posts {

@@ -1,9 +1,4 @@
-@import '../_utils';
-@import '../_core';
-
-.article__header {
-  --block: #ddd;
-}
+@import '../_article';
 
 .post-container {
   max-width: 100vw;

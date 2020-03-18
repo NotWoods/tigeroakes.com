@@ -5,6 +5,10 @@ description:
 date: 2018-10-30
 author: tiger
 editor: daphne
+tags:
+  - Web
+  - JavaScript
+  - CSS
 images:
   - /posts/resume-editor/flex-fail.png
 ---

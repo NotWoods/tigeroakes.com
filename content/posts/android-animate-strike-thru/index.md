@@ -6,6 +6,12 @@ description:
 date: 2019-08-12
 author: tiger
 editor: daphne
+tags:
+  - Android
+  - Firefox
+links:
+  - title: Original post
+    link: https://medium.com/firefox-mobile-engineering/animating-a-strike-through-on-android-with-animated-vector-drawable-and-animatedstatelistdrawable-a77e66f9790f
 images:
   - /posts/android-animate-strike-thru/static_icon_with_gap.png
 ---

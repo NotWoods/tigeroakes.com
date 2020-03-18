@@ -1,0 +1,40 @@
+@import '../_utils';
+@import '../_core';
+
+.header {
+  &__content {
+    display: grid;
+    grid-template:
+      'text' min-content
+      'buttons' min-content
+      / 1fr;
+
+    &--with-image {
+      grid-template:
+        'image text' min-content
+        'buttons buttons' min-content
+        / min-content 1fr;
+      grid-column-gap: 4em;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.2em;
+  }
+
+  &__subtitle {
+    margin: {
+      top: 0;
+      bottom: 0.1em;
+    }
+  }
+}
+
+.button-links {
+  --link-space: 0.3em;
+
+  grid-area: buttons;
+  justify-self: center;
+
+  font-size: 1.2em;
+}

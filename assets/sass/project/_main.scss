@@ -11,7 +11,8 @@ $large-button-margin: 0.5em;
   }
 
   &-text {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0.1em;
   }
 
   &-links {
@@ -25,19 +26,5 @@ $large-button-margin: 0.5em;
       margin: $default-link-space;
       margin: $link-space;
     }
-  }
-}
-
-// Single item from .project-tech
-.pt-item {
-  display: inline;
-
-  &::after {
-    content: ' | ';
-    margin: 0 0.2em;
-  }
-
-  &:last-child::after {
-    content: none;
   }
 }

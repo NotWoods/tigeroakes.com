@@ -6,10 +6,16 @@ description:
 date: 2019-05-09 00:00:00
 author: tiger
 editor: chris_coyier
+links:
+  - title: Original post
+    link: https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
 aliases:
   - /posts/javascript-events-part-1
   - /posts/javascript-events-part-2
   - /posts/javascript-events-part-3
+tags:
+  - Web
+  - JavaScript
 ---
 
 This article was originally written here, then re-edited and posted to

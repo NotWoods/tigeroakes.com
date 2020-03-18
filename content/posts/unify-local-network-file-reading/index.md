@@ -4,6 +4,9 @@ description: Fetch can read files too.
 date: 2018-10-26
 author: tiger
 editor: daphne
+tags:
+  - Web
+  - JavaScript
 images:
   - /posts/unify-local-network-file-reading/imgur-upload.png
 ---

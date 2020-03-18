@@ -3,35 +3,16 @@
     {{ partial "meta/async-css.html" "sass/extra.scss" }}
 {{ end }}
 {{ define "main" }}
-    <section class="about">
-        <div class="inner about-content">
-            {{ with .Site.GetPage "/" }}
-            {{ with .Resources.GetMatch "profile.jpg" }}
-            {{ $Half := .Resize "80x" }}
-            {{ $1x := .Resize "160x" }}
-            {{ $2x := .Resize "320x" }}
-            {{ $3x := .Resize "480x" }}
-            {{ $4x := .Resize "640x" }}
-            <img class="profile" width="80" height="80" sizes="80px" alt="Portrait of Tiger Oakes"
-                src="{{$Half.RelPermalink}}"
-                srcset="{{$1x.RelPermalink}} 2x
-                        {{$2x.RelPermalink}} 3x,
-                        {{$3x.RelPermalink}} 4x,
-                        {{$4x.RelPermalink}} 5x">
-            {{ end }}
-            {{ end }}
-
-            <div class="about-text">
+    <header class="header about">
+        <div class="header__content header__content--with-image inner">
+            {{ partial "small_profile.html" . }}
+            <div class="header__text about-text">
                 {{.Content}}
-
-                <div class="project-links" style="--block: #ddd">
-                    <a class="button-link shadow" href="index.xml">
-                        RSS
-                    </a>
-                </div>
             </div>
+
+            {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
         </div>
-    </section>
+    </header>
     {{ range .Site.Author }}
         {{ . }}
     {{ end }}

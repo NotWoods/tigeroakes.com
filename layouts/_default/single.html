@@ -7,10 +7,17 @@
 {{ define "main" }}
     <article class="article">
         {{ $bkg := .Resources.GetMatch "background.*" }}
-        <header class="article__header hero post project-text"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
-            <div class="hero__content inner">
-                <h1 class="highlight-title">{{.Title}}</h1>
-                <time datetime='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2 January 2006" }}</time>
+        <header class="header article__header hero post project-text"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
+            <div class="header__content inner">
+                <div class="header__text">
+                    <h1 class="header__title highlight-title">{{.Title}}</h1>
+                    <time class="header__subtitle" datetime='{{ .PublishDate.Format "2006-01-02" }}'>
+                        {{ .PublishDate.Format "2 January 2006" }}
+                    </time>
+                    {{ partial "project/tech_list.html" .Params.tags }}
+                </div>
+
+                {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
             </div>
         </header>
 

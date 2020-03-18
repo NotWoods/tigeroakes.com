@@ -11,6 +11,7 @@ $primary-color: #e66d31;
   --background-color: #f0f0f0;
   --light-background: #fff;
   --dark-background: #333;
+  --block: var(--primary-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,6 +70,19 @@ a {
   opacity: 0.8;
   font-size: 0.9em;
   line-height: 1.5em;
+}
+// Single item from .project-tech
+.pt-item {
+  display: inline;
+
+  &::after {
+    content: ' | ';
+    margin: 0 0.2em;
+  }
+
+  &:last-child::after {
+    content: none;
+  }
 }
 
 @import './_button';

@@ -6,6 +6,12 @@ description:
 date: 2019-08-29
 author: tiger
 editor: chris_coyier
+links:
+  - title: Original post
+    link: https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/
+tags:
+  - Web
+  - Progressive Web App
 ---
 
 This article was originally written by me and posted to

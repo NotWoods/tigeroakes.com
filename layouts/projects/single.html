@@ -6,12 +6,12 @@
 {{ end }}
 {{ define "main" }}
     <article class="article">
-        <header class="article__header post project hero project-text" style='{{ partial "project/style.css" . | safeCSS }}'>
-            <div class="hero__content inner">
+        <header class="header article__header post project hero project-text" style='{{ partial "project/style.css" . | safeCSS }}'>
+            <div class="header__content header__content--with-image inner">
                 {{ partial "project/image.html" . }}
-                <div class="project-hero-text">
-                    <h1 class="project-header highlight-title">{{.Title}}</h1>
-                    <p class="project-text">{{.Params.subtitle}}</p>
+                <div class="header__text project-hero-text">
+                    <h1 class="header__title project-header highlight-title">{{.Title}}</h1>
+                    <p class="header__subtitle project-text">{{.Params.subtitle}}</p>
                     {{ partial "project/tech_list.html" .Params.tech }}
                 </div>
 
