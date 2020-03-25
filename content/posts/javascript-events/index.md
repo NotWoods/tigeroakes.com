@@ -1,8 +1,6 @@
 ---
 title: The Thinking Behind Simplifying Event Handlers
-description:
-  How to reduce both the amount of code written and the number of listeners
-  needed for Javascript event handlers.
+description: How to reduce both the amount of code written and the number of listeners needed for Javascript event handlers.
 date: 2019-05-09 00:00:00
 author: tiger
 editor: chris_coyier
@@ -18,22 +16,13 @@ tags:
   - JavaScript
 ---
 
-This article was originally written here, then re-edited and posted to
-[CSS Tricks](https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/).
-The original version has been left here, but you may prefer to read the more
-polished version at CSS Tricks.
+This article was originally written here, then re-edited and posted to [CSS Tricks](https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/). The original version has been left here, but you may prefer to read the more polished version at CSS Tricks.
 
 ---
 
-Events are an important part of any interactive web app. Events are used to
-respond when a user clicks somewhere, focuses on a link with their keyboard, and
-changes the text in a form. When I first started learning Javascript, I wrote
-complicated event listeners. More recently I've learned how to reduce both the
-amount of code I write and the number of listeners I need.
+Events are an important part of any interactive web app. Events are used to respond when a user clicks somewhere, focuses on a link with their keyboard, and changes the text in a form. When I first started learning Javascript, I wrote complicated event listeners. More recently I've learned how to reduce both the amount of code I write and the number of listeners I need.
 
-Let's start with a simple example - a navigation element with a few links. We
-want to print a message to the console showing where a hyperlink goes when the
-user focuses on it.
+Let's start with a simple example - a navigation element with a few links. We want to print a message to the console showing where a hyperlink goes when the user focuses on it.
 
 ```html
 <nav>
@@ -45,10 +34,7 @@ user focuses on it.
 
 ## The intuitive way
 
-When I first started learning about Javascript events, I wrote separate event
-listener functions for each element. I see this as a common pattern because it's
-the simplest way to start - we want specific behavior for each link, so we can
-use specific code for each.
+When I first started learning about Javascript events, I wrote separate event listener functions for each element. I see this as a common pattern because it's the simplest way to start - we want specific behavior for each link, so we can use specific code for each.
 
 ```js
 document.querySelector('a[href="#first"]').addEventListener('focusin', evt => {
@@ -66,8 +52,7 @@ document.querySelector('a[href="#third"]').addEventListener('focusin', evt => {
 
 ## Reducing duplicate code
 
-The above event listeners are all very similar. Each function prints some text.
-This duplicate code can be collapsed into a helper function.
+The above event listeners are all very similar. Each function prints some text. This duplicate code can be collapsed into a helper function.
 
 ```js
 function print(text) {
@@ -89,14 +74,7 @@ This is much cleaner, but we still need many functions and event listeners.
 
 ## Taking advantage of the `Event` object
 
-The key to simplifying your listeners is the
-[`Event` object](https://developer.mozilla.org/en-US/docs/Web/API/Event). When
-an event listener is called, it also sends an `Event` object as the first
-argument. This object has some data to describe the event that occurred, such as
-the time the event happened. To simplify our code, we can use the
-[`evt.currentTarget` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget).
-`currentTarget` refers to the element that the event listener is attached to. In
-our example, it will be one of the 3 links.
+The key to simplifying your listeners is the [`Event` object](https://developer.mozilla.org/en-US/docs/Web/API/Event). When an event listener is called, it also sends an `Event` object as the first argument. This object has some data to describe the event that occurred, such as the time the event happened. To simplify our code, we can use the [`evt.currentTarget` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget). `currentTarget` refers to the element that the event listener is attached to. In our example, it will be one of the 3 links.
 
 ```js
 const print = evt => {
@@ -109,30 +87,17 @@ document.querySelector('a[href="#second"]').addEventListener('focusin', print);
 document.querySelector('a[href="#third"]').addEventListener('focusin', print);
 ```
 
-Now there is only 1 function instead of 4. We can re-use the exact same function
-as an event listener and `evt.currentTarget.href` will have a different value
-depending on the element that fired the event.
+Now there is only 1 function instead of 4. We can re-use the exact same function as an event listener and `evt.currentTarget.href` will have a different value depending on the element that fired the event.
 
 ## Using bubbling
 
-One final change can be made to reduce the number of lines in our code. Rather
-than attaching an event listener to each link, we can just attach a single event
-listener to the `<nav>` element that contains all the links.
+One final change can be made to reduce the number of lines in our code. Rather than attaching an event listener to each link, we can just attach a single event listener to the `<nav>` element that contains all the links.
 
-When an event is fired, it starts off at the element where the event originated
-(one of the links). However, it won't stop there. The browser goes to each
-parent of that link, calling any event listeners on those parents. This will
-continue until the **root** of the document is reached (the `<body>` tag in
-HTML). This process is called "bubbling", as the event rises through the
-document tree like a bubble.
+When an event is fired, it starts off at the element where the event originated (one of the links). However, it won't stop there. The browser goes to each parent of that link, calling any event listeners on those parents. This will continue until the **root** of the document is reached (the `<body>` tag in HTML). This process is called "bubbling", as the event rises through the document tree like a bubble.
 
 <img src="event_anim.svg" alt="Animation of event bubbling" height="250" width="265">
 
-By attaching an event listener to the list, the focus event will bubble from the
-link that was focused up to the parent list. We can also take advantage of the
-[`evt.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target),
-which contains the element that fired the event (one of the links) rather than
-the element that the event listener is attached to (the `<nav>` element).
+By attaching an event listener to the list, the focus event will bubble from the link that was focused up to the parent list. We can also take advantage of the [`evt.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target), which contains the element that fired the event (one of the links) rather than the element that the event listener is attached to (the `<nav>` element).
 
 ```js
 const print = evt => {
@@ -143,25 +108,17 @@ const print = evt => {
 document.querySelector('nav').addEventListener('focusin', print);
 ```
 
-Now the many event listeners have been collapsed to just one! With more
-complicated code, the effect will be greater. By utilizing the `Event` object
-and bubbling, you can master Javascript events and simplify your event handler
-code.
+Now the many event listeners have been collapsed to just one! With more complicated code, the effect will be greater. By utilizing the `Event` object and bubbling, you can master Javascript events and simplify your event handler code.
 
 ---
 
 # What about click events?
 
-[`evt.target`](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)
-works great with events like `focusin` and `change`, where there are only a
-small number of elements that can receive focus or have input changed.
+[`evt.target`](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) works great with events like `focusin` and `change`, where there are only a small number of elements that can receive focus or have input changed.
 
-However, usually you want to listen for `click` events so you can respond to a
-user clicking on a button in your application. `click` events fire for _any_
-element in your document, from large `<div>`s to small `<span>`s.
+However, usually you want to listen for `click` events so you can respond to a user clicking on a button in your application. `click` events fire for _any_ element in your document, from large `<div>`s to small `<span>`s.
 
-As a reminder, we're making a navigation element with a few interactive links.
-Let's make a variant where parts of the links are bold.
+As a reminder, we're making a navigation element with a few interactive links. Let's make a variant where parts of the links are bold.
 
 ```html
 <nav>
@@ -171,8 +128,7 @@ Let's make a variant where parts of the links are bold.
 </nav>
 ```
 
-Let's change our Javascript code from before to respond to clicks rather than
-keyboard focus.
+Let's change our Javascript code from before to respond to clicks rather than keyboard focus.
 
 ```js
 const print = evt => {
@@ -183,16 +139,11 @@ const print = evt => {
 document.querySelector('nav').addEventListener('click', print);
 ```
 
-When you test this code, you may notice that when you click on a link,
-`undefined` is printed instead of a `#first`, `#second` or `#third`.
+When you test this code, you may notice that when you click on a link, `undefined` is printed instead of a `#first`, `#second` or `#third`.
 
-The reason that it doesn't work is that each link contains a `<strong>` element
-which can be clicked instead of the `<a>` element. Since `<strong>` is not a
-link, the `evt.target.href` property is `undefined`.
+The reason that it doesn't work is that each link contains a `<strong>` element which can be clicked instead of the `<a>` element. Since `<strong>` is not a link, the `evt.target.href` property is `undefined`.
 
-We only care about the link elements for our code. If we click somewhere inside
-a link element, we need to find the parent link. We can use
-[`element.closest()` to find the parent closest to the clicked element](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest).
+We only care about the link elements for our code. If we click somewhere inside a link element, we need to find the parent link. We can use [`element.closest()` to find the parent closest to the clicked element](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest).
 
 ```js
 const print = evt => {
@@ -204,23 +155,17 @@ const print = evt => {
 };
 ```
 
-Now we can use a single listener for `click` events! If `element.closest()`
-returns null, that means the user clicked somewhere outside of a link and we
-should ignore the event.
+Now we can use a single listener for `click` events! If `element.closest()` returns null, that means the user clicked somewhere outside of a link and we should ignore the event.
 
 ---
 
 # Extra examples addendum
 
-Here are some additional examples to demonstrate how to take advantage of a
-single event listener.
+Here are some additional examples to demonstrate how to take advantage of a single event listener.
 
 ## Lists
 
-A common pattern is to have a list of items that can be interacted with, where
-new items are inserted dynamically with Javascript. If you have event listeners
-attached to each item, then your code has to deal with event listeners every
-time you generate a new element.
+A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with Javascript. If you have event listeners attached to each item, then your code has to deal with event listeners every time you generate a new element.
 
 ```html
 <div id="buttons-container"></div>
@@ -245,9 +190,7 @@ document.getElementById('add').addEventListener('click', evt => {
 });
 ```
 
-By taking advantage of bubbling, you can just have a single event listener on
-the container. If you create many elements in your app, this reduces the number
-of listeners from _n_ to 2.
+By taking advantage of bubbling, you can just have a single event listener on the container. If you create many elements in your app, this reduces the number of listeners from _n_ to 2.
 
 ```js
 let buttonCounter = 0;
@@ -270,8 +213,7 @@ document.getElementById('buttons-container').addEventListener('click', evt => {
 
 ## Forms
 
-Perhaps you have a form with lots of inputs, and you want to collect all the
-user responses into a single object.
+Perhaps you have a form with lots of inputs, and you want to collect all the user responses into a single object.
 
 ```html
 <form>

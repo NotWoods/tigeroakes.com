@@ -60,14 +60,7 @@ server:
   headers:
     - for: /*
       values:
-        Content-Security-Policy:
-          frame-ancestors 'none'; form-action 'none'; default-src 'none';
-          style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-          script-src 'self' 'unsafe-inline' https://www.google-analytics.com;
-          font-src https://fonts.gstatic.com; img-src 'self'
-          https://img.shields.io; media-src 'self'; worker-src 'self'; frame-src
-          https://www.youtube-nocookie.com; connect-src *; manifest-src 'self';
-          base-uri 'none'
+        Content-Security-Policy: frame-ancestors 'none'; form-action 'none'; default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; font-src https://fonts.gstatic.com; img-src 'self' https://img.shields.io; media-src 'self'; worker-src 'self'; frame-src https://www.youtube-nocookie.com; connect-src *; manifest-src 'self'; base-uri 'none'
         X-Frame-Options: DENY
         X-XSS-Protection: 1; mode=block
         X-Content-Type-Options: nosniff

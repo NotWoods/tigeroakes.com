@@ -1,7 +1,6 @@
 ---
 title: Automatic resume editor
-description:
-  How I built my resume with web technologies then automated the formatting.
+description: How I built my resume with web technologies then automated the formatting.
 date: 2018-10-30
 author: tiger
 editor: daphne
@@ -15,21 +14,11 @@ images:
 
 {{<video src="resume-editor.mp4">}}
 
-After writing my resume in Microsoft Word for years, I recently transitioned to
-generating it from plain HTML and CSS. This works much better for me because I
-can separate the resume content (my work experience and descriptions) from its
-layout (the colors and positions of text and number of columns). I added
-additional features so that I can edit the resume on-the-fly with JavaScript and
-quickly save a new copy, in case I don't have access to my main machine and I
-need to make some small adjustments. Here's how I did it.
+After writing my resume in Microsoft Word for years, I recently transitioned to generating it from plain HTML and CSS. This works much better for me because I can separate the resume content (my work experience and descriptions) from its layout (the colors and positions of text and number of columns). I added additional features so that I can edit the resume on-the-fly with JavaScript and quickly save a new copy, in case I don't have access to my main machine and I need to make some small adjustments. Here's how I did it.
 
 ## Content with HTML and JSON Resume
 
-The first step for displaying my resume online is to represent the data in a way
-the browser understands, with HTML. I started by converting my resume into JSON,
-following the [JSON Resume schema](https://jsonresume.org/schema/). I use a
-static site generator for my website, so I wrote an template that read the JSON
-file and then wrote the corresponding HTML elements.
+The first step for displaying my resume online is to represent the data in a way the browser understands, with HTML. I started by converting my resume into JSON, following the [JSON Resume schema](https://jsonresume.org/schema/). I use a static site generator for my website, so I wrote an template that read the JSON file and then wrote the corresponding HTML elements.
 
 ```html
 <header class="resume-header">
@@ -43,10 +32,7 @@ file and then wrote the corresponding HTML elements.
 
 ## Layout with CSS
 
-When I first redesigned my website, I wanted to include my resume without just
-using an embedded PDF. Instead, I recreated my resume in HTML and CSS, so that
-it showed up as elements in the browser. I used some rarer CSS features like
-inch and centimeter units so the virtual "page" was still an 8.5"x11" sheet.
+When I first redesigned my website, I wanted to include my resume without just using an embedded PDF. Instead, I recreated my resume in HTML and CSS, so that it showed up as elements in the browser. I used some rarer CSS features like inch and centimeter units so the virtual "page" was still an 8.5"x11" sheet.
 
 ```css
 .resume {
@@ -55,50 +41,27 @@ inch and centimeter units so the virtual "page" was still an 8.5"x11" sheet.
 }
 ```
 
-Obviously this isn't optimal because now I have two copies of my resume: a
-Microsoft Word document, and the online version. Every time I update the Word
-document, the corresponding HTML needs to be updated. Word was also becoming a
-hassle because I have the small blocks to the left of headers that need to be
-realigned, and often an extra blank page is created because of the two-column
-layout.
+Obviously this isn't optimal because now I have two copies of my resume: a Microsoft Word document, and the online version. Every time I update the Word document, the corresponding HTML needs to be updated. Word was also becoming a hassle because I have the small blocks to the left of headers that need to be realigned, and often an extra blank page is created because of the two-column layout.
 
 ## Generating a PDF from the site
 
-I next set out to find a way to output a PDF from the online version of my site,
-so I could get rid of the Word version. The way most people make PDFs from some
-website is to just print it out. Easy! Unfortunately printing in web browsers
-has some weird bugs, and my layout turned into a 1 column design as soon as I
-opened the print preview.
+I next set out to find a way to output a PDF from the online version of my site, so I could get rid of the Word version. The way most people make PDFs from some website is to just print it out. Easy! Unfortunately printing in web browsers has some weird bugs, and my layout turned into a 1 column design as soon as I opened the print preview.
 
 {{<img src="flex-fail.png" alt="Chrome print preview showing a broken resume layout">}}
 
-> If you were hoping to use Flexbox or CSS Grid in print stylesheets, you will
-> probably be disappointed. You can check out the Chrome bugs for
-> [Flexbox](https://bugs.chromium.org/p/chromium/issues/detail?id=660611) and
-> for [Grid](https://bugs.chromium.org/p/chromium/issues/detail?id=614667).
+> If you were hoping to use Flexbox or CSS Grid in print stylesheets, you will probably be disappointed. You can check out the Chrome bugs for [Flexbox](https://bugs.chromium.org/p/chromium/issues/detail?id=660611) and for [Grid](https://bugs.chromium.org/p/chromium/issues/detail?id=614667).
 >
-> The best suggestion I can give right now is to keep your print stylesheets
-> reasonably simple.
+> The best suggestion I can give right now is to keep your print stylesheets reasonably simple.
 
-<cite>--
-[A Guide To The State of Print Stylesheets in 2018 - Smashing Magazine](https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/#browser-support)</cite>
+<cite>-- [A Guide To The State of Print Stylesheets in 2018 - Smashing Magazine](https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/#browser-support)</cite>
 
-I got stuck here for a while as I tried different layouts. Eventually I settled
-on a table-based layout for the resume. CSS `display: table` allows me to do
-that without using the `<table>` HTML tag, so on mobile devices it can switch to
-a single column instead.
+I got stuck here for a while as I tried different layouts. Eventually I settled on a table-based layout for the resume. CSS `display: table` allows me to do that without using the `<table>` HTML tag, so on mobile devices it can switch to a single column instead.
 
 ## Scripting
 
-At this point I now have my resume rendering in HTML, laid out with CSS, and
-generating a PDF. Everything works! Except...my site takes 10 seconds to
-regenerate the HTML files, so when editing the resume I need to wait 10 seconds
-then refresh the page, no matter what changes I make. This is a lot clunkier
-than just editing the text in Microsoft Word.
+At this point I now have my resume rendering in HTML, laid out with CSS, and generating a PDF. Everything works! Except...my site takes 10 seconds to regenerate the HTML files, so when editing the resume I need to wait 10 seconds then refresh the page, no matter what changes I make. This is a lot clunkier than just editing the text in Microsoft Word.
 
-I decided to use JavaScript to update the page given my JSON data. I replicated
-my HTML template logic in JavaScript, so in the Inspector I could just call an
-`update` function and paste in my JSON.
+I decided to use JavaScript to update the page given my JSON data. I replicated my HTML template logic in JavaScript, so in the Inspector I could just call an `update` function and paste in my JSON.
 
 ```js
 function update(data) {
@@ -113,21 +76,14 @@ function update(data) {
 
 ## Extras
 
-I'm still not a fan of typing `update(`, paste, `)`, enter. Why not just paste
-in the JSON directly without having to call the function? I added a listener for
-the `"paste"` event that responds when I paste JSON onto the resume window.
+I'm still not a fan of typing `update(`, paste, `)`, enter. Why not just paste in the JSON directly without having to call the function? I added a listener for the `"paste"` event that responds when I paste JSON onto the resume window.
 
 ```js
 document.onpaste = e =>
   update(JSON.parse(e.clipboardData.getData('text/plain')));
 ```
 
-I also sometimes need to make small changes to my resume when I'm away from my
-computer. It would be nice to be able to edit the JSON in the web browser
-inspector. Using the Fetch API, I can load my JSON file in as a JavaScript
-object. I can use a
-[`Proxy` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
-to detect when the object is changed, and then call `update()` automatically.
+I also sometimes need to make small changes to my resume when I'm away from my computer. It would be nice to be able to edit the JSON in the web browser inspector. Using the Fetch API, I can load my JSON file in as a JavaScript object. I can use a [`Proxy` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) to detect when the object is changed, and then call `update()` automatically.
 
 ```js
 let jsonResume = await fetch().then(r => r.json());
@@ -150,26 +106,14 @@ const proxyHandler = {
 window.resume = new Proxy(jsonResume, proxyHandler);
 ```
 
-`Proxy` is used to add custom behavior when getting or setting properties. The
-`set` function is called when a setting a value, and is customized to also call
-my `update` function. The `get` function is customized to return a proxy for
-nested objects.
+`Proxy` is used to add custom behavior when getting or setting properties. The `set` function is called when a setting a value, and is customized to also call my `update` function. The `get` function is customized to return a proxy for nested objects.
 
 ## Next steps
 
-In the future, I'd like to automatically generate a PDF from my markup and save
-it on the website for download, instead of manually using Print to PDF.
-[wkhtmltopdf](https://wkhtmltopdf.org/) or
-[Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)
-might be good tools for this.
+In the future, I'd like to automatically generate a PDF from my markup and save it on the website for download, instead of manually using Print to PDF. [wkhtmltopdf](https://wkhtmltopdf.org/) or [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) might be good tools for this.
 
-It would also be helpful to have the rendered resume allow for text editing
-directly, instead of manipulating JSON in the inspector. The
-[`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable)
-HTML attribute lets a user change the text in an HTML element, but probably
-needs some tweaking to properly handle lists and emphasis.
+It would also be helpful to have the rendered resume allow for text editing directly, instead of manipulating JSON in the inspector. The [`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable) HTML attribute lets a user change the text in an HTML element, but probably needs some tweaking to properly handle lists and emphasis.
 
-You can see all of my source code on my
-[GitHub repository for my website](https://github.com/NotWoods/tigeroakes.com/tree/master/content/resume).
+You can see all of my source code on my [GitHub repository for my website](https://github.com/NotWoods/tigeroakes.com/tree/master/content/resume).
 
 {{<external/github repo="NotWoods/tigeroakes.com">}}
