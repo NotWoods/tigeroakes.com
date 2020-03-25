@@ -13,7 +13,7 @@
     "prettier": "^1.19.1"
   },
   "scripts": {
-    "build": "hugo --minify",
+    "build": "hugo",
     "postbuild": "sw-precache --root=public --config sw-precache-config.js",
     "format": "prettier --write **/*.{md,js,yml,yaml,scss} content/**/*.json --ignore-path .gitignore"
   },
