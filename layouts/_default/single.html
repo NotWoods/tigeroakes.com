@@ -1,5 +1,7 @@
 {{ define "head" }}
     {{ partial "meta/css.html" (resources.Get "sass/posts/single.scss") }}
+    {{ $style := resources.Get "css/highlight.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     {{ partial "meta/async-css.html" "sass/extra.scss" }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}

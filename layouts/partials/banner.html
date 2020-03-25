@@ -15,22 +15,22 @@
         </a>
 
         <nav class="nav">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-            {{ $url := strings.TrimSuffix "/" .URL }}
-            {{ $menuPage := $currentPage.Site.GetPage $url }}
-            {{ $inSection := false }}
-            {{ if ne $menuPage.CurrentSection $.Site.Home }}
+            {{- $currentPage := . -}}
+            {{- range .Site.Menus.main -}}
+            {{- $url := strings.TrimSuffix "/" .URL -}}
+            {{- $menuPage := $currentPage.Site.GetPage $url -}}
+            {{- $inSection := false -}}
+            {{- if ne $menuPage.CurrentSection $.Site.Home -}}
                 {{/* Use section matching */}}
-                {{ $inSection = $currentPage.InSection $menuPage }}
-            {{ else }}
+                {{- $inSection = $currentPage.InSection $menuPage -}}
+            {{- else -}}
                 {{/* Use path matching */}}
-                {{ $inSection = eq .URL $currentPage.RelPermalink }}
-            {{ end }}
+                {{- $inSection = eq .URL $currentPage.RelPermalink -}}
+            {{- end -}}
             <a class='nav-link highlight-title{{if $inSection}} current-page{{end}}'
                 href="{{ .URL }}"
                 title="{{ .Title }}">{{ .Name }}</a>
-            {{ end }}
+            {{- end -}}
         </nav>
     </div>
 </header>

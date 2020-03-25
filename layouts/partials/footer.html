@@ -5,15 +5,13 @@
     </a>
     {{ end }}
     <div class="footer__items">
-        {{ $contact := .Site.GetPage "/contact" }}
-        {{ $color := .Params.contact_color | default "black" }}
-        {{ range .Site.Data.contact.social }}
+        {{- $contact := .Site.GetPage "/contact" -}}
+        {{- $color := .Params.contact_color | default "black" -}}
+        {{- range .Site.Data.contact.social -}}
         <a href="{{.link}}" class="contact-link" title="{{.name}}" aria-label="{{.name}}">
-            {{ $image_name := (string (delimit (slice $color "-" (lower .name) ".*") "")) }}
-            {{ $image := ($contact.Resources.GetMatch $image_name) }}
-            <img class="contact-icon" alt="{{.name}}" width="24" height="24"
-                src='{{ $image.RelPermalink }}'>
-        </a>
-        {{ end }}
+            {{- $image_name := (string (delimit (slice $color "-" (lower .name) ".*") "")) -}}
+            {{- $image := ($contact.Resources.GetMatch $image_name) -}}
+            <img class="contact-icon" alt="{{.name}}" width="24" height="24" src='{{ $image.RelPermalink }}'></a>
+        {{- end -}}
     </div>
 </div>

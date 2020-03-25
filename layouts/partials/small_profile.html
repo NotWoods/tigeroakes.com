@@ -7,9 +7,6 @@
 {{ $4x := .Resize "640x" }}
 <img class="profile" width="80" height="80" sizes="80px" alt="Portrait of Tiger Oakes"
     src="{{$Half.RelPermalink}}"
-    srcset="{{$1x.RelPermalink}} 2x
-            {{$2x.RelPermalink}} 3x,
-            {{$3x.RelPermalink}} 4x,
-            {{$4x.RelPermalink}} 5x">
+    srcset="{{$1x.RelPermalink}} 2x {{$2x.RelPermalink}} 3x, {{$3x.RelPermalink}} 4x, {{$4x.RelPermalink}} 5x">
 {{ end }}
 {{ end }}

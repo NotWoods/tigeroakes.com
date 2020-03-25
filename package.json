@@ -15,7 +15,8 @@
   "scripts": {
     "build": "hugo",
     "postbuild": "sw-precache --root=public --config sw-precache-config.js",
-    "format": "prettier --write **/*.{md,js,yml,yaml,scss} content/**/*.json --ignore-path .gitignore"
+    "format": "prettier --write **/*.{md,js,yml,yaml,scss} content/**/*.json --ignore-path .gitignore",
+    "highlight": "hugo gen chromastyles --style=dracula > ./assets/css/highlight.css"
   },
   "prettier": {
     "singleQuote": true,

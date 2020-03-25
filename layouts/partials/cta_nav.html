@@ -1,17 +1,17 @@
 {{ if .CurrentSection.Params.other }}
 <footer class="cta-wrap post-nav inner">
-    {{with .NextInSection}}
+    {{- with .NextInSection -}}
         <a class="post-nav-link" href='{{ .RelPermalink }}'>
-            {{.Title}}
+            {{- .Title -}}
         </a>
-    {{end}}
+    {{- end -}}
     <a class="button-link cta shadow" href='{{.CurrentSection.RelPermalink}}'>
-        {{ .CurrentSection.Params.other }}
+        {{- .CurrentSection.Params.other -}}
     </a>
-    {{with .PrevInSection}}
+    {{- with .PrevInSection -}}
         <a class="post-nav-link" href='{{ .RelPermalink }}'>
-            {{.Title}}
+            {{- .Title -}}
         </a>
-    {{end}}
+    {{- end -}}
 </footer>
 {{end}}

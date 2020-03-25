@@ -4,6 +4,7 @@ title: 'Tiger Oakes'
 googleAnalytics: UA-37324002-1
 pygmentsCodeFences: true
 pygmentsStyle: dracula
+pygmentsUseClasses: true
 
 menu:
   main:
