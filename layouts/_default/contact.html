@@ -4,6 +4,19 @@
 {{ define "main" }}
     <main class="contact">
         {{.Content}}
+        {{ with .Site.Data.contact.email }}
+        <a href="{{.link}}" class="contact-link email">
+            {{.text | markdownify}}
+        </a>
+        {{ end }}
+        <p>{{ i18n "find_at" }}</p>
+        {{ range .Site.Data.contact.social }}
+        <p>
+        <a href="{{.link}}" class="contact-link">
+            {{.text | markdownify}}
+        </a>
+        </p>
+        {{ end }}
     </main>
 {{ end }}
 {{ define "footer" }}<!---->{{ end }}

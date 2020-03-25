@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.contact-content {
+.footer__items {
   line-height: 1.6em;
 
   display: flex;
@@ -16,19 +16,10 @@
   flex-wrap: wrap;
 }
 
-.contact:hover .contact a::after {
+.contact:hover .contact-link::after {
   will-change: transform;
 }
 
-.email {
-  margin-right: 2.5em;
-
-  @media (max-width: 28em) {
-    width: 100%;
-    margin: 0 0 1.5em;
-  }
-}
 .contact-icon {
-  height: 1.6em;
   display: block;
 }
