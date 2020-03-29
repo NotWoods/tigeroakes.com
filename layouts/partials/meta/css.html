@@ -1,2 +1,0 @@
-{{ $style := resources.ToCSS . | resources.Minify }}
-<style>{{ $style.Content | safeCSS }}</style>

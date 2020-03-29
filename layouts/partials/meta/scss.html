@@ -1,0 +1,2 @@
+{{ $style := . | resources.ToCSS (dict "outputStyle" "compressed") }}
+<style>{{ $style.Content | safeCSS }}</style>
