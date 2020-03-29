@@ -6,6 +6,9 @@
   "author": "Tiger Oakes <tigeroakes@gmail.com>",
   "private": true,
   "dependencies": {
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^7.1.0",
+    "postcss-preset-env": "^6.7.0",
     "sw-precache": "^5.2.1"
   },
   "devDependencies": {
