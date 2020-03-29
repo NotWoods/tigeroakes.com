@@ -1,3 +1,3 @@
-{{ $style := resources.Get . | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := . | resources.PostCSS (dict "config" "postcss.config.js" "inlineImports" true) }}
 <link rel="preload" href="{{ $style.RelPermalink | safeURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ $style.RelPermalink | safeURL }}"></noscript>

@@ -13,16 +13,22 @@ const plugins = [
       'matches-pseudo-class': true,
       'nesting-rules': true,
       'place-properties': true,
-    }
+    },
   }),
   cssNano({
-    preset: ['advanced', {
-      svgo: false,
-      zindex: false,
-    }]
-  })
-]
+    preset: [
+      'default',
+      {
+        discardUnused: true,
+        mergeIdents: true,
+        reduceIdents: true,
+        svgo: false,
+        zindex: false,
+      },
+    ],
+  }),
+];
 
 module.exports = {
-  plugins
+  plugins,
 };

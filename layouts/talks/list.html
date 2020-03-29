@@ -1,5 +1,6 @@
 {{ define "head" }}
     {{ partial "meta/scss.html" (resources.Get "sass/talks/list.scss") }}
+    {{ partialCached "meta/loadcss.html" . }}
     {{ partial "meta/async-scss.html" "sass/extra.scss" }}
 {{ end }}
 {{ define "main" }}
