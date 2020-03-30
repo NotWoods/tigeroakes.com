@@ -1,7 +1,5 @@
 {{ define "head" }}
     {{ partial "meta/scss.html" (resources.Get "sass/posts/single.scss") }}
-    {{ partialCached "meta/loadcss.html" . }}
-    {{ partial "meta/async-scss.html" "sass/extra.scss" }}
     {{ if in .Content "<code>" }}
         {{ partial "meta/async-postcss.html" (resources.Get "css/highlight.css") }}
     {{ end }}

@@ -1,7 +1,5 @@
 {{ define "head" }}
     {{ partial "meta/scss.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
-    {{ partialCached "meta/loadcss.html" . }}
-    {{ partial "meta/async-scss.html" "sass/extra.scss" }}
     {{ partial "meta/twitter-summary.html" . }}
     {{ template "_internal/opengraph.html" . }}
 {{ end }}

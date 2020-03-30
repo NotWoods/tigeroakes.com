@@ -19,6 +19,8 @@
 
 .nav__link {
   /* expects: .block.block--animate */
+  --block-offset: calc(var(--block-width) * -1);
+
   margin-left: 1rem;
   display: inline-block;
   padding: 0 0.5rem;
@@ -45,7 +47,7 @@
   margin-right: 0.75rem;
 
   --small-shadow: none;
-  --large-shadow: 0 4px 4px rgba(black, 0.3);
+  --large-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
 /* Events on the logo link should affect the icon */
 .logo:hover .logo__icon::after,

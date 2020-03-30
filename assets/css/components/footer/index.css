@@ -1,0 +1,14 @@
+/* Styles for contact footer */
+.contact {
+  padding: 2em;
+
+  text-align: center;
+}
+
+.contact__link {
+  --block-width: 0.5rem;
+
+  display: inline-block;
+
+  margin: 1em 0.5em;
+}

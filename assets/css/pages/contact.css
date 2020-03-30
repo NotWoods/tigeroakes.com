@@ -16,14 +16,10 @@ body {
 }
 
 .contact__link {
-  --block-width: 0.5rem;
-
-  display: inline-block;
-
   font-size: 1.2em;
-  margin: 1em 0.5em 0.5em;
+  margin-bottom: 0.5em;
 }
-.contact__link::before {
+.block--bottom.block--animate.contact__link::before {
   transform: scaleY(0.2);
 }
 

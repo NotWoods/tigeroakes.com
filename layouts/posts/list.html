@@ -1,7 +1,5 @@
 {{ define "head" }}
     {{ partial "meta/scss.html" (resources.Get "sass/posts/list.scss") }}
-    {{ partialCached "meta/loadcss.html" . }}
-    {{ partial "meta/async-scss.html" "sass/extra.scss" }}
 {{ end }}
 {{ define "main" }}
     <header class="header about">

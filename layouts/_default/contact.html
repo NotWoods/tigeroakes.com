@@ -1,5 +1,7 @@
 {{ define "head" }}
     {{ partial "meta/postcss.html" (resources.Get "css/pages/contact.css" | resources.ExecuteAsTemplate "contact.css" .) }}
+    {{ partialCached "meta/loadcss.html" . }}
+    {{ partial "meta/async-postcss.html" (resources.Get "css/async.css") }}
 {{ end }}
 {{ define "main" }}
     <main class="contact">
