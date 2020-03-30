@@ -12,3 +12,9 @@
 .cta__wrap .button::after {
   will-change: opacity;
 }
+
+@media (--home-projects-text) {
+  .cta__wrap .button {
+    white-space: normal;
+  }
+}

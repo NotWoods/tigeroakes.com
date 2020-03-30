@@ -28,17 +28,83 @@ hr {
   border-color: black;
 }
 
+img:not([class]),
 img.center,
 video.center {
-  margin: auto;
   display: block;
   max-width: 100%;
   height: auto;
+}
+img.center,
+video.center {
+  margin: auto;
+}
+
+code {
+  background: rgba(27, 31, 35, 0.05);
+  overflow-wrap: anywhere;
+}
+
+pre {
+  margin: 1em -1rem;
+  position: relative;
+
+  overflow: auto;
+  white-space: pre-wrap;
+}
+pre code {
+  display: block;
+  padding: 1em;
+
+  background: none;
+}
+pre code::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  right: 0.25em;
+
+  color: var(--light-color);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+blockquote {
+  margin: 0 0 1em;
+  padding: 0 1em;
+  color: #626971;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.external-link {
+  display: block;
+  margin: 0 -1em;
+  padding: 1em;
+
+  color: inherit;
+  border: 1px solid currentColor;
+}
+.external-link__logo {
+  float: right;
+}
+.external-link__title {
+  margin: 0;
+
+  font-size: 1.1em;
+}
+.external-link__source {
+  font-size: 0.9em;
 }
 
 @media (--banner-wrap) {
   img.center,
   video.center {
     width: 100%;
+  }
+}
+@media (--home-projects-text) {
+  .article__body {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

@@ -110,7 +110,7 @@ If you want to more control over how your <abbr>PWA</abbr> icons are displayed o
 
 ### Icon Credits
 
-- https://notwoods.github.io/color-breakdown/
-- https://notwoods.github.io/insightful-energy/
+- [https://notwoods.<wbr>github.io/<wbr>color-breakdown/](https://notwoods.github.io/color-breakdown/)
+- [https://notwoods.<wbr>github.io/<wbr>insightful-energy/](https://notwoods.github.io/insightful-energy/)
 - https://proxx.app/
-- https://jakearchibald.github.io/svgomg/
+- [https://jakearchibald.<wbr>github.io/<wbr>svgomg/](https://jakearchibald.github.io/svgomg/)

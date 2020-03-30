@@ -1,5 +1,5 @@
 {{ define "head" }}
-    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/contact.css" | resources.ExecuteAsTemplate "contact.css" .) }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/contact.css" | resources.ExecuteAsTemplate "css/pages/contact.css" .) }}
 {{ end }}
 {{ define "main" }}
     <main class="contact">

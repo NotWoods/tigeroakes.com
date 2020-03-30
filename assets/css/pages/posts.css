@@ -12,9 +12,15 @@
   margin: 1rem 0;
   padding: 0.1rem 3rem;
 }
+.post .block::before {
+  transform: scaleX(0.5);
+}
 
 @media (--home-projects-text) {
   .posts {
     font-size: 0.9em;
+  }
+  .post {
+    padding: 0.1rem 1rem;
   }
 }

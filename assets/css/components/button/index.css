@@ -2,6 +2,7 @@
   --space: 0.2em;
 
   display: flex;
+  flex-wrap: wrap;
   margin: calc(var(--space) * -1);
 }
 

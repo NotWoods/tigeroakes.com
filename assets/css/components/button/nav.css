@@ -25,7 +25,7 @@
 }
 
 @media (--home-projects-text) {
-  .article__nav-link {
+  .article__nav {
     grid-template:
       'navprev' auto
       'button' auto

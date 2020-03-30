@@ -1,6 +1,8 @@
+@import '../../base/breakpoints.css';
+
 /* Styles for contact footer */
 .contact {
-  padding: 2em;
+  padding: 2rem;
 
   text-align: center;
 }
@@ -11,4 +13,12 @@
   display: inline-block;
 
   margin: 1em 0.5em;
+}
+
+@media (--small-screen) {
+  .contact {
+    padding: 1rem;
+
+    font-size: 0.9em;
+  }
 }

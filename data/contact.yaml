@@ -2,11 +2,11 @@
 email:
   name: contact​@tigeroakes.com
   link: mailto:contact@tigeroakes.com
-  text: '**contact**@**tigeroakes**.com'
+  text: '**contact<wbr>**@**tigeroakes**.com'
 social:
   - name: GitHub
     link: https://github.com/NotWoods
-    text: '**github**.com/**NotWoods**'
+    text: '**github**.com/<wbr>**NotWoods**'
 
   - name: LinkedIn
     link: https://linkedin.com/in/tigeroakes
@@ -14,4 +14,4 @@ social:
 
   - name: Twitter
     link: https://twitter.com/Not_Woods
-    text: '**twitter**.com/**Not_Woods**'
+    text: '**twitter**.com/<wbr>**Not_Woods**'
