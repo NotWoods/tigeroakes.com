@@ -1,0 +1,4 @@
+/* <svg> or <img> that should be displayed as a block element */
+.icon {
+  display: block;
+}

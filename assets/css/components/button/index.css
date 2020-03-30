@@ -1,0 +1,12 @@
+.button {
+  /* expects: .shadow */
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  position: relative;
+
+  color: inherit;
+  background: var(--block);
+}
+.button::after {
+  border: 1px solid;
+}

@@ -1,0 +1,8 @@
+@import '../base/vars.css';
+
+/* Center content on screen */
+.inner {
+  max-width: var(--site-width);
+  padding: 0 1em;
+  margin: 0 auto;
+}

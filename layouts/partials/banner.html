@@ -1,9 +1,9 @@
 {{/* Banner displayed at the top of the site. */}}
-<header class="banner-container">
+<header class="banner__wrap banner-container">
     <div class="inner banner">
-        <a class="home-link" href="/">
-            <div class="dot shadow">
-                <svg class="dot-inner" width="20" height="20" stroke-linejoin="round" viewBox="2 2 12 12">
+        <a class="logo home-link" href="/">
+            <div class="shadow logo__icon dot">
+                <svg class="icon dot-inner" width="20" height="20" stroke-linejoin="round" viewBox="2 2 12 12">
                     <path fill="#e66d31" d="M2 2h12v12H2z" />
                     <circle xmlns="http://www.w3.org/2000/svg" cx="5" cy="6" r="1.5" fill="none" stroke="#000" stroke-width="1" />
                     <circle xmlns="http://www.w3.org/2000/svg" cx="11" cy="6" r="1.5" fill="none" stroke="#000" stroke-width="1" />
@@ -11,7 +11,7 @@
                     <path d="M8 10.6L9.5 9h-3L8 10.6z" />
                 </svg>
             </div>
-            <h1 class="banner-title">{{ .Site.Title }}</h1>
+            <h1 class="logo__title banner-title">{{ .Site.Title }}</h1>
         </a>
 
         <nav class="nav">
@@ -27,7 +27,7 @@
                 {{/* Use path matching */}}
                 {{- $inSection = eq .URL $currentPage.RelPermalink -}}
             {{- end -}}
-            <a class='nav-link highlight-title{{if $inSection}} current-page{{end}}'
+            <a class='nav__link block block--animate nav-link highlight-title{{if $inSection}} nav__link--current current-page{{end}}'
                 href="{{ .URL }}"
                 title="{{ .Title }}">{{ .Name }}</a>
             {{- end -}}

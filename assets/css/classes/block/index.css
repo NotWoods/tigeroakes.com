@@ -1,0 +1,24 @@
+/* Displays a small block to the left side of the title. */
+.block {
+  --block-width: 0.5em;
+  --block-offset: calc(calc(var(--block-width) * 2) * -1);
+
+  position: relative;
+
+  color: inherit;
+}
+
+.block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--block-offset);
+  width: var(--block-width);
+
+  background: var(--block);
+}
+
+.block--animate::before {
+  transform: scaleX(0);
+}

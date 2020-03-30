@@ -1,0 +1,22 @@
+/* Styles for contact footer */
+.contact {
+  padding: 2em;
+
+  text-align: center;
+}
+
+.footer__items {
+  line-height: 1.6em;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact__link {
+  /* expects: .block.block--bottom.block--animate */
+}
+
+.contact:hover .contact__link::before {
+  will-change: transform;
+}

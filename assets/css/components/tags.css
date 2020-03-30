@@ -1,0 +1,25 @@
+/* List of tags (ie: blog tags, project technologies). Should be a <ul>. */
+.tags {
+  /* expects: ul */
+
+  margin: 0;
+  padding: 0;
+
+  opacity: 0.8;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+/* Single tags. Should be an <li> inside <ul class="tags">. */
+.tag {
+  /* expects: .tags li */
+
+  display: inline;
+}
+.tag::after {
+  content: ' | ';
+  margin: 0 0.2em;
+}
+.tag:last-child::after {
+  content: none;
+}

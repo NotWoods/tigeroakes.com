@@ -1,0 +1,32 @@
+/* {{ $background := .Resources.GetMatch "background.*" }} */
+
+body {
+  background: center / cover no-repeat #d9d9d9 url('{{ $background.RelPermalink }}');
+}
+
+.contact {
+  color: var(--dark-text);
+}
+
+.contact h2 {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+
+  border-bottom: 0.1em solid black;
+}
+
+.contact__link {
+  --block-width: 0.5rem;
+
+  display: inline-block;
+
+  font-size: 1.2em;
+  margin: 1em 0.5em 0.5em;
+}
+.contact__link::before {
+  transform: scaleY(0.2);
+}
+
+.email {
+  font-size: 1.6em;
+}
