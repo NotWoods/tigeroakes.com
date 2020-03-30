@@ -27,7 +27,11 @@
                 {{/* Use path matching */}}
                 {{- $inSection = eq .URL $currentPage.RelPermalink -}}
             {{- end -}}
-            <a class="block block--animate nav__link{{if $inSection}} nav__link--current{{end}}"
+            {{- $classes := slice "block" "block--animate" "nav__link" -}}
+            {{- if $inSection }}
+                {{- $classes = $classes | append "nav__link--current" -}}
+            {{- end -}}
+            <a class='{{ delimit $classes " " }}'
                 href="{{ .URL }}"
                 title="{{ .Title }}">{{ .Name }}</a>
             {{- end -}}

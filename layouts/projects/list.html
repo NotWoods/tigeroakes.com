@@ -4,7 +4,11 @@
 {{ define "main" }}
     <main class="projects">
     {{ range .Pages }}
-        <article class="card{{ if .Params.feature }} feature{{ end }}" style='{{ partial "project/style.css" . | safeCSS }}'>
+        {{ $classes := slice "card" }}
+        {{ if .Params.feature }}
+            {{ $classes = $classes | append "feature" }}
+        {{ end }}
+        <article class='{{ delimit $classes " " }}' style='{{ partial "project/style.css" . | safeCSS }}'>
             {{ partial "project/image.html" . }}
             <h3 class="block card__title">{{.Title}}</h3>
             <p class="card__subtitle">{{.Params.subtitle}}</p>
