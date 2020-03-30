@@ -1,0 +1,45 @@
+@import '../base/breakpoints.css';
+@import '../components/card/list.css';
+
+.projects {
+  --spacing: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: calc(1rem / 2);
+}
+
+.card {
+  margin: calc(1rem / 2);
+  flex: 2 0 auto;
+  min-width: 19em;
+  max-width: calc(100% - 5rem);
+}
+
+.card__header {
+  white-space: nowrap;
+}
+.buttons {
+  flex-wrap: nowrap;
+}
+
+@media (--home-projects-text) {
+  .card {
+    min-width: auto;
+  }
+  .card__header {
+    white-space: normal;
+  }
+  .buttons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (--small-screen) {
+  .card__title {
+    font-size: 1.4em;
+  }
+  .button {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,16 @@
+.hero {
+  --block: #ddd;
+  background: center / cover no-repeat #b7b7b7 url('/hero.jpg');
+  background-image: url('/hero.jpg');
+}
+.hero__content {
+  font-size: 1.2em;
+  color: var(--dark-text);
+  text-shadow: 1px 1px 1px #b6b6b6;
+}
+
+.profile {
+  border-radius: 50%;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+  max-width: none;
+}

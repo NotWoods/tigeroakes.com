@@ -1,0 +1,119 @@
+@import '../components/button/cta.css';
+@import '../components/button/nav.css';
+
+.button--pdf {
+  --block: #cd372d;
+
+  padding: 0.6em 2em;
+
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.resume {
+  max-width: 7.5in;
+  padding: 0.5in;
+  margin: 2em auto;
+
+  color: var(--dark-text);
+  font-size: 11pt;
+  background: white;
+}
+
+a {
+  color: inherit;
+}
+
+.section, h2, h5, p {
+  margin: 0;
+}
+.summary, .resume-contact, .pipe-list, ul {
+  margin: 0 0 8pt;
+}
+
+.name {
+  margin: 0;
+
+  font-size: 22pt;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.summary {
+  font-size: 12pt;
+  color: #404040;
+  font-style: italic;
+}
+
+/* Heading 1: Section headers */
+.section {
+  /* expects: .block */
+  --block-width: 0.25cm;
+
+  font-size: 14pt;
+
+  margin-bottom: 3pt;
+  position: relative;
+}
+.section::before {
+  top: -0.025cm;
+}
+
+/* Heading 2: Job and Project titles */
+h2 {
+  font-size: 12pt;
+}
+.position {
+  font-weight: normal;
+}
+
+/* Heading 4: Dates */
+h5 {
+  float: right;
+
+  font-weight: normal;
+  font-size: 9pt;
+  color: var(--primary-color);
+}
+
+/* Position subtitles */
+em {
+  font-size: 10pt;
+  color: #5a5a5a;
+}
+
+sup {
+  font-size: 0.6em;
+}
+
+ul {
+  list-style: square;
+  line-height: 1.25em;
+
+  margin-top: 2pt;
+  padding: 0 0 0 1em;
+  clear: right;
+}
+
+.education {
+  margin-bottom: 12pt;
+}
+
+@media (max-width: 6in) {
+  .resume {
+    padding: 0.3in;
+  }
+}
+@media print {
+  .banner__wrap,
+  .cta__wrap,
+  .contact {
+    display: none;
+  }
+  .resume {
+    padding: 0;
+  }
+  body {
+    background: transparent;
+  }
+}

@@ -1,0 +1,23 @@
+.buttons {
+  --space: 0.2em;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--space) * -1);
+}
+
+.button {
+  /* expects: .shadow */
+  margin: var(--space);
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  position: relative;
+
+  color: inherit;
+  background: var(--block);
+  text-align: center;
+  white-space: nowrap;
+}
+.button::after {
+  border: 1px solid;
+}

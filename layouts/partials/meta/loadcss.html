@@ -1,0 +1,2 @@
+{{ $script := resources.Get "js/loadcss.js" | minify }}
+<script>{{ $script.Content | safeJS }}</script>

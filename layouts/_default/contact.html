@@ -1,18 +1,18 @@
 {{ define "head" }}
-    {{ partial "meta/scss.html" (resources.Get "sass/contact/page.scss" | resources.ExecuteAsTemplate "contact.scss" .) }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/contact.css" | resources.ExecuteAsTemplate "css/pages/contact.css" .) }}
 {{ end }}
 {{ define "main" }}
     <main class="contact">
         {{.Content}}
         {{ with .Site.Data.contact.email }}
-        <a href="{{.link}}" class="contact-link email">
+        <a href="{{.link}}" class="block block--bottom block--animate contact__link email">
             {{.text | markdownify}}
         </a>
         {{ end }}
         <p>{{ i18n "find_at" }}</p>
         {{ range .Site.Data.contact.social }}
         <p>
-        <a href="{{.link}}" class="contact-link">
+        <a href="{{.link}}" class="block block--bottom block--animate contact__link">
             {{.text | markdownify}}
         </a>
         </p>

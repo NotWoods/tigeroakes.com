@@ -9,6 +9,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#e66d31">
+    {{ partialCached "meta/loadcss.html" . }}
+    {{ partialCached "meta/postcss.html" (resources.Get "css/core.css") "css/core.css" }}
+    {{ partialCached "meta/async-postcss.html" (resources.Get "css/async.css") "css/async.css" }}
     {{ range .AlternativeOutputFormats }}
     <link rel="{{.Rel}}" type="{{.MediaType.Type}}" href="{{.Permalink}}" title="{{$.Site.Title}}">
     {{ end }}

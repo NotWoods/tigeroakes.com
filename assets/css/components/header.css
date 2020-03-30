@@ -1,0 +1,38 @@
+@import '../base/breakpoints.css';
+
+.header {
+  /* expects: .card */
+  display: block;
+}
+
+.header__content {
+  /* expects: .inner */
+  display: grid;
+  grid-template:
+    'text' min-content
+    'buttons' min-content
+    / 1fr;
+}
+.header__content--with-image {
+  grid-template:
+    'image text' min-content
+    'buttons buttons' min-content
+    / min-content 1fr;
+  grid-column-gap: 4em;
+}
+
+.header .buttons {
+  grid-area: buttons;
+  justify-content: center;
+}
+
+@media (--home-projects-text) {
+  .header__content {
+    grid-template:
+      'image' min-content
+      'text' min-content
+      'buttons' min-content
+      / 1fr;
+    justify-items: center;
+  }
+}

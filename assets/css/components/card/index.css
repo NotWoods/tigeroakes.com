@@ -1,0 +1,28 @@
+/* Core styles for project cards, article headers, talk items, etc...
+   Has a blurry background, header with a block, buttons */
+.card {
+  padding: 2rem;
+
+  background: center / cover no-repeat #555;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+/* Project name, post/talk title
+   Should also have the "block" class. */
+.card__title {
+  /* expects: .block */
+
+  margin: 1em 0 0.2em;
+
+  font-size: 1.5em;
+}
+
+/* Project description, post/talk date */
+.card__subtitle {
+  margin: 0 0 0.1em;
+}
+
+.card .buttons {
+  margin-top: calc(1rem - var(--space));
+}

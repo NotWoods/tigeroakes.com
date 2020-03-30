@@ -1,17 +1,16 @@
 {{ define "head" }}
-    {{ partial "meta/scss.html" (resources.Get "sass/project/page.scss") }}
-    {{ partial "meta/async-scss.html" "sass/extra.scss" }}
+    {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/article.css") "css/pages/article.css" }}
     {{ partial "meta/twitter-summary.html" . }}
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
     <article class="article">
-        <header class="header article__header post project hero project-text" style='{{ partial "project/style.css" . | safeCSS }}'>
+        <header class="card header article__header" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="header__content header__content--with-image inner">
                 {{ partial "project/image.html" . }}
-                <div class="header__text project-hero-text">
-                    <h1 class="header__title project-header highlight-title">{{.Title}}</h1>
-                    <p class="header__subtitle project-text">{{.Params.subtitle}}</p>
+                <div class="header__text">
+                    <h1 class="block card__title ">{{.Title}}</h1>
+                    <p class="card__subtitle">{{.Params.subtitle}}</p>
                     {{ partial "project/tech_list.html" .Params.tech }}
                 </div>
 

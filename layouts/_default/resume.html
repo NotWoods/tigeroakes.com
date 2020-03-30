@@ -1,10 +1,10 @@
 {{ define "head" }}
-    {{ partial "meta/scss.html" (resources.Get "sass/resume/page.scss") }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/resume.css") }}
 {{ end }}
 {{ define "main" }}
     {{/* Button linking to the PDF download of my resume. */}}
-    <div class="cta-wrap">
-        <a class="pdf-button button-link shadow" href="{{.Params.pdf}}">
+    <div class="cta__wrap">
+        <a class="shadow button button--pdf" href="{{.Params.pdf}}">
             {{ i18n "pdf" }}
         </a>
     </div>
@@ -12,16 +12,16 @@
     {{ with (getJSON .Params.json_resume) }}
     <main class="resume">
         {{/* Header of the resume, including my name, summary, and contact info. */}}
-        <header class="resume-header">
+        <header class="resume__header">
             <h1 class="name">{{.basics.name}}</h1>
 
             <p class="resume-contact pipe-list">
                 <a class="resume-email" href="mailto:{{.basics.email}}">{{.basics.email}}</a> |
-                {{- range .basics.profiles -}}
+                {{ range .basics.profiles }}
                 {{- if eq .network "GitHub" -}}
                 <a class="resume-github" href="{{.url}}">github.com/{{.username}}</a> |
                 {{- end -}}
-                {{- end -}}
+                {{ end }}
                 <span class="resume-city">{{.basics.location.city}}, {{.basics.location.region}} (US Citizen)</span>
             </p>
 
@@ -30,15 +30,15 @@
 
         <div class="resume-body">
             {{ $format := "2006-01" }}
-            <h1>{{ i18n "resume_work" }}</h1>
+            <h1 class="block section">{{ i18n "resume_work" }}</h1>
             <div class="work-experience">
                 {{ range .work }}
-                <h5>
+                <h5 class="date">
                     {{ dateFormat $format .startDate }}
                     —
                     {{ dateFormat $format .endDate }}
                 </h5>
-                <h2><a href="{{.website}}" class="company">{{ .company }}</a>, <span class="position">{{ .position }}</span></h2>
+                <h2 class="title"><a href="{{.website}}" class="company">{{ .company }}</a>, <span class="position">{{ .position }}</span></h2>
                 {{ if .summary }}
                 <em>{{ .summary }}</em>
                 {{ end }}
@@ -52,10 +52,10 @@
                 {{ end }}
             </div>
 
-            <h1>{{ i18n "resume_projects" }}</h1>
+            <h1 class="block section">{{ i18n "resume_projects" }}</h1>
             <div class="resume-projects">
                 {{ range .projects }}
-                <h5>
+                <h5 class="date">
                     {{ if .startDate }}
                     {{ dateFormat $format .startDate }}
                     {{ if not (eq .startDate .endDate) }}
@@ -64,7 +64,7 @@
                     {{ end }}
                     {{ end }}
                 </h5>
-                <h2>
+                <h2 class="title">
                     {{ if .url }}
                     <a href="{{.url}}">{{ .name }}</a>
                     {{ else }}
@@ -82,31 +82,31 @@
                 {{ end }}
             </div>
 
-            <h1>{{ i18n "resume_skills" }}</h1>
+            <h1 class="block section">{{ i18n "resume_skills" }}</h1>
             <p class="skills pipe-list">
                 {{ $len := (len .skills) }}
-                {{- range $idx, $skill := .skills -}}
+                {{ range $idx, $skill := .skills }}
                 {{ $skill.name }}
-                {{- if lt (add $idx 1) $len -}} | {{- end -}}
-                {{- end -}}
+                {{ if lt (add $idx 1) $len }} | {{ end }}
+                {{ end }}
             </p>
 
-            <h1>{{ i18n "resume_education" }}</h1>
+            <h1 class="block section">{{ i18n "resume_education" }}</h1>
             <div class="education">
                 {{ range .education }}
-                <h5>
+                <h5 class="date">
                     {{ dateFormat $format .startDate }}
                     —
                     {{ dateFormat $format .endDate }}
                 </h5>
-                <h2>
+                <h2 class="title">
                     <span class="institution">{{.institution}}</span>,
                     <span class="position">{{.studyType}} in {{.area}}, 4<sup>th</sup> year</span>
                 </h2>
                 {{ end }}
             </div>
 
-            <h1>{{ i18n "resume_awards" }}</h1>
+            <h1 class="block section">{{ i18n "resume_awards" }}</h1>
             <ul class="awards">
                 {{ range .awards }}
                 <li>{{.title}}</li>

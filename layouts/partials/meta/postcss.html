@@ -1,0 +1,2 @@
+{{ $style := . | postCSS (dict "config" "postcss.config.js" "inlineImports" true) }}
+<link rel="stylesheet" href='{{ $style.RelPermalink }}'>

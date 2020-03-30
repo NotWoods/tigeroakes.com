@@ -20,14 +20,14 @@ export function update(data) {
   document.querySelector('.education').innerHTML = data.education
     .map(
       e => `
-              <h5>${formatDates(e.startDate, e.endDate)}</h5>
-              <h2>
-                <span class="institution">${e.institution}</span>
-                <span class="position">${e.studyType} in ${
+        <h5>${formatDates(e.startDate, e.endDate)}</h5>
+        <h2>
+          <span class="institution">${e.institution}</span>
+          <span class="position">${e.studyType} in ${
         e.area
       }, 4<sup>th</sup> year</span>
-              </h2>
-            `
+        </h2>
+      `
     )
     .join('');
 
@@ -35,14 +35,14 @@ export function update(data) {
   document.querySelector('.work-experience').innerHTML = data.work
     .map(
       w => `
-              <h5>${formatDates(w.startDate, w.endDate)}</h5>
-              <h2>
-                <a href="${w.website}" class="company">${w.company}</a>,
-                <span class="position">${w.position}</span>
-              </h2>
-              ${w.summary ? `<em>${w.summary}</em>` : ''}
-              ${highlights(w.highlights)}
-            `
+        <h5>${formatDates(w.startDate, w.endDate)}</h5>
+        <h2>
+          <a href="${w.website}" class="company">${w.company}</a>,
+          <span class="position">${w.position}</span>
+        </h2>
+        ${w.summary ? `<em>${w.summary}</em>` : ''}
+        ${highlights(w.highlights)}
+      `
     )
     .join('');
 

@@ -1,11 +1,10 @@
 {{ define "head" }}
-    {{ partial "meta/scss.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
-    {{ partial "meta/async-scss.html" "sass/extra.scss" }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/home.css" | resources.ExecuteAsTemplate "css/pages/home.css" .) }}
     {{ partial "meta/twitter-summary.html" . }}
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
-    <section class="hero">
+    <section class="card hero">
         <div class="hero__content">
             <h1 class="home__heading">{{.Title}}</h1>
             <p class="home__subtitle">{{.Params.subtitle}}</p>
@@ -13,10 +12,8 @@
     </section>
 
     <section class="about">
-        <div class="inner about-content">
-            <div class="about-text">
-                {{.Content}}
-            </div>
+        <div class="inner about__content">
+            <div>{{.Content}}</div>
 
             {{ with .Resources.GetMatch "profile.jpg" }}
             {{ $1x := .Resize "160x" }}
@@ -30,14 +27,14 @@
         </div>
     </section>
 
-    <section class="featured-projects projects project-text" id="featured">
+    <section class="featured-projects projects" id="featured">
         {{ range (.GetPage "projects").Pages }}
         {{ if .Params.feature }}
-        <article class="project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
+        <article class="card featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="inner">
-                <h3 class="project-header highlight-title">{{.Title}}</h3>
+                <h3 class="block card__title">{{.Title}}</h3>
                 {{ partial "project/tech_list.html" .Params.tech }}
-                <p class="featured-project-text">
+                <p class="card__description">
                     {{.Description | default .Summary}}
                 </p>
                 {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}

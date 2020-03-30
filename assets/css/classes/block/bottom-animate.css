@@ -1,0 +1,14 @@
+/* Hides the block then makes it grow on hover */
+.block--bottom.block--animate::before {
+  /* expects: .block */
+
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.block--bottom.block--animate:hover::before,
+.block--bottom.block--animate:focus::before {
+  transform: scaleY(1);
+}
+.block--bottom.block--animate:active::before {
+  transform: scaleY(0.5);
+}

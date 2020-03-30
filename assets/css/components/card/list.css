@@ -1,0 +1,25 @@
+/* Styles for pages with lists of cards, such as projects and talks. */
+
+.card {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project logo, talk thumbnail */
+.card__icon {
+  align-self: center;
+  height: auto;
+  max-width: 100%;
+}
+
+.card .tags {
+  margin-bottom: auto;
+}
+.card .buttons {
+  justify-content: center;
+}
+.card .button {
+  flex: 1;
+  max-width: 7em;
+}

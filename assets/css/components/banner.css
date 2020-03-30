@@ -1,0 +1,83 @@
+@import '../base/breakpoints.css';
+
+/* Banner displayed at the top of the site */
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Outer element for the banner */
+.banner__wrap {
+  padding: 1em 0;
+
+  background: var(--light-background);
+}
+
+.nav {
+  margin-left: auto;
+  line-height: 1.3em;
+}
+
+.nav__link {
+  /* expects: .block.block--animate */
+  --block-offset: calc(var(--block-width) * -1);
+
+  margin-left: 1rem;
+  display: inline-block;
+  padding: 0 0.5rem;
+
+  transition-duration: 0.1s;
+}
+.nav__link--current {
+  font-weight: bold;
+}
+
+.logo {
+  color: inherit;
+  text-transform: uppercase;
+}
+.logo__icon, .logo__title {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  font-size: 1.1rem;
+}
+/* Square icon to the side of title */
+.logo__icon {
+  /* expects: .icon.shadow */
+  margin-right: 0.75rem;
+
+  --small-shadow: none;
+  --large-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+/* Events on the logo link should affect the icon */
+.logo:hover .logo__icon::after,
+.logo:focus .logo__icon::after {
+  opacity: 1;
+}
+.logo:active .logo__icon::after {
+  opacity: 0.5;
+}
+
+.banner:hover .logo__icon::after {
+  will-change: opacity;
+}
+.banner:hover .nav__link {
+  will-change: transform;
+}
+
+@media (--banner-wrap) {
+  .banner {
+    flex-flow: column nowrap;
+    align-items: stretch;
+    text-align: center;
+  }
+  .nav {
+    margin: 1rem 0 0;
+  }
+  .nav__link {
+    margin: 0;
+  }
+  .nav__link::before {
+    left: -0.25rem;
+  }
+}

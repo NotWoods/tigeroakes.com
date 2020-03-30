@@ -1,0 +1,35 @@
+@import '../../base/breakpoints.css';
+
+/* Article navigation, with CTA and prev/next links */
+.article__nav {
+  /* expects: .inner.cta__wrap */
+  display: grid;
+  grid-template:
+    'navprev button navnext' 1fr
+    / 1fr auto 1fr;
+  align-items: center;
+
+  gap: 1rem;
+}
+.article__nav-link {
+  font-size: 0.7em;
+}
+.article__nav-link:first-child {
+  grid-area: navprev;
+}
+.article__nav-link:last-child {
+  grid-area: navnext;
+}
+.article__nav .button {
+  grid-area: button;
+}
+
+@media (--home-projects-text) {
+  .article__nav {
+    grid-template:
+      'navprev' auto
+      'button' auto
+      'navnext' auto
+      / 1fr;
+  }
+}

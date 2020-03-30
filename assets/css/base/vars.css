@@ -1,0 +1,32 @@
+/* Primary colors for the site */
+:root {
+  --site-width: 50rem;
+  --dark-text: rgba(0, 0, 0, 0.87);
+  --light-text: rgba(255, 255, 255, 0.87);
+
+  --primary-color: hsl(19.9, 78.4%, 54.7%);
+  --light-color: hsl(19.9, 78.4%, 64.7%);
+  --link-color: hsl(19.9, 78.4%, 42.7%);
+  --font-color: var(--dark-text);
+  --inverse-font-color: var(--light-text);
+
+  /* Background colors */
+  --background-color: #f0f0f0;
+  --light-background: #fff;
+  --dark-background: #333;
+
+  /* Default value for blocks next to headers */
+  --block: var(--primary-color);
+}
+
+/* Dark theme colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link-color: var(--light-color);
+    --font-color: var(--light-text);
+    --inverse-font-color: var(--dark-text);
+    --background-color: #333;
+    --light-background: #242424;
+    --dark-background: #111;
+  }
+}
