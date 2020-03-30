@@ -1,6 +1,6 @@
 @import '../base/breakpoints.css';
 @import '../components/card/list.css';
-@import '../components/hero/index.css';
+@import '../components/hero.css';
 @import '../components/header.css';
 
 .talks {

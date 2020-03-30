@@ -1,23 +1,18 @@
 // @ts-check
-const postcssPresetEnv = require('postcss-preset-env');
+const postcssColorHexAlpha = require('postcss-color-hex-alpha');
+const postcssCustomMedia = require('postcss-custom-media');
+const postcssGapProperties = require('postcss-gap-properties');
+const postcssPlace = require('postcss-place');
+const postcssSelectorMatches = require('postcss-selector-matches');
 const cssNano = require('cssnano');
 
 /** @type {import('postcss').AcceptedPlugin[]} */
 const plugins = [
-  postcssPresetEnv({
-    stage: false,
-    features: {
-      'custom-media-queries': true,
-      'hexadecimal-alpha-notation': true,
-      'gap-properties': true,
-      'matches-pseudo-class': true,
-      'nesting-rules': true,
-      'place-properties': true,
-    },
-    autoprefixer: {
-      add: false,
-    },
-  }),
+  postcssColorHexAlpha({ preserve: false }),
+  postcssCustomMedia({ preserve: false }),
+  postcssGapProperties({ preserve: true }),
+  postcssPlace({ preserve: false }),
+  postcssSelectorMatches(),
   cssNano({
     preset: [
       'default',

@@ -1,6 +1,6 @@
 @import '../base/breakpoints.css';
 @import '../components/button/cta.css';
-@import '../components/hero/index.css';
+@import '../components/hero.css';
 
 .hero__content {
   text-align: center;
