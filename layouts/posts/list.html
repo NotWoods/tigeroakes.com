@@ -1,9 +1,9 @@
 {{ define "head" }}
-    {{ partial "meta/scss.html" (resources.Get "sass/posts/list.scss") }}
+{{ partial "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") }}
 {{ end }}
 {{ define "main" }}
-    <header class="header about">
-        <div class="header__content header__content--with-image inner">
+    <header class="card hero header about">
+        <div class="hero__content header__content header__content--with-image inner">
             {{ partial "small_profile.html" . }}
             <div class="header__text about-text">
                 {{.Content}}
@@ -12,19 +12,17 @@
             {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
         </div>
     </header>
-    {{ range .Site.Author }}
-        {{ . }}
-    {{ end }}
+
     <main class="posts">
         {{ range .Pages }}
         {{ $bkg := .Resources.GetMatch "background.*" }}
-        <article class="post-summary">
+        <article class="post">
             <div class="inner">
-                <h3 class="post-header">
-                    <a class="post-header-link highlight-title" href='{{.RelPermalink}}'>{{.Title}}</a>
+                <h3 class="card__title">
+                    <a class="block block--animate post-header-link highlight-title" href='{{.RelPermalink}}'>{{.Title}}</a>
                 </h3>
                 <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="tags metadata">{{ .PublishDate.Format "2 January 2006" }}</time>
-                <p class="post-text">{{ .Description }}</p>
+                <p class="card__description post-text">{{ .Description }}</p>
             </div>
         </article>
         {{ end }}

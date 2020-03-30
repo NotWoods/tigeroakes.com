@@ -1,5 +1,5 @@
 {{ define "head" }}
-    {{ partial "meta/scss.html" (resources.Get "sass/home/page.scss" | resources.ExecuteAsTemplate "home.scss" .) }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/home.css" | resources.ExecuteAsTemplate "css/pages/home.css" .) }}
     {{ partial "meta/twitter-summary.html" . }}
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
@@ -12,7 +12,7 @@
     </section>
 
     <section class="about">
-        <div class="inner about-content">
+        <div class="inner about__content">
             <div class="about-text">
                 {{.Content}}
             </div>
@@ -32,11 +32,11 @@
     <section class="featured-projects projects project-text" id="featured">
         {{ range (.GetPage "projects").Pages }}
         {{ if .Params.feature }}
-        <article class="project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
+        <article class="card project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="inner">
-                <h3 class="project-header highlight-title">{{.Title}}</h3>
+                <h3 class="block card__title project-header highlight-title">{{.Title}}</h3>
                 {{ partial "project/tech_list.html" .Params.tech }}
-                <p class="featured-project-text">
+                <p class="card__description featured-project-text">
                     {{.Description | default .Summary}}
                 </p>
                 {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}

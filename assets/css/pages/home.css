@@ -1,0 +1,70 @@
+@import '../base/breakpoints.css';
+@import '../components/button/cta.css';
+@import '../components/hero/index.css';
+
+.hero__content {
+  text-align: center;
+  padding: 5em 0em;
+}
+
+.home__heading {
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+.home__heading,
+.home__subtitle {
+  margin: 0 auto;
+  max-width: calc(var(--site-width) / 2);
+}
+
+.about {
+  background: var(--light-background);
+
+  padding: 2rem 0;
+}
+.about__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile {
+  flex: 0 0 160px;
+  margin-left: 5em;
+}
+@media (prefers-color-scheme: dark) {
+  .profile {
+    box-shadow: 0 2px 1px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.featured-projects {
+  font-size: 1.1em;
+}
+.featured-project {
+  padding: 4rem 3.5rem 5rem;
+}
+
+.contact {
+  background: var(--dark-background);
+  color: white;
+  font-size: 1.25em;
+}
+
+@media (--home-projects-text) {
+  .featured-projects {
+    font-size: 0.9em;
+  }
+}
+
+@media (--banner-wrap) {
+  .about__content {
+    flex-wrap: wrap-reverse;
+  }
+  .profile {
+    margin: 0;
+  }
+
+  .featured-project {
+    padding: 2rem;
+  }
+}

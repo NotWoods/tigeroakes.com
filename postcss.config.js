@@ -14,6 +14,9 @@ const plugins = [
       'nesting-rules': true,
       'place-properties': true,
     },
+    autoprefixer: {
+      add: false,
+    },
   }),
   cssNano({
     preset: [

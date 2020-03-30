@@ -1,6 +1,6 @@
 {{ $logo := .Resources.GetMatch "logo.svg" }}
 {{ if $logo }}
-<img src="{{$logo.RelPermalink}}" height="128" width="128" alt="{{.Title}} Logo" class="project-logo">
+<img src="{{$logo.RelPermalink}}" height="128" width="128" alt="{{.Title}} Logo" class="card__icon project-logo">
 {{ else }}
 {{ $logo := .Resources.GetMatch "logo.png" }}
 {{ $1x := $logo.Resize "128x" }}
@@ -9,5 +9,5 @@
 {{ $4x := $logo.Resize "512x" }}
 <img src="{{$1x.RelPermalink}}"
     srcset="{{$2x.RelPermalink}} 2x, {{$3x.RelPermalink}} 3x, {{$4x.RelPermalink}} 4x"
-    height="128" width="128" alt="{{.Title}}" class="project-logo">
+    height="128" width="128" alt="{{.Title}}" class="card__icon project-logo">
 {{ end }}

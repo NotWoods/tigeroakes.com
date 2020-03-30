@@ -1,2 +1,3 @@
 /* Wrap point for the top banner */
 @custom-media --banner-wrap (max-width: 44rem);
+@custom-media --home-projects-text (max-width: 30rem);

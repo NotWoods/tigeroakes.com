@@ -1,0 +1,20 @@
+@import '../base/breakpoints.css';
+@import '../components/hero/index.css';
+@import '../components/header.css';
+
+.posts {
+  margin-top: 2rem;
+
+  font-size: 1.1em;
+}
+
+.post {
+  margin: 1rem 0;
+  padding: 0.1rem 3rem;
+}
+
+@media (--home-projects-text) {
+  .posts {
+    font-size: 0.9em;
+  }
+}

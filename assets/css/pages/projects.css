@@ -1,0 +1,16 @@
+@import '../components/card/list.css';
+
+.projects {
+  --spacing: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: calc(1rem / 2);
+}
+
+.card {
+  margin: calc(1rem / 2);
+  flex: 2 0 auto;
+  min-width: 19em;
+  max-width: calc(100% - 5rem);
+}

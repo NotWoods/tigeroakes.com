@@ -9,6 +9,17 @@
 /* Project logo, talk thumbnail */
 .card__icon {
   align-self: center;
-  margin-bottom: 2rem;
   height: auto;
+  max-width: 100%;
+}
+
+.card .tags {
+  margin-bottom: auto;
+}
+.card .buttons {
+  justify-content: center;
+}
+.card .button {
+  flex: 1;
+  max-width: 7em;
 }

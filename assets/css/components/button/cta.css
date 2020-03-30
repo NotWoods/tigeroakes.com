@@ -1,6 +1,10 @@
 /* Wrapper element for CTA .button, places it in the center */
 .cta__wrap {
-  margin: 2rem 0;
+  --block: #fff;
+  color: var(--dark-text);
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
   font-size: 1.5em;
 }

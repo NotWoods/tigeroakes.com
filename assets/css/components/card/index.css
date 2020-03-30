@@ -3,7 +3,7 @@
 .card {
   padding: 2rem;
 
-  background: center / cover no-repeat #b7b7b7;
+  background: center / cover no-repeat #555;
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
@@ -13,7 +13,7 @@
 .card__title {
   /* expects: .block */
 
-  margin: 0 0 0.2em;
+  margin: 1em 0 0.2em;
 
   font-size: 1.5em;
 }
@@ -21,4 +21,8 @@
 /* Project description, post/talk date */
 .card__subtitle {
   margin: 0 0 0.1em;
+}
+
+.card .buttons {
+  margin-top: calc(1rem - var(--space));
 }

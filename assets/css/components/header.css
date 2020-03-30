@@ -1,0 +1,25 @@
+.header {
+  /* expects: .card */
+  display: block;
+  padding: 2rem 0;
+}
+
+.header__content {
+  /* expects: .inner */
+  display: grid;
+  grid-template:
+    'text' min-content
+    'buttons' min-content
+    / 1fr;
+}
+.header__content--with-image {
+  grid-template:
+    'image text' min-content
+    'buttons buttons' min-content
+    / min-content 1fr;
+  grid-column-gap: 4em;
+}
+
+.header .buttons {
+  grid-area: buttons;
+}

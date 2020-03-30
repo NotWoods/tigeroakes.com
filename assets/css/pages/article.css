@@ -1,0 +1,44 @@
+@import '../base/breakpoints.css';
+@import '../components/header.css';
+@import '../components/button/cta.css';
+@import '../components/button/nav.css';
+
+.buttons {
+  --link-space: 0.3em;
+
+  justify-self: center;
+  font-size: 1.2em;
+}
+
+.article__body {
+  margin-top: -0.5rem;
+  padding: 1rem 3rem 3rem;
+
+  background: var(--light-background);
+  line-height: 1.5em;
+}
+.article__body h2 {
+  margin: 1.5em 0 0.5em;
+}
+
+hr {
+  max-width: 10em;
+  margin: 3vh auto 5vh;
+
+  border-color: black;
+}
+
+img.center,
+video.center {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (--banner-wrap) {
+  img.center,
+  video.center {
+    width: 100%;
+  }
+}

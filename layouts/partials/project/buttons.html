@@ -1,5 +1,5 @@
 {{/* Input should be dict of button name to button link */}}
-<div class="button-links project-links">
+<div class="buttons button-links project-links">
     {{- range .links -}}
     {{- $scratch := newScratch -}}
     {{- if (isset . "link") }}
@@ -9,7 +9,7 @@
     {{- else -}}
         {{ $scratch.Set "link" $.page }}
     {{- end -}}
-    <a class="button-link shadow" href='{{$scratch.Get "link"}}'>
+    <a class="button button-link shadow" href='{{$scratch.Get "link"}}'>
         {{- .title -}}
     </a>
     {{- end -}}
