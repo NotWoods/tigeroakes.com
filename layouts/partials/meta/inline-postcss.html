@@ -1,2 +1,2 @@
-{{ $style := . | resources.PostCSS (dict "config" "postcss.config.js" "inlineImports" true) }}
+{{ $style := . | postCSS (dict "config" "postcss.config.js" "inlineImports" true) }}
 <style>{{ $style.Content | safeCSS }}</style>

@@ -1,17 +1,8 @@
 {{ define "head" }}
-{{ partial "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") }}
 {{ end }}
 {{ define "main" }}
-    <header class="card hero header about">
-        <div class="hero__content header__content header__content--with-image inner">
-            {{ partial "small_profile.html" . }}
-            <div class="header__text about-text">
-                {{.Content}}
-            </div>
-
-            {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
-        </div>
-    </header>
+    {{ partial "mini_hero.html" . }}
 
     <main class="posts">
         {{ range .Pages }}
@@ -19,10 +10,10 @@
         <article class="post">
             <div class="inner">
                 <h3 class="card__title">
-                    <a class="block block--animate post-header-link highlight-title" href='{{.RelPermalink}}'>{{.Title}}</a>
+                    <a class="block block--animate" href='{{.RelPermalink}}'>{{.Title}}</a>
                 </h3>
-                <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="tags metadata">{{ .PublishDate.Format "2 January 2006" }}</time>
-                <p class="card__description post-text">{{ .Description }}</p>
+                <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="tags">{{ .PublishDate.Format "2 January 2006" }}</time>
+                <p class="card__description">{{ .Description }}</p>
             </div>
         </article>
         {{ end }}

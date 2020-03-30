@@ -13,9 +13,7 @@
 
     <section class="about">
         <div class="inner about__content">
-            <div class="about-text">
-                {{.Content}}
-            </div>
+            <div>{{.Content}}</div>
 
             {{ with .Resources.GetMatch "profile.jpg" }}
             {{ $1x := .Resize "160x" }}
@@ -29,14 +27,14 @@
         </div>
     </section>
 
-    <section class="featured-projects projects project-text" id="featured">
+    <section class="featured-projects projects" id="featured">
         {{ range (.GetPage "projects").Pages }}
         {{ if .Params.feature }}
-        <article class="card project featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
+        <article class="card featured-project" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="inner">
-                <h3 class="block card__title project-header highlight-title">{{.Title}}</h3>
+                <h3 class="block card__title">{{.Title}}</h3>
                 {{ partial "project/tech_list.html" .Params.tech }}
-                <p class="card__description featured-project-text">
+                <p class="card__description">
                     {{.Description | default .Summary}}
                 </p>
                 {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}

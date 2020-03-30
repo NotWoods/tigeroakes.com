@@ -1,10 +1,10 @@
 {{ define "head" }}
-{{ partial "meta/inline-postcss.html" (resources.Get "css/pages/resume.css") }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/resume.css") }}
 {{ end }}
 {{ define "main" }}
     {{/* Button linking to the PDF download of my resume. */}}
-    <div class="cta__wrap cta-wrap">
-        <a class="shadow button button--pdf pdf-button button-link" href="{{.Params.pdf}}">
+    <div class="cta__wrap">
+        <a class="shadow button button--pdf" href="{{.Params.pdf}}">
             {{ i18n "pdf" }}
         </a>
     </div>

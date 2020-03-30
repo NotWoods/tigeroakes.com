@@ -1,7 +1,7 @@
 {{ define "head" }}
-    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/article.css") }}
+    {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/article.css") "css/pages/article.css" }}
     {{ if in .Content "<code>" }}
-        {{ partial "meta/async-postcss.html" (resources.Get "css/highlight.css") }}
+        {{ partialCached "meta/async-postcss.html" (resources.Get "css/highlight.css") "css/highlight.css" }}
     {{ end }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
@@ -9,11 +9,11 @@
 {{ define "main" }}
     <article class="article">
         {{ $bkg := .Resources.GetMatch "background.*" }}
-        <header class="card header article__header hero post project-text"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
+        <header class="card header article__header"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
             <div class="header__content inner">
                 <div class="header__text">
-                    <h1 class="block card__title header__title highlight-title">{{.Title}}</h1>
-                    <time class="card__subtitle header__subtitle" datetime='{{ .PublishDate.Format "2006-01-02" }}'>
+                    <h1 class="block card__title">{{.Title}}</h1>
+                    <time class="card__subtitle" datetime='{{ .PublishDate.Format "2006-01-02" }}'>
                         {{ .PublishDate.Format "2 January 2006" }}
                     </time>
                     {{ partial "project/tech_list.html" .Params.tags }}

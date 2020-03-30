@@ -1,0 +1,10 @@
+<header class="card hero header">
+  <div class="hero__content header__content header__content--with-image inner">
+    {{ partialCached "small_profile.html" . }}
+    <div class="header__text">
+      {{.Content}}
+    </div>
+
+    {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
+  </div>
+</header>

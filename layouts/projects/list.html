@@ -2,12 +2,12 @@
     {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/projects.css") }}
 {{ end }}
 {{ define "main" }}
-    <main class="projects project-text">
+    <main class="projects">
     {{ range .Pages }}
-        <article class="card project{{ if .Params.feature }} feature{{ end }}" style='{{ partial "project/style.css" . | safeCSS }}'>
+        <article class="card{{ if .Params.feature }} feature{{ end }}" style='{{ partial "project/style.css" . | safeCSS }}'>
             {{ partial "project/image.html" . }}
-            <h3 class="block card__title project-header highlight-title">{{.Title}}</h3>
-            <p class="card__subtitle project-text">{{.Params.subtitle}}</p>
+            <h3 class="block card__title">{{.Title}}</h3>
+            <p class="card__subtitle">{{.Params.subtitle}}</p>
             {{ partial "project/tech_list.html" .Params.tech }}
             {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
         </article>
