@@ -16,6 +16,7 @@
     "postcss-color-hex-alpha": "^5.0.3",
     "postcss-custom-media": "^7.0.8",
     "postcss-gap-properties": "^2.0.0",
+    "postcss-inset": "^1.0.0",
     "postcss-place": "^4.0.1",
     "postcss-selector-matches": "^4.0.0",
     "prettier": "^1.19.1"
