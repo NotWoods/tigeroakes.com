@@ -1,4 +1,5 @@
 // @ts-check
+const postcssColorFunctionalNotation = require('postcss-color-functional-notation');
 const postcssColorHexAlpha = require('postcss-color-hex-alpha');
 const postcssCustomMedia = require('postcss-custom-media');
 const postcssGapProperties = require('postcss-gap-properties');
@@ -9,6 +10,7 @@ const cssNano = require('cssnano');
 
 /** @type {import('postcss').AcceptedPlugin[]} */
 const plugins = [
+  postcssColorFunctionalNotation({ preserve: false }),
   postcssColorHexAlpha({ preserve: false }),
   postcssCustomMedia({ preserve: false }),
   postcssGapProperties({ preserve: true }),

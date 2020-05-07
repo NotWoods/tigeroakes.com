@@ -1,12 +1,12 @@
 /* Primary colors for the site */
 :root {
   --site-width: 50rem;
-  --dark-text: rgba(0, 0, 0, 0.87);
-  --light-text: rgba(255, 255, 255, 0.87);
+  --dark-text: rgb(0 0 0 / 87%);
+  --light-text: rgb(255 255 255 / 87%);
 
-  --primary-color: hsl(19.9, 78.4%, 54.7%);
-  --light-color: hsl(19.9, 78.4%, 64.7%);
-  --link-color: hsl(19.9, 78.4%, 42.7%);
+  --primary-color: hsl(19.9deg 78.4% 54.7%);
+  --light-color: hsl(19.9deg 78.4% 64.7%);
+  --link-color: hsl(19.9deg 78.4% 42.7%);
   --font-color: var(--dark-text);
   --inverse-font-color: var(--light-text);
 

@@ -47,7 +47,7 @@
   margin-right: 0.75rem;
 
   --small-shadow: none;
-  --large-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  --large-shadow: 0 4px 4px rgb(0 0 0 / 30%);
 }
 /* Events on the logo link should affect the icon */
 .logo:hover .logo__icon::after,
