@@ -33,17 +33,10 @@
   "work": [
     {
       "company": "Mozilla",
-      "position": "Part-Time Android Student Worker",
-      "website": "https://github.com/mozilla-mobile/fenix",
-      "startDate": "2019-09-09",
-      "endDate": "2020-02-07"
-    },
-    {
-      "company": "Mozilla",
-      "position": "Firefox Android Developer Intern",
+      "position": "Firefox Android Developer Intern & Part-Time Student Worker",
       "website": "https://github.com/mozilla-mobile/fenix",
       "startDate": "2019-05-14",
-      "endDate": "2019-08-30",
+      "endDate": "2020-08-30",
       "highlights": [
         "Built and shipped brand new web browser in **Kotlin** to **over 500,000 users on Google Play Store**.",
         "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
