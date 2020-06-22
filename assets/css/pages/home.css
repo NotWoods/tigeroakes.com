@@ -13,8 +13,7 @@
 }
 .home__heading,
 .home__subtitle {
-  margin: 0 auto;
-  max-width: calc(var(--site-width) / 2);
+  margin: 0;
 }
 
 .about {

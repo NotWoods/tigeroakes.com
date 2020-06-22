@@ -7,7 +7,7 @@
     <section class="card hero">
         <div class="hero__content">
             <h1 class="home__heading">{{.Title}}</h1>
-            <p class="home__subtitle">{{.Params.subtitle}}</p>
+            <p class="home__subtitle">{{.Params.subtitle | markdownify}}</p>
         </div>
     </section>
 

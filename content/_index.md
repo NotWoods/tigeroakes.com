@@ -1,6 +1,6 @@
 ---
 title: Tiger Oakes
-subtitle: Software developer with 10 years experience. Built 2 mobile web browsers & hundreds of open source projects.
+subtitle: Software developer with 10 years experience. <br>Built 2 mobile web browsers & hundreds of open source projects.
 contact_color: white
 ---
 
