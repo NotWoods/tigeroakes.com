@@ -16,6 +16,13 @@
   transform: scaleX(0.5);
 }
 
+.tag--android {
+  --block: #28be6b;
+}
+.tag--web {
+  --block: #1c7cba;
+}
+
 @media (--home-projects-text) {
   .posts {
     font-size: 0.9em;

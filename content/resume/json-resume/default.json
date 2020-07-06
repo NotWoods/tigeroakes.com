@@ -40,6 +40,7 @@
       "highlights": [
         "Built and shipped brand new web browser in **Kotlin** to **over 10,000,000 users on Google Play Store**.",
         "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
+        "Built new Firefox DevTools features with **HTML5**, **CSS**, and **JavaScript** for the Applications panel.",
         "Added Trusted Web Activity support to Firefox Preview, **featured in Chrome Dev Summit 2019 keynote**.",
         "Wrote specifications for new web app features as member of the **World Wide Web Consortium**."
       ]
@@ -51,7 +52,7 @@
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
-        "Built internal tool used by entire Google Chrome for Android team with **JavaScript** and **Python**.",
+        "Built internal developer tool used by entire Google Chrome for Android team with **JavaScript** and **Python**.",
         "Used **streams** and **worker threads** to handle 180 MB downloads, rendering partial data in under 1 second."
       ]
     },

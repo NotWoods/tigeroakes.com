@@ -3,11 +3,16 @@
 {{ end }}
 {{ define "main" }}
     {{ partial "mini_hero.html" . }}
+    {{ $topics := slice "Android" "Web" }}
 
     <main class="posts">
         {{ range .Pages }}
         {{ $bkg := .Resources.GetMatch "background.*" }}
-        <article class="post">
+        {{ $tags := apply .Params.tags "lower" "." }}
+        {{ if eq (index $tags 0) "til" }}
+            {{ $tags = after 1 $tags }}
+        {{ end }}
+        <article class='post tag--{{ index $tags 0 }}'>
             <div class="inner">
                 <h3 class="card__title">
                     <a class="block block--animate" href='{{.RelPermalink}}'>{{.Title}}</a>
