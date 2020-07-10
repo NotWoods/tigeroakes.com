@@ -5,5 +5,5 @@
     loop
     muted
     src='{{$video.RelPermalink}}'
-    {{with .Get "style"}}style="{{.}}"{{end}}
+    {{with .Get "max-height"}}style="max-height:{{.}}px"{{end}}
 ></video>

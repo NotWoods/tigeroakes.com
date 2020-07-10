@@ -47,7 +47,7 @@ Obviously this isn't optimal because now I have two copies of my resume: a Micro
 
 I next set out to find a way to output a PDF from the online version of my site, so I could get rid of the Word version. The way most people make PDFs from some website is to just print it out. Easy! Unfortunately printing in web browsers has some weird bugs, and my layout turned into a 1 column design as soon as I opened the print preview.
 
-{{<img src="flex-fail.png" alt="Chrome print preview showing a broken resume layout">}}
+![Chrome print preview showing a broken resume layout](flex-fail.png)
 
 > If you were hoping to use Flexbox or CSS Grid in print stylesheets, you will probably be disappointed. You can check out the Chrome bugs for [Flexbox](https://bugs.chromium.org/p/chromium/issues/detail?id=660611) and for [Grid](https://bugs.chromium.org/p/chromium/issues/detail?id=614667).
 >

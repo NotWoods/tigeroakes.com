@@ -1,0 +1,10 @@
+{{ $img := .Page.Resources.Match .Destination }}
+{{ range $img }}
+<img
+    class="center"
+    src='{{ .RelPermalink }}'
+    alt='{{ $.Text }}'
+    width="{{.Width}}"
+    height="{{.Height}}"
+>
+{{ end }}

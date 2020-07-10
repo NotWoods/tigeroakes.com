@@ -30,4 +30,4 @@ The program implements the JavaScript **FileReader API** to import data, and a c
 
 ---
 
-{{<img src="chart.png" alt="Energy chart from application">}}
+![Energy chart from application](chart.png)

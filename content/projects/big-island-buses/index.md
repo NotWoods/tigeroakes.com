@@ -57,4 +57,4 @@ With a Google Maps visualization and offline support, I built a PWA to enrich th
 
 ---
 
-{{<img src="multi-screen.png" alt="Big Island Buses on different devices">}}
+![Big Island Buses on different devices](multi-screen.png)

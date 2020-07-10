@@ -28,4 +28,4 @@ In addition to previewing maskable icons, Maskable.app now includes an editor to
 
 ---
 
-{{<img src="editor.png" alt="Maskable.app Editor">}}
+![Maskable.app Editor](editor.png)

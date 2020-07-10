@@ -21,4 +21,4 @@ I created this tool to help me build levels in [one of my games](./latch-on). Th
 
 ---
 
-{{<img src="example.gif" alt="Demonstation of building a level using the tool">}}
+![Demonstration of building a level using the tool](example.gif)

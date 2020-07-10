@@ -11,7 +11,7 @@ images:
   - /posts/unify-local-network-file-reading/imgur-upload.png
 ---
 
-{{<img src="imgur-upload.png" alt="Imgur upload page with Browse button and input to paste URL">}}
+![Imgur upload page with Browse button and input to paste URL](imgur-upload.png)
 
 Many web applications let users either upload a file or enter a URL to download the file from. When uploading files, the HTML file input lets you read the file using the `FileReader` API in JavaScript. When downloading from the network, the `fetch` function is used. With a tip from my manager at Google, I learned there's a way to use the same code for both local and network files with a simple trick.
 

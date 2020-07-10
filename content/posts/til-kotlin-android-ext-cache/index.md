@@ -41,4 +41,4 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 }
 ```
 
-{{<img src="slide.png" alt="">}}
+![](slide.png)

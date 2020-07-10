@@ -20,4 +20,4 @@ For this application, I added integration with Mapbox to use their satellite dat
 
 ---
 
-{{<img src="heightmap.*" alt="Terrain heightmap model I created for the application">}}
+![Terrain heightmap model I created for the application](heightmap.*)

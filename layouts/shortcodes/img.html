@@ -6,6 +6,6 @@
     alt='{{$.Get "alt"}}'
     width="{{.Width}}"
     height="{{.Height}}"
-    {{with $.Get "style"}}style="{{.|safeCSS}}"{{end}}
+    {{with $.Get "max-height"}}style="max-height:{{.}}px;width:auto"{{end}}
 >
 {{ end }}

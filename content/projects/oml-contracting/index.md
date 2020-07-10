@@ -25,4 +25,4 @@ Other tricks are used to mask loading times. When a portfolio item is opened, th
 
 ---
 
-{{<img src="screenshot.*" alt="Screenshot">}}
+![Screenshot](screenshot.*)

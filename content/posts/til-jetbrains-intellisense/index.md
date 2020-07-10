@@ -16,8 +16,8 @@ I like easy access to documentation written in comments. In Android Studio, and 
 
 In Android Studio's settings window, go to "Editor" > "General" and check "Show quick documentation on mouse move". You can leave the delay at the default value.
 
-{{<img src="settings.png" alt="Android Studio settings with Show quick documentation on mouse move highlighted">}}
+![Android Studio settings with Show quick documentation on mouse move highlighted](settings.png)
 
 When editing code, you can quickly check documentation by just hovering over code.
 
-{{<img src="preview.png" alt="Android Studio displaying function type and documentation on hover">}}
+![Android Studio displaying function type and documentation on hover](preview.png)

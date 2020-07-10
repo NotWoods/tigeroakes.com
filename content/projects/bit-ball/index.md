@@ -26,4 +26,4 @@ The game is a simple physics puzzle game, built for **Android** using **Corona S
 
 ---
 
-{{<img src="banner.jpg" alt="Bit Ball promotional artwork">}}
+![Bit Ball promotional artwork](banner.jpg)

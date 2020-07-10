@@ -22,7 +22,7 @@ Drupal makes the creation of basic posts simple, but also complicates changing t
 
 I started an initiative to move our website to the [Jamstack](https://jamstack.org/). Jamstack refers to creating static HTML files and serving those directly, with no database involved. Posts would be represented as [Markdown](https://en.wikipedia.org/wiki/Markdown) files in a Github repository, then HTML would be generated from those files on new commits. Rather than rendering HTML on the fly, all visitors are sent the exact same HTML file. Markdown and Github are familiar tools for CS students, so they were suitable for this student site.
 
-{{<img src="drupal.png" alt="Drupal 7 Admin Dashboard">}}
+![Drupal 7 Admin Dashboard](drupal.png)
 
 With no server passwords, I had to explore alternative ways to move the site out of Drupal. Luckily we still had access to the admin panel. There, I had quick access to all the posts published since the website was created. Since I couldn’t access the database, I went for a different route: scraping all the HTML pages on the website.
 

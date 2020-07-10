@@ -25,4 +25,4 @@ Latch On is a game I'm developing, where the player uses a grappling hook to swi
 
 ---
 
-{{<img src="action.png" alt="Screenshot">}}
+![Screenshot](action.png)

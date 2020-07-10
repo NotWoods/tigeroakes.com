@@ -23,6 +23,6 @@ A program designed to be used by the farmers and researchers at the Centre for S
 
 ---
 
-{{<img src="draw-field.gif" alt="Drawing a field">}}
+![Drawing a field](draw-field.gif)
 
-{{<img src="planner.png" alt="Farming planner">}}
+![Farming planner](planner.png)

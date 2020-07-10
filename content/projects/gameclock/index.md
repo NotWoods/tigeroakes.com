@@ -19,4 +19,4 @@ This is a simple web app I built for [Chess Clock Jenga](https://www.youtube.com
 
 ---
 
-{{<img src="screenshot.png" alt="Screenshot showing two timers">}}
+![Screenshot showing two timers](screenshot.png)

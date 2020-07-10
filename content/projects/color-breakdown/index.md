@@ -27,4 +27,4 @@ The app handles file uploads from the user, then extracts image colors inside a 
 
 ---
 
-{{<img src="screenshot.*" alt="Screenshot">}}
+![Screenshot](screenshot.*)

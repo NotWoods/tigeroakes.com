@@ -16,7 +16,7 @@ images:
 
 With 1.6K views, my most popular tweet at the time of writing is about a little feature I added to Firefox Preview:
 
-{{<video src="strike_thru_the_heart.mov" style="max-height:400px">}}
+{{<video src="strike_thru_the_heart.mov" max-height="400">}}
 
 In [Firefox Preview](https://blog.mozilla.org/futurereleases/2019/06/27/reinventing-firefox-for-android-a-preview/), you can grant a website access to your location and microphone. When you toggle those permissions off, a line appears and grows diagonally through the original icon as it fades to gray. To create the animation, I considered many details such as colors, lines, curves, and clip paths.
 
@@ -33,7 +33,7 @@ For color, that’s pretty simple. When the permission is turned on, the icon is
 
 You can preview animations with a tool called [Shape Shifter](https://shapeshifter.design/).
 
-{{<video src="color_transition.mov" style="max-height:300px">}}
+{{<video src="color_transition.mov" max-height="300">}}
 
 ## The line
 
@@ -41,7 +41,7 @@ Unlike colors, which are single values, shapes are more complex. Even a simple l
 
 In Firefox, our icons are defined as vectors, meaning that an image file specifies some points and the computer connects the dots. This is different than bitmap images which store many coloured squares. Since the computer is just connecting dots, the image can be scaled up without losing any detail.
 
-{{<img src="square_line_with_dots.png" alt="Square line with dots" style="max-height:400px;width:auto">}}
+{{<img src="square_line_with_dots.png" alt="Square line with dots" max-height="400">}}
 
 Android can also animate these dots. A line (really a thin rectangle) can be represented as 4 dots for each corner. When it disappears, it’s really just moving the dots so that the rectangle is so small you can’t see it.
 
@@ -61,29 +61,29 @@ That’s not ideal. Luckily there’s another way to hide the line when it shrin
 
 You can hide parts of an image by putting it behind an “[clip path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)”, a special path that hides everything outside of it. It’s akin to a cookie cutter that extracts a shape from the rest of the cookie dough. Outside the clip path, the line becomes invisible.
 
-{{<img src="svg_mask.png" alt="SVG emoji + clip path = SVG emoji with clip path applied">}}
+![SVG emoji + clip path = SVG emoji with clip path applied](svg_mask.png)
 
 By using a clip path, we can hide the end of the line without changing the relative positioning of its dots.
 
-{{<video src="curved_line_with_mask.mov" style="max-height:300px">}}
+{{<video src="curved_line_with_mask.mov" max-height="300">}}
 
 ## The spacing
 
 If we put our animated line on top of another icon, this is what we end up with.
 
-{{<video src="line_no_gap_2.mov" style="max-height:300px">}}
+{{<video src="line_no_gap_2.mov" max-height="300">}}
 
 The line unfortunately blends in with the icon. To emphasize the strike through, we want to create a small gap right under the line and create something like this:
 
-{{<img src="static_icon_with_gap.png" alt="Static icon with line through it and a gap" style="max-height:300px;width:auto">}}
+{{<img src="static_icon_with_gap.png" alt="Static icon with line through it and a gap" max-height="300">}}
 
 Luckily, we already know how to hide parts of an icon. We can use a clip path again. Since clip paths are just another shape created by connecting dots, they can also be animated in parallel to the original line.
 
-{{<video src="mask_transition.mov" style="max-height:300px">}}
+{{<video src="mask_transition.mov" max-height="300">}}
 
 Here's the final product. Using a combination of color transitions, shape transitions, and clip paths we’ve achieved a clean line effect. Looks great!
 
-{{<video src="complete_animation.mov" style="max-height:300px">}}
+{{<video src="complete_animation.mov" max-height="300">}}
 
 ---
 

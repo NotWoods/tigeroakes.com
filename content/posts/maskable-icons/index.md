@@ -18,7 +18,7 @@ This article was originally written by me and posted to [CSS Tricks](https://css
 
 You’ve created a Progressive Web App (<abbr>PWA</abbr>), designed an icon to represent it, and now you’re installing it to your Android home screen.
 
-<img src="folder.png" alt="Folder containing icons with transparent backgrounds or solid backgrounds" width="451" height="367">
+![Folder containing icons with transparent backgrounds or solid backgrounds](folder.png)
 
 But, if you have a recent Android phone, your icons will show up like this:
 

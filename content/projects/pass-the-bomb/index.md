@@ -25,4 +25,4 @@ I worked on the client-side aspect of the game, along with helping guide some of
 
 ---
 
-{{<img src="demo.gif" alt="Playing a round of Pass the Bomb in two windows">}}
+![Playing a round of Pass the Bomb in two windows](demo.gif)
