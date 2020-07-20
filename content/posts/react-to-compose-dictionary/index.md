@@ -20,6 +20,35 @@ Many concepts and functions in the two libraries work the same but have differen
 
 {{< toc >}}
 
+## Children > Children
+Both React and Compose refer to elements to be displayed inside another UI component as children.
+
+React passes children by value, under a special prop named `children`.
+```jsx
+function Container(props) {
+  return <div>{props.children}</div>;
+}
+
+<Container>
+  <span>Hello world!</span>
+</Container>
+```
+
+Jetpack Compose passes composable functions as the functions themselves don't return anything.
+
+```kotlin
+@Composable
+fun Container(children: @Composable () -> Unit) {
+  Box {
+    children()
+  }
+}
+
+Container {
+  Text("Hello world"!)
+}
+```
+
 ## Context > Ambient
 While most data is passed through the component tree as props/parameters, sometimes this model can be cumbersome. React includes the [Context](https://reactjs.org/docs/context.html) API to share this data. Compose uses [Ambient](https://developer.android.com/reference/kotlin/androidx/compose/Ambient#current:androidx.compose.Ambient.T) to accomplish the same thing.
 
@@ -136,7 +165,24 @@ val memoizedValue = remember(a, b) { computeExpensiveValue(a, b) }
 ```
 
 ## React Component > Composable
-In React, Components are used to split the UI into independent and reusable pieces. They can come in the form of a function that takes a `props` parameter and returns a React node. In Jetpack Compose, Composable functions are building blocks used to split the UI into independent and reusable pieces. They are functions with a `@Composable` annotation that can take any number of parameters. Both libraries also refer to these concepts as UI components.
+In React, Components are used to split the UI into independent and reusable pieces. They can come in the form of a function that takes a `props` parameter and returns a React node.
+
+```jsx
+function Greeting(props) {
+  return <span>Hello {props.name}!</span>;
+}
+```
+
+In Jetpack Compose, Composable functions are building blocks used to split the UI into independent and reusable pieces. They are functions with a `@Composable` annotation that can take any number of parameters.
+
+```kotlin
+@Composable
+fun Greeting(name: String) {
+  Text(text = "Hello $name!")
+}
+```
+
+Both libraries also refer to these concepts as UI components.
 
 ## Render > Composition
 Once data has changed inside a UI component, the library must adjust what is presented on screen. React refers to this as rendering, while Jetpack Compose refers to this as composition.
@@ -160,9 +206,37 @@ Compose uses the [`state` function](https://developer.android.com/reference/kotl
 val count = state { 0 }
 
 Button(onClick = { count.value++ }) {
-    Text("You clicked ${count.value} times")
+  Text("You clicked ${count.value} times")
 }
 ```
 
 ## Storybook > Preview
 The [Storybook](https://storybook.js.org/) tool helps you preview React components on the web independently by creating "stories". The `@Preview` annotation in Jetpack Compose lets you build example composables that can be previewed in Android Studio.
+
+## Ternary Operator > If Statement
+React components often use the [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) (`cond ? a : b`) to conditionally render components, as the successful branch is returned (unlike if statements in JavaScript).
+
+```jsx
+function Greeting(props) {
+  return (
+    <span>
+      {props.name != null
+        ? `Hello ${props.name}!`
+        : 'Goodbye.'}
+    </span>
+  );
+}
+```
+
+Kotlin doesn't have ternary operators as if statements do return the result of the successful branch. Since if statements in Kotlin act like ternary operators in JavaScript, there is no need for a second variation.
+
+```kotlin
+@Composable
+fun Greeting(name: String?) {
+  Text(text = if (name != null) {
+    "Hello $name!"
+  } else {
+    "Goodbye."
+  })
+}
+```
