@@ -1,7 +1,7 @@
 ---
 title: "TIL How to cache Kotlin Android view binding extensions"
 description: Simply changing import statements can improve performance.
-date: 2020-07-24
+date: 2020-07-27
 author: tiger
 tags:
   - TIL

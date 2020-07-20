@@ -34,3 +34,5 @@ Switched to branch 'main'
 > git status
 On branch branches/default/tip
 ```
+
+![](carbon.png)
