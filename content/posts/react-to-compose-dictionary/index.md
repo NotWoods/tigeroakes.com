@@ -4,7 +4,6 @@ description: Two libraries with similar concepts. What's the equivalent Jetpack 
 date: 2020-07-22
 author: tiger
 tags:
-  - TIL
   - Android
   - React
   - Kotlin
