@@ -20,7 +20,7 @@ Many concepts and functions in the two libraries work the same but have differen
 
 {{< toc >}}
 
-## Children > Children
+## Children Prop > Children Composable
 Both React and Compose refer to elements to be displayed inside another UI component as children.
 
 React passes children by value, under a special prop named `children`.
@@ -139,7 +139,7 @@ onCommit(input1, input2) {
 ### useEffect(callback, []) > onActive(callback)
 Side effects can also be run only when the UI component is first displayed.
 
-When an empty dependency list is passed to `useEffect`, the effect is only run once.
+When an empty dependency list is passed to `useEffect`, the side effect is only run once.
 ```jsx
 useEffect(() => {
   sideEffectOnMount();
@@ -152,6 +152,108 @@ onActive {
   sideEffectOnActive()
 }
 ```
+
+## Hook > Effect
+
+React lets you [build your own hooks](https://reactjs.org/docs/hooks-custom.html) to extract component logic into reusable functions. They can use other hooks like `useState` and `useEffect` to encapsulate logic that relates to the component lifecycle.
+
+```jsx
+function useFriendStatus(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
+    };
+  });
+
+  return isOnline;
+}
+```
+
+In Jetpack Compose, [@Composable functions](https://developer.android.com/reference/kotlin/androidx/compose/Composable) are used as the equivalent of hooks (along with acting as the [equivalent of Components](#react-component--composable)). These composable functions, sometimes referred to as "effect" functions, usually start with a lowercase letter instead of an uppercase letter.
+
+```kotlin
+@Composable
+fun friendStatus(friendID: String): State<Boolean?> {
+  val isOnline = state<Boolean?> { null }
+
+  onCommit {
+    val handleStatusChange = { status: FriendStatus ->
+      isOnline.value = status.isOnline
+    }
+
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange)
+    onDispose {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange)
+    }
+  }
+
+  return isOnline
+}
+```
+
+## Key Prop > Key Composable
+
+Keys are used to help React and Jetpack Compose identify which items have changed, are added, or are removed. They must be unique among the list of items you display at that point in a UI component.
+
+React has a special [string prop named `key`](https://reactjs.org/docs/lists-and-keys.html).
+
+```jsx
+<ul>
+  {todos.map((todo) =>
+    <li key={todo.id}>{todo.text}</li>
+  )}
+</ul>
+```
+
+Jetpack Compose has a special [utility composable called `key`](https://developer.android.com/reference/kotlin/androidx/compose/package-summary#key) that can take any input.
+
+```kotlin
+Column {
+  for (todo in todos) {
+    key(todo.id) { Text(todo.text) }
+  }
+}
+```
+
+Multiple inputs can be passed in to `key` in Compose, while React requires a single string (although multiple strings could be concatenated).
+
+## .map > For Loop
+
+Since React passes elements by value, elements corresponding to an array are usually created using [`array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). The returned elements in the map callback can be [embedded in JSX](https://reactjs.org/docs/lists-and-keys.html#embedding-map-in-jsx).
+
+```jsx
+function NumberList(props) {
+  return (
+    <ul>
+      {props.numbers.map((number) =>
+        <ListItem value={number} />
+      )}
+    </ul>
+  );
+}
+```
+
+Composable UI functions in Jetpack Compose call other UI composables and don't return anything. As a result, a simple for loop can be used instead of `.map()`.
+
+```kotlin
+@Composable
+fun NumberList(numbers: List<Int>) {
+  Column {
+    for (number in numbers) {
+      ListItem(value = number)
+    }
+  }
+}
+```
+
+In fact, any iteration method can be used, such as `.forEach()`.
 
 ## useMemo > remember
 React allows values to be re-computed only if certain dependencies change inside a component through the [`useMemo` hook](https://reactjs.org/docs/hooks-reference.html#usememo).
@@ -182,7 +284,7 @@ fun Greeting(name: String) {
 }
 ```
 
-Both libraries also refer to these concepts as UI components.
+Both libraries also refer to these concepts as UI components. However, Jetpack Compose also uses composable functions for other functionality, see [hook > effect](#hook--effect) and [key](#key-prop--key-composable) for examples.
 
 ## Render > Composition
 Once data has changed inside a UI component, the library must adjust what is presented on screen. React refers to this as rendering, while Jetpack Compose refers to this as composition.
