@@ -240,7 +240,7 @@ function NumberList(props) {
 }
 ```
 
-Composable UI functions in Jetpack Compose call other UI composables and don't return anything. As a result, a simple for loop can be used instead of `.map()`.
+Composable UI functions in Jetpack Compose emit other UI composables and don't return anything. As a result, a simple for loop can be used instead of `.map()`.
 
 ```kotlin
 @Composable
@@ -288,6 +288,11 @@ Both libraries also refer to these concepts as UI components. However, Jetpack C
 
 ## Render > Composition
 Once data has changed inside a UI component, the library must adjust what is presented on screen. React refers to this as rendering, while Jetpack Compose refers to this as composition.
+
+## Reconciler > Composer
+Internally React needs to figure out what changes when a component is rendered. This diffing algorithm is called the ["Reconciler"](https://reactjs.org/docs/reconciliation.html). React Fiber referred to the release of the new Fiber Reconciler which replaced the old algorithm.
+
+Jetpack Compose's diffing is done using the [Composer](https://developer.android.com/reference/kotlin/androidx/compose/Composer). It determines how nodes change every time a composable completes composition.
 
 ## State > State
 Both React and Compose refer to local variables you want to mutate as "state".
