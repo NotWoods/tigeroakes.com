@@ -38,11 +38,11 @@
       "startDate": "2019-05-14",
       "endDate": "2020-08-30",
       "highlights": [
-        "Built and shipped brand new web browser in **Kotlin** to **over 10,000,000 users on Google Play Store**.",
+        "Built and shipped brand new web browser in **Kotlin** to **over 100,000,000 users on Google Play Store**.",
         "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
-        "Built new Firefox DevTools features with **HTML5**, **CSS**, and **JavaScript** for the Applications panel.",
-        "Added Trusted Web Activity support to Firefox Preview, **featured in Chrome Dev Summit 2019 keynote**.",
-        "Wrote specifications for new web app features as member of the **World Wide Web Consortium**."
+        "Added Trusted Web Activity support to Firefox for Android, **featured in Chrome Dev Summit 2019 keynote**.",
+        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**.",
+        "Established testing infrastructure that improved code coverage by 150% and **doubled developer productivity**."
       ]
     },
     {
@@ -52,8 +52,9 @@
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
-        "Built internal developer tool used by entire Google Chrome for Android team with **JavaScript** and **Python**.",
-        "Used **streams** and **worker threads** to handle 180 MB downloads, rendering partial data in under 1 second."
+        "Built internal developer tool used by **entire Google Chrome for Android team** with **JavaScript** and **Python**.",
+        "Used **streams** and **background threads** to handle 180 MB downloads, rendering partial data in under 1 second.",
+        "Implemented keyboard navigation for tree structure to speed up productivity and add accessibility support."
       ]
     },
     {
@@ -95,7 +96,6 @@
       "website": "https://omlhawaii.com",
       "startDate": "2009-10-01",
       "endDate": "2015-08-10",
-      "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
       "highlights": [
         "Designed and developed web portfolio, including GPU-accelerated parallax using **CSS** 3D transformations."
       ]
@@ -103,19 +103,19 @@
   ],
   "projects": [
     {
-      "name": "Rollup",
+      "name": "Open Source",
       "highlights": [
-        "Maintainer for Rollup, a popular JavaScript bundler written in TypeScript with **900,000 weekly downloads**.",
-        "Used **Typescript compiler API** to compile and typecheck Typescript code for all users of Rollup plugin."
+        "Built Maskable.app developer tool. Recommended by Google & CSS Tricks and is used **over 5,000 times/month**.",
+        "Implemented icon features for Google Bubblewrap & Microsoft PWABuilder, used **over 2,000 times/month**.",
+        "Added support for new commands with **Node.js** to appium-adb to interface with **Android** devices over USB."
       ]
     },
     {
-      "name": "Open Source",
+      "name": "Speaking and Writing",
       "highlights": [
-        "Built Maskable.app developer tool. Recommended by Google & CSS Tricks and is **used over 2,500 times/month**.",
+        "Speaker at upcoming **CascadiaJS 2020** conference with **1,000 predicted online attendees**.",
         "Wrote web development articles for **CSS Tricks**, **MDN**, and **Google web.dev** with thousands of views.",
-        "Implemented advanced configuration feature with **JavaScript** in Google's Travis Size Report.",
-        "Added support for new commands with **Node.js** to appium-adb to interface with **Android** devices over USB."
+        "Authored guidebook on **MockK** testing library for **Kotlin** and **Android**, with **over 5,000 views/month**."
       ]
     }
   ],
