@@ -4,7 +4,7 @@ headless: true
 date: 2019-08-18
 tags:
   - Web
-  - Progressive Web App
+  - PWA
   - Firefox
 links:
   - title: Slides

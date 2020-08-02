@@ -5,7 +5,8 @@ date: 2020-07-10
 author: tiger
 tags:
   - Web
-  - Progressive Web App
+  - PWA
+  - Icons
 links:
   - title: Download
     link: maskable_icon_template.afdesign

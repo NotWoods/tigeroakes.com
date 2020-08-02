@@ -1,4 +1,7 @@
 ---
+elsewhere:
+  name: CSS Tricks
+  link: https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
 title: The Thinking Behind Simplifying Event Handlers
 description: How to reduce both the amount of code written and the number of listeners needed for Javascript event handlers.
 date: 2019-05-09 00:00:00
@@ -14,6 +17,7 @@ aliases:
 tags:
   - Web
   - JavaScript
+  - React
 ---
 
 This article was originally written here, then re-edited and posted to [CSS Tricks](https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/). The original version has been left here, but you may prefer to read the more polished version at CSS Tricks.

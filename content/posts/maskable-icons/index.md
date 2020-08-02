@@ -1,4 +1,7 @@
 ---
+elsewhere:
+  name: CSS Tricks
+  link: https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/
 title: 'Maskable Icons: Android Adaptive Icons for the Web'
 description: How to reduce both the amount of code written and the number of listeners needed for Javascript event handlers.
 date: 2019-08-29
@@ -9,7 +12,8 @@ links:
     link: https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/
 tags:
   - Web
-  - Progressive Web App
+  - PWA
+  - Icons
 ---
 
 This article was originally written by me and posted to [CSS Tricks](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/). I've uploaded a copy of the article here, but you may prefer to read the version at CSS Tricks.
