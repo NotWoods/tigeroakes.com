@@ -26,6 +26,6 @@ a {
   text-decoration: none;
 }
 /* On hover, show an underline. Only for markdown-generated classes. */
-a:hover:not([class]) {
+a:hover:not([class]), .tag__link:hover {
   text-decoration: underline;
 }

@@ -10,7 +10,9 @@ author: tiger
 editor: daphne
 tags:
   - Android
-  - Firefox
+  - Android Studio
+projects:
+  - mozilla-firefox
 links:
   - title: Original post
     link: https://medium.com/firefox-mobile-engineering/animating-a-strike-through-on-android-with-animated-vector-drawable-and-animatedstatelistdrawable-a77e66f9790f

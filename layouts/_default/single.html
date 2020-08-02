@@ -17,7 +17,7 @@
                     <time class="card__subtitle" datetime='{{ .PublishDate.Format "2006-01-02" }}'>
                         {{ .PublishDate.Format "2 January 2006" }}
                     </time>
-                    {{ partial "project/tech_list.html" .Params.tags }}
+                    {{ partial "tag_list.html" . }}
                 </div>
 
                 {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}

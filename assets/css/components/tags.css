@@ -1,5 +1,5 @@
 /* List of tags (ie: blog tags, project technologies). Should be a <ul>. */
-.tags {
+.tags, .date {
   /* expects: ul */
 
   margin: 0;
@@ -22,4 +22,15 @@
 }
 .tag:last-child::after {
   content: none;
+}
+
+.tag__link {
+  color: inherit;
+}
+.tag--elsewhere {
+  font-weight: bold;
+}
+
+.date + .card__title {
+  margin-top: 0;
 }

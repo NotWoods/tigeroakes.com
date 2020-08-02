@@ -5,7 +5,8 @@ date: 2020-07-20
 author: tiger
 tags:
   - TIL
-  - Firefox
+projects:
+  - mozilla-firefox
 images:
   - /posts/til-mozilla-central-main-alias/carbon.png
 ---

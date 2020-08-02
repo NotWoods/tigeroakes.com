@@ -6,7 +6,7 @@
     {{ $topics := slice "Android" "Web" }}
 
     <main class="posts">
-        {{ range .Pages }}
+        {{ range .RegularPages }}
         {{ $bkg := .Resources.GetMatch "background.*" }}
         {{ $tags := apply .Params.tags "lower" "." }}
         {{ if eq (index $tags 0) "til" }}
@@ -14,10 +14,26 @@
         {{ end }}
         <article class='post tag--{{ index $tags 0 }}'>
             <div class="inner">
+                <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="date">{{ .PublishDate.Format "2006, January 2" }}</time>
                 <h3 class="card__title">
                     <a class="block block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
                 </h3>
-                <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="tags">{{ .PublishDate.Format "2 January 2006" }}</time>
+                <ul class="tags">
+                    {{ with .Params.elsewhere }}
+                    <li class="tag tag--elsewhere">{{ .name }}</li>
+                    {{ end }}
+                    {{ range .Params.tags }}
+                    <li class="tag">
+                        <a class="tag__link" href='{{ relURL (print "/" $.Type "/tags/" . | urlize) }}'>{{.}}</a>
+                    </li>
+                    {{ end }}
+                    {{ range .Params.projects }}
+                    {{ $project := $.Site.GetPage "posts" . }}
+                    <li class="tag tag--project">
+                        <a class="tag__link" href='{{ $project.RelPermalink }}'>{{ $project.Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
                 <p class="card__description">{{ .Description }}</p>
             </div>
         </article>

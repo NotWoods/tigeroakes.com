@@ -7,6 +7,8 @@ tags:
   - Web
   - PWA
   - Icons
+projects:
+  - maskable
 links:
   - title: Download
     link: maskable_icon_template.afdesign
