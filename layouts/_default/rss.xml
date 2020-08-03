@@ -11,7 +11,7 @@
 {{- $pages = $pages | first $limit -}}
 {{- end -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ if or (eq .Title .Site.Title) (eq .Title "Blog") }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} | {{ end }}{{ .Site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
@@ -21,6 +21,11 @@
       <name>Tiger Oakes</name>
       <email>contact@tigeroakes.com</email>
     </author>
+    <webfeeds:cover image="{{ absURL "header.png" }}" />
+    <webfeeds:icon>{{ absURL "logo_padding.svg" }}</webfeeds:icon>
+    <webfeeds:logo>{{ absURL "logo_text.svg" }}</webfeeds:logo>
+    <webfeeds:accentColor>e66d31</webfeeds:accentColor>
+    <webfeeds:analytics id="{{ .Site.GoogleAnalytics }}" engine="GoogleAnalytics" />
     {{ with .Site.LanguageCode }}
     <language>{{.}}</language>
     {{end}}
