@@ -63,7 +63,6 @@
       "website": "http://vitalmechanics.com",
       "startDate": "2018-01-05",
       "endDate": "2018-04-25",
-      "summary": "Vancouver startup simulating skin for VFX and prototyping clothing",
       "highlights": [
         "Built **TypeScript Electron** client that interfaces with **C++** server to display 3D simulations with **WebGL**.",
         "Migrated large program from **jQuery** to **React**, **Redux**, saving time and effort for future programmers."
