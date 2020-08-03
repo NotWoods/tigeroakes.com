@@ -3,7 +3,8 @@ title: Driving Hawaii Transit Forward
 date: 2014-09-30
 tags:
   - Web
-  - Big Island Buses
+projects:
+  - big-island-buses
 links:
   - title: Slides
     link: https://docs.google.com/presentation/d/e/2PACX-1vTNFe2Jjib6rfVeHsIZvwpl5Xv_es83MJKt_qxGEYErEGAtVLXvYteiZwN7MziJPM-R3eyXKGb3jJhg/pub?start=false&loop=false

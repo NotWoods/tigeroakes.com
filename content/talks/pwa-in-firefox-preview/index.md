@@ -4,7 +4,9 @@ date: 2019-08-18
 tags:
   - Web
   - PWA
-  - Firefox
+  - Icons
+projects:
+  - mozilla-firefox
 links:
   - title: Slides
     link: https://docs.google.com/presentation/d/e/2PACX-1vRg24dTe5ANqnVqVAgsy7q2QGsXW5-oBh6D9xD7j2YZ9mzMIXJEKtFYVPabdEetspEeNUlcgJaxLmdT/pub?start=false&loop=false#slide=id.gc6f9e470d_0_0

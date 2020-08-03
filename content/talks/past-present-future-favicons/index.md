@@ -5,7 +5,6 @@ publishDate: 2020-07-01
 tags:
   - Web
   - PWA
-  - Firefox
   - Icons
 links:
   - title: CascadiaJS
