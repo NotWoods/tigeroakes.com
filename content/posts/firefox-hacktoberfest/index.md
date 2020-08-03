@@ -1,5 +1,4 @@
 ---
-headless: true
 elsewhere:
   name: Firefox Mobile Engineering
   source: https://medium.com/firefox-mobile-engineering
@@ -8,7 +7,34 @@ title: Participating in Hacktoberfest with Firefox Preview
 description: A guide to being part of Hacktoberfest with Firefox.
 date: 2019-10-01
 author: tiger
+links:
+  - title: Original post
+    link: https://medium.com/firefox-mobile-engineering/participating-in-hacktoberfest-with-firefox-preview-fc68cc318643
 tags:
   - Android
   - Hacktoberfest
+projects:
+  - mozilla-firefox
 ---
+
+[Hacktoberfest](https://hacktoberfest.digitalocean.com/) is a worldwide event to celebrate and support open source. Firefox Preview will be part of Hacktoberfest this year, and we have put [Hacktoberfest labels](https://github.com/search?utf8=%E2%9C%93&q=user%3Amozilla-mobile+label%3AHacktoberfest+state%3Aopen&type=Issues&ref=advsearch&l=&l=) on many of our GitHub issues.
+
+Working on Firefox Preview is a great way to contribute to a web browser and help out our brand-new project. Our code is primarily in Kotlin, which is easier to work with if you come from a web development or Android background.
+
+Firefox Preview is split into multiple repositories. While a lot of our UI code and functionality is in the [mozilla-mobile/fenix](https://github.com/mozilla-mobile/fenix) repository, we’ve written shared libraries used in all of our Android apps in the [mozilla-mobile/android-components](https://github.com/mozilla-mobile/android-components) repository. The [GeckoView](https://mozilla.github.io/geckoview/) engine is not located on GitHub so pull requests there unfortunately won’t count towards Hacktoberfest.
+
+{{<external/github repo="mozilla-mobile/fenix">}}
+
+{{<external/github repo="mozilla-mobile/android-components">}}
+
+## How do I get started?
+
+Make sure to look at the README in each repository, where we’ve written information about setting up for development and how to format your pull requests. Our pull request template includes a checklist to remind you of some essentials.
+
+## Finding an issue to help with
+
+Start with issues that have a [Hacktoberfest label](https://github.com/search?utf8=%E2%9C%93&q=user%3Amozilla-mobile+label%3AHacktoberfest+state%3Aopen&type=Issues&ref=advsearch&l=&l=), especially if they also have a [“good first issue” label](https://github.com/search?utf8=%E2%9C%93&q=user%3Amozilla-mobile+state%3Aopen+label%3A%22good+first+issue%22&type=Issues&ref=advsearch&l=&l=). If an issue doesn’t have a straightforward solution, you should comment in the issue so that we can have a discussion first. This leads to a higher chance of your pull request being accepted!
+
+## Need some help?
+
+While we don’t have unlimited time to help, we’re still available to chat! You can leave comments on an issue you’re interested in, or chat with us on [Gitter](https://gitter.im/mozilla-mobile/android-components).
