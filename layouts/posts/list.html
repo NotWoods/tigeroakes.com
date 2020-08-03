@@ -15,11 +15,7 @@
         <article class='post tag--{{ index $tags 0 }}'>
             <div class="inner">
                 <h3 class="card__title">
-                    {{ $link := .RelPermalink }}
-                    {{ with .Params.elsewhere }}
-                        {{ $link = .link }}
-                    {{ end }}
-                    <a class="block block--animate" href='{{$link}}'>{{.Title}}</a>
+                    <a class="block block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
                 </h3>
                 <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="tags">{{ .PublishDate.Format "2 January 2006" }}</time>
                 <p class="card__description">{{ .Description }}</p>

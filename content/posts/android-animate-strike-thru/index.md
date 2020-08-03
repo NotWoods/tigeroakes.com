@@ -1,6 +1,7 @@
 ---
 elsewhere:
   name: Firefox Mobile Engineering
+  source: https://medium.com/firefox-mobile-engineering
   link: https://medium.com/firefox-mobile-engineering/animating-a-strike-through-on-android-with-animated-vector-drawable-and-animatedstatelistdrawable-a77e66f9790f
 title: Animating a strike through on Android
 description: Putting together Android drawable XML files to create animations for Firefox Preview.

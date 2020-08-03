@@ -1,23 +1,53 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+{{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    {{ partial "meta/title.xml" . }}
+    <title>{{ if or (eq .Title .Site.Title) (eq .Title "Blog") }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} | {{ end }}{{ .Site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
     <description>{{ .Params.description }}</description>
-    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
-    <language>{{.}}</language>{{end}}{{ with .Site.Data.contact.email }}
-    <managingEditor>{{.}} ({{ $.Title }})</managingEditor>
-    <webMaster>{{.}} ({{ $.Title }})</webMaster>{{end}}{{ with .Site.Copyright }}
-    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
-    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}{{ with .OutputFormats.Get "RSS" }}
-    <atom:link href="{{.Permalink}}" rel="self" type="{{.MediaType}}" />{{ end }}
-    {{ range .Pages }}
+    <generator>Hugo -- gohugo.io</generator>
+    <author>
+      <name>Tiger Oakes</name>
+      <email>contact@tigeroakes.com</email>
+    </author>
+    {{ with .Site.LanguageCode }}
+    <language>{{.}}</language>
+    {{end}}
+    {{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>
+    {{end}}
+    {{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+	{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ end }}
+    {{ range $pages }}
     <item>
       <title>{{ .Title }}</title>
-      <link>{{ .Permalink }}</link>
+      <link>{{ partial "meta/link.xml" . }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Content | html }}</description>
+      <description>{{ .Description | html }}</description>
+      <content:encoded>{{ `<![CDATA[ ` | safeHTML }}{{ .Content | safeHTML }}{{ ` ]]>` | safeHTML }}</content:encoded>
+      {{- range .Params.tags -}}
+        <category>{{ . }}</category>
+      {{- end -}}
+      {{- with .Params.elsewhere -}}
+        <source url="{{.source}}">{{.name}}</source>
+      {{- end -}}
     </item>
     {{ end }}
   </channel>
