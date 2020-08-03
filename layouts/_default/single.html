@@ -13,10 +13,8 @@
         <header class="card header article__header"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
             <div class="header__content inner">
                 <div class="header__text">
+                    {{ partial "time.html" . }}
                     <h1 class="block card__title">{{.Title}}</h1>
-                    <time class="card__subtitle" datetime='{{ .PublishDate.Format "2006-01-02" }}'>
-                        {{ .PublishDate.Format "2 January 2006" }}
-                    </time>
                     {{ partial "tag_list.html" . }}
                 </div>
 

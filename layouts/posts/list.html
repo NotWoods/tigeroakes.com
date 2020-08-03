@@ -14,7 +14,7 @@
         {{ end }}
         <article class='post tag--{{ index $tags 0 }}'>
             <div class="inner">
-                <time datetime='{{ .PublishDate.Format "2006-01-02" }}' class="date">{{ .PublishDate.Format "2006, January 2" }}</time>
+                {{ partial "time.html" . }}
                 <h3 class="card__title">
                     <a class="block block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
                 </h3>
