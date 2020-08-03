@@ -18,22 +18,7 @@
                 <h3 class="card__title">
                     <a class="block block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
                 </h3>
-                <ul class="tags">
-                    {{ with .Params.elsewhere }}
-                    <li class="tag tag--elsewhere">{{ .name }}</li>
-                    {{ end }}
-                    {{ range .Params.tags }}
-                    <li class="tag">
-                        <a class="tag__link" href='{{ relURL (print "/" $.Type "/tags/" . | urlize) }}'>{{.}}</a>
-                    </li>
-                    {{ end }}
-                    {{ range .Params.projects }}
-                    {{ $project := $.Site.GetPage "posts" . }}
-                    <li class="tag tag--project">
-                        <a class="tag__link" href='{{ $project.RelPermalink }}'>{{ $project.Name }}</a>
-                    </li>
-                    {{ end }}
-                </ul>
+                {{ partial "tag_list.html" . }}
                 <p class="card__description">{{ .Description }}</p>
             </div>
         </article>
