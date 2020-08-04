@@ -1,0 +1,29 @@
+{{ define "head" }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") }}
+    {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/tags.css") "css/pages/tags.css" }}
+    {{ partial "meta/canonical.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+{{ end }}
+{{ define "main" }}
+    {{ $bkg := .Resources.GetMatch "background.*" }}
+    <header class="card header article__header"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
+        <div class="header__content inner">
+            <div class="header__text">
+                <h1 class="block card__title tag__title">
+                    <a href="{{ .FirstSection.RelPermalink }}" class="tag__parent">{{ .FirstSection.Title }} / </a>{{.Title}}
+                </h1>
+            </div>
+
+            {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
+        </div>
+    </header>
+
+    <main class="posts">
+        {{ range .FirstSection.RegularPages }}
+        {{ if in .Params.tags $.Title }}
+        {{ partial "post/preview.html" . }}
+        {{ end }}
+        {{ end }}
+    </main>
+{{ end }}

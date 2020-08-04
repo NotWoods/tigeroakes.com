@@ -1,11 +1,8 @@
 ---
 title: Talks
-headless: true
-_build:
-  render: true
-cascade:
-  _build:
-    render: false
+outputs:
+  - HTML
+other: More talks
 ---
 
 Presentations I've given in the past.

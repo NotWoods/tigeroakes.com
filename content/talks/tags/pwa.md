@@ -1,4 +1,4 @@
 ---
 title: PWA
-layout: tags
+layout: talks_tags
 ---

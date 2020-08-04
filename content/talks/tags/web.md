@@ -1,5 +1,5 @@
 ---
 title: Web
-layout: tags
+layout: talks_tags
 feature: true
 ---

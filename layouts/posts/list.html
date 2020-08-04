@@ -7,21 +7,7 @@
 
     <main class="posts">
         {{ range .RegularPages }}
-        {{ $bkg := .Resources.GetMatch "background.*" }}
-        {{ $tags := apply .Params.tags "lower" "." }}
-        {{ if eq (index $tags 0) "til" }}
-            {{ $tags = after 1 $tags }}
-        {{ end }}
-        <article class='post tag--{{ index $tags 0 }}'>
-            <div class="inner">
-                {{ partial "time.html" . }}
-                <h3 class="card__title">
-                    <a class="block block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
-                </h3>
-                {{ partial "tag_list.html" . }}
-                <p class="card__description">{{ .Description }}</p>
-            </div>
-        </article>
+        {{ partial "post/preview.html" . }}
         {{ end }}
     </main>
 {{ end }}

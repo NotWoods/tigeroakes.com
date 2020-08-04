@@ -1,4 +1,4 @@
 ---
 title: Icons
-layout: tags
+layout: talks_tags
 ---

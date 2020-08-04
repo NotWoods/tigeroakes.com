@@ -1,0 +1,9 @@
+<article class="card talk" style="--block:{{.Params.color}}">
+  {{- with .Resources.GetMatch "slide.*" -}}
+  <img src="{{.RelPermalink}}" width="960" height="540" alt="" class="card__icon">
+  {{- end -}}
+  <h3 class="block card__title">{{.Title}}</h3>
+  {{ partial "time.html" . }}
+  {{ partial "post/tag_list.html" . }}
+  {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
+</article>

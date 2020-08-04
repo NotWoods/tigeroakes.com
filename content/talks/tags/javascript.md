@@ -1,4 +1,4 @@
 ---
 title: JavaScript
-layout: tags
+layout: talks_tags
 ---

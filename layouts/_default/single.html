@@ -15,7 +15,7 @@
                 <div class="header__text">
                     {{ partial "time.html" . }}
                     <h1 class="block card__title">{{.Title}}</h1>
-                    {{ partial "tag_list.html" . }}
+                    {{ partial "post/tag_list.html" . }}
                 </div>
 
                 {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
