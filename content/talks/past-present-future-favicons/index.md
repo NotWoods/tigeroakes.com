@@ -6,10 +6,16 @@ tags:
   - Web
   - PWA
   - Icons
+projects:
+  - maskable
 links:
   - title: CascadiaJS
     link: https://2020.cascadiajs.com/speakers/tiger-oakes
 color: '#17c37b'
 ---
 
+**Coming soon to CascadiaJS 2020!**
+
 Favicons are everywhere, representing your site on tabs, bookmarks, home screens, and more. Did you know favicons were snuck into Internet Explorer, how Apple was once a major proponent for web apps, or that a single icon design can automatically fit alongside other mobile apps on any device? Let's dive into the history and future of website icons, and show you how to make your website and PWA icons shine on a variety of screens.
+
+![](slide.png)

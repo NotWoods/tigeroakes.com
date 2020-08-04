@@ -48,4 +48,4 @@ To have greater control over the file downloading experience, I modified our imp
 
 ---
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zFNvFefOeaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width:100%;margin:auto;display:block"></iframe>
+{{< external/youtube zFNvFefOeaI >}}

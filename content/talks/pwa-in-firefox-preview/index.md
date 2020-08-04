@@ -16,3 +16,5 @@ color: '#FF7139'
 ---
 
 Brand new Progressive Web App features coming to Firefox Preview, including customized system bars, site controls, maskable icons, and Trusted Web Activities.
+
+{{< external/youtube zFNvFefOeaI >}}
