@@ -1,8 +1,8 @@
 ---
-title: Android
+title: Web
 outputs:
   - HTML
   - RSS
 layout: tags
-feature: true
+hidden: true
 ---

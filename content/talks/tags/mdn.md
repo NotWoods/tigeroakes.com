@@ -1,4 +1,4 @@
 ---
 title: MDN
-layout: talks_tags
+layout: tags
 ---
