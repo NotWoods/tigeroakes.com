@@ -1,0 +1,21 @@
+{{- .Scratch.Set "seoImages" (slice) -}}
+{{- range .Params.images -}}
+  {{- $.Scratch.Add "seoImages" (slice (absURL .)) -}}
+{{- end -}}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
+    },
+    "headline": "{{ .Title }}",
+    "image": {{ .Scratch.Get "seoImages" | jsonify | safeJS }},
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    "author": {
+      "@type": "Person",
+      "name": "Tiger Oakes"
+    }
+  }
+  </script>

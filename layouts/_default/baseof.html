@@ -16,6 +16,7 @@
     {{ range .AlternativeOutputFormats }}
     <link rel="{{.Rel}}" type="{{.MediaType.Type}}" href="{{.Permalink}}" title="{{$.Site.Title}}">
     {{ end }}
+    {{ partial "seo/breadcrumb.html" . }}
     {{ block "head" . }}
 
     {{ end }}
