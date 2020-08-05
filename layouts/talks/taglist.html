@@ -1,0 +1,25 @@
+{{ define "head" }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") }}
+    {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/tags.css") "css/pages/tags.css" }}
+{{ end }}
+{{ define "main" }}
+    <header class="card header article__header">
+        <div class="header__content inner">
+            <div class="header__text">
+                <h1 class="block card__title tag__title">
+                    <a href="{{ .FirstSection.RelPermalink }}" class="tag__parent">{{ .FirstSection.Title }} / </a>All Tags
+                </h1>
+            </div>
+
+            {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
+        </div>
+    </header>
+
+    <ul class="tags__list inner">
+        {{ range .RegularPages }}
+        <li class="tags__list-item">
+            <h3><a class="block block--animate" href='{{ .RelPermalink }}'>{{.Title}}</a></h3>
+        </li>
+        {{ end }}
+    </main>
+{{ end }}

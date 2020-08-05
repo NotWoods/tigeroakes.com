@@ -1,5 +1,5 @@
 ---
-title: Web
+title: Planet Mozilla
 outputs:
   - HTML
   - RSS

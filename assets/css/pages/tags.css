@@ -3,3 +3,7 @@
   color: inherit;
   text-shadow: none;
 }
+
+.tags__list-item {
+  display: block;
+}
