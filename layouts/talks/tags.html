@@ -17,10 +17,8 @@
     </header>
 
     <main class="talks inner">
-        {{ range .FirstSection.RegularPages }}
-        {{ if in .Params.tags $.Title }}
+        {{ range where .FirstSection.RegularPages ".Params.tags" "intersect" (slice .Title) }}
         {{ partial "talk.html" . }}
-        {{ end }}
         {{ end }}
     </main>
 {{ end }}

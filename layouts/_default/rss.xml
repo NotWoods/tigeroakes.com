@@ -3,6 +3,15 @@
 {{- $pages := slice -}}
 {{- if or $.IsHome $.IsSection -}}
 {{- $pages = $pctx.RegularPages -}}
+{{- else if .Params.items -}}
+{{- range .Params.items -}}
+{{- with $.Site.GetPage "posts" . -}}
+{{- $.Scratch.Add "pages" (slice .) -}}
+{{- else -}}
+{{ errorf "Invalid RSS item %s" . }}
+{{- end -}}
+{{- end -}}
+{{- $pages = $.Scratch.Get "pages" -}}
 {{- else -}}
 {{- $pages = $pctx.Pages -}}
 {{- end -}}
@@ -43,7 +52,6 @@
       <title>{{ .Title }}</title>
       <link>{{ partial "meta/link.xml" . }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Description | html }}</description>
       <content:encoded>{{ `<![CDATA[ ` | safeHTML }}{{ .Content | safeHTML }}{{ ` ]]>` | safeHTML }}</content:encoded>

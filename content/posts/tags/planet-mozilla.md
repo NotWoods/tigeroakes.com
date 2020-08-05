@@ -1,8 +1,10 @@
 ---
 title: Planet Mozilla
-outputs:
-  - HTML
-  - RSS
-layout: tags
-hidden: true
+outputs: [RSS]
+items:
+  - til-mozilla-central-main-alias
+  - eleventy-bus-app-experiment
+  - scraping-csss
+  - android-animate-strike-thru
+  - javascript-events
 ---

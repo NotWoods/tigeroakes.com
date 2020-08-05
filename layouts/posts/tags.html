@@ -17,10 +17,8 @@
     </header>
 
     <main class="posts">
-        {{ range .FirstSection.RegularPages }}
-        {{ if in .Params.tags $.Title }}
+        {{ range where .FirstSection.RegularPages ".Params.tags" "intersect" (slice .Title) }}
         {{ partial "post/preview.html" . }}
-        {{ end }}
         {{ end }}
     </main>
 {{ end }}
