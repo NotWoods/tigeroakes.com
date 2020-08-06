@@ -21,6 +21,11 @@
   background: white;
 }
 
+.resume__header {
+  border-bottom: 1pt solid #e66d31;
+  margin-bottom: 8pt;
+}
+
 a {
   color: inherit;
 }
