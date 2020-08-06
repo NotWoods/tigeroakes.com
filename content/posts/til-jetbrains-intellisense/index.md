@@ -1,5 +1,5 @@
 ---
-title: "TIL Android Studio can show KDocs on hover"
+title: "How to make Android Studio show documentation on hover"
 description: My favorite Visual Studio Code feature is hidden behind a setting in Android Studio.
 date: 2020-07-06
 author: tiger
@@ -18,6 +18,6 @@ In Android Studio's settings window, go to "Editor" > "General" and check "Show 
 
 ![Android Studio settings with Show quick documentation on mouse move highlighted](settings.png)
 
-When editing code, you can quickly check documentation by just hovering over code.
+When editing code, you can quickly check documentation by just hovering over code. The documentation is pulled from the code's Javadoc, KDoc, or other similar comments.
 
 ![Android Studio displaying function type and documentation on hover](preview.png)

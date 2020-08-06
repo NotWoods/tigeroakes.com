@@ -1,5 +1,5 @@
 ---
-title: "TIL How to cache Kotlin Android view binding extensions"
+title: "How to easily cache Kotlin Android synthetics"
 description: Simply changing import statements can improve performance.
 date: 2020-07-27
 author: tiger
@@ -11,9 +11,11 @@ images:
   - /posts/til-kotlin-android-ext-cache/slide.png
 ---
 
-In Android projects written with Kotlin, you can replace `findViewById<ViewType>(R.id.view_id)` calls by simply writing `view_id`. The [Kotlin Android Extensions](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.android.extensions) plugin adds this extension property automatically to Activities, Fragments, Views, and classes with the `LayoutContainer` interface.
+In Android projects written with Kotlin, you can replace `findViewById<ViewType>(R.id.view_id)` calls by simply writing `view_id`. The [Kotlin Android Extensions](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.android.extensions) plugin adds this synthetic extension property automatically to Activities, Fragments, Views, and classes with the `LayoutContainer` interface.
 
-However, views don't cache the extension property. Using `view.view_id` is equivalent to calling `findViewById` every time and looking up the view over and over again. This is an easy mistake to make in fragments, where you can get the root view.
+## The performance issue
+
+Views don't cache the extension property. Using `view.view_id` is equivalent to calling `findViewById` every time and looking up the view over and over again. This is an easy mistake to make in fragments, where you can get the root view.
 
 ```kotlin
 import kotlinx.android.synthetic.main.fragment_main.view.*
@@ -27,7 +29,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 }
 ```
 
-Prefer the extension property on Activities, Fragments, and classes with the `LayoutContainer` interface as those are cached. You can identify which version you use based on the import statement.
+## The solution
+
+Prefer the extension property on Activities and Fragments as those are cached. You can identify which version you use based on the import statement.
 
 ```kotlin
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -35,6 +39,26 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class MainFragment : Fragment(R.layout.fragment_main) {
 
   fun bindUi() {
+    learn_button.setOnClickListener { ... }
+    connect_button.setOnClickListener { ... }
+  }
+}
+```
+
+### Using `LayoutContainer` with any class
+
+Classes with the `LayoutContainer` interface can also cache synthetic extension properties. Just provide a getter for the root view object in `containerView`, and everything else will work just like Activites and Fragments.
+
+```kotlin
+import kotlinx.android.synthetic.main.fragment_main.*
+
+class MainFragmentUiHelper(context: Context) : LayoutContainer {
+
+  override val containerView = LayoutInflater.from(context)
+    .inflate(R.layout.fragment_main, null)
+
+  fun bindUi() {
+    # equivalent to containerView.findViewById(R.id.learn_button)
     learn_button.setOnClickListener { ... }
     connect_button.setOnClickListener { ... }
   }

@@ -14,5 +14,6 @@ links:
     link: /posts/index.xml
 ---
 
-My personal blog. \
-I write about my programming projects and what I learn from them.
+My blog is where I learn out loud. Except notes on Web and Android development, and plenty of icon talk.
+
+Occasionally I write articles elsewhere, you can find them here too.
