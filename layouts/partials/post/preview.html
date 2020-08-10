@@ -6,7 +6,7 @@
   <div class="inner">
     {{ partial "time.html" . }}
     <h3 class="card__title">
-      <a class="block block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
+      <a class="block block--half block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
     </h3>
     {{ partial "post/tag_list.html" . }}
     <p class="card__description">{{ .Description }}</p>

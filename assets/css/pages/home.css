@@ -1,6 +1,7 @@
 @import '../base/breakpoints.css';
 @import '../components/button/cta.css';
 @import '../components/hero.css';
+@import './contact.css';
 
 .hero__content {
   text-align: center;
@@ -43,10 +44,11 @@
   padding: 4rem 3.5rem 5rem;
 }
 
+/* {{ $background := (.Site.GetPage "/contact").Resources.GetMatch "background.*" }} */
+
 .contact {
-  background: var(--dark-background);
-  color: white;
-  font-size: 1.25em;
+  color: var(--dark-text);
+  background: center / cover no-repeat #d9d9d9 url('{{ $background.RelPermalink }}');
 }
 
 @media (--home-projects-text) {

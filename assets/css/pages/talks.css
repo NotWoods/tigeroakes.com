@@ -5,14 +5,16 @@
 
 .talks {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 3rem;
   grid-template-columns: 1fr 1fr;
   margin-top: 2rem;
 }
 
 .talk {
-  background: #333;
-  border: 1px solid currentColor;
+  padding: 0;
+  background: none;
+  color: inherit;
+  text-shadow: inherit;
 }
 
 @media (--banner-wrap) {
