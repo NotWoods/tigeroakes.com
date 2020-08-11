@@ -20,7 +20,7 @@ tags:
   - JavaScript
   - React
 color: '#1c7cba'
-banner: event-handlers.png
+banner: banner.png
 ---
 
 This article was originally written here, then re-edited and posted to [CSS Tricks](https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/). The original version has been left here, but you may prefer to read the more polished version at CSS Tricks.

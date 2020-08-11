@@ -4,16 +4,20 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import * as googleAnalytics from 'workbox-google-analytics';
 import { precacheAndRoute } from 'workbox-precaching';
 import { registerRoute, setCatchHandler } from 'workbox-routing';
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import {
+  CacheFirst,
+  StaleWhileRevalidate,
+} from 'workbox-strategies';
 import manifest from 'workbox:manifest';
 import { DAY, ignoreSearch } from './consts.js';
-import * as htmlRoute from './html-route.js';
-import { catchHandler } from './offline-page'
+import { isSinglePage, assetDestinations } from './html-route.js';
+import { catchHandler } from './offline-page';
 
 googleAnalytics.initialize();
 
-precacheAndRoute(manifest);
-setCatchHandler(catchHandler);
+precacheAndRoute(manifest, {
+  ignoreURLParametersMatching: [/.*/],
+});
 
 // Google Fonts
 registerRoute(
@@ -28,10 +32,11 @@ registerRoute(
   })
 );
 
-// Images
+// Assets
 registerRoute(
-  ({ request }) => request.destination === 'image',
+  ({ request }) => assetDestinations.has(request.destination),
   new CacheFirst({
+    cacheName: 'assets',
     plugins: [
       new ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 30 * DAY }),
     ],
@@ -39,15 +44,12 @@ registerRoute(
   })
 );
 
-// CSS
 registerRoute(
-  ({ request }) => request.destination === 'style',
+  (options) =>
+    options.request.destination === 'document' && isSinglePage(options),
   new StaleWhileRevalidate({
-    plugins: [
-      new ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 30 * DAY }),
-    ],
     matchOptions: ignoreSearch,
   })
 );
 
-Object.values(htmlRoute).forEach((route) => registerRoute(route));
+setCatchHandler(catchHandler);

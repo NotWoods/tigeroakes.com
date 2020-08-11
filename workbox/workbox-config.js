@@ -15,14 +15,18 @@ const config = {
     'profile_*_{80,160}x0_*.jpg',
     'contact/**/*.{jpg,svg}',
     // Featured projects
-    'projects/{mozilla-firefox,google,yelp}/**/*.{html,jpg,svg,png}',
+    'projects/{mozilla-firefox,google,yelp,big-island-buses}/**/*.{html,jpg,svg,png}',
+    'posts/{react-to-compose-dictionary, maskable-icons}/**/*.{html,jpg,svg,png,gif}',
     // Projects page
     'projects/index.html',
     'projects/*/logo.svg',
     'projects/*/logo_*_128x0_*.png',
+    '{projects,posts,talks}/tags/**/*.html',
     // Blog & Talks
-    '{posts,talks}/index.html',
+    '{posts,talks,featured-in}/index.html',
     '{posts,talks}/tags/**/*.html',
+    'posts/*/banner.{png,jpg,svg}',
+    'talks/*/slide.{png,jpg,svg}',
     // Resume
     'resume/index.html'
   ],

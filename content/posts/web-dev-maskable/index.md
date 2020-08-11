@@ -15,7 +15,7 @@ tags:
   - PWA
   - Icons
 color: '#1c7cba'
-banner: hero.png
+banner: banner.png
 ---
 
 ![](hero.png)

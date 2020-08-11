@@ -1,14 +1,13 @@
-// @ts-check
-
+import { matchPrecache } from 'workbox-precaching';
 import { ignoreSearch } from './consts';
 
 /** @type {import('workbox-routing').RouteHandlerObject} */
 export const catchHandler = {
   async handle({ event }) {
-    console.log(event);
+    console.log('catch', event);
     switch (event.request.destination) {
       case 'document':
-        return caches.match('/offline.html', ignoreSearch);
+        return matchPrecache('/offline.html', ignoreSearch);
 
       default:
         return Response.error();
