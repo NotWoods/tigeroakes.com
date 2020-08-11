@@ -15,6 +15,7 @@ tags:
 projects:
   - mozilla-firefox
 color: '#FF7139'
+banner: banner.png
 ---
 
 [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is a worldwide event to celebrate and support open source. Firefox Preview will be part of Hacktoberfest this year, and we have put [Hacktoberfest labels](https://github.com/search?utf8=%E2%9C%93&q=user%3Amozilla-mobile+label%3AHacktoberfest+state%3Aopen&type=Issues&ref=advsearch&l=&l=) on many of our GitHub issues.

@@ -39,6 +39,9 @@
 
   object-fit: cover;
 }
+.card__description {
+  margin-top: 0;
+}
 
 @media (--banner-wrap) {
   .talks {

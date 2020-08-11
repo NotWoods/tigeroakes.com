@@ -11,7 +11,7 @@ tags:
 projects:
   - big-island-buses
 color: '#1c7cba'
-banner: empty_menu.png
+banner: banner.png
 ---
 
 This weekend I’ve been tweaking [Big Island Buses](/projects/big-island-buses/), my bus schedule web app, and pre-rendering parts of the app. This was also my first time using Eleventy to build a site!
