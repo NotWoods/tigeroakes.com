@@ -14,8 +14,6 @@ tags:
   - Web
   - PWA
   - Icons
-images:
-  - /posts/unify-local-network-file-reading/hero.png
 color: '#1c7cba'
 banner: hero.png
 ---
