@@ -1,4 +1,5 @@
 ---
+headless: true
 title: Contact
 layout: contact
 ---

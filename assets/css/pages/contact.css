@@ -1,15 +1,3 @@
-@import '../base/breakpoints.css';
-
-/* {{ $background := .Resources.GetMatch "background.*" }} */
-
-body {
-  background: center / cover no-repeat #d9d9d9 url('{{ $background.RelPermalink }}');
-}
-
-.contact {
-  color: var(--dark-text);
-}
-
 .contact h2 {
   display: inline-block;
   padding: 0.75em 1.5em;
@@ -17,10 +5,18 @@ body {
   border-bottom: 0.1em solid black;
 }
 
+.contact__link-container {
+  margin: 0;
+}
 .contact__link {
   font-size: 1.2em;
   margin-bottom: 0.5em;
 }
+
+.email.contact__link {
+  margin-top: 0;
+}
+
 .block--bottom.block--animate.contact__link::before {
   transform: scaleY(0.2);
 }

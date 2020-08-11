@@ -49,8 +49,22 @@
 {{ end }}
 {{ define "footer" }}
     <footer class="contact" id="contact" role="contentinfo">
-        <h2>{{ i18n "contact" }}</h2>
-        {{ partial "footer.html" . }}
+    {{- with .Site.GetPage "/contact" -}}
+        {{.Content}}
+        {{ with .Site.Data.contact.email }}
+        <a href="{{.link}}" class="block block--bottom block--animate contact__link email">
+            {{.text | markdownify}}
+        </a>
+        {{ end }}
+        <p>{{ i18n "find_at" }}</p>
+        {{ range .Site.Data.contact.social }}
+        <p class="contact__link-container">
+        <a href="{{.link}}" class="block block--bottom block--animate contact__link">
+            {{.text | markdownify}}
+        </a>
+        </p>
+        {{ end }}
+    {{- end -}}
     </footer>
 {{ end }}
 {{ define "end" }}

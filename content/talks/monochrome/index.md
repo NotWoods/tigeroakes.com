@@ -15,3 +15,5 @@ banner: slide.png
 **Mozilla Intern Presentation 2020**
 
 Working on the W3C specification for monochrome icons, the Firefox for Android and Gecko implementations, and even contributing monochrome support to Google.
+
+![](slide.png)

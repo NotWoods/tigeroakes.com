@@ -8,10 +8,6 @@ pygmentsUseClasses: true
 
 menu:
   main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: -130
     - identifier: blog
       name: Blog
       url: /posts/
@@ -28,10 +24,6 @@ menu:
       name: Resume
       url: /resume/
       weight: -110
-    - identifier: contact
-      name: Contact
-      url: /contact/
-      weight: -100
 
 outputs:
   home: [HTML]

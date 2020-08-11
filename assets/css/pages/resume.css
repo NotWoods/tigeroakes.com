@@ -75,9 +75,9 @@ h2 {
 /* Heading 4: Dates */
 h5 {
   float: right;
+  margin-left: 1em;
 
   font-weight: normal;
-  font-size: 9pt;
   color: var(--primary-color);
 }
 

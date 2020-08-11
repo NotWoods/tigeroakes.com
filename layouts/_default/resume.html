@@ -33,7 +33,7 @@
             <h1 class="block section">{{ i18n "resume_work" }}</h1>
             <div class="work-experience">
                 {{ range .work }}
-                <h5 class="date">
+                <h5 class="resume-date">
                     {{ dateFormat $format .startDate }}
                     —
                     {{ dateFormat $format .endDate }}
@@ -55,7 +55,7 @@
             <h1 class="block section">{{ i18n "resume_projects" }}</h1>
             <div class="resume-projects">
                 {{ range .projects }}
-                <h5 class="date">
+                <h5 class="resume-date">
                     {{ if .startDate }}
                     {{ dateFormat $format .startDate }}
                     {{ if not (eq .startDate .endDate) }}
@@ -94,7 +94,7 @@
             <h1 class="block section">{{ i18n "resume_education" }}</h1>
             <div class="education">
                 {{ range .education }}
-                <h5 class="date">
+                <h5 class="resume-date">
                     {{ dateFormat $format .startDate }}
                     —
                     {{ dateFormat $format .endDate }}

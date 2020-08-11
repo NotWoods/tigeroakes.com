@@ -49,6 +49,7 @@
 .contact {
   color: var(--dark-text);
   background: center / cover no-repeat #d9d9d9 url('{{ $background.RelPermalink }}');
+  min-height: 65vh;
 }
 
 @media (--home-projects-text) {
