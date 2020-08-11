@@ -3,8 +3,6 @@
     {{ if in .Content "<code>" }}
         {{ partialCached "meta/async-postcss.html" (resources.Get "css/highlight.css") "css/highlight.css" }}
     {{ end }}
-    {{ template "_internal/twitter_cards.html" . }}
-    {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
     <article class="article">
