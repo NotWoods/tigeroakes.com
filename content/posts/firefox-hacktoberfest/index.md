@@ -12,7 +12,6 @@ links:
     link: https://medium.com/firefox-mobile-engineering/participating-in-hacktoberfest-with-firefox-preview-fc68cc318643
 tags:
   - Android
-  - Hacktoberfest
 projects:
   - mozilla-firefox
 color: '#FF7139'
