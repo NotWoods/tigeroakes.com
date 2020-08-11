@@ -32,7 +32,7 @@ if ('serviceWorker' in navigator) {
     // See https://github.com/slightlyoff/ServiceWorker/issues/468
     navigator.serviceWorker
       .register('/service-worker.js')
-      .then(reg => {
+      .then((reg) => {
         // updatefound is fired if service-worker.js changes.
         reg.onupdatefound = () => {
           // The updatefound event implies that reg.installing is set; see
@@ -64,7 +64,7 @@ if ('serviceWorker' in navigator) {
           };
         };
       })
-      .catch(e => {
+      .catch((e) => {
         console.error('Error during service worker registration:', e);
       });
   });

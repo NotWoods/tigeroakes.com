@@ -23,7 +23,7 @@ const config = {
     '/hero.jpg',
     '/contact/background.jpg',
     '/featured-in/index.html',
-  ].map(urlPattern => ({ urlPattern, handler })),
+  ].map((urlPattern) => ({ urlPattern, handler })),
 };
 
 module.exports = config;

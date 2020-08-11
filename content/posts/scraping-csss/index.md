@@ -38,7 +38,7 @@ Rather than figure out the authentication system, I went for a different route: 
 /** Extract all the posts from this page */
 function findLinks() {
   const rows = document.querySelectorAll('.table-select-processed tbody tr');
-  Array.from(rows).map(row => {
+  Array.from(rows).map((row) => {
     // Each child is a table cell. The underscores are for ignored cells.
     const [_c, titleCell, typeCell, authorCell, _s, updatedCell] = row.children;
     return {
@@ -93,11 +93,11 @@ async function scrapeAll(dataFolder, outFolder) {
   const dataFiles = await readdir(dataFolder);
   await Promise.all(
     // Iterate through list of JSON files
-    dataFiles.map(async file => {
+    dataFiles.map(async (file) => {
       const filePath = join(dataFolder, file);
       const json = await readJson(filePath);
       // Iterate through objects in the JSON array
-      return Promise.all(json.map(node => scrapePage(node, outFolder)));
+      return Promise.all(json.map((node) => scrapePage(node, outFolder)));
     })
   );
 }
@@ -165,11 +165,11 @@ function downloadImages(article, outFolder) {
     .find('img')
     .toArray()
     // Turn the source into an absolute URL
-    .map(img => new URL($(img).attr('src'), 'https://ubccsss.org'))
+    .map((img) => new URL($(img).attr('src'), 'https://ubccsss.org'))
     // Ignore images from external sites
-    .filter(url => url.host === 'ubccsss.org')
+    .filter((url) => url.host === 'ubccsss.org')
     // Download the image
-    .forEach(async url => {
+    .forEach(async (url) => {
       const imagePath = join(outFolder, url.pathname);
       const [res] = await Promise.all([
         fetch(url),

@@ -38,7 +38,7 @@ function mergeArrays(base = [], partial, opts) {
   const indexes = new Map();
   merged.forEach((item, index) => indexes.set(toKey(item), index));
 
-  (partial || []).forEach(partialItem => {
+  (partial || []).forEach((partialItem) => {
     const existingIndex = indexes.findIndex(toKey(partialItem));
     if (existingIndex != undefined) {
       merged[existingIndex] = merge(merged[existingIndex], partialItem);
@@ -61,14 +61,14 @@ function mergeBasics(base, partial) {
       ...partial.location,
     },
     profiles: mergeArrays(base.profiles, partial.profiles, {
-      toKey: profile => profile.network,
+      toKey: (profile) => profile.network,
     }),
   };
 }
 
 function mergeWork(base, partial) {
   return mergeArrays(base, partial, {
-    toKey: work => work.company + work.startDate + work.endDate,
+    toKey: (work) => work.company + work.startDate + work.endDate,
     merge(baseWork, partialWork) {
       if (!partialWork) return baseWork;
       return {
@@ -82,7 +82,7 @@ function mergeWork(base, partial) {
 
 function mergeProjects(base, partial) {
   return mergeArrays(base, partial, {
-    toKey: proj => proj.name,
+    toKey: (proj) => proj.name,
     merge(baseProj, partialProj) {
       if (!partialProj) return baseProj;
       return {

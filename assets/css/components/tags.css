@@ -1,5 +1,6 @@
 /* List of tags (ie: blog tags, project technologies). Should be a <ul>. */
-.tags, .date {
+.tags,
+.date {
   /* expects: ul */
 
   margin: 0;

@@ -27,10 +27,10 @@ JavaScript also offers the [`FileReader`](https://developer.mozilla.org/en-US/do
 async function loadLocalFile(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload = event => {
+    reader.onload = (event) => {
       resolve(event.target.result);
     };
-    reader.onerror = event => {
+    reader.onerror = (event) => {
       reject(event.target.error);
     };
     reader.readAsText(file);

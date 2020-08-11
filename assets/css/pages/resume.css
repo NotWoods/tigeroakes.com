@@ -30,10 +30,16 @@ a {
   color: inherit;
 }
 
-.section, h2, h5, p {
+.section,
+h2,
+h5,
+p {
   margin: 0;
 }
-.summary, .resume-contact, .pipe-list, ul {
+.summary,
+.resume-contact,
+.pipe-list,
+ul {
   margin: 0 0 8pt;
 }
 

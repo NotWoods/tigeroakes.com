@@ -26,7 +26,7 @@ window.options = Object.freeze({
   async source(...urls) {
     if (urls.length === 0) throw new TypeError('Must provide at least one URL');
     const partials = await Promise.all(
-      urls.map(url => fetch(url).then(res => res.json()))
+      urls.map((url) => fetch(url).then((res) => res.json()))
     );
     jsonResume = mergeAll(...partials);
     update(jsonResume);
@@ -47,7 +47,7 @@ window.Source = Object.freeze({
 });
 
 (async function editMode() {
-  document.onpaste = e =>
+  document.onpaste = (e) =>
     update(JSON.parse(e.clipboardData.getData('text/plain')));
 
   console.log('Editor mode ready. Options:');

@@ -12,14 +12,14 @@ export function update(data) {
     '.resume-city'
   ).textContent = `${data.basics.location.city}, ${data.basics.location.region} (US Citizen)`;
   const github = document.querySelector('.resume-github');
-  const githubData = data.basics.profiles.find(p => p.network === 'GitHub');
+  const githubData = data.basics.profiles.find((p) => p.network === 'GitHub');
   github.textContent = `github.com/${githubData.username}`;
   github.href = githubData.url;
 
   // Education
   document.querySelector('.education').innerHTML = data.education
     .map(
-      e => `
+      (e) => `
         <h5>${formatDates(e.startDate, e.endDate)}</h5>
         <h2>
           <span class="institution">${e.institution}</span>
@@ -34,7 +34,7 @@ export function update(data) {
   // Work Experience
   document.querySelector('.work-experience').innerHTML = data.work
     .map(
-      w => `
+      (w) => `
         <h5>${formatDates(w.startDate, w.endDate)}</h5>
         <h2>
           <a href="${w.website}" class="company">${w.company}</a>,
@@ -48,18 +48,18 @@ export function update(data) {
 
   // Skills
   document.querySelector('.skills').textContent = data.skills
-    .map(s => s.name)
+    .map((s) => s.name)
     .join(' | ');
 
   // Awards
   document.querySelector('.awards').innerHTML = data.awards
-    .map(a => `<li>${a.title}</li>`)
+    .map((a) => `<li>${a.title}</li>`)
     .join('');
 
   // Selected Projects
   document.querySelector('.resume-projects').innerHTML = data.projects
     .map(
-      p => `
+      (p) => `
               <h5>${formatDates(p.startDate, p.endDate)}</h5>
               <h2><a href="${p.url}" class="company">${p.name}</a></h2>
               ${p.description ? `<em>${p.description}</em>` : ''}
@@ -70,10 +70,7 @@ export function update(data) {
 }
 
 function formatDate(date) {
-  return date
-    .split('-', 2)
-    .reverse()
-    .join('/');
+  return date.split('-', 2).reverse().join('/');
 }
 function formatDates(start, end) {
   if (!start) {
@@ -93,7 +90,7 @@ function markdownify(md) {
 
 function highlights(data) {
   return `<ul>
-    ${data.map(h => `<li>${markdownify(h)}</li>`).join('')}
+    ${data.map((h) => `<li>${markdownify(h)}</li>`).join('')}
   </ul>`;
 }
 

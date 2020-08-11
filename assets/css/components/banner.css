@@ -35,7 +35,8 @@
   color: inherit;
   text-transform: uppercase;
 }
-.logo__icon, .logo__title {
+.logo__icon,
+.logo__title {
   display: inline-block;
   vertical-align: top;
   margin: 0;

@@ -81,14 +81,14 @@ function update(data) {
 I'm still not a fan of typing `update(`, paste, `)`, enter. Why not just paste in the JSON directly without having to call the function? I added a listener for the `"paste"` event that responds when I paste JSON onto the resume window.
 
 ```js
-document.onpaste = e =>
+document.onpaste = (e) =>
   update(JSON.parse(e.clipboardData.getData('text/plain')));
 ```
 
 I also sometimes need to make small changes to my resume when I'm away from my computer. It would be nice to be able to edit the JSON in the web browser inspector. Using the Fetch API, I can load my JSON file in as a JavaScript object. I can use a [`Proxy` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) to detect when the object is changed, and then call `update()` automatically.
 
 ```js
-let jsonResume = await fetch().then(r => r.json());
+let jsonResume = await fetch().then((r) => r.json());
 const proxyHandler = {
   /** Recursive proxy for nested objects. */
   get(target, key) {
