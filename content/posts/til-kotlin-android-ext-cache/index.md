@@ -9,6 +9,8 @@ tags:
   - Kotlin
 images:
   - /posts/til-kotlin-android-ext-cache/slide.png
+banner: slide.png
+color: '#28be6b'
 ---
 
 In Android projects written with Kotlin, you can replace `findViewById<ViewType>(R.id.view_id)` calls by simply writing `view_id`. The [Kotlin Android Extensions](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.android.extensions) plugin adds this synthetic extension property automatically to Activities, Fragments, Views, and classes with the `LayoutContainer` interface.

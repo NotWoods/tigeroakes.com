@@ -2,7 +2,7 @@
 .block--animate::before {
   /* expects: .block */
 
-  transform: scaleX(0);
+  /* transform: scaleX(0); set in ./index.css */
   transform-origin: right;
   transition: transform 0.2s ease;
 }
@@ -11,9 +11,5 @@
   transform: scaleX(1);
 }
 .block--animate:active::before {
-  transform: scaleX(0.5);
-}
-
-.block--half::before {
   transform: scaleX(0.5);
 }

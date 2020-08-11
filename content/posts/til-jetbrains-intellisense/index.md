@@ -10,6 +10,8 @@ tags:
 images:
   - /posts/til-jetbrains-intellisense/settings.png
   - /posts/til-jetbrains-intellisense/preview.png
+color: '#28be6b'
+banner: preview.png
 ---
 
 I like easy access to documentation written in comments. In Android Studio, and other JetBrains editors, you can display function types and docs on hover when you turn on a simple setting.

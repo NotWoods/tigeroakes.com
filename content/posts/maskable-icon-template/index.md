@@ -14,6 +14,7 @@ links:
     link: maskable_icon_template.afdesign
 images:
   - /posts/maskable-icon-template/affinity-designer.png
+banner: affinity-designer.png
 ---
 
 To support full-bleed icons on various platforms, there's a new PWA icon purpose called ["maskable icons"](../maskable-icons). By providing an icon with padding, the web browser can crop it to fit alongside other icons (especially on Android where different manufacturers use different shapes). You can read more about it on my posts on [CSS Tricks](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/) and [web.dev](https://web.dev/maskable-icon/).

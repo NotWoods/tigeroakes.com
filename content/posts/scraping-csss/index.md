@@ -10,6 +10,8 @@ tags:
   - Jamstack
 images:
   - /posts/scraping-csss/drupal.png
+banner: drupal.png
+color: '#1c7cba'
 ---
 
 Your mission is to migrate a website from a server-side CMS to Jamstack. The site is 15 years old and is currently built with Drupal. All the pages need to be converted to markdown. And by the way, nobody knows the password to the server.

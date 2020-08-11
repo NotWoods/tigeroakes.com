@@ -1,10 +1,11 @@
 <article class="card talk" style="--block:{{.Params.color}}">
-  {{- with .Resources.GetMatch "slide.*" -}}
+  {{- with .Resources.GetMatch (.Params.banner | default "slide.*") -}}
   <img src="{{.RelPermalink}}" width="960" height="540" alt="" class="card__icon shadow">
   {{- end -}}
   {{ partial "time.html" . }}
   <h3 class="card__title">
-    <a class="block block--half block--animate" href="{{ .RelPermalink }}">{{.Title}}</a>
+    <a class="block block--half block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
   </h3>
   {{ partial "post/tag_list.html" . }}
+  <p class="card__description">{{ .Description }}</p>
 </article>

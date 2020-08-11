@@ -9,6 +9,8 @@ tags:
   - JavaScript
 images:
   - /posts/unify-local-network-file-reading/imgur-upload.png
+color: '#1c7cba'
+banner: imgur-upload.png
 ---
 
 ![Imgur upload page with Browse button and input to paste URL](imgur-upload.png)

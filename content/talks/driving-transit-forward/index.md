@@ -11,6 +11,7 @@ links:
   - title: Recording
     link: https://www.youtube.com/watch?v=yl_3d7PSKMY&list=PLrF7wZ1Ze5uH1xudf--exufrlgCVCE3n6&index=3&t=0s
 color: '#4d74ab'
+banner: slide.png
 ---
 
 As part of the Hawaii TechWorks Tech Tuesday meetup, I presented live on my bus schedule app Big Island Buses.

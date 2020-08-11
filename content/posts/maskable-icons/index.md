@@ -15,6 +15,7 @@ tags:
   - Web
   - PWA
   - Icons
+banner: adaptive-icons.png
 ---
 
 This article was originally written by me and posted to [CSS Tricks](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/). I've uploaded a copy of the article here, but you may prefer to read the version at CSS Tricks.

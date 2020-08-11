@@ -12,6 +12,7 @@ links:
   - title: CascadiaJS
     link: https://2020.cascadiajs.com/speakers/tiger-oakes
 color: '#17c37b'
+banner: slide.png
 ---
 
 **Coming soon to CascadiaJS 2020!**

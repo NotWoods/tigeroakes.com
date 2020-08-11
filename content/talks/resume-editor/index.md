@@ -7,6 +7,7 @@ tags:
 links:
   - title: Slides
     link: https://docs.google.com/presentation/d/1sXtlz_XLBP3NwWJH-SzBjUcQfyHSyULkDAzhChFxv6Q/edit?usp=sharing
+banner: slide.png
 ---
 
 A talk on how I automated formatting my resume, presented at UBC Project Hub.

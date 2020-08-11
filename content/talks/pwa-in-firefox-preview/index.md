@@ -13,6 +13,7 @@ links:
   - title: Recording
     link: https://youtu.be/zFNvFefOeaI
 color: '#FF7139'
+banner: slide.png
 ---
 
 Brand new Progressive Web App features coming to Firefox Preview, including customized system bars, site controls, maskable icons, and Trusted Web Activities.

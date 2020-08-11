@@ -22,3 +22,6 @@
 .block--animate::before {
   transform: scaleX(0);
 }
+.block--half::before {
+  transform: scaleX(0.5);
+}

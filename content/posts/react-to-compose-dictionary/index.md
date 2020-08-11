@@ -10,6 +10,8 @@ tags:
   - Jetpack Compose
 images:
   - /posts/react-to-compose-dictionary/banner.png
+color: '#28be6b'
+banner: banner.png
 ---
 
 ![](banner.png)
