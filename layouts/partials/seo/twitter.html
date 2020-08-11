@@ -1,0 +1,12 @@
+<meta name="twitter:site" content="@Not_Woods" />
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+{{- with .Resources.GetMatch (.Params.banner | default "") -}}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{.Permalink}}" />
+{{- else -}}
+  <meta name="twitter:card" content="summary" />
+  {{- with .Resources.GetMatch "logo.*" -}}
+  <meta name="twitter:image" content="{{.Permalink}}" />
+  {{- end -}}
+{{- end -}}

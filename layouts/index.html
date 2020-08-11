@@ -1,7 +1,5 @@
 {{ define "head" }}
     {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/home.css" | resources.ExecuteAsTemplate "css/pages/home.css" .) }}
-    {{ partial "meta/twitter-summary.html" . }}
-    {{ template "_internal/opengraph.html" . }}
     {{ range (.GetPage "/posts").AlternativeOutputFormats }}
     <link rel="{{.Rel}}" type="{{.MediaType.Type}}" href="{{.Permalink}}" title="{{$.Site.Title}}">
     {{ end }}

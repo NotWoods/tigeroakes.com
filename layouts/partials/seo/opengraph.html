@@ -1,0 +1,12 @@
+<meta name="og:title" content="{{ .Title }}" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="{{ .Permalink }}" />
+<meta name="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+<meta name="og:site_name" content="Tiger Oakes" />
+{{- with .Resources.GetMatch (.Params.banner | default "") -}}=
+  <meta name="og:image" content="{{.Permalink}}" />
+{{- else -}}
+  {{- with .Resources.GetMatch "logo.*" -}}
+  <meta name="og:image" content="{{.Permalink}}" />
+  {{- end -}}
+{{- end -}}

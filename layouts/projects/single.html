@@ -1,7 +1,5 @@
 {{ define "head" }}
     {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/article.css") "css/pages/article.css" }}
-    {{ partial "meta/twitter-summary.html" . }}
-    {{ template "_internal/opengraph.html" . }}
 {{ end }}
 {{ define "main" }}
     <article class="article">

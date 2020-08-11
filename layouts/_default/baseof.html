@@ -18,6 +18,8 @@
     <link rel="{{.Rel}}" type="{{.MediaType.Type}}" href="{{.Permalink}}" title="{{$.Site.Title}}">
     {{ end }}
     {{ partial "seo/breadcrumb.html" . }}
+    {{ partial "seo/twitter.html" . }}
+    {{ partial "seo/opengraph.html" . }}
     {{ block "head" . }}
 
     {{ end }}

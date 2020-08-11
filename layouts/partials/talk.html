@@ -1,5 +1,5 @@
 <article class="card talk" style="--block:{{.Params.color}}">
-  {{- with .Resources.GetMatch (.Params.banner | default "slide.*") -}}
+  {{- with .Resources.GetMatch (.Params.banner | default "") -}}
   <picture class="card__picture">
     <img src="{{.RelPermalink}}" width="640" height="320" alt="" class="card__source">
   </picture>

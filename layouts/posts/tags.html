@@ -1,5 +1,5 @@
 {{ define "head" }}
-    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/talks.css") }}
     {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/tags.css") "css/pages/tags.css" }}
 {{ end }}
 {{ define "main" }}
@@ -16,9 +16,9 @@
         </div>
     </header>
 
-    <main class="posts">
+    <main class="talks inner">
         {{ range where .FirstSection.RegularPages ".Params.tags" "intersect" (slice .Title) }}
-        {{ partial "post/preview.html" . }}
+        {{ partial "talk.html" . }}
         {{ end }}
     </main>
 {{ end }}
