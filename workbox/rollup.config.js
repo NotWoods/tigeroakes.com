@@ -13,12 +13,12 @@ export default async function rollupConfig({ configDebug }) {
   const mode = configDebug ? 'development' : 'production';
   return [
     {
-      input: 'workbox/sw-window.js',
-      output: [{ dir: 'public/js/', format: 'es', sourcemap: true }],
+      input: 'workbox/window-async.js',
+      output: [{ file: 'public/js/window-async.js', format: 'es', sourcemap: true }],
       plugins: [nodeResolve(), terser()],
     },
     {
-      input: 'workbox/service-worker.js',
+      input: 'workbox/src/service-worker.js',
       output: [
         { file: 'public/service-worker.js', format: 'iife', sourcemap: true },
       ],

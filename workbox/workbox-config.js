@@ -7,6 +7,8 @@ const config = {
   globDirectory: 'public/',
   globPatterns: [
     '**/*.css',
+    'js/**/*.js',
+    'offline.html',
     // Home page
     'index.html',
     'hero.jpg',

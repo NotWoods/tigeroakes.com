@@ -12,6 +12,7 @@
     <meta name="theme-color" content="#e66d31">
     <meta name="monetization" content="$ilp.uphold.com/p2WKq3nJHA8w">
     {{ partialCached "meta/loadcss.html" . }}
+    {{ partialCached "meta/sw.html" . }}
     {{ partialCached "meta/postcss.html" (resources.Get "css/core.css") "css/core.css" }}
     {{ partialCached "meta/async-postcss.html" (resources.Get "css/async.css") "css/async.css" }}
     {{ range .AlternativeOutputFormats }}
@@ -37,5 +38,4 @@
     {{ end }}
 
     {{ template "_internal/google_analytics_async.html" . }}
-    <script async type="module" src="/js/sw-window.js"></script>
 </body>

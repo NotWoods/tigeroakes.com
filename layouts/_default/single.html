@@ -10,7 +10,7 @@
         <header class="card header article__header"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
             <div class="header__content inner">
                 <div class="header__text">
-                    {{ partial "time.html" . }}
+                    {{ if (gt .Date 0) }}{{ partial "time.html" . }}{{ end }}
                     <h1 class="block card__title">{{.Title}}</h1>
                     {{ partial "post/tag_list.html" . }}
                 </div>

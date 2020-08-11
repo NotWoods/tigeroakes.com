@@ -1,0 +1,2 @@
+{{ $script := resources.Get "js/sw-registration.js" | minify }}
+<script type="module">{{ $script.Content | safeJS }}</script>
