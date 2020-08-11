@@ -35,6 +35,8 @@
         {{ partialCached "footer.html" . }}
     </footer>
     {{ end }}
+
     {{ template "_internal/google_analytics_async.html" . }}
-    {{ block "end" . }}{{ end }}
+    {{ $swRegistration := resources.Get "/js/service-worker-registration.js" | minify }}
+    <script async defer src="{{ $swRegistration.RelPermalink }}"></script>
 </body>

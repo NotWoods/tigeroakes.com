@@ -67,7 +67,3 @@
     {{- end -}}
     </footer>
 {{ end }}
-{{ define "end" }}
-    {{ $swRegistration := resources.Get "js/service-worker-registration.js" | minify }}
-    <script async defer src="{{ $swRegistration.RelPermalink }}"></script>
-{{ end }}
