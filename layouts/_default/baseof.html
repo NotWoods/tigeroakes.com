@@ -37,6 +37,5 @@
     {{ end }}
 
     {{ template "_internal/google_analytics_async.html" . }}
-    {{ $swRegistration := resources.Get "/js/service-worker-registration.js" | minify }}
-    <script async defer src="{{ $swRegistration.RelPermalink }}"></script>
+    <script async type="module" src="/js/sw-window.js"></script>
 </body>

@@ -58,6 +58,17 @@ registerRoute(
   })
 );
 
+// CSS
+registerRoute(
+  ({ request }) => request.destination === 'style',
+  new StaleWhileRevalidate({
+    plugins: [
+      new ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 30 * DAY }),
+    ],
+    matchOptions: ignoreSearch,
+  })
+);
+
 // List pages
 const listPagePaths = new Set([
   '/projects/',

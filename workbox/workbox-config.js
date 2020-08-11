@@ -10,7 +10,7 @@ const config = {
     // Home page
     'index.html',
     'hero.jpg',
-    'profile_*_160x0_*.jpg',
+    'profile_*_{80,160}x0_*.jpg',
     'contact/**/*.{jpg,svg}',
     // Featured projects
     'projects/{mozilla-firefox,google,yelp}/**/*.{html,jpg,svg,png}',
