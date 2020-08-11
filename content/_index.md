@@ -10,4 +10,4 @@ I started programming in secondary school and enjoyed it so much I'm still doing
 
 Some of my side [projects](/projects/) have been featured in [Washington, DC](https://gabbard.house.gov/news/press-releases/rep-tulsi-gabbard-presents-congressional-awards-young-leaders-hawai-i-s-second) and outlets such as [CSS Tricks](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/), [Google Developers](https://developers.google.com/web/updates/2019/12/nic79#maskable-icons), [web.dev](https://web.dev/maskable-icon-audit/), the [Star-Advertiser](/featured-in/star-advertiser) and [Hawai'i Public Radio](http://www.bytemarkscafe.org/2015/04/29/episode-348-sounding-rockets-apr-29-2015/).
 
-Below is a portfolio of my projects. If you'd like to get in touch or if you have questions about my work, don't hesitate to [contact me](/contact/).
+Below is a portfolio of my projects. If you'd like to get in touch or if you have questions about my work, don't hesitate to [contact me](#contact).
