@@ -19,6 +19,7 @@
   color: var(--dark-text);
   font-size: 11pt;
   background: white;
+  font-variant-ligatures: none;
 }
 
 .resume__header {
