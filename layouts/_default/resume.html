@@ -17,12 +17,14 @@
 
             <p class="resume-contact pipe-list">
                 <a class="resume-email" href="mailto:{{.basics.email}}">{{.basics.email}}</a> |
+                {{ $phoneSlice := split .basics.phone "-" | after 1 }}
+                <a class="resume-phone" href="tel:{{.basics.phone}}">{{ delimit $phoneSlice "-" }}</a> |
+                <a class="resume-website" href="{{.basics.website}}">tigeroakes.com</a> |
                 {{ range .basics.profiles }}
                 {{- if eq .network "GitHub" -}}
-                <a class="resume-github" href="{{.url}}">github.com/{{.username}}</a> |
+                <a class="resume-github" href="{{.url}}">github.com/{{.username}}</a>
                 {{- end -}}
                 {{ end }}
-                <span class="resume-city">{{.basics.location.city}}, {{.basics.location.region}} (US Citizen)</span>
             </p>
 
             <p class="summary">{{.basics.summary}}</p>

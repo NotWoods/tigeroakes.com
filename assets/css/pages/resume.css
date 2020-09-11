@@ -30,6 +30,9 @@
 a {
   color: inherit;
 }
+a:hover {
+  text-decoration: underline;
+}
 
 .section,
 h2,

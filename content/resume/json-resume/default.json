@@ -4,7 +4,7 @@
     "label": "Software Developer",
     "picture": "https://tigeroakes.com/profile.jpg",
     "email": "contact@tigeroakes.com",
-    "phone": "1 (253) 778-6251",
+    "phone": "+1-253-778-6251",
     "website": "https://tigeroakes.com",
     "summary": "Software developer with 10 yrs experience. Built 2 mobile web browsers & hundreds of open source projects.",
     "location": {
@@ -106,6 +106,7 @@
       "highlights": [
         "Built Maskable.app developer tool. Recommended by Google & CSS Tricks and is used **over 5,000 times/month**.",
         "Implemented icon features for Google Bubblewrap & Microsoft PWABuilder, used **over 2,000 times/month**.",
+        "Contributed **TypeScript typings to over 20 projects**, including authoring DefinitelyTyped packages.",
         "Added support for new commands with **Node.js** to appium-adb to interface with **Android** devices over USB."
       ]
     },
