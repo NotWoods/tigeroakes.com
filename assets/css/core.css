@@ -25,19 +25,22 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.link--hidden {
+  --link-color: transparent;
+}
 /* Only for markdown-generated classes. */
 a:not([class]),
-.block--underline {
+.link {
   background-image: linear-gradient(
     0deg,
     transparent 2%,
-    var(--block) 0,
-    var(--block) 10%,
+    var(--link-color) 0,
+    var(--link-color) 10%,
     transparent 0,
     transparent
   );
 }
 a:not([class]):hover,
-.block--underline:hover {
-  --block: currentColor;
+.link:hover {
+  --link-color: currentColor;
 }
