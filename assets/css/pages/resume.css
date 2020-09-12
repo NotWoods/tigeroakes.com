@@ -6,7 +6,7 @@
 
   padding: 0.6em 2em;
 
-  color: white;
+  color: white !important;
   font-weight: bold;
   font-size: 1rem;
 }
@@ -27,11 +27,8 @@
   margin-bottom: 8pt;
 }
 
-a {
-  color: inherit;
-}
-a:hover {
-  text-decoration: underline;
+.company {
+  --block: transparent;
 }
 
 .section,

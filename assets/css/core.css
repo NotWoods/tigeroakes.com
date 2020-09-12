@@ -22,11 +22,22 @@ body {
 }
 
 a {
-  color: var(--link-color);
+  color: inherit;
   text-decoration: none;
 }
-/* On hover, show an underline. Only for markdown-generated classes. */
-a:hover:not([class]),
-.tag__link:hover {
-  text-decoration: underline;
+/* Only for markdown-generated classes. */
+a:not([class]),
+.block--underline {
+  background-image: linear-gradient(
+    0deg,
+    transparent 2%,
+    var(--block) 0,
+    var(--block) 10%,
+    transparent 0,
+    transparent
+  );
+}
+a:not([class]):hover,
+.block--underline:hover {
+  --block: currentColor;
 }

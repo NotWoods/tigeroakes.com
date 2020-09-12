@@ -2,7 +2,7 @@
 .block--bottom.block--animate::before {
   /* expects: .block */
 
-  transform: scaleY(0);
+  transform: scaleY(var(--initial-block-width, 0));
   transform-origin: top;
 }
 .block--bottom.block--animate:hover::before,

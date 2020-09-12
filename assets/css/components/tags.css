@@ -26,6 +26,7 @@
 }
 
 .tag__link {
+  --block: transparent;
   color: inherit;
 }
 .tag--elsewhere {

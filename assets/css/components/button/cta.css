@@ -1,14 +1,15 @@
 /* Wrapper element for CTA .button, places it in the center */
 .cta__wrap {
   --block: #fff;
-  color: var(--dark-text);
 
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
   font-size: 1.5em;
 }
-
+.cta__wrap .button {
+  color: var(--dark-text);
+}
 .cta__wrap .button::after {
   will-change: opacity;
 }

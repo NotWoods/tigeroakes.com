@@ -4,13 +4,13 @@
   {{ end }}
   {{ range .Params.tags }}
   <li class="tag">
-      <a class="tag__link" href='{{ relURL (print "/" $.Type "/tags/" . "/" | urlize) }}'>{{.}}</a>
+      <a class="tag__link block--underline" href='{{ relURL (print "/" $.Type "/tags/" . "/" | urlize) }}'>{{.}}</a>
   </li>
   {{ end }}
   {{ range .Params.projects }}
   {{ $project := $.Site.GetPage "projects" . }}
   <li class="tag tag--project">
-      <a class="tag__link" href='{{ $project.RelPermalink }}'>{{ $project.Name }}</a>
+      <a class="tag__link block--underline" href='{{ $project.RelPermalink }}'>{{ $project.Name }}</a>
   </li>
   {{ end }}
 </ul>
