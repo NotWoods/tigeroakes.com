@@ -38,3 +38,6 @@ other = "Community"
 other = "You can send an email to"
 [find_at]
 other = "You can find me at"
+
+[view_all]
+other = "View all"

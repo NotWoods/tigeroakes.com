@@ -1,8 +1,17 @@
 @import '../base/breakpoints.css';
 @import '../components/card/list.css';
-@import '../components/hero.css';
 @import '../components/header.css';
 @import '../components/section.css';
+
+.about {
+  --block: #ddd;
+
+  font-size: 1.2em;
+}
+.about .buttons {
+  color: var(--dark-text);
+  text-shadow: none;
+}
 
 .talks {
   display: grid;

@@ -1,12 +1,7 @@
 @import '../base/breakpoints.css';
 @import '../components/button/cta.css';
-@import '../components/hero.css';
+@import '../components/section.css';
 @import './contact.css';
-
-.hero__content {
-  text-align: center;
-  padding: 5em 0em;
-}
 
 .home__heading {
   font-size: 2.5em;
@@ -17,24 +12,66 @@
   margin: 0;
 }
 
-.about {
-  background: var(--light-background);
+.profile {
+  border-radius: 50%;
+  box-shadow: 0 2px 1px rgb(0 0 0 / 20%);
+  max-width: none;
+}
 
-  padding: 2rem 0;
+.about {
+  background: none;
+  color: inherit;
+  text-shadow: none;
 }
 .about__content {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  font-size: 1.2em;
 }
 .profile {
-  flex: 0 0 160px;
+  --size: 160px;
+  width: var(--size);
+  height: var(--size);
+  flex: 0 0 var(--size);
   margin-left: 5em;
 }
-@media (prefers-color-scheme: dark) {
-  .profile {
-    box-shadow: 0 2px 1px rgb(255 255 255 / 20%);
-  }
+
+.previews {
+  background: var(--light-background);
+
+  padding: 2rem 0;
+}
+.section__all {
+  margin-left: 1em;
+  padding: 0.3em 0.5em;
+  vertical-align: middle;
+
+  --block: var(--subtle-background);
+  font-size: 0.9rem;
+  text-transform: none;
+}
+.preview__list {
+  padding: 0;
+}
+.preview {
+  display: block;
+  padding: 0;
+  margin-bottom: 1em;
+
+  color: inherit;
+  background: none;
+  text-shadow: none;
+}
+.preview__title {
+  font-size: 1.4em;
+}
+.preview__cta {
+  --block: var(--subtle-background);
+
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .featured-projects {
@@ -42,6 +79,21 @@
 }
 .featured-project {
   padding: 4rem 3.5rem 5rem;
+}
+.featured-project:first-child {
+  padding-top: 1rem;
+}
+.featured-project:last-child {
+  padding-bottom: 1rem;
+}
+.projects__title {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+.projects .cta__wrap {
+  margin-top: 5rem;
+
+  text-shadow: none;
 }
 
 /* {{ $background := (.Site.GetPage "/contact").Resources.GetMatch "background.*" }} */
@@ -57,19 +109,18 @@
   .featured-projects {
     font-size: 0.9em;
   }
-  .profile {
-    width: 120px;
-    height: 120px;
-    flex-basis: 120px;
-  }
 }
 
 @media (--banner-wrap) {
   .about__content {
     flex-wrap: wrap-reverse;
   }
+  .home__heading {
+    display: none;
+  }
   .profile {
     margin: 0;
+    --size: 100px;
   }
 
   .featured-project {

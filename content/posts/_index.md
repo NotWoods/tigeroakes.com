@@ -15,6 +15,6 @@ links:
     link: /posts/index.xml
 ---
 
-My blog is where I learn out loud. I write about web and Android development, and plenty of icon talk.
+My blog is where I learn out loud. I write about [web](tags/web/) and [Android](tags/android/) development, and plenty of [icon](tags/icons/) talk.
 
 Occasionally I write articles elsewhere, you can find them here too.

@@ -1,4 +1,5 @@
 ---
+feature: true
 elsewhere:
   name: web.dev
   source: https://web.dev

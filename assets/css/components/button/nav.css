@@ -17,8 +17,14 @@
 .article__nav-link:first-child {
   grid-area: navprev;
 }
+.article__nav-link:first-child::before {
+  content: '< ';
+}
 .article__nav-link:last-child {
   grid-area: navnext;
+}
+.article__nav-link:last-child::after {
+  content: ' >';
 }
 .article__nav .button {
   grid-area: button;

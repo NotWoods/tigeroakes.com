@@ -43,14 +43,8 @@ video.center {
 code {
   padding: 0.1em 0.3em;
 
-  --block: rgb(27 31 35 / 10%);
-  background: linear-gradient(0deg, transparent 11%, var(--block) 0, var(--block));
+  background: linear-gradient(0deg, transparent 11%, var(--subtle-background) 0, var(--subtle-background));
   overflow-wrap: anywhere;
-}
-@media (prefers-color-scheme: dark) {
-  code {
-    --block: rgb(220 224 228 / 10%);
-  }
 }
 
 pre {

@@ -1,4 +1,5 @@
 ---
+feature: true
 elsewhere:
   name: Firefox Mobile Engineering
   source: https://medium.com/firefox-mobile-engineering
