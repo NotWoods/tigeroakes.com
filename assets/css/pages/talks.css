@@ -2,6 +2,7 @@
 @import '../components/card/list.css';
 @import '../components/hero.css';
 @import '../components/header.css';
+@import '../components/section.css';
 
 .talks {
   display: grid;

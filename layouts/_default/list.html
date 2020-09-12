@@ -1,12 +1,25 @@
 {{ define "head" }}
-    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/talks.css") }}
+  {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/talks.css") }}
 {{ end }}
 {{ define "main" }}
-    {{ partial "mini_hero.html" . }}
+  {{ partial "mini_hero.html" . }}
 
-    <main class="talks inner">
-        {{ range .RegularPages }}
+  {{ if .Params.group_by_date }}
+    <main class="inner">
+    {{ range .RegularPages.GroupByDate .Params.group_by_date }}
+      <h2 class="section__title">{{ .Key }}</h2>
+      <div class="talks">
+        {{ range .Pages }}
         {{ partial "talk.html" . }}
         {{ end }}
+      </div>
+    {{ end }}
     </main>
+  {{ else }}
+    <main class="talks inner">
+      {{ range .RegularPages }}
+      {{ partial "talk.html" . }}
+      {{ end }}
+    </main>
+  {{ end }}
 {{ end }}
