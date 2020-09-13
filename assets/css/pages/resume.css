@@ -1,3 +1,4 @@
+@import '../components/section.css';
 @import '../components/button/cta.css';
 @import '../components/button/nav.css';
 
@@ -27,10 +28,14 @@
   margin-bottom: 8pt;
 }
 
+.section__title:first-of-type {
+  margin-top: 1rem;
+}
+
 .section,
 h2,
 h5,
-p {
+.resume p {
   margin: 0;
 }
 .summary,
