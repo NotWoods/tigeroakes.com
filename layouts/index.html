@@ -35,7 +35,7 @@
             <h2 class="section__title">
                 Popular content
             </h2>
-            <ul class="previews">
+            <ul class="preview__list">
             {{- $content := (.GetPage "posts").RegularPages | append (.GetPage "talks").RegularPages -}}
             {{ range where $content ".Params.feature" true }}
             {{ partial "home_preview" . }}
