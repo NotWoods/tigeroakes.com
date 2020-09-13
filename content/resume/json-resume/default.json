@@ -106,8 +106,8 @@
       "highlights": [
         "Built Maskable.app developer tool. Recommended by Google & CSS Tricks and is used **over 5,000 times/month**.",
         "Implemented icon features for Google Bubblewrap & Microsoft PWABuilder, used **over 2,000 times/month**.",
-        "Contributed **TypeScript typings to over 20 projects**, including authoring DefinitelyTyped packages.",
-        "Added support for new commands with **Node.js** to appium-adb to interface with **Android** devices over USB."
+        "Maintainer for **Rollup** ES6 module bundler, adding **TypeScript typings and compiler support** to all plugins.",
+        "Created Big Island Buses offline web app with County of Hawai'i, won Congressional App Challenge 2014."
       ]
     },
     {
