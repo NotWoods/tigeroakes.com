@@ -4,7 +4,7 @@ elsewhere:
   source: https://css-tricks.com
   link: https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
 title: The Thinking Behind Simplifying Event Handlers
-description: How to reduce both the amount of code written and the number of listeners needed for Javascript event handlers.
+description: How to reduce both the amount of code written and the number of listeners needed for JavaScript event handlers.
 date: 2019-05-09 00:00:00
 author: tiger
 editor: chris_coyier
@@ -27,7 +27,7 @@ This article was originally written here, then re-edited and posted to [CSS Tric
 
 ---
 
-Events are an important part of any interactive web app. Events are used to respond when a user clicks somewhere, focuses on a link with their keyboard, and changes the text in a form. When I first started learning Javascript, I wrote complicated event listeners. More recently I've learned how to reduce both the amount of code I write and the number of listeners I need.
+Events are an important part of any interactive web app. Events are used to respond when a user clicks somewhere, focuses on a link with their keyboard, and changes the text in a form. When I first started learning JavaScript, I wrote complicated event listeners. More recently I've learned how to reduce both the amount of code I write and the number of listeners I need.
 
 Let's start with a simple example - a navigation element with a few links. We want to print a message to the console showing where a hyperlink goes when the user focuses on it.
 
@@ -41,7 +41,7 @@ Let's start with a simple example - a navigation element with a few links. We wa
 
 ## The intuitive way
 
-When I first started learning about Javascript events, I wrote separate event listener functions for each element. I see this as a common pattern because it's the simplest way to start - we want specific behavior for each link, so we can use specific code for each.
+When I first started learning about JavaScript events, I wrote separate event listener functions for each element. I see this as a common pattern because it's the simplest way to start - we want specific behavior for each link, so we can use specific code for each.
 
 ```js
 document.querySelector('a[href="#first"]').addEventListener('focusin', evt => {
@@ -115,7 +115,7 @@ const print = evt => {
 document.querySelector('nav').addEventListener('focusin', print);
 ```
 
-Now the many event listeners have been collapsed to just one! With more complicated code, the effect will be greater. By utilizing the `Event` object and bubbling, you can master Javascript events and simplify your event handler code.
+Now the many event listeners have been collapsed to just one! With more complicated code, the effect will be greater. By utilizing the `Event` object and bubbling, you can master JavaScript events and simplify your event handler code.
 
 ---
 
@@ -135,7 +135,7 @@ As a reminder, we're making a navigation element with a few interactive links. L
 </nav>
 ```
 
-Let's change our Javascript code from before to respond to clicks rather than keyboard focus.
+Let's change our JavaScript code from before to respond to clicks rather than keyboard focus.
 
 ```js
 const print = evt => {
@@ -172,7 +172,7 @@ Here are some additional examples to demonstrate how to take advantage of a sing
 
 ## Lists
 
-A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with Javascript. If you have event listeners attached to each item, then your code has to deal with event listeners every time you generate a new element.
+A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with JavaScript. If you have event listeners attached to each item, then your code has to deal with event listeners every time you generate a new element.
 
 ```html
 <div id="buttons-container"></div>

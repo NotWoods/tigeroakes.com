@@ -14,5 +14,3 @@ I currently study computer science at the University of British Columbia. I'm lo
 I started programming in secondary school and enjoyed it so much I'm still doing it! In my spare time, I search for geocaches with [my partner](https://daphneliu.com).
 
 Below is my resume, and I hope you enjoy exploring my site. If you'd like to get in touch or if you have questions about my work, don't hesitate to [contact me](/#contact).
-
-<h2 class="section__title">Resume</h2>

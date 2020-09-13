@@ -32,7 +32,7 @@ With no server passwords, I had to explore alternative ways to move the site out
 
 The first step was to collect all the page links in the Drupal website into a single file that I could read later on. All the pages are listed in a table on the admin panel, making it straightforward to read the HTML table and store the data in the cells. However, the admin panel is gated behind a login, so I can’t just download the HTML from a command line and parse through it.
 
-Rather than figure out the authentication system, I went for a different route: scrape the page using Firefox DevTools. By pasting a [script](https://github.com/ubccsss/drupal-export/blob/master/scrape_list.js) into DevTools, I could run some Javascript while already logged in. Using [`querySelectorAll`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll), I could get an of all the table rows on the page, then extract data from the cells.
+Rather than figure out the authentication system, I went for a different route: scrape the page using Firefox DevTools. By pasting a [script](https://github.com/ubccsss/drupal-export/blob/master/scrape_list.js) into DevTools, I could run some JavaScript while already logged in. Using [`querySelectorAll`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll), I could get an of all the table rows on the page, then extract data from the cells.
 
 ```js
 /** Extract all the posts from this page */

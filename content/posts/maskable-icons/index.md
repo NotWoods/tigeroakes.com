@@ -4,7 +4,7 @@ elsewhere:
   source: https://css-tricks.com
   link: https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/
 title: 'Maskable Icons: Android Adaptive Icons for the Web'
-description: How to reduce both the amount of code written and the number of listeners needed for Javascript event handlers.
+description: How to reduce both the amount of code written and the number of listeners needed for JavaScript event handlers.
 date: 2019-08-29
 author: tiger
 editor: chris_coyier
