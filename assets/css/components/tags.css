@@ -10,6 +10,11 @@
   font-size: 0.9em;
   line-height: 1.5em;
 }
+.date .date {
+  opacity: 1;
+  font-size: 1em;
+  line-height: 1em;
+}
 
 /* Single tags. Should be an <li> inside <ul class="tags">. */
 .tag {

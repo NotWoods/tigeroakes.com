@@ -4,7 +4,7 @@
     <img src="{{.RelPermalink}}" width="640" height="320" alt="" loading="lazy" class="card__source">
   </picture>
   {{- end -}}
-  {{ partial "time.html" . }}
+  {{ partial "time.html" .Date }}
   <h3 class="card__title">
     <a class="block block--half block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{.Title}}</a>
   </h3>

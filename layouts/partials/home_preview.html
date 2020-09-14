@@ -1,5 +1,5 @@
 <li class="card preview" style="--block:{{.Params.color}}">
-  {{ partial "time.html" . }}
+  {{ partial "time.html" .Date }}
   <h3 class="card__title preview__title">
     <a class="block block--animate" href='{{ partial "meta/rellink.xml" . }}'>
       {{ .Title }}
