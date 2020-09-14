@@ -2,7 +2,7 @@
 title: 'React to Jetpack Compose Dictionary'
 description: Two libraries with similar concepts. What's the equivalent Jetpack Compose terms for React terms?
 date: 2020-07-20
-lastmod: 2020-07-21
+lastmod: 2020-09-14
 author: tiger
 tags:
   - Android
@@ -19,7 +19,7 @@ banner: banner.png
 
 I've been trying out [Jetpack Compose](https://developer.android.com/jetpack/compose) on a personal project and liking the API. Compose is a pretty big API shift, and I've found my [React](https://reactjs.org/) knowledge much more helpful than my Android knowledge. Perhaps this is how React Native developers come to replace native Android developers.
 
-Many concepts and functions in the two libraries work the same but have different names. Here's a compilation of terms I've seen along with explanations. Jetpack Compose is still changing, and this list is based on [version 0.1.0-dev14](https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev14).
+Many concepts and functions in the two libraries work the same but have different names. Here's a compilation of terms I've seen along with explanations. Jetpack Compose is still changing, and this list is based on [version 1.0.0-alpha02](https://developer.android.com/jetpack/androidx/releases/ui#1.0.0-alpha02).
 
 {{< toc >}}
 
@@ -56,15 +56,15 @@ Container {
 
 ## Context > Ambient
 
-While most data is passed through the component tree as props/parameters, sometimes this model can be cumbersome. React includes the [Context](https://reactjs.org/docs/context.html) API to share this data. Compose uses [Ambient](https://developer.android.com/reference/kotlin/androidx/compose/Ambient#current:androidx.compose.Ambient.T) to accomplish the same thing.
+While most data is passed through the component tree as props/parameters, sometimes this model can be cumbersome. React includes the [Context](https://reactjs.org/docs/context.html) API to share this data. Compose uses [Ambient](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Ambient) to accomplish the same thing.
 
 ### createContext > ambientOf
 
-A React Context is created with [`React.createContext`](https://reactjs.org/docs/context.html#reactcreatecontext), while a Jetpack Compose ambient is created with [`ambientOf`](https://developer.android.com/reference/kotlin/androidx/compose/package-summary#ambientof).
+A React Context is created with [`React.createContext`](https://reactjs.org/docs/context.html#reactcreatecontext), while a Jetpack Compose ambient is created with [`ambientOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#ambientof).
 
 ### Provider > Provider
 
-The value can be controlled using a "Provider" in both [React](https://reactjs.org/docs/context.html#contextprovider) and [Compose](<https://developer.android.com/reference/kotlin/androidx/compose/package-summary#Providers(androidx.compose.ProvidedValue,%20kotlin.Function0)>).
+The value can be controlled using a "Provider" in both [React](https://reactjs.org/docs/context.html#contextprovider) and [Compose](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#providers).
 
 ```jsx
 <MyContext.Provider value={myValue}>
@@ -86,7 +86,7 @@ Accessing the React context value is accomplished using the [`useContext` hook](
 const myValue = useContext(MyContext);
 ```
 
-Accessing the value of an Ambient is done by using the [`.current` getter](https://developer.android.com/reference/kotlin/androidx/compose/Ambient#current:androidx.compose.Ambient.T).
+Accessing the value of an Ambient is done by using the [`.current` getter](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Ambient#current).
 
 ```kotlin
 val myValue = MyAmbient.current
@@ -104,7 +104,7 @@ useEffect(() => {
 });
 ```
 
-Compose has the [`onCommit` effect](https://developer.android.com/reference/kotlin/androidx/compose/package-summary#oncommit) to run side effects every [composition](#render--composition).
+Compose has the [`onCommit` effect](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#oncommit) to run side effects every [composition](#render--composition).
 
 ```kotlin
 onCommit {
@@ -125,7 +125,7 @@ useEffect(() => {
 });
 ```
 
-Jetpack Compose exposes an [`onDispose` function](<https://developer.android.com/reference/kotlin/androidx/compose/CommitScope#onDispose(kotlin.Function0)>) inside `onCommit`, which runs when the effect leaves the composition.
+Jetpack Compose exposes an [`onDispose` function](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#ondispose) inside `onCommit`, which runs when the effect leaves the composition.
 
 ```kotlin
 onCommit {
@@ -168,7 +168,7 @@ useEffect(() => {
 }, []);
 ```
 
-Jetpack Compose has a separate [`onActive` effect](<https://developer.android.com/reference/kotlin/androidx/compose/package-summary#onActive(kotlin.Function1)>) for this.
+Jetpack Compose has a separate [`onActive` effect](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#onactive) for this.
 
 ```kotlin
 onActive {
@@ -199,12 +199,12 @@ function useFriendStatus(friendID) {
 }
 ```
 
-In Jetpack Compose, [@Composable functions](https://developer.android.com/reference/kotlin/androidx/compose/Composable) are used as the equivalent of hooks (along with acting as the [equivalent of Components](#react-component--composable)). These composable functions, sometimes referred to as "effect" functions, usually start with a lowercase letter instead of an uppercase letter.
+In Jetpack Compose, [@Composable functions](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable) are used as the equivalent of hooks (along with acting as the [equivalent of Components](#react-component--composable)). These composable functions, sometimes referred to as "effect" functions, usually start with a lowercase letter instead of an uppercase letter.
 
 ```kotlin
 @Composable
 fun friendStatus(friendID: String): State<Boolean?> {
-  val isOnline = state<Boolean?> { null }
+  val isOnline = remember { mutableStateOf<Boolean?>(null) }
 
   onCommit {
     val handleStatusChange = { status: FriendStatus ->
@@ -235,7 +235,7 @@ React has a special [string prop named `key`](https://reactjs.org/docs/lists-and
 </ul>
 ```
 
-Jetpack Compose has a special [utility composable called `key`](https://developer.android.com/reference/kotlin/androidx/compose/package-summary#key) that can take any input.
+Jetpack Compose has a special [utility composable called `key`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#key) that can take any input.
 
 ```kotlin
 Column {
@@ -286,7 +286,7 @@ React allows values to be re-computed only if certain dependencies change inside
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
-Jetpack Compose has a similar function named [`remember`](https://developer.android.com/reference/kotlin/androidx/compose/package-summary#remember) that only re-computes a value if the inputs change.
+Jetpack Compose has a similar function named [`remember`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#remember) that only re-computes a value if the inputs change.
 
 ```kotlin
 val memoizedValue = remember(a, b) { computeExpensiveValue(a, b) }
@@ -302,7 +302,7 @@ function Greeting(props) {
 }
 ```
 
-In Jetpack Compose, Composable functions are building blocks used to split the UI into independent and reusable pieces. They are functions with a `@Composable` annotation that can take any number of parameters.
+In Jetpack Compose, Composable functions are building blocks used to split the UI into independent and reusable pieces. They are functions with a [`@Composable` annotation](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable) that can take any number of parameters.
 
 ```kotlin
 @Composable
@@ -321,7 +321,7 @@ Once data has changed inside a UI component, the library must adjust what is pre
 
 Internally React needs to figure out what changes when a component is rendered. This diffing algorithm is called the ["Reconciler"](https://reactjs.org/docs/reconciliation.html). React Fiber referred to the release of the new Fiber Reconciler which replaced the old algorithm.
 
-Jetpack Compose's diffing is done using the [Composer](https://developer.android.com/reference/kotlin/androidx/compose/Composer). It determines how nodes change every time a composable completes composition.
+Jetpack Compose's diffing is done using the [Composer](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composer). It determines how nodes change every time a composable completes composition.
 
 ## State > State
 
@@ -339,19 +339,52 @@ const [count, setCount] = useState(0);
 </button>
 ```
 
-Compose uses the [`state` function](<https://developer.android.com/reference/kotlin/androidx/compose/package-summary#state(kotlin.Function2,%20kotlin.Function0)>) to return a `MutableState` object, which contains a variable with a getter and setter.
+Compose uses the [`mutableStateOf` function](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutablestateof) to return a [`MutableState` object](https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState), which contains a variable with a getter and setter.
 
 ```kotlin
-val count = state { 0 }
+val count = remember { mutableStateOf(0) }
 
 Button(onClick = { count.value++ }) {
   Text("You clicked ${count.value} times")
 }
 ```
 
+`MutableState` contains [`componentN()` functions](https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState#component1()), allowing you to destructure the getter and setter just like React.
+
+```kotlin
+val (count, setCount) = remember { mutableStateOf(0) }
+
+Button(onClick = { setCount(count + 1) }) {
+  Text("You clicked ${count} times")
+}
+```
+
+To avoid recomputing the initial state, `mutableStateOf` is usually wrapped with the [`remember` function](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#remember).
+
+### setState updater function > Snapshot
+
+When updating [state in a React component](https://reactjs.org/docs/react-component.html#setstate) based on a previous value, you can pass an "updater" function that receives the current state as a function argument.
+
+```jsx
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  render() {
+    <button onClick={() => this.setState(state => ({ count: state.count + 1 }))}>
+      You clicked {this.state.count} times
+    </button>
+  }
+}
+```
+
+In Jetpack Compose, this behaviour is encapsulated in a concept called snapshots. A snapshot represents state values at a certain time. The [`Snapshot` class](https://developer.android.com/reference/kotlin/androidx/compose/runtime/snapshots/Snapshot) exposes an [`enter` function](<https://developer.android.com/reference/kotlin/androidx/compose/runtime/snapshots/Snapshot#enter(kotlin.Function0)>) to run an updater callback. Inside the callback, all state objects return the value they had when the snapshot was taken.
+
 ## Storybook > Preview
 
-The [Storybook](https://storybook.js.org/) tool helps you preview React components on the web independently by creating "stories". The `@Preview` annotation in Jetpack Compose lets you build example composables that can be previewed in Android Studio.
+The [Storybook](https://storybook.js.org/) tool helps you preview React components on the web independently by creating "stories". The [`@Preview` annotation](https://developer.android.com/reference/kotlin/androidx/ui/tooling/preview/Preview) in Jetpack Compose lets you build example composables that can be previewed in Android Studio.
 
 ## Ternary Operator > If Statement
 
