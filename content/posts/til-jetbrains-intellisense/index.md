@@ -9,17 +9,24 @@ tags:
   - Android Studio
 images:
   - /posts/til-jetbrains-intellisense/settings.png
-  - /posts/til-jetbrains-intellisense/preview.png
+  - /posts/til-jetbrains-intellisense/as_4.0_documentation.png
+  - /posts/til-jetbrains-intellisense/as_4.2_documentation.png
 color: '#28be6b'
 banner: preview.png
 ---
 
 I like easy access to documentation written in comments. In Android Studio, and other JetBrains editors, you can display function types and docs on hover when you turn on a simple setting.
 
-In Android Studio's settings window, go to "Editor" > "General" and check "Show quick documentation on mouse move". You can leave the delay at the default value.
-
-![Android Studio settings with Show quick documentation on mouse move highlighted](settings.png)
-
 When editing code, you can quickly check documentation by just hovering over code. The documentation is pulled from the code's Javadoc, KDoc, or other similar comments.
 
 ![Android Studio displaying function type and documentation on hover](preview.png)
+
+In **Android Studio 4.0**'s settings window, go to "Editor" > "General" and check "Show quick documentation on mouse move". You can leave the delay at the default value.
+
+![Android Studio 4.0 settings with Show quick documentation on mouse move highlighted](as_4.0_documentation.png)
+
+In **Android Studio 4.2**, the option has moved to "Editor" > "General" > "Code Completion". Check "Show the documentation popup".
+
+![Android Studio 4.2 settings with Show the documentation popup highlighted](as_4.2_documentation.png)
+
+It seems like this setting gets moved around a lot, but some corresponding options in IntelliJ [are documented on Stack Overflow](https://stackoverflow.com/questions/6615516/intellij-show-javadocs-tooltip-on-mouse-over).
