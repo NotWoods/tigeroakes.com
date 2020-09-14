@@ -13,6 +13,9 @@
     "headline": "{{ .Title }}",
     "image": {{ .Scratch.Get "seoImages" | jsonify | safeJS }},
     "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    {{ if ne .Date .Lastmod }}
+    "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+    {{ end }}
     "author": {
       "@type": "Person",
       "name": "Tiger Oakes"

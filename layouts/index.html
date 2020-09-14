@@ -37,7 +37,7 @@
             </h2>
             <ul class="preview__list">
             {{- $content := (.GetPage "posts").RegularPages | append (.GetPage "talks").RegularPages -}}
-            {{ range where $content ".Params.feature" true }}
+            {{ range sort (where $content ".Params.feature" true) ".Date" "desc" }}
             {{ partial "home_preview" . }}
             {{ end }}
             </ul>
@@ -53,7 +53,7 @@
     <section class="featured-projects projects" id="featured">
         {{- $projects := where (.GetPage "projects").Pages ".Params.feature" true -}}
         {{- $lastIndex := sub (len $projects) 1 -}}
-        {{ range $index, $project := where (.GetPage "projects").Pages ".Params.feature" true }}
+        {{ range $index, $project := $projects }}
         <article class="card featured-project" style='{{ partial "project/style.css" $project | safeCSS }}'>
             <div class="inner">
                 {{ if eq $index 0 }}
