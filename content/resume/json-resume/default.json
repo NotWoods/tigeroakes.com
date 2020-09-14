@@ -54,7 +54,7 @@
       "highlights": [
         "Built internal developer tool used by **entire Google Chrome for Android team** with **JavaScript** and **Python**.",
         "Used **streams** and **background threads** to handle 180 MB downloads, rendering partial data in under 1 second.",
-        "Implemented keyboard navigation for tree structure to speed up productivity and add accessibility support."
+        "Migrated **Java** Android compiler and runtime tools, shrinking Chrome by 30 KB and removing memory leaks."
       ]
     },
     {

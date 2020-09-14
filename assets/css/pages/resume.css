@@ -17,6 +17,7 @@
   padding: 0.5in;
   margin: 2em auto;
 
+  page-break-before: always;
   color: var(--dark-text);
   font-size: 11pt;
   background: white;
