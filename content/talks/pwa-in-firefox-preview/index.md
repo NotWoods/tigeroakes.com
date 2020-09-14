@@ -3,6 +3,7 @@ title: Progressive Web Apps in Firefox Preview
 date: 2019-08-18
 tags:
   - Web
+  - Android
   - PWA
   - Icons
 projects:
