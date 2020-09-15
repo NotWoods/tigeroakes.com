@@ -34,8 +34,8 @@
 }
 
 .section,
-h2,
-h5 {
+.title,
+.resume-date {
   margin: 0;
 }
 .summary,
@@ -73,7 +73,7 @@ ul {
 }
 
 /* Heading 2: Job and Project titles */
-h2 {
+.title {
   font-size: 12pt;
 }
 .position {
@@ -81,10 +81,11 @@ h2 {
 }
 
 /* Heading 4: Dates */
-h5 {
+.resume-date {
   float: right;
   margin-left: 1em;
 
+  font-size: 0.825em;
   font-weight: normal;
   color: var(--primary-color);
 }
@@ -119,7 +120,7 @@ ul {
 }
 @media print {
   .banner__wrap,
-  .cta__wrap,
+  .hide-print,
   .contact {
     display: none;
   }
