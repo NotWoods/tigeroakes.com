@@ -26,6 +26,13 @@
             </div>
         </header>
 
+        {{ if .Params.toc }}
+        <aside class="article__toc">
+            <h2>Contents</h2>
+            {{ .TableOfContents }}
+        </aside>
+        {{ end }}
+
         <div class="article__body inner">
             {{ .Content }}
         </div>

@@ -1,4 +1,5 @@
 /* Wrap point for the top banner */
+@custom-media --sidebar-hide (max-width: 60rem);
 @custom-media --banner-wrap (max-width: 44rem);
 @custom-media --home-projects-text (max-width: 30rem);
 @custom-media --small-screen (max-width: 19rem);

@@ -9,6 +9,7 @@
     / 1fr auto 1fr;
   align-items: stretch;
   max-width: calc(var(--site-width) + 3rem);
+  grid-area: nav;
 
   gap: 1rem;
 }

@@ -21,6 +21,7 @@ tags:
   - React
 color: '#1c7cba'
 banner: banner.png
+toc: true
 ---
 
 This article was originally written here, then re-edited and posted to [CSS Tricks](https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/). The original version has been left here, but you may prefer to read the more polished version at CSS Tricks.
@@ -119,7 +120,7 @@ Now the many event listeners have been collapsed to just one! With more complica
 
 ---
 
-# What about click events?
+## What about click events?
 
 [`evt.target`](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) works great with events like `focusin` and `change`, where there are only a small number of elements that can receive focus or have input changed.
 
@@ -166,11 +167,11 @@ Now we can use a single listener for `click` events! If `element.closest()` retu
 
 ---
 
-# Extra examples addendum
+## Extra examples addendum
 
 Here are some additional examples to demonstrate how to take advantage of a single event listener.
 
-## Lists
+### Lists
 
 A common pattern is to have a list of items that can be interacted with, where new items are inserted dynamically with JavaScript. If you have event listeners attached to each item, then your code has to deal with event listeners every time you generate a new element.
 
@@ -218,7 +219,7 @@ document.getElementById('buttons-container').addEventListener('click', evt => {
 });
 ```
 
-## Forms
+### Forms
 
 Perhaps you have a form with lots of inputs, and you want to collect all the user responses into a single object.
 

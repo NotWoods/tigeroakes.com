@@ -21,6 +21,7 @@ images:
   - /posts/android-animate-strike-thru/static_icon_with_gap.png
 color: '#28be6b'
 banner: static_icon_with_gap.png
+toc: true
 ---
 
 With 1.6K views, my most popular tweet at the time of writing is about a little feature I added to Firefox Preview:
@@ -29,7 +30,7 @@ With 1.6K views, my most popular tweet at the time of writing is about a little 
 
 In [Firefox Preview](https://blog.mozilla.org/futurereleases/2019/06/27/reinventing-firefox-for-android-a-preview/), you can grant a website access to your location and microphone. When you toggle those permissions off, a line appears and grows diagonally through the original icon as it fades to gray. To create the animation, I considered many details such as colors, lines, curves, and clip paths.
 
-## Color
+## Building the animation
 
 In Android, an animation can be broken down into three states: The start, the end, and the in-between. Android automatically creates the in-between parts of the animation, so you just need to define the start and the end.
 
@@ -44,7 +45,7 @@ You can preview animations with a tool called [Shape Shifter](https://shapeshift
 
 {{<video src="color_transition.mov" max-height="300">}}
 
-## The line
+### The line
 
 Unlike colors, which are single values, shapes are more complex. Even a simple line has multiple points to define its edges.
 
@@ -58,7 +59,7 @@ Here you can see how the animation looks, with the start of the animation on the
 
 {{<video src="square_line_transition.mov">}}
 
-## The curves
+### The curves
 
 This animation for square lines is great, but it doesn’t work for Firefox. The lines we use for Firefox’s icons are curved at the end, rather than flat. When we try to make this line animate, the ends shrink and grow oddly. Look closely at the upper right corner of the animation and how the line width adjusts.
 
@@ -66,7 +67,7 @@ This animation for square lines is great, but it doesn’t work for Firefox. The
 
 That’s not ideal. Luckily there’s another way to hide the line when it shrinks.
 
-## Clip paths
+### Clip paths
 
 You can hide parts of an image by putting it behind an “[clip path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)”, a special path that hides everything outside of it. It’s akin to a cookie cutter that extracts a shape from the rest of the cookie dough. Outside the clip path, the line becomes invisible.
 
@@ -76,7 +77,7 @@ By using a clip path, we can hide the end of the line without changing the relat
 
 {{<video src="curved_line_with_mask.mov" max-height="300">}}
 
-## The spacing
+### The spacing
 
 If we put our animated line on top of another icon, this is what we end up with.
 
@@ -96,7 +97,7 @@ Here's the final product. Using a combination of color transitions, shape transi
 
 ---
 
-# Using the animation on Android
+## Using the animation on Android
 
 Android has tools to create an animation like this with just XML, without Java or Kotlin. You need to create a few different files to represent different states and how to transition between them. The finished files are available to [download from GitHub](https://github.com/NotWoods/android-strikethru-animation-sample) too.
 
@@ -176,11 +177,11 @@ We also create a second Vector Drawable to represent the icon with a line throug
 
 Unfortunately there’s no simple way to play the animation in reverse, for when you want to remove the strike-through. You need to create two different sets of animations for the enable → disable transition and disable → enable transition.
 
-## Creating animation resources
+### Creating animation resources
 
 Now that we have the base icon resource, we create a [property animator](https://developer.android.com/guide/topics/resources/animation-resource#Property) for each path that we want to animate. These files go inside the `res/animator` resources folder. We animate three paths: The color of the main icon (`android:name="icon"`), the shape of the clip path (`android:name="strike_thru_gap"`), and the color and shape of the line (`android:name="strike_thru_path"`). We also have to create another 3 property animators for the reverse direction.
 
-### Changing the color of the icon
+#### Changing the color of the icon
 
 `res/animator/icon_enabled_to_disabled.xml`
 
@@ -206,7 +207,7 @@ Now that we have the base icon resource, we create a [property animator](https:/
 
 We create two [ObjectAnimators](https://developer.android.com/reference/android/animation/ObjectAnimator.html) representing the color property of an object. These two animator files are nearly identical, but the `android:valueFrom` and `android:valueTo` fields have been flipped. These fields indicate the starting and ending values (in this case, the two colors). `android:propertyName` specifies the attribute that we’re animating, and `android:valueType` specifies the type of the values in `valueFrom` and `valueTo`. `android:duration` specifies the length of the animation, in milliseconds. The value of `"500"` corresponds to 500 milliseconds or half a second.
 
-### Changing the shape of the clip path
+#### Changing the shape of the clip path
 
 To change the shape of the clip path, create another ObjectAnimator like before. Instead of animating between two colors, we now animate between two paths.
 
@@ -223,7 +224,7 @@ To change the shape of the clip path, create another ObjectAnimator like before.
 
 The `valueType` is now `"pathType"` as the values represent shape paths rather than colors. Again, you can create the `strike_thru_gap_disabled_to_enabled.xml` file by copying`strike_thru_gap_enabled_to_disabled.xml` and switching around `valueFrom` with `valueTo`. ([Or](https://github.com/NotWoods/android-strikethru-animation-sample/blob/master/app/src/main/res/animator/strike_thru_mask_enable.xml) [download the source code](https://github.com/NotWoods/android-strikethru-animation-sample/blob/master/app/src/main/res/animator/strike_thru_gap_disabled_to_enabled.xml).)
 
-### Changing two values on the same path at once
+#### Changing two values on the same path at once
 
 Finally we create animators for the color and shape of the line. Since there are two values to animate, we use a [AnimatorSet](https://developer.android.com/reference/android/animation/AnimatorSet.html). The set is just a simple container for other animation elements.
 
@@ -250,7 +251,7 @@ The two individual object animators are very similar to the previous shape and c
 
 Again, the corresponding animator for the reverse direction is left as an exercise for you. You can also just [download the source code](https://github.com/NotWoods/android-strikethru-animation-sample/blob/master/app/src/main/res/animator/strike_thru_path_disabled_to_enabled.xml).
 
-## Using Animated Vector Drawables
+### Using Animated Vector Drawables
 
 At this point we’ve created the icon, and created animators for each part of the icon we want to animate. Now it’s time to start putting them together.
 
@@ -284,7 +285,7 @@ These `<animated-vector>` tag has an `android:drawable` attribute where we speci
 
 Inside the tag, we create `<target>` tags for each path we want to animate. The `android:name` field indicates the name of the path to animate, as specified in the VectorDrawables. The `android:animator` tag references one of the property animators we created. Each animator is matched to its corresponding animation and target.
 
-## The Animated​State​List​Drawable
+### The Animated​State​List​Drawable
 
 Now we have two assets that contain all our animation code. Now, we create one final asset that references these two.
 
@@ -333,7 +334,7 @@ While this will change the displayed icon, there’s no animation when switching
 
 We change the XML tag from `<selector>` to `<animated-selector>` and add two `<transition>` elements. The transitions specify their starting state and ending state with the `android:fromId` and `android:toId` attributes, which correspond to the values in the `<item android:id="…">` elements.
 
-## Actually displaying the icon
+### Actually displaying the icon
 
 Finally we have a single super special drawable asset to use in our app. It can be used just like any other drawable, including in an [ImageView](https://developer.android.com/reference/android/widget/ImageView).
 

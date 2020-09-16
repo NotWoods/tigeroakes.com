@@ -12,6 +12,7 @@ images:
   - /posts/resume-editor/flex-fail.png
 color: '#1c7cba'
 banner: word.png
+toc: true
 ---
 
 {{<video src="resume-editor.mp4">}}
