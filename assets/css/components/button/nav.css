@@ -7,26 +7,29 @@
   grid-template:
     'navprev button navnext' 1fr
     / 1fr auto 1fr;
-  align-items: center;
+  align-items: stretch;
+  max-width: calc(var(--site-width) + 3rem);
 
   gap: 1rem;
 }
 .article__nav-link {
+  --block: transparent;
+  --small-shadow: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.7em;
+  white-space: normal;
+  color: inherit !important;
 }
 .article__nav-link:first-child {
   grid-area: navprev;
 }
-.article__nav-link:first-child::before {
-  content: '< ';
-}
 .article__nav-link:last-child {
   grid-area: navnext;
 }
-.article__nav-link:last-child::after {
-  content: ' >';
-}
-.article__nav .button {
+.article__nav-other {
   grid-area: button;
 }
 

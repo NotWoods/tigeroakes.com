@@ -1,16 +1,16 @@
 {{ if .CurrentSection.Params.other }}
 <footer class="cta__wrap article__nav inner">
     {{- with .NextInSection -}}
-        <a class="article__nav-link" href='{{ .RelPermalink }}'>
-            {{- .Title -}}
+        <a class="shadow button article__nav-link" href='{{ .RelPermalink }}'>
+            &lt; {{ .Title }}
         </a>
     {{- end -}}
-    <a class="shadow button" href='{{.CurrentSection.RelPermalink}}'>
+    <a class="shadow button article__nav-other" href='{{.CurrentSection.RelPermalink}}'>
         {{- .CurrentSection.Params.other -}}
     </a>
     {{- with .PrevInSection -}}
-        <a class="article__nav-link" href='{{ .RelPermalink }}'>
-            {{- .Title -}}
+        <a class="shadow button article__nav-link" href='{{ .RelPermalink }}'>
+            {{ .Title }} &gt;
         </a>
     {{- end -}}
 </footer>

@@ -3,6 +3,6 @@
 /* Center content on screen */
 .inner {
   max-width: var(--site-width);
-  padding: 0 1em;
+  padding: 0 1rem;
   margin: 0 auto;
 }
