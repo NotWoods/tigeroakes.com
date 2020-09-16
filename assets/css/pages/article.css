@@ -49,6 +49,14 @@ html {
   color: var(--link-color);
   background-image: none;
 }
+.article__toc h2 a {
+  font-weight: normal;
+}
+
+.article__toc-inner.article__toc--sticky {
+  position: fixed;
+  top: 0;
+}
 
 @media (--sidebar-hide) {
   .article {

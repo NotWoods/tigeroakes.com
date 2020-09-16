@@ -27,9 +27,14 @@
         </header>
 
         {{ if .Params.toc }}
+        {{ $script := resources.Get "js/sticky.js" }}
+        <script src="{{ $script.RelPermalink }}" defer></script>
+
         <aside class="article__toc">
-            <h2>Contents</h2>
-            {{ .TableOfContents }}
+            <div class="article__toc-inner">
+                <h2>Contents <a href="#" title="Back to top">↥</a></h2>
+                {{ .TableOfContents }}
+            </div>
         </aside>
         {{ end }}
 
