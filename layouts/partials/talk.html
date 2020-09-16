@@ -1,7 +1,9 @@
 <article class="card talk" style="--block:{{.Params.color}}">
   {{- with .Resources.GetMatch (.Params.banner | default "") -}}
+  {{ $srcset := slice (.Fill "376x188 Center") (.Fill "640x320 Center") (.Fill "960x480 Center") }}
   <picture class="card__picture">
-    <img src="{{.RelPermalink}}" width="640" height="320" alt="" loading="lazy" class="card__source">
+    <source srcset='{{ partial "srcset" $srcset | safeHTMLAttr }}'>
+    <img src="{{.RelPermalink}}" width="376" height="188" alt="" loading="lazy" class="card__source">
   </picture>
   {{- end -}}
   {{ partial "time.html" .Date }}
