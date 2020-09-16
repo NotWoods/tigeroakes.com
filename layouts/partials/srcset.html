@@ -1,0 +1,6 @@
+{{- $srcset := slice "" -}}
+{{- range . -}}
+  {{- $src := printf "%s %dw" .RelPermalink .Width -}}
+  {{- $srcset = $srcset | append $src -}}
+{{- end -}}
+{{- return (delimit ($srcset | after 1) ", ") -}}

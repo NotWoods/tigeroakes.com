@@ -10,13 +10,10 @@
             <div>{{.Content}}</div>
 
             {{ with .Resources.GetMatch "profile.jpg" }}
-            {{ $1x := .Resize "160x" }}
-            {{ $2x := .Resize "320x" }}
-            {{ $3x := .Resize "480x" }}
-            {{ $4x := .Resize "640x" }}
+            {{ $srcset := slice (.Resize "160x") (.Resize "320x") (.Resize "480x") (.Resize "640x") }}
             <img class="profile" width="160" height="160" sizes="160px" alt="Portrait of Tiger Oakes"
-                src="{{$1x.RelPermalink}}"
-                srcset="{{$2x.RelPermalink}} 2x, {{$3x.RelPermalink}} 3x, {{$4x.RelPermalink}} 4x">
+                src="{{.RelPermalink}}"
+                srcset='{{ partial "srcset" $srcset | safeHTMLAttr }}'>
             {{ end }}
         </div>
     </section>

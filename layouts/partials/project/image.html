@@ -3,11 +3,8 @@
 <img src="{{$logo.RelPermalink}}" height="128" width="128" alt="{{.Title}} Logo" class="card__icon">
 {{ else }}
 {{ $logo := .Resources.GetMatch "logo.png" }}
-{{ $1x := $logo.Resize "128x" }}
-{{ $2x := $logo.Resize "256x" }}
-{{ $3x := $logo.Resize "384x" }}
-{{ $4x := $logo.Resize "512x" }}
-<img src="{{$1x.RelPermalink}}"
-    srcset="{{$2x.RelPermalink}} 2x, {{$3x.RelPermalink}} 3x, {{$4x.RelPermalink}} 4x"
+{{ $srcset := slice ($logo.Resize "128x") ($logo.Resize "256x") ($logo.Resize "384x") ($logo.Resize "512x") }}
+<img src="{{$logo.RelPermalink}}"
+    srcset='{{ partial "srcset" $srcset | safeHTMLAttr }}'
     height="128" width="128" alt="{{.Title}}" class="card__icon">
 {{ end }}
