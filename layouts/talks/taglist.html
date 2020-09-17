@@ -1,5 +1,5 @@
 {{ define "head" }}
-    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") }}
+    {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/posts.css") "css/pages/posts.css" }}
     {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/tags.css") "css/pages/tags.css" }}
 {{ end }}
 {{ define "main" }}
