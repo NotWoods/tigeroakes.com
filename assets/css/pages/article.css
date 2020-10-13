@@ -146,6 +146,12 @@ blockquote {
   color: #626971;
   border-left: 0.25em solid #dfe2e5;
 }
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    color: rgba(204 204 204 / 87%);
+    border-color: #3b4148;
+  }
+}
 
 .external-link {
   display: block;
@@ -165,6 +171,11 @@ blockquote {
 }
 .external-link__source {
   font-size: 0.9em;
+}
+
+.twitter-tweet {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (--banner-wrap) {
