@@ -24,7 +24,7 @@ obj.bar = 100;
 
 ## What are function overloads?
 
-TypeScript has another [neat feature called function overloads](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads). Some JavaScript functions return different results based on the arguments you supply, and this can be represented in TypeScript by written multiple function types on top of each other. Only one function signature can match at a time. The matching overload is determined by the arguments you supply to he function. [The first applicable overload will always be chosen](https://github.com/microsoft/TypeScript/issues/1860#issuecomment-72154737).
+TypeScript has another [neat feature called function overloads](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads). Some JavaScript functions return different results based on the arguments you supply, and this can be represented in TypeScript by written multiple function types on top of each other. Only one function signature can match at a time. The matching overload is determined by the arguments you supply to the function. [The first applicable overload will always be chosen](https://github.com/microsoft/TypeScript/issues/1860#issuecomment-72154737).
 
 ```tsx
 function convertType(value: string): number;
@@ -43,13 +43,13 @@ const str: string = convertType(num);
 
 ## Using overloading with arrays
 
-Some functions want to transform an array in some way, and return an array with the same length and slightly modified types. [A good example of this is `Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all), which transforms an array of promises into a single promise that resolves with an array of values.
+Some functions want to transform an array in some way and return an array with the same length and slightly modified types. [A good example of this is `Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all), which transforms an array of promises into a single promise that resolves with an array of values.
 
 Using [generic function definitions](https://www.typescriptlang.org/docs/handbook/2/functions.html#generic-functions), you can infer the type of the array passed into `Promise.all`. However, the resulting type will be an array without positional data.
 
 ```tsx
 class Promise {
-  static all<T>(array: (T | Promise<T>)[]): T[];
+  static all<T>(array: Promise<T>[]): Promise<T[]>;
 }
 
 Promise.all([Promise.resolve(10), Promise.resolve('hello world')]).then(
@@ -61,17 +61,17 @@ Promise.all([Promise.resolve(10), Promise.resolve('hello world')]).then(
 );
 ```
 
-TypeScript does let you infer type of specific array items, but then you need to hardcode the length. Using overloading, you can have a couple of variations for different array lengths.
+TypeScript does let you infer the type of specific array items, but then you need to hardcode the length. Using overloading, you can have a couple of variations for different array lengths.
 
 ```tsx
 class Promise {
   static all<A, B, C>(
-    array: [A | Promise<A>, B | Promise<B>, C | Promise<C>]
-  ): [A, B, C];
-  static all<A, B>(array: [A | Promise<A>, B | Promise<B>]): [A, B];
-  static all<A>(array: [A | Promise<A>]): [A];
+    array: [Promise<A>, Promise<B>, Promise<C>]
+  ): Promise<[A, B, C]>;
+  static all<A, B>(array: [Promise<A>, Promise<B>]): Promise<[A, B]>;
+  static all<A>(array: [Promise<A>]): Promise<[A]>;
   // fallback to unknown length
-  static all<T>(array: (T | Promise<T>)[]): T[];
+  static all<T>(array: Promise<T>[]): Promise<T[]>;
 }
 
 Promise.all([Promise.resolve(10), Promise.resolve('hello world')]).then(
@@ -83,7 +83,7 @@ Promise.all([Promise.resolve(10), Promise.resolve('hello world')]).then(
 );
 ```
 
-However, you can only write so many overloads. Eventually you need to fallback to an array with an unknown length like above. TypeScript's [official type definitions for `Promise.all`](https://github.com/microsoft/TypeScript/blob/065a996345fcfafd3c744d2a724a1ae9f31f9ab0/lib/lib.es2015.promise.d.ts#L41) hardcodes arrays up to length 10, and fallback after that.
+However, you can only write so many overloads. Eventually, you need to fallback to an array with an unknown length like above. TypeScript's [official type definitions for `Promise.all`](https://github.com/microsoft/TypeScript/blob/065a996345fcfafd3c744d2a724a1ae9f31f9ab0/lib/lib.es2015.promise.d.ts#L41) hardcodes arrays up to length 10, and fallback after that.
 
 ## How `any` creates problems with overloads
 
@@ -105,7 +105,7 @@ const num: any = 10;
 const str: string = convertType(num);
 ```
 
-The first overload is always used when you pass in a variable with type `any`, because it will be applicable to that signature. Even if there is a more generic signature later, the first overload is chosen. The overload ordering cannot be reversed, because the more generic signature will match every variable you pass in. As far as I know, you can't write a signature that _only_ matches if the variable is type `any`, because matching with anything works in both directions.
+The first overload is always used when you pass in a variable with type `any` because it will be applicable to that signature. Even if there is a more generic signature later, the first overload is chosen. The overload ordering cannot be reversed, because the more generic signature will match every variable you pass in. As far as I know, you can't write a signature that _only_ matches if the variable is type `any`, because matching with anything works in both directions.
 
 In the case of `Promise.all`, the first function overload signature is an array with a hardcoded length of 10. That can create confusing bugs like this, where `any` is passed in and the resulting type becomes an array of exactly 10 `unknown`s.
 
