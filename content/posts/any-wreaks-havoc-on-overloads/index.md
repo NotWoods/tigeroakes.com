@@ -1,5 +1,5 @@
 ---
-title: How TypeScript's any creates confusing function overload bugs
+title: How any in TypeScript creates confusing function overload bugs
 description: One little type wreaks havoc on certain functions.
 date: 2020-10-13
 author: tiger
