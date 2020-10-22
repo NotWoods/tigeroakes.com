@@ -279,6 +279,43 @@ fun NumberList(numbers: List<Int>) {
 
 In fact, any iteration method can be used, such as `.forEach()`.
 
+## PropTypes.oneOfType > UnionType
+
+JavaScript and TypeScript support passing in different variable types for the same parameter. In React, this can be modelled using `PropTypes.oneOfType`. In TypeScript, it can be modelled using a union type.
+
+```tsx
+function FancyButton(props) {
+  return (
+    <ul>
+      {props.numbers.map((number) => (
+        <ListItem value={number} />
+      ))}
+    </ul>
+  );
+}
+
+FancyButton.propTypes = {
+  text: PropTypes.string,
+  background: PropTypes.oneOfType([PropTypes.instanceOf(Color), PropTypes.number])
+}
+
+interface FancyButtonProps {
+  text: string;
+  background: Color | number;
+}
+```
+
+This is possible to model using overloads in Kotlin. However, depending on the number of union type parameters, the number of overloads can quickly grow. Jetpack Compose introduces the [`UnionType`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/UnionType) annotation to use union types inside of Kotlin.
+
+```kotlin
+@Composable fun FancyButton(
+  text: String,
+  background: @UnionType(Color::class, Int::class) Any,
+) {
+  ...
+}
+```
+
 ## useMemo > remember
 
 React allows values to be re-computed only if certain dependencies change inside a component through the [`useMemo` hook](https://reactjs.org/docs/hooks-reference.html#usememo).
