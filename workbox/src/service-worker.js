@@ -4,10 +4,7 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import * as googleAnalytics from 'workbox-google-analytics';
 import { precacheAndRoute } from 'workbox-precaching';
 import { registerRoute, setCatchHandler } from 'workbox-routing';
-import {
-  CacheFirst,
-  StaleWhileRevalidate,
-} from 'workbox-strategies';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import manifest from 'workbox:manifest';
 import { DAY, ignoreSearch } from './consts.js';
 import { isSinglePage, assetDestinations } from './html-route.js';

@@ -3,7 +3,7 @@ title: Talks
 outputs:
   - HTML
 other: More talks
-group_by_date: "2006"
+group_by_date: '2006'
 ---
 
 I'm a software engineer passionate about the web. I've spoken at [CascadiaJS](past-present-future-favicons/), hosted [workshops](not-that-canvas/), and more.

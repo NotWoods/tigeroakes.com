@@ -14,5 +14,7 @@ export const ignoreSearch = {
  * @param {import('workbox-routing').RouteMatchCallbackOptions} url
  */
 export function localOrigin({ url }) {
-  return url.origin === 'https://tigeroakes.com' || url.hostname === 'localhost';
+  return (
+    url.origin === 'https://tigeroakes.com' || url.hostname === 'localhost'
+  );
 }

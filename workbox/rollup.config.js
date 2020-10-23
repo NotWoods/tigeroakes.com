@@ -14,7 +14,9 @@ export default async function rollupConfig({ configDebug }) {
   return [
     {
       input: 'workbox/window-async.js',
-      output: [{ file: 'public/js/window-async.js', format: 'es', sourcemap: true }],
+      output: [
+        { file: 'public/js/window-async.js', format: 'es', sourcemap: true },
+      ],
       plugins: [nodeResolve(), terser()],
     },
     {

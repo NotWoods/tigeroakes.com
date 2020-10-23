@@ -1,3 +1,3 @@
 if ('serviceWorker' in navigator) {
-  import('/js/window-async.js')
+  import('/js/window-async.js');
 }

@@ -37,7 +37,7 @@ function Container(props) {
 
 <Container>
   <span>Hello world!</span>
-</Container>
+</Container>;
 ```
 
 Jetpack Compose passes composable functions as the functions themselves don't return anything.
@@ -296,8 +296,11 @@ function FancyButton(props) {
 
 FancyButton.propTypes = {
   text: PropTypes.string,
-  background: PropTypes.oneOfType([PropTypes.instanceOf(Color), PropTypes.number])
-}
+  background: PropTypes.oneOfType([
+    PropTypes.instanceOf(Color),
+    PropTypes.number,
+  ]),
+};
 
 interface FancyButtonProps {
   text: string;
@@ -387,7 +390,7 @@ Button(onClick = { count.value++ }) {
 }
 ```
 
-`MutableState` contains [`componentN()` functions](https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState#component1()), allowing you to destructure the getter and setter just like React.
+`MutableState` contains [`componentN()` functions](<https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState#component1()>), allowing you to destructure the getter and setter just like React.
 
 ```kotlin
 val (count, setCount) = remember { mutableStateOf(0) }

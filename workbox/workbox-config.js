@@ -28,7 +28,7 @@ const config = {
     'posts/*/banner.{png,jpg,svg}',
     'talks/*/slide.{png,jpg,svg}',
     // Resume
-    'resume/index.html'
+    'resume/index.html',
   ],
   // Hugo already includes a hash on processed images
   dontCacheBustURLsMatching: /[a-z]+_[a-z0-9]+_\d+_\d+x\d_[a-z]+_[a-z0-9]+_[a-z0-9]+\.(?:png|jpg)$/,
