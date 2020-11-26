@@ -2,7 +2,7 @@
     Feature-Policy: animations 'none'
     Feature-Policy: sync-xhr 'none'
     Feature-Policy: legacy-image-formats 'none'
-    Content-Security-Policy: frame-ancestors 'none'; form-action 'none'; default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://platform.twitter.com; font-src https://fonts.gstatic.com; img-src 'self' https://img.shields.io https://www.google-analytics.com; media-src 'self'; worker-src 'self'; frame-src https://www.youtube-nocookie.com https://docs.google.com https://platform.twitter.com; connect-src *; manifest-src 'self'; base-uri 'none'
+    Content-Security-Policy: frame-ancestors 'none'; form-action 'none'; default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://platform.twitter.com; font-src https://fonts.gstatic.com; img-src 'self' https://img.shields.io https://www.google-analytics.com; media-src 'self'; worker-src 'self'; frame-src https://www.youtube-nocookie.com https://docs.google.com https://platform.twitter.com; connect-src *; manifest-src 'self'; base-uri 'none'
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
