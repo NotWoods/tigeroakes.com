@@ -1,15 +1,13 @@
 ---
 title: Color Breakdown
 subtitle: Color-identifying Progressive Web App
-weight: 5
+weight: 7
 color: '#37474f'
 fallbackcolor: '#6f3d10'
 links:
   - title: Details
   - title: Open app
     link: https://notwoods.github.io/color-breakdown/
-  - title: Microsoft Store
-    link: https://www.microsoft.com/en-us/p/color-breakdown/9pfc4twflznv
   - title: Code
     github: NotWoods/color-breakdown
 tech:
