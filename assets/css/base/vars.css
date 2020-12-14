@@ -4,8 +4,10 @@
   --dark-text: rgb(0 0 0 / 87%);
   --light-text: rgb(255 255 255 / 87%);
 
-  --primary-color: hsl(19.9deg 78.4% 54.7%);
-  --light-color: hsl(19.9deg 78.4% 64.7%);
+  --primary-color: hsl(20deg 78% 56%);
+  --light-color: hsl(20deg 78% 66%);
+  --dark-block: hsl(20deg 78% 46%);
+
   --link-color: var(--primary-color);
   --font-color: var(--dark-text);
   --inverse-font-color: var(--light-text);
@@ -18,7 +20,6 @@
 
   /* Default value for blocks next to headers */
   --block: var(--primary-color);
-  --dark-block: hsl(19.9deg 78.4% 42.7%);
 }
 
 /* Dark theme colors */
@@ -31,6 +32,6 @@
     --light-background: #242424;
     --dark-background: #111;
     --subtle-background: rgb(220 224 228 / 10%);
-    --dark-block: hsl(19.9deg 78.4% 64.7%);
+    --dark-block: hsl(20deg 78% 66%);
   }
 }
