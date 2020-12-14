@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 16">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 16" class="animate">
   <style>
     :root {
-      color: black;
+      color: #032030;
     }
 
     .monochrome .background {
@@ -10,27 +10,73 @@
     .monochrome .outline {
       visibility: visible;
     }
+
+    @keyframes wire {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes open {
+      from {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes closed {
+      from {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    .animate .text path {
+      stroke-dasharray: 25;
+      stroke-dashoffset: 25;
+      animation: wire 1.5s ease-in forwards;
+    }
+    .animate .eye, .animate .eye-closed {
+      animation: open 0.7s steps(1, end) 2.8s;
+    }
+    .animate .eye-closed {
+      opacity: 0;
+      visibility: visible;
+      animation-name: closed;
+    }
   </style>
-  <rect class="background" width="12" height="12" x="2" y="2" fill="#e66d31"/>
+  <rect class="background" width="12" height="12" x="2" y="2" fill="#e67237"/>
   <g fill="none" stroke="currentColor">
     <rect class="outline" width="13" height="13" x="1.5" y="1.5" visibility="hidden"/>
-    <circle cx="5" cy="6" r="1.5"/>
-    <circle cx="11" cy="6" r="1.5"/>
-    <path d="M4.5,7.5l0,3.5l2.5,1.5m4.5,-4.9l0,3.4l-2.5,1.5"/>
+    <circle class="eye" cx="5" cy="6" r="1.5"/>
+    <circle class="eye" cx="11" cy="6" r="1.5"/>
+    <path class="eye-closed" d="M3 6h4" visibility="hidden"/>
+    <path class="eye-closed" d="M9 6h4" visibility="hidden"/>
+    <path d="M4.5,7.5v3.5l2.5,1.5m4.5,-4.9v3.4l-2.5,1.5"/>
   </g>
-  <path fill="currentColor" d="M8,10.6l1.5,-1.6l-3,0l1.5,1.6Z"/>
-  <g fill="none" stroke="currentColor" stroke-miterlimit="1.5">
-    <path d="M27,4.5l-7,0l-0.5,0.5l0,1l0.5,0.5l3,0l0.5,0.5l0,6"/>
-    <path d="M28,13l-0.5,-0.5l0,-4.5"/>
-    <path d="M32.5,12.5l-2.5,0l-0.5,-0.5l0,-4l0.5,-0.5l3,0l0.5,0.5l0,7l-0.5,0.5l-3,0l-0.5,-0.5"/>
-    <path d="M36.5,10l2,0l0.5,-0.5l0,-1.5l-0.5,-0.5l-2.5,0l-0.5,0.5l0,4l0.5,0.5l2.5,0l0.5,-0.5"/>
-    <path d="M71,10l2,0l0.5,-0.5l0,-1.5l-0.5,-0.5l-2.5,0l-0.5,0.5l0,4l0.5,0.5l2.5,0l0.5,-0.5"/>
-    <path d="M75.5,12l0.5,0.5l3,0l0.5,-0.5l0,-1.5l-0.5,-0.5l-3,0l-0.5,-0.5l0,-1.5l0.5,-0.5l3,0l0.5,0.5"/>
-    <path d="M40.5,7.5l0.5,0.5l0,4l0.5,0.5l0.5,0l0.5,-0.5l0,-4l0.5,-0.5l1.5,0l0.5,0.5"/>
-    <path d="M55.5,12.5l-4.5,0l-0.5,-0.5l0,-7l0.5,-0.5l4,0l0.5,0.5l0,6"/>
-    <path d="M57.5,8l0.5,-0.5l3,0l0.5,0.5l0,4l-0.5,0.5l-3,0l-0.5,-0.5l0,-2l0.5,-0.5l2,0"/>
-    <path d="M63,13l0.5,-0.5l-0,-8.5"/>
-    <path d="M66.5,6l0,2l-0.5,0.5l-0.5,0l-0.5,0.5l0,1l0.5,0.5l2,0l0.5,0.5l0,2"/>
+  <path fill="currentColor" d="M8,10.6l1.5,-1.6h-3l1.5,1.6Z"/>
+  <clipPath id="i">
+    <path d="M29 8v6h-3V8h3zm0-1h-3V5h3v2z"/>
+  </clipPath>
+  <g class="text" fill="none" stroke="currentColor" stroke-miterlimit="1.5">
+    <path style="animation-delay:0s" d="M23.5 13V7l-.5-.5h-3l-.5-.5V5l.5-.5h7"/>
+    <path style="animation-delay:0.3s" d="M28 13l-.5-.5V6" clip-path="url(#i)"/>
+    <path style="animation-delay:0.6s" d="M32.5,12.5h-2.5l-.5,-.5v-4l.5,-.5h3l.5,.5v7l-.5,.5h-3l-.5,-.5"/>
+    <path style="animation-delay:0.9s" d="M36.5,10h2l.5,-.5v-1.5l-.5,-.5h-2.5l-.5,.5v4l.5,.5h2.5l.5,-.5"/>
+    <path style="animation-delay:1.2s" d="M40.5,7.5l.5,.5v4l.5,.5h.5l.5,-.5v-4l.5,-.5h1.5l.5,.5"/>
+    <path style="animation-delay:0s" d="M55.5,12.5h-4.5l-.5,-.5v-7l.5,-.5h4l.5,.5v6"/>
+    <path style="animation-delay:0.3s" d="M57.5,8l.5,-.5h3l.5,.5v4l-.5,.5h-3l-.5,-.5v-2l.5,-.5h2"/>
+    <path style="animation-delay:0.6s" d="M63,13l.5,-.5v-8.5"/>
+    <path style="animation-delay:0.9s" d="M66.5,6v2l-.5,.5h-.5l-.5,.5v1l.5,.5h2l.5,.5v2"/>
+    <path style="animation-delay:1.2s" d="M71,10h2l.5,-.5v-1.5l-.5,-.5h-2.5l-.5,.5v4l.5,.5h2.5l.5,-.5"/>
+    <path style="animation-delay:1.5s" d="M75.5,12l.5,.5h3l.5,-.5v-1.5l-.5,-.5h-3l-.5,-.5v-1.5l.5,-.5h3l.5,.5"/>
   </g>
-  <rect fill="currentColor" width="1" height="1" x="27" y="6"/>
 </svg>
