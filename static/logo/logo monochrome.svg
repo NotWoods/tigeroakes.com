@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 16" class="monochrome">
+  <style>
+    :root {
+      color: black;
+    }
+
+    .monochrome .background {
+      visibility: hidden;
+    }
+    .monochrome .outline {
+      visibility: visible;
+    }
+  </style>
+  <rect class="background" width="12" height="12" x="2" y="2" fill="#e66d31"/>
+  <g fill="none" stroke="currentColor">
+    <rect class="outline" width="13" height="13" x="1.5" y="1.5" visibility="hidden"/>
+    <circle cx="5" cy="6" r="1.5"/>
+    <circle cx="11" cy="6" r="1.5"/>
+    <path d="M4.5,7.5l0,3.5l2.5,1.5m4.5,-4.9l0,3.4l-2.5,1.5"/>
+  </g>
+  <path fill="currentColor" d="M8,10.6l1.5,-1.6l-3,0l1.5,1.6Z"/>
+  <g fill="none" stroke="currentColor" stroke-miterlimit="1.5">
+    <path d="M27,4.5l-7,0l-0.5,0.5l0,1l0.5,0.5l3,0l0.5,0.5l0,6"/>
+    <path d="M28,13l-0.5,-0.5l0,-4.5"/>
+    <path d="M32.5,12.5l-2.5,0l-0.5,-0.5l0,-4l0.5,-0.5l3,0l0.5,0.5l0,7l-0.5,0.5l-3,0l-0.5,-0.5"/>
+    <path d="M36.5,10l2,0l0.5,-0.5l0,-1.5l-0.5,-0.5l-2.5,0l-0.5,0.5l0,4l0.5,0.5l2.5,0l0.5,-0.5"/>
+    <path d="M71,10l2,0l0.5,-0.5l0,-1.5l-0.5,-0.5l-2.5,0l-0.5,0.5l0,4l0.5,0.5l2.5,0l0.5,-0.5"/>
+    <path d="M75.5,12l0.5,0.5l3,0l0.5,-0.5l0,-1.5l-0.5,-0.5l-3,0l-0.5,-0.5l0,-1.5l0.5,-0.5l3,0l0.5,0.5"/>
+    <path d="M40.5,7.5l0.5,0.5l0,4l0.5,0.5l0.5,0l0.5,-0.5l0,-4l0.5,-0.5l1.5,0l0.5,0.5"/>
+    <path d="M55.5,12.5l-4.5,0l-0.5,-0.5l0,-7l0.5,-0.5l4,0l0.5,0.5l0,6"/>
+    <path d="M57.5,8l0.5,-0.5l3,0l0.5,0.5l0,4l-0.5,0.5l-3,0l-0.5,-0.5l0,-2l0.5,-0.5l2,0"/>
+    <path d="M63,13l0.5,-0.5l-0,-8.5"/>
+    <path d="M66.5,6l0,2l-0.5,0.5l-0.5,0l-0.5,0.5l0,1l0.5,0.5l2,0l0.5,0.5l0,2"/>
+  </g>
+  <rect fill="currentColor" width="1" height="1" x="27" y="6"/>
+</svg>

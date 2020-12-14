@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="monochrome">
+  <style>
+    :root {
+      color: black;
+    }
+
+    .monochrome .background {
+      visibility: hidden;
+    }
+    .monochrome .outline {
+      visibility: visible;
+    }
+  </style>
+  <rect class="background" width="12" height="12" x="2" y="2" fill="#e66d31"/>
+  <g fill="none" stroke="currentColor">
+    <rect class="outline" width="13" height="13" x="1.5" y="1.5" visibility="hidden"/>
+    <circle cx="5" cy="6" r="1.5"/>
+    <circle cx="11" cy="6" r="1.5"/>
+    <path d="M4.5,7.5l0,3.5l2.5,1.5m4.5,-4.9l0,3.4l-2.5,1.5"/>
+  </g>
+  <path fill="currentColor" d="M8,10.6l1.5,-1.6l-3,0l1.5,1.6Z"/>
+</svg>
