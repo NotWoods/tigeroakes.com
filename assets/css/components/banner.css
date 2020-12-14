@@ -15,6 +15,7 @@
 .nav {
   margin-left: auto;
   line-height: 1.3em;
+  align-self: center;
 }
 
 .nav__link {
@@ -64,6 +65,45 @@
 }
 .banner:hover .nav__link {
   will-change: transform;
+}
+
+@keyframes wire {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes open {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes closed {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.animate .text path {
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+  animation: wire 1s linear forwards;
+}
+.animate .eye, .animate .eye-closed {
+  animation: open 0.5s steps(1, end) 2.5s both;
+}
+.animate .eye-closed {
+  animation-name: closed;
 }
 
 @media (--banner-wrap) {
