@@ -25,7 +25,7 @@
 }
 
 .resume__header {
-  border-bottom: 1pt solid #e66d31;
+  border-bottom: 1pt solid var(--primary-color);
   margin-bottom: 8pt;
 }
 

@@ -4,7 +4,9 @@
   --dark-text: rgb(0 0 0 / 87%);
   --light-text: rgb(255 255 255 / 87%);
 
-  --primary-color: hsl(20deg 78% 56%);
+  --primary-color: #e67237; /* hsl(20deg 78% 56%); */
+  --theme-dark: #032030;
+  --theme-light: #ebeeef;
 
   --link-color: var(--primary-color);
   --font-color: var(--dark-text);
