@@ -29,6 +29,10 @@ a {
   --link-color: transparent;
 }
 /* Only for markdown-generated classes. */
+a:not([class]):hover,
+.link:hover {
+  --link-color: currentColor;
+}
 a:not([class]),
 .link {
   background-image: linear-gradient(
@@ -40,7 +44,14 @@ a:not([class]),
     transparent
   );
 }
-a:not([class]):hover,
-.link:hover {
-  --link-color: currentColor;
+@supports (text-decoration-thickness: 10%) and (text-underline-offset: 15%) {
+  a:not([class]),
+  .link {
+    background-image: none;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    text-decoration-color: var(--link-color);
+    text-decoration-thickness: 10%;
+    text-underline-offset: 15%;
+  }
 }
