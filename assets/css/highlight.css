@@ -1,7 +1,7 @@
-/* Background */ .chroma { color: #f8f8f2; background-color: #282a36 }
+/* Background */ .chroma { color: #ebeeef; background-color: #032030 }
 /* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
 /* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
-/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #ffffcc33 }
+/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #ffffcc25 }
 /* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
 /* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
 /* Keyword */ .chroma .k { color: #ff79c6 }
@@ -47,7 +47,7 @@
 /* Comment */ .chroma .c { color: #6272a4 }
 /* CommentHashbang */ .chroma .ch { color: #6272a4 }
 /* CommentMultiline */ .chroma .cm { color: #6272a4 }
-/* CommentSingle */ .chroma .c1 { color: #6272a4 }
+/* CommentSingle */ .chroma .c1 { opacity: 0.7; }
 /* CommentSpecial */ .chroma .cs { color: #6272a4 }
 /* CommentPreproc */ .chroma .cp { color: #ff79c6 }
 /* CommentPreprocFile */ .chroma .cpf { color: #ff79c6 }

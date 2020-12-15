@@ -5,8 +5,6 @@
   --light-text: rgb(255 255 255 / 87%);
 
   --primary-color: hsl(20deg 78% 56%);
-  --light-color: hsl(20deg 78% 66%);
-  --dark-block: hsl(20deg 78% 46%);
 
   --link-color: var(--primary-color);
   --font-color: var(--dark-text);
@@ -25,13 +23,11 @@
 /* Dark theme colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --link-color: var(--light-color);
     --font-color: var(--light-text);
     --inverse-font-color: var(--dark-text);
     --background-color: #333;
     --light-background: #242424;
     --dark-background: #111;
     --subtle-background: rgb(220 224 228 / 10%);
-    --dark-block: hsl(20deg 78% 66%);
   }
 }

@@ -135,7 +135,7 @@ pre code::before {
   top: 0;
   right: 0.25em;
 
-  color: var(--light-color);
+  color: var(--primary-color);
   font-weight: bold;
   text-transform: uppercase;
 }
