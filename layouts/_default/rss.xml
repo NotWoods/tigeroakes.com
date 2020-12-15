@@ -31,7 +31,7 @@
       <email>contact@tigeroakes.com</email>
     </author>
     <webfeeds:cover image="{{ absURL "header.png" }}" />
-    <webfeeds:icon>{{ absURL "logo_padding.svg" }}</webfeeds:icon>
+    <webfeeds:icon>{{ absURL "favicon.svg" }}</webfeeds:icon>
     <webfeeds:logo>{{ absURL "logo_text.svg" }}</webfeeds:logo>
     <webfeeds:accentColor>e66d31</webfeeds:accentColor>
     <webfeeds:analytics id="{{ .Site.GoogleAnalytics }}" engine="GoogleAnalytics" />

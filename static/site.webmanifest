@@ -3,16 +3,21 @@
   "short_name": "Tiger Oakes",
   "start_url": ".",
   "display": "browser",
-  "theme_color": "#e66d31",
-  "background_color": "#f0f0f0",
+  "theme_color": "#e67237",
+  "background_color": "#032030",
   "icons": [
     {
-      "src": "/favicon_32.png",
+      "src": "/favicon_x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/maskable_32.png",
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/maskable_x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

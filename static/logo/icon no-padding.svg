@@ -4,7 +4,7 @@
       color: black;
     }
   </style>
-  <rect class="background" width="12" height="12" x="2" y="2" fill="#e66d31"/>
+  <rect class="background" width="12" height="12" x="2" y="2" fill="#e67237"/>
   <g fill="none" stroke="currentColor">
     <rect class="outline" width="13" height="13" x="1.5" y="1.5" visibility="hidden"/>
     <circle cx="5" cy="6" r="1.5"/>
