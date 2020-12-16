@@ -17,8 +17,22 @@ body {
   grid-template-rows: auto 1fr auto;
 
   font-family: Lato, 'Trebuchet MS', sans-serif;
-  color: var(--font-color);
-  background: var(--background-color);
+  color: var(--theme-light);
+  background: var(--theme-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cascadia Code', monospace;
+  font-weight: 600;
+}
+code {
+  font-family: 'Cascadia Code', monospace;
+  font-size: 0.9em;
+}
+
+blockquote, dl, ol, p, table, ul {
+  font-size: 1.125em;
+  line-height: 1.75em;
 }
 
 a {

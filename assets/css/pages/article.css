@@ -7,6 +7,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--content-background);
+  color: var(--content-text);
+}
+
 .buttons {
   --link-space: 0.3em;
 
@@ -25,6 +30,11 @@ html {
 
 .article__header {
   grid-area: header;
+  font-size: 1.1em;
+}
+.banner__wrap, .article__header, .contact {
+  background-color: var(--theme-dark);
+  color: var(--theme-light);
 }
 
 .article__toc {
@@ -74,11 +84,11 @@ html {
 }
 
 .article__body {
-  margin-top: -0.5rem;
   padding: 1rem 3rem 3rem;
   grid-area: body;
 
-  background: var(--light-background);
+  background: var(--content-background);
+  color: var(--content-text);
   line-height: 1.5em;
 }
 .article__body h2 {

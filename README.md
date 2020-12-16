@@ -1,4 +1,4 @@
-<img src="content/logo.png" width="144" height="144">
+<img src="static/favicon.svg" width="144" height="144">
 
 # tigeroakes.com
 

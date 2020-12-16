@@ -8,6 +8,8 @@
   --block: #ddd;
 
   font-size: 1.2em;
+  background: none;
+  color: inherit;
 }
 .about .buttons {
   color: var(--dark-text);

@@ -4,7 +4,7 @@
 {{ end }}
 {{ define "main" }}
     {{ $bkg := .Resources.GetMatch "background.*" }}
-    <header class="card header article__header"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
+    <header class="card header article__header {{ if $bkg }}card--image{{ end }}"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
         <div class="header__content inner">
             <div class="header__text">
                 <h1 class="block card__title tag__title">

@@ -8,8 +8,9 @@
 /* Outer element for the banner */
 .banner__wrap {
   padding: 1em 0;
-
-  background: var(--light-background);
+}
+.banner--colored .logo__icon {
+  margin: -2px 0;
 }
 
 .nav {

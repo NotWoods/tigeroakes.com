@@ -7,29 +7,31 @@
   --primary-color: #e67237; /* hsl(20deg 78% 56%); */
   --theme-dark: #032030;
   --theme-light: #ebeeef;
+  --light-inverted: #282929;
 
   --link-color: var(--primary-color);
-  --font-color: var(--dark-text);
-  --inverse-font-color: var(--light-text);
+  --font-color: var(--light-text);
+  --inverse-font-color: var(--dark-text);
 
   /* Background colors */
-  --background-color: #f0f0f0;
-  --light-background: #fff;
-  --dark-background: #333;
-  --subtle-background: rgb(27 31 35 / 10%);
+  --background-color: #333;
+  --light-background: #242424;
+  --dark-background: #111;
+  --subtle-background: rgb(220 224 228 / 10%);
+
+  --content-background: #282929;
+  --content-text: var(--theme-light);
 
   /* Default value for blocks next to headers */
   --block: var(--primary-color);
 }
 
-/* Dark theme colors */
-@media (prefers-color-scheme: dark) {
+/* Light theme colors */
+@media (prefers-color-scheme: light) {
   :root {
-    --font-color: var(--light-text);
-    --inverse-font-color: var(--dark-text);
-    --background-color: #333;
-    --light-background: #242424;
-    --dark-background: #111;
-    --subtle-background: rgb(220 224 228 / 10%);
+    /* --font-color: var(--dark-text);
+    --inverse-font-color: var(--light-text); */
+    --content-background: var(--theme-light);
+    --content-text: var(--theme-dark);
   }
 }

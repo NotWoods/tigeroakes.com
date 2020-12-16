@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
     <article class="article">
-        <header class="card header article__header" style='{{ partial "project/style.css" . | safeCSS }}'>
+        <header class="card header article__header card--image" style='{{ partial "project/style.css" . | safeCSS }}'>
             <div class="header__content header__content--with-image inner">
                 {{ partial "project/image.html" . }}
                 <div class="header__text">
