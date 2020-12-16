@@ -1,6 +1,6 @@
 ---
-title: How any in TypeScript creates confusing function overload bugs
-description: One little type wreaks havoc on certain functions.
+title: The secret trap when using ANY in TypeScript
+description: How one little type wreaks havoc on certain overloaded functions.
 date: 2020-10-13
 author: tiger
 tags:
@@ -8,6 +8,7 @@ tags:
   - TypeScript
 color: '#3178c6'
 toc: true
+banner: banner.jpg
 ---
 
 ## What is `any`?
