@@ -16,24 +16,11 @@ precacheAndRoute(manifest, {
   ignoreURLParametersMatching: [/.*/],
 });
 
-// Google Fonts
-registerRoute(
-  ({ url }) =>
-    url.origin === 'https://fonts.googleapis.com' ||
-    url.origin === 'https://fonts.gstatic.com',
-  new CacheFirst({
-    cacheName: 'google-fonts',
-    plugins: [
-      new ExpirationPlugin({ maxEntries: 20, maxAgeSeconds: 365 * DAY }),
-    ],
-  })
-);
-
 // Assets
 registerRoute(
   ({ request }) => assetDestinations.has(request.destination),
   new CacheFirst({
-    cacheName: 'assets',
+    cacheName: 'assets-navy',
     plugins: [
       new ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 30 * DAY }),
     ],
