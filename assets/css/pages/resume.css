@@ -23,6 +23,9 @@
   background: white;
   font-variant-ligatures: none;
 }
+.resume h1, .resume h2, .resume h3 {
+  font-family: inherit;
+}
 
 .resume__header {
   border-bottom: 1pt solid var(--primary-color);

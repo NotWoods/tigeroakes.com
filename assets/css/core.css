@@ -1,3 +1,4 @@
+@import './base/font.css';
 @import './base/vars.css';
 @import './classes/block/index.css';
 @import './classes/block/bottom.css';
@@ -58,14 +59,14 @@ a:not([class]),
     transparent
   );
 }
-@supports (text-decoration-thickness: 10%) and (text-underline-offset: 15%) {
+@supports (text-decoration-thickness: 2px) and (text-underline-offset: 3px) {
   a:not([class]),
   .link {
     background-image: none;
     text-decoration: underline;
     text-decoration-skip-ink: auto;
     text-decoration-color: var(--link-color);
-    text-decoration-thickness: 10%;
-    text-underline-offset: 15%;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
   }
 }

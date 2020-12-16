@@ -25,6 +25,7 @@
 .about, .banner__wrap {
   background: var(--primary-color);
   color: var(--theme-dark);
+  --block: var(--theme-dark);
   text-shadow: none;
 }
 .about__content {

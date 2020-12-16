@@ -29,6 +29,8 @@ const config = {
     'talks/*/slide.{png,jpg,svg}',
     // Resume
     'resume/index.html',
+    // Fonts
+    'font/*.woff2'
   ],
   // Hugo already includes a hash on processed images
   dontCacheBustURLsMatching: /[a-z]+_[a-z0-9]+_\d+_\d+x\d_[a-z]+_[a-z0-9]+_[a-z0-9]+\.(?:png|jpg)$/,
