@@ -29,8 +29,8 @@ export default async function rollupConfig({ configDebug }) {
           'process.env.NODE_ENV': JSON.stringify(mode),
         }),
         nodeResolve(),
-        workbox({ ...workboxConfig, mode }),
-        terser(),
+        workbox({ ...workboxConfig }),
+        mode === 'production' ? terser() : undefined,
       ],
     },
   ];

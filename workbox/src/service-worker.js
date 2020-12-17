@@ -20,7 +20,7 @@ precacheAndRoute(manifest, {
 registerRoute(
   ({ request }) => assetDestinations.has(request.destination),
   new CacheFirst({
-    cacheName: 'assets-navy',
+    cacheName: 'assets',
     plugins: [
       new ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 30 * DAY }),
     ],

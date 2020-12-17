@@ -25,7 +25,7 @@ export const assetDestinations = new Set(['audio', 'embed', 'image', 'video']);
 /**
  * Checks if the given request is for a list page.
  * (i.e. all projects, all blog posts)
- * @param {import('workbox-routing').RouteMatchCallbackOptions} options
+ * @param {import('workbox-core').RouteMatchCallbackOptions} options
  */
 export function isListPage(options) {
   if (!localOrigin(options)) return false;
@@ -39,7 +39,7 @@ export function isListPage(options) {
 
 /**
  * Checks if the given request is for a single page or corresponding resource.
- * @param {import('workbox-routing').RouteMatchCallbackOptions} options
+ * @param {import('workbox-core').RouteMatchCallbackOptions} options
  */
 export function isSinglePage(options) {
   console.log(options.url);

@@ -11,7 +11,7 @@ export const ignoreSearch = {
 
 /**
  * Checks if the given request is for my site.
- * @param {import('workbox-routing').RouteMatchCallbackOptions} url
+ * @param {import('workbox-core').RouteMatchCallbackOptions} url
  */
 export function localOrigin({ url }) {
   return (
