@@ -36,6 +36,7 @@
 .logo {
   color: inherit;
   text-transform: uppercase;
+  align-self: start;
 }
 .logo__icon,
 .logo__title {

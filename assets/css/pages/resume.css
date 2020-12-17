@@ -12,6 +12,11 @@
   text-shadow: rgba(0 0 0 / 75%) 1px 1px 1px;
 }
 
+blockquote, ol, p, ul {
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .resume {
   max-width: 7.5in;
   padding: 0.5in;

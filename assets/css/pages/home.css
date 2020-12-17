@@ -123,15 +123,8 @@
 }
 
 @media (--banner-wrap) {
-  .about__content {
-    flex-wrap: wrap-reverse;
-  }
-  .home__heading {
-    display: none;
-  }
   .profile {
-    margin: 0;
-    --size: 100px;
+    display: none;
   }
 
   .featured-project {
