@@ -68,7 +68,11 @@
         {{ partial "project/buttons.html" (dict "links" $project.Params.links "page" $project.RelPermalink) }}
       </div>
       {{ if eq $index $lastIndex }}
-      {{ partial "project/cta.html" "see_more" }}
+      <footer class="cta__wrap">
+        <a class="shadow button" href="/projects/">
+          {{ i18n "see_more" }}
+        </a>
+      </footer>
       {{ end }}
     </article>
     {{ end }}
