@@ -1,5 +1,4 @@
 ---
-feature: true
 title: 'React to Jetpack Compose Dictionary'
 description: Two libraries with similar concepts. What's the equivalent Jetpack Compose terms for React terms?
 date: 2020-07-20
@@ -12,6 +11,7 @@ tags:
   - Jetpack Compose
 categories:
   - Planet Mozilla
+  - Feature
 images:
   - /posts/react-to-compose-dictionary/banner.png
 color: '#28be6b'

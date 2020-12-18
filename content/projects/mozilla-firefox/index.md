@@ -1,5 +1,4 @@
 ---
-feature: true
 weight: 1
 title: Mozilla Firefox
 subtitle: Firefox Preview PWA and TWA support
@@ -16,6 +15,8 @@ tech:
   - Kotlin
   - PWA
   - Trusted Web Activities
+categories:
+  - Feature
 aliases:
   - /projects/mozilla
 description: >

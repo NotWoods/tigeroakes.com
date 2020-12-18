@@ -5,7 +5,7 @@
     <main class="projects">
     {{ range .Pages }}
         {{ $classes := slice "card" "card--image" }}
-        {{ if .Params.feature }}
+        {{ if in .Params.categories "Feature" }}
             {{ $classes = $classes | append "feature" }}
         {{ end }}
         <article class='{{ delimit $classes " " }}' style='{{ partial "project/style.css" . | safeCSS }}'>

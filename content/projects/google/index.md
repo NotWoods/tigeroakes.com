@@ -1,5 +1,4 @@
 ---
-feature: true
 weight: 2
 title: Google Chrome
 subtitle: Chrome APK size breakdown
@@ -19,6 +18,8 @@ tech:
   - Web Workers
   - Streams
   - Canvas API
+categories:
+  - Feature
 description: >
   Working at Google, I built the user interface for an internal tools created by the Chrome for Android team. "Super Size" tracks details for every file and method in Chrome's APK executable, so I wrote the interface to display thousands of data entries quickly.
 ---

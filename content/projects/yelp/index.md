@@ -1,5 +1,4 @@
 ---
-feature: true
 weight: 2
 title: Yelp
 subtitle: Describe Your Project
@@ -15,6 +14,8 @@ tech:
   - Redux
   - SQL
   - jQuery
+categories:
+  - Feature
 description: >
   For my intern project at Yelp, I helped create a new feature on the desktop website to make it easier for users to request quotes from home services businesses. Rather than search for a business and write a message to them from scratch, "Describe Your Project" lets users answer multiple-choice questions before they are presented with businesses to send their request to.
 ---

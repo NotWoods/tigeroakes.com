@@ -1,5 +1,4 @@
 ---
-feature: true
 elsewhere:
   name: web.dev
   source: https://web.dev
@@ -15,6 +14,8 @@ tags:
   - Web
   - PWA
   - Icons
+categories:
+  - Feature
 color: '#1c7cba'
 banner: banner.png
 toc: true

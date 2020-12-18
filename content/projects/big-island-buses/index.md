@@ -1,5 +1,4 @@
 ---
-feature: true
 weight: 4
 title: Big Island Buses
 subtitle: Bus schedule software
@@ -13,11 +12,12 @@ links:
     github: NotWoods/big-island-buses
 tech:
   - JavaScript
-  - AppCache
   - Node.js
   - IndexedDB
   - Google Maps
   - GTFS
+categories:
+  - Feature
 aliases:
   - /big-island-buses
   - /heleon
