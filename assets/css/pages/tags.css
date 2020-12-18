@@ -7,3 +7,9 @@
 .tags__list-item {
   display: block;
 }
+
+.header__text {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}

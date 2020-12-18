@@ -10,6 +10,11 @@
         <h1 class="block card__title tag__title">
           <a href="../" class="tag__parent">{{ (.GetPage "../").Title }} / </a>{{.Title}}
         </h1>
+        {{ range where .AlternativeOutputFormats ".MediaType.Type" "==" "application/rss+xml" }}
+        <a class="rss__link shadow" href="{{ .Permalink }}" title="RSS">
+          {{ partialCached "rss.svg" . }}
+        </a>
+        {{ end }}
       </div>
 
       {{ partial "project/buttons.html" (dict "links" .Params.links "page" .RelPermalink) }}
