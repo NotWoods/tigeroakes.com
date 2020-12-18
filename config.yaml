@@ -30,7 +30,6 @@ frontmatter:
 taxonomies:
   tag: tags
   category: categories
-  tech: tech
 
 markup:
   goldmark:
