@@ -28,8 +28,8 @@
 
         {{ if .Params.toc }}
         {{ $jsOptions := dict "minify" true "target" "es2015" }}
-        {{ $script := resources.Get "js/sticky.js" | js.Build $jsOptions }}
-        <script src="{{ $script.RelPermalink }}" defer></script>
+        {{ $script := resources.Get "js/sticky.js" | js.Build $jsOptions | fingerprint }}
+        <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
 
         <aside class="article__toc">
             <div class="article__toc-inner">

@@ -1,2 +1,2 @@
-{{ $style := . | postCSS (dict "config" "postcss.config.js" "inlineImports" true) }}
-<link rel="stylesheet" href="{{ $style.RelPermalink | safeURL }}" media="print" onload="this.media='all'; this.onload=null;">
+{{ $style := . | postCSS (dict "config" "postcss.config.js" "inlineImports" true) | fingerprint  }}
+<link rel="stylesheet" href="{{ $style.RelPermalink | safeURL }}" integrity="{{ $style.Data.Integrity }}" media="print" onload="this.media='all'; this.onload=null;">
