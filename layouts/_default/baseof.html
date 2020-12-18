@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   {{ partial "meta/title.xml" . }}
-  {{ partial "meta/canonical.html" . }}
+  <link rel="canonical" href='{{ partial "meta/link.xml" . }}' />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
   <link rel="icon" type="image/png" href="/favicon_x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon_x48.png" sizes="48x48">

@@ -27,7 +27,8 @@
         </header>
 
         {{ if .Params.toc }}
-        {{ $script := resources.Get "js/sticky.js" }}
+        {{ $jsOptions := dict "minify" true "target" "es2015" }}
+        {{ $script := resources.Get "js/sticky.js" | js.Build $jsOptions }}
         <script src="{{ $script.RelPermalink }}" defer></script>
 
         <aside class="article__toc">

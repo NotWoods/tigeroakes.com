@@ -1,5 +1,5 @@
+{{- $link := .Permalink -}}
 {{- with .Params.elsewhere -}}
-  {{- .link -}}
-{{- else -}}
-  {{- .Permalink -}}
+  {{- $link = .link -}}
 {{- end -}}
+{{- return $link -}}

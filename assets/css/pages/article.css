@@ -55,6 +55,10 @@ body {
 .article__toc li {
   margin-bottom: 0.1em;
 }
+.article__toc ul,
+.article__toc li {
+  font-size: 1em;
+}
 .article__toc a {
   color: var(--link-color);
   background-image: none;
