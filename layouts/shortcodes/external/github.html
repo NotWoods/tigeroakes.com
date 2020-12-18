@@ -1,5 +1,6 @@
 <a class="external-link" href='https://github.com/{{.Get "repo"}}'>
-  <img class="external-link__logo" src="/contact/black-github.svg" alt="" width="20" height="20"/>
-  <h6 class="external-link__title">{{replace (.Get "repo") "/" "/<wbr>" | safeHTML}}</h6>
-  <span class="external-link__source">github.com</span>
+  <img class="external-link__logo" src="/contact/github.svg" alt="" width="20" height="20"/>
+  <h6 class="external-link__title">{{ replace (.Get "repo") "/" "/<wbr>" | safeHTML }}</h6>
+  {{ $repo := getJSON "https://api.github.com" "/repos/" (.Get "repo") }}
+  <span class="external-link__about">{{ $repo.description }}</span>
 </a>

@@ -26,3 +26,9 @@
   flex: 1;
   max-width: 7em;
 }
+
+@media (--small-screen) {
+  .button {
+    white-space: normal;
+  }
+}
