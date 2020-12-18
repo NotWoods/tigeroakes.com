@@ -1,20 +1,22 @@
-/contact                          /#contact
+/contact                              /#contact
 
-/blog                             /posts
-/blog/*                           /posts/:splat
+/blog                                 /posts
+/blog/*                               /posts/:splat
+/posts/tags/planet-mozilla/index.xml  /categories/planet-mozilla/index.xml
+/posts/tags/*                         /tags/:splat
 
-/posts/javascript-events-part-1   https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
-/posts/javascript-events-part-2   https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
-/posts/javascript-events-part-3   https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
+/posts/javascript-events-part-1       https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
+/posts/javascript-events-part-2       https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
+/posts/javascript-events-part-3       https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
 
-/big-island-buses                 /projects/big-island-buses/
-/heleon                           /projects/big-island-buses/
-/games/bitball                    /projects/bit-ball/
-/gametest                         /projects/latch-on/
-/grappling-3d                     /projects/latch-on/
-/games/latchon                    /projects/latch-on/
-/elec                             /projects/insightful-energy/
-/mbta-energy                      /projects/insightful-energy/
-/projects/mbta-energy             /projects/insightful-energy/
-/projects/mozilla                 /projects/mozilla-firefox/
-/projects/google-chrome           /projects/google/
+/big-island-buses                     /projects/big-island-buses/
+/heleon                               /projects/big-island-buses/
+/games/bitball                        /projects/bit-ball/
+/gametest                             /projects/latch-on/
+/grappling-3d                         /projects/latch-on/
+/games/latchon                        /projects/latch-on/
+/elec                                 /projects/insightful-energy/
+/mbta-energy                          /projects/insightful-energy/
+/projects/mbta-energy                 /projects/insightful-energy/
+/projects/mozilla                     /projects/mozilla-firefox/
+/projects/google-chrome               /projects/google/
