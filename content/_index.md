@@ -6,7 +6,7 @@ contact_color: white
 
 <h1 class="home__heading">
   <a class="logo" href="/">
-    <svg class="logo__icon icon animate" width="320" height="64" stroke-linejoin="round" viewBox="0 0 80 16">
+    <svg class="logo__icon icon animate" width="320" height="64" viewBox="0 0 80 16">
       <title>Tiger Oakes</title>
       <rect class="background" width="12" height="12" x="2" y="2" fill="#e67237"/>
       <g fill="none" stroke="#032030">

@@ -5,14 +5,14 @@
 @import '../components/section.css';
 
 .about {
-  --block: #ddd;
+  --block: var(--primary-color);
 
   font-size: 1.2em;
   background: none;
   color: inherit;
 }
 .about .buttons {
-  color: var(--dark-text);
+  color: var(--theme-dark);
   text-shadow: none;
 }
 
