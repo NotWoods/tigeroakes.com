@@ -16,8 +16,9 @@ Additionally, the site uses the `will-change` property to indicate which buttons
 
 ### Built With
 
-- Hugo v0.49
-- Sass
+- Hugo
+- PostCSS
+- Workbox
 - Netlify
 
 ## Licensing
