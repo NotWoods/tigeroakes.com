@@ -21,10 +21,9 @@ const config = {
     'projects/index.html',
     'projects/*/logo.svg',
     'projects/*/logo_*_128x0_*.png',
-    '{projects,posts,talks}/tags/**/*.html',
     // Blog & Talks
     '{posts,talks,featured-in}/index.html',
-    '{posts,talks}/tags/**/*.html',
+    'tags/**/*.html',
     'posts/*/banner.{png,jpg,svg}',
     'talks/*/slide.{png,jpg,svg}',
     // Resume

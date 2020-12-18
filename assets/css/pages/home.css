@@ -13,6 +13,10 @@
   margin: 0;
 }
 
+.logo__icon {
+  max-width: 100%;
+}
+
 .profile {
   border-radius: 50%;
   border: 4px var(--theme-dark) solid;
