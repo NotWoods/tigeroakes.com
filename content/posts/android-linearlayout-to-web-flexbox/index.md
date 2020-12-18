@@ -8,6 +8,8 @@ tags:
   - Android
   - Web
   - CSS
+categories:
+  - Planet Mozilla
 images:
   - /posts/android-linearlayout-to-web-flexbox/banner.png
 color: '#1c7cba'

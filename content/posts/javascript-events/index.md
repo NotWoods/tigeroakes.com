@@ -19,6 +19,8 @@ tags:
   - Web
   - JavaScript
   - React
+categories:
+  - Planet Mozilla
 color: '#1c7cba'
 banner: banner.png
 toc: true

@@ -5,13 +5,9 @@
     </a>
     {{ end }}
     <div class="footer__items">
-        {{- $contact := .Site.GetPage "/contact" -}}
-        {{- $color := .Params.contact_color | default "black" -}}
         {{- range .Site.Data.contact.social -}}
         <a href="{{.link}}" class="block block--bottom block--animate contact__link" title="{{.name}}" aria-label="{{.name}}">
-            {{- $image_name := (string (delimit (slice $color "-" (lower .name) ".*") "")) -}}
-            {{- $image := ($contact.Resources.GetMatch $image_name) -}}
-            <img class="icon" alt="{{.name}}" width="24" height="24" src='{{ $image.RelPermalink }}'></a>
+            <img class="icon" alt="{{.name}}" width="24" height="24" src="{{ .icon }}"></a>
         {{- end -}}
     </div>
 </div>

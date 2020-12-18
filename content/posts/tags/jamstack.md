@@ -1,4 +1,0 @@
----
-title: Jamstack
-layout: tags
----

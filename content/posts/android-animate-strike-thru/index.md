@@ -11,6 +11,8 @@ editor: daphne
 tags:
   - Android
   - Android Studio
+categories:
+  - Planet Mozilla
 projects:
   - mozilla-firefox
 links:

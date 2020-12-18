@@ -1,4 +1,0 @@
----
-title: MDN
-layout: tags
----

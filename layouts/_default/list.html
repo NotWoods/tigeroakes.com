@@ -10,7 +10,7 @@
       <h2 class="section__title">{{ .Key }}</h2>
       <div class="talks">
         {{ range .Pages }}
-        {{ partial "talk.html" . }}
+        {{ .Render "preview/image" }}
         {{ end }}
       </div>
     {{ end }}
@@ -18,7 +18,7 @@
   {{ else }}
     <main class="talks inner">
       {{ range .RegularPages }}
-      {{ partial "talk.html" . }}
+      {{ .Render "preview/image" }}
       {{ end }}
     </main>
   {{ end }}

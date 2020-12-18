@@ -10,6 +10,8 @@ tags:
   - React
   - Kotlin
   - Jetpack Compose
+categories:
+  - Planet Mozilla
 images:
   - /posts/react-to-compose-dictionary/banner.png
 color: '#28be6b'

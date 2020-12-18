@@ -1,4 +1,0 @@
----
-title: Kotlin
-layout: tags
----

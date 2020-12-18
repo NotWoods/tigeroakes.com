@@ -8,6 +8,8 @@ tags:
   - Web
   - PWA
   - Jamstack
+categories:
+  - Planet Mozilla
 projects:
   - big-island-buses
 color: '#1c7cba'

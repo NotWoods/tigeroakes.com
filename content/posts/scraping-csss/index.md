@@ -8,6 +8,8 @@ tags:
   - Web
   - JavaScript
   - Jamstack
+categories:
+  - Planet Mozilla
 images:
   - /posts/scraping-csss/drupal.png
 banner: drupal.png

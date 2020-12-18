@@ -5,6 +5,8 @@ date: 2020-07-19
 author: tiger
 tags:
   - TIL
+categories:
+  - Planet Mozilla
 projects:
   - mozilla-firefox
 images:

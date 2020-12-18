@@ -1,8 +1,0 @@
----
-title: Android
-outputs:
-  - HTML
-  - RSS
-layout: tags
-feature: true
----

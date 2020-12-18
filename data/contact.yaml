@@ -7,11 +7,14 @@ social:
   - name: GitHub
     link: https://github.com/NotWoods
     text: '**github**.com/<wbr>**NotWoods**'
+    icon: /contact/github.svg
 
   - name: LinkedIn
     link: https://linkedin.com/in/tigeroakes
     text: '**linkedin**.com/in/**tigeroakes**'
+    icon: /contact/linkedin.svg
 
   - name: Twitter
     link: https://twitter.com/Not_Woods
     text: '**twitter**.com/<wbr>**Not_Woods**'
+    icon: /contact/twitter.svg

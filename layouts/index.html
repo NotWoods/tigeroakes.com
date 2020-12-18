@@ -1,8 +1,5 @@
 {{ define "head" }}
-    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/home.css" | resources.ExecuteAsTemplate "css/pages/home.css" .) }}
-    {{ range (.GetPage "/posts").AlternativeOutputFormats }}
-    <link rel="{{.Rel}}" type="{{.MediaType.Type}}" href="{{.Permalink}}" title="{{$.Site.Title}}">
-    {{ end }}
+    {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/home.css") }}
 {{ end }}
 {{ define "main" }}
     <section class="card header about">
@@ -25,7 +22,7 @@
             </h2>
             <ul class="preview__list">
             {{ range (.GetPage "posts").RegularPages | first 3 }}
-            {{ partial "home_preview" . }}
+            {{ .Render "preview/latest" }}
             {{ end }}
             </ul>
 
@@ -35,7 +32,7 @@
             <ul class="preview__list">
             {{- $content := (.GetPage "posts").RegularPages | append (.GetPage "talks").RegularPages -}}
             {{ range sort (where $content ".Params.feature" true) ".Date" "desc" }}
-            {{ partial "home_preview" . }}
+            {{ .Render "preview/latest" }}
             {{ end }}
             </ul>
 
