@@ -1,15 +1,8 @@
 @import '../base/breakpoints.css';
-@import '../components/button/cta.css';
 @import '../components/section.css';
 @import '../components/card/picture.css';
-@import './contact.css';
 
 .home__heading {
-  font-size: 2.5em;
-  text-transform: uppercase;
-}
-.home__heading,
-.home__subtitle {
   margin: 0;
 }
 
@@ -18,15 +11,21 @@
 }
 
 .profile {
+  --size: 160px;
   border-radius: 50%;
   border: 4px var(--theme-dark) solid;
+  width: var(--size);
+  height: var(--size);
+  flex: 0 0 var(--size);
   max-width: none;
+  margin-left: 5em;
 }
 .about {
   padding-top: 0;
   --link-color: var(--theme-light);
 }
-.about, .banner__wrap {
+.about,
+.banner__wrap {
   background: var(--primary-color);
   color: var(--theme-dark);
   --block: var(--theme-dark);
@@ -39,25 +38,9 @@
 
   font-size: 1.1em;
 }
-.profile {
-  --size: 160px;
-  width: var(--size);
-  height: var(--size);
-  flex: 0 0 var(--size);
-  margin-left: 5em;
-}
 
 .previews {
   padding: 2rem 0;
-}
-.section__all {
-  margin-left: 1em;
-  padding: 0.3em 0.5em;
-  vertical-align: middle;
-
-  --block: var(--subtle-background);
-  font-size: 0.9rem;
-  text-transform: none;
 }
 .preview__list {
   padding: 0;
@@ -75,12 +58,6 @@
 .preview__title {
   font-size: 1.4em;
 }
-.preview__cta {
-  --block: var(--subtle-background);
-
-  text-align: center;
-  font-size: 1.5em;
-}
 .card__picture {
   width: 100px;
   height: 50px;
@@ -88,47 +65,8 @@
   float: right;
 }
 
-.featured-projects {
-  font-size: 1.1em;
-}
-.featured-project {
-  padding: 4rem 3.5rem 5rem;
-}
-.featured-project:first-child {
-  padding-top: 1rem;
-}
-.featured-project:last-child {
-  padding-bottom: 1rem;
-}
-.projects__title {
-  margin-top: 1rem;
-  margin-bottom: 4rem;
-}
-.projects .cta__wrap {
-  margin-top: 5rem;
-
-  text-shadow: none;
-}
-
-.contact {
-  color: var(--theme-light);
-  text-shadow: 1px 1px 1px var(--theme-dark);
-  background: center / cover no-repeat var(--theme-dark) url('/contact/background.jpg');
-  min-height: 65vh;
-}
-
-@media (--home-projects-text) {
-  .featured-projects {
-    font-size: 0.9em;
-  }
-}
-
 @media (--banner-wrap) {
   .profile {
     display: none;
-  }
-
-  .featured-project {
-    padding: 2rem;
   }
 }

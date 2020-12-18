@@ -32,6 +32,7 @@
 }
 .article__nav-other {
   grid-area: button;
+  align-self: center;
 }
 
 @media (--home-projects-text) {

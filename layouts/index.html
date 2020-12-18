@@ -1,5 +1,6 @@
 {{ define "head" }}
   {{ partial "meta/inline-postcss.html" (resources.Get "css/pages/home.css") }}
+  {{ partial "meta/async-postcss.html" (resources.Get "css/pages/home-async.css") }}
 {{ end }}
 {{ define "rss" }}
   {{ range (.GetPage "posts").AlternativeOutputFormats }}
