@@ -1,3 +1,2 @@
 {{ $style := . | postCSS (dict "config" "postcss.config.js" "inlineImports" true) }}
-<link rel="preload" href="{{ $style.RelPermalink | safeURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="{{ $style.RelPermalink | safeURL }}"></noscript>
+<link rel="stylesheet" href="{{ $style.RelPermalink | safeURL }}" media="print" onload="this.media='all'; this.onload=null;">
