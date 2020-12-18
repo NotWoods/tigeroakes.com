@@ -76,8 +76,8 @@
 {{ end }}
 {{ define "footer" }}
   <footer class="contact" id="contact" role="contentinfo">
-  {{- with .Site.GetPage "/contact" -}}
-    {{.Content}}
+    <h2 class="section__title">Contact</h2>
+    <p>You can send an email to</p>
     {{ with .Site.Data.contact.email }}
     <a href="{{.link}}" class="block block--bottom block--animate contact__link email">
       {{.text | markdownify}}
@@ -91,6 +91,5 @@
     </a>
     </p>
     {{ end }}
-  {{- end -}}
   </footer>
 {{ end }}
