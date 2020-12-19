@@ -11,7 +11,6 @@ const config = {
     'offline.html',
     // Home page
     'index.html',
-    'hero.jpg',
     'profile_*_{80,160}x0_*.jpg',
     'contact/**/*.{jpg,svg}',
     // Featured projects

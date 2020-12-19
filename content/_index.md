@@ -1,7 +1,7 @@
 ---
 title: Tiger Oakes
 subtitle: Software developer with 10 years experience. <br>Built 2 mobile web browsers & hundreds of open source projects.
-contact_color: white
+banner: banner.png
 ---
 
 <h1 class="home__heading">
