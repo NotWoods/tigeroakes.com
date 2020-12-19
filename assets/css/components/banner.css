@@ -14,18 +14,20 @@
 }
 
 .nav {
+  display: grid;
   margin-left: auto;
-  line-height: 1.3em;
+  line-height: 1.2em;
   align-self: center;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, auto);
 }
 
 .nav__link {
   /* expects: .block.block--animate */
   --block-offset: calc(var(--block-width) * -1);
 
-  margin-left: 1rem;
   display: inline-block;
-  padding: 0 0.5rem;
+  padding: 0.2em 0.4rem;
 
   transition-duration: 0.1s;
 }

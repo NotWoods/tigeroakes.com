@@ -61,7 +61,7 @@
         {{/* Use path matching */}}
         {{- $inSection = eq .URL $currentPage.RelPermalink -}}
       {{- end -}}
-      {{- $classes := slice "block" "block--animate" "nav__link" -}}
+      {{- $classes := slice "block" "block--animate" "nav__link" "block--bottom" -}}
       {{- if $inSection }}
         {{- $classes = $classes | append "nav__link--current" -}}
       {{- end -}}
