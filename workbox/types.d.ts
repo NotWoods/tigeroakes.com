@@ -19,7 +19,7 @@ declare module 'workbox-expiration' {
   }
 }
 
-declare module 'workbox:manifest' {
+declare module 'workbox:*' {
   import { ManifestEntry } from 'workbox-build';
 
   const manifest: ManifestEntry[];

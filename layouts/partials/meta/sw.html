@@ -1,2 +1,7 @@
-{{ $script := resources.Get "js/sw-registration.js" | minify }}
-<script type="module">{{ $script.Content | safeJS }}</script>
+{{ $jsOptions := dict "minify" true "target" "es5" }}
+{{ $script := resources.Get "js/window-async.js" | js.Build $jsOptions | fingerprint }}
+<script type="module">
+  if ('serviceWorker' in navigator) {
+    import('{{ $script.RelPermalink }}');
+  }
+</script>
