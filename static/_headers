@@ -9,3 +9,6 @@
 
 /posts/index.xml
     Content-Type: application/rss+xml
+
+/css/:file
+    Cache-Control: max-age=31536000
