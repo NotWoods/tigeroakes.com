@@ -2,7 +2,7 @@
 weight: 1
 title: Mozilla Firefox
 subtitle: Firefox Preview PWA and TWA support
-color: '#FF7139'
+color: '#E22850'
 fallbackcolor: '#3a525c'
 links:
   - title: Details

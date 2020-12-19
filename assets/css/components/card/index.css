@@ -21,11 +21,6 @@
   font-size: 1.5em;
 }
 
-/* Project description, post/talk date */
-.card__subtitle {
-  margin: 0 0 0.1em;
-}
-
 .card .buttons {
   margin-top: calc(1rem - var(--space));
 }

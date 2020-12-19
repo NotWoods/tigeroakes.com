@@ -17,11 +17,11 @@ tags:
 categories:
   - Feature
 color: '#1c7cba'
-banner: banner.png
+banner: banner.jpg
 toc: true
 ---
 
-![](hero.png)
+![](banner.png)
 
 ## What are maskable icons?
 

@@ -1,4 +1,5 @@
 @import '../base/breakpoints.css';
+@import '../base/font-extra.css';
 @import '../components/header.css';
 @import '../components/button/cta.css';
 @import '../components/button/nav.css';
@@ -70,6 +71,10 @@ body {
 .article__toc-inner.article__toc--sticky {
   position: fixed;
   top: 0;
+}
+
+.card__subtitle {
+  margin: 0 0 0.1em;
 }
 
 @media (--sidebar-hide) {

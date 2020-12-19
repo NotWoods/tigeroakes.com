@@ -23,6 +23,10 @@
   flex-wrap: nowrap;
 }
 
+.card__subtitle {
+  margin: 0 0 0.1em;
+}
+
 @media (--home-projects-text) {
   .card {
     min-width: auto;
