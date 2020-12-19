@@ -18,7 +18,7 @@
   margin-left: auto;
   line-height: 1.2em;
   align-self: center;
-  gap: 1.5rem;
+  gap: 0.5rem 1.5rem;
   grid-template-columns: repeat(4, auto);
 }
 
@@ -124,5 +124,10 @@
   }
   .nav__link::before {
     left: -0.25rem;
+  }
+}
+@media (--small-screen) {
+  .nav {
+    grid-template-columns: repeat(2, auto);
   }
 }
