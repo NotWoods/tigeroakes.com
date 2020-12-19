@@ -28,7 +28,7 @@ const config = {
     // Resume
     'resume/index.html',
     // Fonts
-    'font/*.woff2'
+    'font/**/*.woff2'
   ],
   // Hugo already includes a hash on processed images: img_hash_hash_WxH_resize_quality_box.jpg
   // Hugo also has a hash on CSS and JS: file.hash.css

@@ -34,7 +34,6 @@
     <webfeeds:icon>{{ absURL "favicon.svg" }}</webfeeds:icon>
     <webfeeds:logo>{{ absURL "logo_text.svg" }}</webfeeds:logo>
     <webfeeds:accentColor>e67237</webfeeds:accentColor>
-    <webfeeds:analytics id="{{ .Site.GoogleAnalytics }}" engine="GoogleAnalytics" />
     {{ with .Site.LanguageCode }}
     <language>{{.}}</language>
     {{end}}
