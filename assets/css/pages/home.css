@@ -39,6 +39,15 @@
   font-size: 1.1em;
 }
 
+.nav__link::selection,
+.my-name::selection,
+.profile::selection,
+.about p::selection,
+.about a::selection {
+  background-color: var(--theme-dark);
+  color: var(--primary-color);
+}
+
 .previews {
   padding: 2rem 0;
 }

@@ -15,6 +15,10 @@
   color: var(--theme-dark);
   text-shadow: none;
 }
+.about .button::selection {
+  background-color: var(--theme-dark);
+  color: var(--primary-color);
+}
 
 .talks {
   display: grid;

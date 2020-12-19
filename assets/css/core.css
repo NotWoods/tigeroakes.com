@@ -22,6 +22,12 @@ body {
   background: var(--theme-dark);
 }
 
+::selection {
+  color: var(--theme-dark);
+  background-color: var(--primary-color);
+  text-shadow: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cascadia Mono', monospace;
   font-weight: 600;

@@ -24,7 +24,7 @@
 }
 .card .button {
   flex: 1;
-  max-width: 7em;
+  max-width: 8em;
 }
 
 @media (--small-screen) {
