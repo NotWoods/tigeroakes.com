@@ -1,4 +1,4 @@
-{{ $jsOptions := dict "minify" true "target" "es5" }}
+{{ $jsOptions := dict "minify" true "target" "es2017" }}
 {{ $script := resources.Get "js/window-async.js" | js.Build $jsOptions | fingerprint }}
 <script type="module">
   if ('serviceWorker' in navigator) {

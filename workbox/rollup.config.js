@@ -31,9 +31,6 @@ export default async function rollupConfig({ configDebug }) {
           // Home page
           'profile_*_{80,160}x0_*.jpg',
           'contact/**/*.{jpg,svg}',
-          // Featured projects
-          'projects/{mozilla-firefox,google,yelp,big-island-buses}/**/*.{html,jpg,svg,png}',
-          'posts/{react-to-compose-dictionary, maskable-icons}/**/*.{html,jpg,svg,png,gif}',
           // Projects page
           'projects/*/logo.svg',
           'projects/*/logo_*_128x0_*.png',

@@ -1,6 +1,4 @@
 // @ts-check
-
-import manifest from 'workbox:manifest';
 import { localOrigin } from './consts';
 
 const listPagePaths = new Set([
@@ -9,52 +7,70 @@ const listPagePaths = new Set([
   '/talks/',
   '/featured-in/',
 ]);
-
-const TOPIC_URL = /^projects\/[\w-]+\/index\.html$/;
-const INDEX_LENGTH = 'index.html'.length;
-const precachedTopics = new Set(
-  manifest
-    .filter((entry) => TOPIC_URL.test(entry.url))
-    .map((entry) => '/' + entry.url.slice(0, -INDEX_LENGTH))
-);
-console.log(precachedTopics);
+const taxonomyTermsPagePaths = new Set(['/tags/', '/categories/']);
 
 /** @type {Set<RequestDestination>} */
-export const assetDestinations = new Set(['audio', 'embed', 'image', 'video']);
+export const assetDestinations = new Set([
+  'audio',
+  'embed',
+  'image',
+  'video',
+  'font',
+  'style',
+  'script',
+]);
+
+/**
+ * @param {Set<string>} parentPaths
+ * @param {URL} url
+ */
+function parentPath(parentPaths, url) {
+  return (
+    !parentPaths.has(url.pathname) &&
+    Array.from(parentPaths).some((parent) => url.pathname.startsWith(parent))
+  );
+}
 
 /**
  * Checks if the given request is for a list page.
  * (i.e. all projects, all blog posts)
  * @param {import('workbox-core').RouteMatchCallbackOptions} options
  */
-export function isListPage(options) {
-  if (!localOrigin(options)) return false;
+export function isListPage({ url }) {
+  if (!localOrigin(url)) return false;
 
-  const { url } = options;
   // Index pages are matched
-  if (listPagePaths.has(url.pathname)) return true;
-  // Tag pages are also matched
-  return url.pathname.includes('/tags/');
+  return listPagePaths.has(url.pathname);
+}
+
+/**
+ * Checks if the given request is for a list page.
+ * (i.e. all projects, all blog posts)
+ * @param {import('workbox-core').RouteMatchCallbackOptions} options
+ */
+export function isTaxonomyTermsPage({ url }) {
+  if (!localOrigin(url)) return false;
+
+  return taxonomyTermsPagePaths.has(url.pathname);
+}
+
+/**
+ * Checks if the given request is for a list page.
+ * (i.e. all projects, all blog posts)
+ * @param {import('workbox-core').RouteMatchCallbackOptions} options
+ */
+export function isTaxonomyPage({ url }) {
+  if (!localOrigin(url)) return false;
+
+  return parentPath(taxonomyTermsPagePaths, url);
 }
 
 /**
  * Checks if the given request is for a single page or corresponding resource.
  * @param {import('workbox-core').RouteMatchCallbackOptions} options
  */
-export function isSinglePage(options) {
-  console.log(options.url);
-  if (!localOrigin(options)) return false;
-  if (isListPage(options)) return false;
+export function isSinglePage({ url }) {
+  if (!localOrigin(url)) return false;
 
-  const { url } = options;
-  if (precachedTopics.has(url.pathname)) return false;
-
-  for (const parent of listPagePaths) {
-    if (url.pathname.startsWith(parent)) {
-      console.log('single: true');
-      return true;
-    }
-  }
-  console.log('single: false');
-  return false;
+  return parentPath(listPagePaths, url);
 }

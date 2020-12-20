@@ -6,7 +6,7 @@ import { getManifest } from 'workbox-build';
  * @param {import('workbox-build').GetManifestConfig & { moduleId: string }} options
  * @returns {import('rollup').Plugin}
  */
-export default function workboxPlugin({ moduleId, options }) {
+export default function workboxPlugin({ moduleId, ...options }) {
   /** @type {Promise<{count: number, manifestEntries: Array<import('workbox-build').ManifestEntry>, size: number, warnings: Array<string>}>} */
   const manifestPromise = getManifest(options);
   const modId = `workbox:${moduleId}`;
