@@ -62,7 +62,7 @@ Since the maskable icon format is designed work with any platform, the size and 
 
 Maskable icons can be any size, and you can continue to use the same sizes that you’d use for normal transparent icons. But when designing the icon, ensure that important information is within a “safe zone” circle with a radius equal to 40% of the image’s size.
 
-<img src="safe_zone.png" alt="Safe zone illustrated" width="500" height="500">
+<img loading="lazy" src="safe_zone.png" alt="Safe zone illustrated" width="500" height="500">
 
 All pixels within this zone are guaranteed to be visible. Pixels outside the zone may be cropped off depending on the icon shape and the platform.
 

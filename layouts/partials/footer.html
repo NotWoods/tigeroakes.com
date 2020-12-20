@@ -7,7 +7,7 @@
     <div class="footer__items">
         {{- range .Site.Data.contact.social -}}
         <a href="{{.link}}" class="block block--bottom block--animate contact__link" title="{{.name}}" aria-label="{{.name}}">
-            <img class="icon" alt="{{.name}}" width="24" height="24" src="{{ .icon }}"></a>
+            <img class="icon" alt="{{.name}}" width="24" height="24" src="{{ .icon }}" loading="lazy"></a>
         {{- end -}}
     </div>
 </div>

@@ -1,11 +1,12 @@
 {{ $img := $.Page.Resources.Match (.Get "src") }}
 {{ range $img }}
 <img
-    class="center"
-    src='{{ .RelPermalink }}'
-    alt='{{$.Get "alt"}}'
-    width="{{.Width}}"
-    height="{{.Height}}"
-    {{with $.Get "max-height"}}style="max-height:{{.}}px;width:auto"{{end}}
+  class="center"
+  src='{{ .RelPermalink }}'
+  alt='{{ $.Get "alt" }}'
+  width="{{ .Width }}"
+  height="{{ .Height }}"
+  {{ with $.Get "max-height" }}style="max-height:{{ . }}px;width:auto"{{ end }}
+  loading="lazy"
 >
 {{ end }}
