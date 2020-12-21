@@ -28,12 +28,12 @@ body {
   text-shadow: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cascadia Mono', monospace;
+h1, h2, h3, h4, h5, h6, code {
+  font-family: 'Cascadia Mono', Menlo, Consolas, 'Ubuntu Monospace', monospace;
   font-weight: 600;
 }
 code {
-  font-family: 'Cascadia Mono', monospace;
+  font-weight: 400;
   font-size: 0.9em;
 }
 
