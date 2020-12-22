@@ -38,11 +38,6 @@ outputFormats:
     mediaType: image/svg+xml
     notAlternative: true
 
-outputs:
-  page:
-    - HTML
-    - Banner
-
 markup:
   goldmark:
     renderer:
