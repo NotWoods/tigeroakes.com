@@ -17,20 +17,22 @@ const plugins = [
   postcssInset({ preserve: false }),
   postcssPlace({ preserve: false }),
   postcssSelectorMatches(),
-  cssNano({
-    preset: [
-      'default',
-      {
-        discardUnused: true,
-        mergeIdents: true,
-        reduceIdents: true,
-        svgo: false,
-        zindex: false,
-      },
-    ],
-  }),
+  process.env.HUGO_ENVIRONMENT === 'production'
+    ? cssNano({
+        preset: [
+          'default',
+          {
+            discardUnused: true,
+            mergeIdents: true,
+            reduceIdents: true,
+            svgo: false,
+            zindex: false,
+          },
+        ],
+      })
+    : undefined,
 ];
 
 module.exports = {
-  plugins,
+  plugins: plugins.filter(plugin => plugin != undefined),
 };

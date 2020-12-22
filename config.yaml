@@ -31,6 +31,18 @@ taxonomies:
   tag: tags
   category: categories
 
+outputFormats:
+  Banner:
+    baseName: banner
+    isPlainText: true
+    mediaType: image/svg+xml
+    notAlternative: true
+
+outputs:
+  page:
+    - HTML
+    - Banner
+
 markup:
   goldmark:
     renderer:

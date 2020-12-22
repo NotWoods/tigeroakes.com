@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 640 320">
+  <style>
+    .title { font: 500 32px; }
+    .subtitle { font: 500 18px; }
+  </style>
+  <filter id="blur">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="5" edgeMode="none" />
+  </filter>
+
+  <g id="banner">
+    <rect y="0" width="640" height="60" fill="#032030" />
+    <image href="/logo/logo white text.svg" y="16" width="160" height="28" />
+  </g>
+  <image href="background.jpg" y="60" width="640" height="260" preserveAspectRatio="xMidYMid slice" />
+  <image href="logo.svg" x="250" y="70" width="140" height="140" />
+  <g fill="#fff">
+    <rect x="40" y="224" width="15" height="36" fill="{{ .Params.color }}" />
+    <text x="67" y="253" class="title" font-family="'Cascadia Mono', monospace" font-size="32px" font-weight="500">{{ .Title }}</text>
+    <text x="67" y="282" class="subtitle" font-family="Lato, sans-serif" font-size="18px">{{ .Params.subtitle }}</text>
+  </g>
+</svg>

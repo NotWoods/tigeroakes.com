@@ -8,7 +8,7 @@ HUGO_ENABLEGITINFO = "true"
 NODE_VERSION = "12.18.3"
 
 [context.production.environment]
-HUGO_ENV = "production"
+HUGO_ENVIRONMENT = "production"
 
 [context.deploy-preview]
 command = "npm run build -- --gc --buildFuture -b $DEPLOY_PRIME_URL"
