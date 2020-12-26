@@ -15,6 +15,7 @@ images:
 color: '#1c7cba'
 banner: banner.png
 banner_svg: banner.svg
+toc: true
 ---
 
 ![](banner.png)

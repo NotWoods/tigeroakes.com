@@ -30,7 +30,7 @@
       <name>Tiger Oakes</name>
       <email>contact@tigeroakes.com</email>
     </author>
-    <webfeeds:cover image="{{ absURL "favicon.svg" }}" />
+    <webfeeds:cover image="{{ absURL "banner.png" }}" />
     <webfeeds:icon>{{ absURL "favicon.svg" }}</webfeeds:icon>
     <webfeeds:logo>{{ absURL "logo_text.svg" }}</webfeeds:logo>
     <webfeeds:accentColor>e67237</webfeeds:accentColor>

@@ -1,6 +1,6 @@
 ---
 title: Maskable.app
-subtitle: Implementing, writing about, and creating tooling for new web feature
+subtitle: Implementing, writing, and creating tooling for new web feature
 weight: 3
 color: '#DBA824'
 fallbackcolor: '#252525'
@@ -14,6 +14,8 @@ tech:
   - PWA
   - JavaScript
   - Canvas API
+  - CSS
+  - PWA
 description: >
   A tool I created for maskable icons, alongside implementing the web feature into Firefox and writing about it for CSS Tricks.
 ---
