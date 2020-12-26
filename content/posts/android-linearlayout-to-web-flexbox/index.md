@@ -14,7 +14,7 @@ images:
   - /posts/android-linearlayout-to-web-flexbox/banner.png
 color: '#1c7cba'
 banner: banner.png
-draft: false
+banner_svg: banner.svg
 ---
 
 ![](banner.png)

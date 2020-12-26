@@ -1,7 +1,10 @@
 <article class="card talk" style="--block:{{.Params.color}}">
-  {{- with .Resources.GetMatch (.Params.banner | default "") -}}
+  {{- with .Resources.GetMatch (.Params.banner | default "banner.png") -}}
   {{ $srcset := slice (.Fill "376x188 Center") (.Fill "640x320 Center") (.Fill "960x480 Center") }}
   <picture class="card__picture">
+    {{- with $.Resources.GetMatch (.Params.banner_svg | default "banner.svg") -}}
+    <source srcset="{{ .RelPermalink }}" type="{{ .MediaType }}">
+    {{- end -}}
     <source srcset='{{ partial "srcset" $srcset | safeHTMLAttr }}'>
     <img src="{{.RelPermalink}}" width="376" height="188" alt="" loading="lazy" class="card__source">
   </picture>
