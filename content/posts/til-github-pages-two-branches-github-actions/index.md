@@ -4,6 +4,7 @@ description: CI/CD combining different branches.
 date: 2020-12-26
 tags:
   - TIL
+  - Web
   - GitHub
 categories:
   - Planet Mozilla
