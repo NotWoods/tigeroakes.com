@@ -27,7 +27,7 @@
   padding: 0.2em 0.4rem;
 }
 .nav__link--current {
-  font-weight: bold;
+  --initial-block-width: 0.5;
 }
 
 .logo {
