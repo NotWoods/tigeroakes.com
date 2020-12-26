@@ -16,6 +16,10 @@ links:
     link: https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Ftigeroakes.com%2Fposts%2Findex.xml
   - title: RSS Feed
     link: /posts/index.xml
+
+cascade:
+  author: tiger
+  banner: banner.*
 ---
 
 My blog is where I learn out loud. I write about [web](tags/web/) and [Android](tags/android/) development, with plenty of PWA and [icon](tags/icons/) talk.

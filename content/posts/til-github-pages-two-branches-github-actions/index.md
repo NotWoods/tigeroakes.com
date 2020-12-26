@@ -1,14 +1,12 @@
 ---
 title: Deploy a site to GitHub Pages from multiple branches using GitHub Actions
-description: A guide to being part of Hacktoberfest with Firefox.
+description: CI/CD combining different branches.
 date: 2020-12-26
-author: tiger
 tags:
   - TIL
   - GitHub
 categories:
   - Planet Mozilla
-banner: banner.png
 ---
 
 I've been moving many repositories over to GitHub Actions to automate deployment and testing. One of my projects uses GitHub Pages, but includes data from two different branches:
