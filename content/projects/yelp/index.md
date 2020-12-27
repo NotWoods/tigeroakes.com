@@ -6,8 +6,6 @@ color: '#d32323'
 fallbackcolor: '#594134'
 links:
   - title: Case study
-  - title: View site
-    link: https://www.yelp.com/search?cflt=movers&find_loc=San%20Francisco%2C%20CA%2C%20United%20States
 tech:
   - Python
   - React

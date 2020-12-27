@@ -6,8 +6,6 @@ color: '#2a70ea'
 fallbackcolor: '#9ba3ac'
 links:
   - title: Case study
-  - title: Open app
-    link: https://storage.googleapis.com/chrome-supersize/index.html
   - title: Code
     link: https://chromium.googlesource.com/chromium/src.git/+/master/tools/binary_size/
 tech:
