@@ -31,7 +31,7 @@ These phones can do anything a normal phone does, but I've tweaked the use cases
 - Show a drink list or other text across all phones.
 - Indicate at a glance if I or my partner is is in a meeting.
 
-<!—demo iframe—>
+{{<img src="cell-wall-graphic-decorated.svg" alt="Example of CellWall running with different screens" width="837" height="618">}}
 
 ## Parts and assembly
 
@@ -57,7 +57,7 @@ The edges can be a little sharp afterwards. Use a block of [sandpaper](https://a
 
 I wanted the wood board to blend in with my wall and not look like...wood. At a craft store, I picked up [a small bottle of white paint](https://amzn.to/2L5YzS7) and [a paintbrush](https://amzn.to/35eqiHk). At home, on top of some trash bags, I started painting a few coats of white.
 
-{{<video src="paint-gif.mov" max-height="400">}}
+{{<video src="paint-gif.mov" max-height="450">}}
 
 ### Mounting and connecting the phones (the "Cell"s)
 
@@ -77,6 +77,8 @@ If the phone does turn on, [enable developer mode](https://www.howtogeek.com/129
 The wires are laid out with a bunch of tiny wire clips. $7 will get you [100 of these clips in a bag](https://amzn.to/391YTJL), and I've laid them out so each clip only contains 1 or 2 wires. The wires themselves are all standard phone USB cables you probably have lying around for charging. You can also buy [extra cables for less than a dollar each at Monoprice](https://www.monoprice.com/product?p_id=4867).
 
 All the wires feed into a USB hub. This hub lets me connect all the phones to a computer just using a single wire. I had one lying around, but [similar hubs are on Amazon for $20](https://amzn.to/2JM19w0). The hub needs a second cable that plugs directly into an outlet and provides extra power, since it needs to charge so many phones.
+
+{{<video src="wires-gif.mov" max-height="450">}}
 
 ## Software
 
@@ -121,7 +123,35 @@ The server software is written in TypeScript and creates an HTTP server to expos
 
 To control CellWall, I wrote a small JavaScript app served by the Node server. It includes a few buttons to turn each display on, controls for specific screens, and presets to display. These input elements all send HTTP requests to the server, which then converts them into ADB commands sent to the cells.
 
-{{<img src="remote-control.png" alt="Remote control app with power buttons, device selection, and manual display controls" max-height="500">}}
+<div style="display:flex;justify-content:space-evenly;flex-wrap:wrap">
+{{<img src="remote-control.png" alt="Remote control app with power buttons, device selection, and manual display controls" max-height="500" class="col-left">}}
+<svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" style="max-width:500px">
+  <path stroke="#ebeeef" fill="#1b5e20" d="M222.1 29.3a4 4 0 00-4-4h-51a4 4 0 00-4 4v35a4 4 0 004 4h51a4 4 0 004-4v-35z"/>
+  <path d="M220.8 30.6a4 4 0 00-4-4h-48.4a4 4 0 00-4 4V63a4 4 0 004 4h48.4a4 4 0 004-4V30.6z" fill="#429a46"/>
+  <path fill="#efefef" d="M187.4 32.7c0-1.5-1.2-2.7-2.7-2.7h-13.5a2.7 2.7 0 00-2.7 2.7v4c0 1.5 1.2 2.7 2.7 2.7h13.5c1.5 0 2.7-1.2 2.7-2.7v-4zM217.7 32.7c0-1.5-1.2-2.7-2.7-2.7h-14.5a2.7 2.7 0 00-2.7 2.7v6.1c0 1.5 1.2 2.7 2.7 2.7H215c1.5 0 2.7-1.2 2.7-2.7v-6zM206.2 45.3c0-1.5-1.2-2.7-2.7-2.7h-19.7a2.7 2.7 0 00-2.7 2.7v11.3c0 1.5 1.2 2.7 2.7 2.7h19.7c1.5 0 2.7-1.2 2.7-2.7V45.3zM179 44.2c0-1.5-1.2-2.7-2.7-2.7h-5a2.7 2.7 0 00-2.8 2.7v14.5c0 1.5 1.2 2.7 2.7 2.7h5.1c1.5 0 2.7-1.2 2.7-2.7V44.2z"/>
+  <g font-family="'Cascadia Mono', monospace" font-size="12" fill="currentColor">
+    <text x="31.7" y="104.7">Remote</text>
+    <text x="164.6" y="104.7">CellWall</text>
+    <text x="32.4" y="241.3">Server</text>
+    <text x="182.1" y="241.4">ADB</text>
+  </g>
+  <g font-family="'Lato', sans-serif" font-size="20" fill="currentColor">
+    <text x="53.7" y="35.6" transform="matrix(.5 0 0 .5 61.6 191.6)">Tell ADB to send</text>
+    <text x="53.7" y="55.6" transform="matrix(.5 0 0 .5 61.6 191.6)">VIEW intent</text>
+    <text x="53.7" y="35.6" transform="matrix(.5 0 0 .5 -22.9 111)">HTTP</text>
+    <text x="53.7" y="55.6" transform="matrix(.5 0 0 .5 -22.9 111)">request to</text>
+    <text x="53.7" y="75.6" transform="matrix(.5 0 0 .5 -22.9 111)">show URL</text>
+    <text x="53.7" y="35.6" transform="matrix(.5 0 0 .5 170.8 111)">Send intent</text>
+    <text x="53.7" y="55.6" transform="matrix(.5 0 0 .5 170.8 111)">to each</text>
+    <text x="53.7" y="75.6" transform="matrix(.5 0 0 .5 170.8 111)">phone</text>
+  </g>
+  <path d="M72 11.2C72 8.3 69.9 6 67 6H38.8a5.2 5.2 0 00-5.2 5.2v71.1c0 2.9 2.3 5.2 5.2 5.2h28c3 0 5.3-2.3 5.3-5.2V11.2z" fill="#252525" stroke="#ebeeef"/>
+  <path fill="#375a7f" d="M35.4 11.4h34.9v69.9H35.4z"/>
+  <path d="M80 196.4H27.5v23.3H80v-23.3zM39 214a5.9 5.9 0 01-5.8-5.8c0-3.2 2.6-5.8 5.8-5.8 3.2 0 5.9 2.6 5.9 5.8 0 3.2-2.7 5.8-5.9 5.8zM80 167.2H27.5v23.4H80v-23.3zM39 184.8a5.9 5.9 0 01-5.8-5.9c0-3.2 2.6-5.8 5.8-5.8 3.2 0 5.9 2.6 5.9 5.8 0 3.2-2.7 5.8-5.9 5.8z" fill="#032030" stroke="#ebeeef"/>
+  <path d="M172.2 205.2a20.4 20.4 0 1040.8 0v-11.7h-40.8v11.7zm32.4-34l6.1-6-2.4-2.5-6.7 6.7a20 20 0 00-18 0l-6.8-6.7-2.4 2.4 6.2 6.1c-5.1 3.7-8.4 9.7-8.4 16.5v2.9H213v-3c0-6.7-3.3-12.7-8.4-16.4zm-20.8 13.6a3 3 0 01-2.9-3 3 3 0 013-2.9 3 3 0 012.9 3 3 3 0 01-3 2.8zm17.5 0a3 3 0 01-2.9-3 3 3 0 013-2.9 3 3 0 012.9 3 3 3 0 01-3 2.8z" fill="#032030" stroke="#ebeeef"/>
+  <path d="M52.5 112H55v41.6l2.2-2.2 1.8 1.8-5.3 5.3-5.3-5.3 1.8-1.8 2.3 2.2V112zM193.9 158.5h-2.6v-41.6l-2.2 2.2-1.8-1.8 5.3-5.3 5.3 5.3-1.8 1.8-2.2-2.2v41.6zM92 194.8v-2.6h60.7l-2.2-2.2 1.8-1.8 5.3 5.3-5.3 5.3-1.8-1.8 2.2-2.2H92z" fill="#e67237"/>
+</svg>
+</div>
 
 As a nice final touch, I put some black masking tape to resemble wires coming out of the board. While this is optional, it makes a nice Zoom background for meetings. My partner's desk is across the room, and I frequently hear her coworkers comment on the display behind her.
 
