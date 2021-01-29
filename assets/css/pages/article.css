@@ -211,6 +211,11 @@ blockquote {
   margin-right: auto;
 }
 
+.disclaimer {
+  display: block;
+  margin-bottom: 1rem;
+}
+
 @media (--banner-wrap) {
   img.center,
   video.center {

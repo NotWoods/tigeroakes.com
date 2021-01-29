@@ -47,3 +47,11 @@
         {{ partial "cta_nav.html" . }}
     </article>
 {{ end }}
+{{ define "footer" }}
+<footer class="contact" id="contact" role="contentinfo">
+  {{ with .Params.footer }}
+  <small class="disclaimer">{{.}}</small>
+  {{ end }}
+  {{ partialCached "footer.html" . }}
+</footer>
+{{ end }}
