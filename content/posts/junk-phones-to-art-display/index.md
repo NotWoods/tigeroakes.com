@@ -1,7 +1,7 @@
 ---
 title: Turning junk phones into an art display
 description: Build your own interactive creation from your pile of old phones.
-date: 2021-01-29
+date: 2021-02-01
 author: tiger
 editor: daphne
 tags:
