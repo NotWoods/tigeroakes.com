@@ -126,6 +126,8 @@ To control CellWall, I wrote a small JavaScript app served by the Node server. I
 <div style="display:flex;justify-content:space-evenly;flex-wrap:wrap">
 {{<img src="remote-control.png" alt="Remote control app with power buttons, device selection, and manual display controls" max-height="500" class="col-left">}}
 <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" style="max-width:500px">
+
+  <title>Diagram of request flow from remote to server to ADB to CellWall</title>
   <path stroke="#ebeeef" fill="#1b5e20" d="M222.1 29.3a4 4 0 00-4-4h-51a4 4 0 00-4 4v35a4 4 0 004 4h51a4 4 0 004-4v-35z"/>
   <path d="M220.8 30.6a4 4 0 00-4-4h-48.4a4 4 0 00-4 4V63a4 4 0 004 4h48.4a4 4 0 004-4V30.6z" fill="#429a46"/>
   <path fill="#efefef" d="M187.4 32.7c0-1.5-1.2-2.7-2.7-2.7h-13.5a2.7 2.7 0 00-2.7 2.7v4c0 1.5 1.2 2.7 2.7 2.7h13.5c1.5 0 2.7-1.2 2.7-2.7v-4zM217.7 32.7c0-1.5-1.2-2.7-2.7-2.7h-14.5a2.7 2.7 0 00-2.7 2.7v6.1c0 1.5 1.2 2.7 2.7 2.7H215c1.5 0 2.7-1.2 2.7-2.7v-6zM206.2 45.3c0-1.5-1.2-2.7-2.7-2.7h-19.7a2.7 2.7 0 00-2.7 2.7v11.3c0 1.5 1.2 2.7 2.7 2.7h19.7c1.5 0 2.7-1.2 2.7-2.7V45.3zM179 44.2c0-1.5-1.2-2.7-2.7-2.7h-5a2.7 2.7 0 00-2.8 2.7v14.5c0 1.5 1.2 2.7 2.7 2.7h5.1c1.5 0 2.7-1.2 2.7-2.7V44.2z"/>
