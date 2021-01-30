@@ -98,7 +98,7 @@ Maskable icons use a special new key, `purpose`, to indicate that they are meant
 
 Do you want to see what your own maskable icons will look like? I’ve created a tool, [Maskable.app](https://maskable.app), to help you evaluate how the icon appears in different shapes.
 
-{{<video src="maskable_app.mov">}}
+{{<video src="maskable_app.*">}}
 
 The app lets you preview your icon in various shapes that can be found on Android devices. I hope this tool helps you create unique icons for your Progressive Web Apps.
 
