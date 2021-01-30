@@ -12,11 +12,14 @@
   padding: 0.5em 1.5em;
   display: inline-block;
   position: relative;
+  border: 0;
 
   color: inherit;
+  font: inherit;
   background: var(--block);
   text-align: center;
   white-space: nowrap;
+  cursor: pointer;
 }
 .button::after {
   border: 2px solid;

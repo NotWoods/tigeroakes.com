@@ -23,3 +23,9 @@
         {{ partial "cta_nav.html" . }}
     </article>
 {{ end }}
+{{ define "footer" }}
+{{ partialCached "subscribe.html" . }}
+<footer class="contact" id="contact" role="contentinfo">
+  {{ partialCached "footer.html" . }}
+</footer>
+{{ end }}

@@ -1,0 +1,52 @@
+.subscribe {
+  display: flex;
+}
+.input__wrap {
+  display: flex;
+  flex: 1;
+  margin-right: 1em;
+  flex-flow: column;
+}
+.input__border {
+  height: 3px;
+  background: currentColor;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.input__label {
+  order: -1;
+  transition: color 0.3s ease;
+}
+.input {
+  background: transparent;
+  border: 0;
+  padding: 0.5em 0 0.5em;
+  color: inherit;
+  font: inherit;
+}
+
+.input:focus ~ .input__label {
+  color: var(--primary-color);
+}
+.input:focus ~ .input__border {
+  transform: translateY(6px);
+  background: var(--primary-color);
+}
+
+.subscribe__button {
+  justify-self: flex-end;
+  font-size: 1.2em;
+  color: var(--theme-dark);
+}
+
+@media (--home-projects-text) {
+  .subscribe {
+    flex-flow: column;
+  }
+  .input__wrap {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+  .subscribe__button {
+    margin-left: auto;
+  }
+}

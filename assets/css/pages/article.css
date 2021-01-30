@@ -3,6 +3,7 @@
 @import '../components/header.css';
 @import '../components/button/cta.css';
 @import '../components/button/nav.css';
+@import '../components/subscribe.css';
 
 html {
   scroll-behavior: smooth;
@@ -33,7 +34,7 @@ body {
   grid-area: header;
   font-size: 1.1em;
 }
-.banner__wrap, .article__header, .contact {
+.banner__wrap, .article__header, .subscribe__wrap, .contact {
   background-color: var(--theme-dark);
   color: var(--theme-light);
 }

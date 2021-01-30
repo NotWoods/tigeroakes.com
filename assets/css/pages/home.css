@@ -38,6 +38,10 @@
 
   font-size: 1.1em;
 }
+.subscribe__button {
+  --block: var(--primary-color);
+  border: 2px solid;
+}
 
 .nav__link::selection,
 .my-name::selection,

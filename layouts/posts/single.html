@@ -48,6 +48,7 @@
     </article>
 {{ end }}
 {{ define "footer" }}
+{{ partialCached "subscribe.html" . }}
 <footer class="contact" id="contact" role="contentinfo">
   {{ with .Params.footer }}
   <small class="disclaimer">{{.}}</small>
