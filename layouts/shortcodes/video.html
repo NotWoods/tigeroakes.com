@@ -1,9 +1,12 @@
-{{ $video := $.Page.Resources.GetMatch (.Get "src") }}
+{{ $video := $.Page.Resources.Match (.Get "src") }}
 <video
-    class="center"
-    autoplay
-    loop
-    muted
-    src='{{$video.RelPermalink}}'
-    {{with .Get "max-height"}}style="max-height:{{.}}px"{{end}}
-></video>
+  class="center"
+  autoplay
+  loop
+  muted
+  {{with .Get "max-height"}}style="max-height:{{.}}px"{{end}}
+>
+{{ range sort $video "MediaType.SubType" "desc" }}
+  <source src='{{ .RelPermalink }}' type="{{ .MediaType }}" />
+{{ end }}
+</video>
