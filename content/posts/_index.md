@@ -14,6 +14,8 @@ group_by_date: '2006'
 links:
   - title: Subscribe to my newsletter
     link: https://buttondown.email/tiger
+  - title: RSS Feed
+    link: /posts/index.xml
 
 cascade:
   author: tiger
