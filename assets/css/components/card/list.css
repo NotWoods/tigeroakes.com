@@ -22,7 +22,7 @@
 .card .buttons {
   justify-content: center;
 }
-.card .button {
+.projects .card .button {
   flex: 1;
   max-width: 8em;
 }

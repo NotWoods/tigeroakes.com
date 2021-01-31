@@ -6,7 +6,7 @@ other: More talks
 group_by_date: '2006'
 
 links:
-  - title: YouTube
+  - title: Watch on YouTube
     link: https://www.youtube.com/c/TigerOakes
 ---
 

@@ -1,30 +1,40 @@
 {{ define "head" }}
-    {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/article.css") "css/pages/article.css" }}
+  {{ partialCached "meta/inline-postcss.html" (resources.Get "css/pages/article.css") "css/pages/article.css" }}
 {{ end }}
 {{ define "main" }}
-    <article class="article">
-        <header class="card header article__header card--image" style='{{ partial "project/style.css" . | safeCSS }}'>
-            <div class="header__content header__content--with-image inner">
-                {{ partial "project/image.html" . }}
-                <div class="header__text">
-                    <h1 class="block card__title ">{{.Title}}</h1>
-                    <p class="card__subtitle">{{.Params.subtitle}}</p>
-                    {{ partial "project/tech_list.html" .Params.tech }}
-                </div>
-
-                {{ partial "project/buttons.html" (dict "links" (after 1 .Params.links) "page" .RelPermalink) }}
-            </div>
-        </header>
-
-        <div class="article__body inner">
-            {{ .Content }}
+  <article class="article">
+    <header class="card header article__header card--image" style='{{ partial "project/style.css" . | safeCSS }}'>
+      <div class="header__content header__content--with-image inner">
+        {{ partial "project/image.html" . }}
+        <div class="header__text">
+          <h1 class="block card__title ">{{.Title}}</h1>
+          <p class="card__subtitle">{{.Params.subtitle}}</p>
+          {{ partial "project/tech_list.html" .Params.tech }}
         </div>
 
-        {{ partial "cta_nav.html" . }}
-    </article>
+        {{ partial "project/buttons.html" (dict "links" (after 1 .Params.links) "page" .RelPermalink) }}
+      </div>
+    </header>
+
+    <div class="article__body inner">
+      {{ .Content }}
+    </div>
+
+    {{ partial "cta_nav.html" . }}
+  </article>
 {{ end }}
 {{ define "footer" }}
-{{ partialCached "subscribe.html" . }}
+<aside class="card subscribe__wrap">
+  <div class="inner">
+    <h2>Want to read more?</h2>
+    <p>
+      On this site I try to write about interesting and weird projects, and my newsletter is no different!
+      It includes <strong>early access</strong> to upcoming posts and access to special bonus content.
+      No spam, unsubscribe at any time.
+    </p>
+    {{ partialCached "subscribe-form.html" . }}
+  </div>
+</aside>
 <footer class="contact" id="contact" role="contentinfo">
   {{ partialCached "footer.html" . }}
 </footer>
