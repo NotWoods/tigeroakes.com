@@ -7,7 +7,7 @@ color: '#DCD9FB'
 banner: flik-faq.png
 ---
 
-Recently, a woman I know came across a platform created by an alumni of our university named  [FLIK](https://weareflik.com/). The company is an online job portal for "connecting and empowering driven womxn at all stages of the female founder pipeline". She was curious and joined the platform, but alerted me because she ended up getting so many offers for unpaid internships called "apprenticeships".
+Recently, a woman I know came across a platform created by an alumni of our university named  [FLIK](https://weareflik.com/). The company is an online job portal for "connecting and empowering driven women at all stages of the female founder pipeline". She was curious and joined the platform, but alerted me because she ended up getting so many offers for unpaid internships called "apprenticeships".
 
 She received many messages of "we're a startup looking for a software engineer. It'll be part-time and unpaid." We didn't know if that was the intention of the platform, but after some more research by us and some friends, it appears that FLIK is intentionally preying on young women in tech for profit - [$60 per founder every month](https://weareflik.com/founders).
 
@@ -19,7 +19,7 @@ Despite looking like a job board, FLIK is careful not to refer to itself as a jo
 
 FLIK's FAQ has a totally different definition for apprenticeships. "Apprenticeships are a mentorship-first experience, where the apprentice is not entitled to a wage... Our legal team has written a secure contract for this specific reason so it is important you keep us in the loop. The apprenticeship is legally defined as a volunteer role. The apprentice can be hired after the 3 month period with a recruitment fee due to FLIK." FLIK uses "apprentice" as a special term to avoid saying "unpaid intern", and their FAQ makes it clear that they are legally "volunteers".
 
-But candidates for FLIK are also not really volunteers. Founders are hiring students for their for-profit companies, with the potential for a job afterwards - as indicated by FLIK's $500 recruiting fee. FLIK's site states that they help founders "Bring more incredible womxn into your circle to help you build your company". FLIK promotes that their apprentices, "have direct access to top executives of innovative companies for consistent mentorship", implying that startup founders have time to generously mentor the next generation while they're running their company.
+But candidates for FLIK are also not really volunteers. Founders are hiring students for their for-profit companies, with the potential for a job afterwards - as indicated by FLIK's $500 recruiting fee. FLIK's site states that they help founders "Bring more incredible women into your circle to help you build your company". FLIK promotes that their apprentices, "have direct access to top executives of innovative companies for consistent mentorship", implying that startup founders have time to generously mentor the next generation while they're running their company.
 
 FLIK is taking advantage of young people looking to work in the growing tech industry. It feels especially predatory with the focus on gender, knowing the dynamics of women in tech. I don't want anyone to work with leaders who perpetuate a culture of taking advantage of people, whether intentional or not. I want to believe this was created in good faith, but FLIK's intentionally misleading terminology makes it difficult to feel like they didn't know exactly what they were doing.
 
@@ -28,6 +28,8 @@ It's a strange mission to empower women with the caveat of skirting around actua
 This information was compiled by [Daphne Liu](https://twitter.com/DevDaphne), [Tiger Oakes](https://twitter.com/Not_Woods), [Jonathan Budiardjo](https://github.com/Jopika), and [Amy Zhu](https://twitter.com/zhucchina).
 
 ## Excerpts from FLIK's FAQ
+
+These excerpts were extract word-for-word on January 24, 2021. Since then, FLIK's website has changed. The older responses can be seen on the [Wayback Machine](http://web.archive.org/web/20210124074758/https://weareflik.com/faqs).
 
 ### Do I have to pay the apprentice?
 
