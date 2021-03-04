@@ -6,7 +6,7 @@ elsewhere:
 title: Participating in Hacktoberfest 2020 with Firefox Daylight
 description: A guide to being part of Hacktoberfest with Firefox.
 date: 2019-10-01
-lastmode: 2020-09-01
+lastmod: 2020-09-01
 author: tiger
 links:
   - title: Original post

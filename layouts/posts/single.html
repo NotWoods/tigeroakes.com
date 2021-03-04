@@ -12,7 +12,7 @@
       <div class="header__content inner">
         <div class="header__text">
           <span class="date">
-            {{- if ne .Date .Lastmod -}}
+            {{- if gt .Lastmod .Date  -}}
             Last updated on {{ partial "time.html" .Lastmod }}
             {{- else -}}
             Posted on {{ partial "time.html" .Date }}

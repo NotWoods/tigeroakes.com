@@ -25,7 +25,9 @@ menu:
       weight: -110
 
 frontmatter:
-  lastmod: ['lastmod', 'date', 'publishDate']
+  lastmod: ['lastmod', ':git', 'date', 'publishDate']
+
+enableGitInfo: true
 
 taxonomies:
   tag: tags

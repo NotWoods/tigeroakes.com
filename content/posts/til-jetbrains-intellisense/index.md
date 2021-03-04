@@ -2,7 +2,6 @@
 title: 'How to make Android Studio show documentation on hover'
 description: My favorite Visual Studio Code feature is hidden behind a setting in Android Studio.
 date: 2020-07-06
-lastmod: 2020-09-13
 author: tiger
 tags:
   - TIL
