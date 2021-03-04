@@ -21,11 +21,11 @@ FLIK's FAQ has a totally different definition for apprenticeships. "Apprenticesh
 
 But candidates for FLIK are also not really volunteers. Founders are hiring students for their for-profit companies, with the potential for a job afterwards - as indicated by FLIK's $500 recruiting fee. FLIK's site states that they help founders "Bring more incredible womxn into your circle to help you build your company". FLIK promotes that their apprentices, "have direct access to top executives of innovative companies for consistent mentorship", implying that startup founders have time to generously mentor the next generation while they're running their company.
 
-This information was compiled by [Daphne Liu](https://twitter.com/DevDaphne), [Tiger Oakes](https://twitter.com/Not_Woods), [Jonathan Budiardjo](https://github.com/Jopika), and [Amy Zhu](https://twitter.com/zhucchina).
-
 FLIK is taking advantage of young people looking to work in the growing tech industry. It feels especially predatory with the focus on gender, knowing the dynamics of women in tech. I don't want anyone to work with leaders who perpetuate a culture of taking advantage of people, whether intentional or not. I want to believe this was created in good faith, but FLIK's intentionally misleading terminology makes it difficult to feel like they didn't know exactly what they were doing.
 
 It's a strange mission to empower women with the caveat of skirting around actually paying them for work. If the companies using the board can afford to pay the fees for a candidate's successful placement, it seems they could also afford to pay their part-time workers hourly rates. Please help spread the word so that students know to look for positions where they will be truly valued and compensated fairly.
+
+This information was compiled by [Daphne Liu](https://twitter.com/DevDaphne), [Tiger Oakes](https://twitter.com/Not_Woods), [Jonathan Budiardjo](https://github.com/Jopika), and [Amy Zhu](https://twitter.com/zhucchina).
 
 ## Excerpts from FLIK's FAQ
 
