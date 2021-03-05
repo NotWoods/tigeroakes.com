@@ -31,7 +31,7 @@ This information was compiled by [Daphne Liu](https://twitter.com/DevDaphne), [T
 
 These excerpts were extract word-for-word on January 24, 2021. Since then, FLIK's website has changed. The older responses can be seen on the [Wayback Machine](http://web.archive.org/web/20210124074758/https://weareflik.com/faqs).
 
-_Update: Since this post was published, FLIK has tweaked their FAQ to remove the question "What are the tax implications? Is this legal? How does the honorarium work?". The original content from their site is [preserved below](#what-are-the-tax-implications-is-this-legal-how-does-the-honorarium-work)._
+_Update: Since this post was published, FLIK has tweaked their FAQ to replace the question "Is this legal?" with "Can this work for me?". The original content from their site is [preserved below](#what-are-the-tax-implications-is-this-legal-how-does-the-honorarium-work)._
 
 ### Do I have to pay the apprentice?
 
