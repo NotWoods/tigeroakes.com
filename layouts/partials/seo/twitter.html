@@ -6,7 +6,5 @@
   <meta name="twitter:image" content="{{.Permalink}}" />
 {{- else -}}
   <meta name="twitter:card" content="summary" />
-  {{- with .Resources.GetMatch "logo.*" -}}
-  <meta name="twitter:image" content="{{.Permalink}}" />
-  {{- end -}}
+  <meta name="twitter:image" content="/twitter-default.png" />
 {{- end -}}
