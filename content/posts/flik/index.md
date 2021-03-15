@@ -5,6 +5,8 @@ date: 2021-03-04
 author: tiger
 color: '#DCD9FB'
 banner: flik-faq.png
+tags:
+  - Career
 ---
 
 Recently, a woman I know came across a platform created by an alumni of our university named  [FLIK](https://weareflik.com/). The company is an online job portal for "connecting and empowering driven women at all stages of the female founder pipeline". She was curious and joined the platform, but alerted me because she ended up getting so many offers for unpaid internships called "apprenticeships".
