@@ -1,5 +1,5 @@
 ---
-title: 'React to Jetpack Compose Dictionary'
+title: 'React to Jetpack Compose Beta Dictionary'
 description: Two libraries with similar concepts. What's the equivalent Jetpack Compose terms for React terms?
 date: 2020-07-20
 author: tiger
@@ -57,17 +57,17 @@ Container {
 }
 ```
 
-## Context > Ambient
+## Context > CompositionLocal
 
-While most data is passed through the component tree as props/parameters, sometimes this model can be cumbersome. React includes the [Context](https://reactjs.org/docs/context.html) API to share this data. Compose uses [Ambient](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Ambient) to accomplish the same thing.
+While most data is passed through the component tree as props/parameters, sometimes this model can be cumbersome. React includes the [Context](https://reactjs.org/docs/context.html) API to share this data. Compose uses [CompositionLocal](https://developer.android.com/reference/kotlin/androidx/compose/runtime/CompositionLocal) to accomplish the same thing. This API was called `Ambient` in alpha versions of Jetpack Compose.
 
-### createContext > ambientOf
+### createContext > compositionLocalOf
 
-A React Context is created with [`React.createContext`](https://reactjs.org/docs/context.html#reactcreatecontext), while a Jetpack Compose ambient is created with [`ambientOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#ambientof).
+A React Context is created with [`React.createContext`](https://reactjs.org/docs/context.html#reactcreatecontext), while a Jetpack Compose ambient is created with [`compositionLocalOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#compositionlocalof).
 
-### Provider > Provider
+### Provider > CompositionLocalProvider
 
-The value can be controlled using a "Provider" in both [React](https://reactjs.org/docs/context.html#contextprovider) and [Compose](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#providers).
+The value can be controlled using a "Provider" in both [React](https://reactjs.org/docs/context.html#contextprovider) and [Compose](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#compositionlocalprovider).
 
 ```jsx
 <MyContext.Provider value={myValue}>
@@ -76,12 +76,12 @@ The value can be controlled using a "Provider" in both [React](https://reactjs.o
 ```
 
 ```kotlin
-Providers(MyAmbient provides myValue) {
+CompositionLocalProvider(MyLocal provides myValue) {
   SomeChild()
 }
 ```
 
-### useContext > Ambient.current
+### useContext > CompositionLocal.current
 
 Accessing the React context value is accomplished using the [`useContext` hook](https://reactjs.org/docs/hooks-reference.html#usecontext).
 
@@ -89,17 +89,17 @@ Accessing the React context value is accomplished using the [`useContext` hook](
 const myValue = useContext(MyContext);
 ```
 
-Accessing the value of an Ambient is done by using the [`.current` getter](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Ambient#current).
+Accessing the value of an Ambient is done by using the [`.current` getter](https://developer.android.com/reference/kotlin/androidx/compose/runtime/CompositionLocal#current:androidx.compose.runtime.CompositionLocal.T).
 
 ```kotlin
-val myValue = MyAmbient.current
+val myValue = MyLocal.current
 ```
 
-## useEffect > onCommit
+## useEffect > Effect
 
 Mutations, subscriptions, timers, logging, and other side effects are not allowed inside the main body of a UI component. They must be placed inside a callback function that both React and Jetpack Compose will call at the correct point.
 
-React has the [`useEffect` hook](https://reactjs.org/docs/hooks-reference.html#useeffect) to run side effects every [render](#render--composition).
+React has the [`useEffect` hook](https://reactjs.org/docs/hooks-reference.html#useeffect) to run side effects.
 
 ```jsx
 useEffect(() => {
@@ -107,75 +107,138 @@ useEffect(() => {
 });
 ```
 
-Compose has the [`onCommit` effect](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#oncommit) to run side effects every [composition](#render--composition).
+`useEffect` is used for many different purposes: event subscriptions, logging, asynchronous code, and more. Compose breaks up these use cases into separate functions with the suffix `Effect`, including [`DisposableEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#disposableeffect_1), [`LaunchedEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#launchedeffect_1), and [`SideEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#sideeffect).
 
-```kotlin
-onCommit {
-  sideEffectRunEveryComposition()
-}
-```
-
-### Clean-up function > onDispose
+### Clean-up function > DisposableEffect
 
 Side effects often create resources that need to be cleaned up once the UI component is unused. React allows the `useEffect` function to return a second function, known as the [clean-up function](https://reactjs.org/docs/hooks-reference.html#cleaning-up-an-effect).
 
 ```jsx
 useEffect(() => {
-  const subscription = source.subscribe();
+  const subscription = source.subscribe(id);
   return () => {
-    subscription.unsubscribe();
+    subscription.unsubscribe(id);
   };
-});
+}, [id]);
 ```
 
-Jetpack Compose exposes an [`onDispose` function](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#ondispose) inside `onCommit`, which runs when the effect leaves the composition.
+Jetpack Compose exposes an [`DisposableEffect` composable](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#disposableeffect_1) that replaces `useEffect` in this scenario. Rather than returning a function, you can call `onDispose` and pass a callback there. It will run when the effect leaves the composition.
 
 ```kotlin
-onCommit {
-  val subscription = source.subscribe()
+DisposableEffect(id) {
+  val subscription = source.subscribe(id)
   onDispose {
-    subscription.unsubscribe()
+    subscription.unsubscribe(id)
   }
 }
 ```
 
-### useEffect(callback, deps) > onCommit(inputs, callback)
+### useEffect(promise, deps) > LaunchedEffect
 
-Both `useEffect` and `onCommit` default to running after every [render/composition](#render--composition). However, side effects can also be run only when their dependencies change.
-
-React allows a second parameter to be passed to `useEffect` with a list of dependencies:
+Asynchronous functions are created in JavaScript using the `async` keyword. React will handle running the function, but doesn't handle cancelling the promise if a re-render occurs before the promise has finished running. Since you shouldn't return anything except for a [clean-up function](#TODO) from the effect callback, you need to create then immediately invoke the asynchronous function.
 
 ```jsx
 useEffect(() => {
-  sideEffect();
-}, [dep1, dep2]);
+  async function asyncEffect() {
+    await apiClient.fetchUser(id);
+  }
+  asyncEffect();
+}, [id]);
 ```
 
-Jetpack Compose allows inputs to be passed as parameters before the callback:
+The above code fetches from an API whenever the `id` value changes. You can also write the same code using an [IIFE or Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
+
+```jsx
+useEffect(() => {
+  (async () => {
+    await apiClient.fetchUser(id);
+  })();
+}, [id]);
+```
+
+Cancelling the promise is a little more complicated because it isn't built into React. You can use an [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) to cancel `fetch` functions and certain other promises.
+
+```jsx
+useEffect(() => {
+  const controller = new AbortController();
+
+  (async () => {
+    // The abort signal will send abort events to the API client
+    await apiClient.fetchUser(id, controller.signal);
+  })();
+
+  // Abort when id changes, or when the component is unmounted
+  return () => controller.abort();
+}, [id]);
+```
+
+Kotlin uses suspend functions and coroutines instead of JavaScript's async functions and promises. Jetpack Compose has a dedicated `LaunchedEffect` composable to handle suspend functions in side effects. The effect dependencies are called "keys" and work the same way as React, expect that you provide them at the start of the function instead of the end.
+
+Compose additionally cancels the coroutine whenever the keys change. As a result, the 11 lines of code above are replaced with the 3 lines below.
 
 ```kotlin
-onCommit(input1, input2) {
-  sideEffect()
+LaunchedEffect(id) {
+  apiClient.fetchUser(id)
 }
 ```
 
-### useEffect(callback, []) > onActive(callback)
+### useEffect(callback) > SideEffect(callback)
 
-Side effects can also be run only when the UI component is first displayed.
-
-When an empty dependency list is passed to `useEffect`, the side effect is only run once.
+Side effects that run every single [render](#render--composition) are created in React using `useEffect` with no dependency list.
 
 ```jsx
 useEffect(() => {
-  sideEffectOnMount();
+  sideEffectRunEveryRender();
+});
+```
+
+This is accomplished using the [`SideEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#sideeffect) function in Jetpack Compose. These side effects will be run every single composition.
+
+```kotlin
+SideEffect {
+  sideEffectRunEveryComposition()
+}
+```
+
+### Dependency array > Keys
+
+`useEffect` takes an optional second parameter: an array [containing the values the effect depends on](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect). If this parameter isn't passed at all, then the effect will run every single render. If an empty array is passed in, then the effect is only run when the component is first rendered.
+
+```jsx
+useEffect(() => {
+  // Run when id changes
+}, [id]);
+
+useEffect(() => {
+  // Run every render
+});
+
+useEffect(() => {
+  // Run on the first render
 }, []);
 ```
 
-Jetpack Compose has a separate [`onActive` effect](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#onactive) for this.
+Rather than passing an array as the last parameter, you can pass any number of arguments as the first few parameters to `DisposableEffect` and `LaunchedEffect`.
 
 ```kotlin
-onActive {
-  sideEffectOnActive()
+LaunchedEffect(id) {
+  // Run when id changes
+}
+```
+
+If you want to run something every render, you need to use `SideEffect`. There is no equivalent for not passing the dependency list to `useEffect` in `DisposableEffect` and `LaunchedEffect`. You should always pass some kind of dependency or key.
+
+```kotlin
+SideEffect {
+  // Run every composition
+}
+```
+
+To only run an effect on the first composition, you should use a key that never changes - such as `Unit` or `true`.
+
+```kotlin
+LaunchedEffect(Unit) {
+  // Run only on the first composition
 }
 ```
 
@@ -377,9 +440,7 @@ Creating a new state variable in React is done with the [`useState` hook](https:
 ```jsx
 const [count, setCount] = useState(0);
 
-<button onClick={() => setCount(count + 1)}>
-  You clicked {count} times
-</button>
+<button onClick={() => setCount(count + 1)}>You clicked {count} times</button>;
 ```
 
 Compose uses the [`mutableStateOf` function](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutablestateof) to return a [`MutableState` object](https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState), which contains a variable with a getter and setter.
@@ -416,9 +477,11 @@ class Button extends React.Component {
   }
 
   render() {
-    <button onClick={() => this.setState(state => ({ count: state.count + 1 }))}>
+    <button
+      onClick={() => this.setState((state) => ({ count: state.count + 1 }))}
+    >
       You clicked {this.state.count} times
-    </button>
+    </button>;
   }
 }
 ```
@@ -436,11 +499,7 @@ React components often use the [ternary operator](https://developer.mozilla.org/
 ```jsx
 function Greeting(props) {
   return (
-    <span>
-      {props.name != null
-        ? `Hello ${props.name}!`
-        : 'Goodbye.'}
-    </span>
+    <span>{props.name != null ? `Hello ${props.name}!` : 'Goodbye.'}</span>
   );
 }
 ```
