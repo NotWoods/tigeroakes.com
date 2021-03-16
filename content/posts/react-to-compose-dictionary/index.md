@@ -95,7 +95,52 @@ Accessing the value of an Ambient is done by using the [`.current` getter](https
 val myValue = MyLocal.current
 ```
 
-## useEffect > Effect
+## Hook > Effect
+
+React lets you [build your own hooks](https://reactjs.org/docs/hooks-custom.html) to extract component logic into reusable functions. They can use other hooks like `useState` and `useEffect` to encapsulate logic that relates to the component lifecycle.
+
+```jsx
+function useFriendStatus(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
+    };
+  }, [friendID]);
+
+  return isOnline;
+}
+```
+
+In Jetpack Compose, [@Composable functions](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable) are used as the equivalent of hooks (along with acting as the [equivalent of Components](#react-component--composable)). These composable functions, sometimes referred to as "effect" functions, usually start with a lowercase letter instead of an uppercase letter.
+
+```kotlin
+@Composable
+fun friendStatus(friendID: String): State<Boolean?> {
+  val isOnline = remember { mutableStateOf<Boolean?>(null) }
+
+  DisposableEffect(friendID) {
+    val handleStatusChange = { status: FriendStatus ->
+      isOnline.value = status.isOnline
+    }
+
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange)
+    onDispose {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange)
+    }
+  }
+
+  return isOnline
+}
+```
+
+## useEffect > LaunchedEffect
 
 Mutations, subscriptions, timers, logging, and other side effects are not allowed inside the main body of a UI component. They must be placed inside a callback function that both React and Jetpack Compose will call at the correct point.
 
@@ -242,50 +287,48 @@ LaunchedEffect(Unit) {
 }
 ```
 
-## Hook > Effect
+### useState with useEffect > produceState
 
-React lets you [build your own hooks](https://reactjs.org/docs/hooks-custom.html) to extract component logic into reusable functions. They can use other hooks like `useState` and `useEffect` to encapsulate logic that relates to the component lifecycle.
+In React, frequently you will use a combination of the `useEffect` hook to fetch data, and `useState` to store that data.
 
 ```jsx
 function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null);
 
   useEffect(() => {
-    function handleStatusChange(status) {
+    ChatAPI.subscribeToFriendStatus(friendID, (status) => {
       setIsOnline(status.isOnline);
-    }
+    });
 
-    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
+      ChatAPI.unsubscribeFromFriendStatus(friendID);
     };
-  });
+  }, [friendID]);
 
   return isOnline;
 }
 ```
 
-In Jetpack Compose, [@Composable functions](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable) are used as the equivalent of hooks (along with acting as the [equivalent of Components](#react-component--composable)). These composable functions, sometimes referred to as "effect" functions, usually start with a lowercase letter instead of an uppercase letter.
+Jetpack Compose offers a single function to handle this functionality: [`produceState`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#producestate).
 
 ```kotlin
 @Composable
 fun friendStatus(friendID: String): State<Boolean?> {
-  val isOnline = remember { mutableStateOf<Boolean?>(null) }
-
-  onCommit {
-    val handleStatusChange = { status: FriendStatus ->
-      isOnline.value = status.isOnline
+  return produceState(initialValue = null, friendID) {
+    ChatAPI.subscribeToFriendStatus(friendID) { status ->
+      value = status.isOnline
     }
 
-    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange)
-    onDispose {
-      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange)
+    awaitDispose {
+      ChatAPI.unsubscribeFromFriendStatus(friendID)
     }
   }
-
-  return isOnline
 }
 ```
+
+Instead of calling a set function, you can use the `value` setter inside of the [produce state scope](https://developer.android.com/reference/kotlin/androidx/compose/runtime/ProduceStateScope). You can read the current state by looking at the return value from `produceState`.
+
+The side effect inside of `produceState` can be a coroutine or choose to clean itself up using the `awaitDispose` function. This is similar to returning a clean-up function inside React's `useEffect` hook.
 
 ## Key Prop > Key Composable
 
@@ -344,19 +387,13 @@ fun NumberList(numbers: List<Int>) {
 
 In fact, any iteration method can be used, such as `.forEach()`.
 
-## PropTypes.oneOfType > UnionType
+## PropTypes.oneOfType > Function overloading
 
 JavaScript and TypeScript support passing in different variable types for the same parameter. In React, this can be modelled using `PropTypes.oneOfType`. In TypeScript, it can be modelled using a union type.
 
 ```tsx
 function FancyButton(props) {
-  return (
-    <ul>
-      {props.numbers.map((number) => (
-        <ListItem value={number} />
-      ))}
-    </ul>
-  );
+  return ...
 }
 
 FancyButton.propTypes = {
@@ -373,12 +410,18 @@ interface FancyButtonProps {
 }
 ```
 
-This is possible to model using overloads in Kotlin. However, depending on the number of union type parameters, the number of overloads can quickly grow. Jetpack Compose introduces the [`UnionType`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/UnionType) annotation to use union types inside of Kotlin.
+This is possible to model using overloads in Kotlin.
 
 ```kotlin
 @Composable fun FancyButton(
   text: String,
-  background: @UnionType(Color::class, Int::class) Any,
+  background: Color,
+) {
+  ...
+}
+@Composable fun FancyButton(
+  text: String,
+  background: Int,
 ) {
   ...
 }
@@ -490,7 +533,7 @@ In Jetpack Compose, this behaviour is encapsulated in a concept called snapshots
 
 ## Storybook > Preview
 
-The [Storybook](https://storybook.js.org/) tool helps you preview React components on the web independently by creating "stories". The [`@Preview` annotation](https://developer.android.com/reference/kotlin/androidx/ui/tooling/preview/Preview) in Jetpack Compose lets you build example composables that can be previewed in Android Studio.
+The [Storybook](https://storybook.js.org/) tool helps you preview React components on the web independently by creating "stories". The [`@Preview` annotation](https://developer.android.com/reference/kotlin/androidx/compose/ui/tooling/preview/Preview) in Jetpack Compose lets you build example composables that can be previewed in Android Studio.
 
 ## Ternary Operator > If Statement
 
