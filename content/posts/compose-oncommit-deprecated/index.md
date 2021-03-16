@@ -11,6 +11,7 @@ tags:
 categories:
   - Planet Mozilla
 color: '#28be6b'
+toc: true
 ---
 
 If you're looking at some Jetpack Compose code or tutorials written last year, you might see the use of `onCommit`, `onActive`, and `onDispose`. However, these functions are no longer present in Android's developer documentation. They were deprecated in [version 1.0.0-alpha11](https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.0-alpha11) in favor of [`SideEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#sideeffect) and [`DisposableEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#disposableeffect_1). Here's how to use those new functions and update your code.

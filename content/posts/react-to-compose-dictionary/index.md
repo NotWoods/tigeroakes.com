@@ -22,7 +22,7 @@ toc: true
 
 I've been trying out [Jetpack Compose](https://developer.android.com/jetpack/compose) on a personal project and liking the API. Compose is a pretty big API shift, and I've found my [React](https://reactjs.org/) knowledge much more helpful than my Android knowledge. Perhaps this is how React Native developers come to replace native Android developers.
 
-Many concepts and functions in the two libraries work the same but have different names. Here's a compilation of terms I've seen along with explanations. Jetpack Compose is still changing, and this list is based on [version 1.0.0-alpha02](https://developer.android.com/jetpack/androidx/releases/ui#1.0.0-alpha02).
+Many concepts and functions in the two libraries work the same but have different names. Here's a compilation of terms I've seen along with explanations. Jetpack Compose is still changing, and this list is based on [version 1.0.0-beta02](https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-beta02).
 
 {{< toc >}}
 
