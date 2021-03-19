@@ -1,5 +1,12 @@
-{{ $jsOptions := dict "minify" true "target" "es2017" }}
-{{ $script := resources.Get "js/window-async.js" | js.Build $jsOptions | fingerprint }}
+{{ $prod := eq (getenv "HUGO_ENVIRONMENT") "production" }}
+{{ $swOptions := dict "minify" false "target" "es2017" "defines" (dict "process.env.NODE_ENV" `"development"`) }}
+{{ if $prod }}
+{{ $swOptions = merge $swOptions (dict "minify" true "defines" (dict "process.env.NODE_ENV" `"production"`)) }}
+{{ end }}
+
+{{ $serviceWorker := resources.Get "service-worker.js" | js.Build $swOptions }}
+<!--{{ $serviceWorker.Permalink }}-->
+{{ $script := resources.Get "js/window-async.js" | js.Build $swOptions | fingerprint }}
 <script type="module">
   if ('serviceWorker' in navigator) {
     import('{{ $script.RelPermalink }}');
