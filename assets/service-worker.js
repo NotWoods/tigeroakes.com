@@ -7,6 +7,15 @@ import {
   staticResourceCache,
 } from 'workbox-recipes';
 
+/**
+ * @param {ExtendableEvent} event
+ */
+function deleteOldCache(event) {
+  event.waitUntil(caches.delete('cache-4'));
+}
+
+self.addEventListener('activate', deleteOldCache);
+
 pageCache();
 staticResourceCache();
 imageCache({
