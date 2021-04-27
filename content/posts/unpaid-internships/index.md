@@ -1,7 +1,7 @@
 ---
 title: How unpaid internships affect you and the tech industry
 description: >
-  When you get an unpaid internship offer, is it worth it? If you're a struggling startup, are unpaid interns your only viable workforce?
+  Is an unpaid offer worth it? Are unpaid interns the only viable workforce for startups?
 date: 2021-04-27
 author: tiger
 color: '#DCD9FB'
@@ -13,7 +13,7 @@ With more and more people are coming into tech, you gotta start somewhere. When 
 
 I recorded a podcast this month covering unpaid internships and how they affect you and the tech industry. Check it out below, in your favorite podcast app, or read the transcript futher down.
 
-<iframe src="https://anchor.fm/tiger-oakes/embed/episodes/How-unpaid-internships-affect-you-and-the-tech-industry-euotrf" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://anchor.fm/tiger-oakes/embed/episodes/How-unpaid-internships-affect-you-and-the-tech-industry-euotrf" height="102px" width="400px" style="width:100%" frameborder="0" scrolling="no"></iframe>
 
 ---
 
