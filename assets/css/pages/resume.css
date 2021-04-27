@@ -11,7 +11,10 @@
   font-size: 1.1rem;
 }
 
-blockquote, ol, p, ul {
+blockquote,
+ol,
+p,
+ul {
   font-size: inherit;
   line-height: inherit;
 }
@@ -27,7 +30,9 @@ blockquote, ol, p, ul {
   background: white;
   font-variant-ligatures: none;
 }
-.resume h1, .resume h2, .resume h3 {
+.resume h1,
+.resume h2,
+.resume h3 {
   font-family: inherit;
 }
 

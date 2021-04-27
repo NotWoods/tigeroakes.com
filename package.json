@@ -7,11 +7,11 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "@rollup/plugin-replace": "^2.4.1",
-    "cssnano": "^4.1.10",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-replace": "^2.4.2",
+    "cssnano": "^5.0.1",
     "insights-js": "^1.2.10",
-    "postcss": "^8.2.8",
+    "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
     "postcss-color-functional-notation": "^3.0.2",
     "postcss-color-hex-alpha": "^7.0.0",
@@ -22,12 +22,12 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-selector-matches": "^4.0.0",
     "prettier": "^2.2.1",
-    "workbox-recipes": "^6.1.2",
-    "workbox-window": "^6.1.2"
+    "workbox-recipes": "^6.1.5",
+    "workbox-window": "^6.1.5"
   },
   "scripts": {
     "build": "hugo",
-    "format": "prettier --write **/*.{md,js,yml,yaml,css} content/**/*.json --ignore-path .gitignore",
+    "format": "prettier --write **/*.{md,js,yml,yaml,css} content/**/*.json",
     "highlight": "hugo gen chromastyles --style=dracula > ./assets/css/highlight.css"
   },
   "prettier": {

@@ -34,5 +34,5 @@ const plugins = [
 ];
 
 module.exports = {
-  plugins: plugins.filter(plugin => plugin != undefined),
+  plugins: plugins.filter((plugin) => plugin != undefined),
 };
