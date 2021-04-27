@@ -1,0 +1,124 @@
+---
+title: How unpaid internships affect you and the tech industry
+description: >
+  When you get an unpaid internship offer, is it worth it? If you're a struggling startup, are unpaid interns your only viable workforce?
+date: 2021-04-27
+author: tiger
+color: '#DCD9FB'
+tags:
+  - Career
+banner: banner.jpg
+---
+With more and more people are coming into tech, you gotta start somewhere. When you get an unpaid internship offer, is it worth it? If you're a struggling startup, are unpaid interns your only viable workforce? 
+
+I recorded a podcast this month covering unpaid internships and how they affect you and the tech industry. Check it out below, in your favorite podcast app, or read the transcript futher down.
+
+<iframe src="https://anchor.fm/tiger-oakes/embed/episodes/How-unpaid-internships-affect-you-and-the-tech-industry-euotrf" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+
+---
+
+# Transcript
+
+More and more people are coming into tech, and many come in with no experience and need to start off somewhere. Companies are popping up to connect new students with internships.
+
+Recently, my partner Daphne came across a recruitment platform for young women named [FLIK](https://weareflik.com/). 
+
+<blockquote cite="www.youtube.com/watch?v=ERokSVBObA8.">
+Michele and I came to this idea of building an apprenticeship portal to help connect female founders and leaders with ambitious female talent. What became, lo and behold, FLIK. We know that we were working towards a greater mission, to really help women around the world, both female founders right now and the next generation of female entrepreneurs.
+</blockquote>
+
+It sounds great! Daphne was curious and joined FLIK's platform, but alerted me because something didn't seem right.
+
+> After I signed up for the platform, I was really excited to look for a Product Management position. But then I started getting offers from founders for things like social media, for software engineering...did any of them read my profile? And all of them were unpaid!
+
+The [two of us took a look at their Frequently Asked Questions](/posts/flik/), and learned that despite presenting themselves as a platform to empower women, FLIK is really a job board to put women in unpaid internships. Every "apprenticeship" is designed to be unpaid.
+
+> And I started wondering, did these founders just send out 50 offers to interns all at once? Could they just easily build up an army of unpaid interns that could build out the whole company for them?
+
+## It's illegal
+
+So what's the problem? Well unpaid internships are straight up illegal.
+
+In most provinces of Canada, including BC and Ontario, [unpaid internships are against the law outside of a few narrow exceptions for school credit](https://gowlingwlg.com/en/insights-resources/articles/2014/are-unpaid-internships-legal-in-canada/).
+
+In places without those protections, with unfortunately includes the US, unpaid interns don't count as employees. As a result, in most states [you aren't protected against workplace discrimination, harassment, and other employment issues](https://www.fastcompany.com/90388911/how-the-unpaid-intern-economy-feeds-income-inequality).
+
+## Get (paid) internships elsewhere 
+
+FLIK is targeting women in tech, a demographic that already suffers from income inequality. When you're starting out, your first experiences set the baseline for what to expect. Setting the precedent at $0 means you expect to not be valued out of the gate.
+
+You might argue, if these women don't have experience and can't get a position elsewhere, shouldn't *some* experience be better than no experience?
+
+Let's look at some stats from a [survey by the National Association of Colleges and Employers](https://www.naceweb.org/job-market/internships/paid-interns-co-ops-see-greater-offer-rates-and-salary-offers-than-their-unpaid-classmates/). 
+
+- 72% students with paid internships received a job offer with median salary at $53,000.
+- Just 43% of students with unpaid internships received an offer, with median salary at $34,000.
+- Students with no internship at all had a median salary of... $38,000.
+
+Students with paid internships were 60% more likely to find a job than those with unpaid internships, and their median income was 60% higher. In fact, even students with no internship had a 12% higher median income. The statistics show that unpaid internships are detrimental to your future job prospects! 
+
+<blockquote cite="https://www.fastcompany.com/3061841/paid-internships-lead-to-more-job-offers-than-unpaid-internship">
+The employer can ‘test drive’ the intern as a potential employee, and see how the intern performs... Many employers use their internship programs as a means of feeding their full-time hiring efforts... Unpaid interns, in general, do not have the same ability to demonstrate their on-the-job effectiveness,
+</blockquote>
+
+When you're starting a new career, you might condition yourself in thinking that no companies want to hire you. 
+
+But that's not true! Especially in an industry with a strong demand for tech talent and many internship opportunities. There are even special programs dedicated to new students.
+
+<blockquote cite="https://www.youtube.com/watch?v=PrcOpwDal3I">Google STEP...It's a program designed to kick start your career in tech</blockquote>
+
+<blockquote cite="https://www.youtube.com/watch?v=u_rwDBUTU2Q">Facebook University...its for freshmen, sophomores, and its an introductory CS program, ...my little freshman self was like: These companies have opportunities for freshmen?? OMG, that's crazy!</blockquote>
+
+## Mentorship (unpaid)
+
+While unpaid internships are a problem for all students, women are 77% more likely to take unpaid work. Many women who used FLIK lacked confidence and felt like they weren't good enough to apply for positions are bigger companies. These issues are disproportionately affecting women and reinforcing gender-based inequities.
+
+A key factor to confidence building is mentorship - having someone who's experienced and has the time and interest to invest in your growth. With unpaid internships, mentorship is unlikely. 
+
+> Founders were just looking for someone to work on their startup. Because (1) they did not have the ability or skills to do so, or (2) they're very busy with fundraising or bootstrapping the company, and needed someone to work for them. And I believe these are red flags for founders that do not have the time to teach the interns or mentor the interns.
+
+Instead, you'd be better off gaining experience from mentorship programs. Google and Twitter have mentorship programs that match you to a personal project and a mentor, whose role is to help you learn. Alternatively, you can join student engineering teams, where you get mentorship from upper year students. These experiences aren't paid, but are focused on your personal development instead of a company project.
+
+## If you're a company
+
+Now, if you're a startup based in a location where unpaid internships are legal, FLIK sounds appealing as it allows you to use your limited fund on something else. 
+
+But ask yourself, are you capable of providing the mentorship and experience that these students are looking for? Do you have other alternatives that can bring them in but offer them pay? 
+
+Yes! [There are an abundance of grants and tax credits for companies to hire interns provided by the government](https://uwaterloo.ca/hire/funding-opportunities), including the Canada Summer Jobs program and Student Work Placement Program.
+
+Also, keep in mind the long-term impact of hiring unpaid interns. You're only hiring students who are able to work for free. Consequently, less affluent people without support from their family can't work for your company, hurting diversity. Building diversity and opening up the talent pool ultimately set the tone of your company culture long-term. And research indicates that diverse companies are more effective, more successful, and more profitable
+
+## Conclusion
+
+FLIK has a great mission with good intentions but poor execution. In fact there's a equivalent program that has done it right. 
+
+<blockquote cite="https://www.youtube.com/watch?v=2107BiQYGqA">
+Code2040 is a brand new non-profit organization. We bring high performing Black and Latino engineering students from around the country to Silicon Valley for a summer fellowship program...to open doors, basically, for talent in Silicon Valley.
+</blockquote>
+
+Code2040's program matches students with paid internships. Perhaps FLIK could pivot to the same model, and create those jobs by helping founders find and apply for grants and funding. 
+
+In the end, no matter where you are in your career, your work is important and you should value it. Working for free hurts your future and the industry at large. Employers should always pay employees, and there are resources you may not be aware of to help achieve that.
+
+# Sources
+
+Oakes, Tiger. "Are unpaid internships empowering women in tech?" 15 Mar. 2021, tigeroakes.com/posts/flik/.
+
+"These entrepreneurs are building the next Linkedin for women in tech." YouTube, uploaded by CBC, 31 Mar. 2021, www.youtube.com/watch?v=ERokSVBObA8.
+
+"Are unpaid internships legal in Canada?" Gowling WLG, 1 Feb. 2014, gowlingwlg.com/en/insights-resou…-legal-in-canada/.
+
+Mohan, Pavithra. "How unpaid internships hurt all workers and worsen income inequality." Fast Company, 21 Aug. 2019, www.fastcompany.com/90388911/how-th…come-inequality.
+
+NACE Staff. "Paid Interns/Co-ops See Greater Offer Rates and Salary Offers Than Their Unpaid Classmates." National Association of Colleges and Employers, 23 Mar. 2016, www.naceweb.org/job-market/intern…npaid-classmates/.
+
+Dishman, Lydia. "Paid Internships Lead To More Job Offers Than Unpaid Internships." Fast Company, 17 Jul. 2016, www.fastcompany.com/3061841/paid-in…aid-internships.
+
+"All About Google STEP: eligibility, how to apply, and tips (from a Google intern!)" YouTube, uploaded by Megan Phibbons, 5 Sep. 2020, www.youtube.com/watch?v=PrcOpwDal3I.
+
+"how i got Google & Facebook offers as a freshman." YouTube, uploaded by miah sanchez, 1 Aug. 2020, www.youtube.com/watch?v=u_rwDBUTU2Q.
+
+"Funding opportunities." University of Waterloo, uwaterloo.ca/hire/funding-opportunities. Accessed 11 Apr. 2021.
+
+"code2040: Silicon Valley-Based Fellowships for Black and Latino Students." YouTube, uploaded by Dice, 20 Sep. 2012, www.youtube.com/watch?v=2107BiQYGqA.
