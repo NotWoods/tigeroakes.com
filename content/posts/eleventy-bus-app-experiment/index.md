@@ -48,9 +48,7 @@ Now that I have the API data on both the server and client, I can start using it
 <ul id="other">
   {% for id, route in api.routes %}
   <li style="border-color: #{{ route.route_color }}">
-    <a href="/routes/{{ id }}/">
-      {{ route.route_long_name }}
-    </a>
+    <a href="/routes/{{ id }}/">{{ route.route_long_name }}</a>
   </li>
   {% endfor %}
 </ul>

@@ -2,6 +2,8 @@
 title: How unpaid internships affect you and the tech industry
 description: >
   Is an unpaid offer worth it? Are unpaid interns the only viable workforce for startups?
+
+
 date: 2021-04-27
 author: tiger
 color: '#DCD9FB'
@@ -9,7 +11,8 @@ tags:
   - Career
 banner: banner.jpg
 ---
-With more and more people are coming into tech, you gotta start somewhere. When you get an unpaid internship offer, is it worth it? If you're a struggling startup, are unpaid interns your only viable workforce? 
+
+With more and more people are coming into tech, you gotta start somewhere. When you get an unpaid internship offer, is it worth it? If you're a struggling startup, are unpaid interns your only viable workforce?
 
 I recorded a podcast this month covering unpaid internships and how they affect you and the tech industry. Check it out below, in your favorite podcast app, or read the transcript futher down.
 
@@ -21,7 +24,7 @@ I recorded a podcast this month covering unpaid internships and how they affect 
 
 More and more people are coming into tech, and many come in with no experience and need to start off somewhere. Companies are popping up to connect new students with internships.
 
-Recently, my partner Daphne came across a recruitment platform for young women named [FLIK](https://weareflik.com/). 
+Recently, my partner Daphne came across a recruitment platform for young women named [FLIK](https://weareflik.com/).
 
 <blockquote cite="www.youtube.com/watch?v=ERokSVBObA8.">
 Michele and I came to this idea of building an apprenticeship portal to help connect female founders and leaders with ambitious female talent. What became, lo and behold, FLIK. We know that we were working towards a greater mission, to really help women around the world, both female founders right now and the next generation of female entrepreneurs.
@@ -43,25 +46,25 @@ In most provinces of Canada, including BC and Ontario, [unpaid internships are a
 
 In places without those protections, with unfortunately includes the US, unpaid interns don't count as employees. As a result, in most states [you aren't protected against workplace discrimination, harassment, and other employment issues](https://www.fastcompany.com/90388911/how-the-unpaid-intern-economy-feeds-income-inequality).
 
-## Get (paid) internships elsewhere 
+## Get (paid) internships elsewhere
 
 FLIK is targeting women in tech, a demographic that already suffers from income inequality. When you're starting out, your first experiences set the baseline for what to expect. Setting the precedent at $0 means you expect to not be valued out of the gate.
 
-You might argue, if these women don't have experience and can't get a position elsewhere, shouldn't *some* experience be better than no experience?
+You might argue, if these women don't have experience and can't get a position elsewhere, shouldn't _some_ experience be better than no experience?
 
-Let's look at some stats from a [survey by the National Association of Colleges and Employers](https://www.naceweb.org/job-market/internships/paid-interns-co-ops-see-greater-offer-rates-and-salary-offers-than-their-unpaid-classmates/). 
+Let's look at some stats from a [survey by the National Association of Colleges and Employers](https://www.naceweb.org/job-market/internships/paid-interns-co-ops-see-greater-offer-rates-and-salary-offers-than-their-unpaid-classmates/).
 
 - 72% students with paid internships received a job offer with median salary at $53,000.
 - Just 43% of students with unpaid internships received an offer, with median salary at $34,000.
 - Students with no internship at all had a median salary of... $38,000.
 
-Students with paid internships were 60% more likely to find a job than those with unpaid internships, and their median income was 60% higher. In fact, even students with no internship had a 12% higher median income. The statistics show that unpaid internships are detrimental to your future job prospects! 
+Students with paid internships were 60% more likely to find a job than those with unpaid internships, and their median income was 60% higher. In fact, even students with no internship had a 12% higher median income. The statistics show that unpaid internships are detrimental to your future job prospects!
 
 <blockquote cite="https://www.fastcompany.com/3061841/paid-internships-lead-to-more-job-offers-than-unpaid-internship">
 The employer can ‘test drive’ the intern as a potential employee, and see how the intern performs... Many employers use their internship programs as a means of feeding their full-time hiring efforts... Unpaid interns, in general, do not have the same ability to demonstrate their on-the-job effectiveness,
 </blockquote>
 
-When you're starting a new career, you might condition yourself in thinking that no companies want to hire you. 
+When you're starting a new career, you might condition yourself in thinking that no companies want to hire you.
 
 But that's not true! Especially in an industry with a strong demand for tech talent and many internship opportunities. There are even special programs dedicated to new students.
 
@@ -73,7 +76,7 @@ But that's not true! Especially in an industry with a strong demand for tech tal
 
 While unpaid internships are a problem for all students, women are 77% more likely to take unpaid work. Many women who used FLIK lacked confidence and felt like they weren't good enough to apply for positions are bigger companies. These issues are disproportionately affecting women and reinforcing gender-based inequities.
 
-A key factor to confidence building is mentorship - having someone who's experienced and has the time and interest to invest in your growth. With unpaid internships, mentorship is unlikely. 
+A key factor to confidence building is mentorship - having someone who's experienced and has the time and interest to invest in your growth. With unpaid internships, mentorship is unlikely.
 
 > Founders were just looking for someone to work on their startup. Because (1) they did not have the ability or skills to do so, or (2) they're very busy with fundraising or bootstrapping the company, and needed someone to work for them. And I believe these are red flags for founders that do not have the time to teach the interns or mentor the interns.
 
@@ -81,9 +84,9 @@ Instead, you'd be better off gaining experience from mentorship programs. Google
 
 ## If you're a company
 
-Now, if you're a startup based in a location where unpaid internships are legal, FLIK sounds appealing as it allows you to use your limited fund on something else. 
+Now, if you're a startup based in a location where unpaid internships are legal, FLIK sounds appealing as it allows you to use your limited fund on something else.
 
-But ask yourself, are you capable of providing the mentorship and experience that these students are looking for? Do you have other alternatives that can bring them in but offer them pay? 
+But ask yourself, are you capable of providing the mentorship and experience that these students are looking for? Do you have other alternatives that can bring them in but offer them pay?
 
 Yes! [There are an abundance of grants and tax credits for companies to hire interns provided by the government](https://uwaterloo.ca/hire/funding-opportunities), including the Canada Summer Jobs program and Student Work Placement Program.
 
@@ -91,13 +94,13 @@ Also, keep in mind the long-term impact of hiring unpaid interns. You're only hi
 
 ## Conclusion
 
-FLIK has a great mission with good intentions but poor execution. In fact there's a equivalent program that has done it right. 
+FLIK has a great mission with good intentions but poor execution. In fact there's a equivalent program that has done it right.
 
 <blockquote cite="https://www.youtube.com/watch?v=2107BiQYGqA">
 Code2040 is a brand new non-profit organization. We bring high performing Black and Latino engineering students from around the country to Silicon Valley for a summer fellowship program...to open doors, basically, for talent in Silicon Valley.
 </blockquote>
 
-Code2040's program matches students with paid internships. Perhaps FLIK could pivot to the same model, and create those jobs by helping founders find and apply for grants and funding. 
+Code2040's program matches students with paid internships. Perhaps FLIK could pivot to the same model, and create those jobs by helping founders find and apply for grants and funding.
 
 In the end, no matter where you are in your career, your work is important and you should value it. Working for free hurts your future and the industry at large. Employers should always pay employees, and there are resources you may not be aware of to help achieve that.
 

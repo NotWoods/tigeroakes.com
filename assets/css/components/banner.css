@@ -75,7 +75,8 @@
   stroke-dashoffset: 25;
   animation: wire 1s linear forwards;
 }
-.animate .eye, .animate .eye-closed {
+.animate .eye,
+.animate .eye-closed {
   animation: open 0.5s steps(1, end) 2.5s both;
 }
 .animate .eye-closed {

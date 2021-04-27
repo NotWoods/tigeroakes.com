@@ -9,7 +9,7 @@ tags:
   - Career
 ---
 
-Recently, a woman I know came across a platform created by an alumni of our university named  [FLIK](https://weareflik.com/). The company is an online job portal for "connecting and empowering driven women at all stages of the female founder pipeline". She was curious and joined the platform, but alerted me because she ended up getting so many offers for unpaid internships called "apprenticeships".
+Recently, a woman I know came across a platform created by an alumni of our university named [FLIK](https://weareflik.com/). The company is an online job portal for "connecting and empowering driven women at all stages of the female founder pipeline". She was curious and joined the platform, but alerted me because she ended up getting so many offers for unpaid internships called "apprenticeships".
 
 She received many messages of "we're a startup looking for a software engineer. It'll be part-time and unpaid." We didn't know if that was the intention of the platform, but after some more research by us and some friends, it appears that FLIK is intentionally preying on young women in tech for profit - [$60 per founder every month](https://weareflik.com/founders).
 

@@ -27,7 +27,7 @@
   },
   "scripts": {
     "build": "hugo",
-    "format": "prettier --write **/*.{md,js,yml,yaml,css} content/**/*.json --ignore-path .gitignore",
+    "format": "prettier --write **/*.{md,js,yml,yaml,css} content/**/*.json",
     "highlight": "hugo gen chromastyles --style=dracula > ./assets/css/highlight.css"
   },
   "prettier": {

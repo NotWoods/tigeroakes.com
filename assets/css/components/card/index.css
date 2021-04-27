@@ -7,7 +7,8 @@
   background: center / cover no-repeat #555;
   color: #fff;
 }
-.card .buttons, .card--image {
+.card .buttons,
+.card--image {
   text-shadow: 1px 1px 1px rgb(0 0 0 / 75%);
 }
 

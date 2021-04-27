@@ -28,7 +28,13 @@ body {
   text-shadow: none;
 }
 
-h1, h2, h3, h4, h5, h6, code {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code {
   font-family: 'Cascadia Mono', Menlo, Consolas, 'Ubuntu Monospace', monospace;
   font-weight: 600;
 }
@@ -37,7 +43,12 @@ code {
   font-size: 0.9em;
 }
 
-blockquote, dl, ol, p, table, ul {
+blockquote,
+dl,
+ol,
+p,
+table,
+ul {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
