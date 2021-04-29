@@ -13,7 +13,6 @@ categories:
 images:
   - /posts/scraping-csss/drupal.png
 banner: drupal.png
-color: '#1c7cba'
 toc: true
 ---
 

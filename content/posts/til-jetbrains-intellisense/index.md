@@ -11,7 +11,6 @@ images:
   - /posts/til-jetbrains-intellisense/settings.png
   - /posts/til-jetbrains-intellisense/as_4.0_documentation.png
   - /posts/til-jetbrains-intellisense/as_4.2_documentation.png
-color: '#28be6b'
 banner: preview.png
 ---
 

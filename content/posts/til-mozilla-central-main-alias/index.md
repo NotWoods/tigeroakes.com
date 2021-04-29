@@ -12,7 +12,6 @@ projects:
 images:
   - /posts/til-mozilla-central-main-alias/carbon.png
 banner: carbon.png
-color: '#FF7139'
 ---
 
 I just set up [Mozilla Central with a git wrapper](https://github.com/glandium/git-cinnabar/wiki/Mozilla:-A-git-workflow-for-Gecko-development) so I can contribute to the main Gecko codebase using Git. It works great, but the default branch has an unusual name compared to what I'm used to.

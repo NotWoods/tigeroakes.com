@@ -6,7 +6,6 @@ description: >
 
 date: 2021-04-27
 author: tiger
-color: '#DCD9FB'
 tags:
   - Podcast
   - Career

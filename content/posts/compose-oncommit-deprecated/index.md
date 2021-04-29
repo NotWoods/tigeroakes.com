@@ -10,7 +10,6 @@ tags:
   - Jetpack Compose
 categories:
   - Planet Mozilla
-color: '#28be6b'
 toc: true
 ---
 

@@ -12,7 +12,6 @@ categories:
   - Planet Mozilla
 images:
   - /posts/android-linearlayout-to-web-flexbox/banner.png
-color: '#1c7cba'
 banner: banner.png
 banner_svg: banner.svg
 toc: true

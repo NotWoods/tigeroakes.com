@@ -12,7 +12,6 @@ categories:
   - Planet Mozilla
 projects:
   - cell-wall
-color: '#41BDF5'
 banner: banner.jpg
 toc: true
 footer: Some of the links above are affiliate links for Amazon. As an Amazon Associate I earn from qualifying purchases. Using these links helps me out!

@@ -15,7 +15,6 @@ tags:
   - Android
 projects:
   - mozilla-firefox
-color: '#FF7139'
 banner: banner.png
 ---
 

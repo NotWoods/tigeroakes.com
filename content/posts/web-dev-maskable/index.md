@@ -16,7 +16,6 @@ tags:
   - Icons
 categories:
   - Feature
-color: '#1c7cba'
 banner: banner.jpg
 toc: true
 ---

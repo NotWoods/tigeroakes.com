@@ -8,7 +8,6 @@ tags:
   - TypeScript
 categories:
   - Planet Mozilla
-color: '#3178c6'
 toc: true
 banner: banner.jpg
 ---

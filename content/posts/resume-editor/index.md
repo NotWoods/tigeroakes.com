@@ -10,7 +10,6 @@ tags:
   - CSS
 images:
   - /posts/resume-editor/flex-fail.png
-color: '#1c7cba'
 banner: word.png
 toc: true
 ---

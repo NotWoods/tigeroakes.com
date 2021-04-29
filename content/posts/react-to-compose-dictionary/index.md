@@ -13,7 +13,6 @@ categories:
   - Feature
 images:
   - /posts/react-to-compose-dictionary/banner.png
-color: '#28be6b'
 banner: banner.png
 toc: true
 ---
