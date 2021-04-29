@@ -1,7 +1,7 @@
 assets/css/highlight.css
 assets/css/base/font.css
 assets/css/base/font-extra.css
-layouts/partials/project/style.css
+layouts/partials/**/*.css
 content/posts/javascript-events/
 _gen
 public

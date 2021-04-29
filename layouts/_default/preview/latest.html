@@ -1,4 +1,4 @@
-<li class="card preview" style="--block:{{.Params.color}}">
+<li class="card preview" style='{{ partial "post/color.css" . | safeCSS }}'>
   {{- with .Resources.GetMatch (.Params.banner | default "") -}}
   {{ $srcset := slice (.Fill "100x50 Center") (.Fill "200x100 Center") (.Fill "400x200 Center") }}
   <picture class="card__picture">

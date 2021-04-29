@@ -1,4 +1,4 @@
-<article class="card talk" style="--block:{{.Params.color}}">
+<article class="card talk" style='{{ partial "post/color.css" . | safeCSS }}'>
   {{- with .Resources.GetMatch (.Params.banner | default "banner.png") -}}
   {{ $srcset := slice (.Fill "376x188 Center") (.Fill "640x320 Center") (.Fill "960x480 Center") }}
   <picture class="card__picture">
