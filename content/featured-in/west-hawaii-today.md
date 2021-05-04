@@ -4,15 +4,15 @@ date: 2015-04-23
 seo:
   type: NewsArticle
   links:
-    - http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app
+    - https://www.westhawaiitoday.com/2015/04/23/hawaii-news/hele-on-schedule-to-be-available-via-app/
 links:
   - title: Original post
-    link: http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app
+    link: https://www.westhawaiitoday.com/2015/04/23/hawaii-news/hele-on-schedule-to-be-available-via-app/
 description: >
   Article from West Hawaii Today: Google Maps will soon offer transit directions for the Hawaii County's bus system, Hele-On Bus, as part of a new community project.
 ---
 
-_Posted from [West Hawaii Today](http://westhawaiitoday.com/news/local-news/hele-schedule-be-available-app)_
+_Posted from [West Hawaii Today](https://www.westhawaiitoday.com/2015/04/23/hawaii-news/hele-on-schedule-to-be-available-via-app/)_
 
 ---
 
