@@ -44,10 +44,18 @@ body {
 
 .article__toc {
   grid-area: toc;
-  padding-right: 0.5rem;
+  position: relative;
 }
 .article__toc--inline {
   display: none;
+}
+.article__toc-inner {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem;
+  padding-left: 0;
+  max-height: calc(100vh - 1rem);
+  overflow-y: auto;
 }
 .article__toc h2 {
   padding-left: 1.1rem;
@@ -72,11 +80,6 @@ body {
   font-weight: normal;
 }
 
-.article__toc-inner.article__toc--sticky {
-  position: fixed;
-  top: 0;
-}
-
 .card__subtitle {
   margin: 0 0 0.1em;
 }
@@ -88,7 +91,7 @@ body {
       '. body .'
       '. nav .';
   }
-  .article__toc {
+  .article__toc--sidebar {
     display: none;
   }
   .article__toc--inline {

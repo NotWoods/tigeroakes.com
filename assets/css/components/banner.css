@@ -95,9 +95,6 @@
   .nav__link {
     margin: 0;
   }
-  .nav__link::before {
-    left: -0.25rem;
-  }
 }
 @media (--small-screen) {
   .nav {
