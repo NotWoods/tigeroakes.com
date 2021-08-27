@@ -1,3 +1,0 @@
-{{ $jsOptions := dict "minify" true "target" "es5" }}
-{{ $script := resources.Get "js/analytics.js" | js.Build $jsOptions | fingerprint }}
-<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" async defer></script>
