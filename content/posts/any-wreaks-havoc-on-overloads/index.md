@@ -85,7 +85,7 @@ Promise.all([Promise.resolve(10), Promise.resolve('hello world')]).then(
 );
 ```
 
-However, you can only write so many overloads. Eventually, you need to fallback to an array with an unknown length like above. TypeScript's [official type definitions for `Promise.all`](https://github.com/microsoft/TypeScript/blob/065a996345fcfafd3c744d2a724a1ae9f31f9ab0/lib/lib.es2015.promise.d.ts#L41) hardcodes arrays up to length 10, and fallback after that.
+However, you can only write so many overloads. Eventually, you need to fallback to an array with an unknown length like above. TypeScript 4.4's [official type definitions for `Promise.all`](https://github.com/microsoft/TypeScript/blob/065a996345fcfafd3c744d2a724a1ae9f31f9ab0/lib/lib.es2015.promise.d.ts#L41) hardcodes arrays up to length 10, and fallback after that.
 
 ## How `any` creates problems with overloads
 
@@ -115,6 +115,6 @@ In the case of `Promise.all`, the first function overload signature is an array 
 
 ## Future solutions
 
-Hardcoding the array length isn't great, because you can only support so many variations. TypeScript 4.0 introduces a new feature called ["variadic tuple types"](https://devblogs.microsoft.com/typescript/announcing-typescript-4-0/#variadic-tuple-types), which lets you capture the exact array argument and transform it. [Future type definitions for `Promise.all`](https://github.com/microsoft/TypeScript/pull/39796) may replace all the function overloads with a single function signature, removing the `any` bug entirely.
+Hardcoding the array length isn't great, because you can only support so many variations. TypeScript 4.0 introduces a new feature called ["variadic tuple types"](https://devblogs.microsoft.com/typescript/announcing-typescript-4-0/#variadic-tuple-types), which lets you capture the exact array argument and transform it. [TypeScript 4.5's type definitions for `Promise.all`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#the-awaited-type-and-promise-improvements) replaces all the function overloads with a single function signature, removing the `any` bug entirely.
 
 TypeScript may also add special handling for passing `any` into function overloads in the future. If you know of an existing issue, or see something I missed, let me know.
