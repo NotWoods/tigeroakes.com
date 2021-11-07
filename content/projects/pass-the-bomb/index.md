@@ -7,10 +7,10 @@ color: '#c79a6a'
 fallbackcolor: '#3c4438'
 links:
   - title: Details
-  - title: Devpost
-    link: https://devpost.com/software/passthebomb
+  - title: Open app
+    link: https://pass-the-bomb.glitch.me
   - title: Code
-    github: NotWoods/local-hack-day
+    github: NotWoods/pass-the-bomb
 tech:
   - Node.js
   - Socket.io
