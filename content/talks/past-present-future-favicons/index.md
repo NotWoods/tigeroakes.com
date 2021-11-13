@@ -5,8 +5,6 @@ tags:
   - Web
   - PWA
   - Icons
-categories:
-  - Feature
 projects:
   - maskable
 links:
