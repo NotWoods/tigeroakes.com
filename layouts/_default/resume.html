@@ -46,7 +46,7 @@
                 <span class="resume-date">
                     {{ dateFormat $format .startDate }}
                     —
-                    {{ dateFormat $format .endDate }}
+                    {{ if .endDate }}{{ dateFormat $format .endDate }}{{ else }}Present{{ end }}
                 </span>
                 <h3 class="title"><a href="{{.website}}" class="company link link--hidden">{{ .company }}</a>, <span class="position">{{ .position }}</span></h3>
                 {{ if .summary }}
@@ -111,7 +111,7 @@
                 </span>
                 <h3 class="title">
                     <span class="institution">{{.institution}}</span>,
-                    <span class="position">{{.studyType}} in {{.area}}, 4<sup>th</sup> year</span>
+                    <span class="position">{{.studyType}} in {{.area}}
                 </h3>
                 {{ end }}
             </div>

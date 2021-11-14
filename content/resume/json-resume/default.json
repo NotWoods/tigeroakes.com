@@ -6,11 +6,11 @@
     "email": "contact@tigeroakes.com",
     "phone": "+1-253-778-6251",
     "website": "https://tigeroakes.com",
-    "summary": "Software developer with 10 yrs experience. Built 2 mobile web browsers & hundreds of open source projects.",
+    "summary": "Software developer with 10 yrs experience. Built 3 web browsers & hundreds of open source projects.",
     "location": {
-      "city": "Vancouver",
-      "region": "BC",
-      "countryCode": "CA"
+      "city": "Seattle",
+      "region": "WA",
+      "countryCode": "US"
     },
     "profiles": [
       {
@@ -32,6 +32,17 @@
   },
   "work": [
     {
+      "company": "Microsoft",
+      "position": "Edge Software Engineer",
+      "website": "https://www.microsoft.com/en-us/edge",
+      "startDate": "2021-08-09",
+      "highlights": [
+        "Caught multiple bugs before deployment by spearheading strict mode **TypeScript** migration.",
+        "Taught **React and TypeScript** concepts to 8 teammates as **subject matter expert (SME)**.",
+        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**."
+      ]
+    },
+    {
       "company": "Mozilla",
       "position": "Firefox Android Developer Intern & Part-Time Student Worker",
       "website": "https://github.com/mozilla-mobile/fenix",
@@ -41,7 +52,6 @@
         "Built and shipped brand new web browser in **Kotlin** to **over 100,000,000 users on Google Play Store**.",
         "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
         "Added Trusted Web Activity support to Firefox for Android, **featured in Chrome Dev Summit 2019 keynote**.",
-        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**.",
         "Established testing infrastructure that improved code coverage by 150% and **doubled developer productivity**."
       ]
     },
@@ -53,8 +63,7 @@
       "endDate": "2018-07-27",
       "highlights": [
         "Built internal developer tool used by **entire Google Chrome for Android team** with **JavaScript** and **Python**.",
-        "Used **streams** and **background threads** to handle 180 MB downloads, rendering partial data in under 1 second.",
-        "Migrated **Java** Android compiler and runtime tools, shrinking Chrome by 30 KB and removing memory leaks."
+        "Used **streams** and **background threads** to handle 180 MB downloads, rendering partial data in under 1 second."
       ]
     },
     {
@@ -65,7 +74,7 @@
       "endDate": "2018-04-25",
       "highlights": [
         "Built **TypeScript Electron** client that interfaces with **C++** server to display 3D simulations with **WebGL**.",
-        "Migrated large program from **jQuery** to **React**, **Redux**, saving time and effort for future programmers."
+        "Saved future developer time by migrating **jQuery** MVP to encapsulated **React/Redux** components."
       ]
     },
     {
@@ -77,16 +86,6 @@
       "highlights": [
         "Built new web search page feature in **Flow**, **React**, **Redux**, and **Python** displayed to **1,000,000 users monthly**.",
         "Led hackathon team to build new product for in-restaurant experience which was picked up by sales team."
-      ]
-    },
-    {
-      "company": "Centre for Sustainable Food Systems at UBC Farm",
-      "position": "Software Developer",
-      "website": "https://github.com/ubc-farm",
-      "startDate": "2016-05-14",
-      "endDate": "2017-04-14",
-      "highlights": [
-        "Developed custom **TypeScript** software and wrote fill algorithm to classify farm fields."
       ]
     },
     {
@@ -104,8 +103,8 @@
     {
       "name": "Open Source",
       "highlights": [
-        "Built Maskable.app developer tool. Recommended by Google & CSS Tricks and is used **over 5,000 times/month**.",
-        "Implemented icon features for Google Bubblewrap & Microsoft PWABuilder, used **over 2,000 times/month**.",
+        "Built Maskable.app, go-to developer tool recommended by Google & CSS Tricks, used **11,000+ times/month**.",
+        "Implemented icon features for Google Bubblewrap & Microsoft PWABuilder, used **2,000+ times/month**.",
         "Maintainer for **Rollup** ES6 module bundler, adding **TypeScript typings and compiler support** to all plugins.",
         "Created Big Island Buses offline web app with County of Hawai'i, won Congressional App Challenge 2014."
       ]
@@ -113,9 +112,9 @@
     {
       "name": "Speaking and Writing",
       "highlights": [
-        "Speaker at upcoming **CascadiaJS 2020** conference with **1,000 predicted online attendees**.",
+        "Speaker at **CascadiaJS 2020** and **JSConf Budapest 2022** conferences with thousands of attendees.",
         "Wrote web development articles for **CSS Tricks**, **MDN**, and **Google web.dev** with thousands of views.",
-        "Authored guidebook on **MockK** testing library for **Kotlin** and **Android**, with **over 5,000 views/month**."
+        "Authored guidebook on **MockK** testing library for **Kotlin** and **Android**, with **13,000+ views/month**."
       ]
     }
   ],
@@ -148,13 +147,13 @@
   "skills": [
     { "name": "TypeScript" },
     { "name": "JavaScript" },
+    { "name": "React" },
     { "name": "Kotlin" },
     { "name": "Java" },
     { "name": "Android" },
     { "name": "Python" },
     { "name": "C#" },
     { "name": "Node.js" },
-    { "name": "React" },
     { "name": "Design" },
     { "name": "Vector Animation" }
   ]
