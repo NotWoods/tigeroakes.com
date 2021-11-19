@@ -10,7 +10,10 @@
 {{ define "main" }}
   <section class="card header about">
     <div class="inner about__content">
-      <div>{{.Content}}</div>
+      <div>
+        {{ partialCached "logo.html" (dict "width" 320 "height" 64 "outline" true) "home" }}
+        {{.Content}}
+      </div>
 
       {{ with .Resources.GetMatch "profile.jpg" }}
       {{ $srcset := slice (.Resize "160x") (.Resize "320x") (.Resize "480x") (.Resize "640x") }}

@@ -34,6 +34,9 @@
   color: inherit;
   align-self: start;
 }
+.logo__heading {
+  margin: 0;
+}
 
 .nav__link::before {
   transition-duration: 0s;

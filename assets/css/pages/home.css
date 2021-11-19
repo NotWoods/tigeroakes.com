@@ -2,10 +2,6 @@
 @import '../components/section.css';
 @import '../components/card/picture.css';
 
-.home__heading {
-  margin: 0;
-}
-
 .logo__icon {
   max-width: 100%;
 }
