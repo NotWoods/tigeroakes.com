@@ -11,6 +11,7 @@ editor: daphne
 tags:
   - Android
   - Android Studio
+  - Animation
 categories:
   - Planet Mozilla
 projects:

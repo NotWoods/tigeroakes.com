@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 12 12">
   <style>
     :root {
-      color: black;
+      color: #032030;
     }
   </style>
   <rect class="background" width="12" height="12" x="2" y="2" fill="#e67237"/>

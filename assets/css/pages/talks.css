@@ -43,6 +43,11 @@
   margin-top: 0;
 }
 
+.external-link {
+  margin-left: 0.25em;
+  opacity: 0.7;
+}
+
 @media (--banner-wrap) {
   .talks {
     grid-template-columns: 1fr;

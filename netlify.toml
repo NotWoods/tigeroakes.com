@@ -3,15 +3,15 @@ publish = "public"
 command = "npm run build"
 
 [build.environment]
-HUGO_VERSION = "0.89.0"
+HUGO_VERSION = "0.98.0"
 HUGO_ENABLEGITINFO = "true"
-NODE_VERSION = "16.13.0"
+NODE_VERSION = "16.15.0"
 
 [context.production.environment]
 HUGO_ENVIRONMENT = "production"
 
 [context.deploy-preview]
-command = "npm run build -- --gc --buildFuture -b $DEPLOY_PRIME_URL"
+command = "npm run build -- --gc --buildFuture --buildDrafts -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
 command = "npm run build -- --gc -b $DEPLOY_PRIME_URL"
