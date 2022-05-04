@@ -5,6 +5,9 @@ pygmentsCodeFences: true
 pygmentsStyle: dracula
 pygmentsUseClasses: true
 
+contentDir: 'src/pages'
+dataDir: 'src/data'
+
 menu:
   main:
     - identifier: blog

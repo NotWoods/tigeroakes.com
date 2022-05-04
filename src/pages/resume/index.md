@@ -2,7 +2,7 @@
 title: Resume
 layout: resume
 pdf: pdf/Tiger_Oakes_resume_-_November_2021.pdf
-json_resume: content/resume/json-resume/default.json
+json_resume: src/pages/resume/json-resume/default.json
 ---
 
 <h2 class="section__title">About me</h2>
