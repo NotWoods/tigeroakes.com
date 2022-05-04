@@ -13,9 +13,9 @@
 }
 
 /* Project name, post/talk title
-   Should also have the "block" class. */
+   Should also have the "block--side" class. */
 .card__title {
-  /* expects: .block */
+  /* expects: .block--side */
 
   margin: 1em 0 0.2em;
 

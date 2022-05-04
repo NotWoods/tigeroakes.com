@@ -7,7 +7,7 @@
     <header class="card header article__header {{ if $bkg }}card--image{{ end }}"{{ if $bkg }} style='background-image:url({{$bkg.RelPermalink}})'{{ end }}>
         <div class="header__content inner">
             <div class="header__text">
-                <h1 class="block card__title tag__title">
+                <h1 class="block--side card__title tag__title">
                     <a href="{{ .FirstSection.RelPermalink }}" class="tag__parent">{{ .FirstSection.Title }} / </a>{{.Title}}
                 </h1>
             </div>

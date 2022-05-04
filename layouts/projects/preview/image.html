@@ -3,7 +3,7 @@
     {{ partial "project/image.html" . }}
   </figure>
   <h3 class="card__title">
-    <a class="block block--half block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{ .Title }}</a>
+    <a class="block--side block--half block--animate" href='{{ partial "meta/rellink.xml" . }}'>{{ .Title }}</a>
   </h3>
   <p class="card__description">{{ .Params.subtitle }}</p>
   {{ partial "project/tech_list.html" .Params.tech }}

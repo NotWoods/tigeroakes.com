@@ -10,7 +10,7 @@
         {{ end }}
         <article class='{{ delimit $classes " " }}' style='animation-delay: {{ mul $index 0.1 }}s; {{ partial "project/style.css" $page | safeCSS }}'>
             {{ partial "project/image.html" $page }}
-            <h2 class="block card__title">{{$page.Title}}</h2>
+            <h2 class="block--side card__title">{{$page.Title}}</h2>
             <p class="card__subtitle">{{$page.Params.subtitle}}</p>
             {{ partial "project/tech_list.html" $page.Params.tech }}
             {{ partial "project/buttons.html" (dict "links" $page.Params.links "page" $page.RelPermalink) }}

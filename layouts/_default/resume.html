@@ -40,7 +40,7 @@
 
         <div class="resume-body">
             {{ $format := "2006-01" }}
-            <h2 class="block section">{{ i18n "resume_work" }}</h2>
+            <h2 class="block--side section">{{ i18n "resume_work" }}</h2>
             <div class="work-experience">
                 {{ range .work }}
                 <span class="resume-date">
@@ -62,7 +62,7 @@
                 {{ end }}
             </div>
 
-            <h2 class="block section">{{ i18n "resume_projects" }}</h2>
+            <h2 class="block--side section">{{ i18n "resume_projects" }}</h2>
             <div class="resume-projects">
                 {{ range .projects }}
                 <span class="resume-date">
@@ -92,7 +92,7 @@
                 {{ end }}
             </div>
 
-            <h2 class="block section">{{ i18n "resume_skills" }}</h2>
+            <h2 class="block--side section">{{ i18n "resume_skills" }}</h2>
             <p class="skills pipe-list">
                 {{ $len := (len .skills) }}
                 {{ range $idx, $skill := .skills }}
@@ -101,7 +101,7 @@
                 {{ end }}
             </p>
 
-            <h2 class="block section">{{ i18n "resume_education" }}</h2>
+            <h2 class="block--side section">{{ i18n "resume_education" }}</h2>
             <div class="education">
                 {{ range .education }}
                 <span class="resume-date">
@@ -116,7 +116,7 @@
                 {{ end }}
             </div>
 
-            <h2 class="block section">{{ i18n "resume_awards" }}</h2>
+            <h2 class="block--side section">{{ i18n "resume_awards" }}</h2>
             <ul class="awards">
                 {{ range .awards }}
                 <li>{{.title}}</li>

@@ -11,7 +11,7 @@
       <div class="header__content inner">
         <div class="header__text">
           {{ if (gt .Date 0) }}{{ partial "time.html" .Date }}{{ end }}
-          <h1 class="block card__title">{{.Title}}</h1>
+          <h1 class="block--side card__title">{{.Title}}</h1>
           {{ partial "post/tag_list.html" . }}
         </div>
 

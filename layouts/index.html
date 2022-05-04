@@ -64,7 +64,7 @@
           Featured projects
         </h2>
         {{ end }}
-        <h3 class="block card__title">{{$project.Title}}</h3>
+        <h3 class="block--side card__title">{{$project.Title}}</h3>
         {{ partial "project/tech_list.html" $project.Params.tech }}
         <p class="card__description">
           {{$project.Description | default $project.Summary}}
@@ -87,14 +87,14 @@
     <h2 class="section__title">Contact</h2>
     <p>You can send an email to</p>
     {{ with .Site.Data.contact.email }}
-    <a href="{{ .link }}" class="block block--bottom block--animate contact__link email">
+    <a href="{{ .link }}" class="block--bottom block--animate contact__link email">
       {{ .text | markdownify }}
     </a>
     {{ end }}
     <p>{{ i18n "find_at" }}</p>
     {{ range .Site.Data.contact.social }}
     <p class="contact__link-container">
-    <a href="{{ .link }}" class="block block--bottom block--animate contact__link">
+    <a href="{{ .link }}" class="block--bottom block--animate contact__link">
       {{ .text | markdownify }}
     </a>
     </p>
