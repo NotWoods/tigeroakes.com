@@ -7,8 +7,8 @@
 
     <nav class="nav">
       {{- $currentPage := . -}}
-      {{- range .Site.Menus.main -}}
-      {{- $url := strings.TrimSuffix "/" .URL -}}
+      {{- range .Site.Data.nav -}}
+      {{- $url := strings.TrimSuffix "/" .url -}}
       {{- $menuPage := $currentPage.Site.GetPage $url -}}
       {{- $inSection := false -}}
       {{- if ne $menuPage.CurrentSection $.Site.Home -}}
@@ -16,15 +16,14 @@
         {{- $inSection = $currentPage.InSection $menuPage -}}
       {{- else -}}
         {{/* Use path matching */}}
-        {{- $inSection = eq .URL $currentPage.RelPermalink -}}
+        {{- $inSection = eq .url $currentPage.RelPermalink -}}
       {{- end -}}
       {{- $classes := slice "block--animate" "nav__link" "block--bottom" -}}
       {{- if $inSection }}
         {{- $classes = $classes | append "nav__link--current" -}}
       {{- end -}}
       <a class='{{ delimit $classes " " }}'
-        href="{{ .URL }}"
-        title="{{ .Title }}">{{ .Name }}</a>
+        href="{{ .url }}">{{ .name }}</a>
       {{- end -}}
     </nav>
   </div>

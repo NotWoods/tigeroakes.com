@@ -1,0 +1,27 @@
+{
+  "email": {
+    "name": "contact<wbr>@tigeroakes.com",
+    "link": "mailto:contact@tigeroakes.com",
+    "text": "<b>contact<wbr></b>@<b>tigeroakes</b>.com"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "link": "https://github.com/NotWoods",
+      "text": "<b>github</b>.com/<wbr><b>NotWoods</b>",
+      "icon": "/contact/github.svg"
+    },
+    {
+      "name": "LinkedIn",
+      "link": "https://linkedin.com/in/tigeroakes",
+      "text": "<b>linkedin</b>.com/in/<b>tigeroakes</b>",
+      "icon": "/contact/linkedin.svg"
+    },
+    {
+      "name": "Twitter",
+      "link": "https://twitter.com/Not_Woods",
+      "text": "<b>twitter</b>.com/<wbr><b>Not_Woods</b>",
+      "icon": "/contact/twitter.svg"
+    }
+  ]
+}
