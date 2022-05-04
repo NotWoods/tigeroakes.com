@@ -23,7 +23,7 @@
   --content-text: var(--theme-light);
 
   /* Default value for blocks next to headers */
-  --block: var(--primary-color);
+  --accent: var(--primary-color);
 }
 
 /* Light theme colors */

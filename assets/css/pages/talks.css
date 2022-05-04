@@ -5,7 +5,7 @@
 @import '../components/section.css';
 
 .about {
-  --block: var(--primary-color);
+  --accent: var(--primary-color);
 
   font-size: 1.2em;
   background: none;

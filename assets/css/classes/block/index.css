@@ -18,7 +18,7 @@
   left: var(--block-offset);
   width: var(--block-width);
 
-  background: var(--block);
+  background: var(--accent);
 }
 
 .block--animate::before {

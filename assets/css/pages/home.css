@@ -24,7 +24,7 @@
 .banner__wrap {
   background: var(--primary-color);
   color: var(--theme-dark);
-  --block: var(--theme-dark);
+  --accent: var(--theme-dark);
   text-shadow: none;
 }
 .about__content {
@@ -35,7 +35,7 @@
   font-size: 1.1em;
 }
 .subscribe__button {
-  --block: var(--primary-color);
+  --accent: var(--primary-color);
   border: 2px solid;
 }
 

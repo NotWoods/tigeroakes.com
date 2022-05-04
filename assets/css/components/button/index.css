@@ -16,7 +16,7 @@
 
   color: inherit;
   font: inherit;
-  background: var(--block);
+  background: var(--accent);
   text-align: center;
   white-space: nowrap;
   cursor: pointer;

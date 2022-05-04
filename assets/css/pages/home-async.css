@@ -2,7 +2,7 @@
 @import '../components/button/cta.css';
 
 .preview__cta {
-  --block: var(--subtle-background);
+  --accent: var(--subtle-background);
 
   text-align: center;
   font-size: 1.5em;

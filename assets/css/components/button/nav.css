@@ -14,7 +14,7 @@
   gap: 1rem;
 }
 .article__nav-link {
-  --block: transparent;
+  --accent: transparent;
   --small-shadow: 0;
 
   display: flex;

@@ -5,5 +5,5 @@
   {{- end -}}
 {{- end -}}
 {{- if gt (len $tags) 0 -}}
-  --block: {{ index $tags 0 }}
+  --accent: {{ index $tags 0 }}
 {{- end -}}

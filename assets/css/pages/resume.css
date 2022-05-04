@@ -3,7 +3,7 @@
 @import '../components/button/nav.css';
 
 .button--pdf {
-  --block: #cd372d;
+  --accent: #cd372d;
 
   padding: 0.6em 2em;
 

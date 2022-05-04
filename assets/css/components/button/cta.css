@@ -1,6 +1,6 @@
 /* Wrapper element for CTA .button, places it in the center */
 .cta__wrap {
-  --block: var(--theme-light);
+  --accent: var(--theme-light);
 
   margin-top: 2rem;
   margin-bottom: 2rem;
