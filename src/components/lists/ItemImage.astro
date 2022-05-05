@@ -1,0 +1,15 @@
+---
+export interface Props {
+  src: string;
+  alt?: string;
+  height: number;
+  class?: string;
+}
+
+const { src, alt = '', height, class: className } = Astro.props as Props;
+const width = height * 2;
+---
+
+<picture class={`mb-2 shadow aspect-w-2 aspect-h-1 ${className}`}>
+  <img class="object-cover" {src} {alt} {width} {height} />
+</picture>

@@ -1,0 +1,11 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+---
+
+<h2 class:list={['text-3xl border-b py-1 mb-8 uppercase', className]}>
+  <slot />
+</h2>

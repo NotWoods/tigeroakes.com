@@ -1,0 +1,17 @@
+---
+import AccentBlock from '../AccentBlock.astro';
+import { classes } from '../article/ArticleTitle.astro';
+
+export interface Props {
+  href: URL | string;
+}
+
+const { href } = Astro.props as Props;
+---
+
+<h3 class={classes}>
+  <a class="relative group" {href}>
+    <AccentBlock position="left" animate />
+    <slot />
+  </a>
+</h3>

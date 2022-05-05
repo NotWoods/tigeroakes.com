@@ -14,9 +14,9 @@
     // Add type definitions for our Vite runtime.
     "types": ["vite/client"],
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@data/*": ["src/data/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@components/*": ["./src/components/*"],
+      "@data/*": ["./src/data/*"],
+      "@layouts/*": ["./src/layouts/*"]
     }
   }
 }

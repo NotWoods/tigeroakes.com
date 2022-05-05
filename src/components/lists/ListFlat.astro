@@ -1,0 +1,35 @@
+---
+import type { Temporal } from "@js-temporal/polyfill";
+import { postAccentColor } from "../../scripts/posts";
+import Time from "../article/Time.astro";
+import ItemImage from "./ItemImage.astro";
+import ItemTitle from "./ItemTitle.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+interface Item {
+  title: string;
+  href: URL | string;
+  date: Temporal.PlainDate;
+
+  pictureSrc?: string;
+  pictureAlt?: string;
+  tags?: readonly string[];
+}
+
+export interface Props {
+  title: string;
+  items: readonly Item[];
+}
+
+const { title, items } = Astro.props as Props;
+---
+<SectionTitle>{title}</SectionTitle>
+<ul class="mt-4">
+  {items.map(item => (
+    <li class="clear-both mb-4" style={postAccentColor(item.tags)}>
+      {item.pictureSrc && <ItemImage class="float-right mt-2" src={item.pictureSrc} alt={item.pictureAlt} height={50} />}
+      <Time date={item.date} />
+      <ItemTitle href={item.href}>{item.title}</ItemTitle>
+    </li>
+  ))}
+</ul>

@@ -3,6 +3,7 @@ import Buttons, { ButtonProps } from '../Buttons.astro';
 
 export interface Props {
   class?: string;
+  style?: string;
   accent?: string;
   backgroundImage?: string;
   buttons?: readonly ButtonProps[];
@@ -12,6 +13,7 @@ const {
   buttons,
   accent,
   backgroundImage,
+  style = '',
   class: className,
 } = Astro.props as Props;
 
@@ -24,15 +26,19 @@ if (backgroundImage) {
 if (className) {
   classes.push(className);
 }
+
+const styles = [
+  accent && `--accent: ${accent}`,
+  backgroundImage && `background-image: url(${backgroundImage})`,
+  style,
+].filter(Boolean);
 ---
 
 <header
   class={classes.join(' ')}
-  style={backgroundImage ? `url('${backgroundImage}')` : undefined}
+  style={styles.length > 0 ? styles.join(';') : undefined}
 >
-  <div class="max-w-site mx-auto px-4">
-    <slot />
-  </div>
+  <slot />
   <slot name="buttons">
     {buttons && <Buttons class="text-lg" buttons={buttons} />}
   </slot>

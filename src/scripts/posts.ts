@@ -1,4 +1,5 @@
 import { Temporal } from '@js-temporal/polyfill';
+import tagColors from '../data/tags.json';
 import type { MarkdownInstance } from 'astro';
 import { dateFromString } from './date';
 
@@ -28,4 +29,14 @@ export async function loadPosts(
     (a, b) => Temporal.PlainDate.compare(a.date, b.date) * -1
   );
   return formattedPosts;
+}
+
+export function postAccentColor(tags: readonly string[] = []) {
+  for (const tag of tags) {
+    const color = tagColors[tag];
+    if (color) {
+      return `--accent: ${color};`;
+    }
+  }
+  return undefined;
 }

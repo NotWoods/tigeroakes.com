@@ -1,19 +1,22 @@
 ---
-import navData from '@data/nav.json';
+import navData from '../data/nav.json';
 import AccentBlock from './AccentBlock.astro';
 import Logo from './Logo.astro';
 
 // Banner displayed at the top of the site.
 export interface Props {
 	logo?: 'default' | 'outline' | 'none';
-	current?: string;
+	current?: string | URL;
 	class?: string;
 }
 
 const { logo = 'default', current, class: className } = Astro.props as Props;
 
 function isCurrent({ url }: { url: string }) {
-  return current?.startsWith(url) ? `--initial-block-scale: 0.5`: undefined;
+	if (!current) return undefined;
+
+	const currentPath = typeof current === 'string' ? current : current.pathname;
+  return currentPath.startsWith(url) ? `--initial-block-scale: 0.5`: undefined;
 }
 ---
 

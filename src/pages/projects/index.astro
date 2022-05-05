@@ -1,0 +1,46 @@
+---
+import BannerNav from '../../components/BannerNav.astro';
+import Footer from '../../components/Footer.astro';
+import ListPanels from '../../components/lists/ListPanels.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+
+function buttonLink(
+  link: { title: string; link?: string },
+  page: { url: string }
+) {
+  switch (link.title) {
+    case 'Details':
+    case 'Case study':
+      return page.url;
+    default:
+      return link.link;
+  }
+}
+
+const allPages = await Astro.glob('./**/*.md');
+const projects = allPages.map((page) => ({
+  title: page.frontmatter.title,
+  description: page.frontmatter.subtitle,
+  href: page.url,
+  accent: page.frontmatter.color,
+  buttons: page.frontmatter.links.map((link) => ({
+    title: link.title,
+    href: buttonLink(link, page),
+  })),
+  tags: page.frontmatter.tech,
+}));
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Projects" />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <BannerNav current={Astro.canonicalURL} />
+
+    <ListPanels items={projects} />
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,60 @@
+---
+import ArticleDescription from "@components/article/ArticleDescription.astro";
+import type { Temporal } from "@js-temporal/polyfill";
+import { postAccentColor } from "../../scripts/posts";
+import Time from "../article/Time.astro";
+import Tags from "../article/Tags.astro";
+import ItemImage from "./ItemImage.astro";
+import ItemTitle from "./ItemTitle.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+interface Item {
+  title: string;
+  href: URL | string;
+  date: Temporal.PlainDate;
+  description?: string;
+
+  pictureSrc?: string;
+  pictureAlt?: string;
+
+  tags?: readonly string[];
+  elsewhere?: {
+    name: string;
+    link: string;
+  }
+}
+
+export interface Props {
+  items: readonly Item[];
+}
+
+const { items } = Astro.props as Props;
+
+function groupByYear(): readonly { year: number, items: readonly Item[] }[] {
+  const itemsByYear = new Map<number, Item[]>();
+	for (const item of items) {
+		const { year } = item.date;
+		const posts = itemsByYear.get(year) ?? [];
+		posts.push(item);
+		itemsByYear.set(year, posts);
+	}
+	return Array.from(itemsByYear).map(([year, items]) => ({ year, items }));
+}
+
+---
+{groupByYear().map(({ year, items }) => (
+  <Fragment>
+    <SectionTitle>{year}</SectionTitle>
+    <div class="grid grid-cols-2 gap-12" style="--initial-block-scale: 0.5">
+      {items.map(item => (
+        <article class="flex flex-col" style={postAccentColor(item.tags)}>
+          {item.pictureSrc && <ItemImage src={item.pictureSrc} alt={item.pictureAlt} height={188} />}
+          <Time date={item.date} />
+          <ItemTitle href={item.href}>{item.title}</ItemTitle>
+          {item.description && <ArticleDescription>{item.description}</ArticleDescription>}
+          <Tags class="mt-auto text-sm" tags={item.tags} elsewhere={item.elsewhere?.name} />
+        </article>
+      ))}
+    </div>
+  </Fragment>
+))}

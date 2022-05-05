@@ -1,5 +1,5 @@
 ---
-import '../../styles/tag.css';
+import '../../styles/tags.css';
 
 export interface Props {
   class?: string;
@@ -12,27 +12,15 @@ function href(tag: string) {
 }
 
 const { tags, elsewhere, class: className } = Astro.props as Props;
+const projects = [];
 ---
 
-<ul class="tags">
-  {elsewhere && 
-  <li class="tag tag--elsewhere">{elsewhere}</li>
-  }
-  {tags.map(tag =>
-  <li class="tag">
-    <a
-      class="tag__link link link--hidden"
-      href={{ relURL (print "/tags/" . "/" | urlize) }}>{{.}}</a
-    >
-  </li>
-  }
-  {projects.map(project =>
-  {{ range .Params.projects }}
-  {{ $project := $.Site.GetPage "projects" . }}
-  <li class="tag tag--project">
-    <a class="tag__link link link--hidden" href={{ $project.RelPermalink }}
-      >{{ $project.Name }}</a
-    >
-  </li>
-  }
+<ul class={`leading-normal opacity-80 ${className}`}>
+  {elsewhere && <li class="tag inline font-bold">{elsewhere}</li>}
+  {tags.map(tag => (
+    <li class="tag inline"><a class="hover:underline" href={href(tag)}>{tag}</a></li>
+  ))}
+  {projects.map(project => (
+    <li class="tag inline"><a class="hover:underline" href={project.url}>{project.name}</a></li>
+  ))}
 </ul>
