@@ -6,6 +6,11 @@ import ItemImage from "./ItemImage.astro";
 import ItemTitle from "./ItemTitle.astro";
 import SectionTitle from "./SectionTitle.astro";
 
+export interface Props {
+  title: string;
+  items: readonly Item[];
+}
+
 interface Item {
   title: string;
   href: URL | string;
@@ -14,11 +19,6 @@ interface Item {
   pictureSrc?: string;
   pictureAlt?: string;
   tags?: readonly string[];
-}
-
-export interface Props {
-  title: string;
-  items: readonly Item[];
 }
 
 const { title, items } = Astro.props as Props;

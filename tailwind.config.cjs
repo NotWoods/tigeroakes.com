@@ -36,6 +36,9 @@ const config = {
       maxWidth: {
         site: '50rem',
       },
+      scale: {
+        initial: 'var(--initial-block-scale, 0)',
+      },
       // @ts-ignore
       typography({ theme }) {
         return {
