@@ -1,0 +1,28 @@
+---
+import Button from '../Button.astro';
+
+export interface Props {
+  href: string | URL;
+}
+
+const { href } = Astro.props as Props;
+
+const url = typeof href === 'string' ? href : href.pathname;
+const secondSlash = url.indexOf('/', 1) + 1;
+const topLevel = url.slice(0, secondSlash);
+const title = {
+  '/posts/': 'More blog posts',
+  '/projects/': 'Other projects',
+  '/talks/': 'More talks',
+}[topLevel];
+---
+
+<footer class="article-nav flex justify-center py-8">
+  {title && <Button href={topLevel} class="bg-slate-200 text-slate-800 text-2xl basis-64">{title}</Button>}
+</footer>
+
+<style>
+  .article-nav {
+    grid-area: nav;
+  }
+</style>

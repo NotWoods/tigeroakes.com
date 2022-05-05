@@ -3,6 +3,7 @@ import type { Temporal } from '@js-temporal/polyfill';
 import BannerNav from '../BannerNav.astro';
 import Footer from '../Footer.astro';
 import MailingListCallToAction from '../MailingListCallToAction.astro';
+import MoreButton from './MoreButton.astro';
 import PostHeader from './PostHeader.astro';
 
 export interface Props {
@@ -35,6 +36,9 @@ const { href, ...props } = Astro.props as Props;
   <div class="prose prose-lg dark:prose-invert max-w-site px-4 py-6">
     <slot />
   </div>
+  <slot name="footer">
+    <MoreButton {href} />
+  </slot>
 </article>
 <MailingListCallToAction />
 <Footer />
