@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: The Past, Present, and Future of Favicons
 date: 2020-09-01
 tags:

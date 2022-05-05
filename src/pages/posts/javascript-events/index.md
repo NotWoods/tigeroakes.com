@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 elsewhere:
   name: CSS Tricks
   source: https://css-tricks.com

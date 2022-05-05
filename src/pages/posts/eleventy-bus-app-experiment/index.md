@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Experimenting with using Eleventy for web apps
 description: Playing around with using Eleventy to pre-render Big Island Buses
 date: 2020-04-13

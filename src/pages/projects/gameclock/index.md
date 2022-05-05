@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: GameClock
 weight: 19
 subtitle: Chess clocker timer web app

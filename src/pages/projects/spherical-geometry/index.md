@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Spherical Geometry
 subtitle: Library for latitude/longitude math
 weight: 5

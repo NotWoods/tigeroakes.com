@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Automatic resume editor
 description: How I built my resume with web technologies then automated the formatting.
 date: 2018-10-30

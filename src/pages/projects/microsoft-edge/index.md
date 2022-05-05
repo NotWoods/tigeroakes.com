@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 weight: 1
 title: Microsoft Edge
 subtitle: Edge

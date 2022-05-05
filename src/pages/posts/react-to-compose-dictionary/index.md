@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: 'React to Jetpack Compose RC Dictionary'
 description: Two libraries with similar concepts. What's the equivalent Jetpack Compose terms for React terms?
 date: 2020-07-20

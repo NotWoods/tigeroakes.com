@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: The Golden Quest
 subtitle: Alexa adventure game
 color: '#c3a242'

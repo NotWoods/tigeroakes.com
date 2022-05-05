@@ -10,6 +10,9 @@ import ListFlat from '../components/lists/ListFlat.astro';
 import { loadPosts, Post } from '../scripts/posts';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
+const featured = allPosts.filter((post) =>
+  post.frontmatter.categories?.includes('Featured')
+);
 
 function formatPost(post: Post) {
   return {
@@ -18,6 +21,7 @@ function formatPost(post: Post) {
     date: post.date,
     tags: post.frontmatter.tags,
     href: post.url,
+    pictureSrc: post.frontmatter.banner,
   };
 }
 ---
@@ -76,7 +80,10 @@ function formatPost(post: Post) {
         title="Latest posts"
         items={allPosts.slice(0, 3).map(formatPost)}
       />
-      <ListFlat title="Popular content" items={[]} />
+      <ListFlat
+        title="Popular content"
+        items={featured.slice(0, 3).map(formatPost)}
+      />
     </section>
 
     <section id="featured-projects" class="max-w-site mx-auto px-4"></section>

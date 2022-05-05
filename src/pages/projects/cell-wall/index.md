@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: CellWall
 weight: 4
 subtitle: Interactive multi-device display art piece.

@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: 'How to easily cache Kotlin Android synthetics'
 description: Simply changing import statements can improve performance.
 date: 2020-07-27

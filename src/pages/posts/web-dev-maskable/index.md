@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 elsewhere:
   name: web.dev
   source: https://web.dev

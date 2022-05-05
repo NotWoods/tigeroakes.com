@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Pass the Bomb
 subtitle: Hackathon multiplayer word game
 weight: 9

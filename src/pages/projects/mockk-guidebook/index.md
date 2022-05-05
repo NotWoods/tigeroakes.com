@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: MockK Guidebook
 weight: 5
 subtitle: All-in-one guide to Kotlin mocking library

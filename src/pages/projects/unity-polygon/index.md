@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Polygon2D Editor
 subtitle: Level-building tool for Unity
 weight: 4

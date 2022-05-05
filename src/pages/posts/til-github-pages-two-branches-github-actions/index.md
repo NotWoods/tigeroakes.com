@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Deploy a site to GitHub Pages from multiple branches using GitHub Actions
 description: CI/CD combining different branches.
 date: 2020-12-26

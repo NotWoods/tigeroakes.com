@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Maskable.app
 subtitle: Implementing, writing, and creating tooling for new web feature
 weight: 3

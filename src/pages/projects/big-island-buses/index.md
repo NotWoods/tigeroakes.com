@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 weight: 4
 title: Big Island Buses
 subtitle: Bus schedule software

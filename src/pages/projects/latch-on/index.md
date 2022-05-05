@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Latch On
 subtitle: Rope swinging game
 weight: 7

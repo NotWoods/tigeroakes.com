@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Oakes Management LLC
 subtitle: Construction portfolio
 weight: 8

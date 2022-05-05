@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Color Breakdown
 subtitle: Color-identifying Progressive Web App
 weight: 7

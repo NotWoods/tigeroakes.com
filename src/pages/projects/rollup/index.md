@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Rollup
 subtitle: JavaScript module bundler
 weight: 6

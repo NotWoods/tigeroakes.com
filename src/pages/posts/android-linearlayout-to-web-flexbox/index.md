@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Going from Android LinearLayout to CSS flexbox
 description: Learning how to create a linear layout in CSS using Android experience.
 date: 2020-10-26

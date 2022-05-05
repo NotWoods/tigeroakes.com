@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: 'How to use git branch aliases with Mozilla Central'
 description: Even if a default branch has an odd name, its easy to `git checkout main`.
 date: 2020-07-19

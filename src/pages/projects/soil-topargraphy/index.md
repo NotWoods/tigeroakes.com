@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Soil TopARgraphy
 subtitle: Educational AR application
 weight: 7

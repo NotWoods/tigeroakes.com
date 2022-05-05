@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: UBC Farm
 subtitle: Farm research database
 weight: 8

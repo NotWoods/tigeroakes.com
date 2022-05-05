@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Schedule application for the Hele-On bus
 date: 2014-06-24
 tags:

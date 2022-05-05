@@ -27,7 +27,7 @@ const { title, items } = Astro.props as Props;
 <ul class="mt-4">
   {items.map(item => (
     <li class="clear-both mb-4" style={postAccentColor(item.tags)}>
-      {item.pictureSrc && <ItemImage class="float-right mt-2" src={item.pictureSrc} alt={item.pictureAlt} height={50} />}
+      {item.pictureSrc && <div class="float-right mt-2"><ItemImage src={item.pictureSrc} alt={item.pictureAlt} height={50} /></div>}
       <Time date={item.date} />
       <ItemTitle href={item.href}>{item.title}</ItemTitle>
     </li>

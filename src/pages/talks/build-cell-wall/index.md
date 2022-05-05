@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Building interactive wall decor from junk phones
 date: 2022-06-02
 publishDate: 2021-11-01

@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Creating a new PWA feature in Firefox for Android...and beyond
 date: 2020-08-25
 tags:

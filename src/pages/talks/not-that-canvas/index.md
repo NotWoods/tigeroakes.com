@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Web, Docs, & Canvas
 date: 2020-03-09
 tags:

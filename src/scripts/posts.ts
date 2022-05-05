@@ -7,6 +7,7 @@ export interface PostFrontmatter {
   title: string;
   description: string;
   tags: readonly string[];
+  categories: readonly string[];
   date: string;
   elsewhere?: {
     name: string;

@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Scraping a 15-year-old Drupal site into Markdown files
 description: Moving from Drupal to Jamstack...without any server passwords
 date: 2020-03-07
@@ -134,6 +135,7 @@ async function scrapePage(node, outFolder) {
 
   // Add Markdown front matter at the start of the file
   const frontMatter = `---
+layout: ../../../layouts/PostLayout.astro
 title: ${node.title}
 href: ${node.link}
 type: ${node.type}

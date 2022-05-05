@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/PostLayout.astro
 title: 'For teenager, buds of life bloom without boundaries.'
 date: 2012-07-31
 author: mtsai

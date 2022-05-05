@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Turning junk phones into an art display
 description: Build your own interactive creation from your pile of old phones.
 date: 2021-02-01

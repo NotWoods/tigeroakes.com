@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 weight: 2
 title: Google Chrome
 subtitle: Chrome APK size breakdown

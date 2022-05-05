@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Bit Ball
 weight: 20 # Bottom of page
 subtitle: 9th grade physics game

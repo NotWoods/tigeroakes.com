@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Automatic resume editor
 date: 2019-03-17
 tags:
