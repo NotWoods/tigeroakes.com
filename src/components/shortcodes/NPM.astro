@@ -1,3 +1,19 @@
+---
+export interface Props {
+  pkg: string;
+  start?: string;
+}
+
+const { pkg, start } = Astro.props as Props;
+const repoTitle = repo.split('/').join('/<wbr>');
+
+async function queryJson() {
+  const response = await fetch(`https://api.github.com/repos/${repo}`);
+  const json = await response.json();
+  return json as { stargazers_count: number; description: string };
+}
+const { stargazers_count, description } = await queryJson();
+---
 <a class="external-link" href='https://www.npmjs.com/package/{{.Get "pkg"}}'>
   <svg class="external-link__logo" viewBox="0 0 18 7" height="20" width="51">
     <title>npm</title>
