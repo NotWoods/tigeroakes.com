@@ -1,6 +1,5 @@
 ---
 title: Resume
-layout: resume
 pdf: pdf/Tiger_Oakes_resume_-_November_2021.pdf
 json_resume: src/pages/resume/json-resume/default.json
 ---

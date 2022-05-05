@@ -7,10 +7,9 @@ export interface Props {
 
 const { outline = false, width = 160, height = 28 } = Astro.props as Props;
 ---
-
-<h1 class="logo__heading">
-  <a class="logo" href="/">
-    <svg class="logo__icon icon animate" width={width} height={height} viewBox="0 2 80 14">
+<h1 class="grow pr-2">
+  <a class="block" href="/">
+    <svg class="" width={width} height={height} viewBox="0 2 80 14">
       <title>Tiger Oakes</title>
       <rect class="background" width="12" height="12" x="2" y="2" fill="#e67237"/>
       <g fill="none" stroke="#032030">
@@ -90,8 +89,7 @@ const { outline = false, width = 160, height = 28 } = Astro.props as Props;
       stroke-dashoffset: 25;
       animation: wire 1s linear forwards;
     }
-    .eye,
-    .eye-closed {
+    .eye, .eye-closed {
       animation: open 0.5s steps(3, jump-none) 2.5s both;
     }
     .eye-closed {

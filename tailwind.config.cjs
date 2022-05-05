@@ -34,7 +34,7 @@ const config = {
     },
     extend: {
       maxWidth: {
-        site: '52rem',
+        site: '50rem',
       },
       // @ts-ignore
       typography({ theme }) {

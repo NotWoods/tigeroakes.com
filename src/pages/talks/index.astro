@@ -1,0 +1,31 @@
+---
+import ListGridYears from '../../components/lists/ListGridYears.astro';
+import BannerNav from '../../components/BannerNav.astro';
+import Footer from '../../components/Footer.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+import { loadPosts } from '../../scripts/posts';
+
+const allPages = await loadPosts(Astro.glob('./*/*.md'));
+const posts = allPages.map((post) => ({
+  title: post.frontmatter.title,
+  href: post.url,
+  date: post.date,
+  description: post.frontmatter.description,
+  pictureSrc: post.frontmatter.banner,
+  tags: post.frontmatter.tags,
+}));
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Blog" />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <BannerNav current={Astro.canonicalURL} />
+
+    <ListGridYears items={posts} />
+
+    <Footer />
+  </body>
+</html>

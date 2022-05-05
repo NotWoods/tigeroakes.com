@@ -8,6 +8,12 @@ export interface PostFrontmatter {
   description: string;
   tags: readonly string[];
   date: string;
+  elsewhere?: {
+    name: string;
+    source: string;
+    link: string;
+  };
+  banner?: string;
 }
 
 export interface Post extends MarkdownInstance<PostFrontmatter> {
@@ -19,6 +25,9 @@ export async function loadPosts(
 ) {
   const allPosts = await input;
   const formattedPosts = allPosts.map((post) => {
+    if (!post.frontmatter.date) {
+      console.warn('No date found for post', post.url);
+    }
     const formattedPost: Post = {
       ...post,
       date: dateFromString(post.frontmatter.date),

@@ -1,3 +1,10 @@
+---
+export interface Props {
+  src: string;
+}
+
+const { src } = Astro.props as Props;
+---
 <div class="youtube__wrapper">
   <iframe width="800" height="450"
     src="https://www.youtube-nocookie.com/embed/{{ .Get 0 }}"
