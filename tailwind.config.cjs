@@ -36,6 +36,9 @@ const config = {
       maxWidth: {
         site: '52rem',
       },
+      minWidth: {
+        44: '11rem',
+      },
       scale: {
         initial: 'var(--initial-block-scale, 0)',
       },

@@ -1,0 +1,62 @@
+---
+import TableOfContentsList from './TableOfContentsList.astro';
+
+export interface Props {
+  headers: readonly {
+    depth: number;
+    slug: string;
+    text: string;
+  }[];
+}
+
+interface TreeNode {
+  children: readonly TreeNode[];
+  slug: string;
+  text: string;
+}
+
+interface MutableTreeNode extends TreeNode {
+  children: MutableTreeNode[];
+}
+
+const { headers } = Astro.props as Props;
+
+function asTree(): readonly TreeNode[] {
+  const tree: MutableTreeNode[] = [];
+  const lastAtDepths = new Map<number, MutableTreeNode>();
+
+  for (const header of headers) {
+    const parent = lastAtDepths.get(header.depth - 1);
+    const node: MutableTreeNode = {
+      children: [],
+      slug: header.slug,
+      text: header.text,
+    };
+
+    if (parent) {
+      parent.children.push(node);
+    } else {
+      tree.push(node);
+    }
+
+    lastAtDepths.set(header.depth, node);
+  }
+  return tree;
+}
+---
+
+<nav
+  class="table-of-contents min-w-44 lg:sticky top-0 lg:justify-self-end self-start p-4 pt-0 pl-1 mt-12"
+>
+  <h2 class="border-b py-1 uppercase ml-3 mb-2">
+    On this page
+    <a class="hidden lg:inline-block" href="#" title="Back to top">↥</a>
+  </h2>
+  <TableOfContentsList tree={asTree()} />
+</nav>
+
+<style>
+  .table-of-contents {
+    grid-area: toc;
+  }
+</style>

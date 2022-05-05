@@ -1,0 +1,30 @@
+---
+import AccentBlock from "../AccentBlock.astro";
+
+export interface Props {
+  tree: readonly TreeNode[];
+}
+
+interface TreeNode {
+  children: readonly TreeNode[];
+  slug: string;
+  text: string;
+}
+
+const { tree } = Astro.props as Props;
+
+const Self = tree.some(node => node.children.length > 0)
+  && (await import('./TableOfContentsList.astro')).default;
+---
+
+<ul class="ml-3">
+  {tree.map(node => (
+    <li class="leading-5">
+      <a class="block mb-1 relative group" href={`#${node.slug}`}>
+        <AccentBlock position="left" animate />
+        {node.text}
+      </a>
+      {node.children.length > 0 && <Self tree={node.children} />}
+    </li>
+  ))}
+</ul>
