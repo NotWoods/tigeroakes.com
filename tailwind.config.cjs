@@ -34,7 +34,7 @@ const config = {
     },
     extend: {
       maxWidth: {
-        site: '50rem',
+        site: '52rem',
       },
       scale: {
         initial: 'var(--initial-block-scale, 0)',

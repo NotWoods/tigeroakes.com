@@ -1,0 +1,48 @@
+---
+import BannerNav from '../../components/BannerNav.astro';
+import Button from '../../components/Button.astro';
+import Footer from '../../components/Footer.astro';
+import SectionTitle from '../../components/lists/SectionTitle.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+
+import * as content from './_about.md';
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Resume" />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <BannerNav current={Astro.canonicalURL} class="print:hidden" />
+
+    <section id="about" class="mt-4 max-w-site mx-auto px-4 print:hidden">
+      <SectionTitle>About Me</SectionTitle>
+      <div class="prose prose-invert">
+        <content.Content></content.Content>
+      </div>
+    </section>
+
+    <div class="max-w-site mt-8 mx-auto px-4 print:hidden">
+      <SectionTitle>Resume</SectionTitle>
+      <div class="text-center">
+        <Button
+          class="inline-block text-xl bg-[#cd372d]"
+          href={content.frontmatter.pdf}
+        >
+          PDF
+        </Button>
+      </div>
+    </div>
+
+    <Footer class="print:hidden" />
+  </body>
+</html>
+
+<style is:global>
+  .resume {
+    page-break-before: always;
+    color: rgba(0, 0, 0, 0.9);
+    font-variant-ligatures: none;
+  }
+</style>

@@ -32,8 +32,10 @@ export interface Props {
 const { title, items } = Astro.props as Props;
 
 ---
-<SectionTitle class="max-w-site mx-auto">{title}</SectionTitle>
-<div class="grid grid-cols-2 gap-12 mb-8 max-w-site mx-auto px-4 box-content" style="--initial-block-scale: 0.5">
+<div class="max-w-site mx-auto">
+  <SectionTitle class="mx-4">{title}</SectionTitle>
+</div>
+<div class="grid grid-cols-2 gap-12 mb-8 max-w-site mx-auto px-4" style="--initial-block-scale: 0.5">
   {items.map(item => (
     <article class="flex flex-col" style={postAccentColor(item.tags)}>
       {item.pictureSrc && <ItemImage src={item.pictureSrc} alt={item.pictureAlt} height={188} />}
