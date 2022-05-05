@@ -23,7 +23,7 @@ I've been trying out [Jetpack Compose](https://developer.android.com/jetpack/com
 
 Many concepts and functions in the two libraries work the same but have different names. Here's a compilation of terms I've seen along with explanations. Jetpack Compose is still changing, and this list is based on [version 1.0.0-rc01](https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-rc01).
 
-{{< toc >}}
+< toc >
 
 ## Children Prop > Children Composable
 

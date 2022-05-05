@@ -12,9 +12,11 @@ images:
   - /posts/resume-editor/flex-fail.png
 banner: word.png
 toc: true
+setup: |
+  import GitHub from '../../../components/shortcodes/GitHub.astro';
 ---
 
-{{<video src="resume-editor.mp4">}}
+<video src="resume-editor.mp4">
 
 After writing my resume in Microsoft Word for years, I recently transitioned to generating it from plain HTML and CSS. This works much better for me because I can separate the resume content (my work experience and descriptions) from its layout (the colors and positions of text and number of columns). I added additional features so that I can edit the resume on-the-fly with JavaScript and quickly save a new copy, in case I don't have access to my main machine and I need to make some small adjustments. Here's how I did it.
 
@@ -118,4 +120,4 @@ It would also be helpful to have the rendered resume allow for text editing dire
 
 You can see all of my source code on my [GitHub repository for my website](https://github.com/NotWoods/tigeroakes.com/tree/master/content/resume).
 
-{{<external/github repo="NotWoods/tigeroakes.com">}}
+<GitHub repo="NotWoods/tigeroakes.com" />

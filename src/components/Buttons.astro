@@ -16,7 +16,7 @@ const { buttons, class: className } = Astro.props as Props;
 ---
 
 <div class={`buttons flex flex-wrap gap-2 justify-center mt-3 ${className}`}>
-  {buttons.map(button => <Button href={button.href}>{button.title}</Button>)}
+  {buttons.map(button => <Button href={button.href} class="bg-accent">{button.title}</Button>)}
 </div>
 
 <style>

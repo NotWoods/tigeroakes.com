@@ -17,13 +17,14 @@ function buttonLink(
   }
 }
 
-const allPages = await Astro.glob('./**/*.md');
+const allPages = await Astro.glob('./*/*.md');
+allPages.sort((a, b) => b.frontmatter.weight - a.frontmatter.weight);
 const projects = allPages.map((page) => ({
   title: page.frontmatter.title,
   description: page.frontmatter.subtitle,
   href: page.url,
   accent: page.frontmatter.color,
-  buttons: page.frontmatter.links.map((link) => ({
+  buttons: page.frontmatter.links?.map((link) => ({
     title: link.title,
     href: buttonLink(link, page),
   })),

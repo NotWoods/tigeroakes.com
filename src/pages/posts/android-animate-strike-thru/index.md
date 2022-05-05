@@ -23,11 +23,13 @@ images:
   - /posts/android-animate-strike-thru/static_icon_with_gap.png
 banner: static_icon_with_gap.png
 toc: true
+setup: |
+  import GitHub from '../../../components/shortcodes/GitHub.astro';
 ---
 
 With 1.6K views, my most popular tweet at the time of writing is about a little feature I added to Firefox Preview:
 
-{{<video src="strike_thru_the_heart.*" max-height="400">}}
+<video src="strike_thru_the_heart.*" max-height="400">
 
 In [Firefox Preview](https://blog.mozilla.org/futurereleases/2019/06/27/reinventing-firefox-for-android-a-preview/), you can grant a website access to your location and microphone. When you toggle those permissions off, a line appears and grows diagonally through the original icon as it fades to gray. To create the animation, I considered many details such as colors, lines, curves, and clip paths.
 
@@ -44,7 +46,7 @@ For color, that’s pretty simple. When the permission is turned on, the icon is
 
 You can preview animations with a tool called [Shape Shifter](https://shapeshifter.design/).
 
-{{<video src="color_transition.*" max-height="300">}}
+<video src="color_transition.*" max-height="300">
 
 ### The line
 
@@ -52,19 +54,19 @@ Unlike colors, which are single values, shapes are more complex. Even a simple l
 
 In Firefox, our icons are defined as vectors, meaning that an image file specifies some points and the computer connects the dots. This is different than bitmap images which store many coloured squares. Since the computer is just connecting dots, the image can be scaled up without losing any detail.
 
-{{<img src="square_line_with_dots.png" alt="Square line with dots" max-height="400">}}
+<img src="square_line_with_dots.png" alt="Square line with dots" max-height="400">
 
 Android can also animate these dots. A line (really a thin rectangle) can be represented as 4 dots for each corner. When it disappears, it’s really just moving the dots so that the rectangle is so small you can’t see it.
 
 Here you can see how the animation looks, with the start of the animation on the left and the end on the right.
 
-{{<video src="square_line_transition.*">}}
+<video src="square_line_transition.*">
 
 ### The curves
 
 This animation for square lines is great, but it doesn’t work for Firefox. The lines we use for Firefox’s icons are curved at the end, rather than flat. When we try to make this line animate, the ends shrink and grow oddly. Look closely at the upper right corner of the animation and how the line width adjusts.
 
-{{<video src="curved_line_no_mask.*">}}
+<video src="curved_line_no_mask.*">
 
 That’s not ideal. Luckily there’s another way to hide the line when it shrinks.
 
@@ -76,25 +78,25 @@ You can hide parts of an image by putting it behind an “[clip path](https://de
 
 By using a clip path, we can hide the end of the line without changing the relative positioning of its dots.
 
-{{<video src="curved_line_with_mask.*" max-height="300">}}
+<video src="curved_line_with_mask.*" max-height="300">
 
 ### The spacing
 
 If we put our animated line on top of another icon, this is what we end up with.
 
-{{<video src="line_no_gap_2.*" max-height="300">}}
+<video src="line_no_gap_2.*" max-height="300">
 
 The line unfortunately blends in with the icon. To emphasize the strike through, we want to create a small gap right under the line and create something like this:
 
-{{<img src="static_icon_with_gap.png" alt="Static icon with line through it and a gap" max-height="300">}}
+<img src="static_icon_with_gap.png" alt="Static icon with line through it and a gap" max-height="300">
 
 Luckily, we already know how to hide parts of an icon. We can use a clip path again. Since clip paths are just another shape created by connecting dots, they can also be animated in parallel to the original line.
 
-{{<video src="mask_transition.*" max-height="300">}}
+<video src="mask_transition.*" max-height="300">
 
 Here's the final product. Using a combination of color transitions, shape transitions, and clip paths we’ve achieved a clean line effect. Looks great!
 
-{{<video src="complete_animation.*" max-height="300">}}
+<video src="complete_animation.*" max-height="300">
 
 ---
 
@@ -102,7 +104,7 @@ Here's the final product. Using a combination of color transitions, shape transi
 
 Android has tools to create an animation like this with just XML, without Java or Kotlin. You need to create a few different files to represent different states and how to transition between them. The finished files are available to [download from GitHub](https://github.com/NotWoods/android-strikethru-animation-sample) too.
 
-{{<external/github repo="NotWoods/android-strikethru-animation-sample">}}
+<GitHub repo="NotWoods/android-strikethru-animation-sample" />
 
 First of all we start with a Vector Drawable, which contains the icons and the paths we designed before. This goes inside the Android project’s `drawables` folder.
 
@@ -353,6 +355,6 @@ From your code, just change the `enabled` value and you’ll see the icon automa
 findViewById(R.id.icon).setEnabled(true);
 ```
 
-{{<video src="sample_preview.*">}}
+<video src="sample_preview.*">
 
 This article has broken down how to implement animation in Android step-by-step. The same principles apply to not only strike-throughs, but other animations as well. In addition to colors and paths, you can animate position, rotation, transparency, and more. I can't wait to see what you all build!

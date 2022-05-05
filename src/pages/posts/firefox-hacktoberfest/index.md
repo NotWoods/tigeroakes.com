@@ -16,6 +16,8 @@ tags:
 projects:
   - mozilla-firefox
 banner: banner.png
+setup: |
+  import GitHub from '../../../components/shortcodes/GitHub.astro';
 ---
 
 [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is a worldwide event to celebrate and support open source. Firefox Daylight for Android will be part of Hacktoberfest again this year, and we have put [Hacktoberfest labels](https://github.com/search?utf8=%E2%9C%93&q=user%3Amozilla-mobile+label%3AHacktoberfest+state%3Aopen&type=Issues&ref=advsearch&l=&l=) on many of our GitHub issues.
@@ -24,9 +26,9 @@ Working on Firefox Daylight (codenamed Fenix) is a great way to contribute to a 
 
 Firefox Daylight is split into multiple repositories. While a lot of our UI code and functionality is in the [mozilla-mobile/fenix](https://github.com/mozilla-mobile/fenix) repository, we’ve written shared libraries used in all of our Android apps in the [mozilla-mobile/android-components](https://github.com/mozilla-mobile/android-components) repository. The [GeckoView](https://mozilla.github.io/geckoview/) engine is not located on GitHub so pull requests there unfortunately won’t count towards Hacktoberfest.
 
-{{<external/github repo="mozilla-mobile/fenix">}}
+<GitHub repo="mozilla-mobile/fenix" />
 
-{{<external/github repo="mozilla-mobile/android-components">}}
+<GitHub repo="mozilla-mobile/android-components" />
 
 ## How do I get started?
 

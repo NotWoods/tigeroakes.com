@@ -12,3 +12,24 @@ const classes = `button relative shadow-sm px-6 py-2 text-center whitespace-nowr
 {href
   ? <a href={href} class={classes}><slot /></a>
   : <button type={type} class={classes}><slot /></button>}
+
+<style>
+  .button::after {
+    @apply absolute inset-0 border-2 border-current shadow-md;
+    content: "";
+    opacity: 0;
+  }
+  .button:hover::after,
+  .button:focus::after {
+    opacity: 1;
+  }
+  .button:active::after {
+    opacity: 0.5;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .button::after {
+      @apply transition-opacity;
+    }
+  }
+</style>

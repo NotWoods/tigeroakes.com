@@ -14,6 +14,8 @@ images:
   - /posts/scraping-csss/drupal.png
 banner: drupal.png
 toc: true
+setup: |
+  import GitHub from '../../../components/shortcodes/GitHub.astro';
 ---
 
 Your mission is to migrate a website from a server-side CMS to Jamstack. The site is 15 years old and is currently built with Drupal. All the pages need to be converted to markdown. And by the way, nobody knows the password to the server.
@@ -190,4 +192,4 @@ With these tasks completed, I now had a copy of 15 years of website content as M
 
 If you’re curious to see the full code and exported data, it’s all available on Github.
 
-{{<external/github repo="ubccsss/drupal-export">}}
+<GitHub repo="ubccsss/drupal-export" />

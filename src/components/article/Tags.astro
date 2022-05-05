@@ -11,7 +11,7 @@ function href(tag: string) {
   return `/tags/${tag.toLowerCase()}`;
 }
 
-const { tags, elsewhere, class: className } = Astro.props as Props;
+const { tags = [], elsewhere, class: className } = Astro.props as Props;
 const projects = [];
 ---
 

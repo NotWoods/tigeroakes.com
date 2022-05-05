@@ -18,4 +18,4 @@ description: >
 
 A library I created as a drop-in replacement for some of Google Maps' geometry APIs for Node.js servers. This library has gained over 180,000 downloads as of December, 2020 and continues to grow.
 
-{{<external/npm pkg="spherical-geometry-js" start="2019-06-18">}}
+<external/npm pkg="spherical-geometry-js" start="2019-06-18">

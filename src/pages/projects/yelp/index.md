@@ -52,4 +52,4 @@ The new Describe your Project feature shows Yelp's commitment to helping users c
 
 ---
 
-{{<video src="demo.mp4">}}
+<video src="demo.mp4">
