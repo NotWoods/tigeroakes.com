@@ -1,17 +1,12 @@
 [build]
-publish = "public"
+publish = "dist"
 command = "npm run build"
 
-[build.environment]
-HUGO_VERSION = "0.98.0"
-HUGO_ENABLEGITINFO = "true"
-NODE_VERSION = "16.15.0"
-
 [context.production.environment]
-HUGO_ENVIRONMENT = "production"
+NETLIFY_CONTEXT = "production"
 
-[context.deploy-preview]
-command = "npm run build -- --gc --buildFuture --buildDrafts -b $DEPLOY_PRIME_URL"
+[context.deploy-preview.environment]
+NETLIFY_CONTEXT = "deploy-preview"
 
-[context.branch-deploy]
-command = "npm run build -- --gc -b $DEPLOY_PRIME_URL"
+[context.branch-deploy.environment]
+NETLIFY_CONTEXT = "branch-deploy"

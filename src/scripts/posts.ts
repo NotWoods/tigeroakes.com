@@ -1,0 +1,31 @@
+import { Temporal } from '@js-temporal/polyfill';
+import type { MarkdownInstance } from 'astro';
+import { dateFromString } from './date';
+
+export interface PostFrontmatter {
+  title: string;
+  description: string;
+  tags: readonly string[];
+  date: string;
+}
+
+export interface Post extends MarkdownInstance<PostFrontmatter> {
+  date: Temporal.PlainDate;
+}
+
+export async function loadPosts(
+  input: Promise<MarkdownInstance<PostFrontmatter>[]>
+) {
+  const allPosts = await input;
+  const formattedPosts = allPosts.map((post) => {
+    const formattedPost: Post = {
+      ...post,
+      date: dateFromString(post.frontmatter.date),
+    };
+    return formattedPost;
+  });
+  formattedPosts.sort(
+    (a, b) => Temporal.PlainDate.compare(a.date, b.date) * -1
+  );
+  return formattedPosts;
+}

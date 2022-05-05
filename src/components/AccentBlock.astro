@@ -1,0 +1,46 @@
+---
+export interface Props {
+  position: 'left' | 'bottom';
+  animate?: boolean;
+  class?: string;
+}
+
+const { position, animate, class: className } = Astro.props as Props;
+const classes = {
+  left: {
+    base: 'inset-y-0 origin-right',
+    animate:
+      'scale-x-0 group-hover:scale-x-100 group-active:scale-x-50 motion-safe:transition-transform',
+  },
+  bottom: {
+    base: 'inset-x-0 origin-top',
+    animate:
+      'scale-y-0 group-hover:scale-y-100 group-active:scale-y-50 motion-safe:transition-transform',
+  },
+};
+---
+
+<div
+  aria-hidden="true"
+  class:list={[
+    'block absolute bg-accent',
+    `accent-block--${position}`,
+    classes[position].base,
+    animate && classes[position].animate,
+    className,
+  ]}
+>
+</div>
+
+<style is:global>
+  .accent-block--left {
+    width: var(--block-size);
+    left: calc(calc(var(--block-size) * 2) * -1);
+    --tw-scale-x: var(--initial-block-scale, 0);
+  }
+  .accent-block--bottom {
+    height: var(--block-size);
+    bottom: calc(calc(var(--block-size) * 2) * -1);
+    --tw-scale-y: var(--initial-block-scale, 0);
+  }
+</style>
