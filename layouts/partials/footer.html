@@ -1,7 +1,7 @@
 <div class="footer__items">
     {{ with .Site.Data.contact.email }}
     <a href="{{.link}}" class="block--bottom block--animate contact__link email">
-        {{.name}}
+        {{.name | markdownify}}
     </a>
     {{ end }}
     <div class="footer__items">
