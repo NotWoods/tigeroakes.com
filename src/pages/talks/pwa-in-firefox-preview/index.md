@@ -15,10 +15,12 @@ links:
     link: https://youtu.be/zFNvFefOeaI
 color: '#FF7139'
 banner: slide.png
+setup: |
+  import YouTube from '../../../components/shortcodes/YouTube.astro';
 ---
 
 **Mozilla Intern Presentation 2019**
 
 Brand new Progressive Web App features coming to Firefox Preview, including customized system bars, site controls, maskable icons, and Trusted Web Activities.
 
-{{< external/youtube zFNvFefOeaI >}}
+<YouTube id="zFNvFefOeaI" />

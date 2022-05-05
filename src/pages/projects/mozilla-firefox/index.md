@@ -21,6 +21,10 @@ aliases:
   - /projects/mozilla
 description: >
   At Mozilla, I was trusted with bringing support for Progressive Web Apps to the new Firefox Preview browser for Android. I shipped support for maskable icons before other browsers and added many other features.
+
+
+setup: |
+  import YouTube from '../../../components/shortcodes/YouTube.astro';
 ---
 
 Firefox Preview is a rewrite of Mozilla's Firefox browser for Android. On the Mozilla Android Components team, I work on many features for Firefox Preview and other Mozilla Android web browsers. We shipped the browser to over 100,000 users on the Google Play Store during my internship and I continue to work on new features for the app.
@@ -49,4 +53,4 @@ To have greater control over the file downloading experience, I modified our imp
 
 ---
 
-external/youtube zFNvFefOeaI
+<YouTube id="zFNvFefOeaI" />

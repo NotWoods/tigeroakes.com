@@ -1,1 +1,10 @@
+---
+export interface Props {
+  src: string;
+}
+
+const { src } = Astro.props as Props;
+---
+
 <iframe src='{{ .Get "src" }}' frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width:100%;margin:auto;display:block"></iframe>
+
