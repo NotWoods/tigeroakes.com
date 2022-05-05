@@ -18,7 +18,11 @@ function buttonLink(
 }
 
 const allPages = await Astro.glob('./*/*.md');
-allPages.sort((a, b) => b.frontmatter.weight - a.frontmatter.weight);
+allPages.sort((a, b) => {
+  const aWeight = a.frontmatter.weight || Infinity;
+  const bWeight = b.frontmatter.weight || Infinity;
+  return aWeight - bWeight;
+});
 const projects = allPages.map((page) => ({
   title: page.frontmatter.title,
   description: page.frontmatter.subtitle,

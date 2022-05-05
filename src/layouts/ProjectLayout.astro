@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../components/article/ArticleLayout.astro';
+import ProjectHeader from '../components/article/ProjectHeader.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import { dateFromString } from '../scripts/date';
 
@@ -9,10 +10,15 @@ const formattedProps = {
   title: content.title,
   href: Astro.canonicalURL,
   date: content.date ? dateFromString(content.date) : undefined,
-  description: content.description,
-  pictureSrc: content.banner,
-  tags: content.tags,
-  elsewhere: content.elsewhere,
+  description: content.subtitle,
+  tags: content.tech,
+  accent: content.color,
+  buttons: content.links
+    ?.filter((link) => link.title !== 'Details' && link.title !== 'Case study')
+    ?.map((link) => ({
+      title: link.title,
+      href: link.link,
+    })),
 };
 ---
 
@@ -23,6 +29,7 @@ const formattedProps = {
 
   <body class="bg-slate-800 text-slate-200">
     <ArticleLayout {...formattedProps}>
+      <ProjectHeader {...formattedProps} class="bg-slate-800" slot="header" />
       <slot />
     </ArticleLayout>
   </body>

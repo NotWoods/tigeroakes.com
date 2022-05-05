@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 weight: 1
 title: Mozilla Firefox
 subtitle: Firefox Preview PWA and TWA support

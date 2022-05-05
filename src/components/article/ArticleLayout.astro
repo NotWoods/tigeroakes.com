@@ -1,0 +1,53 @@
+---
+import type { Temporal } from '@js-temporal/polyfill';
+import BannerNav from '../BannerNav.astro';
+import Footer from '../Footer.astro';
+import MailingListCallToAction from '../MailingListCallToAction.astro';
+import PostHeader from './PostHeader.astro';
+
+export interface Props {
+  title: string;
+  href: string | URL;
+  date: Temporal.PlainDate;
+  description: string;
+  tags?: readonly string[];
+  elsewhere?: {
+    name: string;
+    link: string;
+  };
+  links?: readonly {
+    href: string;
+    title: string;
+  }[];
+}
+
+const { href, ...props } = Astro.props as Props;
+---
+
+<BannerNav current={href} />
+
+<article
+  class="grid bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:text-slate-200"
+>
+  <slot name="header">
+    <PostHeader {...props} class="bg-slate-800" />
+  </slot>
+  <div class="prose prose-lg dark:prose-invert max-w-site px-4 py-6">
+    <slot />
+  </div>
+</article>
+<MailingListCallToAction />
+<Footer />
+
+<style>
+  article {
+    grid-template:
+      'header header header' min-content
+      '.      prose  toc   ' 1fr
+      '.      nav    .     ' min-content
+      / 1fr auto 1fr;
+  }
+  .prose {
+    grid-area: prose;
+  }
+</style>
