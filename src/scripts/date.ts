@@ -1,4 +1,13 @@
-import { Temporal } from '@js-temporal/polyfill';
+import { Intl, Temporal } from '@js-temporal/polyfill';
+
+export function formatToPartsMap(
+  formatter: Intl.DateTimeFormat,
+  date: Intl.Formattable
+): ReadonlyMap<globalThis.Intl.DateTimeFormatPartTypes, string> {
+  return new Map(
+    formatter.formatToParts(date).map(({ type, value }) => [type, value])
+  );
+}
 
 /**
  * Convert date string into a PlainDate.

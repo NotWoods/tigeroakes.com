@@ -11,6 +11,7 @@ tags:
   - Android
 categories:
   - Planet Mozilla
+  - Feature
 projects:
   - cell-wall
 banner: banner.jpg

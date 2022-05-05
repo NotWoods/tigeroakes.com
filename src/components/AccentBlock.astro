@@ -1,36 +1,12 @@
 ---
-export interface Props {
-  position: 'left' | 'bottom';
-  animate?: boolean;
-  class?: string;
-}
+import { AccentBlock, Props } from './AccentBlock';
 
-const { position, animate, class: className } = Astro.props as Props;
-const classes = {
-  left: {
-    base: 'inset-y-0 origin-right',
-    animate:
-      'scale-x-initial group-hover:scale-x-100 group-active:scale-x-50 motion-safe:transition-transform',
-  },
-  bottom: {
-    base: 'inset-x-0 origin-top',
-    animate:
-      'scale-y-initial group-hover:scale-y-100 group-active:scale-y-50 motion-safe:transition-transform',
-  },
-};
+export type { Props };
+
+const props = Astro.props as Props;
 ---
 
-<div
-  aria-hidden="true"
-  class:list={[
-    'block absolute bg-accent',
-    `accent-block--${position}`,
-    classes[position].base,
-    animate && classes[position].animate,
-    className,
-  ]}
->
-</div>
+<AccentBlock {...props} />
 
 <style is:global>
   .accent-block--left {

@@ -10,6 +10,8 @@ const config = {
       transparent: 'transparent',
       current: 'currentColor',
       accent: 'var(--accent)',
+      black: colors.black,
+      white: colors.white,
       slate: {
         200: '#ebeeef',
         800: '#032030',
@@ -41,6 +43,9 @@ const config = {
       },
       scale: {
         initial: 'var(--initial-block-scale, 0)',
+      },
+      listStyleType: {
+        square: 'square',
       },
       // @ts-ignore
       typography({ theme }) {

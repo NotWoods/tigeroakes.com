@@ -4,6 +4,8 @@ import Button from '../../components/Button.astro';
 import Footer from '../../components/Footer.astro';
 import SectionTitle from '../../components/lists/SectionTitle.astro';
 import MainHead from '../../components/meta/MainHead.astro';
+import { Resume } from '../../components/resume/Resume';
+import jsonResume from './json-resume/default.json';
 
 import * as content from './_about.md';
 ---
@@ -35,6 +37,8 @@ import * as content from './_about.md';
       </div>
     </div>
 
+    <Resume {jsonResume} />
+
     <Footer class="print:hidden" />
   </body>
 </html>
@@ -44,5 +48,6 @@ import * as content from './_about.md';
     page-break-before: always;
     color: rgba(0, 0, 0, 0.9);
     font-variant-ligatures: none;
+    line-height: normal;
   }
 </style>

@@ -11,7 +11,7 @@ import { loadPosts, Post } from '../scripts/posts';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
 const featured = allPosts.filter((post) =>
-  post.frontmatter.categories?.includes('Featured')
+  post.frontmatter.categories?.includes('Feature')
 );
 
 function formatPost(post: Post) {
