@@ -1,0 +1,45 @@
+---
+import Buttons, { ButtonProps } from '../Buttons.astro';
+
+export interface Props {
+  class?: string;
+  accent?: string;
+  backgroundImage?: string;
+  buttons?: readonly ButtonProps[];
+}
+
+const {
+  buttons,
+  accent,
+  backgroundImage,
+  class: className,
+} = Astro.props as Props;
+
+const classes = [
+  'p-8 text-slate-200 bg-center bg-cover bg-no-repeat',
+];
+if (backgroundImage) {
+  classes.push('text-shadow');
+}
+if (className) {
+  classes.push(className);
+}
+---
+
+<header
+  class={classes.join(' ')}
+  style={backgroundImage ? `url('${backgroundImage}')` : undefined}
+>
+  <div class="max-w-site mx-auto px-4">
+    <slot />
+  </div>
+  <slot name="buttons">
+    {buttons && <Buttons class="text-lg" buttons={buttons} />}
+  </slot>
+</header>
+
+<style define:vars={accent ? { accent } : undefined}>
+  header {
+    grid-area: header;
+  }
+</style>

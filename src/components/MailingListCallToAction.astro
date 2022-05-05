@@ -1,3 +1,7 @@
+---
+import Button from './Button.astro';
+---
+
 <form
   action="https://buttondown.email/api/emails/embed-subscribe/tiger"
   method="post"
@@ -11,5 +15,5 @@
     <div class="input__border"></div>
   </div>
   <input type="hidden" value="1" name="embed" />
-  <button type="submit" class="subscribe__button shadow button">Subscribe</button>
+  <Button type="submit" class="subscribe__button shadow button">Subscribe</Button>
 </form>

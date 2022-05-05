@@ -1,0 +1,7 @@
+.tag::after {
+  content: " | ";
+  margin: 0 0.2em;
+}
+.tag:last-child::after {
+  content: none;
+}

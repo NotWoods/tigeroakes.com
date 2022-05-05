@@ -1,0 +1,38 @@
+---
+import '../../styles/tag.css';
+
+export interface Props {
+  class?: string;
+  tags: readonly string[];
+  elsewhere?: string;
+}
+
+function href(tag: string) {
+  return `/tags/${tag.toLowerCase()}`;
+}
+
+const { tags, elsewhere, class: className } = Astro.props as Props;
+---
+
+<ul class="tags">
+  {elsewhere && 
+  <li class="tag tag--elsewhere">{elsewhere}</li>
+  }
+  {tags.map(tag =>
+  <li class="tag">
+    <a
+      class="tag__link link link--hidden"
+      href={{ relURL (print "/tags/" . "/" | urlize) }}>{{.}}</a
+    >
+  </li>
+  }
+  {projects.map(project =>
+  {{ range .Params.projects }}
+  {{ $project := $.Site.GetPage "projects" . }}
+  <li class="tag tag--project">
+    <a class="tag__link link link--hidden" href={{ $project.RelPermalink }}
+      >{{ $project.Name }}</a
+    >
+  </li>
+  }
+</ul>

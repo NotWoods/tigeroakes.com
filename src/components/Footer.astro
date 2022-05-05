@@ -3,24 +3,34 @@ import contactData from '@data/contact.json';
 import AccentBlock from './AccentBlock.astro';
 
 export interface Props {
-	class?: string;
+  class?: string;
 }
 
 const { class: className } = Astro.props as Props;
 const { email, social } = contactData;
 ---
 
-<div class="footer__items">
-
-    <a href="{{.link}}" class="block--bottom block--animate contact__link email">
+<footer class:list={['flex flex-wrap m-8 justify-center', className]}>
+  <a
+    class="leading-6 mx-2 my-4 relative group"
+    href="mailto:{email.link}"
+    set:html={email.name}
+  >
+    <AccentBlock position="bottom" animate />
+  </a>
+  <div class="flex">
+    {social.map((item) => (
+      <a
+        class="mx-2 my-4 relative group"
+        title={item.name}
+        href={item.link}>
         <AccentBlock position="bottom" animate />
-    </a>
-
-    <div class="footer__items">
-        {social.map((item) =>
-        <a href="{{.link}}" class="block--bottom block--animate contact__link" title="{{.name}}" aria-label="{{.name}}">
-            <AccentBlock position="bottom" animate />
-            <img class="icon" alt="{{.name}}" width="24" height="24" src="{{ .icon }}" loading="lazy" /></a>
-        )}
-    </div>
-</div>
+        <img class="block"
+          width="24" height="24"
+          alt={item.name}
+          src={item.icon}
+          loading="lazy" />
+      </a>
+    ))}
+  </div>
+</footer>
