@@ -14,7 +14,7 @@ export interface Props {
   buttons?: readonly ButtonProps[];
 
   title: string;
-  date: Temporal.PlainDate;
+  date?: Temporal.PlainDate;
   description?: string;
   tags?: readonly string[];
   elsewhere?: {
@@ -29,7 +29,7 @@ const { title, description, date, tags, elsewhere, ...props } =
 
 <ArticleHeaderContainer {...props}>
   <div class="max-w-site mx-auto px-4">
-    <Time {date}>Posted on</Time>
+    {date && <Time {date}>Posted on</Time>}
     <ArticleTitle>{title}</ArticleTitle>
     <ArticleDescription>{description}</ArticleDescription>
     <Tags class="mt-auto text-sm" {tags} elsewhere={elsewhere?.name} />

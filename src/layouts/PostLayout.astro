@@ -1,0 +1,55 @@
+---
+import PostHeader from '../components/article/PostHeader.astro';
+import BannerNav from '../components/BannerNav.astro';
+import Footer from '../components/Footer.astro';
+import MailingListCallToAction from '../components/MailingListCallToAction.astro';
+import MainHead from '../components/meta/MainHead.astro';
+import { dateFromString } from '../scripts/date';
+
+const { content } = Astro.props;
+
+const formattedProps = {
+  title: content.title,
+  date: content.date ? dateFromString(content.date) : undefined,
+  description: content.description,
+  pictureSrc: content.banner,
+  tags: content.tags,
+  elsewhere: content.elsewhere,
+};
+---
+
+<html lang="en">
+  <head>
+    <MainHead title={content.title} />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <BannerNav current={Astro.canonicalURL} />
+
+    <article
+      class="grid bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:text-slate-200"
+    >
+      <PostHeader class="bg-slate-800" {...formattedProps} />
+      <div class="prose prose-lg dark:prose-invert max-w-site p-4">
+        <slot />
+      </div>
+    </article>
+
+    <MailingListCallToAction />
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  article {
+    grid-template:
+      'header header header' min-content
+      '.      prose  toc   ' 1fr
+      '.      nav    .     ' min-content
+      / 1fr auto 1fr;
+  }
+  .prose {
+    grid-area: prose;
+  }
+</style>

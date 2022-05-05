@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: How unpaid internships affect you and the tech industry
 description: >
   Is an unpaid offer worth it? Are unpaid interns the only viable workforce for startups?
