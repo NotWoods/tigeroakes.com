@@ -1,0 +1,34 @@
+---
+import navData from '@data/nav.json';
+import AccentBlock from './AccentBlock.astro';
+import Logo from './Logo.astro';
+
+// Banner displayed at the top of the site.
+export interface Props {
+	logo?: 'default' | 'outline' | 'none';
+	current?: string;
+	class?: string;
+}
+
+const { logo = 'default', current, class: className } = Astro.props as Props;
+
+function isCurrent({ url }: { url: string }) {
+  return current?.startsWith(url) ? `--initial-block-scale: 0.5`: undefined;
+}
+---
+
+<header class:list={['py-4', className]}>
+	<div class="flex flex-wrap items-stretch max-w-site mx-auto justify-between px-4 gap-y-4">
+		{logo !== 'none' && <Logo outline={logo === 'outline'} />}
+		{logo === 'none' && <div class="grow h-7" />}
+
+		<nav class="flex items-stretch mx-auto gap-x-2 gap-y-6">
+			{navData.map(page =>
+        <a class="px-2 relative group" href={page.url} style={isCurrent(page)}>
+          <AccentBlock position="bottom" animate />
+          {page.name}
+        </a>
+      )}
+		</nav>
+	</div>
+</header>

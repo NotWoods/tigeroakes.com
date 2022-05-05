@@ -1,12 +1,20 @@
+---
+export interface Props {
+  outline?: boolean;
+  width?: number;
+  height?: number;
+}
+
+const { outline = false, width = 160, height = 28 } = Astro.props as Props;
+---
+
 <h1 class="logo__heading">
   <a class="logo" href="/">
-    <svg class="logo__icon icon animate" width="{{ .width | default 160 }}" height="{{ .height | default 28 }}" viewBox="0 2 80 14">
+    <svg class="logo__icon icon animate" width={width} height={height} viewBox="0 2 80 14">
       <title>Tiger Oakes</title>
       <rect class="background" width="12" height="12" x="2" y="2" fill="#e67237"/>
       <g fill="none" stroke="#032030">
-        {{ if (.outline | default false) }}
-        <rect class="" width="13" height="13" x="1.5" y="1.5"/>
-        {{ end }}
+        {outline && <rect width="13" height="13" x="1.5" y="1.5" />}
         <circle class="eye" cx="5" cy="6" r="1.5"/>
         <circle class="eye" cx="11" cy="6" r="1.5"/>
         <path class="eye-closed" d="M3 6h4"/>
@@ -46,3 +54,48 @@
     </svg>
   </a>
 </h1>
+
+<style>
+  @keyframes open {
+    from {
+      visibility: visible;
+    }
+    50% {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes closed {
+    from {
+      visibility: hidden;
+    }
+    50% {
+      visibility: visible;
+    }
+    to {
+      visibility: hidden;
+    }
+  }
+  @keyframes wire {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .text path {
+      stroke-dasharray: 25;
+      stroke-dashoffset: 25;
+      animation: wire 1s linear forwards;
+    }
+    .eye,
+    .eye-closed {
+      animation: open 0.5s steps(3, jump-none) 2.5s both;
+    }
+    .eye-closed {
+      animation-name: closed;
+    }
+  }
+</style>

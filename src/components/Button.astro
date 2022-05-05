@@ -1,0 +1,14 @@
+---
+export interface Props {
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const { href, type = 'button', class: className } = Astro.props as Props;
+const classes = `button relative shadow-sm px-6 py-2 text-center whitespace-nowrap ${className}`;
+---
+
+{href
+  ? <a href={href} class={classes}><slot /></a>
+  : <button type={type} class={classes}><slot /></button>}
