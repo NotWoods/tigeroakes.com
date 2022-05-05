@@ -2,7 +2,7 @@ assets/css/highlight.css
 assets/css/base/font.css
 assets/css/base/font-extra.css
 layouts/partials/**/*.css
-content/posts/javascript-events/
+src/pages/posts/javascript-events/
 _gen
 public
 node_modules
