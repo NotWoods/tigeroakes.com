@@ -3,9 +3,11 @@ export interface Props {
   class?: string;
 }
 
+export const classes = 'text-3xl border-b py-1 uppercase';
+
 const { class: className } = Astro.props as Props;
 ---
 
-<h2 class:list={['text-3xl border-b py-1 mb-8 uppercase', className]}>
+<h2 class:list={[classes, className]}>
   <slot />
 </h2>

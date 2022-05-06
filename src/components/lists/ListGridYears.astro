@@ -1,4 +1,5 @@
 ---
+import { groupBy } from "../../scripts/group";
 import ListGrid, { Item } from "./ListGrid.astro";
 
 export interface Props {
@@ -8,13 +9,7 @@ export interface Props {
 const { items } = Astro.props as Props;
 
 function groupByYear(): readonly { year: number, items: readonly Item[] }[] {
-  const itemsByYear = new Map<number, Item[]>();
-	for (const item of items) {
-		const { year } = item.date;
-		const posts = itemsByYear.get(year) ?? [];
-		posts.push(item);
-		itemsByYear.set(year, posts);
-	}
+  const itemsByYear = groupBy(items, (item) => item.date.year);
 	return Array.from(itemsByYear).map(([year, items]) => ({ year, items }));
 }
 

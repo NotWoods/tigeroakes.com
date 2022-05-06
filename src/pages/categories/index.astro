@@ -1,0 +1,23 @@
+---
+import CollectionListLayout from '../../components/collection/CollectionListLayout.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+import { getStaticPaths } from './[category].astro';
+
+const paths = await getStaticPaths();
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Categories" />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <CollectionListLayout
+      collection="Categories"
+      tags={paths.map(({ params, props }) => ({
+        url: `/categories/${params.category}`,
+        name: props.category,
+      }))}
+    />
+  </body>
+</html>

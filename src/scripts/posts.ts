@@ -26,18 +26,25 @@ export async function loadPosts(
 ) {
   const allPosts = await input;
   const formattedPosts = allPosts.map((post) => {
-    if (!post.frontmatter.date) {
-      console.warn('No date found for post', post.url);
-    }
     const formattedPost: Post = {
       ...post,
-      date: dateFromString(post.frontmatter.date),
+      date: post.frontmatter.date
+        ? dateFromString(post.frontmatter.date)
+        : undefined,
     };
     return formattedPost;
   });
-  formattedPosts.sort(
-    (a, b) => Temporal.PlainDate.compare(a.date, b.date) * -1
-  );
+  formattedPosts.sort((a, b) => {
+    if (a.date && b.date) {
+      return Temporal.PlainDate.compare(a.date, b.date) * -1;
+    } else if (a.date) {
+      return -1;
+    } else if (b.date) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
   return formattedPosts;
 }
 

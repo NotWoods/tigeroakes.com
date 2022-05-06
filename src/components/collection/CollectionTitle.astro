@@ -1,0 +1,38 @@
+---
+import { classes as sectionTitleClasses } from '../lists/SectionTitle.astro';
+import { classes as articleTitleClasses } from '../article/ArticleTitle.astro';
+import Button from '../Button.astro';
+import CollectionHeader from './CollectionHeader.astro';
+
+export interface Props {
+  collection: string;
+  tag: string;
+}
+
+const { collection, tag } = Astro.props as Props;
+---
+
+<h2 class="flex-1">
+  <a
+    class={`${sectionTitleClasses} mb-2 inline-block`}
+    href={`/${collection.toLowerCase()}/`}
+  >
+    {collection}</a
+  ><span class={`${articleTitleClasses} normal-case`}>: {tag}</span>
+</h2>
+
+<Button
+  class="ml-auto"
+  href={`/${collection.toLowerCase()}/${tag.toLowerCase()}/index.xml`}
+  title="RSS"
+>
+  <svg aria-label="RSS" role="img" width="40" height="40" viewBox="0 0 512 512">
+    <rect width="512" height="512" fill="#e67237"></rect>
+    <circle cx="145" cy="367" r="35" fill="#ebeeef"></circle>
+    <path
+      fill="none"
+      stroke="#ebeeef"
+      stroke-width="60"
+      d="M109 241c89 0 162 73 162 162m114 0c0-152-124-276-276-276"></path>
+  </svg>
+</Button>

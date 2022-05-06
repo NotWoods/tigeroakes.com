@@ -3,17 +3,25 @@ export interface Props {
   href?: string | URL;
   type?: 'button' | 'submit' | 'reset';
   class?: string;
+  /**
+   * Indicates this is an icon button
+   */
+  title?: string;
 }
 
-const { href, type = 'button', class: className } = Astro.props as Props;
-const classes = `button relative shadow-sm px-6 py-2 text-center whitespace-nowrap ${className}`;
+const { class: className, ...props } = Astro.props as Props;
+const classes = ['button relative shadow-sm text-center whitespace-nowrap'];
+if (!props.title) {
+  classes.push('px-6 py-2');
+}
+classes.push(className);
 ---
 
-{href
-  ? <a href={href} class={classes}><slot /></a>
-  : <button type={type} class={classes}><slot /></button>}
+{props.href
+  ? <a {...props} class:list={classes}><slot /></a>
+  : <button type="button" {...props} class:list={classes}><slot /></button>}
 
-<style>
+<style is:global>
   .button::after {
     @apply absolute inset-0 border-2 border-current shadow-md;
     content: "";
