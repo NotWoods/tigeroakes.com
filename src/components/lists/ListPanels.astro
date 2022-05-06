@@ -1,6 +1,7 @@
 ---
 import ArticleDescription from "../article/ArticleDescription.astro";
 import ArticleHeaderContainer from "../article/ArticleHeaderContainer.astro";
+import ProjectIcon from "../article/ProjectIcon.astro";
 import Tags from "../article/Tags.astro";
 import type { ButtonProps } from "../Buttons.astro";
 import ItemTitle from "./ItemTitle.astro";
@@ -14,6 +15,7 @@ interface Item {
   href: URL | string;
   description?: string;
 
+  logo?: string;
   accent?: string;
   backgroundImage?: string;
 
@@ -26,10 +28,12 @@ const { items } = Astro.props as Props;
 <main class="flex flex-wrap p-2 gap-4" style="--initial-block-scale: 1">
   {items.map((item, i) => (
     <ArticleHeaderContainer
-      class="project-panel flex flex-col px-8 py-6"
+      as="article"
+      class="project-panel flex flex-col px-4 py-2"
       style={`animation-delay:${i * 0.1}ms`}
       accent={item.accent} backgroundImage={item.backgroundImage} buttons={item.buttons}>
-      <ItemTitle href={item.href}>{item.title}</ItemTitle>
+      <ProjectIcon logo={item.logo} />
+      <ItemTitle class="mt-6" href={item.href}>{item.title}</ItemTitle>
       <ArticleDescription>{item.description}</ArticleDescription>
       <Tags class="mt-auto text-sm" tags={item.tags} />
     </ArticleHeaderContainer>

@@ -1,0 +1,26 @@
+---
+import { projectButtons } from '../../scripts/projects';
+import ArticleDescription from '../article/ArticleDescription.astro';
+import ArticleHeaderContainer from '../article/ArticleHeaderContainer.astro';
+import Tags from '../article/Tags.astro';
+import ItemTitle from './ItemTitle.astro';
+
+export interface Props {
+  class?: string;
+  project: {
+    url: string | URL;
+    frontmatter: any;
+  };
+}
+
+const { class: className, project } = Astro.props as Props;
+const { title, description, tech, color } = project.frontmatter;
+const buttons = projectButtons(project.frontmatter.links, project.url);
+---
+
+<ArticleHeaderContainer as="article" class={className} accent={color} {buttons}>
+  <slot name="start" />
+  <ItemTitle href={project.url}>{title}</ItemTitle>
+  <Tags tags={tech} />
+  <ArticleDescription>{description}</ArticleDescription>
+</ArticleHeaderContainer>

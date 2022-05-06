@@ -3,19 +3,7 @@ import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
 import ListPanels from '../../components/lists/ListPanels.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-
-function buttonLink(
-  link: { title: string; link?: string },
-  page: { url: string }
-) {
-  switch (link.title) {
-    case 'Details':
-    case 'Case study':
-      return page.url;
-    default:
-      return link.link;
-  }
-}
+import { projectButtons } from '../../scripts/projects';
 
 const allPages = await Astro.glob('./*/*.md');
 allPages.sort((a, b) => {
@@ -28,10 +16,7 @@ const projects = allPages.map((page) => ({
   description: page.frontmatter.subtitle,
   href: page.url,
   accent: page.frontmatter.color,
-  buttons: page.frontmatter.links?.map((link) => ({
-    title: link.title,
-    href: buttonLink(link, page),
-  })),
+  buttons: projectButtons(page.frontmatter.links, page.url),
   tags: page.frontmatter.tech,
 }));
 ---

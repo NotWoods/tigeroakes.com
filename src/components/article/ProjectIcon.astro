@@ -1,0 +1,10 @@
+---
+export interface Props {
+  logo?: string;
+}
+
+const { logo } = Astro.props as Props;
+---
+
+<img class="grow-0 shrink-0 mx-auto" src={logo} alt="" width="128" height="128"
+/>

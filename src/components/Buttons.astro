@@ -2,7 +2,7 @@
 import Button from './Button.astro';
 
 export interface ButtonProps {
-  href: string;
+  href: string | URL;
   title: string;
 }
 
@@ -11,7 +11,7 @@ export interface Props {
   class?: string;
 }
 
-const { buttons, class: className } = Astro.props as Props;
+const { buttons = [], class: className } = Astro.props as Props;
 
 ---
 

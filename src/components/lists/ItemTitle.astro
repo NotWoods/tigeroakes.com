@@ -4,13 +4,14 @@ import { classes } from '../article/ArticleTitle.astro';
 
 export interface Props {
   href: URL | string;
+  class?: string;
 }
 
-const { href } = Astro.props as Props;
+const props = Astro.props as Props;
 ---
 
-<h3 class={classes}>
-  <a class="relative group" {href}>
+<h3 class:list={[classes, props.class]}>
+  <a class="relative group" href={props.href}>
     <AccentBlock position="left" animate />
     <slot />
   </a>

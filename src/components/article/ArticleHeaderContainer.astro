@@ -1,7 +1,9 @@
 ---
-import Buttons, { ButtonProps } from '../Buttons.astro';
+import type { ButtonProps } from '../Buttons.astro';
+import ArticleHeaderContainerContent from './ArticleHeaderContainerContent.astro';
 
 export interface Props {
+  as?: 'header' | 'article';
   class?: string;
   style?: string;
   accent?: string;
@@ -10,6 +12,7 @@ export interface Props {
 }
 
 const {
+  as = 'header',
   buttons,
   accent,
   backgroundImage,
@@ -18,8 +21,11 @@ const {
 } = Astro.props as Props;
 
 const classes = [
-  'p-8 text-slate-200 bg-center bg-cover bg-no-repeat',
+  'text-slate-200 bg-center bg-cover bg-no-repeat',
 ];
+if (as === 'header') {
+  classes.push('p-4 grid-area-header');
+}
 if (backgroundImage) {
   classes.push('text-shadow');
 }
@@ -32,20 +38,21 @@ const styles = [
   backgroundImage && `background-image: url(${backgroundImage})`,
   style,
 ].filter(Boolean);
+
+const props = {
+  class: classes.join(' '),
+  style: styles.length > 0 ? styles.join(';') : undefined,
+}
 ---
 
-<header
-  class={classes.join(' ')}
-  style={styles.length > 0 ? styles.join(';') : undefined}
->
-  <slot />
-  <slot name="buttons">
-    {buttons && <Buttons class="text-lg" buttons={buttons} />}
-  </slot>
-</header>
-
-<style>
-  header {
-    grid-area: header;
-  }
-</style>
+{as === 'article'
+  ? <article {...props}>
+      <ArticleHeaderContainerContent {buttons}>
+        <slot />
+      </ArticleHeaderContainerContent>
+    </article>
+  : <header {...props}>
+      <ArticleHeaderContainerContent {buttons}>
+        <slot />
+     </ArticleHeaderContainerContent>
+    </header>}

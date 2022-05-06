@@ -8,6 +8,8 @@ import Button from '../components/Button.astro';
 import profile from './profile.jpg';
 import ListFlat from '../components/lists/ListFlat.astro';
 import { loadPosts, Post } from '../scripts/posts';
+import ProjectFeature from '../components/lists/ProjectFeature.astro';
+import SectionTitle from '../components/lists/SectionTitle.astro';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
 const featured = allPosts.filter((post) =>
@@ -24,6 +26,14 @@ function formatPost(post: Post) {
     pictureSrc: post.frontmatter.banner,
   };
 }
+
+const projects = (
+  await Promise.all([
+    Astro.glob('./projects/mozilla-firefox/index.md'),
+    Astro.glob('./projects/google/index.md'),
+    Astro.glob('./projects/big-island-buses/index.md'),
+  ])
+).map((list) => list[0]);
 ---
 
 <html lang="en">
@@ -86,8 +96,29 @@ function formatPost(post: Post) {
       />
     </section>
 
-    <section id="featured-projects" class="max-w-site mx-auto px-4"></section>
+    <section id="featured-projects" style="--initial-block-scale: 1">
+      <ProjectFeature project={projects[0]}>
+        <SectionTitle slot="start">Featured projects</SectionTitle>
+      </ProjectFeature>
+      <ProjectFeature project={projects[1]} />
+      <ProjectFeature project={projects[2]} />
+    </section>
+
+    <div class="my-6 text-center">
+      <Button
+        class="inline-block bg-slate-200 text-slate-800 text-2xl"
+        href="/projects/"
+      >
+        See more projects
+      </Button>
+    </div>
 
     <HomeContact />
   </body>
 </html>
+
+<style is:global>
+  .buttons {
+    justify-content: start;
+  }
+</style>
