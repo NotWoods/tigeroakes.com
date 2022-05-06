@@ -10,5 +10,6 @@ export default defineConfig({
   integrations: [preact(), tailwind({ config: { applyBaseStyles: false } })],
   markdown: {
     drafts: process.env.NETLIFY_CONTEXT === 'deploy-preview',
+    syntaxHighlight: 'prism',
   },
 });

@@ -81,9 +81,10 @@ const config = {
                 content: 'none',
               },
               pre: {
+                fontSize: 'inherit',
                 whiteSpace: 'pre-wrap',
-                marginLeft: theme('-spacing.4'),
-                marginRight: theme('-spacing.4'),
+                marginLeft: '-1rem',
+                marginRight: '-1rem',
                 borderRadius: '0',
               },
               img: {
