@@ -1,24 +1,32 @@
 ---
-import { projectButtons } from '../../scripts/projects';
+import { projectButtons, PROJECT_PATH } from '../../scripts/projects';
 import ArticleDescription from '../article/ArticleDescription.astro';
 import ArticleHeaderContainer from '../article/ArticleHeaderContainer.astro';
 import Tags from '../article/Tags.astro';
 import ItemTitle from './ItemTitle.astro';
 
 export interface Props {
-  class?: string;
   project: {
-    url: string | URL;
+    url: string;
     frontmatter: any;
   };
 }
 
-const { class: className, project } = Astro.props as Props;
+const { project } = Astro.props as Props;
 const { title, description, tech, color } = project.frontmatter;
+const [, projectId] = project.url.match(PROJECT_PATH);
 const buttons = projectButtons(project.frontmatter.links, project.url);
+const backgroundImage = `/assets/projects/${projectId}/background.jpg`;
 ---
 
-<ArticleHeaderContainer as="article" class={className} accent={color} {buttons}>
+<ArticleHeaderContainer
+  as="article"
+  class="py-10"
+  buttonsClass="justify-start"
+  accent={color}
+  {buttons}
+  {backgroundImage}
+>
   <slot name="start" />
   <ItemTitle href={project.url}>{title}</ItemTitle>
   <Tags tags={tech} />

@@ -5,6 +5,7 @@ weight: 20 # Bottom of page
 subtitle: 9th grade physics game
 color: '#28a0c5'
 fallbackcolor: '#161616'
+logo: logo.png
 links:
   - title: Details
   - title: Download

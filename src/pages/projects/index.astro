@@ -21,10 +21,10 @@ const projects = allPages.map((page) => {
     accent: page.frontmatter.color,
     buttons: projectButtons(page.frontmatter.links, page.url),
     tags: page.frontmatter.tech,
-    logo: `/aseets/projects/${projectId}/${
+    logo: `/assets/projects/${projectId}/${
       page.frontmatter.logo ?? 'logo.svg'
     }`,
-    backgroundImage: `/aseets/projects/${projectId}/background.jpg`,
+    backgroundImage: `/assets/projects/${projectId}/background.jpg`,
   };
 });
 ---

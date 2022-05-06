@@ -21,4 +21,4 @@ For this application, I added integration with Mapbox to use their satellite dat
 
 ---
 
-![Terrain heightmap model I created for the application](heightmap.*)
+![Terrain heightmap model I created for the application](heightmap.png)

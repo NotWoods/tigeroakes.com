@@ -5,6 +5,7 @@ subtitle: Library for latitude/longitude math
 weight: 5
 color: '#5575FF'
 fallbackcolor: '#051022'
+logo: logo.png
 links:
   - title: Details
   - title: Code

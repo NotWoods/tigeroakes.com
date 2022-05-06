@@ -26,4 +26,4 @@ Other tricks are used to mask loading times. When a portfolio item is opened, th
 
 ---
 
-![Screenshot](screenshot.*)
+![Screenshot](screenshot.png)

@@ -16,8 +16,8 @@ const formattedProps = {
   description: content.subtitle,
   tags: content.tech,
   accent: content.color,
-  logo: `/aseets/projects/${projectId}/${content.logo ?? 'logo.svg'}`,
-  backgroundImage: `/aseets/projects/${projectId}/background.jpg`,
+  logo: `/assets/projects/${projectId}/${content.logo ?? 'logo.svg'}`,
+  backgroundImage: `/assets/projects/${projectId}/background.jpg`,
   buttons: content.links
     ?.filter((link) => link.title !== 'Details' && link.title !== 'Case study')
     ?.map((link) => ({

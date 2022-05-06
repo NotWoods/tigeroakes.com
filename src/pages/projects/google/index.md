@@ -57,4 +57,4 @@ Armed with a better tool for analyzing the Android app, the Google Chrome team i
 
 ---
 
-![Screenshot](screenshot.*)
+![Screenshot](screenshot.png)

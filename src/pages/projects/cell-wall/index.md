@@ -5,6 +5,7 @@ weight: 4
 subtitle: Interactive multi-device display art piece.
 color: '#429A46'
 fallbackcolor: '#938E8B'
+logo: logo.png
 links:
   - title: Details
   - title: Code

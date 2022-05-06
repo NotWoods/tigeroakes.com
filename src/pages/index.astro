@@ -98,7 +98,7 @@ const projects = (
 
     <section id="featured-projects" style="--initial-block-scale: 1">
       <ProjectFeature project={projects[0]}>
-        <SectionTitle slot="start">Featured projects</SectionTitle>
+        <SectionTitle slot="start" class="mb-6">Featured projects</SectionTitle>
       </ProjectFeature>
       <ProjectFeature project={projects[1]} />
       <ProjectFeature project={projects[2]} />
@@ -116,9 +116,3 @@ const projects = (
     <HomeContact />
   </body>
 </html>
-
-<style is:global>
-  .buttons {
-    justify-content: start;
-  }
-</style>
