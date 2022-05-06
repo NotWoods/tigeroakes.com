@@ -3,8 +3,11 @@ import ArticleLayout from '../components/article/ArticleLayout.astro';
 import ProjectHeader from '../components/article/ProjectHeader.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import { dateFromString } from '../scripts/date';
+import { PROJECT_PATH } from '../scripts/projects';
 
 const { content } = Astro.props;
+
+const [, projectId] = Astro.canonicalURL.pathname.match(PROJECT_PATH);
 
 const formattedProps = {
   title: content.title,
@@ -13,6 +16,8 @@ const formattedProps = {
   description: content.subtitle,
   tags: content.tech,
   accent: content.color,
+  logo: `/aseets/projects/${projectId}/${content.logo ?? 'logo.svg'}`,
+  backgroundImage: `/aseets/projects/${projectId}/background.jpg`,
   buttons: content.links
     ?.filter((link) => link.title !== 'Details' && link.title !== 'Case study')
     ?.map((link) => ({

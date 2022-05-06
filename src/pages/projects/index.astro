@@ -3,7 +3,7 @@ import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
 import ListPanels from '../../components/lists/ListPanels.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-import { projectButtons } from '../../scripts/projects';
+import { projectButtons, PROJECT_PATH } from '../../scripts/projects';
 
 const allPages = await Astro.glob('./*/*.md');
 allPages.sort((a, b) => {
@@ -11,14 +11,22 @@ allPages.sort((a, b) => {
   const bWeight = b.frontmatter.weight || Infinity;
   return aWeight - bWeight;
 });
-const projects = allPages.map((page) => ({
-  title: page.frontmatter.title,
-  description: page.frontmatter.subtitle,
-  href: page.url,
-  accent: page.frontmatter.color,
-  buttons: projectButtons(page.frontmatter.links, page.url),
-  tags: page.frontmatter.tech,
-}));
+
+const projects = allPages.map((page) => {
+  const [, projectId] = page.url.match(PROJECT_PATH);
+  return {
+    title: page.frontmatter.title,
+    description: page.frontmatter.subtitle,
+    href: page.url,
+    accent: page.frontmatter.color,
+    buttons: projectButtons(page.frontmatter.links, page.url),
+    tags: page.frontmatter.tech,
+    logo: `/aseets/projects/${projectId}/${
+      page.frontmatter.logo ?? 'logo.svg'
+    }`,
+    backgroundImage: `/aseets/projects/${projectId}/background.jpg`,
+  };
+});
 ---
 
 <html lang="en">

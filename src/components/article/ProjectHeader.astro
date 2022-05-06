@@ -22,7 +22,7 @@ const { title, description, logo, tags, ...props } = Astro.props as Props;
 ---
 
 <ArticleHeaderContainer {...props}>
-  <div class="flex flex-wrap items-start max-w-site mx-auto px-4 gap-x-16">
+  <div class="flex flex-wrap items-start gap-x-16">
     <ProjectIcon {logo} />
     <div class="flex-1 basis-36 pt-5">
       <ArticleTitle>{title}</ArticleTitle>

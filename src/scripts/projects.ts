@@ -4,6 +4,8 @@ interface Link {
   link?: string;
 }
 
+export const PROJECT_PATH = /^\/projects\/([-\w]+)/;
+
 export function projectButtons(links: readonly Link[], pageUrl: string | URL) {
   return links?.map((link) => ({
     title: link.title,

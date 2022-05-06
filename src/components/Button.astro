@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const { class: className, ...props } = Astro.props as Props;
-const classes = ['button relative shadow-sm text-center whitespace-nowrap'];
+const classes = ['button relative shadow text-center whitespace-nowrap'];
 if (!props.title) {
   classes.push('px-6 py-2');
 }
@@ -23,7 +23,7 @@ classes.push(className);
 
 <style is:global>
   .button::after {
-    @apply absolute inset-0 border-2 border-current shadow-md;
+    @apply absolute inset-0 border-2 border-current shadow-lg;
     content: "";
     opacity: 0;
   }
