@@ -1,6 +1,6 @@
-import { Intl, Temporal } from '@js-temporal/polyfill';
+import { Intl } from '@js-temporal/polyfill';
 import { ComponentChild, Fragment } from 'preact';
-import { formatToPartsMap } from '../../scripts/date';
+import { dateFromString, formatToPartsMap } from '../../scripts/date';
 
 const resumeFormatter = new Intl.DateTimeFormat('en-CA', {
   year: 'numeric',
@@ -8,10 +8,7 @@ const resumeFormatter = new Intl.DateTimeFormat('en-CA', {
 });
 
 function formatResumeDate(date: string) {
-  const parts = formatToPartsMap(
-    resumeFormatter,
-    Temporal.PlainDate.from(date)
-  );
+  const parts = formatToPartsMap(resumeFormatter, dateFromString(date));
   return `${parts.get('year')}-${parts.get('month')}`;
 }
 
@@ -19,7 +16,7 @@ function formatIsoDate(date: string | undefined) {
   if (!date) {
     return 'P1Y';
   }
-  return Temporal.PlainDate.from(date).toString();
+  return dateFromString(date).toString();
 }
 
 export const ExperienceDate = ({ startDate, endDate }) => {

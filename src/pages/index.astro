@@ -38,7 +38,6 @@ async function loadProject(
   const { default: backgroundImage } = await projectAssets[
     `./projects/${projectId}/background.jpg`
   ]();
-  console.log(project);
   return { project, backgroundImage };
 }
 

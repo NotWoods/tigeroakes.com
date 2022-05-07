@@ -1,6 +1,6 @@
 ---
 import { Intl, Temporal } from '@js-temporal/polyfill';
-import { formatToPartsMap } from '../../scripts/date';
+import { dateFromString, formatToPartsMap } from '../../scripts/date';
 
 export interface Props {
   date: string | Temporal.PlainDate;
@@ -15,7 +15,7 @@ const readableFormatter = new Intl.DateTimeFormat('en-CA', {
 
 const parts = formatToPartsMap(
   readableFormatter,
-  Temporal.PlainDate.from(date)
+  typeof date === 'string' ? dateFromString(date) : undefined
 );
 ---
 
