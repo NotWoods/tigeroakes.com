@@ -12,21 +12,37 @@ allPages.sort((a, b) => {
   return aWeight - bWeight;
 });
 
-const projects = allPages.map((page) => {
-  const [, projectId] = page.url.match(PROJECT_PATH);
-  return {
-    title: page.frontmatter.title,
-    description: page.frontmatter.subtitle,
-    href: page.url,
-    accent: page.frontmatter.color,
-    buttons: projectButtons(page.frontmatter.links, page.url),
-    tags: page.frontmatter.tech,
-    logo: `/assets/projects/${projectId}/${
-      page.frontmatter.logo ?? 'logo.svg'
-    }`,
-    backgroundImage: `/assets/projects/${projectId}/background.jpg`,
-  };
-});
+const assets = import.meta.glob('./*/{logo,background}.{svg,png,jpg}');
+
+async function assetPath(...paths: string[]) {
+  for (const path of paths) {
+    const importer = assets[path];
+    if (importer) {
+      const { default: fullPath } = await importer();
+      return fullPath;
+    }
+  }
+  return undefined;
+}
+
+const projects = await Promise.all(
+  allPages.map(async (page) => {
+    const [, projectId] = page.url.match(PROJECT_PATH);
+    return {
+      title: page.frontmatter.title,
+      description: page.frontmatter.subtitle,
+      href: page.url,
+      accent: page.frontmatter.color,
+      buttons: projectButtons(page.frontmatter.links, page.url),
+      tags: page.frontmatter.tech,
+      logo: await assetPath(
+        `./${projectId}/logo.svg`,
+        `./${projectId}/logo.png`
+      ),
+      backgroundImage: await assetPath(`./${projectId}/background.jpg`),
+    };
+  })
+);
 ---
 
 <html lang="en">

@@ -10,6 +10,7 @@ import ListFlat from '../components/lists/ListFlat.astro';
 import { loadPosts, Post } from '../scripts/posts';
 import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
+import { PROJECT_PATH } from '../scripts/projects';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
 const featured = allPosts.filter((post) =>
@@ -27,13 +28,25 @@ function formatPost(post: Post) {
   };
 }
 
-const projects = (
-  await Promise.all([
-    Astro.glob('./projects/mozilla-firefox/index.md'),
-    Astro.glob('./projects/google/index.md'),
-    Astro.glob('./projects/big-island-buses/index.md'),
-  ])
-).map((list) => list[0]);
+const projectAssets = import.meta.glob('./projects/*/background.jpg');
+
+async function loadProject(
+  projectGlob: Promise<readonly { url: string; frontmatter: any }[]>
+) {
+  const [project] = await projectGlob;
+  const [, projectId] = project.url.match(PROJECT_PATH);
+  const { default: backgroundImage } = await projectAssets[
+    `./projects/${projectId}/background.jpg`
+  ]();
+  console.log(project);
+  return { project, backgroundImage };
+}
+
+const projects = await Promise.all([
+  loadProject(Astro.glob('./projects/mozilla-firefox/index.md')),
+  loadProject(Astro.glob('./projects/google/index.md')),
+  loadProject(Astro.glob('./projects/big-island-buses/index.md')),
+]);
 ---
 
 <html lang="en">
@@ -97,11 +110,11 @@ const projects = (
     </section>
 
     <section id="featured-projects" style="--initial-block-scale: 1">
-      <ProjectFeature project={projects[0]}>
+      <ProjectFeature {...projects[0]}>
         <SectionTitle slot="start" class="mb-6">Featured projects</SectionTitle>
       </ProjectFeature>
-      <ProjectFeature project={projects[1]} />
-      <ProjectFeature project={projects[2]} />
+      <ProjectFeature {...projects[1]} />
+      <ProjectFeature {...projects[2]} />
     </section>
 
     <div class="my-6 text-center">

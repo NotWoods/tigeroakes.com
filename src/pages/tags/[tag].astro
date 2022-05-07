@@ -13,7 +13,10 @@ export async function getStaticPaths() {
   const allPages = await loadPosts(
     Astro.glob('../{posts,projects,talks}/*/*.md')
   );
-  const tagToPages = groupBy(allPages, (page) => page.frontmatter.tags ?? []);
+  const tagToPages = groupBy(
+    allPages,
+    (page) => page.frontmatter.tags ?? (page.frontmatter as any).tech ?? []
+  );
 
   return Array.from(tagToPages).map(([tag, pages]) => {
     const props: Props = { tag, pages };
