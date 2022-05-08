@@ -1,0 +1,41 @@
+---
+export interface Props {
+  src: string;
+  ext?: string;
+  width?: string | number;
+  height?: string | number;
+}
+
+const { src, ext, width, height } = Astro.props as Props;
+
+function mimeType(source: string) {
+  const extensionIndex = source.lastIndexOf('.');
+  const extension = source.substring(extensionIndex);
+  switch (extension) {
+    case '.mov':
+      return 'video/quicktime';
+    case '.m4v':
+    case '.mp4':
+      return 'video/mp4';
+    case '.webm':
+      return 'video/webm';
+    default:
+      throw new Error(`Unknown video extension: ${source}`);
+  }
+}
+
+let sourceList = [src]
+if (ext) {
+  sourceList = ext.split(',').map(ext => src.replace('.*', ext.trim()))
+}
+---
+
+<video
+  autoplay
+  loop
+  muted
+  {width}
+  {height}
+>
+  {sourceList.map((source) => <source src={source} type={mimeType(source)} />)}
+</video>
