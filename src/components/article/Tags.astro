@@ -16,11 +16,11 @@ const projects = [];
 ---
 
 <ul class={`leading-normal opacity-80 ${className}`}>
-  {elsewhere && <li class="tag inline font-bold">{elsewhere}</li>}
+  {elsewhere && <li class="pipe-item inline font-bold">{elsewhere}</li>}
   {tags.map(tag => (
-    <li class="tag inline"><a class="hover:underline" href={href(tag)}>{tag}</a></li>
+    <li class="pipe-item inline"><a class="hover:underline" href={href(tag)}>{tag}</a></li>
   ))}
   {projects.map(project => (
-    <li class="tag inline"><a class="hover:underline" href={project.url}>{project.name}</a></li>
+    <li class="pipe-item inline"><a class="hover:underline" href={project.url}>{project.name}</a></li>
   ))}
 </ul>

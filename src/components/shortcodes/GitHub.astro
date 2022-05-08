@@ -1,11 +1,13 @@
 ---
+import ExternalLink from './ExternalLink.astro';
+
 export interface Props {
   repo: string;
   stars?: boolean;
 }
 
 const { repo, stars } = Astro.props as Props;
-const repoTitle = repo.split('/').join('/<wbr>');
+const [user, repoName] = repo.split('/');
 
 async function queryJson() {
   const response = await fetch(`https://api.github.com/repos/${repo}`);
@@ -15,17 +17,18 @@ async function queryJson() {
 const { stargazers_count, description } = await queryJson();
 ---
 
-<a class="external-link" href={`https://github.com/${repo}`}>
+<ExternalLink href={`https://github.com/${repo}`}>
   <img
-    class="external-link__logo"
+    class="float-right"
+    slot="icon"
     loading="lazy"
     src="/contact/github.svg"
     alt="GitHub"
     width="20"
     height="20"
   />
-  <h6 class="external-link__title" set:html={repoTitle}></h6>
-  <span class="external-link__about">
+  <Fragment slot="title">{user}/<wbr />{repoName}</Fragment>
+  <Fragment slot="about">
     {stars ? `${stargazers_count} stars` : description}
-  </span>
-</a>
+  </Fragment>
+</ExternalLink>

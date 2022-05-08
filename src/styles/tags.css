@@ -1,7 +1,7 @@
-.tag::after {
+.pipe-item::after {
   content: " | ";
   margin: 0 0.2em;
 }
-.tag:last-child::after {
+.pipe-item:last-child::after {
   content: none;
 }
