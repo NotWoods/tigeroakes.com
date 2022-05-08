@@ -1,16 +1,16 @@
 ---
 // Component Imports
-import MainHead from '../components/meta/MainHead.astro';
 import BannerNav from '../components/BannerNav.astro';
-import Logo from '../components/Logo.astro';
-import HomeContact from '../components/HomeContact.astro';
 import Button from '../components/Button.astro';
-import profile from './profile.jpg';
+import HomeContact from '../components/HomeContact.astro';
 import ListFlat from '../components/lists/ListFlat.astro';
-import { loadPosts, Post } from '../scripts/posts';
 import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
-import { PROJECT_PATH } from '../scripts/projects';
+import Logo from '../components/Logo.astro';
+import MainHead from '../components/meta/MainHead.astro';
+import { trailingSlash } from '../scripts/path';
+import { loadPosts, Post } from '../scripts/posts';
+import profile from './profile.jpg';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
 const featured = allPosts.filter((post) =>
@@ -23,22 +23,21 @@ function formatPost(post: Post) {
     description: post.frontmatter.description,
     date: post.date,
     tags: post.frontmatter.tags,
-    href: post.url,
+    href: trailingSlash(post.url),
     pictureSrc: post.frontmatter.banner,
   };
 }
-
-const projectAssets = import.meta.glob('./projects/*/background.jpg');
 
 async function loadProject(
   projectGlob: Promise<readonly { url: string; frontmatter: any }[]>
 ) {
   const [project] = await projectGlob;
-  const [, projectId] = project.url.match(PROJECT_PATH);
-  const { default: backgroundImage } = await projectAssets[
-    `./projects/${projectId}/background.jpg`
-  ]();
-  return { project, backgroundImage };
+  return {
+    project: {
+      url: trailingSlash(project.url),
+      frontmatter: project.frontmatter,
+    },
+  };
 }
 
 const projects = await Promise.all([

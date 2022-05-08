@@ -52,8 +52,16 @@ export function postAccentColor(tags: readonly string[] = []) {
   for (const tag of tags) {
     const color = tagColors[tag];
     if (color) {
-      return `--accent: ${color};`;
+      return color;
     }
   }
   return undefined;
+}
+
+export function accentStyles(accent: string | undefined) {
+  if (accent) {
+    return `--accent: ${accent};`;
+  } else {
+    return undefined;
+  }
 }

@@ -1,6 +1,6 @@
 ---
 import type { Temporal } from "@js-temporal/polyfill";
-import { postAccentColor } from "../../scripts/posts";
+import { accentStyles, postAccentColor } from "../../scripts/posts";
 import ArticleDescription from "../article/ArticleDescription.astro";
 import Time from "../article/Time.astro";
 import Tags from "../article/Tags.astro";
@@ -37,7 +37,7 @@ const { title, items } = Astro.props as Props;
 </div>
 <div class="grid grid-cols-2 gap-12 mb-8 max-w-site mx-auto px-4" style="--initial-block-scale: 0.5">
   {items.map(item => (
-    <article class="flex flex-col" style={postAccentColor(item.tags)}>
+    <article class="flex flex-col" style={accentStyles(postAccentColor(item.tags))}>
       {item.pictureSrc && <ItemImage src={item.pictureSrc} alt={item.pictureAlt} height={188} />}
       <Time date={item.date} />
       <ItemTitle href={item.href}>{item.title}</ItemTitle>

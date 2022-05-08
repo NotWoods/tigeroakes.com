@@ -1,25 +1,22 @@
 ---
 import GithubSlugger from 'github-slugger';
-import MainHead from '../../components/meta/MainHead.astro';
-import { loadPosts, Post } from '../../scripts/posts';
-import { groupBy } from '../../scripts/group';
 import CollectionLayout from '../../components/collection/CollectionLayout.astro';
+import type { Item } from '../../components/lists/ListFlat.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+import { getCollectionPages } from '../../scripts/collection';
 
 export interface Props {
   tag: string;
-  pages: readonly Post[];
+  pages: readonly Item[];
 }
 
 export async function getStaticPaths() {
-  const slugger = new GithubSlugger();
-  const allPages = await loadPosts(
-    Astro.glob('../{posts,projects,talks}/*/*.md')
-  );
-  const tagToPages = groupBy(
-    allPages,
-    (page) => page.frontmatter.tags ?? (page.frontmatter as any).tech ?? []
+  const tagToPages = await getCollectionPages(
+    Astro.glob('../{posts,talks}/*/*.md'),
+    Astro.glob('../projects/*/*.md')
   );
 
+  const slugger = new GithubSlugger();
   return Array.from(tagToPages).map(([tag, pages]) => {
     const props: Props = { tag, pages };
     return { props, params: { tag: slugger.slug(tag) } };
@@ -27,17 +24,6 @@ export async function getStaticPaths() {
 }
 
 const { tag, pages } = Astro.props as Props;
-
-function formatPost(post: Post) {
-  return {
-    title: post.frontmatter.title,
-    description: post.frontmatter.description,
-    date: post.date,
-    tags: post.frontmatter.tags,
-    href: post.url,
-    pictureSrc: post.frontmatter.banner,
-  };
-}
 ---
 
 <html lang="en">
@@ -46,6 +32,6 @@ function formatPost(post: Post) {
   </head>
 
   <body class="bg-slate-800 text-slate-200">
-    <CollectionLayout collection="Tags" {tag} items={pages.map(formatPost)} />
+    <CollectionLayout collection="Tags" {tag} items={pages} />
   </body>
 </html>

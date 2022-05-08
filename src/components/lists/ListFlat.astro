@@ -1,6 +1,6 @@
 ---
 import type { Temporal } from "@js-temporal/polyfill";
-import { postAccentColor } from "../../scripts/posts";
+import { accentStyles } from "../../scripts/posts";
 import Time from "../article/Time.astro";
 import ItemImage from "./ItemImage.astro";
 import ItemTitle from "./ItemTitle.astro";
@@ -14,11 +14,27 @@ export interface Props {
 export interface Item {
   title: string;
   href: URL | string;
-  date: Temporal.PlainDate;
+  date?: Temporal.PlainDate;
 
   pictureSrc?: string;
   pictureAlt?: string;
-  tags?: readonly string[];
+  accent?: string;
+}
+
+const TYPE_PATH = /^\/(posts|projects|talks)\/[-\w]+/;
+
+function formatType(item: Item) {
+  const suffix = item.date ? ' | ' : '';
+  const path = typeof item.href === 'string' ? item.href : item.href.pathname;
+  const [, type] = path.match(TYPE_PATH)
+  switch (type) {
+    case 'posts':
+      return `Blog post${suffix}`;
+    case 'projects':
+      return `Project${suffix}`;
+    case 'talks':
+      return `Talk${suffix}`;
+  }
 }
 
 const { title, items } = Astro.props as Props;
@@ -26,9 +42,9 @@ const { title, items } = Astro.props as Props;
 {title && <SectionTitle>{title}</SectionTitle>}
 <ul class="mt-4">
   {items.map(item => (
-    <li class="clear-both mb-4" style={postAccentColor(item.tags)}>
+    <li class="clear-both mb-4" style={accentStyles(item.accent)}>
       {item.pictureSrc && <div class="float-right mt-2"><ItemImage src={item.pictureSrc} alt={item.pictureAlt} height={50} /></div>}
-      {item.date && <Time date={item.date} />}
+      <p class="text-sm">{formatType(item)}{item.date && <Time date={item.date} />}</p>
       <ItemTitle href={item.href}>{item.title}</ItemTitle>
     </li>
   ))}

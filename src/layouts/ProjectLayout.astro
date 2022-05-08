@@ -3,24 +3,8 @@ import ArticleLayout from '../components/article/ArticleLayout.astro';
 import ProjectHeader from '../components/article/ProjectHeader.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import { dateFromString } from '../scripts/date';
-import { PROJECT_PATH } from '../scripts/projects';
 
 const { content } = Astro.props;
-
-const [, projectId] = Astro.canonicalURL.pathname.match(PROJECT_PATH);
-const assets = import.meta.glob(
-  '../pages/projects/*/{logo,background}.{svg,png,jpg}'
-);
-async function assetPath(...paths: string[]) {
-  for (const path of paths) {
-    const importer = assets[path];
-    if (importer) {
-      const { default: fullPath } = await importer();
-      return fullPath;
-    }
-  }
-  return undefined;
-}
 
 const formattedProps = {
   title: content.title,
@@ -29,13 +13,8 @@ const formattedProps = {
   description: content.subtitle,
   tags: content.tech,
   accent: content.color,
-  logo: await assetPath(
-    `../pages/projects/${projectId}/logo.svg`,
-    `../pages/projects/${projectId}/logo.png`
-  ),
-  backgroundImage: await assetPath(
-    `../pages/projects/${projectId}/background.jpg`
-  ),
+  logo: content.logo || 'logo.svg',
+  backgroundImage: 'background.jpg',
   buttons: content.links
     ?.filter((link) => link.title !== 'Details' && link.title !== 'Case study')
     ?.map((link) => ({
