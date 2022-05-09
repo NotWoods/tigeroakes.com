@@ -3,6 +3,7 @@ _gen
 public
 dist/
 .output/
+static/assets/images
 
 # dependencies
 node_modules/

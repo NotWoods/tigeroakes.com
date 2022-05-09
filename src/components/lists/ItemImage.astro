@@ -1,4 +1,8 @@
 ---
+import { generateObject } from '@11ty/eleventy-img';
+import { generateImage } from 'astro-eleventy-img';
+import { basename, dirname, extname } from 'path';
+
 export interface Props {
   src: string;
   alt?: string;
@@ -8,8 +12,40 @@ export interface Props {
 
 const { src, alt = '', height, class: className } = Astro.props as Props;
 const width = height * 2;
+
+const image = generateImage(src, {
+  outputDir: 'static/assets/images',
+  widths: [width],
+  formats: ['avif', 'webp', 'png'],
+  svgShortCircuit: true,
+  sharpWebpOptions: { quality: 90 },
+  sharpAvifOptions: { quality: 90 },
+  filenameFormat(id: string, src: string, width: string, format: string) {
+    const parentFolder = basename(dirname(src));
+    const fileName = basename(src, extname(src));
+    return `${parentFolder}-${fileName}-${width}.${id}.${format}`;
+  }
+});
+
+type ImgTag = { img: Record<string, string> };
+type SourceTag = { source: { type: string, srcset: string, sizes?: string } };
+type PictureTag = { picture: [...SourceTag[], ImgTag] };
+
+function isImg(tag: ImgTag | SourceTag | PictureTag): tag is ImgTag {
+  return Boolean((tag as ImgTag).img);
+}
+
+const tag = generateObject(image, {
+  alt,
+  loading: 'lazy',
+  decoding: 'async',
+}) as ImgTag | PictureTag;
 ---
 
-<picture class={`mb-2 shadow aspect-w-2 aspect-h-1 ${className}`}>
-  <img class="object-cover" {src} {alt} {width} {height} />
+<picture class={`mb-2 shadow-md aspect-w-2 aspect-h-1 ${className}`}>
+  {isImg(tag)
+    ? <img {...tag.img} class="object-cover" {alt} />
+    : tag.picture.map(tag => isImg(tag)
+      ? <img {...tag.img} class="object-cover" {alt} />
+      : <source {...tag.source} />)}
 </picture>

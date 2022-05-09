@@ -6,7 +6,7 @@ export interface Props {
 
 const classes = {
   left: {
-    base: 'inset-y-0 origin-right',
+    base: 'inset-y-0 origin-right max-h-7',
     animate:
       'scale-x-initial group-hover:scale-x-100 group-active:scale-x-50 motion-safe:transition-transform',
   },

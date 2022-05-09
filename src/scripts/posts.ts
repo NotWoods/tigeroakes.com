@@ -1,5 +1,6 @@
 import { Temporal } from '@js-temporal/polyfill';
 import type { MarkdownInstance } from 'astro';
+import { dirname, join } from 'path';
 import tagColors from '../data/tags.json';
 import { dateFromString } from './date';
 import { trailingSlash } from './path';
@@ -66,4 +67,13 @@ export function accentStyles(accent: string | undefined) {
   } else {
     return undefined;
   }
+}
+
+export function postBanner(post: {
+  file: string;
+  frontmatter: { banner?: string };
+}) {
+  return post.frontmatter.banner
+    ? join(dirname(post.file), post.frontmatter.banner)
+    : undefined;
 }

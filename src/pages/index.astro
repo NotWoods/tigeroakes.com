@@ -1,5 +1,4 @@
 ---
-// Component Imports
 import BannerNav from '../components/BannerNav.astro';
 import Button from '../components/Button.astro';
 import HomeContact from '../components/HomeContact.astro';
@@ -8,7 +7,7 @@ import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
 import Logo from '../components/Logo.astro';
 import MainHead from '../components/meta/MainHead.astro';
-import { loadPosts, postAccentColor, type Post } from '../scripts/posts';
+import { loadPosts, postAccentColor, postBanner, type Post } from '../scripts/posts';
 import profile from './profile.jpg';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
@@ -23,7 +22,7 @@ function formatPost(post: Post) {
     date: post.date,
     accent: postAccentColor(post.frontmatter.tags),
     href: post.url,
-    pictureSrc: post.frontmatter.banner,
+    pictureSrc: postBanner(post),
   };
 }
 
