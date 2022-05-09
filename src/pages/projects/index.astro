@@ -5,7 +5,7 @@ import ListPanels from '../../components/lists/ListPanels.astro';
 import MainHead from '../../components/meta/MainHead.astro';
 import { projectButtons, PROJECT_PATH } from '../../scripts/projects';
 
-const allPages = await Astro.glob('./*/*.md');
+const allPages = await Astro.glob('./**/*.md');
 allPages.sort((a, b) => {
   const aWeight = a.frontmatter.weight || Infinity;
   const bWeight = b.frontmatter.weight || Infinity;
