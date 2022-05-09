@@ -1,6 +1,5 @@
 ---
-import { generateObject } from '@11ty/eleventy-img';
-import { generateImage } from 'astro-eleventy-img';
+import Image, { generateObject } from '@11ty/eleventy-img';
 import { basename, dirname, extname } from 'path';
 
 export interface Props {
@@ -13,8 +12,9 @@ export interface Props {
 const { src, alt = '', height, class: className } = Astro.props as Props;
 const width = height * 2;
 
-const image = generateImage(src, {
+const metadata = await Image(src, {
   outputDir: 'static/assets/images',
+  urlPath: '/assets/images',
   widths: [width],
   formats: ['avif', 'webp', 'png'],
   svgShortCircuit: true,
@@ -35,7 +35,7 @@ function isImg(tag: ImgTag | SourceTag | PictureTag): tag is ImgTag {
   return Boolean((tag as ImgTag).img);
 }
 
-const tag = generateObject(image, {
+const tag = generateObject(metadata, {
   alt,
   loading: 'lazy',
   decoding: 'async',
