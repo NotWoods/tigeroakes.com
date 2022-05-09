@@ -9,7 +9,7 @@ import SectionTitle from '../components/lists/SectionTitle.astro';
 import Logo from '../components/Logo.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import { trailingSlash } from '../scripts/path';
-import { loadPosts, Post } from '../scripts/posts';
+import { loadPosts, postAccentColor, type Post } from '../scripts/posts';
 import profile from './profile.jpg';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
@@ -22,7 +22,7 @@ function formatPost(post: Post) {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
     date: post.date,
-    tags: post.frontmatter.tags,
+    accent: postAccentColor(post.frontmatter.tags),
     href: trailingSlash(post.url),
     pictureSrc: post.frontmatter.banner,
   };

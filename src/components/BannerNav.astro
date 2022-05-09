@@ -16,7 +16,7 @@ function isCurrent({ url }: { url: string }) {
 	if (!current) return undefined;
 
 	const currentPath = typeof current === 'string' ? current : current.pathname;
-  return currentPath.startsWith(url) ? `--initial-block-scale: 0.5`: undefined;
+  return currentPath.startsWith(url);
 }
 ---
 
@@ -27,7 +27,7 @@ function isCurrent({ url }: { url: string }) {
 
 		<nav class="flex items-stretch mx-auto gap-x-2 gap-y-6">
 			{navData.map(page =>
-        <a class="px-2 relative group" href={page.url} style={isCurrent(page)}>
+        <a class="px-2 relative group" href={page.url} style={isCurrent(page) ? `--initial-block-scale: 0.5`: undefined} aria-current="page">
           <AccentBlock position="bottom" animate />
           {page.name}
         </a>
