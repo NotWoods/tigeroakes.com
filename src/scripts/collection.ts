@@ -1,5 +1,4 @@
 import type { MarkdownInstance } from 'astro';
-import { trailingSlash } from './path';
 import { loadPosts, postAccentColor, PostFrontmatter } from './posts';
 import { loadProjects, ProjectFrontmatter } from './projects';
 
@@ -41,14 +40,14 @@ export async function getCollectionPages(
     title: post.frontmatter.title,
     date: post.date,
     accent: postAccentColor(post.frontmatter.tags),
-    href: trailingSlash(post.url),
+    href: post.url,
     pictureSrc: post.frontmatter.banner,
     tags: post.frontmatter.tags,
   }));
   const formattedProjects = allProjects.map((project) => ({
     title: project.frontmatter.title,
     accent: project.frontmatter.color,
-    href: trailingSlash(project.url),
+    href: project.url,
     pictureSrc: project.frontmatter.logo,
     tags: project.frontmatter.tech,
   }));

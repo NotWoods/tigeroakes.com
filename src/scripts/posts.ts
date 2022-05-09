@@ -1,7 +1,8 @@
 import { Temporal } from '@js-temporal/polyfill';
-import tagColors from '../data/tags.json';
 import type { MarkdownInstance } from 'astro';
+import tagColors from '../data/tags.json';
 import { dateFromString } from './date';
+import { trailingSlash } from './path';
 
 export interface PostFrontmatter {
   title: string;
@@ -28,6 +29,7 @@ export async function loadPosts(
   const formattedPosts = allPosts.map((post) => {
     const formattedPost: Post = {
       ...post,
+      url: trailingSlash(post.url),
       date: post.frontmatter.date
         ? dateFromString(post.frontmatter.date)
         : undefined,

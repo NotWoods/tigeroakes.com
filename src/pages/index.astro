@@ -8,7 +8,6 @@ import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
 import Logo from '../components/Logo.astro';
 import MainHead from '../components/meta/MainHead.astro';
-import { trailingSlash } from '../scripts/path';
 import { loadPosts, postAccentColor, type Post } from '../scripts/posts';
 import profile from './profile.jpg';
 
@@ -23,7 +22,7 @@ function formatPost(post: Post) {
     description: post.frontmatter.description,
     date: post.date,
     accent: postAccentColor(post.frontmatter.tags),
-    href: trailingSlash(post.url),
+    href: post.url,
     pictureSrc: post.frontmatter.banner,
   };
 }
@@ -34,7 +33,7 @@ async function loadProject(
   const [project] = await projectGlob;
   return {
     project: {
-      url: trailingSlash(project.url),
+      url: project.url,
       frontmatter: project.frontmatter,
     },
   };

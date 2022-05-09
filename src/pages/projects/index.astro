@@ -3,7 +3,6 @@ import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
 import ListPanels from '../../components/lists/ListPanels.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-import { trailingSlash } from '../../scripts/path';
 import { projectButtons, PROJECT_PATH } from '../../scripts/projects';
 
 const allPages = await Astro.glob('./*/*.md');
@@ -18,7 +17,7 @@ const projects = allPages.map((page) => {
   return {
     title: page.frontmatter.title,
     description: page.frontmatter.subtitle,
-    href: trailingSlash(page.url),
+    href: page.url,
     accent: page.frontmatter.color,
     buttons: projectButtons(page.frontmatter.links, page.url),
     tags: page.frontmatter.tech,

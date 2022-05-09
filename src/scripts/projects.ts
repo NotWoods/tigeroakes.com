@@ -27,13 +27,17 @@ export const PROJECT_PATH = /^\/projects\/([-\w]+)/;
 export async function loadProjects(
   input: Promise<MarkdownInstance<ProjectFrontmatter>[]>
 ) {
-  const allProjects = (await input).slice(0);
-  allProjects.sort((a, b) => {
+  const allProjects = await input;
+  const formattedProjects = allProjects.map((project) => ({
+    ...project,
+    url: trailingSlash(project.url),
+  }));
+  formattedProjects.sort((a, b) => {
     const aWeight = a.frontmatter.weight || Infinity;
     const bWeight = b.frontmatter.weight || Infinity;
     return aWeight - bWeight;
   });
-  return allProjects;
+  return formattedProjects;
 }
 
 export function projectButtons(links: readonly Link[], pageUrl: string | URL) {
