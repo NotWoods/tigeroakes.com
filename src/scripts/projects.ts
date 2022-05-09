@@ -1,7 +1,7 @@
 import type { MarkdownInstance } from 'astro';
 import { trailingSlash } from './path';
 
-interface Link {
+export interface Link {
   title: string;
   github?: string;
   link?: string;

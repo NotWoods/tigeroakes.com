@@ -35,7 +35,7 @@ const { title, items } = Astro.props as Props;
 <div class="max-w-site mx-auto px-4 mb-4">
   <SectionTitle>{title}</SectionTitle>
 </div>
-<div class="grid grid-cols-2 gap-12 mb-8 max-w-site mx-auto px-4" style="--initial-block-scale: 0.5">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-8 max-w-site mx-auto px-4" style="--initial-block-scale: 0.5">
   {items.map(item => (
     <article class="flex flex-col" style={accentStyles(postAccentColor(item.tags))}>
       {item.pictureSrc && <ItemImage src={item.pictureSrc} alt={item.pictureAlt} height={188} />}

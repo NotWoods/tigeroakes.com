@@ -1,9 +1,11 @@
 ---
-import ListGridYears from '../../components/lists/ListGridYears.astro';
 import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
+import ListGridYears from '../../components/lists/ListGridYears.astro';
+import PostsHeader from '../../components/lists/PostsHeader.astro';
 import MainHead from '../../components/meta/MainHead.astro';
 import { loadPosts } from '../../scripts/posts';
+import * as header from './_index.md';
 
 const allPages = await loadPosts(Astro.glob('./*/*.md'));
 const posts = allPages.map((post) => ({
@@ -25,6 +27,9 @@ const posts = allPages.map((post) => ({
   <body class="bg-slate-800 text-slate-200">
     <BannerNav current={Astro.canonicalURL} />
 
+    <PostsHeader links={header.frontmatter.links}>
+      <header.Content></header.Content>
+    </PostsHeader>
     <ListGridYears items={posts} />
 
     <Footer />

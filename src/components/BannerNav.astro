@@ -20,18 +20,16 @@ function isCurrent({ url }: { url: string }) {
 }
 ---
 
-<header class:list={['py-4', className]}>
-	<div class="flex flex-wrap items-stretch max-w-site mx-auto justify-between px-4 gap-y-4">
-		{logo !== 'none' && <Logo outline={logo === 'outline'} />}
-		{logo === 'none' && <div class="grow h-7" />}
+<header class:list={["flex flex-wrap items-stretch max-w-site mx-auto justify-between p-4 gap-y-4", className]}>
+	{logo !== 'none' && <Logo outline={logo === 'outline'} />}
+	{logo === 'none' && <div class="grow h-7" />}
 
-		<nav class="flex items-stretch mx-auto gap-x-2 gap-y-6">
-			{navData.map(page =>
-        <a class="px-2 relative group" href={page.url} style={isCurrent(page) ? `--initial-block-scale: 0.5`: undefined} aria-current="page">
-          <AccentBlock position="bottom" animate />
-          {page.name}
-        </a>
-      )}
-		</nav>
-	</div>
+	<nav class="flex flex-wrap items-stretch mx-auto gap-x-2 gap-y-6">
+		{navData.map(page =>
+			<a class="px-2 relative group" href={page.url} style={isCurrent(page) ? `--initial-block-scale: 0.5`: undefined} aria-current="page">
+				<AccentBlock position="bottom" animate />
+				{page.name}
+			</a>
+		)}
+	</nav>
 </header>

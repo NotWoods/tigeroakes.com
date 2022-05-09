@@ -1,9 +1,5 @@
 ---
 title: Talks
-outputs:
-  - HTML
-other: More talks
-group_by_date: '2006'
 
 links:
   - title: Watch on YouTube
