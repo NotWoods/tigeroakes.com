@@ -1,12 +1,14 @@
 ---
 import '../../styles/global.css';
 import '../../styles/font.css';
+import Breadcrumb from './Breadcrumb.astro';
 
 export interface Props {
   title: string;
+  canonical?: string;
 }
 
-const { title } = Astro.props as Props;
+const { title, canonical = Astro.canonicalURL.href } = Astro.props as Props;
 
 const siteTitle = 'Tiger Oakes';
 const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
@@ -18,6 +20,7 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 <link rel="icon" type="image/png" href="/favicon_x16.png" sizes="16x16" />
 <link rel="icon" type="image/png" href="/favicon_x48.png" sizes="48x48" />
 <link rel="icon" type="image/png" href="/favicon_x512.png" sizes="512x512" />
+<link rel="canonical" href={canonical} />
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#e67237" />
@@ -26,3 +29,4 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
   src="https://caterpilla.tigeroakes.com/script.js"
   data-site="CSXBFPSZ"
   defer></script>
+<Breadcrumb {title} />

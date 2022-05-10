@@ -1,0 +1,17 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  pictureSrc?: string;
+  pictureAlt?: string;
+}
+
+const { title, description, pictureSrc } = Astro.props as Props;
+---
+
+<meta name="og:title" content={title} />
+<meta name="og:type" content="website" />
+<meta name="og:url" content={Astro.canonicalURL} />
+<meta name="og:description" content={description} />
+<meta name="og:site_name" content="Tiger Oakes" />
+{pictureSrc && <meta name="og:image" content={pictureSrc} />}

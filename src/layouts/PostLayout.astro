@@ -1,6 +1,8 @@
 ---
 import ArticleLayout from '../components/article/ArticleLayout.astro';
 import MainHead from '../components/meta/MainHead.astro';
+import OpenGraph from '../components/meta/OpenGraph.astro';
+import Twitter from '../components/meta/Twitter.astro';
 import { dateFromString } from '../scripts/date';
 import { postAccentColor } from '../scripts/posts';
 import '../styles/font-extra.css';
@@ -21,7 +23,9 @@ const formattedProps = {
 
 <html lang="en">
   <head>
-    <MainHead title={content.title} />
+    <MainHead title={content.title} canonical={content.elsewhere?.link ?? Astro.canonicalURL} />
+    <Twitter title={content.title} description={content.description} />
+    <OpenGraph title={content.title} description={content.description} />
   </head>
 
   <body class="bg-slate-800 text-slate-200">
