@@ -17,8 +17,6 @@ tech:
   - IndexedDB
   - Google Maps
   - GTFS
-categories:
-  - Feature
 aliases:
   - /big-island-buses
   - /heleon

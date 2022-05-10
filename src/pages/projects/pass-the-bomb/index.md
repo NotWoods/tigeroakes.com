@@ -14,7 +14,7 @@ links:
     github: NotWoods/pass-the-bomb
 tech:
   - Node.js
-  - Socket.io
+  - WebSockets
   - Hammer.js
 description: >
   Online multiplayer word game created in a hackathon within 12 hours. Socket.io is used to sync the client devices and the server, which runs Node.js.

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-weight: 2
+weight: 4
 title: Yelp
 subtitle: Describe Your Project
 color: '#d32323'

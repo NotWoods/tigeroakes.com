@@ -14,6 +14,7 @@ tech:
   - Android
   - GeckoView
   - USB
+  - WebSockets
   - Raspberry Pi
 ---
 
