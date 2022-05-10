@@ -7,10 +7,12 @@ export interface Props {
   alt?: string;
   height: number;
   class?: string;
+  fit?: 'cover' | 'contain';
 }
 
-const { src, alt = '', height, class: className } = Astro.props as Props;
+const { src, alt = '', fit, height, class: className } = Astro.props as Props;
 const width = height * 2;
+const imgClass = fit === 'contain' ? 'object-contain' : 'object-cover';
 
 const metadata = await Image(src, {
   outputDir: 'static/assets/images',
@@ -42,10 +44,10 @@ const tag = generateObject(metadata, {
 }) as ImgTag | PictureTag;
 ---
 
-<picture class={`mb-2 shadow-md aspect-w-2 aspect-h-1 ${className}`}>
+<picture class:list={[`block mb-2 shadow-md aspect-w-2 aspect-h-1`, className]}>
   {isImg(tag)
-    ? <img {...tag.img} class="object-cover" {alt} />
+    ? <img {...tag.img} class={imgClass} {alt} />
     : tag.picture.map(tag => isImg(tag)
-      ? <img {...tag.img} class="object-cover" {alt} />
+      ? <img {...tag.img} class={imgClass} {alt} />
       : <source {...tag.source} />)}
 </picture>

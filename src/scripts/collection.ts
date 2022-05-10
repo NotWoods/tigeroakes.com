@@ -42,13 +42,15 @@ export async function getCollectionPages(
     accent: postAccentColor(post.frontmatter.tags),
     href: post.url,
     pictureSrc: postBanner(post),
+    pictureFit: 'cover',
     tags: post.frontmatter.tags,
   }));
   const formattedProjects = allProjects.map((project) => ({
     title: project.frontmatter.title,
     accent: project.frontmatter.color,
     href: project.url,
-    pictureSrc: undefined, // frontmatter.logo,
+    pictureSrc: undefined,
+    pictureFit: 'contain',
     tags: project.frontmatter.tech,
   }));
 

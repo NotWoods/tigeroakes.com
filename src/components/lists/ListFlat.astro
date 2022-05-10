@@ -18,6 +18,7 @@ export interface Item {
 
   pictureSrc?: string;
   pictureAlt?: string;
+  pictureFit?: 'cover' | 'contain';
   accent?: string;
 }
 
@@ -43,7 +44,7 @@ const { title, items } = Astro.props as Props;
 <ul class="mt-4">
   {items.map(item => (
     <li class="clear-both mb-4" style={accentStyles(item.accent)}>
-      {item.pictureSrc && <div class="float-right mt-2"><ItemImage src={item.pictureSrc} alt={item.pictureAlt} height={50} /></div>}
+      {item.pictureSrc && <div class="float-right mt-2"><ItemImage class="w-[5.875rem]" src={item.pictureSrc} alt={item.pictureAlt} height={47} /></div>}
       <p class="text-sm">{formatType(item)}{item.date && <Time date={item.date} />}</p>
       <ItemTitle href={item.href}>{item.title}</ItemTitle>
     </li>

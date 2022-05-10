@@ -2,6 +2,7 @@
 import ArticleLayout from '../components/article/ArticleLayout.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import { dateFromString } from '../scripts/date';
+import { postAccentColor } from '../scripts/posts';
 import '../styles/font-extra.css';
 
 const { content } = Astro.props;
@@ -9,9 +10,9 @@ const { content } = Astro.props;
 const formattedProps = {
   title: content.title,
   href: Astro.canonicalURL,
+  accent: postAccentColor(content.tags),
   date: content.date ? dateFromString(content.date) : undefined,
   description: content.description,
-  pictureSrc: content.banner,
   tags: content.tags,
   elsewhere: content.elsewhere,
   tableOfContents: content.toc ? content.astro.headers : undefined,
