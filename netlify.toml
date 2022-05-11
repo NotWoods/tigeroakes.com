@@ -20,4 +20,5 @@ command = "npm run build -- --gc -b $DEPLOY_PRIME_URL"
 package = "netlify-plugin-checklinks"
 
   [plugins.inputs]
+  recursive = false
   checkExternal = true
