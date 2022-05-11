@@ -15,3 +15,9 @@ command = "npm run build -- --gc --buildFuture --buildDrafts -b $DEPLOY_PRIME_UR
 
 [context.branch-deploy]
 command = "npm run build -- --gc -b $DEPLOY_PRIME_URL"
+
+[[plugins]]
+package = "netlify-plugin-checklinks"
+
+  [plugins.inputs]
+  checkExternal = true
