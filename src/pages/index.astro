@@ -1,22 +1,19 @@
 ---
 import BannerNav from '../components/BannerNav.astro';
 import Button from '../components/Button.astro';
-import HomeContact from '../components/HomeContact.astro';
+import HomeAbout from '../components/home/HomeAbout.astro';
+import HomeContact from '../components/home/HomeContact.astro';
 import ListFlat from '../components/lists/ListFlat.astro';
 import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
-import Logo from '../components/Logo.astro';
 import MainHead from '../components/meta/MainHead.astro';
-import OpenGraph from '../components/meta/OpenGraph.astro';
 import RSS from '../components/meta/RSS.astro';
-import Twitter from '../components/meta/Twitter.astro';
 import {
   loadPosts,
   postAccentColor,
   postBanner,
   type Post,
 } from '../scripts/posts';
-import profile from './profile.jpg';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
 const featured = allPosts.filter((post) =>
@@ -68,42 +65,7 @@ const description =
       style="--accent: currentColor"
     >
       <BannerNav logo="none" />
-      <section
-        id="about"
-        class="max-w-site mx-auto px-4 flex flex-wrap gap-x-20 gap-y-8 items-center"
-      >
-        <div class="text-lg flex-1">
-          <Logo outline width={320} height={64} />
-          <p class="my-4 decoration-slate-200">
-            Hi, I'm <span class="my-name" title="yes, that's my real name">
-              Tiger</span
-            >! I've worked on 3 web browsers and hundreds of open source
-            projects. You can see some of those
-            <a class="underline" href="/projects/">projects</a> here, read my <a
-              class="underline"
-              href="/posts/">blog</a
-            >, or learn more <a class="underline" href="/resume/">about me</a>.
-          </p>
-          <p class="my-4 decoration-slate-200">
-            If you'd like to get in touch or if you have questions about my
-            work, don't hesitate to <a class="underline" href="#contact"
-              >contact me</a
-            >.
-          </p>
-          <Button
-            class="inline-block border-2 border-current"
-            href="https://buttondown.email/tiger"
-            >Subscribe to my newsletter</Button
-          >
-        </div>
-        <img
-          class="border-4 border-slate-800 rounded-full grow-0 shrink-0 mx-auto"
-          src={profile}
-          alt="Portrait of Tiger Oakes"
-          width="160"
-          height="160"
-        />
-      </section>
+      <HomeAbout />
     </div>
 
     <section id="previews" class="max-w-site mx-auto px-4 py-8">

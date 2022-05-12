@@ -1,0 +1,39 @@
+---
+import Button from '../Button.astro';
+import Logo from '../Logo.astro';
+import profile from './profile.jpg';
+---
+
+<section
+  id="about"
+  class="max-w-site mx-auto px-4 flex flex-wrap gap-x-20 gap-y-8 items-center"
+>
+  <div class="text-lg flex-1">
+    <Logo outline width={320} height={64} />
+    <p class="my-4 decoration-slate-200">
+      Hi, I'm <span class="my-name" title="yes, that's my real name">
+        Tiger</span
+      >! I've worked on 3 web browsers and hundreds of open source projects. You
+      can see some of those
+      <a class="underline" href="/projects/">projects</a> here, read my <a
+        class="underline"
+        href="/posts/">blog</a
+      >, or learn more <a class="underline" href="/resume/">about me</a>.
+    </p>
+    <p class="my-4 decoration-slate-200">
+      If you'd like to get in touch or if you have questions about my work,
+      don't hesitate to <a class="underline" href="#contact">contact me</a>.
+    </p>
+    <Button
+      class="inline-block border-2 border-current"
+      href="https://buttondown.email/tiger">Subscribe to my newsletter</Button
+    >
+  </div>
+  <img
+    class="border-4 border-slate-800 rounded-full grow-0 shrink-0 mx-auto"
+    src={profile}
+    alt="Portrait of Tiger Oakes"
+    width="160"
+    height="160"
+  />
+</section>
