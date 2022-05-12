@@ -1,6 +1,5 @@
 ---
 import contactData from '../data/contact.json';
-import AccentBlock from './AccentBlock.astro';
 
 export interface Props {
   class?: string;
@@ -12,19 +11,16 @@ const { email, social } = contactData;
 
 <footer class:list={['flex flex-wrap m-8 justify-center', className]}>
   <a
-    class="leading-6 mx-2 my-4 relative group"
+    class="leading-6 mx-2 my-4 relative accent-block--bottom"
     href="mailto:{email.link}"
     set:html={email.name}
-  >
-    <AccentBlock position="bottom" animate />
-  </a>
+  />
   <div class="flex">
     {social.map((item) => (
       <a
-        class="mx-2 my-4 relative group"
+        class="mx-2 my-4 relative accent-block--bottom"
         title={item.name}
         href={item.link}>
-        <AccentBlock position="bottom" animate />
         <img class="block"
           width="24" height="24"
           alt={item.name}

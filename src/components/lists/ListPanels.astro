@@ -25,7 +25,7 @@ interface Item {
 
 const { items } = Astro.props as Props;
 ---
-<main class="flex flex-wrap p-2 gap-4" style="--initial-block-scale: 1">
+<main class="flex flex-wrap p-2 gap-4" style="--block-scale: 1">
   {items.map((item, i) => (
     <ArticleHeaderContainer
       as="article"

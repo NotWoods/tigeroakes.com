@@ -1,5 +1,4 @@
 import { ComponentChildren, Fragment } from 'preact';
-import { AccentBlock } from '../AccentBlock';
 import {
   ExperienceDate,
   ExperienceHighlights,
@@ -65,11 +64,10 @@ const ResumeSectionHeader = (props: {
   class?: string;
 }) => (
   <h2
-    class={['font-sans text-[14pt] mb-[3pt] relative font-bold', props.class]
+    class={['font-sans text-[14pt] mb-[3pt] relative font-bold accent-block--left accent-block--still', props.class]
       .filter(Boolean)
       .join(' ')}
   >
-    <AccentBlock position="left" />
     {props.children}
   </h2>
 );

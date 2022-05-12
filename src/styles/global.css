@@ -5,7 +5,6 @@
 @layer base {
   :root {
     --accent: theme('colors.orange.500');
-    --block-size: 0.5em;
   }
 
   h1,
@@ -21,6 +20,46 @@
     text-decoration-skip-ink: auto;
     text-underline-offset: 3px;
     @apply decoration-2 hover:decoration-current;
+  }
+}
+
+@layer components {
+  .accent-block--left::before {
+    content: "";
+    width: 0.5em;
+    left: -1em;
+    @apply inset-y-0 origin-right;
+  }
+  .accent-block--left:not(.accent-block--still)::before {
+    transform: scaleX(var(--block-scale, 0));
+  }
+
+  .accent-block--bottom::before {
+    content: "";
+    height: 0.5em;
+    bottom: -1em;
+    @apply inset-x-0 origin-top;
+  }
+  .accent-block--bottom:not(.accent-block--still)::before {
+    transform: scaleY(var(--block-scale, 0));
+  }
+
+  .accent-block--left:hover,
+  .accent-block--bottom:hover {
+    --block-scale: 1;
+  }
+  .accent-block--left:active,
+  .accent-block--bottom:active,
+  .accent-block--left[aria-current],
+  .accent-block--bottom[aria-current] {
+    --block-scale: 0.5;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .accent-block--left::before,
+    .accent-block--bottom::before {
+      @apply transition-transform;
+    }
   }
 }
 

@@ -1,6 +1,5 @@
 ---
 import navData from '../data/nav.json';
-import AccentBlock from './AccentBlock.astro';
 import Logo from './Logo.astro';
 
 // Banner displayed at the top of the site.
@@ -26,8 +25,7 @@ function isCurrent({ url }: { url: string }) {
 
 	<nav class="flex flex-wrap items-stretch mx-auto gap-x-2 gap-y-6">
 		{navData.map(page =>
-			<a class="px-2 relative group" href={page.url} style={isCurrent(page) ? `--initial-block-scale: 0.5`: undefined} aria-current="page">
-				<AccentBlock position="bottom" animate />
+			<a class="px-2 relative accent-block--bottom" href={page.url} aria-current={isCurrent(page) ? 'page' : undefined}>
 				{page.name}
 			</a>
 		)}

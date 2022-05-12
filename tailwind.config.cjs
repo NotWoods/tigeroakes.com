@@ -41,9 +41,6 @@ const config = {
       minWidth: {
         44: '11rem',
       },
-      scale: {
-        initial: 'var(--initial-block-scale, 0)',
-      },
       listStyleType: {
         square: 'square',
       },

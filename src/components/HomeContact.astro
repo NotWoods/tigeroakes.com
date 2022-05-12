@@ -6,26 +6,22 @@ const { email, social } = contactData;
 ---
 
 <footer id="contact"
-  style="--initial-block-scale: 0.2; background-image: url(/contact/background.jpg);"
+  style="--block-scale: 0.2; background-image: url(/contact/background.jpg);"
   class="bg-center bg-cover bg-no-repeat text-shadow p-8 text-lg text-center">
   <SectionTitle class="inline-block mb-4">Contact</SectionTitle>
 
   <p class="mb-2">You can send an email to</p>
-  <a class="inline-block mx-4 text-2xl relative group" href="mailto:{email.link}" set:html={email.text}>
-    <AccentBlock position="bottom" animate />
-  </a>
+  <a class="inline-block mx-4 text-2xl relative accent-block--bottom" href="mailto:{email.link}" set:html={email.text} />
 
   <p class="mt-12 mb-2">You can find me at</p>
   <ul class="text-xl">
     {social.map((item) => (
       <li class="mx-4 mb-6">
         <a
-          class="relative group"
+          class="relative accent-block--bottom"
           title={item.name}
           href={item.link}
-          set:html={item.text}>
-          <AccentBlock position="bottom" animate />
-        </a>
+          set:html={item.text} />
       </li>))}
   </ul>
 </footer>

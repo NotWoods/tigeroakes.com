@@ -8,7 +8,6 @@ let lastHighlightedHeaderLink: HTMLAnchorElement | undefined;
 function setHighlightedHeaderId(id: string) {
   if (lastHighlightedHeaderLink) {
     lastHighlightedHeaderLink.removeAttribute('aria-current');
-    lastHighlightedHeaderLink.style.setProperty('--initial-block-scale', '0');
   }
 
   const link = tableOfContents.querySelector<HTMLAnchorElement>(
@@ -16,7 +15,6 @@ function setHighlightedHeaderId(id: string) {
   );
   if (link) {
     link.setAttribute('aria-current', 'location');
-    link.style.setProperty('--initial-block-scale', '0.5');
 
     lastHighlightedHeaderLink = link;
   } else {
