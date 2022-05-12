@@ -1,5 +1,6 @@
 ---
 import TableOfContentsList from './TableOfContentsList.astro';
+import type { MutableTreeNode, TreeNode } from './tree-node';
 
 export interface Props {
   headers: readonly {
@@ -7,16 +8,6 @@ export interface Props {
     slug: string;
     text: string;
   }[];
-}
-
-interface TreeNode {
-  children: readonly TreeNode[];
-  slug: string;
-  text: string;
-}
-
-interface MutableTreeNode extends TreeNode {
-  children: MutableTreeNode[];
 }
 
 const { headers } = Astro.props as Props;

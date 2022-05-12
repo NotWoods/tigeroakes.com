@@ -1,14 +1,9 @@
 ---
 import AccentBlock from "../../AccentBlock.astro";
+import type { TreeNode } from "./tree-node";
 
 export interface Props {
   tree: readonly TreeNode[];
-}
-
-interface TreeNode {
-  children: readonly TreeNode[];
-  slug: string;
-  text: string;
 }
 
 const { tree } = Astro.props as Props;

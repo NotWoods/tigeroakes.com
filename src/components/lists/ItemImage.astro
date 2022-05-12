@@ -15,7 +15,7 @@ const width = height * 2;
 const imgClass = fit === 'contain' ? 'object-contain' : 'object-cover';
 
 const metadata = await Image(src, {
-  outputDir: 'static/assets/images',
+  outputDir: `${import.meta.env.PROD ? 'dist' : 'static'}/assets/images`,
   urlPath: '/assets/images',
   widths: [width],
   formats: ['avif', 'webp', 'png'],
