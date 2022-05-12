@@ -11,7 +11,7 @@ import * as header from './_index.md';
 const allPages = await loadPosts(Astro.glob('./*/*.md'));
 const posts = allPages.map((post) => ({
   title: post.frontmatter.title,
-  href: new URL(post.url, Astro.canonicalURL).pathname,
+  href: post.url,
   date: post.date,
   description: post.frontmatter.description,
   pictureSrc: postBanner(post),
