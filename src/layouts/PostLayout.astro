@@ -22,7 +22,7 @@ const formattedProps = {
 
 <html lang="en">
   <head>
-    <MainHead title={content.title} canonical={content.elsewhere?.link ?? Astro.canonicalURL} />
+    <MainHead title={content.title} description={content.description} canonical={content.elsewhere?.link ?? Astro.canonicalURL} />
     <Social title={content.title} description={content.description} />
   </head>
 

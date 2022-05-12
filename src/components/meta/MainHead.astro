@@ -1,13 +1,22 @@
 ---
 import '../../styles/global.css';
 import '../../styles/font.css';
+import Twitter from './Twitter.astro';
+import OpenGraph from './OpenGraph.astro';
 
 export interface Props {
   title: string;
+  description: string;
   canonical?: string;
+  defaultSocial?: boolean;
 }
 
-const { title, canonical = Astro.canonicalURL.href } = Astro.props as Props;
+const {
+  title,
+  description,
+  canonical = Astro.canonicalURL.href,
+  defaultSocial,
+} = Astro.props as Props;
 
 const siteTitle = 'Tiger Oakes';
 const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
@@ -15,6 +24,7 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 
 <meta charset="utf-8" />
 <title>{pageTitle}</title>
+<meta name="description" content={description} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
 <link rel="icon" type="image/png" href="/favicon_x16.png" sizes="16x16" />
 <link rel="icon" type="image/png" href="/favicon_x48.png" sizes="48x48" />
@@ -28,3 +38,7 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
   src="https://caterpilla.tigeroakes.com/script.js"
   data-site="CSXBFPSZ"
   defer></script>
+<link rel="preload" href="/font/lato/LatoLatin-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/font/cascadia-code/CascadiaMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+{defaultSocial && <Twitter {title} {description} />}
+{defaultSocial && <OpenGraph {title} {description} />}

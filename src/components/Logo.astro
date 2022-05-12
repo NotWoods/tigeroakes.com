@@ -9,7 +9,7 @@ const { outline = false, width = 160, height = 28 } = Astro.props as Props;
 ---
 <h1 class="grow pr-2">
   <a class="block" href="/">
-    <svg class="" width={width} height={height} viewBox="0 2 80 14">
+    <svg class="logo" width={width} height={height} viewBox="0 2 80 14">
       <title>Tiger Oakes</title>
       <rect class="background" width="12" height="12" x="2" y="2" fill="#e67237"/>
       <g fill="none" stroke="#032030">
@@ -55,6 +55,10 @@ const { outline = false, width = 160, height = 28 } = Astro.props as Props;
 </h1>
 
 <style>
+  .logo {
+    contain: size layout paint style;
+  }
+
   @keyframes open {
     from {
       visibility: visible;

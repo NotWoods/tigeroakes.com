@@ -23,11 +23,12 @@ export async function getStaticPaths() {
 }
 
 const { category, pages } = Astro.props as Props;
+const description = `Posts under the ${category} category on Tiger's blog.`;
 ---
 
 <html lang="en">
   <head>
-    <MainHead title={`${category} | Categories`} />
+    <MainHead title={`${category} | Categories`} {description} />
   </head>
 
   <body class="bg-slate-800 text-slate-200">

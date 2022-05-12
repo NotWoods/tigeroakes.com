@@ -1,5 +1,6 @@
 ---
 title: Talks
+description: Talks by Tiger Oakes - a software engineer passionate about the web.
 
 links:
   - title: Watch on YouTube

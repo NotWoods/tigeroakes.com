@@ -7,8 +7,15 @@ import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
 import Logo from '../components/Logo.astro';
 import MainHead from '../components/meta/MainHead.astro';
+import OpenGraph from '../components/meta/OpenGraph.astro';
 import RSS from '../components/meta/RSS.astro';
-import { loadPosts, postAccentColor, postBanner, type Post } from '../scripts/posts';
+import Twitter from '../components/meta/Twitter.astro';
+import {
+  loadPosts,
+  postAccentColor,
+  postBanner,
+  type Post,
+} from '../scripts/posts';
 import profile from './profile.jpg';
 
 const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
@@ -44,11 +51,14 @@ const projects = await Promise.all([
   loadProject(Astro.glob('./projects/google/index.md')),
   loadProject(Astro.glob('./projects/big-island-buses/index.md')),
 ]);
+
+const description =
+  "Hi! I've worked on 3 web browsers and hundreds of open source projects. See some of those projects, read my blog, or learn about me.";
 ---
 
 <html lang="en">
   <head>
-    <MainHead title="Tiger Oakes" />
+    <MainHead title="Tiger Oakes" {description} defaultSocial />
     <RSS href="/posts/rss.xml" />
   </head>
 

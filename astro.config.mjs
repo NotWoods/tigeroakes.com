@@ -7,8 +7,10 @@ export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL || 'https://tigeroakes.com',
   publicDir: './static',
   trailingSlash: 'always',
-  // Enable the Preact integration to support Preact JSX components.
   integrations: [preact(), tailwind({ config: { applyBaseStyles: false } })],
+  build: {
+    format: 'file',
+  },
   markdown: {
     drafts: process.env.NETLIFY_CONTEXT === 'deploy-preview',
   },
