@@ -7,6 +7,7 @@ import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
 import Logo from '../components/Logo.astro';
 import MainHead from '../components/meta/MainHead.astro';
+import RSS from '../components/meta/RSS.astro';
 import { loadPosts, postAccentColor, postBanner, type Post } from '../scripts/posts';
 import profile from './profile.jpg';
 
@@ -48,6 +49,7 @@ const projects = await Promise.all([
 <html lang="en">
   <head>
     <MainHead title="Tiger Oakes" />
+    <RSS href="/posts/rss.xml" />
   </head>
 
   <body class="bg-slate-800 text-slate-200">

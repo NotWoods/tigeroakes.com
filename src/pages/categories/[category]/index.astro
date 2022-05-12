@@ -35,7 +35,7 @@ const { category, pages } = Astro.props as Props;
       collection="Categories"
       tag={category}
       items={pages}
-      rss={category === 'Planet Mozilla' ? '/rss/planet-mozilla.xml' : undefined}
+      rss={category === 'Planet Mozilla' ? '/categories/planet-mozilla/rss.xml' : undefined}
     />
   </body>
 </html>
