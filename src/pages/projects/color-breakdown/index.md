@@ -27,4 +27,4 @@ The app handles file uploads from the user, then extracts image colors inside a 
 
 ---
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.jpg)

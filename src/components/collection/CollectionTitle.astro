@@ -15,7 +15,7 @@ const { collection, tag, rss } = Astro.props as Props;
 <h2 class="flex-1">
   <a
     class={`${sectionTitleClasses} mb-2 inline-block`}
-    href={`/${collection.toLowerCase()}/`}
+    href={new URL('../', Astro.canonicalURL).pathname}
   >
     {collection}</a
   ><span class={`${articleTitleClasses} normal-case`}>: {tag}</span>

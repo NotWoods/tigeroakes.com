@@ -9,6 +9,7 @@ tags:
 links:
   - title: CascadiaJS
     link: https://2022.cascadiajs.com/speakers/tiger-oakes
+banner: slide.png
 ---
 
 **CascadiaJS 2022**

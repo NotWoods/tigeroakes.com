@@ -13,12 +13,11 @@ categories:
   - Planet Mozilla
 images:
   - /posts/android-linearlayout-to-web-flexbox/banner.png
-banner: banner.png
-banner_svg: banner.svg
+banner: banner.svg
 toc: true
 ---
 
-![](banner.png)
+![](banner.svg)
 
 Are you an Android developer looking to learn web development? I find it easier to learn a new technology stack by comparing it to a stack I'm already familiar with. Android developers can layout views using the simple yet flexible [`LinearLayout`](https://developer.android.com/reference/kotlin/android/widget/LinearLayout) class. The web platform has similar tools to layout elements using CSS, and some concepts are shared. Here's some tips to learn web development using your Android knowledge.
 

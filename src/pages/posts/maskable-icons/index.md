@@ -21,6 +21,7 @@ banner: banner.png
 toc: true
 setup: |
   import GitHub from '../../../components/shortcodes/GitHub.astro';
+  import Video from '../../../components/shortcodes/Video.astro';
 ---
 
 This article was originally written by me and posted to [CSS Tricks](https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/). I've uploaded a copy of the article here, but you may prefer to read the version at CSS Tricks.
@@ -101,7 +102,7 @@ Maskable icons use a special new key, `purpose`, to indicate that they are meant
 
 Do you want to see what your own maskable icons will look like? I’ve created a tool, [Maskable.app](https://maskable.app), to help you evaluate how the icon appears in different shapes.
 
-<video src="maskable_app.*">
+<Video src="maskable_app.*" ext=".webm,.m4v" width="456" height="308" />
 
 The app lets you preview your icon in various shapes that can be found on Android devices. I hope this tool helps you create unique icons for your Progressive Web Apps.
 
