@@ -24,23 +24,27 @@
 }
 
 @layer components {
-  .accent-block--left::before {
+  .accent-block--left::before,
+  .accent-block--bottom::before {
     content: "";
+    @apply block absolute bg-accent;
+  }
+
+  .accent-block--left::before {
     width: 0.5em;
     left: -1em;
-    @apply inset-y-0 origin-right;
+    @apply inset-y-0 origin-right max-h-7;
   }
-  .accent-block--left:not(.accent-block--still)::before {
+  .accent-block--left::before {
     transform: scaleX(var(--block-scale, 0));
   }
 
   .accent-block--bottom::before {
-    content: "";
     height: 0.5em;
     bottom: -1em;
     @apply inset-x-0 origin-top;
   }
-  .accent-block--bottom:not(.accent-block--still)::before {
+  .accent-block--bottom::before {
     transform: scaleY(var(--block-scale, 0));
   }
 
@@ -53,6 +57,9 @@
   .accent-block--left[aria-current],
   .accent-block--bottom[aria-current] {
     --block-scale: 0.5;
+  }
+  .accent-block--still {
+    transform: none !important;
   }
 
   @media (prefers-reduced-motion: no-preference) {

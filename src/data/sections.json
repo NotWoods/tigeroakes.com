@@ -6,5 +6,10 @@
     "/resume": "Resume",
     "/tags": "Tags",
     "/talks": "Talks"
+  },
+  "more": {
+    "/posts/": "More blog posts",
+    "/projects/": "Other projects",
+    "/talks/": "More talks"
   }
 }

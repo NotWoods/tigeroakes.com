@@ -17,7 +17,7 @@ const { email, social } = contactData;
     {social.map((item) => (
       <li class="mx-4 mb-6">
         <a
-          class="relative accent-block--bottom"
+          class="relative inline-block accent-block--bottom"
           title={item.name}
           href={item.link}
           set:html={item.text} />
