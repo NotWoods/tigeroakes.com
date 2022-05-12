@@ -18,18 +18,20 @@
     "astro": "1.0.0-beta.27",
     "github-slugger": "^1.4.0",
     "postcss": "^8.4.13",
-    "preact": "^10.7.2",
     "prettier": "~2.6.2",
     "prettier-plugin-astro": "^0.0.12",
     "rimraf": "^3.0.2",
     "tailwindcss": "^3.0.24",
     "workbox-recipes": "^6.5.3",
     "workbox-window": "^6.5.3"
+  },  
+  "dependencies": {
+    "preact": "^10.7.2"
   },
   "scripts": {
     "dev": "astro dev",
     "start": "rimraf static/assets/images && astro dev --port 8000",
-    "build": "astro build",
+    "build": "rimraf dist && astro build",
     "preview": "astro preview",
     "format": "prettier --write src/**/*.{astro,md,js,json,yml,yaml,css}"
   },

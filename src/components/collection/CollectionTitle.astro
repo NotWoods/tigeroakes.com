@@ -2,14 +2,14 @@
 import { classes as sectionTitleClasses } from '../lists/SectionTitle.astro';
 import { classes as articleTitleClasses } from '../article/ArticleTitle.astro';
 import Button from '../Button.astro';
-import CollectionHeader from './CollectionHeader.astro';
 
 export interface Props {
   collection: string;
   tag: string;
+  rss?: string
 }
 
-const { collection, tag } = Astro.props as Props;
+const { collection, tag, rss } = Astro.props as Props;
 ---
 
 <h2 class="flex-1">
@@ -21,9 +21,9 @@ const { collection, tag } = Astro.props as Props;
   ><span class={`${articleTitleClasses} normal-case`}>: {tag}</span>
 </h2>
 
-<Button
+{rss && <Button
   class="ml-auto"
-  href={`/${collection.toLowerCase()}/${tag.toLowerCase()}/index.xml`}
+  href={rss}
   title="RSS"
 >
   <svg aria-label="RSS" role="img" width="40" height="40" viewBox="0 0 512 512">
@@ -35,4 +35,4 @@ const { collection, tag } = Astro.props as Props;
       stroke-width="60"
       d="M109 241c89 0 162 73 162 162m114 0c0-152-124-276-276-276"></path>
   </svg>
-</Button>
+</Button>}

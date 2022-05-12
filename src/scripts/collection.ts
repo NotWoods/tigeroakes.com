@@ -1,5 +1,12 @@
 import type { MarkdownInstance } from 'astro';
-import { loadPosts, postAccentColor, postBanner, PostFrontmatter } from './posts';
+import GithubSlugger from 'github-slugger';
+import { trailingSlash } from './path';
+import {
+  loadPosts,
+  postAccentColor,
+  postBanner,
+  PostFrontmatter,
+} from './posts';
 import { loadProjects, ProjectFrontmatter } from './projects';
 
 function asArray<T>(x: T | readonly T[]): readonly T[] {
@@ -29,7 +36,8 @@ export function groupBy<Item, Key>(
 
 export async function getCollectionPages(
   postInput: Promise<MarkdownInstance<PostFrontmatter>[]>,
-  projectInput: Promise<MarkdownInstance<ProjectFrontmatter>[]>
+  projectInput: Promise<MarkdownInstance<ProjectFrontmatter>[]>,
+  key: 'tags' | 'categories'
 ) {
   const [allPages, allProjects] = await Promise.all([
     loadPosts(postInput),
@@ -40,23 +48,31 @@ export async function getCollectionPages(
     title: post.frontmatter.title,
     date: post.date,
     accent: postAccentColor(post.frontmatter.tags),
-    href: post.url,
+    href: trailingSlash(post.url),
     pictureSrc: postBanner(post),
-    pictureFit: 'cover',
+    pictureFit: 'cover' as const,
     tags: post.frontmatter.tags,
+    categories: post.frontmatter.categories,
   }));
   const formattedProjects = allProjects.map((project) => ({
     title: project.frontmatter.title,
     accent: project.frontmatter.color,
-    href: project.url,
+    href: trailingSlash(project.url),
     pictureSrc: undefined,
-    pictureFit: 'contain',
+    pictureFit: 'contain' as const,
     tags: project.frontmatter.tech,
+    categories: project.frontmatter.categories,
   }));
 
   const tagToPages = groupBy(
     [...formattedPages, ...formattedProjects],
-    (page) => page.tags ?? []
+    (page) => page[key] ?? []
   );
-  return tagToPages;
+
+  const slugger = new GithubSlugger();
+  const tagPaths = new Map(
+    Array.from(tagToPages.keys()).map((tag) => [tag, slugger.slug(tag)])
+  );
+
+  return { tagToPages, tagPaths };
 }

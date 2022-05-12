@@ -1,5 +1,4 @@
 ---
-import GithubSlugger from 'github-slugger';
 import CollectionLayout from '../../components/collection/CollectionLayout.astro';
 import type { Item } from '../../components/lists/ListFlat.astro';
 import MainHead from '../../components/meta/MainHead.astro';
@@ -11,15 +10,15 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const tagToPages = await getCollectionPages(
+  const { tagToPages, tagPaths } = await getCollectionPages(
     Astro.glob('../{posts,talks}/*/*.md'),
-    Astro.glob('../projects/**/*.md')
+    Astro.glob('../projects/**/*.md'),
+    'tags'
   );
 
-  const slugger = new GithubSlugger();
   return Array.from(tagToPages).map(([tag, pages]) => {
     const props: Props = { tag, pages };
-    return { props, params: { tag: slugger.slug(tag) } };
+    return { props, params: { tag: tagPaths.get(tag) } };
   });
 }
 

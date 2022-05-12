@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL || 'https://tigeroakes.com',
   publicDir: './static',
+  trailingSlash: 'always',
   // Enable the Preact integration to support Preact JSX components.
   integrations: [preact(), tailwind({ config: { applyBaseStyles: false } })],
   markdown: {

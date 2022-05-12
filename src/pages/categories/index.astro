@@ -1,7 +1,7 @@
 ---
 import CollectionListLayout from '../../components/collection/CollectionListLayout.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-import { getStaticPaths } from './[category].astro';
+import { getStaticPaths } from './[category]/index.astro';
 
 const paths = await getStaticPaths();
 ---

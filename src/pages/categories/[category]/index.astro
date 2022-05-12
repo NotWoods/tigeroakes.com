@@ -1,0 +1,41 @@
+---
+import CollectionLayout from '../../../components/collection/CollectionLayout.astro';
+import type { Item } from '../../../components/lists/ListFlat.astro';
+import MainHead from '../../../components/meta/MainHead.astro';
+import { getCollectionPages } from '../../../scripts/collection';
+
+export interface Props {
+  category: string;
+  pages: readonly Item[];
+}
+
+export async function getStaticPaths() {
+  const { tagToPages, tagPaths } = await getCollectionPages(
+    Astro.glob('../../{posts,talks}/*/*.md'),
+    Astro.glob('../../projects/**/*.md'),
+    'categories'
+  );
+
+  return Array.from(tagToPages).map(([category, pages]) => {
+    const props: Props = { category, pages };
+    return { props, params: { category: tagPaths.get(category) } };
+  });
+}
+
+const { category, pages } = Astro.props as Props;
+---
+
+<html lang="en">
+  <head>
+    <MainHead title={`${category} | Categories`} />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <CollectionLayout
+      collection="Categories"
+      tag={category}
+      items={pages}
+      rss={category === 'Planet Mozilla' ? '/rss/planet-mozilla.xml' : undefined}
+    />
+  </body>
+</html>
