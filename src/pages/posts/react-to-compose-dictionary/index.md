@@ -178,7 +178,7 @@ DisposableEffect(id) {
 
 ### useEffect(promise, deps) > LaunchedEffect
 
-Asynchronous functions are created in JavaScript using the `async` keyword. React will handle running the function, but doesn't handle cancelling the promise if a re-render occurs before the promise has finished running. Since you shouldn't return anything except for a [clean-up function](#TODO) from the effect callback, you need to create then immediately invoke the asynchronous function.
+Asynchronous functions are created in JavaScript using the `async` keyword. React will handle running the function, but doesn't handle cancelling the promise if a re-render occurs before the promise has finished running. Since you shouldn't return anything except for a [clean-up function](#clean-up-function--disposableeffect) from the effect callback, you need to create then immediately invoke the asynchronous function.
 
 ```jsx
 useEffect(() => {

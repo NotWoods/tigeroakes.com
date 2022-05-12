@@ -10,7 +10,7 @@ links:
   - title: Subscribe to my newsletter
     link: https://buttondown.email/tiger
   - title: RSS Feed
-    link: /posts/index.xml
+    link: /posts/rss.xml
 ---
 
 My blog is where I learn out loud. I write about [web](tags/web/) and [Android](tags/android/) development, with plenty of PWA and [icon](tags/icons/) talk.

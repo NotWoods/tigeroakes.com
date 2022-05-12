@@ -19,6 +19,7 @@ toc: true
 footer: Some of the links above are affiliate links for Amazon. As an Amazon Associate I earn from qualifying purchases. Using these links helps me out!
 setup: |
   import GitHub from '../../../components/shortcodes/GitHub.astro';
+  import Video from '../../../components/shortcodes/Video.astro';
 ---
 
 ![Phones attached to wood panel with black wire wall art stemming from it](banner.jpg)
@@ -61,7 +62,7 @@ The edges can be a little sharp afterwards. Use a block of [sandpaper](https://a
 
 I wanted the wood board to blend in with my wall and not look like...wood. At a craft store, I picked up [a small bottle of white paint](https://amzn.to/2L5YzS7) and [a paintbrush](https://amzn.to/35eqiHk). At home, on top of some trash bags, I started painting a few coats of white.
 
-<video src="paint-gif.*" max-height="450">
+<Video src="paint-gif.*" ext=".webm,.m4v" />
 
 ### Mounting and connecting the phones (the "Cell"s)
 
@@ -82,7 +83,7 @@ The wires are laid out with a bunch of tiny wire clips. $7 will get you [100 of 
 
 All the wires feed into a USB hub. This hub lets me connect all the phones to a computer just using a single wire. I had one lying around, but [similar hubs are on Amazon for $20](https://amzn.to/2JM19w0). The hub needs a second cable that plugs directly into an outlet and provides extra power, since it needs to charge so many phones.
 
-<video src="wires-gif.*" max-height="450">
+<Video src="wires-gif.*" ext=".webm,.m4v" />
 
 ## Software
 

@@ -83,6 +83,6 @@ server:
         X-Frame-Options: DENY
         X-XSS-Protection: 1; mode=block
         X-Content-Type-Options: nosniff
-    - for: /posts/index.xml
+    - for: /posts/rss.xml
       values:
         Content-Type: application/rss+xml
