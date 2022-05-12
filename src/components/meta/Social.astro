@@ -1,6 +1,6 @@
 ---
 import Image from '@11ty/eleventy-img';
-import { basename, dirname } from 'path';
+import { imageOptions, parentFolder } from '../eleventy-img/options';
 import OpenGraph from "./OpenGraph.astro";
 import Twitter from "./Twitter.astro";
 
@@ -16,13 +16,11 @@ const { title, description, pictureSrc, pictureAlt } = Astro.props as Props;
 let src: string | undefined;
 if (pictureSrc) {
   const metadata = await Image(pictureSrc, {
-    outputDir: `${import.meta.env.PROD ? 'dist' : 'static'}/assets/images`,
-    urlPath: '/assets/images',
+    ...imageOptions,
     formats: ['png'],
     svgShortCircuit: false,
     filenameFormat(id: string, src: string, width: string, format: string) {
-      const parentFolder = basename(dirname(src));
-      return `${parentFolder}-banner.${id}.${format}`;
+      return `${parentFolder(src)}-banner.${id}.${format}`;
     }
   });
   src = metadata.png[0].url;
