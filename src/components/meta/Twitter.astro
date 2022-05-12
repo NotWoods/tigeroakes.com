@@ -6,7 +6,7 @@ export interface Props {
   pictureAlt?: string;
 }
 
-const { title, description, pictureSrc } = Astro.props as Props;
+const { title, description, pictureSrc, pictureAlt } = Astro.props as Props;
 const defaultImage = new URL('/twitter-default.png', Astro.canonicalURL);
 ---
 
@@ -19,3 +19,4 @@ const defaultImage = new URL('/twitter-default.png', Astro.canonicalURL);
 {pictureSrc
   ? <meta name="twitter:image" content={pictureSrc} />
   : <meta name="twitter:image" content={defaultImage.href} />}
+{pictureAlt && <meta name="twitter:image:alt" content={pictureAlt} />}

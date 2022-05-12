@@ -9,8 +9,7 @@ tags:
   - GitHub
 categories:
   - Planet Mozilla
-banner: banner.png
-banner_svg: banner.svg
+banner: banner.svg
 ---
 
 I've been moving many repositories over to GitHub Actions to automate deployment and testing. One of my projects uses GitHub Pages, but includes data from two different branches:

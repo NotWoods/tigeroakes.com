@@ -6,7 +6,7 @@ export interface Props {
   pictureAlt?: string;
 }
 
-const { title, description, pictureSrc } = Astro.props as Props;
+const { title, description, pictureSrc, pictureAlt } = Astro.props as Props;
 ---
 
 <meta name="og:title" content={title} />
@@ -15,3 +15,4 @@ const { title, description, pictureSrc } = Astro.props as Props;
 <meta name="og:description" content={description} />
 <meta name="og:site_name" content="Tiger Oakes" />
 {pictureSrc && <meta name="og:image" content={pictureSrc} />}
+{pictureAlt && <meta name="og:image:alt" content={pictureAlt} />}
