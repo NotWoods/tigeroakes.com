@@ -21,7 +21,7 @@ function isImg(tag: ImgTag | SourceTag | PictureTag): tag is ImgTag {
 const tag = generateObject(metadata, attributes) as ImgTag | PictureTag;
 ---
 
-<picture class:list={[`block mb-2 shadow-md aspect-w-2 aspect-h-1`, pictureClass]}>
+<picture class={pictureClass}>
   {isImg(tag)
     ? <img {...tag.img} class={imgClass} />
     : tag.picture.map(tag => isImg(tag)

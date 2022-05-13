@@ -1,7 +1,20 @@
 ---
+import Image from '@11ty/eleventy-img';
+import GeneratePicture from '../eleventy-img/GeneratePicture.astro';
+import { imageOptions } from '../eleventy-img/options';
 import Button from '../Button.astro';
 import Logo from '../Logo.astro';
-import profile from './profile.jpg';
+
+const metadata = await Image('src/components/home/profile.jpg', {
+  ...imageOptions,
+  widths: [160, 320, 640],
+  formats: ['avif', 'webp', 'jpeg'],
+});
+const attributes = {
+  alt: 'Portrait of Tiger Oakes',
+  decoding: 'async',
+  sizes: '10rem',
+};
 ---
 
 <section
@@ -29,11 +42,5 @@ import profile from './profile.jpg';
       href="https://buttondown.email/tiger">Subscribe to my newsletter</Button
     >
   </div>
-  <img
-    class="border-4 border-slate-800 rounded-full grow-0 shrink-0 mx-auto"
-    src={profile}
-    alt="Portrait of Tiger Oakes"
-    width="160"
-    height="160"
-  />
+  <GeneratePicture {metadata} {attributes} pictureClass="grow-0 shrink-0 mx-auto w-40 h-40" imgClass="border-4 border-slate-800 rounded-full" />
 </section>
