@@ -21,6 +21,15 @@
     text-underline-offset: 3px;
     @apply decoration-2 hover:decoration-current;
   }
+
+  ::selection {
+    @apply bg-orange-500 text-slate-800;
+    text-shadow: none;
+  }
+  .selection-invert::selection,
+  .selection-invert ::selection {
+    @apply bg-slate-800 text-orange-500;
+  }
 }
 
 @layer components {

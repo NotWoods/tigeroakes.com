@@ -8,9 +8,6 @@ export default defineConfig({
   publicDir: './static',
   trailingSlash: 'always',
   integrations: [preact(), tailwind({ config: { applyBaseStyles: false } })],
-  build: {
-    format: 'file',
-  },
   markdown: {
     drafts: process.env.NETLIFY_CONTEXT === 'deploy-preview',
   },
