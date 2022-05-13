@@ -15,7 +15,7 @@ links:
   - title: JSConf Budapest
     link: https://jsconfbp.com/speakers/tiger-oakes
 color: '#17c37b'
-banner: slide.jpg
+banner: slide.png
 ---
 
 **JSConf Budapest 2022**
