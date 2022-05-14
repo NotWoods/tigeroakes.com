@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-areas: 'sidebar content';
+}
+.container.closed {
+  grid-template-columns: 0px 1fr;
+}
+.container.open {
+  grid-template-columns: 320px 1fr;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(to bottom, #334155, #1e293b);
+}
+.content {
+  grid-area: content;
+  background: linear-gradient(to right bottom, #cbd5e1, #94a3b8);
+}
+
+.sidebar, .content {
+  padding: 1rem;
+  min-height: 10rem;
+}
