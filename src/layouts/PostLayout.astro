@@ -13,6 +13,7 @@ const formattedProps = {
   href: Astro.canonicalURL,
   accent: postAccentColor(content.tags),
   date: content.date ? dateFromString(content.date) : undefined,
+  lastMod: content.lastMod ? dateFromString(content.lastMod) : undefined,
   description: content.description,
   tags: content.tags,
   elsewhere: content.elsewhere,

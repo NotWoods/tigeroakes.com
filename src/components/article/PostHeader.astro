@@ -15,6 +15,7 @@ export interface Props {
 
   title: string;
   date?: Temporal.PlainDate;
+  lastMod?: Temporal.PlainDate;
   description?: string;
   tags?: readonly string[];
   elsewhere?: {
@@ -23,12 +24,19 @@ export interface Props {
   };
 }
 
-const { title, description, date, tags, elsewhere, ...props } =
+const { title, description, date, lastMod, tags, elsewhere, ...props } =
   Astro.props as Props;
+
+const displayedTimes = [
+  { text: 'Last updated on', date: lastMod },
+  { text: 'Posted on', date },
+];
+const defaultDisplayedTime = { date: undefined, text: '' };
+const displayedTime = displayedTimes.find(time => time.date != undefined) ?? defaultDisplayedTime;
 ---
 
 <ArticleHeaderContainer {...props}>
-  {date && <Time {date}>Posted on</Time>}
+  {displayedTime.date && <Time date={displayedTime.date}>{displayedTime.text}</Time>}
   <ArticleTitle>{title}</ArticleTitle>
   <ArticleDescription>{description}</ArticleDescription>
   <Tags class="mt-auto text-sm" {tags} elsewhere={elsewhere?.name} />

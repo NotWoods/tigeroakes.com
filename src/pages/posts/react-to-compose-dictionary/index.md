@@ -1,9 +1,9 @@
 ---
 layout: ../../../layouts/PostLayout.astro
-title: 'React to Jetpack Compose RC Dictionary'
+title: 'React to Jetpack Compose Dictionary'
 description: Two libraries with similar concepts. What's the equivalent Jetpack Compose terms for React terms?
 date: 2020-07-20
-author: tiger
+lastMod: 2022-05-13
 tags:
   - Android
   - React
@@ -22,7 +22,7 @@ toc: true
 
 I've been trying out [Jetpack Compose](https://developer.android.com/jetpack/compose) on a personal project and liking the API. Compose is a pretty big API shift, and I've found my [React](https://reactjs.org/) knowledge much more helpful than my Android knowledge. Perhaps this is how React Native developers come to replace native Android developers.
 
-Many concepts and functions in the two libraries work the same but have different names. Here's a compilation of terms I've seen along with explanations. Jetpack Compose is still changing, and this list is based on [version 1.0.0-rc01](https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-rc01).
+Many concepts and functions in the two libraries work the same but have different names. Here's a compilation of terms I've seen along with explanations. This list is up to date for Jetpack Compose, and based on [version 1.1.1](https://developer.android.com/jetpack/androidx/releases/compose-ui#version_11_2).
 
 ## Children Prop > Children Composable
 
