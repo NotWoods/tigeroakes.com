@@ -1,12 +1,15 @@
 [build]
-publish = "dist"
-command = "npm run build"
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "16"
 
 [context.production.environment]
-NETLIFY_CONTEXT = "production"
+  NETLIFY_CONTEXT = "production"
 
 [context.deploy-preview.environment]
-NETLIFY_CONTEXT = "deploy-preview"
+  NETLIFY_CONTEXT = "deploy-preview"
 
 [context.branch-deploy.environment]
-NETLIFY_CONTEXT = "branch-deploy"
+  NETLIFY_CONTEXT = "branch-deploy"

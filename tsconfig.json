@@ -12,7 +12,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     // Add type definitions for our Vite runtime.
-    "types": ["vite/client"],
+    "types": ["vite/client", "vite-plugin-pwa/client"],
     "allowSyntheticDefaultImports": true
   }
 }

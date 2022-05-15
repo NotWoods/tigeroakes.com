@@ -27,12 +27,16 @@ export interface Props {
 const { title, description, date, lastMod, tags, elsewhere, ...props } =
   Astro.props as Props;
 
-const displayedTimes = [
+interface DisplayedTime {
+  text: string;
+  date?: Temporal.PlainDate | undefined;
+}
+
+const displayedTimes: DisplayedTime[] = [
   { text: 'Last updated on', date: lastMod },
   { text: 'Posted on', date },
 ];
-const defaultDisplayedTime = { date: undefined, text: '' };
-const displayedTime = displayedTimes.find(time => time.date != undefined) ?? defaultDisplayedTime;
+const displayedTime = displayedTimes.find(time => time.date != undefined) ?? { text: '' };
 ---
 
 <ArticleHeaderContainer {...props}>

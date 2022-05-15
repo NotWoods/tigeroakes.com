@@ -1,9 +1,9 @@
 ---
 import { Intl, Temporal } from '@js-temporal/polyfill';
-import { dateFromString, formatToPartsMap } from '../../scripts/date';
+import { formatToPartsMap } from '../../scripts/date';
 
 export interface Props {
-  date: string | Temporal.PlainDate;
+  date: Temporal.PlainDate;
 }
 
 const { date } = Astro.props as Props;
@@ -13,10 +13,7 @@ const readableFormatter = new Intl.DateTimeFormat('en-CA', {
   day: 'numeric',
 });
 
-const parts = formatToPartsMap(
-  readableFormatter,
-  typeof date === 'string' ? dateFromString(date) : undefined
-);
+const parts = formatToPartsMap(readableFormatter, date);
 ---
 
 <time class="text-sm opacity-80" datetime={date.toString()}>

@@ -1,0 +1,33 @@
+---
+import BannerNav from '../components/BannerNav.astro';
+import Footer from '../components/Footer.astro';
+import HomeNewPosts from '../components/home/HomeNewPosts.astro';
+import MainHead from '../components/meta/MainHead.astro';
+import RSS from '../components/meta/RSS.astro';
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Tiger Oakes" description="404 page" defaultSocial />
+    <RSS href="/posts/rss.xml" />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <div
+      class="bg-orange-500 text-slate-800 selection-invert pb-12"
+      style="--accent: currentColor"
+    >
+      <BannerNav />
+      <section
+        class="max-w-site mx-auto px-4 prose prose-lg"
+      >
+        <h2 class="text-5xl my-4">404</h2>
+        <p>Couldn't find the page you're looking for. Check out some other posts below!</p>
+      </section>
+    </div>
+
+    <HomeNewPosts />
+
+    <Footer />
+  </body>
+</html>

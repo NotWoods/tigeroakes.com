@@ -3,33 +3,11 @@ import BannerNav from '../components/BannerNav.astro';
 import Button from '../components/Button.astro';
 import HomeAbout from '../components/home/HomeAbout.astro';
 import HomeContact from '../components/home/HomeContact.astro';
-import ListFlat from '../components/lists/ListFlat.astro';
+import HomeNewPosts from '../components/home/HomeNewPosts.astro';
 import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import RSS from '../components/meta/RSS.astro';
-import {
-  loadPosts,
-  postAccentColor,
-  postBanner,
-  type Post,
-} from '../scripts/posts';
-
-const allPosts = await loadPosts(Astro.glob('./posts/*/*.md'));
-const featured = allPosts.filter((post) =>
-  post.frontmatter.categories?.includes('Feature')
-);
-
-function formatPost(post: Post) {
-  return {
-    title: post.frontmatter.title,
-    description: post.frontmatter.description,
-    date: post.date,
-    accent: postAccentColor(post.frontmatter.tags),
-    href: post.url,
-    pictureSrc: postBanner(post),
-  };
-}
 
 async function loadProject(
   projectGlob: Promise<readonly { url: string; frontmatter: any }[]>
@@ -68,16 +46,7 @@ const description =
       <HomeAbout />
     </div>
 
-    <section id="previews" class="max-w-site mx-auto px-4 py-8">
-      <ListFlat
-        title="Latest posts"
-        items={allPosts.slice(0, 3).map(formatPost)}
-      />
-      <ListFlat
-        title="Popular content"
-        items={featured.slice(0, 3).map(formatPost)}
-      />
-    </section>
+    <HomeNewPosts />
 
     <section id="featured-projects" style="--block-scale: 1">
       <ProjectFeature {...projects[0]}>
