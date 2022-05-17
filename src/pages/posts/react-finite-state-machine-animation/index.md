@@ -13,14 +13,14 @@ categories:
   - Planet Mozilla
 toc: true
 setup: |
-  import { SidebarTranslateSliderDemo } from './SidebarDemo';
+  import { SidebarAnimationDemo, SidebarTranslateSliderDemo } from './SidebarDemo';
 ---
 
 Advanced web animation can be tricky - you want to mount and unmount elements, reduce layout, and keep the whole thing looking smooth. While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I recently added an animation that plays when you open or close the sidebar. I found that using a finite state machine and the Web Animation API made the animation performant and easy to read. Here’s how it works!
 
 ## Breaking down the animation
 
-<!— Interactive preview of sidebar layout with animation speed toggle (333ms vs 2000ms) —>
+<SidebarAnimationDemo client:visible />
 
 This simple sidebar and content layout requires a few different moving parts:
 

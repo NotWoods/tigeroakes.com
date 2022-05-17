@@ -8,6 +8,9 @@
 .container.open {
   grid-template-columns: 320px 1fr;
 }
+.container.animating {
+  grid-template-columns: 320px 100%;
+}
 
 .sidebar {
   grid-area: sidebar;
@@ -15,7 +18,7 @@
 }
 .content {
   grid-area: content;
-  background: linear-gradient(to right bottom, #cbd5e1, #94a3b8);
+  background: linear-gradient(to right bottom, #1C1917, #cbd5e1);
 }
 
 .sidebar, .content {
