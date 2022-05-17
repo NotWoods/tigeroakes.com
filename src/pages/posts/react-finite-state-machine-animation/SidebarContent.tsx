@@ -1,6 +1,6 @@
 import { Ref } from 'preact';
 import { JSXInternal } from 'preact/src/jsx';
-import classes from './sidebar-demo.module.css';
+import classes from './sidebar-content.module.css';
 
 export type AnimationState = 'open' | 'opening' | 'closed' | 'closing';
 
@@ -24,7 +24,9 @@ export function SidebarContent(props: Props) {
         containerClass[props.animationState]
       }`}
     >
-      <div class={classes.sidebar}>Sidebar</div>
+      {props.animationState !== 'closed' && (
+        <div class={classes.sidebar}>Sidebar</div>
+      )}
       <div
         ref={props.contentRef}
         class={classes.content}

@@ -6,10 +6,10 @@
   grid-template-columns: 0px 1fr;
 }
 .container.open {
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 160px 1fr;
 }
 .container.animating {
-  grid-template-columns: 320px 100%;
+  grid-template-columns: 160px 100%;
 }
 
 .sidebar {

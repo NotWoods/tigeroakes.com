@@ -51,14 +51,14 @@ function useOpenCloseAnimation(
     switch (animationState) {
       case 'opening':
         animation = contentRef.current.animate(
-          [{ transform: 'translateX(-320px)' }, { transform: 'translateX(0)' }],
+          [{ transform: 'translateX(-160px)' }, { transform: 'translateX(0)' }],
           options
         );
         animation.onfinish = () => setAnimationDone('open');
         break;
       case 'closing':
         animation = contentRef.current.animate(
-          [{ transform: 'translateX(0)' }, { transform: 'translateX(-320px)' }],
+          [{ transform: 'translateX(0)' }, { transform: 'translateX(-160px)' }],
           options
         );
         animation.onfinish = () => setAnimationDone('closed');
@@ -87,6 +87,7 @@ export function SidebarAnimationDemo() {
     <CodeDemoControls
       controls={
         <>
+          <div>state: {animationState}</div>
           <CodeDemoControl name="open" type="checkbox" checked={state.open} />
           <CodeDemoControl
             label="animation-duration"
@@ -113,7 +114,7 @@ export function SidebarAnimationDemo() {
 }
 
 export function SidebarTranslateSliderDemo() {
-  const [state, callbacks] = useFormState({ translateX: 320 });
+  const [state, callbacks] = useFormState({ translateX: 160 });
 
   return (
     <CodeDemoControls
@@ -122,7 +123,7 @@ export function SidebarTranslateSliderDemo() {
           name="translateX"
           type="range"
           min={0}
-          max={320}
+          max={160}
           value={state.translateX}
         />
       }
@@ -130,7 +131,7 @@ export function SidebarTranslateSliderDemo() {
     >
       <SidebarContent
         animationState="open"
-        contentStyle={{ transform: `translateX(${state.translateX - 320}px)` }}
+        contentStyle={{ transform: `translateX(${state.translateX - 160}px)` }}
       />
     </CodeDemoControls>
   );
