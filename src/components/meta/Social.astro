@@ -23,8 +23,7 @@ if (pictureSrc) {
       return `${parentFolder(src)}-banner.${id}.${format}`;
     },
   });
-  src = metadata.png[0].url;
-  console.log(src);
+  src = new URL(metadata.png[0].url, Astro.canonicalURL).href;
 }
 ---
 
