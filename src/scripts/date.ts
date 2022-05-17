@@ -2,10 +2,12 @@ import { Intl, Temporal } from '@js-temporal/polyfill';
 
 export function formatToPartsMap(
   formatter: Intl.DateTimeFormat,
-  date: Intl.Formattable
+  date: Temporal.PlainDate
 ): ReadonlyMap<globalThis.Intl.DateTimeFormatPartTypes, string> {
+  const formattable =
+    date.toZonedDateTime('America/Vancouver').epochMilliseconds;
   return new Map(
-    formatter.formatToParts(date).map(({ type, value }) => [type, value])
+    formatter.formatToParts(formattable).map(({ type, value }) => [type, value])
   );
 }
 
