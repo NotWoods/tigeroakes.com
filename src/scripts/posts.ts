@@ -8,6 +8,7 @@ import { trailingSlash } from './path';
 export interface PostFrontmatter {
   title: string;
   description: string;
+  draft?: boolean;
   tags: readonly string[];
   categories: readonly string[];
   date: string;
@@ -17,6 +18,7 @@ export interface PostFrontmatter {
     link: string;
   };
   banner?: string;
+  banner_alt?: string;
 }
 
 export interface Post extends MarkdownInstance<PostFrontmatter> {
@@ -27,16 +29,18 @@ export async function loadPosts(
   input: Promise<MarkdownInstance<PostFrontmatter>[]>
 ) {
   const allPosts = await input;
-  const formattedPosts = allPosts.map((post) => {
-    const formattedPost: Post = {
-      ...post,
-      url: trailingSlash(post.url),
-      date: post.frontmatter.date
-        ? dateFromString(post.frontmatter.date)
-        : undefined,
-    };
-    return formattedPost;
-  });
+  const formattedPosts = allPosts
+    .filter((post) => !post.frontmatter.draft)
+    .map((post) => {
+      const formattedPost: Post = {
+        ...post,
+        url: trailingSlash(post.url),
+        date: post.frontmatter.date
+          ? dateFromString(post.frontmatter.date)
+          : undefined,
+      };
+      return formattedPost;
+    });
   formattedPosts.sort((a, b) => {
     if (a.date && b.date) {
       return Temporal.PlainDate.compare(a.date, b.date) * -1;

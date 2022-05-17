@@ -1,4 +1,5 @@
 ---
+import { resolve } from 'path';
 import ArticleLayout from '../components/article/ArticleLayout.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import Social from '../components/meta/Social.astro';
@@ -7,6 +8,16 @@ import { postAccentColor } from '../scripts/posts';
 import '../styles/font-extra.css';
 
 const { content } = Astro.props;
+
+const POST_PATH = /^\/(posts|talks)\/([-\w]+)/;
+function postBanner(bannerFile: string | undefined) {
+  const match = POST_PATH.exec(Astro.canonicalURL.pathname);
+  if (match && bannerFile) {
+    const [, folder, slug] = match;
+    return resolve(process.cwd(), `src/pages/${folder}/${slug}/${bannerFile}`);
+  }
+  return undefined;
+}
 
 const formattedProps = {
   title: content.title,
@@ -23,8 +34,17 @@ const formattedProps = {
 
 <html lang="en">
   <head>
-    <MainHead title={content.title} description={content.description} canonical={content.elsewhere?.link ?? Astro.canonicalURL} />
-    <Social title={content.title} description={content.description} />
+    <MainHead
+      title={content.title}
+      description={content.description}
+      canonical={content.elsewhere?.link ?? Astro.canonicalURL}
+    />
+    <Social
+      title={content.title}
+      description={content.description}
+      pictureSrc={postBanner(content.banner)}
+      pictureAlt={content.banner_alt}
+    />
   </head>
 
   <body class="bg-slate-800 text-slate-200">

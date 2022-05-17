@@ -14,13 +14,18 @@ const posts = allPages.map((post) => ({
   date: post.date,
   description: post.frontmatter.description,
   pictureSrc: postBanner(post),
+  pictureAlt: post.frontmatter.banner_alt,
   tags: post.frontmatter.tags,
 }));
 ---
 
 <html lang="en">
   <head>
-    <MainHead title={header.frontmatter.title} description={header.description} defaultSocial />
+    <MainHead
+      title={header.frontmatter.title}
+      description={header.frontmatter.description}
+      defaultSocial
+    />
   </head>
 
   <body class="bg-slate-800 text-slate-200">

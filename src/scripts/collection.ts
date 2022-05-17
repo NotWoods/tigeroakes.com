@@ -50,6 +50,7 @@ export async function getCollectionPages(
     accent: postAccentColor(post.frontmatter.tags),
     href: trailingSlash(post.url),
     pictureSrc: postBanner(post),
+    pictureAlt: post.frontmatter.banner_alt,
     pictureFit: 'cover' as const,
     tags: post.frontmatter.tags,
     categories: post.frontmatter.categories,

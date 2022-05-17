@@ -2,7 +2,6 @@
 layout: ../../../layouts/PostLayout.astro
 title: 'Make advanced React animation easy using finite state machines'
 description: Sync state changes with animations while keeping code readable.
-draft: true
 date: 2022-05-17
 tags:
   - Web
@@ -12,6 +11,7 @@ tags:
 categories:
   - Planet Mozilla
 banner: banner.png
+banner_alt: Finite State Machine diagram with circular paths and states for Open, Closing, Closed, Opening. In the background a sidebar and content layout is visible.
 toc: true
 setup: |
   import { SidebarAnimationDemo, SidebarLayoutDemo, SidebarNaiveDemo, SidebarTranslateSliderDemo } from './SidebarDemo';
@@ -275,7 +275,11 @@ function SidebarLayout(props: { open: boolean }) {
   return (
     <div className={`container ${containerClassName}`}>
       {/* If the current state is "closed", unmount the sidebar */}
-      {animationState !== 'closed' && <aside className="sidebar">Sidebar</aside>}
+      {animationState !== 'closed' && (
+        <aside className="sidebar">
+          Sidebar
+        </aside>
+      )}
       <section ref={contentRef} className="content">
         Main content
       </section>

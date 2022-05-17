@@ -4,17 +4,15 @@ title: Going from Android LinearLayout to CSS flexbox
 description: Learning how to create a linear layout in CSS using Android experience.
 date: 2020-10-26
 publishDate: 2020-10-23
-author: tiger
 tags:
   - Android
   - Web
   - CSS
 categories:
   - Planet Mozilla
-images:
-  - /posts/android-linearlayout-to-web-flexbox/banner.png
-banner: banner.svg
 toc: true
+banner: banner.svg
+banner_alt: LinearLayout to Flexbox. Shows logos for Android below LinearLayout, and CSS3 above Flexbox.
 ---
 
 ![](banner.svg)

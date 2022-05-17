@@ -15,6 +15,7 @@ const posts = allPages.map((post) => ({
   date: post.date,
   description: post.frontmatter.description,
   pictureSrc: postBanner(post),
+  pictureAlt: post.frontmatter.banner_alt,
   tags: post.frontmatter.tags,
   elsewhere: post.frontmatter.elsewhere,
 }));
@@ -22,7 +23,11 @@ const posts = allPages.map((post) => ({
 
 <html lang="en">
   <head>
-    <MainHead title="Blog" description={header.description} defaultSocial />
+    <MainHead
+      title="Blog"
+      description={header.frontmatter.description}
+      defaultSocial
+    />
     <RSS href="/posts/rss.xml" />
   </head>
 

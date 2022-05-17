@@ -12,6 +12,7 @@ categories:
   - Planet Mozilla
 toc: true
 banner: banner.jpg
+banner_alt: Lobster trap
 ---
 
 ## What is `any`?

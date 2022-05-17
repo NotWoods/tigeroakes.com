@@ -4,10 +4,11 @@ title: Are unpaid internships empowering women in tech?
 description: I don't think so, but it feels like FLIK's business does.
 date: 2021-03-04
 lastMod: 2022-05-04
-author: tiger
-banner: flik-faq.png
 tags:
   - Career
+banner: flik-faq.png
+banner_alt: >
+  FLIK FAQ screenshot, showing questions "Do I have to pay the apprentice?", "What are the tax implications? Is this legal?", and "Would FLIK apprenticeships be similar to unpaid internships?"
 ---
 
 Recently, a woman I know came across a platform created by an alumni of our university named [FLIK](https://weareflik.com/). The company is an online job portal for "connecting and empowering driven women at all stages of the female founder pipeline". She was curious and joined the platform, but alerted me because she ended up getting so many offers for unpaid internships called "apprenticeships".

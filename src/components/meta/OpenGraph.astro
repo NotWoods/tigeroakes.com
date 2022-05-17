@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const { title, description, pictureSrc, pictureAlt } = Astro.props as Props;
-const defaultImage = new URL('/twitter-default.png', Astro.canonicalURL);
+const defaultImage = new URL('/banner.png', Astro.canonicalURL);
 ---
 
 <meta name="og:title" content={title} />

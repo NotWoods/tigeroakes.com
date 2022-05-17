@@ -20,16 +20,13 @@ function formatPost(post: Post) {
     accent: postAccentColor(post.frontmatter.tags),
     href: post.url,
     pictureSrc: postBanner(post),
+    pictureAlt: post.frontmatter.banner_alt,
   };
 }
 ---
+
 <section id="previews" class="max-w-site mx-auto px-4 py-8">
-  <ListFlat
-    title="Latest posts"
-    items={allPosts.slice(0, 3).map(formatPost)}
-  />
-  <ListFlat
-    title="Popular content"
-    items={featured.slice(0, 3).map(formatPost)}
+  <ListFlat title="Latest posts" items={allPosts.slice(0, 3).map(formatPost)} />
+  <ListFlat title="Popular content" items={featured.slice(0, 3).map(formatPost)}
   />
 </section>

@@ -10,9 +10,9 @@ categories:
   - Planet Mozilla
 projects:
   - mozilla-firefox
-images:
-  - /posts/til-mozilla-central-main-alias/carbon.png
 banner: carbon.png
+banner_alt: >
+  /c/Code/mozilla/gecko> git checkout main
 ---
 
 I just set up [Mozilla Central with a git wrapper](https://github.com/glandium/git-cinnabar/wiki/Mozilla:-A-git-workflow-for-Gecko-development) so I can contribute to the main Gecko codebase using Git. It works great, but the default branch has an unusual name compared to what I'm used to.
@@ -40,4 +40,4 @@ Switched to branch 'main'
 On branch branches/default/tip
 ```
 
-![](carbon.png)
+![/c/Code/mozilla/gecko> git checkout main](carbon.png)
