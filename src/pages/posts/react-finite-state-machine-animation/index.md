@@ -3,7 +3,7 @@ layout: ../../../layouts/PostLayout.astro
 title: 'Make advanced React animation easy using finite state machines'
 description: Sync state changes with animations while keeping code readable.
 draft: true
-date: 2022-05-13
+date: 2022-05-17
 tags:
   - Web
   - React
@@ -174,9 +174,9 @@ This is where the state machine starts to come in. We can store the current stat
 ```tsx
 type AnimationState = 'open' | 'opening' | 'closed' | 'closing';
 
-function useAnimationStateMachine(
-  props: { open: boolean }
-): [AnimationState, (state: 'open' | 'closed') => void] {
+function useAnimationStateMachine(props: {
+  open: boolean;
+}): [AnimationState, (state: 'open' | 'closed') => void] {
   const [animationState, setAnimationState] = useState<AnimationState>('open');
 
   useEffect(() => {
@@ -208,7 +208,8 @@ Later on we'll use the setter to mark when the animation is finished. Since we o
 ```tsx
 function SidebarLayout(props: { open: boolean }) {
   const contentRef = useRef<HTMLElement>(null);
-  const [animationState, setAnimationFinished] = useAnimationStateMachine(props);
+  const [animationState, setAnimationFinished] =
+    useAnimationStateMachine(props);
 
   useLayoutEffect(() => {
     const mainContent = contentRef.current;
@@ -216,7 +217,7 @@ function SidebarLayout(props: { open: boolean }) {
     let animation: Animation | undefined;
     const options: KeyframeAnimationOptions = {
       easing: 'ease-in-out',
-      duration
+      duration,
     };
 
     switch (animationState) {
