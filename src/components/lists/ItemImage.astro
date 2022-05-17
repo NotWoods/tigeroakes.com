@@ -12,7 +12,14 @@ export interface Props {
   fit?: 'cover' | 'contain';
 }
 
-const { src, alt = '', fit, width, sizes, class: className } = Astro.props as Props;
+const {
+  src,
+  alt = '',
+  fit,
+  width,
+  sizes,
+  class: className,
+} = Astro.props as Props;
 const imgClass = fit === 'contain' ? 'object-contain' : 'object-cover';
 const pictureClass = [`block mb-2 shadow-md aspect-w-2 aspect-h-1`, className]
   .filter(Boolean)

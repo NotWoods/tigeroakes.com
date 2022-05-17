@@ -19,7 +19,7 @@ if (pictureSrc) {
     ...imageOptions,
     formats: ['png'],
     svgShortCircuit: false,
-    filenameFormat(id: string, src: string, width: number, format: string) {
+    filenameFormat(id, src, width, format) {
       return `${parentFolder(src)}-banner.${id}.${format}`;
     },
   });
