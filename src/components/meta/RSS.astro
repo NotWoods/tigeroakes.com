@@ -1,12 +1,10 @@
 ---
 export interface Props {
-  href: string;
+  href?: string;
   title?: string;
 }
 
-const { href, title = 'Tiger Oakes' } = Astro.props as Props;
-
-const url = new URL(href, Astro.canonicalURL);
+const { href = '/posts/rss.xml', title = 'Tiger Oakes' } = Astro.props as Props;
 ---
 
-<link rel="alternate" type="application/rss+xml" href={url.href} {title} />
+<link rel="alternate" type="application/rss+xml" {href} {title} />
