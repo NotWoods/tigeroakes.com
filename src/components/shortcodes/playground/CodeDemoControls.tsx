@@ -21,7 +21,7 @@ export function CodeDemoControl({
 }: BaseControlProps<string, 'value' | 'checked' | 'onInput' | 'onChange'> &
   ControlProps) {
   return (
-    <label class="flex gap-x-4">
+    <label class="flex flex-wrap gap-x-4 items-center">
       <input autocomplete="off" {...props} />
       <span>{label || props.name}</span>
     </label>

@@ -119,7 +119,7 @@ export function SidebarAnimationDemo() {
 }
 
 export function SidebarTranslateSliderDemo() {
-  const [state, callbacks] = useFormState({ open: true });
+  const [state, callbacks] = useFormState({ translateX: 0 });
 
   return (
     <CodeDemoControls
@@ -146,29 +146,40 @@ export function SidebarTranslateSliderDemo() {
 type Layout = 'open' | 'animating' | 'closed';
 const layouts: readonly Layout[] = ['open', 'animating', 'closed'];
 export function SidebarLayoutDemo() {
-  const [currentLayout, setLayout] = useState(layouts[0]);
+  const [state, callbacks] = useFormState({
+    layout: layouts[0],
+    translateX: 0,
+  });
 
   return (
     <CodeDemoControls
-      controls={layouts.map((layout) => (
-        <CodeDemoControl
-          key={layout}
-          label={layout}
-          value={layout}
-          name="layout"
-          type="radio"
-          checked={currentLayout === layout}
-        />
-      ))}
-      onInput={(event) =>
-        setLayout((event.target as HTMLInputElement).value as Layout)
+      controls={
+        <>
+          {layouts.map((layout) => (
+            <CodeDemoControl
+              key={layout}
+              label={layout}
+              value={layout}
+              name="layout"
+              type="radio"
+              checked={state.layout === layout}
+            />
+          ))}
+          <CodeDemoControl
+            label={`transform: translateX(${state.translateX}px)`}
+            name="translateX"
+            type="range"
+            min={-160}
+            max={0}
+            value={state.translateX}
+          />
+        </>
       }
-      onReset={() => setLayout(layouts[0])}
+      {...callbacks}
     >
       <SidebarContent
-        animationState={
-          currentLayout === 'animating' ? 'opening' : currentLayout
-        }
+        animationState={state.layout === 'animating' ? 'opening' : state.layout}
+        contentStyle={{ transform: `translateX(${state.translateX}px)` }}
       />
     </CodeDemoControls>
   );

@@ -29,7 +29,7 @@ function useElementWidth(elementRef: RefObject<HTMLElement>) {
     return () => resizeObserver.disconnect();
   }, [elementRef]);
 
-  return width;
+  return Math.floor(width);
 }
 
 export function SidebarContent(props: Props) {

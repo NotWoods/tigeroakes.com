@@ -3,8 +3,9 @@ import { useCallback, useState } from 'preact/hooks';
 function readInputState(input: HTMLInputElement) {
   switch (input.type) {
     case 'checkbox':
-    case 'radio':
       return input.checked;
+    case 'radio':
+      return input.value;
     case 'range':
       return Number(input.value);
     default:
