@@ -21,9 +21,9 @@ export function CodeDemoControl({
 }: BaseControlProps<string, 'value' | 'checked' | 'onInput' | 'onChange'> &
   ControlProps) {
   return (
-    <label class="block">
+    <label class="flex gap-x-4">
       <input autocomplete="off" {...props} />
-      <span class="ml-4">{label || props.name}</span>
+      <span>{label || props.name}</span>
     </label>
   );
 }
@@ -37,7 +37,7 @@ export function CodeDemoControls({ controls, ...props }: ControlsProps) {
 
   return (
     <CodeDemo {...props}>
-      <div class="bg-slate-200 mx-4">{props.children}</div>
+      <div class="bg-slate-200 mx-4 relative">{props.children}</div>
       <fieldset class="px-4 py-2" disabled={!mounted}>
         {controls}
       </fieldset>

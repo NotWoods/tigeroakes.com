@@ -7,16 +7,17 @@ date: 2022-05-13
 tags:
   - Web
   - React
-  - Web Animation API
+  - Animation
   - CSS
 categories:
   - Planet Mozilla
+banner: banner.png
 toc: true
 setup: |
-  import { SidebarAnimationDemo, SidebarTranslateSliderDemo } from './SidebarDemo';
+  import { SidebarAnimationDemo, SidebarLayoutDemo, SidebarNaiveDemo, SidebarTranslateSliderDemo } from './SidebarDemo';
 ---
 
-Advanced web animation can be tricky - you want to mount and unmount elements, reduce layout, and keep the whole thing looking smooth. While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I recently added an animation that plays when you open or close the sidebar. I found that using a finite state machine and the Web Animation API made the animation performant and easy to read. Here’s how it works!
+Advanced web animation can be tricky - you want to mount and unmount elements, reduce layout, and keep the whole thing looking smooth. While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I recently added an animation that plays when you open or close the sidebar. I found that using a finite state machine and the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) made the animation performant and easy to read. Here’s how it works!
 
 ## Breaking down the animation
 
@@ -25,7 +26,7 @@ Advanced web animation can be tricky - you want to mount and unmount elements, r
 This simple sidebar and content layout requires a few different moving parts:
 
 - The sidebar must take up 160 pixels when its open, but 0 pixels when its closed.
-- We can’t animate the sidebar width since [animating size and layout is slow](https://web.dev/animations-overview/).
+- We can’t animate the sidebar width since [animating width and layout is slow](https://web.dev/animations-overview/).
 - We want the main content to cover the sidebar, rather than just slide the sidebar away.
 - When closed, we should remove the `<Sidebar />` React component - but only once the animation is completed.
 
@@ -52,7 +53,7 @@ The sidebar animation has two clear states: the sidebar is open and the sidebar 
   <path fill="#e67237" d="m48.4 73 2.2-1.3 20.8 36 .9-3 2.4.7-2 7.2-7.2-1.9.7-2.5 3 .9L48.4 73ZM234.6 112l-2.2 1.3-20.8-36-.8 3-2.4-.7 1.9-7.2 7.2 1.9-.6 2.5-3-.9 20.7 36.1ZM142.8 153.8v-2.6h60.7l-2.2-2.2 1.8-1.8 5.3 5.3-5.3 5.3-1.8-1.8 2.2-2.2h-60.7ZM140.3 33.8v-2.6H79.6l2.2-2.2-1.8-1.8-5.3 5.3 5.3 5.3 1.8-1.8-2.2-2.2h60.7Z"/>
 </svg>
 
-The diagram makes it pretty clear how many states we need to represent the animation and the possible paths. We can use TypeScript to help enforce these paths.
+The diagram makes it pretty clear how many states we need to represent the animation and the possible paths. All the animation logic will be driven by the current state of the state machine. Setting up the animation in this way makes it easier to keep React rendering in sync, since the state can be accessed synchronously.
 
 ## Representing the animation in CSS
 
@@ -67,25 +68,105 @@ Let’s start with the CSS used to represent the sidebar and content layout.
   grid-template-columns: 0px 1fr;
 }
 .container.open {
+  /* Using 1fr makes the column take up the remaining space in the grid */
   grid-template-columns: 160px 1fr;
 }
 ```
 
-Intuitively you probably want to animate the sidebar column’s width from 0px to 160px. However, this will hurt your website’s performance. Each “in-between” width needs to be calculated by the browser during the animation: 1px, 2px, ... 319px, 160px. When the browser is running the animation, it has to re-layout the page for each of those in-between values. As a result, your site will attempt to figure out how every element is laid out around 160 times in a mere third of a second.
+Intuitively you probably want to animate the sidebar column’s width from 0px to 160px. However, [this will hurt your website’s performance](https://web.dev/animations-overview/). Each “in-between” width needs to be calculated by the browser during the animation: 1px, 2px, ... 319px, 160px. When the browser is running the animation, it has to re-layout the page for each of those in-between values. As a result, your site will attempt to figure out how every element is laid out around 160 times in a mere third of a second.
 
 The more performant way to build animations is to use the [`transform` property](https://developer.mozilla.org/en-US/docs/Web/CSS/transform). Transformations are purely visual and don’t effect layout. As a result, it can be animated cheaply. When animating, we can translate the content section to cover and uncover the sidebar.
 
-```css
-@keyframes slideOpen {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(160px);
-  }
-}
+```ts
+// Start animating the main content section using the Web Animations API.
+const animation = mainContent.animate(
+  [{ transform: 'translateX(0)' }, { transform: 'translateX(-160px)' }],
+  { easing: 'ease-in-out', duration: 300 }
+);
 ```
 
 <SidebarTranslateSliderDemo client:visible />
 
-However, we still want to change layout eventually, since the content needs to fill the screen once the sidebar closes. So, once the animation is done,
+## Changing layout
+
+However, we still want to change layout eventually, since the content needs to fill the screen once the sidebar closes. So, once the animation is done, we change the width. The difference is this layout change happens once rather than many times.
+
+```ts
+animation.addEventListener('finish', () => {
+  // When the animation is finished, add the "closed" CSS class.
+  container.classList.add('closed');
+});
+```
+
+We also need to change the layout once when the animation is running. In the demo above, you'll notice that the area behind the content is visible when its being translated. Since the content only takes up part of the screen, it leaves a gap once it starts moving. The trick is to first make the content take up the entire screen width, then start moving it.
+
+```css
+.container.animating {
+  /* Using 100% makes the column take up the entire grid's width */
+  grid-template-columns: 0px 100%;
+}
+```
+
+<SidebarLayoutDemo client:visible />
+
+Now our code for the closing animation looks like this:
+
+```ts
+// Add the "animating" CSS class.
+container.classList.add('animating');
+// Start the animation.
+const animation = mainContent.animate(
+  [{ transform: 'translateX(0)' }, { transform: 'translateX(-160px)' }],
+  { easing: 'ease-in-out', duration: 300 }
+);
+animation.addEventListener('finish', () => {
+  // When the animation is finished, add the "closed" CSS class.
+  container.classList.replace('animating', 'closed');
+});
+```
+
+## Managing the layout and animation in React
+
+So far we've been working with vanilla JS for the animation. However, if we're working with a React component, we probably want to use React to manage the CSS classes and layout (in case your component does other things).
+
+```tsx
+function SidebarLayout(props: { open: boolean }) {
+  const contentRef = useRef<HTMLElement>(null);
+  const [containerClassName, setContainerClassName] = useState('open');
+
+  useLayoutEffect(() => {
+    const mainContent = contentRef.current;
+    if (!props.open) {
+      // Add the "animating" CSS class.
+      setContainerClassName('animating');
+      // Start the animation.
+      const animation = mainContent.animate(
+        [{ transform: 'translateX(0)' }, { transform: 'translateX(-160px)' }],
+        { easing: 'ease-in-out', duration: 300 }
+      );
+      animation.addEventListener('finish', () => {
+        // When the animation is finished, add the "closed" CSS class.
+        setContainerClassName('animating', 'closed');
+      });
+    } else {
+      // Reverse the direction for the opening animation.
+      ...
+    }
+  }, [props.open]);
+
+  return (
+    <div className={`container ${containerClassName}`}>
+      <aside className="sidebar">Sidebar</aside>
+      <section ref={contentRef} className="content">
+        Main content
+      </section>
+    </div>
+  );
+}
+```
+
+<SidebarNaiveDemo client:visible />
+
+If you toggle `open` rapidly in the above demo, you'll notice that the background is sometimes visible again. This is because state updates with `setContainerClassName` are asynchronous. React doesn't update the container's CSS class until the animation has already started.
+
+This is where the state machine starts to come in. We can store the current state of the animation and use that to trigger the animation, rather than having the animation effect manage state.

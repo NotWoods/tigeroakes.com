@@ -75,7 +75,7 @@ export function SidebarAnimationDemo() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [state, callbacks] = useFormState({
     open: true,
-    animationDuration: 333,
+    animationDuration: 300,
   });
   const animationState = useOpenCloseAnimation(
     contentRef,
@@ -88,9 +88,14 @@ export function SidebarAnimationDemo() {
       controls={
         <>
           <div>state: {animationState}</div>
-          <CodeDemoControl name="open" type="checkbox" checked={state.open} />
           <CodeDemoControl
-            label="animation-duration"
+            label={`open: ${state.open}`}
+            name="open"
+            type="checkbox"
+            checked={state.open}
+          />
+          <CodeDemoControl
+            label={`animation-duration: ${state.animationDuration}ms`}
             name="animationDuration"
             type="range"
             min="0"
@@ -114,16 +119,17 @@ export function SidebarAnimationDemo() {
 }
 
 export function SidebarTranslateSliderDemo() {
-  const [state, callbacks] = useFormState({ translateX: 160 });
+  const [state, callbacks] = useFormState({ open: true });
 
   return (
     <CodeDemoControls
       controls={
         <CodeDemoControl
+          label={`transform: translateX(${state.translateX}px)`}
           name="translateX"
           type="range"
-          min={0}
-          max={160}
+          min={-160}
+          max={0}
           value={state.translateX}
         />
       }
@@ -131,8 +137,89 @@ export function SidebarTranslateSliderDemo() {
     >
       <SidebarContent
         animationState="open"
-        contentStyle={{ transform: `translateX(${state.translateX - 160}px)` }}
+        contentStyle={{ transform: `translateX(${state.translateX}px)` }}
       />
+    </CodeDemoControls>
+  );
+}
+
+type Layout = 'open' | 'animating' | 'closed';
+const layouts: readonly Layout[] = ['open', 'animating', 'closed'];
+export function SidebarLayoutDemo() {
+  const [currentLayout, setLayout] = useState(layouts[0]);
+
+  return (
+    <CodeDemoControls
+      controls={layouts.map((layout) => (
+        <CodeDemoControl
+          key={layout}
+          label={layout}
+          value={layout}
+          name="layout"
+          type="radio"
+          checked={currentLayout === layout}
+        />
+      ))}
+      onInput={(event) =>
+        setLayout((event.target as HTMLInputElement).value as Layout)
+      }
+      onReset={() => setLayout(layouts[0])}
+    >
+      <SidebarContent
+        animationState={
+          currentLayout === 'animating' ? 'opening' : currentLayout
+        }
+      />
+    </CodeDemoControls>
+  );
+}
+
+export function SidebarNaiveDemo() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [animationState, setAnimationState] = useState<AnimationState>('open');
+  const [state, callbacks] = useFormState({ open: true });
+
+  useLayoutEffect(() => {
+    if (!contentRef.current) return;
+
+    let animation: Animation | undefined;
+    const options: KeyframeAnimationOptions = {
+      easing: 'ease-in-out',
+      duration: 300,
+    };
+
+    if (state.open) {
+      setAnimationState('opening');
+      animation = contentRef.current.animate(
+        [{ transform: 'translateX(-160px)' }, { transform: 'translateX(0)' }],
+        options
+      );
+      animation.onfinish = () => setAnimationState('open');
+    } else {
+      setAnimationState('opening');
+      animation = contentRef.current.animate(
+        [{ transform: 'translateX(0)' }, { transform: 'translateX(-160px)' }],
+        options
+      );
+      animation.onfinish = () => setAnimationState('closed');
+    }
+
+    return () => animation?.finish();
+  }, [state.open]);
+
+  return (
+    <CodeDemoControls
+      controls={
+        <CodeDemoControl
+          label={`open: ${state.open}`}
+          name="open"
+          type="checkbox"
+          checked={state.open}
+        />
+      }
+      {...callbacks}
+    >
+      <SidebarContent animationState={animationState} contentRef={contentRef} />
     </CodeDemoControls>
   );
 }

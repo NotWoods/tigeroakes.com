@@ -9,7 +9,7 @@ export interface Props {
 }
 
 function href(tag: string) {
-  return `/tags/${slugger.slug(tag)}`;
+  return `/tags/${slugger.slug(tag)}/`;
 }
 
 const { tags = [], elsewhere, class: className } = Astro.props as Props;
