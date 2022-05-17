@@ -1,0 +1,30 @@
+---
+import { generateObject } from '@11ty/eleventy-img';
+
+export interface Props {
+  metadata: unknown;
+  attributes: object & { alt: string };
+  pictureClass?: string;
+  imgClass?: string;
+}
+
+const { metadata, attributes, pictureClass, imgClass } = Astro.props as Props;
+
+type ImgTag = { img: Record<string, string> };
+type SourceTag = { source: { type: string, srcset: string, sizes?: string } };
+type PictureTag = { picture: [...SourceTag[], ImgTag] };
+
+function isImg(tag: ImgTag | SourceTag | PictureTag): tag is ImgTag {
+  return Boolean((tag as ImgTag).img);
+}
+
+const tag = generateObject(metadata, attributes) as ImgTag | PictureTag;
+---
+
+<picture class={pictureClass}>
+  {isImg(tag)
+    ? <img {...tag.img} class={imgClass} />
+    : tag.picture.map(tag => isImg(tag)
+      ? <img {...tag.img} class={imgClass} />
+      : <source {...tag.source} />)}
+</picture>

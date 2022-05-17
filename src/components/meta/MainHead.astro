@@ -1,0 +1,44 @@
+---
+import '../../styles/global.css';
+import '../../styles/font.css';
+import Twitter from './Twitter.astro';
+import OpenGraph from './OpenGraph.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  defaultSocial?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.canonicalURL.href,
+  defaultSocial,
+} = Astro.props as Props;
+
+const siteTitle = 'Tiger Oakes';
+const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+---
+
+<meta charset="utf-8" />
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+<link rel="icon" type="image/png" href="/favicon_x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="/favicon_x48.png" sizes="48x48" />
+<link rel="icon" type="image/png" href="/favicon_x512.png" sizes="512x512" />
+<link rel="canonical" href={canonical} />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#e67237" />
+<meta name="monetization" content="$ilp.uphold.com/p2WKq3nJHA8w" />
+<script
+  src="https://caterpilla.tigeroakes.com/script.js"
+  data-site="CSXBFPSZ"
+  defer></script>
+<link rel="preload" href="/font/lato/LatoLatin-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/font/cascadia-code/CascadiaMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+{defaultSocial && <Twitter {title} {description} />}
+{defaultSocial && <OpenGraph {title} {description} />}

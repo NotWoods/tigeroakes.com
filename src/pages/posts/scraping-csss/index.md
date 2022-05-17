@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Scraping a 15-year-old Drupal site into Markdown files
 description: Moving from Drupal to Jamstack...without any server passwords
 date: 2020-03-07
@@ -14,6 +15,8 @@ images:
   - /posts/scraping-csss/drupal.png
 banner: drupal.png
 toc: true
+setup: |
+  import GitHub from '../../../components/shortcodes/GitHub.astro';
 ---
 
 Your mission is to migrate a website from a server-side CMS to Jamstack. The site is 15 years old and is currently built with Drupal. All the pages need to be converted to markdown. And by the way, nobody knows the password to the server.
@@ -132,6 +135,7 @@ async function scrapePage(node, outFolder) {
 
   // Add Markdown front matter at the start of the file
   const frontMatter = `---
+layout: ../../../layouts/PostLayout.astro
 title: ${node.title}
 href: ${node.link}
 type: ${node.type}
@@ -190,4 +194,4 @@ With these tasks completed, I now had a copy of 15 years of website content as M
 
 If you’re curious to see the full code and exported data, it’s all available on Github.
 
-{{<external/github repo="ubccsss/drupal-export">}}
+<GitHub repo="ubccsss/drupal-export" />

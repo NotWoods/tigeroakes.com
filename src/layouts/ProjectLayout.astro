@@ -1,0 +1,38 @@
+---
+import ArticleLayout from '../components/article/ArticleLayout.astro';
+import ProjectHeader from '../components/article/ProjectHeader.astro';
+import MainHead from '../components/meta/MainHead.astro';
+import { dateFromString } from '../scripts/date';
+
+const { content } = Astro.props;
+
+const formattedProps = {
+  title: content.title,
+  href: Astro.canonicalURL,
+  date: content.date ? dateFromString(content.date) : undefined,
+  description: content.subtitle,
+  tags: content.tech,
+  accent: content.color,
+  logo: content.logo || 'logo.svg',
+  backgroundImage: 'background.jpg',
+  buttons: content.links
+    ?.filter((link) => link.title !== 'Details' && link.title !== 'Case study')
+    ?.map((link) => ({
+      title: link.title,
+      href: link.link,
+    })),
+};
+---
+
+<html lang="en">
+  <head>
+    <MainHead title={content.title} description="List of projects worked on by Tiger Oakes." defaultSocial />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <ArticleLayout {...formattedProps}>
+      <ProjectHeader {...formattedProps} class="bg-slate-800" slot="header" />
+      <slot />
+    </ArticleLayout>
+  </body>
+</html>

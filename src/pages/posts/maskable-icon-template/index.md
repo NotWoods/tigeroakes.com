@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: 'Maskable Icon template for Affinity Designer'
 description: Like Maskable.app for design tools
 date: 2020-07-10

@@ -10,5 +10,9 @@
       "fileMatch": ["/content/resume/json-resume/**"],
       "url": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
     }
-  ]
+  ],
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "dist/**": true
+  }
 }

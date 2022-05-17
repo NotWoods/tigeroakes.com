@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Soil TopARgraphy
 subtitle: Educational AR application
 weight: 7
@@ -20,4 +21,4 @@ For this application, I added integration with Mapbox to use their satellite dat
 
 ---
 
-![Terrain heightmap model I created for the application](heightmap.*)
+![Terrain heightmap model I created for the application](heightmap.png)

@@ -1,0 +1,18 @@
+---
+export interface Props {
+  src: string;
+}
+
+const { src } = Astro.props as Props;
+---
+
+<iframe
+  {src}
+  frameborder="0"
+  width="960"
+  height="569"
+  allowfullscreen
+  mozallowfullscreen
+  webkitallowfullscreen
+  allow="fullscreen"
+  class="block max-w-full mx-auto"></iframe>

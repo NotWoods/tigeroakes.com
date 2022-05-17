@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  pictureSrc?: string;
+  pictureAlt?: string;
+}
+
+const { title, description, pictureSrc, pictureAlt } = Astro.props as Props;
+const defaultImage = new URL('/twitter-default.png', Astro.canonicalURL);
+---
+
+<meta name="og:title" content={title} />
+<meta name="og:type" content="website" />
+<meta name="og:url" content={Astro.canonicalURL} />
+<meta name="og:description" content={description} />
+<meta name="og:site_name" content="Tiger Oakes" />
+<meta name="og:image" content={pictureSrc || defaultImage.href} />
+{pictureAlt && <meta name="og:image:alt" content={pictureAlt} />}

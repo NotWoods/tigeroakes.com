@@ -1,5 +1,0 @@
-{
-  "compilerOptions": {
-    "lib": ["webworker", "dom", "es2020"]
-  }
-}

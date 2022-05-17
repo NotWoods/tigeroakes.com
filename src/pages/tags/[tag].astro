@@ -1,0 +1,37 @@
+---
+import CollectionLayout from '../../components/collection/CollectionLayout.astro';
+import type { Item } from '../../components/lists/ListFlat.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+import { getCollectionPages } from '../../scripts/collection';
+
+export interface Props {
+  tag: string;
+  pages: readonly Item[];
+}
+
+export async function getStaticPaths() {
+  const { tagToPages, tagPaths } = await getCollectionPages(
+    Astro.glob('../{posts,talks}/*/*.md'),
+    Astro.glob('../projects/**/*.md'),
+    'tags'
+  );
+
+  return Array.from(tagToPages).map(([tag, pages]) => {
+    const props: Props = { tag, pages };
+    return { props, params: { tag: tagPaths.get(tag) } };
+  });
+}
+
+const { tag, pages } = Astro.props as Props;
+const description = `Posts under the ${tag} tag on Tiger's blog.`;
+---
+
+<html lang="en">
+  <head>
+    <MainHead title={`${tag} | Tags`} {description} />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <CollectionLayout collection="Tags" {tag} items={pages} />
+  </body>
+</html>

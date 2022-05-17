@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Turning junk phones into an art display
 description: Build your own interactive creation from your pile of old phones.
 date: 2021-02-01
@@ -10,11 +11,15 @@ tags:
   - Android
 categories:
   - Planet Mozilla
+  - Feature
 projects:
   - cell-wall
 banner: banner.jpg
 toc: true
 footer: Some of the links above are affiliate links for Amazon. As an Amazon Associate I earn from qualifying purchases. Using these links helps me out!
+setup: |
+  import GitHub from '../../../components/shortcodes/GitHub.astro';
+  import Video from '../../../components/shortcodes/Video.astro';
 ---
 
 ![Phones attached to wood panel with black wire wall art stemming from it](banner.jpg)
@@ -31,7 +36,7 @@ These phones can do anything a normal phone does, but I've tweaked the use cases
 - Show a drink list or other text across all phones.
 - Indicate at a glance if I or my partner is is in a meeting.
 
-{{<img src="cell-wall-graphic-decorated.svg" alt="Example of CellWall running with different screens" width="837" height="618">}}
+<img src="cell-wall-graphic-decorated.svg" alt="Example of CellWall running with different screens" width="837" height="618">
 
 ## Parts and assembly
 
@@ -57,7 +62,7 @@ The edges can be a little sharp afterwards. Use a block of [sandpaper](https://a
 
 I wanted the wood board to blend in with my wall and not look like...wood. At a craft store, I picked up [a small bottle of white paint](https://amzn.to/2L5YzS7) and [a paintbrush](https://amzn.to/35eqiHk). At home, on top of some trash bags, I started painting a few coats of white.
 
-{{<video src="paint-gif.*" max-height="450">}}
+<Video src="paint-gif.*" ext=".webm,.m4v" />
 
 ### Mounting and connecting the phones (the "Cell"s)
 
@@ -78,7 +83,7 @@ The wires are laid out with a bunch of tiny wire clips. $7 will get you [100 of 
 
 All the wires feed into a USB hub. This hub lets me connect all the phones to a computer just using a single wire. I had one lying around, but [similar hubs are on Amazon for $20](https://amzn.to/2JM19w0). The hub needs a second cable that plugs directly into an outlet and provides extra power, since it needs to charge so many phones.
 
-{{<video src="wires-gif.*" max-height="450">}}
+<Video src="wires-gif.*" ext=".webm,.m4v" />
 
 ## Software
 
@@ -124,7 +129,7 @@ The server software is written in TypeScript and creates an HTTP server to expos
 To control CellWall, I wrote a small JavaScript app served by the Node server. It includes a few buttons to turn each display on, controls for specific screens, and presets to display. These input elements all send HTTP requests to the server, which then converts them into ADB commands sent to the cells.
 
 <div style="display:flex;justify-content:space-evenly;flex-wrap:wrap">
-{{<img src="remote-control.png" alt="Remote control app with power buttons, device selection, and manual display controls" max-height="500" class="col-left">}}
+<img src="remote-control.png" alt="Remote control app with power buttons, device selection, and manual display controls" max-height="500" class="col-left">
 <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" style="max-width:500px">
 
   <title>Diagram of request flow from remote to server to ADB to CellWall</title>
@@ -159,4 +164,4 @@ As a nice final touch, I put some black masking tape to resemble wires coming ou
 
 I hope you're inspired to try something similar yourself. All of my project code is [available on GitHub](https://github.com/NotWoods/cell-wall). Let me know how yours turns out! I'm happy to answer any questions on Twitter [@Not_Woods](https://twitter.com/Not_Woods).
 
-{{<external/github repo="NotWoods/cell-wall">}}
+<GitHub repo="NotWoods/cell-wall" />

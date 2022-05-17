@@ -1,0 +1,33 @@
+---
+import navData from '../data/nav.json';
+import Logo from './Logo.astro';
+
+// Banner displayed at the top of the site.
+export interface Props {
+	logo?: 'default' | 'outline' | 'none';
+	current?: string | URL;
+	class?: string;
+}
+
+const { logo = 'default', current, class: className } = Astro.props as Props;
+
+function isCurrent({ url }: { url: string }) {
+	if (!current) return undefined;
+
+	const currentPath = typeof current === 'string' ? current : current.pathname;
+  return currentPath.startsWith(url);
+}
+---
+
+<header class:list={["flex flex-wrap items-stretch max-w-site mx-auto justify-between p-4 gap-y-4", className]}>
+	{logo !== 'none' && <Logo outline={logo === 'outline'} />}
+	{logo === 'none' && <div class="grow h-7" />}
+
+	<nav class="flex flex-wrap items-stretch mx-auto gap-x-2 gap-y-6">
+		{navData.map(page =>
+			<a class="px-2 relative accent-block--bottom" href={page.url} aria-current={isCurrent(page) ? 'page' : undefined}>
+				{page.name}
+			</a>
+		)}
+	</nav>
+</header>

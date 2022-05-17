@@ -1,0 +1,7 @@
+.pipe-item::after {
+  content: " | ";
+  margin: 0 0.2em;
+}
+.pipe-item:last-child::after {
+  content: none;
+}

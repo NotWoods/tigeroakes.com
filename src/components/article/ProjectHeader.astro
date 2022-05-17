@@ -1,0 +1,33 @@
+---
+import type { ButtonProps } from '../Buttons.astro';
+import ArticleDescription from './ArticleDescription.astro';
+import ArticleHeaderContainer from './ArticleHeaderContainer.astro';
+import ArticleTitle from './ArticleTitle.astro';
+import ProjectIcon from './ProjectIcon.astro';
+import Tags from './Tags.astro';
+
+export interface Props {
+  class?: string;
+  accent?: string;
+  logo?: string;
+  backgroundImage?: string;
+  buttons?: readonly ButtonProps[];
+
+  title: string;
+  description?: string;
+  tags?: readonly string[];
+}
+
+const { title, description, logo, tags, ...props } = Astro.props as Props;
+---
+
+<ArticleHeaderContainer {...props}>
+  <div class="flex flex-wrap items-start gap-x-16">
+    <ProjectIcon {logo} />
+    <div class="flex-1 basis-36 pt-5">
+      <ArticleTitle>{title}</ArticleTitle>
+      <ArticleDescription>{description}</ArticleDescription>
+      <Tags class="text-sm" {tags} />
+    </div>
+  </div>
+</ArticleHeaderContainer>

@@ -1,0 +1,20 @@
+---
+import { Link, projectButtons } from '../../scripts/projects';
+import Buttons from '../Buttons.astro';
+
+export interface Props {
+  links: readonly Link[];
+}
+
+const { links } = Astro.props as Props;
+---
+
+<aside class="max-w-site mx-auto px-4 text-lg">
+  <div class="prose prose-lg prose-invert py-8">
+    <slot />
+  </div>
+  <Buttons
+    class="selection-invert text-slate-800 justify-center mb-4"
+    buttons={projectButtons(links, Astro.canonicalURL)}
+  />
+</aside>

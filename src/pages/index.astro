@@ -1,0 +1,70 @@
+---
+import BannerNav from '../components/BannerNav.astro';
+import Button from '../components/Button.astro';
+import HomeAbout from '../components/home/HomeAbout.astro';
+import HomeContact from '../components/home/HomeContact.astro';
+import HomeNewPosts from '../components/home/HomeNewPosts.astro';
+import ProjectFeature from '../components/lists/ProjectFeature.astro';
+import SectionTitle from '../components/lists/SectionTitle.astro';
+import MainHead from '../components/meta/MainHead.astro';
+import RSS from '../components/meta/RSS.astro';
+
+async function loadProject(
+  projectGlob: Promise<readonly { url: string; frontmatter: any }[]>
+) {
+  const [project] = await projectGlob;
+  return {
+    project: {
+      url: project.url,
+      frontmatter: project.frontmatter,
+    },
+  };
+}
+
+const projects = await Promise.all([
+  loadProject(Astro.glob('./projects/mozilla-firefox/index.md')),
+  loadProject(Astro.glob('./projects/google/index.md')),
+  loadProject(Astro.glob('./projects/maskable/index.md')),
+]);
+
+const description =
+  "Hi! I've worked on 3 web browsers and hundreds of open source projects. See some of those projects, read my blog, or learn about me.";
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Tiger Oakes" {description} defaultSocial />
+    <RSS href="/posts/rss.xml" />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <div
+      class="bg-orange-500 text-slate-800 selection-invert pb-12"
+      style="--accent: currentColor"
+    >
+      <BannerNav logo="none" />
+      <HomeAbout />
+    </div>
+
+    <HomeNewPosts />
+
+    <section id="featured-projects" style="--block-scale: 1">
+      <ProjectFeature {...projects[0]}>
+        <SectionTitle slot="start" class="mb-6">Featured projects</SectionTitle>
+      </ProjectFeature>
+      <ProjectFeature {...projects[1]} />
+      <ProjectFeature {...projects[2]} />
+    </section>
+
+    <div class="my-6 text-center">
+      <Button
+        class="inline-block bg-slate-200 text-slate-800 text-2xl"
+        href="/projects/"
+      >
+        See more projects
+      </Button>
+    </div>
+
+    <HomeContact />
+  </body>
+</html>

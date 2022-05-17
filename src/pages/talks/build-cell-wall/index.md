@@ -1,10 +1,12 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Building interactive wall decor from junk phones
 date: 2022-06-02
 publishDate: 2021-11-01
 tags:
   - Web
   - Android
+  - IoT
 categories:
   - Feature
 projects:
@@ -13,7 +15,7 @@ links:
   - title: JSConf Budapest
     link: https://jsconfbp.com/speakers/tiger-oakes
 color: '#17c37b'
-banner: slide.jpg
+banner: slide.png
 ---
 
 **JSConf Budapest 2022**

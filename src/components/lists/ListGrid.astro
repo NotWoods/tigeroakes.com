@@ -1,0 +1,49 @@
+---
+import type { Temporal } from "@js-temporal/polyfill";
+import { accentStyles, postAccentColor } from "../../scripts/posts";
+import ArticleDescription from "../article/ArticleDescription.astro";
+import Time from "../article/Time.astro";
+import Tags from "../article/Tags.astro";
+import ItemImage from "./ItemImage.astro";
+import ItemTitle from "./ItemTitle.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+export interface Item {
+  title: string;
+  href: URL | string;
+  date: Temporal.PlainDate;
+  description?: string;
+
+  pictureSrc?: string;
+  pictureAlt?: string;
+  pictureFit?: 'cover' | 'contain';
+
+  tags?: readonly string[];
+  elsewhere?: {
+    name: string;
+    link: string;
+  }
+}
+
+export interface Props {
+  title: string;
+  items: readonly Item[];
+}
+
+const { title, items } = Astro.props as Props;
+
+---
+<div class="max-w-site mx-auto px-4 mb-4">
+  <SectionTitle>{title}</SectionTitle>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-8 max-w-site mx-auto px-4" style="--block-scale: 0.5">
+  {items.map(item => (
+    <article class="flex flex-col" style={accentStyles(postAccentColor(item.tags))}>
+      {item.pictureSrc && <ItemImage src={item.pictureSrc} alt={item.pictureAlt} width={376} sizes="(max-width: 640px) 95vw, 376px" />}
+      <Time date={item.date} />
+      <ItemTitle href={item.href}>{item.title}</ItemTitle>
+      {item.description && <ArticleDescription>{item.description}</ArticleDescription>}
+      <Tags class="mt-auto text-sm" tags={item.tags} elsewhere={item.elsewhere?.name} />
+    </article>
+  ))}
+</div>

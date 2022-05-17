@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Deploy a site to GitHub Pages from multiple branches using GitHub Actions
 description: CI/CD combining different branches.
 date: 2020-12-26
@@ -8,8 +9,7 @@ tags:
   - GitHub
 categories:
   - Planet Mozilla
-banner: banner.png
-banner_svg: banner.svg
+banner: banner.svg
 ---
 
 I've been moving many repositories over to GitHub Actions to automate deployment and testing. One of my projects uses GitHub Pages, but includes data from two different branches:

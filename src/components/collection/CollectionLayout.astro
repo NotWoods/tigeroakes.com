@@ -1,0 +1,19 @@
+---
+import ListFlat, { Item } from '../lists/ListFlat.astro';
+import BaseCollectionLayout from './BaseCollectionLayout.astro';
+import CollectionTitle from './CollectionTitle.astro';
+
+export interface Props {
+  collection: string;
+  tag: string;
+  items: readonly Item[];
+  rss?: string
+}
+
+const { collection, tag, items, rss } = Astro.props as Props;
+---
+
+<BaseCollectionLayout headerClass="flex flex-wrap gap-x-2 gap-y-4 items-start">
+  <CollectionTitle slot="header" {collection} {tag} {rss} />
+  <ListFlat {items} />
+</BaseCollectionLayout>

@@ -1,0 +1,23 @@
+---
+import { Intl, Temporal } from '@js-temporal/polyfill';
+import { formatToPartsMap } from '../../scripts/date';
+
+export interface Props {
+  date: Temporal.PlainDate;
+}
+
+const { date } = Astro.props as Props;
+const readableFormatter = new Intl.DateTimeFormat('en-CA', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const parts = formatToPartsMap(readableFormatter, date);
+---
+
+<time class="text-sm opacity-80" datetime={date.toString()}>
+  <slot />
+  {parts.get('year')}, {parts.get('month')}
+  {parts.get('day')}
+</time>

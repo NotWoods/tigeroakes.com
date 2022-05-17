@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: 'How to make Android Studio show documentation on hover'
 description: My favorite Visual Studio Code feature is hidden behind a setting in Android Studio.
 date: 2020-07-06

@@ -1,9 +1,11 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: UBC Farm
 subtitle: Farm research database
 weight: 8
 color: '#3b7448'
 fallbackcolor: '#2d410b'
+logo: logo.png
 links:
   - title: Details
   - title: Code

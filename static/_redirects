@@ -2,8 +2,10 @@
 
 /blog                                 /posts
 /blog/*                               /posts/:splat
-/posts/tags/planet-mozilla/index.xml  /categories/planet-mozilla/index.xml
+/posts/tags/planet-mozilla/index.xml  /categories/planet-mozilla/rss.xml
+/categories/planet-mozilla/index.xml  /categories/planet-mozilla/rss.xml
 /posts/tags/*                         /tags/:splat
+/posts/index.xml                      /posts/rss.xml
 
 /posts/javascript-events-part-1       https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/
 /posts/javascript-events-part-2       https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/

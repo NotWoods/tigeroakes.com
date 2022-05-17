@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 285 185">
+  <g fill="#032030" class="stroke-zinc-800 dark:stroke-slate-200">
+    <circle cx="37.5" cy="32.5" r="27.5"/>
+    <circle cx="177.5" cy="32.5" r="27.5" stroke-dasharray="4"/>
+    <circle cx="107.5" cy="152.5" r="27.5" stroke-dasharray="4"/>
+    <circle cx="247.5" cy="152.5" r="27.5"/>
+  </g>
+  <g font-family="'Cascadia Mono', 'Cascadia Code', monospace" fill="#ebeeef" text-anchor="middle">
+    <text x="37.5" y="35.6" font-size="12">Open</text>
+    <text x="177.5" y="35.6" font-size="12">Opening</text>
+    <text x="107.5" y="155.6" font-size="12">Closing</text>
+    <text x="247.5" y="156.9" font-size="12">Closed</text>
+  </g>
+  <path fill="#e67237" d="m48.4 73 2.2-1.3 20.8 36 .9-3 2.4.7-2 7.2-7.2-1.9.7-2.5 3 .9L48.4 73ZM234.6 112l-2.2 1.3-20.8-36-.8 3-2.4-.7 1.9-7.2 7.2 1.9-.6 2.5-3-.9 20.7 36.1ZM142.8 153.8v-2.6h60.7l-2.2-2.2 1.8-1.8 5.3 5.3-5.3 5.3-1.8-1.8 2.2-2.2h-60.7ZM140.3 33.8v-2.6H79.6l2.2-2.2-1.8-1.8-5.3 5.3 5.3 5.3 1.8-1.8-2.2-2.2h60.7Z"/>
+</svg>

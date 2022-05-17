@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Unifying code to read local and network files
 description: Fetch can read files too.
 date: 2018-10-26

@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Oakes Management LLC
 subtitle: Construction portfolio
 weight: 8
@@ -25,4 +26,4 @@ Other tricks are used to mask loading times. When a portfolio item is opened, th
 
 ---
 
-![Screenshot](screenshot.*)
+![Screenshot](screenshot.png)

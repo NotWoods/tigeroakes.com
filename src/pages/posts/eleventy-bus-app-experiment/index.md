@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: Experimenting with using Eleventy for web apps
 description: Playing around with using Eleventy to pre-render Big Island Buses
 date: 2020-04-13
@@ -13,11 +14,13 @@ categories:
 projects:
   - big-island-buses
 banner: banner.png
+setup: |
+  import GitHub from '../../../components/shortcodes/GitHub.astro';
 ---
 
 This weekend I’ve been tweaking [Big Island Buses](/projects/big-island-buses/), my bus schedule web app, and pre-rendering parts of the app. This was also my first time using Eleventy to build a site!
 
-{{<external/github repo="NotWoods/big-island-buses">}}
+<GitHub repo="NotWoods/big-island-buses" />
 
 Like many web apps, most of Big Island Buses’ UI was generated on the client using JavaScript. Some very minimal HTML was sent by the server, and only contained the logo and some empty `<div>`s. Once the app is loaded up, JavaScript code connects to my API and builds new HTML elements on the client to represent bus routes and other information. However, until that API data is downloaded, an empty list of routes is presented to the user.
 

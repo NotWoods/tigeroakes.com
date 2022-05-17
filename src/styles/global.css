@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent: theme('colors.orange.500');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mono font-semibold;
+  }
+
+  a {
+    text-decoration-skip-ink: auto;
+    text-underline-offset: 3px;
+    @apply decoration-2 hover:decoration-current;
+  }
+
+  ::selection {
+    @apply bg-orange-500 text-slate-800;
+    text-shadow: none;
+  }
+  .selection-invert::selection,
+  .selection-invert ::selection {
+    @apply bg-slate-800 text-orange-500;
+  }
+}
+
+@layer components {
+  .accent-block--left::before,
+  .accent-block--bottom::before {
+    content: "";
+    @apply block absolute bg-accent;
+  }
+
+  .accent-block--left::before {
+    width: 0.5em;
+    left: -1em;
+    @apply inset-y-0 origin-right max-h-7;
+  }
+  .accent-block--left::before {
+    transform: scaleX(var(--block-scale, 0));
+  }
+
+  .accent-block--bottom::before {
+    height: 0.5em;
+    bottom: -1em;
+    @apply inset-x-0 origin-top;
+  }
+  .accent-block--bottom::before {
+    transform: scaleY(var(--block-scale, 0));
+  }
+
+  .accent-block--left:hover,
+  .accent-block--bottom:hover {
+    --block-scale: 1;
+  }
+  .accent-block--left:active,
+  .accent-block--bottom:active,
+  .accent-block--left[aria-current],
+  .accent-block--bottom[aria-current] {
+    --block-scale: 0.5;
+  }
+  .accent-block--still {
+    transform: none !important;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .accent-block--left::before,
+    .accent-block--bottom::before {
+      @apply transition-transform;
+    }
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  }
+
+  .grid-area-header {
+    grid-area: header;
+  }
+}

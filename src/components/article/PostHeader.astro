@@ -1,0 +1,47 @@
+---
+import type { Temporal } from '@js-temporal/polyfill';
+import type { ButtonProps } from '../Buttons.astro';
+import ArticleDescription from './ArticleDescription.astro';
+import ArticleHeaderContainer from './ArticleHeaderContainer.astro';
+import ArticleTitle from './ArticleTitle.astro';
+import Tags from './Tags.astro';
+import Time from './Time.astro';
+
+export interface Props {
+  class?: string;
+  accent?: string;
+  backgroundImage?: string;
+  buttons?: readonly ButtonProps[];
+
+  title: string;
+  date?: Temporal.PlainDate;
+  lastMod?: Temporal.PlainDate;
+  description?: string;
+  tags?: readonly string[];
+  elsewhere?: {
+    name: string;
+    link: string;
+  };
+}
+
+const { title, description, date, lastMod, tags, elsewhere, ...props } =
+  Astro.props as Props;
+
+interface DisplayedTime {
+  text: string;
+  date?: Temporal.PlainDate | undefined;
+}
+
+const displayedTimes: DisplayedTime[] = [
+  { text: 'Last updated on', date: lastMod },
+  { text: 'Posted on', date },
+];
+const displayedTime = displayedTimes.find(time => time.date != undefined) ?? { text: '' };
+---
+
+<ArticleHeaderContainer {...props}>
+  {displayedTime.date && <Time date={displayedTime.date}>{displayedTime.text}</Time>}
+  <ArticleTitle>{title}</ArticleTitle>
+  <ArticleDescription>{description}</ArticleDescription>
+  <Tags class="mt-auto text-sm" {tags} elsewhere={elsewhere?.name} />
+</ArticleHeaderContainer>

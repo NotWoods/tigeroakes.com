@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Insightful Energy
 subtitle: Interactive information
 weight: 10

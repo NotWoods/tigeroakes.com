@@ -1,0 +1,16 @@
+---
+import { classes } from '../article/ArticleTitle.astro';
+
+export interface Props {
+  href: URL | string;
+  class?: string;
+}
+
+const props = Astro.props as Props;
+---
+
+<h3 class:list={[classes, props.class]}>
+  <a class="relative accent-block--left" href={props.href}>
+    <slot />
+  </a>
+</h3>

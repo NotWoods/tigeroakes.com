@@ -1,8 +1,10 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: The Golden Quest
 subtitle: Alexa adventure game
 color: '#c3a242'
 fallbackcolor: '#503627'
+logo: logo.png
 links:
   - title: Details
   - title: Amazon

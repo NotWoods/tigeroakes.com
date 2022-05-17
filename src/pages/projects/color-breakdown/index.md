@@ -1,9 +1,11 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Color Breakdown
 subtitle: Color-identifying Progressive Web App
 weight: 7
 color: '#37474f'
 fallbackcolor: '#6f3d10'
+logo: logo.png
 links:
   - title: Details
   - title: Open app
@@ -25,4 +27,4 @@ The app handles file uploads from the user, then extracts image colors inside a 
 
 ---
 
-![Screenshot](screenshot.*)
+![Screenshot](screenshot.jpg)

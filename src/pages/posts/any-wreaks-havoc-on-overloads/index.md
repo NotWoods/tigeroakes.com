@@ -1,7 +1,9 @@
 ---
+layout: ../../../layouts/PostLayout.astro
 title: The secret trap when using ANY in TypeScript
 description: How one little type wreaks havoc on certain overloaded functions.
 date: 2020-10-13
+lastMod: 2022-05-04
 author: tiger
 tags:
   - Web

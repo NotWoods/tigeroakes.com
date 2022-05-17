@@ -1,0 +1,48 @@
+---
+import sectionData from '../../data/sections.json';
+
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props as Props;
+const path = Astro.canonicalURL.pathname.split('/').filter(Boolean);
+const [sectionPath, pagePath] = path;
+
+const breadcrumbs = [
+  { name: 'Tiger Oakes', url: new URL('/', Astro.canonicalURL) },
+];
+if (sectionPath) {
+  const sectionWithSlash = `/${sectionPath}`;
+  const name = sectionData.names[sectionWithSlash];
+  breadcrumbs.push({
+    name,
+    url: new URL(sectionWithSlash, Astro.canonicalURL),
+  });
+}
+if (pagePath) {
+  breadcrumbs.push({ name: title, url: Astro.canonicalURL });
+}
+
+const itemListElement = breadcrumbs.map(({ name, url }, index) => {
+  const item = {
+    '@type': 'ListItem',
+    position: index + 1,
+    name,
+    item: url.href,
+  };
+  if (index === breadcrumbs.length - 1) {
+    delete item.item;
+  }
+  return item;
+});
+const breadcrumbList = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement,
+});
+---
+
+<script is:inline type="application/ld+json">
+  {breadcrumbList}
+</script>

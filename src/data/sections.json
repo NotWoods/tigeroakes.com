@@ -1,0 +1,15 @@
+{
+  "names": {
+    "/categories": "Categories",
+    "/posts": "Blog",
+    "/projects": "Projects",
+    "/resume": "Resume",
+    "/tags": "Tags",
+    "/talks": "Talks"
+  },
+  "more": {
+    "/posts/": "More blog posts",
+    "/projects/": "Other projects",
+    "/talks/": "More talks"
+  }
+}

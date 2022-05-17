@@ -7,22 +7,11 @@
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
 
-/posts/index.xml
+/posts/rss.xml
+/categories/:category/rss.xml
     Content-Type: application/rss+xml
+/site.webmanifest
+    Content-Type: application/manifest+json
 
-/css/*
-/js/*
-/profile_*_box.jpg
-/talks/:talk/slide_*.png
-/projects/:project/logo_*.png
-/posts/:post/banner_*.jpg
-/posts/:post/banner_*.png
-/posts/android-animate-strike-thru/static_icon_with_gap_*.png
-/posts/maskable-icon-template/affinity-designer_*.png
-/posts/resume-editor/word_*.png
-/posts/scraping-csss/drupal_*.png
-/posts/til-jetbrains-intellisense/preview_*.png
-/posts/til-kotlin-android-ext-cache/slide_*.png
-/posts/til-mozilla-central-main-alias/carbon_*.png
-/posts/unify-local-network-file-reading/imgur-upload_*.png
-    Cache-Control: max-age=31536000
+/assets/*
+    Cache-Control: max-age=31536000, immutable

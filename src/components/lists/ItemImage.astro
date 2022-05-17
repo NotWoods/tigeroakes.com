@@ -1,0 +1,36 @@
+---
+import Image from '@11ty/eleventy-img';
+import GeneratePicture from '../eleventy-img/GeneratePicture.astro';
+import { imageOptions } from '../eleventy-img/options';
+
+export interface Props {
+  src: string;
+  alt?: string;
+  width: number;
+  sizes: string;
+  class?: string;
+  fit?: 'cover' | 'contain';
+}
+
+const { src, alt = '', fit, width, sizes, class: className } = Astro.props as Props;
+const imgClass = fit === 'contain' ? 'object-contain' : 'object-cover';
+const pictureClass = [`block mb-2 shadow-md aspect-w-2 aspect-h-1`, className]
+  .filter(Boolean)
+  .join(' ');
+
+const metadata = await Image(src, {
+  ...imageOptions,
+  widths: [width, width * 2, width * 3],
+  formats: ['avif', 'webp', null],
+  svgShortCircuit: true,
+});
+
+const attributes = {
+  alt,
+  sizes,
+  loading: 'lazy',
+  decoding: 'async',
+};
+---
+
+<GeneratePicture {metadata} {attributes} {pictureClass} {imgClass} />

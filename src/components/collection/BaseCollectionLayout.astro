@@ -1,0 +1,28 @@
+---
+import BannerNav from '../BannerNav.astro';
+import Footer from '../Footer.astro';
+import MailingListCallToAction from '../MailingListCallToAction.astro';
+
+export interface Props {
+  headerClass?: string;
+  sectionClass?: string;
+}
+
+const { headerClass, sectionClass } = Astro.props as Props;
+---
+
+<BannerNav />
+
+<header class:list={['max-w-site mx-auto px-4 py-8', headerClass]}>
+  <slot name="header" />
+</header>
+<div
+  class="py-8 bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:text-slate-200"
+>
+  <section class:list={["max-w-site mx-auto px-4", sectionClass]}>
+    <slot />
+  </section>
+</div>
+
+<MailingListCallToAction />
+<Footer />

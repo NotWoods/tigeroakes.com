@@ -1,0 +1,19 @@
+---
+import { groupBy } from "../../scripts/collection";
+import ListGrid, { Item } from "./ListGrid.astro";
+
+export interface Props {
+  items: readonly Item[];
+}
+
+const { items } = Astro.props as Props;
+
+function groupByYear(): readonly { year: number, items: readonly Item[] }[] {
+  const itemsByYear = groupBy(items, (item) => item.date.year);
+	return Array.from(itemsByYear).map(([year, items]) => ({ year, items }));
+}
+
+---
+{groupByYear().map(({ year, items }) => (
+  <ListGrid title={year.toString()} items={items} />
+))}

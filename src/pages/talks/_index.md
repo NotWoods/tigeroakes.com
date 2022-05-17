@@ -1,9 +1,6 @@
 ---
 title: Talks
-outputs:
-  - HTML
-other: More talks
-group_by_date: '2006'
+description: Talks by Tiger Oakes - a software engineer passionate about the web.
 
 links:
   - title: Watch on YouTube

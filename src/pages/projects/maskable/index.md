@@ -1,4 +1,5 @@
 ---
+layout: ../../../layouts/ProjectLayout.astro
 title: Maskable.app
 subtitle: Implementing, writing, and creating tooling for new web feature
 weight: 3
@@ -16,8 +17,10 @@ tech:
   - Canvas API
   - CSS
   - PWA
+categories:
+  - Feature
 description: >
-  A tool I created for maskable icons, alongside implementing the web feature into Firefox and writing about it for CSS Tricks.
+  The leading tool for working with maskable icons. I built this app alongside implementing the web feature into Firefox and writing about it for CSS Tricks. It uses the Canvas API and vanilla JavaScript to help developers build the best PWAs.
 ---
 
 As part of my work to support [Progressive Web Apps in Firefox Preview](/projects/mozilla-firefox), I implemented support for a recent web specification called "maskable icons". Maskable icons allow web developers to specify a full-bleed icon that will be cropped by the user-agent to match other icons on the device. On Android, this lets developers get rid of the default white background around their icons and use the entire provided space.
