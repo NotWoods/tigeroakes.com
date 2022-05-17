@@ -170,3 +170,119 @@ function SidebarLayout(props: { open: boolean }) {
 If you toggle `open` rapidly in the above demo, you'll notice that the background is sometimes visible again. This is because state updates with `setContainerClassName` are asynchronous. React doesn't update the container's CSS class until the animation has already started.
 
 This is where the state machine starts to come in. We can store the current state of the animation and use that to trigger the animation, rather than having the animation effect manage state.
+
+```tsx
+type AnimationState = 'open' | 'opening' | 'closed' | 'closing';
+
+function useAnimationStateMachine(
+  props: { open: boolean }
+): [AnimationState, (state: 'open' | 'closed') => void] {
+  const [animationState, setAnimationState] = useState<AnimationState>('open');
+
+  useEffect(() => {
+    // React to the "open" prop changing
+    setAnimationState((lastState) => {
+      const finalState = finalAnimationState(props.open);
+      if (lastState === finalState) {
+        // Don't animate if the state is already correct
+        return lastState;
+      } else {
+        // Start animating
+        if (props.open) {
+          return 'opening';
+        } else {
+          return 'closing';
+        }
+      }
+    });
+  }, [props.open]);
+
+  return [animationState, setAnimationState];
+}
+```
+
+The possible animation states here correspond to the state diagram above. Now that the animate state is stored in React state, it can be used to change the CSS class name when rendering.
+
+Later on we'll use the setter to mark when the animation is finished. Since we only want to set the `'open'` and `'closed'` states to indicate the animation is finished, we can restrict the possible parameter types with TypeScript. This helps enforce the paths in the state diagram.
+
+```tsx
+function SidebarLayout(props: { open: boolean }) {
+  const contentRef = useRef<HTMLElement>(null);
+  const [animationState, setAnimationFinished] = useAnimationStateMachine(props);
+
+  useLayoutEffect(() => {
+    const mainContent = contentRef.current;
+
+    let animation: Animation | undefined;
+    const options: KeyframeAnimationOptions = {
+      easing: 'ease-in-out',
+      duration
+    };
+
+    switch (animationState) {
+      case 'closing':
+        // Start the animation when the animate state changes to closing
+        animation = mainContent.animate(
+          [{ transform: 'translateX(0)' }, { transform: 'translateX(-160px)' }],
+          options
+        );
+        animation.addEventListener('finish', () => {
+          // Mark when the animation is done
+          setAnimationFinished('closed');
+        });
+        break;
+      case 'opening':
+        // Reverse the direction for the opening animation.
+        animation = mainContent.animate(
+          [{ transform: 'translateX(-160px)' }, { transform: 'translateX(0)' }],
+          options
+        );
+        animation.addEventListener('finish', () => {
+          setAnimationFinished('open');
+        });
+        break;
+    }
+  }, [animationState]);
+
+  // Map animation state to the container CSS class name
+  const containerClassName = {
+    opening: 'animating',
+    closing: 'animating',
+    open: 'open',
+    closed: 'closed',
+  }[animationState];
+
+  return (
+    <div className={`container ${containerClassName}`}>
+      <aside className="sidebar">Sidebar</aside>
+      <section ref={contentRef} className="content">
+        Main content
+      </section>
+    </div>
+  );
+}
+```
+
+With this change, the animation now starts at the same time as the CSS class name change! The state machine is now driving the layout (via React) and the animation (via `useLayoutEffect` and the Web Animations API).
+
+It's also now possible to unmount the sidebar using React. Just like changing the class name, we can use the animation state to alter what items are rendered in sync with the animation.
+
+```tsx
+function SidebarLayout(props: { open: boolean }) {
+  ...
+
+  return (
+    <div className={`container ${containerClassName}`}>
+      {/* If the current state is "closed", unmount the sidebar */}
+      {animationState !== 'closed' && <aside className="sidebar">Sidebar</aside>}
+      <section ref={contentRef} className="content">
+        Main content
+      </section>
+    </div>
+  );
+}
+```
+
+You can check out the complete demo again here, and keep an eye out for this animation in Microsoft Loop.
+
+<SidebarAnimationDemo client:visible />
