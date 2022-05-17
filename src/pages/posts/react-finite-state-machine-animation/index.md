@@ -17,7 +17,7 @@ setup: |
   import { SidebarAnimationDemo, SidebarLayoutDemo, SidebarNaiveDemo, SidebarTranslateSliderDemo } from './SidebarDemo';
 ---
 
-Advanced web animation can be tricky - you want to mount and unmount elements, reduce layout, and keep the whole thing looking smooth. While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I recently added an animation that plays when you open or close the sidebar. I found that using a finite state machine and the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) made the animation performant and easy to read. Here’s how it works!
+Advanced web animation can be tricky - you want to mount and unmount elements, reduce layout, and keep the whole thing looking smooth. While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I recently added an animation that plays when you open or close the sidebar. I found that using a finite state machine and the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) made the animation performant and easy to read, with no need for a library or package. Here’s some examples of how it works!
 
 ## Breaking down the animation
 
@@ -288,6 +288,6 @@ function SidebarLayout(props: { open: boolean }) {
 }
 ```
 
-You can check out the complete demo again here, and keep an eye out for this animation in Microsoft Loop.
+With that, you have a complete and performant animation without the need for tools like react-spring or React Transition Group. You can check out the complete demo again here, and keep an eye out for this animation in Microsoft Loop.
 
 <SidebarAnimationDemo client:visible />
