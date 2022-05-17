@@ -1,2 +1,0 @@
-{{ $bkg := .Resources.GetMatch "background.*" }}
-background-color:{{.Params.fallbackcolor}};background-image:url({{$bkg.RelPermalink}});--accent:{{.Params.color}}

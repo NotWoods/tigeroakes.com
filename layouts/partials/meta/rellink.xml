@@ -1,5 +1,0 @@
-{{- $link := .RelPermalink -}}
-{{- with .Params.elsewhere -}}
-  {{- $link = .link -}}
-{{- end -}}
-{{- return $link -}}

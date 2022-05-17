@@ -1,9 +1,0 @@
-{{- $tags := slice -}}
-{{- range $tag := .Params.tags -}}
-  {{- with index $.Site.Data.tags $tag -}}
-    {{- $tags = $tags | append . -}}
-  {{- end -}}
-{{- end -}}
-{{- if gt (len $tags) 0 -}}
-  --accent: {{ index $tags 0 }}
-{{- end -}}

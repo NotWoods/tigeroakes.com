@@ -1,2 +1,0 @@
-{{ $style := . | postCSS (dict "config" "postcss.config.js" "inlineImports" true) | fingerprint }}
-<link rel="stylesheet" href='{{ $style.RelPermalink }}' integrity="{{ $style.Data.Integrity }}">
