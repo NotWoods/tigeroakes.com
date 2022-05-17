@@ -5,6 +5,7 @@ date: 2022-09-01
 publishDate: 2022-05-11
 tags:
   - Web
+  - Smart home
   - IoT
 links:
   - title: CascadiaJS

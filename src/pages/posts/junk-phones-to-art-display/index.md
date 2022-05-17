@@ -9,6 +9,7 @@ tags:
   - Smart home
   - Web
   - Android
+  - IoT
 categories:
   - Planet Mozilla
   - Feature

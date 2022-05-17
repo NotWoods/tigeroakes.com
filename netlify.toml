@@ -16,7 +16,56 @@ NETLIFY_CONTEXT = "branch-deploy"
 
 [[plugins]]
 package = "netlify-plugin-checklinks"
-
   [plugins.inputs]
   recursive = false
   checkExternal = true
+
+[[headers]]
+for = "/*"
+  [headers.values]
+  Feature-Policy = '''
+  document-domain 'none',
+  layout-animations 'none',
+  legacy-image-formats 'none',
+  sync-xhr 'none'
+  '''
+  Content-Security-Policy = '''
+  frame-ancestors 'none';
+  form-action buttondown.email;
+  default-src 'none';
+  style-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-inline' data: https://platform.twitter.com https://caterpilla.tigeroakes.com;
+  font-src 'self';
+  img-src 'self' https://caterpilla.tigeroakes.com;
+  media-src 'self';
+  worker-src 'self';
+  frame-src https://www.youtube-nocookie.com https://docs.google.com https://platform.twitter.com https://anchor.fm;
+  connect-src *;
+  manifest-src 'self';
+  base-uri 'none'
+  '''
+  X-Frame-Options = "DENY"
+  X-XSS-Protection = "1; mode=block"
+  X-Content-Type-Options = "nosniff"
+
+[[headers]]
+for = "/posts/rss.xml"
+  [headers.values]
+  Content-Type = "application/rss+xml"
+
+[[headers]]
+for = "/categories/:category/rss.xml"
+  [headers.values]
+  Content-Type = "application/rss+xml"
+
+[[headers]]
+for = "/site.webmanifest"
+  [headers.values]
+  Content-Type = "application/manifest+json"
+
+[[headers]]
+for = "/assets/*"
+  [headers.values]
+  Cache-Control = '''
+  max-age=31536000,
+  immutable'''
