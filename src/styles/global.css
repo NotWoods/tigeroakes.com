@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --accent: theme('colors.orange.500');
+    scroll-behavior: smooth;
   }
 
   h1,
