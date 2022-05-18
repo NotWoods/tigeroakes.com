@@ -1,4 +1,5 @@
 import preact from '@astrojs/preact';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 import { VitePWA } from 'vite-plugin-pwa';
@@ -8,7 +9,11 @@ export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL || 'https://tigeroakes.com',
   publicDir: './static',
   trailingSlash: 'always',
-  integrations: [preact(), tailwind({ config: { applyBaseStyles: false } })],
+  integrations: [
+    preact(),
+    tailwind({ config: { applyBaseStyles: false } }),
+    sitemap(),
+  ],
   markdown: {
     drafts: process.env.NETLIFY_CONTEXT === 'deploy-preview',
     shikiConfig: {
