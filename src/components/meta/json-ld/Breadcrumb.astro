@@ -1,5 +1,6 @@
 ---
-import sectionData from '../../data/sections.json';
+import sectionData from '../../../data/sections.json';
+import JsonLD from './JsonLD.astro';
 
 export interface Props {
   title?: string;
@@ -36,13 +37,11 @@ const itemListElement = breadcrumbs.map(({ name, url }, index) => {
   }
   return item;
 });
-const breadcrumbList = JSON.stringify({
+const breadcrumbList = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement,
-});
+};
 ---
 
-<script is:inline type="application/ld+json">
-  {breadcrumbList}
-</script>
+<JsonLD json={breadcrumbList} />

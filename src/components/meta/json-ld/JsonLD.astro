@@ -1,0 +1,11 @@
+---
+export interface Props {
+  json: unknown;
+  pretty?: boolean;
+}
+
+const { json, pretty } = Astro.props as Props;
+const content = JSON.stringify(json, undefined, pretty ? 2 : undefined);
+---
+
+<script is:inline type="application/ld+json" set:html={content}></script>

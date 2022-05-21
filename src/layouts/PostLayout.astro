@@ -1,6 +1,9 @@
 ---
+  import Image from '@11ty/eleventy-img';
 import { resolve } from 'path';
+import { imageOptions, parentFolder } from '../components/eleventy-img/options';
 import ArticleLayout from '../components/article/ArticleLayout.astro';
+import Article from '../components/meta/json-ld/Article.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import Social from '../components/meta/Social.astro';
 import { dateFromString } from '../scripts/date';
@@ -10,11 +13,21 @@ import '../styles/font-extra.css';
 const { content } = Astro.props;
 
 const POST_PATH = /^\/(posts|talks)\/([-\w]+)/;
-function postBanner(bannerFile: string | undefined) {
+async function postBanner(bannerFile: string | undefined) {
   const match = POST_PATH.exec(Astro.canonicalURL.pathname);
   if (match && bannerFile) {
     const [, folder, slug] = match;
-    return resolve(process.cwd(), `src/pages/${folder}/${slug}/${bannerFile}`);
+    const pictureSrc = resolve(process.cwd(), `src/pages/${folder}/${slug}/${bannerFile}`);
+
+    const metadata = await Image(pictureSrc, {
+      ...imageOptions,
+      formats: ['png'],
+      svgShortCircuit: false,
+      filenameFormat(id, src, width, format) {
+        return `${parentFolder(src)}-banner.${id}.${format}`;
+      },
+    });
+    return new URL(metadata.png[0].url, Astro.canonicalURL).href;
   }
   return undefined;
 }
@@ -30,6 +43,8 @@ const formattedProps = {
   elsewhere: content.elsewhere,
   tableOfContents: content.toc ? content.astro.headers : undefined,
 };
+
+const pictureSrc = await postBanner(content.banner);
 ---
 
 <html lang="en">
@@ -42,8 +57,14 @@ const formattedProps = {
     <Social
       title={content.title}
       description={content.description}
-      pictureSrc={postBanner(content.banner)}
+      pictureSrc={pictureSrc}
       pictureAlt={content.banner_alt}
+    />
+    <Article
+      title={content.title}
+      date={formattedProps.date}
+      lastMod={formattedProps.lastMod}
+      images={pictureSrc ? [pictureSrc] : []}
     />
   </head>
 

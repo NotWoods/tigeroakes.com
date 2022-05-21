@@ -1,0 +1,42 @@
+---
+import type { Temporal } from '@js-temporal/polyfill';
+import JsonLD from './JsonLD.astro';
+
+export interface Props {
+  type?: 'BlogPosting' | 'NewsArticle' | 'Article';
+  title: string;
+  images: readonly string[];
+  date?: Temporal.PlainDate;
+  lastMod?: Temporal.PlainDate;
+}
+
+const {
+  type = 'BlogPosting',
+  title,
+  images,
+  date,
+  lastMod,
+} = Astro.props as Props;
+
+function formatDate(date: Temporal.PlainDate | undefined) {
+  if (!date) return undefined;
+  return date.toPlainDateTime().toString();
+}
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': type,
+  mainEntityOfPage: Astro.canonicalURL,
+  headline: title,
+  image: images,
+  datePublished: formatDate(date),
+  dateModified: formatDate(lastMod),
+  author: {
+    '@type': 'Person',
+    name: 'Tiger Oakes',
+    url: 'https://tigeroakes.com/',
+  },
+};
+---
+
+<JsonLD json={article} />

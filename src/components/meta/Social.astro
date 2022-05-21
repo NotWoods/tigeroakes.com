@@ -1,6 +1,4 @@
 ---
-import Image from '@11ty/eleventy-img';
-import { imageOptions, parentFolder } from '../eleventy-img/options';
 import OpenGraph from './OpenGraph.astro';
 import Twitter from './Twitter.astro';
 
@@ -12,20 +10,7 @@ export interface Props {
 }
 
 const { title, description, pictureSrc, pictureAlt } = Astro.props as Props;
-
-let src: string | undefined;
-if (pictureSrc) {
-  const metadata = await Image(pictureSrc, {
-    ...imageOptions,
-    formats: ['png'],
-    svgShortCircuit: false,
-    filenameFormat(id, src, width, format) {
-      return `${parentFolder(src)}-banner.${id}.${format}`;
-    },
-  });
-  src = new URL(metadata.png[0].url, Astro.canonicalURL).href;
-}
 ---
 
-<OpenGraph {title} {description} {pictureAlt} pictureSrc={src} />
-<Twitter {title} {description} {pictureAlt} pictureSrc={src} />
+<OpenGraph {title} {description} {pictureAlt} pictureSrc={pictureSrc} />
+<Twitter {title} {description} {pictureAlt} pictureSrc={pictureSrc} />

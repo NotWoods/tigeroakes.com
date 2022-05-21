@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css';
 import '../../styles/font.css';
+import Breadcrumb from './json-ld/Breadcrumb.astro';
 import Twitter from './Twitter.astro';
 import OpenGraph from './OpenGraph.astro';
 
@@ -42,3 +43,4 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 <link rel="preload" href="/font/cascadia-code/CascadiaMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 {defaultSocial && <Twitter {title} {description} />}
 {defaultSocial && <OpenGraph {title} {description} />}
+<Breadcrumb {title} />
