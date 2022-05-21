@@ -19,6 +19,7 @@ package = "netlify-plugin-checklinks"
   [plugins.inputs]
   recursive = false
   checkExternal = true
+  skipPatterns = ["https://caterpilla.tigeroakes.com/*"]
 
 [[headers]]
 for = "/*"
