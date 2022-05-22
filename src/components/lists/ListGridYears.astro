@@ -14,6 +14,6 @@ function groupByYear(): readonly { year: number, items: readonly Item[] }[] {
 }
 
 ---
-{groupByYear().map(({ year, items }) => (
-  <ListGrid title={year.toString()} items={items} />
+{groupByYear().map(({ year, items }, i) => (
+  <ListGrid title={year.toString()} items={items} pictureLoading={i === 0 ? 'eager' : 'lazy'} />
 ))}
