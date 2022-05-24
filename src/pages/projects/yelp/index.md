@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/ProjectLayout.astro
+layout: ../../../layouts/ProjectLayout.astro
 weight: 4
 title: Yelp
 subtitle: Describe Your Project

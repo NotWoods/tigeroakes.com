@@ -1,5 +1,5 @@
 ---
-import { projectButtons, PROJECT_PATH } from '../../scripts/projects';
+import { projectBackgroundImage, projectButtons, PROJECT_PATH } from '../../scripts/projects';
 import ArticleDescription from '../article/ArticleDescription.astro';
 import ArticleHeaderContainer from '../article/ArticleHeaderContainer.astro';
 import Tags from '../article/Tags.astro';
@@ -16,6 +16,8 @@ const { project } = Astro.props as Props;
 const { title, description, tech, color } = project.frontmatter;
 const [, projectId] = project.url.match(PROJECT_PATH);
 const buttons = projectButtons(project.frontmatter.links, project.url);
+
+const backgroundImage = await projectBackgroundImage(projectId)
 ---
 
 <ArticleHeaderContainer
@@ -24,7 +26,7 @@ const buttons = projectButtons(project.frontmatter.links, project.url);
   buttonsClass="justify-start"
   accent={color}
   {buttons}
-  backgroundImage={`./projects/${projectId}/background.jpg`}
+  {backgroundImage}
 >
   <slot name="start" />
   <ItemTitle href={project.url}>{title}</ItemTitle>

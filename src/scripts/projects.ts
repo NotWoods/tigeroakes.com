@@ -1,4 +1,6 @@
+import Image from '@11ty/eleventy-img';
 import type { MarkdownInstance } from 'astro';
+import { imageOptions } from '../components/eleventy-img/options';
 import { trailingSlash } from './path';
 
 export interface Link {
@@ -58,4 +60,11 @@ function buttonLink(link: Link, pageUrl: string | URL) {
       }
   }
   return link.link;
+}
+
+export async function projectBackgroundImage(projectId: string) {
+  return Image(`src/pages/projects/${projectId}/background.jpg`, {
+    ...imageOptions,
+    formats: ['avif', 'webp', 'jpeg'],
+  });
 }

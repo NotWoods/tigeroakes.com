@@ -9,7 +9,11 @@ export function backgroundImage(
   const imageSet = backgroundFormats
     .map((format) => `url("${paths[format]}") type("image/${format}")`)
     .join(', ');
-  return `background-image: -webkit-image-set(${imageSet}); background-image: image-set(${imageSet})`;
+
+  return (
+    `background-image: url("${paths['jpeg']}"); ` +
+    `background-image: -webkit-image-set(${imageSet}); background-image: image-set(${imageSet})`
+  );
 }
 
 export function metadataToBackgroundImage(metadata: Metadata) {

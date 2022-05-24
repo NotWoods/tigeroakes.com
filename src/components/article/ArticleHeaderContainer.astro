@@ -1,4 +1,6 @@
 ---
+import type { Metadata } from '@11ty/eleventy-img';
+import { metadataToBackgroundImage } from '../../scripts/background-image';
 import Buttons, { ButtonProps } from '../Buttons.astro';
 
 export interface Props {
@@ -7,7 +9,7 @@ export interface Props {
   buttonsClass?: string;
   style?: string;
   accent?: string;
-  backgroundImage?: string;
+  backgroundImage?: Metadata;
   buttons?: readonly ButtonProps[];
 }
 
@@ -36,7 +38,7 @@ if (className) {
 
 const styles = [
   accent && `--accent: ${accent}`,
-  backgroundImage && `background-image: url(${backgroundImage})`,
+  backgroundImage && metadataToBackgroundImage(backgroundImage),
   style,
 ].filter(Boolean);
 
