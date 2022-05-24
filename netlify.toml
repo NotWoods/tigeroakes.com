@@ -15,11 +15,7 @@ NETLIFY_CONTEXT = "deploy-preview"
 NETLIFY_CONTEXT = "branch-deploy"
 
 [[plugins]]
-package = "netlify-plugin-checklinks"
-  [plugins.inputs]
-  recursive = false
-  checkExternal = true
-  skipPatterns = ["https://caterpilla.tigeroakes.com/*"]
+package = "netlify-plugin-minify-html"
 
 [[headers]]
 for = "/*"
