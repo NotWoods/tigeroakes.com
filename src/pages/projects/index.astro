@@ -4,8 +4,8 @@ import Footer from '../../components/Footer.astro';
 import ListPanels from '../../components/lists/ListPanels.astro';
 import MainHead from '../../components/meta/MainHead.astro';
 import {
-  projectBackgroundImage,
   projectButtons,
+  projectImages,
   PROJECT_PATH,
 } from '../../scripts/projects';
 
@@ -19,6 +19,10 @@ allPages.sort((a, b) => {
 const projects = await Promise.all(
   allPages.map(async (page) => {
     const [, projectId] = page.url.match(PROJECT_PATH);
+    const { backgroundImage, logo } = await projectImages(
+      projectId,
+      page.frontmatter.logo
+    );
     return {
       title: page.frontmatter.title,
       description: page.frontmatter.subtitle,
@@ -26,8 +30,8 @@ const projects = await Promise.all(
       accent: page.frontmatter.color,
       buttons: projectButtons(page.frontmatter.links, page.url),
       tags: page.frontmatter.tech,
-      logo: `./${projectId}/${page.frontmatter.logo ?? 'logo.svg'}`,
-      backgroundImage: await projectBackgroundImage(projectId),
+      logo,
+      backgroundImage,
     };
   })
 );

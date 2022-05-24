@@ -1,10 +1,23 @@
 ---
+import type { Metadata } from '@11ty/eleventy-img';
+import GeneratePicture from '../eleventy-img/GeneratePicture.astro';
+
 export interface Props {
-  logo?: string;
+  logo?: Metadata;
 }
 
 const { logo } = Astro.props as Props;
+
+const attributes = {
+  alt: '',
+  sizes: '128px',
+  decoding: 'async',
+};
 ---
 
-<img class="grow-0 shrink-0 mx-auto" src={logo} alt="" width="128" height="128"
+<GeneratePicture
+  pictureClass="block grow-0 shrink-0 mx-auto w-32 h-32"
+  imgClass="w-full h-full"
+  metadata={logo}
+  {attributes}
 />

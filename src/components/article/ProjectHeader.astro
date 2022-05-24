@@ -1,4 +1,5 @@
 ---
+import type { Metadata } from '@11ty/eleventy-img';
 import type { ButtonProps } from '../Buttons.astro';
 import ArticleDescription from './ArticleDescription.astro';
 import ArticleHeaderContainer from './ArticleHeaderContainer.astro';
@@ -9,8 +10,8 @@ import Tags from './Tags.astro';
 export interface Props {
   class?: string;
   accent?: string;
-  logo?: string;
-  backgroundImage?: string;
+  logo?: Metadata;
+  backgroundImage?: Metadata;
   buttons?: readonly ButtonProps[];
 
   title: string;

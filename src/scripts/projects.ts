@@ -62,9 +62,26 @@ function buttonLink(link: Link, pageUrl: string | URL) {
   return link.link;
 }
 
-export async function projectBackgroundImage(projectId: string) {
-  return Image(`src/pages/projects/${projectId}/background.jpg`, {
-    ...imageOptions,
-    formats: ['avif', 'webp', 'jpeg'],
-  });
+export async function projectImages(
+  projectId: string,
+  logoSrc: string | false = 'logo.svg'
+) {
+  const [backgroundImage, logo] = await Promise.all([
+    Image(`src/pages/projects/${projectId}/background.jpg`, {
+      ...imageOptions,
+      formats: ['avif', 'webp', 'jpeg'],
+    }),
+    logoSrc
+      ? Image(`src/pages/projects/${projectId}/${logoSrc}`, {
+          ...imageOptions,
+          widths: [128, 256, 512],
+          formats: ['avif', 'webp', null],
+          svgShortCircuit: true,
+          sharpWebpOptions: { lossless: true },
+          sharpAvifOptions: { lossless: true },
+        })
+      : undefined,
+  ]);
+
+  return { backgroundImage, logo };
 }

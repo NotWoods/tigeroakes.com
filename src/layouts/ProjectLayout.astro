@@ -3,11 +3,12 @@ import ArticleLayout from '../components/article/ArticleLayout.astro';
 import ProjectHeader from '../components/article/ProjectHeader.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import { dateFromString } from '../scripts/date';
-import { projectBackgroundImage, PROJECT_PATH } from '../scripts/projects';
+import { projectImages, PROJECT_PATH } from '../scripts/projects';
 
 const { content } = Astro.props;
 const [, projectId] = Astro.canonicalURL.pathname.match(PROJECT_PATH);
 
+const { backgroundImage, logo } = await projectImages(projectId, content.logo);
 const formattedProps = {
   title: content.title,
   href: Astro.canonicalURL,
@@ -15,8 +16,8 @@ const formattedProps = {
   description: content.subtitle,
   tags: content.tech,
   accent: content.color,
-  logo: content.logo || 'logo.svg',
-  backgroundImage: await projectBackgroundImage(projectId),
+  logo,
+  backgroundImage,
   buttons: content.links
     ?.filter((link) => link.title !== 'Details' && link.title !== 'Case study')
     ?.map((link) => ({
@@ -28,7 +29,11 @@ const formattedProps = {
 
 <html lang="en">
   <head>
-    <MainHead title={content.title} description="List of projects worked on by Tiger Oakes." defaultSocial />
+    <MainHead
+      title={content.title}
+      description="List of projects worked on by Tiger Oakes."
+      defaultSocial
+    />
   </head>
 
   <body class="bg-slate-800 text-slate-200">

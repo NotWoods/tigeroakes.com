@@ -1,5 +1,9 @@
 ---
-import { projectBackgroundImage, projectButtons, PROJECT_PATH } from '../../scripts/projects';
+import {
+  projectImages,
+  projectButtons,
+  PROJECT_PATH,
+} from '../../scripts/projects';
 import ArticleDescription from '../article/ArticleDescription.astro';
 import ArticleHeaderContainer from '../article/ArticleHeaderContainer.astro';
 import Tags from '../article/Tags.astro';
@@ -17,7 +21,7 @@ const { title, description, tech, color } = project.frontmatter;
 const [, projectId] = project.url.match(PROJECT_PATH);
 const buttons = projectButtons(project.frontmatter.links, project.url);
 
-const backgroundImage = await projectBackgroundImage(projectId)
+const { backgroundImage } = await projectImages(projectId, false);
 ---
 
 <ArticleHeaderContainer
