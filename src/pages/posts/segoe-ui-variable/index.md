@@ -7,6 +7,7 @@ tags:
   - TIL
   - Web
 banner: banner.svg
+toc: true
 ---
 
 ### Why use Segoe UI Variable?
