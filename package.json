@@ -17,9 +17,9 @@
     "@types/11ty__eleventy-img": "^2.0.1",
     "@types/github-slugger": "^1.3.0",
     "@types/tailwindcss": "^3.0.10",
-    "astro": "1.0.0-beta.29",
+    "astro": "^1.0.0-beta.36",
     "github-slugger": "^1.4.0",
-    "postcss": "^8.4.13",
+    "postcss": "^8.4.14",
     "prettier": "~2.6.2",
     "prettier-plugin-astro": "^0.0.12",
     "rimraf": "^3.0.2",
@@ -31,8 +31,9 @@
     "preact": "^10.7.2"
   },
   "scripts": {
+    "clean": "rimraf static/assets/images && rimraf dist",
     "dev": "astro dev",
-    "start": "rimraf static/assets/images && astro dev --port 8000",
+    "start": "astro dev --port 8000",
     "build": "rimraf dist && astro build",
     "preview": "astro preview",
     "format": "prettier --write src/**/*.{astro,md,js,json,yml,yaml,css}"
