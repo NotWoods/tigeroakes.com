@@ -69,7 +69,7 @@
     --block-scale: 0.5;
   }
   .accent-block--still {
-    transform: none !important;
+    --block-scale: 0 !important;
   }
 
   @media (prefers-reduced-motion: no-preference) {

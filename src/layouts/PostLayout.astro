@@ -1,5 +1,5 @@
 ---
-  import Image from '@11ty/eleventy-img';
+import Image from '@11ty/eleventy-img';
 import { resolve } from 'path';
 import { imageOptions, parentFolder } from '../components/eleventy-img/options';
 import ArticleLayout from '../components/article/ArticleLayout.astro';
@@ -17,7 +17,10 @@ async function postBanner(bannerFile: string | undefined) {
   const match = POST_PATH.exec(Astro.canonicalURL.pathname);
   if (match && bannerFile) {
     const [, folder, slug] = match;
-    const pictureSrc = resolve(process.cwd(), `src/pages/${folder}/${slug}/${bannerFile}`);
+    const pictureSrc = resolve(
+      process.cwd(),
+      `src/pages/${folder}/${slug}/${bannerFile}`
+    );
 
     const metadata = await Image(pictureSrc, {
       ...imageOptions,
@@ -42,6 +45,7 @@ const formattedProps = {
   tags: content.tags,
   elsewhere: content.elsewhere,
   tableOfContents: content.toc ? content.astro.headers : undefined,
+  links: content.links,
 };
 
 const pictureSrc = await postBanner(content.banner);
@@ -57,7 +61,7 @@ const pictureSrc = await postBanner(content.banner);
     <Social
       title={content.title}
       description={content.description}
-      pictureSrc={pictureSrc}
+      {pictureSrc}
       pictureAlt={content.banner_alt}
     />
     <Article

@@ -13,10 +13,14 @@ categories:
 projects:
   - cell-wall
 links:
+  - title: Slides
+    link: https://speakerdeck.com/notwoods/building-interactive-wall-decor-from-junk-phones
   - title: JSConf Budapest
     link: https://jsconfbp.com/speakers/tiger-oakes
 color: '#17c37b'
 banner: slide.png
+setup: |
+  import SpeakerDeck from '../../../components/shortcodes/SpeakerDeck.astro';
 ---
 
 **JSConf Budapest 2022**
@@ -24,3 +28,5 @@ banner: slide.png
 Why throw away your old phones when you can create a digital work of art? With just some basic arts and crafts skills, you can build a collage of phones with wires intertwining and running across your wall like a circuit board. It can display photo galleries, shopping lists, music visualizations, and make a wicked Zoom background.
 
 In this talk, you'll learn how Node.js and a Raspberry Pi can manage multiple Android devices over USB. We'll explore how to build visualizations using browser APIs, and how to integrate with the wider Internet of Things. Let's give your old mobile phones a new life.
+
+<SpeakerDeck src="https://speakerdeck.com/player/890d3f90445f4664a3e25405d60640b1" title="Building interactive wall décor from junk phones" />

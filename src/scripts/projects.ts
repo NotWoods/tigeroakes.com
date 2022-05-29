@@ -42,7 +42,10 @@ export async function loadProjects(
   return formattedProjects;
 }
 
-export function projectButtons(links: readonly Link[], pageUrl: string | URL) {
+export function projectButtons(
+  links: readonly Link[] | undefined,
+  pageUrl: string | URL
+) {
   return links?.map((link) => ({
     title: link.title,
     href: buttonLink(link, pageUrl),

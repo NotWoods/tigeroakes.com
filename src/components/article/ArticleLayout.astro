@@ -1,5 +1,6 @@
 ---
 import type { Temporal } from '@js-temporal/polyfill';
+import { Link, projectButtons } from '../../scripts/projects';
 import BannerNav from '../BannerNav.astro';
 import Footer from '../Footer.astro';
 import MailingListCallToAction from '../MailingListCallToAction.astro';
@@ -19,10 +20,7 @@ export interface Props {
     name: string;
     link: string;
   };
-  links?: readonly {
-    href: string;
-    title: string;
-  }[];
+  links?: readonly Link[];
   tableOfContents?: readonly {
     depth: number;
     slug: string;
@@ -30,7 +28,7 @@ export interface Props {
   }[];
 }
 
-const { href, tableOfContents, ...props } = Astro.props as Props;
+const { href, tableOfContents, links, ...props } = Astro.props as Props;
 ---
 
 <BannerNav current={href} />
@@ -39,7 +37,7 @@ const { href, tableOfContents, ...props } = Astro.props as Props;
   class="grid bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:text-slate-200"
 >
   <slot name="header">
-    <PostHeader {...props} class="bg-slate-800" />
+    <PostHeader {...props} buttons={projectButtons(links, Astro.canonicalURL)} class="bg-slate-800" />
   </slot>
   {tableOfContents && <TableOfContents headers={tableOfContents} />}
   <div class="prose prose-lg dark:prose-invert max-w-site px-4 py-6">

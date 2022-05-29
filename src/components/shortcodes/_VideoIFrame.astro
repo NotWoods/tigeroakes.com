@@ -1,20 +1,23 @@
 ---
 export interface Props {
   src: string;
+  title?: string;
 }
 
-const { src } = Astro.props as Props;
+const { src, title } = Astro.props as Props;
 ---
 
-<div class="w-full aspect-w-8 aspect-h-5">
+<div class="w-full aspect-w-16 aspect-h-9">
   <iframe
-    {src}
-    frameborder="0"
     width="800"
-    height="486"
+    height="450"
+    {src}
+    {title}
+    frameborder="0"
     allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
     allowfullscreen
-    allow="fullscreen"
     class="block"
-    loading="lazy"></iframe>
+    loading="lazy"
+  >
+  </iframe>
 </div>

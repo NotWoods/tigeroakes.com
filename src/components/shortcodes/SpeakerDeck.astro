@@ -1,0 +1,12 @@
+---
+import VideoIFrame from './_VideoIFrame.astro';
+
+export interface Props {
+  src: string;
+  title: string;
+}
+
+const { src, title } = Astro.props as Props;
+---
+
+<VideoIFrame {src} {title} />
