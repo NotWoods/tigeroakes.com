@@ -6,6 +6,8 @@ date: 2022-05-25
 tags:
   - TIL
   - Web
+categories:
+  - Planet Mozilla
 banner: banner.svg
 toc: true
 ---
