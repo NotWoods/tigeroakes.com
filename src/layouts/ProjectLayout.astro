@@ -3,7 +3,12 @@ import ArticleLayout from '../components/article/ArticleLayout.astro';
 import ProjectHeader from '../components/article/ProjectHeader.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import { dateFromString } from '../scripts/date';
-import { projectImages, PROJECT_PATH } from '../scripts/projects';
+import {
+  projectButtons,
+  projectImages,
+  PROJECT_PATH,
+  type Link,
+} from '../scripts/projects';
 
 const { content } = Astro.props;
 const [, projectId] = Astro.canonicalURL.pathname.match(PROJECT_PATH);
@@ -18,12 +23,12 @@ const formattedProps = {
   accent: content.color,
   logo,
   backgroundImage,
-  buttons: content.links
-    ?.filter((link) => link.title !== 'Details' && link.title !== 'Case study')
-    ?.map((link) => ({
-      title: link.title,
-      href: link.link,
-    })),
+  buttons: projectButtons(
+    content.links?.filter(
+      (link: Link) => link.title !== 'Details' && link.title !== 'Case study'
+    ),
+    Astro.canonicalURL
+  ),
 };
 ---
 
