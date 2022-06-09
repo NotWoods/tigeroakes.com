@@ -10,6 +10,8 @@ categories:
   - Planet Mozilla
 banner: banner.svg
 toc: true
+setup: |
+  import { VariableFontSliders } from './VariableFontSliders';
 ---
 
 ### Why use Segoe UI Variable?
@@ -115,3 +117,5 @@ The [downloadable version of Segoe UI Variable](https://aka.ms/SegoeUIVariable) 
 The [`font-variation-settings` property](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variation-settings) is the key here and lets you specify the optical size of the variable font. While `SegoeUIVF-all.ttf` is loaded for every font family, it uses a different axis of variation depending on the name.
 
 The other properties [`font-weight`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight) and [`font-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style) list the range of supported weights and styles for the font. It's important to place these properties after the `font-variation-settings` property, otherwise they'll be overriden by `font-variation-settings`.
+
+<VariableFontSliders client:visible />
