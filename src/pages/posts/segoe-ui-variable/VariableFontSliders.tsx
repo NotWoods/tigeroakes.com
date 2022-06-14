@@ -9,10 +9,12 @@ export function VariableFontSliders() {
   const [state, callbacks] = useFormState({
     wght: 400,
     opsz: 14,
+    size: 24,
   });
 
   return (
     <CodeDemoControls
+      title="Segoe UI Variable Demo"
       controls={
         <>
           <CodeDemoControl
@@ -33,13 +35,21 @@ export function VariableFontSliders() {
             list="optical-sizes"
             value={state.opsz}
           />
+          <CodeDemoControl
+            label={`font size: ${state.size}px`}
+            name="size"
+            type="range"
+            min="1"
+            max="36"
+            value={state.size}
+          />
         </>
       }
       {...callbacks}
     >
       <p
-        class={`text-slate-800 text-2xl text-center p-4 ${classes.text}`}
-        style={`font-variation-settings: 'wght' ${state.wght}, 'opsz' ${state.opsz}`}
+        class={`text-slate-800 text-center p-4 ${classes.text}`}
+        style={`font-variation-settings: 'wght' ${state.wght}, 'opsz' ${state.opsz}; font-size: ${state.size}px`}
       >
         The quick brown fox jumps over the lazy dog
       </p>

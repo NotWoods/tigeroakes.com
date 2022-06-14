@@ -37,7 +37,7 @@ const { href, tableOfContents, links, ...props } = Astro.props as Props;
   class="grid bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:text-slate-200"
 >
   <slot name="header">
-    <PostHeader {...props} buttons={projectButtons(links, Astro.canonicalURL)} class="bg-slate-800" />
+    <PostHeader {...props} buttons={projectButtons(links, Astro.canonicalURL)} />
   </slot>
   {tableOfContents && <TableOfContents headers={tableOfContents} />}
   <div class="prose prose-lg dark:prose-invert max-w-site px-4 py-6">

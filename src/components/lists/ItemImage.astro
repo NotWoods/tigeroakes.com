@@ -23,7 +23,10 @@ const {
   class: className,
 } = Astro.props as Props;
 const imgClass = fit === 'contain' ? 'object-contain' : 'object-cover';
-const pictureClass = [`block mb-2 shadow-md aspect-w-2 aspect-h-1`, className]
+const pictureClass = [
+  `block mb-2 shadow-md aspect-w-2 aspect-h-1 bg-slate-200`,
+  className,
+]
   .filter(Boolean)
   .join(' ');
 

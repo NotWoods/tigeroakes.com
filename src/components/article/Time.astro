@@ -4,9 +4,10 @@ import { formatToPartsMap } from '../../scripts/date';
 
 export interface Props {
   date: Temporal.PlainDate;
+  class?: string;
 }
 
-const { date } = Astro.props as Props;
+const { date, class: className } = Astro.props as Props;
 const readableFormatter = new Intl.DateTimeFormat('en-CA', {
   year: 'numeric',
   month: 'long',
@@ -16,7 +17,10 @@ const readableFormatter = new Intl.DateTimeFormat('en-CA', {
 const parts = formatToPartsMap(readableFormatter, date);
 ---
 
-<time class="text-sm opacity-80" datetime={date.toString()}>
+<time
+  class:list={['inline-block text-sm opacity-80', className]}
+  datetime={date.toString()}
+>
   <slot />
   {parts.get('year')}, {parts.get('month')}
   {parts.get('day')}

@@ -2,6 +2,7 @@
 _gen
 public
 dist/
+.cache/
 .output/
 static/assets/images
 

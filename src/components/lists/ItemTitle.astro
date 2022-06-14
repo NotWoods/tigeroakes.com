@@ -9,7 +9,7 @@ export interface Props {
 const props = Astro.props as Props;
 ---
 
-<h3 class:list={[classes, props.class]}>
+<h3 class:list={['text-2xl', classes, props.class]}>
   <a class="relative accent-block--left" href={props.href}>
     <slot />
   </a>

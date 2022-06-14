@@ -18,7 +18,7 @@ const { collection, tag, rss } = Astro.props as Props;
     href={new URL('../', Astro.canonicalURL).pathname}
   >
     {collection}</a
-  ><span class={`${articleTitleClasses} normal-case`}>: {tag}</span>
+  ><span class={`${articleTitleClasses} text-2xl normal-case`}>: {tag}</span>
 </h2>
 
 {rss && <Button

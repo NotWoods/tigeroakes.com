@@ -37,7 +37,7 @@ function asTree(): readonly TreeNode[] {
 ---
 
 <nav
-  class="table-of-contents min-w-44 lg:sticky lg:max-h-screen top-0 lg:justify-self-end self-start flex flex-col pl-1 pr-4 mt-12"
+  class="table-of-contents min-w-44 lg:sticky lg:max-h-screen top-0 lg:justify-self-end self-start flex flex-col pl-1 pr-4 mt-8 lg:mt-12"
 >
   <h2 class="border-b py-1 uppercase ml-3 mb-2">
     On this page
@@ -47,8 +47,6 @@ function asTree(): readonly TreeNode[] {
     <TableOfContentsList tree={asTree()} />
   </div>
 </nav>
-
-
 
 <script src="/src/components/article/toc/tocHighlight.ts"></script>
 

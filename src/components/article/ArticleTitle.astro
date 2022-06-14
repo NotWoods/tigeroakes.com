@@ -1,8 +1,8 @@
 ---
-export const classes = 'text-2xl leading-7 mb-1';
+export const classes = 'font-normal mb-1';
 ---
 
-<h2 class={classes}>
+<h2 class:list={['text-3xl', classes]}>
   <span class="relative accent-block--left accent-block--still">
     <slot />
   </span>
