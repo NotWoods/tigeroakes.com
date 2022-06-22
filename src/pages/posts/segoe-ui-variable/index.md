@@ -11,7 +11,7 @@ categories:
 banner: banner.svg
 toc: true
 setup: |
-  import { VariableFontSliders } from './VariableFontSliders';
+  import { VariableFontSliders } from './VariableFontSliders.tsx';
 ---
 
 ### Why use Segoe UI Variable?

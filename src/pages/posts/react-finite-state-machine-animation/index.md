@@ -14,7 +14,7 @@ banner: banner.png
 banner_alt: Finite State Machine diagram with circular paths and states for Open, Closing, Closed, Opening. In the background a sidebar and content layout is visible.
 toc: true
 setup: |
-  import { SidebarAnimationDemo, SidebarLayoutDemo, SidebarNaiveDemo, SidebarTranslateSliderDemo } from './SidebarDemo';
+  import { SidebarAnimationDemo, SidebarLayoutDemo, SidebarNaiveDemo, SidebarTranslateSliderDemo } from './SidebarDemo.tsx';
 ---
 
 Advanced web animation can be tricky - you want to mount and unmount elements, reduce layout, and keep the whole thing looking smooth. While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I recently added an animation that plays when you open or close the sidebar. I found that using a finite state machine and the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) made the animation performant and easy to read, with no need for a library or package. Here’s some examples of how it works!

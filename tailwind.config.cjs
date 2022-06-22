@@ -2,7 +2,7 @@
 
 const colors = require('tailwindcss/colors');
 
-/** @type {import('tailwindcss/tailwind-config').TailwindConfig} */
+/** @type {import('tailwindcss').Config} */
 const config = {
   content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx}'],
   theme: {
