@@ -13,6 +13,8 @@ categories:
 toc: true
 banner: banner.svg
 banner_alt: LinearLayout to Flexbox. Shows logos for Android below LinearLayout, and CSS3 above Flexbox.
+setup: |
+  import FlexExample from './FlexExample.astro';
 ---
 
 ![](banner.svg)
@@ -55,39 +57,7 @@ Let's focus on a horizontal layout, similar to a `LinearLayout` with the [`"hori
 </LinearLayout>
 ```
 
-<style>
-  #horizontal {
-    color: black;
-    background: white;
-    margin: auto;
-
-    width: 200px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #child1 {
-    background: #bcf5b1;
-    flex-grow: 1;
-  }
-
-  #child2 {
-    background: #aacaff;
-    align-self: flex-start;
-  }
-
-  #child3 {
-    background: #e3e2ad;
-  }
-</style>
-<div id="horizontal">
-  <span id="child1">One</span>
-  <span id="child2">Two</span>
-  <span id="child3">Three</span>
-</div>
+<FlexExample />
 
 On the web, layouts are split across two languages: HTML for declaring elements (similar to XML files in Android declaring views) and CSS for declaring styling (similar to the [styles.xml file](https://developer.android.com/guide/topics/ui/look-and-feel/themes)).
 
