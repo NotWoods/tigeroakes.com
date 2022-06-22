@@ -19,6 +19,8 @@ categories:
   - Feature
 banner: banner.jpg
 toc: true
+setup: |
+  import Video from '../../../components/shortcodes/Video.astro';
 ---
 
 ![](banner.png)
@@ -37,7 +39,7 @@ Maskable icons are a new icon format that give you more control and let your Pro
 
 Since maskable icons need to support a variety of shapes, you supply an opaque image with some padding that the browser can later crop into the desired shape and size. It's best not to rely on any particular shape, since it can vary by browser and per platform.
 
-<video src="fugu-mask.mp4">
+<Video src="fugu-mask.mp4" />
 
 Luckily, there's a well-defined and [standardized](https://w3c.github.io/manifest/#icon-masks) "minimum safe zone" that all platforms respect. The important parts of your icon, such as your logo, should be within a circular area in the center of the icon with a radius equal to 40% of the icon width. The outer 10% edge may be cropped.
 
