@@ -1,5 +1,5 @@
 .pipe-item::after {
-  content: " | ";
+  content: ' | ';
   margin: 0 0.2em;
 }
 .pipe-item:last-child::after {

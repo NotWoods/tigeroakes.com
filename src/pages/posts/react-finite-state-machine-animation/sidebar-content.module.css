@@ -18,10 +18,11 @@
 }
 .content {
   grid-area: content;
-  background: linear-gradient(to right bottom, #1C1917, #cbd5e1);
+  background: linear-gradient(to right bottom, #1c1917, #cbd5e1);
 }
 
-.sidebar, .content {
+.sidebar,
+.content {
   padding: 1rem;
   min-height: 10rem;
 }

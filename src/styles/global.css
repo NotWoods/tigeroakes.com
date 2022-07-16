@@ -36,7 +36,7 @@
 @layer components {
   .accent-block--left::before,
   .accent-block--bottom::before {
-    content: "";
+    content: '';
     @apply block absolute bg-accent;
   }
 

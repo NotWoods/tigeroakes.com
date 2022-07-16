@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.DEPLOY_PRIME_URL || 'https://tigeroakes.com',
+  site: 'https://tigeroakes.com',
   publicDir: './static',
   trailingSlash: 'always',
   integrations: [
