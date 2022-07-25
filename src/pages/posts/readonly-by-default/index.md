@@ -1,0 +1,152 @@
+---
+layout: ../../../layouts/PostLayout.astro
+title: You should use ReadonlyArray in your React state
+description: Preventing a common React bug.
+date: 2022-07-25
+tags:
+  - Web
+  - React
+categories:
+  - Planet Mozilla
+banner: banner.png
+---
+
+If you’ve ever written any React code, you’ve probably used arrays to represent state: an array of todo items, articles fetched from the server, and more. But sometimes React doesn’t update after you change that state. Usually, that’s because you mutated an array instead of copying it - a mistake easily prevented by using read-only types like `ReadonlyArray`. Here’s why you should start switching to read-only!
+
+## What’s wrong with mutable types?
+
+[`useState`](https://reactjs.org/docs/hooks-state.html) only triggers a render when the old and new state values are not equal (`!==`). When you work with primitive types like strings and numbers, that’s not a problem. Primitives are compared by value (`'a' === 'a'`), and you can only mutate the state by calling the setter returned from `useState`, so its clear when state changes will trigger a render.
+
+But arrays and other objects are more complicated. Objects are compared by identity instead of value (`['a'] !== ['a']`). And if you change the contents of an array by mutating it with `.push`, that will not change its identity.
+
+```jsx
+// Don't do:
+const [array, setArray] = React.useState<string[]>(['a']);
+const onClick = () => {
+  setArray(array => {
+    array.push('b'); // mutates the same array
+    return array;
+  });
+}
+```
+
+It won’t trigger a render if you just push to the the array. It also won’t trigger a render if you mutate that array and then set it as the new state, since the two states refer to the same object.
+
+The correct thing to do is always make a new copy of the collection when changing it, often by using the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+```jsx
+// Do:
+const [array, setArray] = React.useState<string[]>(['a']);
+const onClick = () => {
+  setArray(array => [...array, 'b']); // copies into a new array
+}
+```
+
+Brand new arrays will always have a different identity than existing arrays. Now React knows to rerender, because the new state doesn’t equal the old state.
+
+## Use TypeScript to avoid mutations
+
+So now we know that we shouldn’t mutate arrays stored in React state…but how do we avoid it? You can choose to memorize every array function, and remember which ones mutate an array and which ones create a copy. Instead, let’s enforce the correct functions with TypeScript.
+
+TypeScript offers the `ReadonlyArray<T>` type (which can also be written as `readonly T[]`), which represents an array with all the setters removed. That forces us to always make a copy, and let TypeScript quickly point it out anytime we forget with a type error.
+
+```jsx
+const [array, setArray] = React.useState<readonly string[]>(['a']);
+const onClick = () => {
+  setArray(array => {
+    // Type error: Property 'push' does not exist on type 'readonly string[]'.
+    array.push('b');
+    return array;
+  });
+}
+```
+
+This makes it much clearer to future editors of your codebase. It makes it clear that there is only one way to update the array, and that there are no mutations in the existing code.
+
+Since `ReadonlyArray` has all the same getters as an array, you can always pass in a regular array wherever a readonly array is expected.
+
+```jsx
+function List(props: { array: readonly string[] }) {
+  return <ul>
+    {props.array.map(item => <li>{item}</li>)}
+  </ul>
+}
+
+const data: string[] = ['hello', 'world'];
+<List array={data} />
+```
+
+## Local mutations are still OK
+
+While you should use readonly types for your state, it’s still OK to mutate an array when you’re constructing the next state value. `array.slice()` gives you a fresh copy of an array to mutate however you need.
+
+```jsx
+const [array, setArray] = React.useState<readonly string[]>(['a', 'b', 'c']);
+const onClick = () => {
+  setArray(array => {
+    const copy = array.slice(); // returns string[], not readonly string[]
+    copy.splice(1, 1);
+    copy.push('d');
+    // no problems, because the new state `copy` !== the old state `array`
+    return copy;
+  });
+}
+```
+
+## Read-only collections and objects
+
+There are also read-only variants of other collections, like `ReadonlyMap` and `ReadonlySet`. Just like `ReadonlyArray`, these types don’t include any functions that let you mutate the collection.
+
+You can apply the same principles to objects, too. The `Readonly<T>` type lets you remove the setters from properties in an object type.
+
+```jsx
+interface Bike {
+  speed: number;
+}
+
+const [bike, setBike] = React.useState < Readonly < Bike >> { speed: 0 };
+const onPedal = () => {
+  setBike((bike) => {
+    // Type error: Cannot assign to 'speed' because it is a read-only property.
+    bike.speed += 5;
+    return bike;
+  });
+};
+```
+
+You can also use the [`Pick`](https://www.typescriptlang.org/docs/handbook/utility-types.html) helper to avoid any functions that mutate a class instance.
+
+```jsx
+class Car {
+  speed = 0;
+
+  copy(speed: number) {
+    const newCar = new Car();
+    newCar.speed = speed;
+    return newCar;
+  }
+
+  mutate() {
+    speed += 10;
+  }
+}
+
+type ReadonlyCar = Readonly<Pick<Car, 'speed' | 'copy'>>;
+
+const [car, setCar] = React.useState < ReadonlyCar > new Car();
+const onPedal = () => {
+  setCar((car) => {
+    // Type error: Property 'mutate' does not exist on type 'ReadonlyCar'.
+    car.mutate();
+    return car;
+  });
+};
+```
+
+## Other uses for read-only types
+
+Read-only types are useful outside of React state and collections too. It’s useful for props and hooks to use and return read-only types to help enforce React’s update model across your app.
+
+Outside of React, you might want to use read-only to indicate that you never mutate an array passed to a function. You might want to enforce that a class property or variable shouldn’t be changed.
+
+Always think carefully about which parts of your data are mutable or not. Try using read-only by default instead of mutable collections!
