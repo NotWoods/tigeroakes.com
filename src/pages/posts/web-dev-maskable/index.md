@@ -9,7 +9,7 @@ description: A new icon format to use adaptive icons on supporting platforms.
 date: 2019-12-19
 author: tiger
 links:
-  - title: Original post
+  - title: Posted on web.dev
     link: https://web.dev/maskable-icon/
 tags:
   - Web

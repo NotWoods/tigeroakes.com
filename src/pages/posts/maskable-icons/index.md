@@ -11,7 +11,7 @@ lastmod: 2019-10-28
 author: tiger
 editor: chris_coyier
 links:
-  - title: Original post
+  - title: Posted on CSS Tricks
     link: https://css-tricks.com/maskable-icons-android-adaptive-icons-for-your-pwa/
 tags:
   - Web

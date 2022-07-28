@@ -10,7 +10,7 @@ date: 2019-10-01
 lastmod: 2020-09-01
 author: tiger
 links:
-  - title: Original post
+  - title: Posted on Firefox Mobile Engineering
     link: https://medium.com/firefox-mobile-engineering/participating-in-hacktoberfest-with-firefox-preview-fc68cc318643
 tags:
   - Android
