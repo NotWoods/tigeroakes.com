@@ -9,6 +9,7 @@ tags:
 categories:
   - Planet Mozilla
 banner: banner.png
+toc: true
 ---
 
 If you’ve ever written any React code, you’ve probably used arrays to represent state: an array of todo items, articles fetched from the server, and more. But sometimes React doesn’t update after you change that state. Usually, that’s because you mutated an array instead of copying it - a mistake easily prevented by using read-only types like `ReadonlyArray`. Here’s why you should start switching to read-only!
