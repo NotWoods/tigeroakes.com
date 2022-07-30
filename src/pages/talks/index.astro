@@ -29,7 +29,7 @@ const posts = allPages.map((post) => ({
   </head>
 
   <body class="bg-slate-800 text-slate-200">
-    <BannerNav current={Astro.canonicalURL} />
+    <BannerNav current={Astro.url} />
 
     <PostsHeader links={header.frontmatter.links}>
       <header.Content></header.Content>

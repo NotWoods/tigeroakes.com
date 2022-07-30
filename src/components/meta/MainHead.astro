@@ -15,7 +15,7 @@ export interface Props {
 const {
   title,
   description,
-  canonical = Astro.canonicalURL.href,
+  canonical = new URL(Astro.url.pathname, Astro.site).href,
   defaultSocial,
 } = Astro.props as Props;
 

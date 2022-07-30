@@ -7,22 +7,22 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
-const path = Astro.canonicalURL.pathname.split('/').filter(Boolean);
+const path = Astro.url.pathname.split('/').filter(Boolean);
 const [sectionPath, pagePath] = path;
 
 const breadcrumbs = [
-  { name: 'Tiger Oakes', url: new URL('/', Astro.canonicalURL) },
+  { name: 'Tiger Oakes', url: new URL('/', Astro.site) },
 ];
 if (sectionPath) {
   const sectionWithSlash = `/${sectionPath}`;
   const name = sectionData.names[sectionWithSlash];
   breadcrumbs.push({
     name,
-    url: new URL(sectionWithSlash, Astro.canonicalURL),
+    url: new URL(sectionWithSlash, Astro.site),
   });
 }
 if (pagePath) {
-  breadcrumbs.push({ name: title, url: Astro.canonicalURL });
+  breadcrumbs.push({ name: title, url: new URL(Astro.url.pathname, Astro.site) });
 }
 
 const itemListElement = breadcrumbs.map(({ name, url }, index) => {

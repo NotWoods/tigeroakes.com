@@ -7,12 +7,12 @@ export interface Props {
 }
 
 const { title, description, pictureSrc, pictureAlt } = Astro.props as Props;
-const defaultImage = new URL('/banner.png', Astro.canonicalURL);
+const defaultImage = new URL('/banner.png', Astro.site);
 ---
 
 <meta name="og:title" content={title} />
 <meta name="og:type" content="website" />
-<meta name="og:url" content={Astro.canonicalURL} />
+<meta name="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
 <meta name="og:description" content={description} />
 <meta name="og:site_name" content="Tiger Oakes" />
 <meta name="og:image" content={pictureSrc || defaultImage.href} />

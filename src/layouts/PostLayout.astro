@@ -14,7 +14,7 @@ const { content } = Astro.props;
 
 const POST_PATH = /^\/(posts|talks)\/([-\w]+)/;
 async function postBanner(bannerFile: string | undefined) {
-  const match = POST_PATH.exec(Astro.canonicalURL.pathname);
+  const match = POST_PATH.exec(Astro.url.pathname);
   if (match && bannerFile) {
     const [, folder, slug] = match;
     const pictureSrc = resolve(
@@ -30,21 +30,21 @@ async function postBanner(bannerFile: string | undefined) {
         return `${parentFolder(src)}-banner.${id}.${format}`;
       },
     });
-    return new URL(metadata.png[0].url, Astro.canonicalURL).href;
+    return new URL(metadata.png[0].url, Astro.site).href;
   }
   return undefined;
 }
 
 const formattedProps = {
   title: content.title,
-  href: Astro.canonicalURL,
+  href: Astro.url,
   accent: postAccentColor(content.tags),
   date: content.date ? dateFromString(content.date) : undefined,
   lastMod: content.lastMod ? dateFromString(content.lastMod) : undefined,
   description: content.description,
   tags: content.tags,
   elsewhere: content.elsewhere,
-  tableOfContents: content.toc ? content.astro.headers : undefined,
+  tableOfContents: content.toc ? content.astro.headings : undefined,
   links: content.links,
 };
 
@@ -56,7 +56,7 @@ const pictureSrc = await postBanner(content.banner);
     <MainHead
       title={content.title}
       description={content.description}
-      canonical={content.elsewhere?.link ?? Astro.canonicalURL}
+      canonical={content.elsewhere?.link ?? new URL(Astro.url.pathname, Astro.site)}
     />
     <Social
       title={content.title}

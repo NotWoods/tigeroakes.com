@@ -26,7 +26,7 @@ function formatDate(date: Temporal.PlainDate | undefined) {
 const article = {
   '@context': 'https://schema.org',
   '@type': type,
-  mainEntityOfPage: Astro.canonicalURL,
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site),
   headline: title,
   image: images,
   datePublished: formatDate(date),

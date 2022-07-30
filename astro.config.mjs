@@ -20,6 +20,9 @@ export default defineConfig({
       theme: 'dark-plus',
     },
   },
+  legacy: {
+    astroFlavoredMarkdown: true,
+  },
   vite: {
     plugins: [
       VitePWA({

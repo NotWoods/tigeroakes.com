@@ -11,12 +11,12 @@ import {
 } from '../scripts/projects';
 
 const { content } = Astro.props;
-const [, projectId] = Astro.canonicalURL.pathname.match(PROJECT_PATH);
+const [, projectId] = Astro.url.pathname.match(PROJECT_PATH);
 
 const { backgroundImage, logo } = await projectImages(projectId, content.logo);
 const formattedProps = {
   title: content.title,
-  href: Astro.canonicalURL,
+  href: Astro.url,
   date: content.date ? dateFromString(content.date) : undefined,
   description: content.subtitle,
   tags: content.tech,
@@ -27,7 +27,7 @@ const formattedProps = {
     content.links?.filter(
       (link: Link) => link.title !== 'Details' && link.title !== 'Case study'
     ),
-    Astro.canonicalURL
+    Astro.url
   ),
 };
 ---

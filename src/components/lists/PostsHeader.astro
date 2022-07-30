@@ -15,6 +15,6 @@ const { links } = Astro.props as Props;
   </div>
   <Buttons
     class="selection-invert text-slate-800 justify-center mb-4"
-    buttons={projectButtons(links, Astro.canonicalURL)}
+    buttons={projectButtons(links, Astro.url)}
   />
 </aside>
