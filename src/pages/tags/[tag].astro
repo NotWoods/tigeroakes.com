@@ -11,8 +11,8 @@ export interface Props {
 
 export async function getStaticPaths() {
   const { tagToPages, tagPaths } = await getCollectionPages(
-    Astro.glob('../{posts,talks}/*/*.md'),
-    Astro.glob('../projects/**/*.md'),
+    Astro.glob('../{posts,talks}/*/*.{md,mdx}'),
+    Astro.glob('../projects/**/*.{md,mdx}'),
     'tags'
   );
 

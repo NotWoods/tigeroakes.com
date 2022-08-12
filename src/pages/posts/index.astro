@@ -8,7 +8,7 @@ import RSS from '../../components/meta/RSS.astro';
 import { loadPosts, postBanner } from '../../scripts/posts';
 import * as header from './_index.md';
 
-const allPages = await loadPosts(Astro.glob('./*/*.md'));
+const allPages = await loadPosts(Astro.glob('./*/*.{md,mdx}'));
 const posts = allPages.map((post) => ({
   title: post.frontmatter.title,
   href: post.url,

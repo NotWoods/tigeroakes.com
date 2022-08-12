@@ -9,7 +9,7 @@ import {
   PROJECT_PATH,
 } from '../../scripts/projects';
 
-const allPages = await Astro.glob('./**/*.md');
+const allPages = await Astro.glob('./**/*.{md,mdx}');
 allPages.sort((a, b) => {
   const aWeight = a.frontmatter.weight || Infinity;
   const bWeight = b.frontmatter.weight || Infinity;

@@ -7,7 +7,7 @@ import MainHead from '../../components/meta/MainHead.astro';
 import { loadPosts, postBanner } from '../../scripts/posts';
 import * as header from './_index.md';
 
-const allPages = await loadPosts(Astro.glob('./*/*.md'));
+const allPages = await loadPosts(Astro.glob('./*/*.mdx'));
 const posts = allPages.map((post) => ({
   title: post.frontmatter.title,
   href: post.url,

@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { loadPosts } from '../../../scripts/posts';
 
-const postsData = import.meta.globEager('../../posts/*/*.md');
+const postsData = import.meta.globEager('../../posts/*/*.{md,mdx}');
 
 export const get = async () => {
   const posts = await loadPosts(Object.values(postsData) as any);
