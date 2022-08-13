@@ -93,6 +93,9 @@
 .shiki {
   position: relative;
 }
+.shiki .line:empty::before {
+  content: ' ';
+}
 .language-id {
   position: absolute;
   top: 0;
