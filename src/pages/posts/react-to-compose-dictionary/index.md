@@ -42,7 +42,7 @@ function Container(props) {
 
 Jetpack Compose passes composable functions as the functions themselves don't return anything.
 
-```kotlin
+```kt
 @Composable
 fun Container(children: @Composable () -> Unit) {
   Box {
@@ -73,7 +73,7 @@ The value can be controlled using a "Provider" in both [React](https://reactjs.o
 </MyContext.Provider>
 ```
 
-```kotlin
+```kt
 CompositionLocalProvider(MyLocal provides myValue) {
   SomeChild()
 }
@@ -89,7 +89,7 @@ const myValue = useContext(MyContext);
 
 Accessing the value of an Ambient is done by using the [`.current` getter](https://developer.android.com/reference/kotlin/androidx/compose/runtime/CompositionLocal#current:androidx.compose.runtime.CompositionLocal.T).
 
-```kotlin
+```kt
 val myValue = MyLocal.current
 ```
 
@@ -118,7 +118,7 @@ function useFriendStatus(friendID) {
 
 In Jetpack Compose, [@Composable functions](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable) are used as the equivalent of hooks (along with acting as the [equivalent of Components](#react-component--composable)). These composable functions, sometimes referred to as "effect" functions, usually start with a lowercase letter instead of an uppercase letter.
 
-```kotlin
+```kt
 @Composable
 fun friendStatus(friendID: String): State<Boolean?> {
   val isOnline = remember { mutableStateOf<Boolean?>(null) }
@@ -167,7 +167,7 @@ useEffect(() => {
 
 Jetpack Compose exposes an [`DisposableEffect` composable](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#disposableeffect_1) that replaces `useEffect` in this scenario. Rather than returning a function, you can call `onDispose` and pass a callback there. It will run when the effect leaves the composition.
 
-```kotlin
+```kt
 DisposableEffect(id) {
   val subscription = source.subscribe(id)
   onDispose {
@@ -219,7 +219,7 @@ Kotlin uses suspend functions and coroutines instead of JavaScript's async funct
 
 Compose additionally cancels the coroutine whenever the keys change. As a result, the 11 lines of code above are replaced with the 3 lines below.
 
-```kotlin
+```kt
 LaunchedEffect(id) {
   apiClient.fetchUser(id)
 }
@@ -237,7 +237,7 @@ useEffect(() => {
 
 This is accomplished using the [`SideEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#sideeffect) function in Jetpack Compose. These side effects will be run every single composition.
 
-```kotlin
+```kt
 SideEffect {
   sideEffectRunEveryComposition()
 }
@@ -263,7 +263,7 @@ useEffect(() => {
 
 Rather than passing an array as the last parameter, you can pass any number of arguments as the first few parameters to `DisposableEffect` and `LaunchedEffect`.
 
-```kotlin
+```kt
 LaunchedEffect(id) {
   // Run when id changes
 }
@@ -271,7 +271,7 @@ LaunchedEffect(id) {
 
 If you want to run something every render, you need to use `SideEffect`. There is no equivalent for not passing the dependency list to `useEffect` in `DisposableEffect` and `LaunchedEffect`. You should always pass some kind of dependency or key.
 
-```kotlin
+```kt
 SideEffect {
   // Run every composition
 }
@@ -279,7 +279,7 @@ SideEffect {
 
 To only run an effect on the first composition, you should use a key that never changes - such as `Unit` or `true`.
 
-```kotlin
+```kt
 LaunchedEffect(Unit) {
   // Run only on the first composition
 }
@@ -309,7 +309,7 @@ function useFriendStatus(friendID) {
 
 Jetpack Compose offers a single function to handle this functionality: [`produceState`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#producestate).
 
-```kotlin
+```kt
 @Composable
 fun friendStatus(friendID: String): State<Boolean?> {
   return produceState(initialValue = null, friendID) {
@@ -344,7 +344,7 @@ React has a special [string prop named `key`](https://reactjs.org/docs/lists-and
 
 Jetpack Compose has a special [utility composable called `key`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#key) that can take any input.
 
-```kotlin
+```kt
 Column {
   for (todo in todos) {
     key(todo.id) { Text(todo.text) }
@@ -372,7 +372,7 @@ function NumberList(props) {
 
 Composable UI functions in Jetpack Compose emit other UI composables and don't return anything. As a result, a simple for loop can be used instead of `.map()`.
 
-```kotlin
+```kt
 @Composable
 fun NumberList(numbers: List<Int>) {
   Column {
@@ -410,7 +410,7 @@ interface FancyButtonProps {
 
 This is possible to model using overloads in Kotlin.
 
-```kotlin
+```kt
 @Composable fun FancyButton(
   text: String,
   background: Color,
@@ -435,7 +435,7 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 Jetpack Compose has a similar function named [`remember`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#remember) that only re-computes a value if the inputs change.
 
-```kotlin
+```kt
 val memoizedValue = remember(a, b) { computeExpensiveValue(a, b) }
 ```
 
@@ -451,7 +451,7 @@ function Greeting(props) {
 
 In Jetpack Compose, Composable functions are building blocks used to split the UI into independent and reusable pieces. They are functions with a [`@Composable` annotation](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable) that can take any number of parameters.
 
-```kotlin
+```kt
 @Composable
 fun Greeting(name: String) {
   Text(text = "Hello $name!")
@@ -486,7 +486,7 @@ const [count, setCount] = useState(0);
 
 Compose uses the [`mutableStateOf` function](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutablestateof) to return a [`MutableState` object](https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState), which contains a variable with a getter and setter.
 
-```kotlin
+```kt
 val count = remember { mutableStateOf(0) }
 
 Button(onClick = { count.value++ }) {
@@ -496,7 +496,7 @@ Button(onClick = { count.value++ }) {
 
 `MutableState` contains [`componentN()` functions](<https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState#component1()>), allowing you to destructure the getter and setter just like React.
 
-```kotlin
+```kt
 val (count, setCount) = remember { mutableStateOf(0) }
 
 Button(onClick = { setCount(count + 1) }) {
@@ -547,7 +547,7 @@ function Greeting(props) {
 
 Kotlin doesn't have ternary operators as if statements do return the result of the successful branch. Since if statements in Kotlin act like ternary operators in JavaScript, there is no need for a second variation.
 
-```kotlin
+```kt
 @Composable
 fun Greeting(name: String?) {
   Text(text = if (name != null) {

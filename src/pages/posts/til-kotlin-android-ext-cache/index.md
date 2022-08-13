@@ -19,7 +19,7 @@ In Android projects written with Kotlin, you can replace `findViewById<ViewType>
 
 Views don't cache the extension property. Using `view.view_id` is equivalent to calling `findViewById` every time and looking up the view over and over again. This is an easy mistake to make in fragments, where you can get the root view.
 
-```kotlin
+```kt
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -35,7 +35,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
 Prefer the extension property on Activities and Fragments as those are cached. You can identify which version you use based on the import statement.
 
-```kotlin
+```kt
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -51,7 +51,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
 Classes with the `LayoutContainer` interface can also cache synthetic extension properties. Just provide a getter for the root view object in `containerView`, and everything else will work just like Activites and Fragments.
 
-```kotlin
+```kt
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragmentUiHelper(context: Context) : LayoutContainer {

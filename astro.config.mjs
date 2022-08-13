@@ -3,6 +3,7 @@ import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
+import shikiTwoslash from 'remark-shiki-twoslash';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // https://astro.build/config
@@ -13,7 +14,9 @@ export default defineConfig({
   integrations: [
     preact(),
     tailwind({ config: { applyBaseStyles: false } }),
-    mdx(),
+    mdx({
+      remarkPlugins: { extends: [shikiTwoslash] },
+    }),
     sitemap(),
   ],
   markdown: {

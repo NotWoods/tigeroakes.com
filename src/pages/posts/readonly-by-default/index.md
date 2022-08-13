@@ -20,7 +20,7 @@ If you’ve ever written any React code, you’ve probably used arrays to repres
 
 But arrays and other objects are more complicated. Objects are compared by identity instead of value (`['a'] !== ['a']`). And if you change the contents of an array by mutating it with `.push`, that will not change its identity.
 
-```jsx
+```tsx
 // Don't do:
 const [array, setArray] = React.useState<string[]>(['a']);
 const onClick = () => {
@@ -35,7 +35,7 @@ It won’t trigger a render if you just push to the the array. It also won’t t
 
 The correct thing to do is always make a new copy of the collection when changing it, often by using the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
 
-```jsx
+```tsx
 // Do:
 const [array, setArray] = React.useState<string[]>(['a']);
 const onClick = () => {
@@ -51,7 +51,7 @@ So now we know that we shouldn’t mutate arrays stored in React state…but how
 
 TypeScript offers the `ReadonlyArray<T>` type (which can also be written as `readonly T[]`), which represents an array with all the setters removed. That forces us to always make a copy, and let TypeScript quickly point it out anytime we forget with a type error.
 
-```jsx
+```tsx
 const [array, setArray] = React.useState<readonly string[]>(['a']);
 const onClick = () => {
   setArray(array => {
@@ -66,7 +66,7 @@ This makes it much clearer to future editors of your codebase. It makes it clear
 
 Since `ReadonlyArray` has all the same getters as an array, you can always pass in a regular array wherever a readonly array is expected.
 
-```jsx
+```tsx
 function List(props: { array: readonly string[] }) {
   return <ul>
     {props.array.map(item => <li>{item}</li>)}
@@ -81,7 +81,7 @@ const data: string[] = ['hello', 'world'];
 
 While you should use readonly types for your state, it’s still OK to mutate an array when you’re constructing the next state value. `array.slice()` gives you a fresh copy of an array to mutate however you need.
 
-```jsx
+```tsx
 const [array, setArray] = React.useState<readonly string[]>(['a', 'b', 'c']);
 const onClick = () => {
   setArray(array => {
@@ -100,12 +100,12 @@ There are also read-only variants of other collections, like `ReadonlyMap` and `
 
 You can apply the same principles to objects, too. The `Readonly<T>` type lets you remove the setters from properties in an object type.
 
-```jsx
+```tsx
 interface Bike {
   speed: number;
 }
 
-const [bike, setBike] = React.useState < Readonly < Bike >> { speed: 0 };
+const [bike, setBike] = React.useState<Readonly<Bike>>({ speed: 0 });
 const onPedal = () => {
   setBike((bike) => {
     // Type error: Cannot assign to 'speed' because it is a read-only property.
@@ -117,7 +117,7 @@ const onPedal = () => {
 
 You can also use the [`Pick`](https://www.typescriptlang.org/docs/handbook/utility-types.html) helper to avoid any functions that mutate a class instance.
 
-```jsx
+```tsx
 class Car {
   speed = 0;
 
@@ -134,7 +134,7 @@ class Car {
 
 type ReadonlyCar = Readonly<Pick<Car, 'speed' | 'copy'>>;
 
-const [car, setCar] = React.useState < ReadonlyCar > new Car();
+const [car, setCar] = React.useState<ReadonlyCar>(new Car());
 const onPedal = () => {
   setCar((car) => {
     // Type error: Property 'mutate' does not exist on type 'ReadonlyCar'.

@@ -24,14 +24,14 @@ Composables should be side-effect free and not handle use cases such as connecti
 
 This simple use case has a simple update. Just use the new [`SideEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#sideeffect) function instead.
 
-```kotlin
+```kt
 // Before
 onCommit {
   sideEffectRunEveryComposition()
 }
 ```
 
-```kotlin
+```kt
 // After
 SideEffect {
   sideEffectRunEveryComposition()
@@ -42,14 +42,14 @@ SideEffect {
 
 If you only want to run your side effect when keys are changed, then you should [`LaunchedEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#launchedeffect_1) if you don't call `onDispose`. (If you do, scroll down to the next section.)
 
-```kotlin
+```kt
 // Before
 onCommit(userId) {
   searchUser(userId)
 }
 ```
 
-```kotlin
+```kt
 // After
 LaunchedEffect(userId) {
   searchUser(userId)
@@ -60,7 +60,7 @@ LaunchedEffect(userId) {
 
 Effects using [`onDispose`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/DisposableEffectScope#ondispose) to clean up are now handled in a separate function called [`DisposableEffect`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#disposableeffect_1).
 
-```kotlin
+```kt
 // Before
 onCommit(userId) {
   val subscription = subscribeToUser(userId)
@@ -71,7 +71,7 @@ onCommit(userId) {
 }
 ```
 
-```kotlin
+```kt
 // After
 DisposableEffect(userId) {
   val subscription = subscribeToUser(userId)
@@ -86,14 +86,14 @@ DisposableEffect(userId) {
 
 Rather than having a separate function for running an effect only on the first composition, this use cases is now handled by passing `Unit` as a key to `LaunchedEffect` or `DisposableEffect`. You can pass any static value as a key, including `Unit` or `true`.
 
-```kotlin
+```kt
 // Before
 onActive {
   search()
 }
 ```
 
-```kotlin
+```kt
 // After
 LaunchedEffect(Unit) {
   search()
@@ -102,7 +102,7 @@ LaunchedEffect(Unit) {
 
 ## `onActive` with `onDispose`
 
-```kotlin
+```kt
 // Before
 onActive {
   val subscription = subscribe()
@@ -113,7 +113,7 @@ onActive {
 }
 ```
 
-```kotlin
+```kt
 // After
 DisposableEffect(Unit) {
   val subscription = subscribe()

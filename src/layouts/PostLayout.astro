@@ -10,7 +10,7 @@ import { dateFromString } from '../scripts/date';
 import { postAccentColor } from '../scripts/posts';
 import '../styles/font-extra.css';
 
-const { content } = Astro.props;
+const { content, headings } = Astro.props;
 
 const POST_PATH = /^\/(posts|talks)\/([-\w]+)/;
 async function postBanner(bannerFile: string | undefined) {
@@ -44,7 +44,7 @@ const formattedProps = {
   description: content.description,
   tags: content.tags,
   elsewhere: content.elsewhere,
-  tableOfContents: content.toc ? content.astro.headings : undefined,
+  tableOfContents: content.toc ? headings : undefined,
   links: content.links,
 };
 
