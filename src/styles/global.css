@@ -89,19 +89,3 @@
     grid-area: header;
   }
 }
-
-.shiki {
-  position: relative;
-}
-.shiki .line:empty::before {
-  content: ' ';
-}
-.language-id {
-  position: absolute;
-  top: 0;
-  right: 0;
-  @apply font-sans font-bold px-2 text-orange-500;
-}
-.language-id::before {
-  content: '.';
-}
