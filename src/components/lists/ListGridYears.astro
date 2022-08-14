@@ -1,19 +1,27 @@
 ---
-import { groupBy } from "../../scripts/collection";
-import ListGrid, { Item } from "./ListGrid.astro";
+import { groupBy } from '../../scripts/collection';
+import ListGrid, { Item } from './ListGrid.astro';
 
 export interface Props {
   items: readonly Item[];
+  pictureAspect: 'half' | 'video';
 }
 
-const { items } = Astro.props as Props;
+const { items, pictureAspect } = Astro.props as Props;
 
-function groupByYear(): readonly { year: number, items: readonly Item[] }[] {
+function groupByYear(): readonly { year: number; items: readonly Item[] }[] {
   const itemsByYear = groupBy(items, (item) => item.date.year);
-	return Array.from(itemsByYear).map(([year, items]) => ({ year, items }));
+  return Array.from(itemsByYear).map(([year, items]) => ({ year, items }));
 }
-
 ---
-{groupByYear().map(({ year, items }, i) => (
-  <ListGrid title={year.toString()} items={items} pictureLoading={i === 0 ? 'eager' : 'lazy'} />
-))}
+
+{
+  groupByYear().map(({ year, items }, i) => (
+    <ListGrid
+      title={year.toString()}
+      items={items}
+      pictureLoading={i === 0 ? 'eager' : 'lazy'}
+      {pictureAspect}
+    />
+  ))
+}

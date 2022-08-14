@@ -11,6 +11,7 @@ export interface Props {
   class?: string;
   fit?: 'cover' | 'contain';
   loading?: 'eager' | 'lazy';
+  aspect: 'half' | 'video';
 }
 
 const {
@@ -18,13 +19,16 @@ const {
   alt = '',
   fit,
   width,
+  aspect,
   sizes,
   loading = 'lazy',
   class: className,
 } = Astro.props as Props;
 const imgClass = fit === 'contain' ? 'object-contain' : 'object-cover';
 const pictureClass = [
-  `block mb-2 shadow-md aspect-w-2 aspect-h-1 bg-slate-200`,
+  `block mb-2 shadow-md bg-slate-200`,
+  aspect === 'half' && 'aspect-w-2 aspect-h-1',
+  aspect === 'video' && 'aspect-w-16 aspect-h-9',
   className,
 ]
   .filter(Boolean)
