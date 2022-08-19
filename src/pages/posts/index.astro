@@ -35,7 +35,7 @@ const posts = allPages.map((post) => ({
     <BannerNav current={Astro.url} />
 
     <PostsHeader links={header.frontmatter.links}>
-      <header.Content></header.Content>
+      <header.Content />
     </PostsHeader>
     <ListGridYears items={posts} pictureAspect="half" />
 

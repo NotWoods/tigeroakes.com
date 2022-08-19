@@ -14,9 +14,16 @@ const topLevel = url.slice(0, secondSlash);
 const title = sectionData.more[topLevel];
 ---
 
-{title && <footer class="article-nav flex justify-center py-8">
-  <Button href={topLevel} class="bg-gray-100 dark:bg-slate-200 text-slate-800 text-2xl basis-64">{title}</Button>
-</footer>}
+{title && (
+  <footer class="article-nav flex justify-center py-8">
+    <Button
+      href={topLevel}
+      class="bg-gray-100 dark:bg-slate-200 text-slate-800 text-2xl basis-64"
+    >
+      {title}
+    </Button>
+  </footer>
+)}
 
 <style>
   .article-nav {

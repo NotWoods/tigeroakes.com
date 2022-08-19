@@ -24,18 +24,12 @@ function mimeType(source: string) {
   }
 }
 
-let sourceList = [src]
+let sourceList = [src];
 if (ext) {
-  sourceList = ext.split(',').map(ext => src.replace('.*', ext.trim()))
+  sourceList = ext.split(',').map((ext) => src.replace('.*', ext.trim()));
 }
 ---
 
-<video
-  autoplay
-  loop
-  muted
-  {width}
-  {height}
->
+<video autoplay loop muted {width} {height}>
   {sourceList.map((source) => <source src={source} type={mimeType(source)} />)}
 </video>

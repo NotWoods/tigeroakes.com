@@ -38,9 +38,22 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 <script
   src="https://caterpilla.tigeroakes.com/script.js"
   data-site="CSXBFPSZ"
-  defer></script>
-<link rel="preload" href="/font/lato/LatoLatin-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/font/cascadia-code/CascadiaMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  defer
+></script>
+<link
+  rel="preload"
+  href="/font/lato/LatoLatin-Regular.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/font/cascadia-code/CascadiaMono-Variable.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 {defaultSocial && <Twitter {title} {description} />}
 {defaultSocial && <OpenGraph {title} {description} />}
 <Breadcrumb {title} />

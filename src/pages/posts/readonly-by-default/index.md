@@ -24,11 +24,11 @@ But arrays and other objects are more complicated. Objects are compared by ident
 // Don't do:
 const [array, setArray] = React.useState<string[]>(['a']);
 const onClick = () => {
-  setArray(array => {
+  setArray((array) => {
     array.push('b'); // mutates the same array
     return array;
   });
-}
+};
 ```
 
 It won’t trigger a render if you just push to the the array. It also won’t trigger a render if you mutate that array and then set it as the new state, since the two states refer to the same object.
@@ -39,8 +39,8 @@ The correct thing to do is always make a new copy of the collection when changin
 // Do:
 const [array, setArray] = React.useState<string[]>(['a']);
 const onClick = () => {
-  setArray(array => [...array, 'b']); // copies into a new array
-}
+  setArray((array) => [...array, 'b']); // copies into a new array
+};
 ```
 
 Brand new arrays will always have a different identity than existing arrays. Now React knows to rerender, because the new state doesn’t equal the old state.
@@ -54,12 +54,12 @@ TypeScript offers the `ReadonlyArray<T>` type (which can also be written as `rea
 ```tsx
 const [array, setArray] = React.useState<readonly string[]>(['a']);
 const onClick = () => {
-  setArray(array => {
+  setArray((array) => {
     // Type error: Property 'push' does not exist on type 'readonly string[]'.
     array.push('b');
     return array;
   });
-}
+};
 ```
 
 This makes it much clearer to future editors of your codebase. It makes it clear that there is only one way to update the array, and that there are no mutations in the existing code.
@@ -68,13 +68,17 @@ Since `ReadonlyArray` has all the same getters as an array, you can always pass 
 
 ```tsx
 function List(props: { array: readonly string[] }) {
-  return <ul>
-    {props.array.map(item => <li>{item}</li>)}
-  </ul>
+  return (
+    <ul>
+      {props.array.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  );
 }
 
 const data: string[] = ['hello', 'world'];
-<List array={data} />
+<List array={data} />;
 ```
 
 ## Local mutations are still OK
@@ -84,14 +88,14 @@ While you should use readonly types for your state, it’s still OK to mutate an
 ```tsx
 const [array, setArray] = React.useState<readonly string[]>(['a', 'b', 'c']);
 const onClick = () => {
-  setArray(array => {
+  setArray((array) => {
     const copy = array.slice(); // returns string[], not readonly string[]
     copy.splice(1, 1);
     copy.push('d');
     // no problems, because the new state `copy` !== the old state `array`
     return copy;
   });
-}
+};
 ```
 
 ## Read-only collections and objects

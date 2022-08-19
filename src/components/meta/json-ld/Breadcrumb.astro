@@ -10,9 +10,7 @@ const { title } = Astro.props as Props;
 const path = Astro.url.pathname.split('/').filter(Boolean);
 const [sectionPath, pagePath] = path;
 
-const breadcrumbs = [
-  { name: 'Tiger Oakes', url: new URL('/', Astro.site) },
-];
+const breadcrumbs = [{ name: 'Tiger Oakes', url: new URL('/', Astro.site) }];
 if (sectionPath) {
   const sectionWithSlash = `/${sectionPath}`;
   const name = sectionData.names[sectionWithSlash];
@@ -22,7 +20,10 @@ if (sectionPath) {
   });
 }
 if (pagePath) {
-  breadcrumbs.push({ name: title, url: new URL(Astro.url.pathname, Astro.site) });
+  breadcrumbs.push({
+    name: title,
+    url: new URL(Astro.url.pathname, Astro.site),
+  });
 }
 
 const itemListElement = breadcrumbs.map(({ name, url }, index) => {
