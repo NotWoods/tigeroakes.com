@@ -18,10 +18,10 @@ projects:
 banner: banner.jpg
 toc: true
 footer: Some of the links above are affiliate links for Amazon. As an Amazon Associate I earn from qualifying purchases. Using these links helps me out!
-setup: |
-  import GitHub from '../../../components/shortcodes/GitHub.astro';
-  import Video from '../../../components/shortcodes/Video.astro';
 ---
+
+import GitHub from '../../../components/shortcodes/GitHub.astro';
+import Video from '../../../components/shortcodes/Video.astro';
 
 ![Phones attached to wood panel with black wire wall art stemming from it](banner.jpg)
 
@@ -37,7 +37,7 @@ These phones can do anything a normal phone does, but I've tweaked the use cases
 - Show a drink list or other text across all phones.
 - Indicate at a glance if I or my partner is is in a meeting.
 
-<img src="cell-wall-graphic-decorated.svg" alt="Example of CellWall running with different screens" width="837" height="618">
+<img src="cell-wall-graphic-decorated.svg" alt="Example of CellWall running with different screens" width="837" height="618" />
 
 ## Parts and assembly
 
@@ -130,7 +130,7 @@ The server software is written in TypeScript and creates an HTTP server to expos
 To control CellWall, I wrote a small JavaScript app served by the Node server. It includes a few buttons to turn each display on, controls for specific screens, and presets to display. These input elements all send HTTP requests to the server, which then converts them into ADB commands sent to the cells.
 
 <div style="display:flex;justify-content:space-evenly;flex-wrap:wrap">
-<img src="remote-control.png" alt="Remote control app with power buttons, device selection, and manual display controls" max-height="500" class="col-left">
+<img src="remote-control.png" alt="Remote control app with power buttons, device selection, and manual display controls" max-height="500" class="col-left" />
 <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" style="max-width:500px">
 
   <title>Diagram of request flow from remote to server to ADB to CellWall</title>

@@ -24,10 +24,10 @@ images:
   - /posts/android-animate-strike-thru/static_icon_with_gap.png
 banner: static_icon_with_gap.png
 toc: true
-setup: |
-  import GitHub from '../../../components/shortcodes/GitHub.astro';
-  import Video from '../../../components/shortcodes/Video.astro';
 ---
+
+import GitHub from '../../../components/shortcodes/GitHub.astro';
+import Video from '../../../components/shortcodes/Video.astro';
 
 With 1.6K views, my most popular tweet at the time of writing is about a little feature I added to Firefox Preview:
 
@@ -56,7 +56,7 @@ Unlike colors, which are single values, shapes are more complex. Even a simple l
 
 In Firefox, our icons are defined as vectors, meaning that an image file specifies some points and the computer connects the dots. This is different than bitmap images which store many coloured squares. Since the computer is just connecting dots, the image can be scaled up without losing any detail.
 
-<img src="square_line_with_dots.png" alt="Square line with dots" width="394" height="400">
+<img src="square_line_with_dots.png" alt="Square line with dots" width="394" height="400" />
 
 Android can also animate these dots. A line (really a thin rectangle) can be represented as 4 dots for each corner. When it disappears, it’s really just moving the dots so that the rectangle is so small you can’t see it.
 
@@ -90,7 +90,7 @@ If we put our animated line on top of another icon, this is what we end up with.
 
 The line unfortunately blends in with the icon. To emphasize the strike through, we want to create a small gap right under the line and create something like this:
 
-<img src="static_icon_with_gap.png" alt="Static icon with line through it and a gap" width="295" height="300">
+<img src="static_icon_with_gap.png" alt="Static icon with line through it and a gap" width="295" height="300" />
 
 Luckily, we already know how to hide parts of an icon. We can use a clip path again. Since clip paths are just another shape created by connecting dots, they can also be animated in parallel to the original line.
 
