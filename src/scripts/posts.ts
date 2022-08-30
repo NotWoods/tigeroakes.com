@@ -21,12 +21,12 @@ export interface PostFrontmatter {
   banner_alt?: string;
 }
 
-export interface Post extends MarkdownInstance<PostFrontmatter> {
+export interface Post extends Omit<MarkdownInstance<PostFrontmatter>, 'rawContent' | 'compiledContent'> {
   date: Temporal.PlainDate;
 }
 
 export async function loadPosts(
-  input: Promise<MarkdownInstance<PostFrontmatter>[]>
+  input: Promise<readonly Omit<MarkdownInstance<PostFrontmatter>, 'rawContent' | 'compiledContent'>[]>
 ) {
   const allPosts = await input;
   const formattedPosts = allPosts

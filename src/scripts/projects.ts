@@ -1,5 +1,5 @@
 import Image from '@11ty/eleventy-img';
-import type { MarkdownInstance } from 'astro';
+import type { MarkdownInstance, MDXInstance } from 'astro';
 import { imageOptions } from '../components/eleventy-img/options';
 import { trailingSlash } from './path';
 
@@ -22,12 +22,12 @@ export interface ProjectFrontmatter {
   categories: readonly string[];
 }
 
-export type Project = MarkdownInstance<ProjectFrontmatter>;
+export type Project = MarkdownInstance<ProjectFrontmatter> | MDXInstance<ProjectFrontmatter>;
 
 export const PROJECT_PATH = /^\/projects\/([-\w]+)/;
 
 export async function loadProjects(
-  input: Promise<MarkdownInstance<ProjectFrontmatter>[]>
+  input: Promise<readonly Project[]>
 ) {
   const allProjects = await input;
   const formattedProjects = allProjects.map((project) => ({

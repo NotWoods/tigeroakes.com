@@ -15,7 +15,7 @@ export interface Props {
 const {
   title,
   description,
-  canonical = new URL(Astro.url.pathname, Astro.site).href,
+  canonical = Astro.url.pathname,
   defaultSocial,
 } = Astro.props as Props;
 
@@ -30,7 +30,7 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 <link rel="icon" type="image/png" href="/favicon_x16.png" sizes="16x16" />
 <link rel="icon" type="image/png" href="/favicon_x48.png" sizes="48x48" />
 <link rel="icon" type="image/png" href="/favicon_x512.png" sizes="512x512" />
-<link rel="canonical" href={canonical.href} />
+<link rel="canonical" href={new URL(canonical, Astro.site).href} />
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#e67237" />

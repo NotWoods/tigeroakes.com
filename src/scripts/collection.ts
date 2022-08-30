@@ -1,4 +1,4 @@
-import type { MarkdownInstance } from 'astro';
+import type { MarkdownInstance, MDXInstance } from 'astro';
 import GithubSlugger from 'github-slugger';
 import { trailingSlash } from './path';
 import {
@@ -34,9 +34,11 @@ export function groupBy<Item, Key>(
   return groupedItems;
 }
 
+type MarkdownOrMdxInstance<T> = MarkdownInstance<T> | MDXInstance<T>;
+
 export async function getCollectionPages(
-  postInput: Promise<MarkdownInstance<PostFrontmatter>[]>,
-  projectInput: Promise<MarkdownInstance<ProjectFrontmatter>[]>,
+  postInput: Promise<readonly MarkdownOrMdxInstance<PostFrontmatter>[]>,
+  projectInput: Promise<readonly MarkdownOrMdxInstance<ProjectFrontmatter>[]>,
   key: 'tags' | 'categories'
 ) {
   const [allPages, allProjects] = await Promise.all([

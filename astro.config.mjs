@@ -2,6 +2,7 @@ import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
+import htmlMinify from "@frontendista/astro-html-minify";
 import { defineConfig } from 'astro/config';
 import { VitePWA } from 'vite-plugin-pwa';
 
@@ -15,6 +16,17 @@ export default defineConfig({
     tailwind({ config: { applyBaseStyles: false } }),
     mdx(),
     sitemap(),
+    htmlMinify({
+      htmlTerserMinifierOptions: {
+        collapseInlineTagWhitespace: false,
+        minifyCSS: false,
+        minifyJS: false,
+        processConditionalComments: false,
+        removeTagWhitespace: false,
+        removeRedundantAttributes: false,
+        removeScriptTypeAttributes: false,
+      }
+    })
   ],
   markdown: {
     drafts: process.env.NETLIFY_CONTEXT === 'deploy-preview',

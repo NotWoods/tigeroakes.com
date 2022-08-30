@@ -14,9 +14,6 @@ NETLIFY_CONTEXT = "deploy-preview"
 [context.branch-deploy.environment]
 NETLIFY_CONTEXT = "branch-deploy"
 
-[[plugins]]
-package = "netlify-plugin-minify-html"
-
 [[headers]]
 for = "/*"
   [headers.values]

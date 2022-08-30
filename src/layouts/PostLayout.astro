@@ -56,7 +56,7 @@ const pictureSrc = await postBanner(content.banner);
     <MainHead
       title={content.title}
       description={content.description}
-      canonical={content.elsewhere?.link ?? new URL(Astro.url.pathname, Astro.site)}
+      canonical={content.elsewhere?.link}
     />
     <Social
       title={content.title}
