@@ -17,6 +17,7 @@ tech:
   - Alexa SDK
   - TypeScript
   - Node.js
+category: Games
 description: >
   The Golden Quest is a voice-only, interactive Choose Your Own Adventure game. You play as the main character, a hackathon member embarking on a desperate search. Alexa reads out the story and choices to the player. Its intuitiveness and ease of use means anyone can play -- all you need to do is say "Alexa, open the Golden Quest".
 ---

@@ -16,6 +16,7 @@ tech:
   - C#
   - Unity
   - Box2D
+category: Games
 aliases:
   - /gametest
   - /grappling-3d

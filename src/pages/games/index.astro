@@ -1,0 +1,57 @@
+---
+import BannerNav from '../../components/BannerNav.astro';
+import Footer from '../../components/Footer.astro';
+import ListPanels from '../../components/lists/ListPanels.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+import {
+  projectButtons,
+  projectImages,
+  PROJECT_PATH,
+} from '../../scripts/projects';
+
+const allProjects = await Astro.glob('../projects/**/*.{md,mdx}');
+const allOtherGames = []; // await Astro.glob('./**/*.{md,mdx}');
+
+const allPages = allProjects
+  .filter((page) => page.frontmatter.category === 'Games')
+  .concat(allOtherGames);
+allPages.sort((a, b) => {
+  const aWeight = a.frontmatter.weight || Infinity;
+  const bWeight = b.frontmatter.weight || Infinity;
+  return aWeight - bWeight;
+});
+
+const projects = await Promise.all(
+  allPages.map(async (page) => {
+    const [, projectId] = page.url.match(PROJECT_PATH);
+    const { backgroundImage, logo } = await projectImages(
+      projectId,
+      page.frontmatter.logo
+    );
+    return {
+      title: page.frontmatter.title,
+      description: page.frontmatter.subtitle,
+      href: page.url,
+      accent: page.frontmatter.color,
+      buttons: projectButtons(page.frontmatter.links, page.url),
+      tags: page.frontmatter.tech,
+      logo,
+      backgroundImage,
+    };
+  })
+);
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="Projects" />
+  </head>
+
+  <body class="bg-slate-800 text-slate-200">
+    <BannerNav current={Astro.url} />
+
+    <ListPanels items={projects} />
+
+    <Footer />
+  </body>
+</html>

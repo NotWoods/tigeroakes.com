@@ -16,6 +16,7 @@ tech:
   - Lua
   - Corona SDK
   - Box2D
+category: Games
 aliases:
   - /games/bitball
 description: >
