@@ -23,7 +23,8 @@ const imageSetStyle = backgroundImage({
   <a
     class="inline-block mx-4 text-2xl relative accent-block--bottom"
     href="mailto:{email.link}"
-    set:html={email.text} />
+    set:html={email.text}
+  />
 
   <p class="mt-12 mb-2">You can find me at</p>
   <ul class="text-xl">
@@ -39,5 +40,15 @@ const imageSetStyle = backgroundImage({
         </li>
       ))
     }
+    <li class="mx-4 mb-6 hidden">
+      <a
+        class="relative inline-block accent-block--bottom"
+        title="Mastodon"
+        href="https://mastodon.social/@notwoods"
+        rel="me"
+      >
+        <b>mastodon</b>.social/@<b>notwoods</b>
+      </a>
+    </li>
   </ul>
 </footer>
