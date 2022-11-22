@@ -5,6 +5,10 @@ command = "npm run build"
 [build.environment]
 NODE_VERSION = "16"
 
+[[edge_functions]]
+path = "/.well-known/webfinger"
+function = "webfinger"
+
 [context.production.environment]
 NETLIFY_CONTEXT = "production"
 
