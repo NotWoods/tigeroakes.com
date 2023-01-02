@@ -13,7 +13,8 @@ const { email, social } = contactData;
   <a
     class="leading-6 mx-2 my-4 relative accent-block--bottom"
     href="mailto:{email.link}"
-    set:html={email.name}></a>
+    set:html={email.name}
+  />
   <div class="flex">
     {social.map((item) => (
       <a

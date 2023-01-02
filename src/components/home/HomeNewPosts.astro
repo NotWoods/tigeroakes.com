@@ -27,6 +27,8 @@ function formatPost(post: Post) {
 
 <section id="previews" class="max-w-site mx-auto px-4 py-8">
   <ListFlat title="Latest posts" items={allPosts.slice(0, 3).map(formatPost)} />
-  <ListFlat title="Popular content" items={featured.slice(0, 3).map(formatPost)}
+  <ListFlat
+    title="Popular content"
+    items={featured.slice(0, 3).map(formatPost)}
   />
 </section>
