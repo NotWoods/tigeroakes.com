@@ -8,6 +8,7 @@ import ProjectFeature from '../components/lists/ProjectFeature.astro';
 import SectionTitle from '../components/lists/SectionTitle.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import RSS from '../components/meta/RSS.astro';
+import { Content as AboutContent } from './_index.md';
 
 async function loadProject(
   projectGlob: Promise<readonly { url: string; frontmatter: any }[]>
@@ -43,7 +44,9 @@ const description =
       style="--accent: currentColor"
     >
       <BannerNav logo="none" />
-      <HomeAbout />
+      <HomeAbout>
+        <AboutContent />
+      </HomeAbout>
     </div>
 
     <HomeNewPosts />
