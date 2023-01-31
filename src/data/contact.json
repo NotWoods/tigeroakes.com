@@ -18,6 +18,12 @@
       "icon": "/contact/linkedin.svg"
     },
     {
+      "name": "Mastodon",
+      "link": "https://hachyderm.io/@notwoods",
+      "text": "<b>hachyderm</b>.io/<wbr>@<b>notwoods</b>",
+      "icon": "/contact/mastodon.svg"
+    },
+    {
       "name": "Twitter",
       "link": "https://twitter.com/Not_Woods",
       "text": "<b>twitter</b>.com/<wbr><b>Not_Woods</b>",

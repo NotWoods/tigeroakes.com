@@ -26,7 +26,7 @@ import * as content from './_about.md';
     </section>
 
     <div class="max-w-site mt-8 mx-auto px-4 print:hidden">
-      <SectionTitle>Resume</SectionTitle>
+      <SectionTitle class="mb-4">Resume</SectionTitle>
       <div class="text-center">
         <Button
           class="inline-block text-xl bg-[#cd372d]"
@@ -40,14 +40,12 @@ import * as content from './_about.md';
     <Resume {jsonResume} />
 
     <Footer class="print:hidden" />
-  </body>
+  </body><style is:global>
+    .resume {
+      page-break-before: always;
+      color: rgba(0, 0, 0, 0.9);
+      font-variant-ligatures: none;
+      line-height: normal;
+    }
+  </style>
 </html>
-
-<style is:global>
-  .resume {
-    page-break-before: always;
-    color: rgba(0, 0, 0, 0.9);
-    font-variant-ligatures: none;
-    line-height: normal;
-  }
-</style>

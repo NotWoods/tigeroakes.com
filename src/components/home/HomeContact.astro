@@ -35,20 +35,11 @@ const imageSetStyle = backgroundImage({
             class="relative inline-block accent-block--bottom"
             title={item.name}
             href={item.link}
+            rel={item.name === 'Mastodon' ? 'me' : undefined}
             set:html={item.text}
           />
         </li>
       ))
     }
-    <li class="mx-4 mb-6 hidden">
-      <a
-        class="relative inline-block accent-block--bottom"
-        title="Mastodon"
-        href="https://mastodon.social/@notwoods"
-        rel="me"
-      >
-        <b>mastodon</b>.social/@<b>notwoods</b>
-      </a>
-    </li>
   </ul>
 </footer>
