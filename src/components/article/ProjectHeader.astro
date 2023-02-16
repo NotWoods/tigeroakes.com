@@ -11,7 +11,7 @@ export interface Props {
   class?: string;
   accent?: string;
   logo?: Metadata;
-  backgroundImage?: Metadata;
+  backgroundImage?: ImageMetadata;
   buttons?: readonly ButtonProps[];
 
   title: string;
@@ -24,11 +24,11 @@ const { title, description, logo, tags, ...props } = Astro.props as Props;
 
 <ArticleHeaderContainer {...props}>
   <div class="flex flex-wrap items-start gap-x-16">
-    <ProjectIcon {logo} />
+    <ProjectIcon logo={logo} />
     <div class="flex-1 basis-56 pt-5 pb-4">
       <ArticleTitle>{title}</ArticleTitle>
       <ArticleDescription>{description}</ArticleDescription>
-      <Tags class="text-sm" {tags} />
+      <Tags class="text-sm" tags={tags} />
     </div>
   </div>
 </ArticleHeaderContainer>

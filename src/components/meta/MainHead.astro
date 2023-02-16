@@ -54,6 +54,6 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
   type="font/woff2"
   crossorigin
 />
-{defaultSocial && <Twitter {title} {description} />}
-{defaultSocial && <OpenGraph {title} {description} />}
-<Breadcrumb {title} />
+{defaultSocial && <Twitter title={title} description={description} />}
+{defaultSocial && <OpenGraph title={title} description={description} />}
+<Breadcrumb title={title} />

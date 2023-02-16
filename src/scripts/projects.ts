@@ -1,4 +1,4 @@
-import Image from '@11ty/eleventy-img';
+import Image, { type Metadata } from '@11ty/eleventy-img';
 import type { MarkdownInstance, MDXInstance } from 'astro';
 import { imageOptions } from '../components/eleventy-img/options';
 import { trailingSlash } from './path';
@@ -22,13 +22,13 @@ export interface ProjectFrontmatter {
   categories: readonly string[];
 }
 
-export type Project = MarkdownInstance<ProjectFrontmatter> | MDXInstance<ProjectFrontmatter>;
+export type Project =
+  | MarkdownInstance<ProjectFrontmatter>
+  | MDXInstance<ProjectFrontmatter>;
 
 export const PROJECT_PATH = /^\/projects\/([-\w]+)/;
 
-export async function loadProjects(
-  input: Promise<readonly Project[]>
-) {
+export async function loadProjects(input: Promise<readonly Project[]>) {
   const allProjects = await input;
   const formattedProjects = allProjects.map((project) => ({
     ...project,
@@ -68,12 +68,9 @@ function buttonLink(link: Link, pageUrl: string | URL) {
 export async function projectImages(
   projectId: string,
   logoSrc: string | false = 'logo.svg'
-) {
-  const [backgroundImage, logo] = await Promise.all([
-    Image(`src/pages/projects/${projectId}/background.jpg`, {
-      ...imageOptions,
-      formats: ['avif', 'webp', 'jpeg'],
-    }),
+): Promise<{ backgroundImage: ImageMetadata; logo: Metadata }> {
+  const [{ default: backgroundImage }, logo] = await Promise.all([
+    import(`../pages/projects/${projectId}/background.jpg`),
     logoSrc
       ? Image(`src/pages/projects/${projectId}/${logoSrc}`, {
           ...imageOptions,

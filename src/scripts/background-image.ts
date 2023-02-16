@@ -1,34 +1,42 @@
-import type { Metadata } from '@11ty/eleventy-img';
+import { getPicture } from '@astrojs/image';
 
-type BackgroundFormat = 'jpeg' | 'webp' | 'avif';
-const backgroundFormats: readonly BackgroundFormat[] = ['avif', 'webp', 'jpeg'];
+const FIRST_SRC_SET = /^(\S*) \d+w/;
 
-export function backgroundImage(
-  paths: Record<'jpeg' | 'webp' | 'avif', string>
-) {
-  const imageSet = backgroundFormats
-    .map((format) => `url("${paths[format]}") type("image/${format}")`)
+function sourcesToImageSet(sources: { type: string; srcset: string }[]) {
+  return sources
+    .map((source) => {
+      const match = source.srcset.match(FIRST_SRC_SET);
+      if (!match) {
+        throw new Error(`Invalid srcset: ${source}`);
+      }
+      return `url("${match[1]}") type("${source.type}")`;
+    })
     .join(', ');
-
-  return (
-    `background-image: url("${paths['jpeg']}"); ` +
-    `background-image: -webkit-image-set(${imageSet}); background-image: image-set(${imageSet})`
-  );
 }
 
-export function metadataToBackgroundImage(metadata: Metadata) {
-  function urlForFormat(format: BackgroundFormat) {
-    const data = metadata[format];
-    if (data) {
-      return data[0].url;
-    } else {
-      throw new Error(`Missing format .${format}`);
-    }
-  }
+export type GetPictureResult = Awaited<ReturnType<typeof getPicture>>;
 
-  return backgroundImage({
-    avif: urlForFormat('avif'),
-    webp: urlForFormat('webp'),
-    jpeg: urlForFormat('jpeg'),
-  });
+/**
+ * Converts the metadata returned by getPicture to a background-image CSS property.
+ * @example
+ * metadataToBackgroundImage({
+ *   image: { src: 'fallback.jpg' },
+ *   sources: [{ type: 'image/webp', srcset: 'image.webp 20w' }]
+ * });
+ * // ->
+ * // `background-image: url("fallback.jpg");
+ * // background-image: -webkit-image-set(url("image.webp") type("image/webp"));
+ * // background-image: image-set(url("image.webp") type("image/webp"))`
+ */
+export function metadataToBackgroundImage(metadata: GetPictureResult) {
+  const src = metadata.image.src;
+  const imageSet = sourcesToImageSet(metadata.sources);
+
+  return [
+    `url("${src}")`,
+    `-webkit-image-set(${imageSet})`,
+    `image-set(${imageSet})`,
+  ]
+    .map((value) => `background-image: ${value}`)
+    .join('; ');
 }

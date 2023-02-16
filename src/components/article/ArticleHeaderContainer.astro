@@ -1,5 +1,5 @@
 ---
-import type { Metadata } from '@11ty/eleventy-img';
+import { getPicture } from '@astrojs/image';
 import { metadataToBackgroundImage } from '../../scripts/background-image';
 import Buttons, { ButtonProps } from '../Buttons.astro';
 import Polymorphic from './Polymorphic.astro';
@@ -10,7 +10,7 @@ export interface Props {
   buttonsClass?: string;
   style?: string;
   accent?: string;
-  backgroundImage?: Metadata;
+  backgroundImage?: ImageMetadata;
   buttons?: readonly ButtonProps[];
 }
 
@@ -37,7 +37,15 @@ if (className) {
 
 const styles = [
   accent && `--accent: ${accent}`,
-  backgroundImage && metadataToBackgroundImage(backgroundImage),
+  backgroundImage &&
+    metadataToBackgroundImage(
+      await getPicture({
+        src: backgroundImage,
+        alt: '',
+        widths: [backgroundImage.width],
+        formats: ['avif', 'webp', 'jpeg'],
+      })
+    ),
   style,
 ].filter(Boolean);
 

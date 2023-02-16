@@ -1,15 +1,19 @@
 ---
+import { getPicture } from '@astrojs/image';
 import contactData from '../../data/contact.json';
-import { backgroundImage } from '../../scripts/background-image';
+import { metadataToBackgroundImage } from '../../scripts/background-image';
 import SectionTitle from '../lists/SectionTitle.astro';
 
 const { email, social } = contactData;
 
-const imageSetStyle = backgroundImage({
-  avif: '/contact/background.avif',
-  webp: '/contact/background.webp',
-  jpeg: '/contact/background.jpg',
-});
+const imageSetStyle = metadataToBackgroundImage(
+  await getPicture({
+    src: import('./contact-background.jpg'),
+    alt: '',
+    widths: [1400],
+    formats: ['avif', 'webp', 'jpeg'],
+  })
+);
 ---
 
 <footer
