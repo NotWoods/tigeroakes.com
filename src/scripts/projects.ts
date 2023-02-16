@@ -1,6 +1,4 @@
-import Image, { type Metadata } from '@11ty/eleventy-img';
 import type { MarkdownInstance, MDXInstance } from 'astro';
-import { imageOptions } from '../components/eleventy-img/options';
 import { trailingSlash } from './path';
 
 export interface Link {
@@ -68,19 +66,10 @@ function buttonLink(link: Link, pageUrl: string | URL) {
 export async function projectImages(
   projectId: string,
   logoSrc: string | false = 'logo.svg'
-): Promise<{ backgroundImage: ImageMetadata; logo: Metadata }> {
-  const [{ default: backgroundImage }, logo] = await Promise.all([
+): Promise<{ backgroundImage: ImageMetadata; logo: ImageMetadata }> {
+  const [{ default: backgroundImage }, { default: logo }] = await Promise.all([
     import(`../pages/projects/${projectId}/background.jpg`),
-    logoSrc
-      ? Image(`src/pages/projects/${projectId}/${logoSrc}`, {
-          ...imageOptions,
-          widths: [128, 256, 512],
-          formats: ['avif', 'webp', null],
-          svgShortCircuit: true,
-          sharpWebpOptions: { lossless: true },
-          sharpAvifOptions: { lossless: true },
-        })
-      : undefined,
+    import(`../pages/projects/${projectId}/${logoSrc}`),
   ]);
 
   return { backgroundImage, logo };

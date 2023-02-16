@@ -1,6 +1,5 @@
 ---
 import { Picture } from '@astrojs/image/components';
-import { OutputFormat } from '@astrojs/image/dist/loaders';
 
 export interface Props {
   src: ImageMetadata | Promise<{ default: ImageMetadata }>;
@@ -52,7 +51,7 @@ const metadata = getDefault(await src);
   sizes={sizes}
   formats={metadata.format === 'svg'
     ? ['svg']
-    : ['avif', 'webp', metadata.format as OutputFormat]}
+    : ['avif', 'webp', metadata.format as 'png' | 'jpeg' | 'jpg']}
   aspectRatio={aspect === 'half' ? '2:1' : '16:9'}
   fit={fit}
   widths={[width, width * 2, width * 4]}

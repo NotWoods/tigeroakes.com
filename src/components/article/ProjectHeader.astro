@@ -1,5 +1,4 @@
 ---
-import type { Metadata } from '@11ty/eleventy-img';
 import type { ButtonProps } from '../Buttons.astro';
 import ArticleDescription from './ArticleDescription.astro';
 import ArticleHeaderContainer from './ArticleHeaderContainer.astro';
@@ -10,7 +9,7 @@ import Tags from './Tags.astro';
 export interface Props {
   class?: string;
   accent?: string;
-  logo?: Metadata;
+  logo?: ImageMetadata;
   backgroundImage?: ImageMetadata;
   buttons?: readonly ButtonProps[];
 
@@ -23,7 +22,7 @@ const { title, description, logo, tags, ...props } = Astro.props as Props;
 ---
 
 <ArticleHeaderContainer {...props}>
-  <div class="flex flex-wrap items-start gap-x-16">
+  <div class="project-header flex flex-wrap items-start gap-x-16">
     <ProjectIcon logo={logo} />
     <div class="flex-1 basis-56 pt-5 pb-4">
       <ArticleTitle>{title}</ArticleTitle>
@@ -32,3 +31,9 @@ const { title, description, logo, tags, ...props } = Astro.props as Props;
     </div>
   </div>
 </ArticleHeaderContainer>
+
+<style>
+  .project-header :global(picture) {
+    @apply grow-0 shrink-0 mx-auto;
+  }
+</style>

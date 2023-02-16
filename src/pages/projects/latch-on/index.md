@@ -11,7 +11,6 @@ links:
     link: https://notwoods.github.io/latch-on/
   - title: Code
     github: NotWoods/latch-on
-banner: banner.svg
 tech:
   - C#
   - Unity
