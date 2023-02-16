@@ -1,8 +1,9 @@
 import mdx from '@astrojs/mdx';
+import image from '@astrojs/image';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import htmlMinify from "@frontendista/astro-html-minify";
+import htmlMinify from '@frontendista/astro-html-minify';
 import { defineConfig } from 'astro/config';
 import { VitePWA } from 'vite-plugin-pwa';
 
@@ -12,6 +13,7 @@ export default defineConfig({
   publicDir: './static',
   trailingSlash: 'always',
   integrations: [
+    image({ serviceEntryPoint: '@astrojs/image/sharp' }),
     preact(),
     tailwind({ config: { applyBaseStyles: false } }),
     mdx(),
@@ -25,8 +27,8 @@ export default defineConfig({
         removeTagWhitespace: false,
         removeRedundantAttributes: false,
         removeScriptTypeAttributes: false,
-      }
-    })
+      },
+    }),
   ],
   markdown: {
     drafts: process.env.NETLIFY_CONTEXT === 'deploy-preview',

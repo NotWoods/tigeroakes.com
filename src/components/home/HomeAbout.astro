@@ -1,20 +1,7 @@
 ---
-import Image from '@11ty/eleventy-img';
-import GeneratePicture from '../eleventy-img/GeneratePicture.astro';
-import { imageOptions } from '../eleventy-img/options';
+import { Picture } from '@astrojs/image/components';
 import Button from '../Button.astro';
 import Logo from '../Logo.astro';
-
-const metadata = await Image('src/components/home/profile.jpg', {
-  ...imageOptions,
-  widths: [160, 320, 640],
-  formats: ['avif', 'webp', 'jpeg'],
-});
-const attributes = {
-  alt: 'Portrait of Tiger Oakes',
-  decoding: 'async',
-  sizes: '10rem',
-};
 ---
 
 <section
@@ -32,11 +19,14 @@ const attributes = {
       >Subscribe to my newsletter
     </Button>
   </div>
-  <GeneratePicture
-    {metadata}
-    {attributes}
-    pictureClass="grow-0 shrink-0 mx-auto w-40 h-40"
-    imgClass="border-4 border-slate-800 rounded-full"
+  <Picture
+    src={import('./profile.jpg')}
+    alt="Portrait of Tiger Oakes"
+    loading="eager"
+    sizes="10rem"
+    aspectRatio="1:1"
+    widths={[160, 320, 640]}
+    class="border-4 border-slate-800 rounded-full h-40 w-40"
   />
 </section>
 
@@ -46,5 +36,8 @@ const attributes = {
   }
   .about-content :global(a) {
     @apply underline;
+  }
+  #about :global(picture) {
+    @apply grow-0 shrink-0 mx-auto;
   }
 </style>
