@@ -36,11 +36,17 @@ const displayedTimes: DisplayedTime[] = [
   { text: 'Last updated on', date: lastMod },
   { text: 'Posted on', date },
 ];
-const displayedTime = displayedTimes.find((time) => time.date != undefined) ?? { text: '' };
+const displayedTime = displayedTimes.find((time) => time.date != undefined) ?? {
+  text: '',
+};
 ---
 
 <ArticleHeaderContainer {...props} class="bg-slate-800 pt-8 md:pt-4">
-  {displayedTime.date && <Time class="mb-2" date={displayedTime.date}>{displayedTime.text}</Time>}
+  {displayedTime.date && (
+    <Time class="mb-2" date={displayedTime.date}>
+      {displayedTime.text}
+    </Time>
+  )}
   <ArticleTitle>{title}</ArticleTitle>
   <ArticleDescription>{description}</ArticleDescription>
   <Tags class="mt-auto text-sm" {tags} elsewhere={elsewhere?.name} />
