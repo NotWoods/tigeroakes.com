@@ -40,5 +40,11 @@ const posts = allPages.map((post) => ({
     <ListGridYears items={posts} pictureAspect="half" />
 
     <Footer />
+
+    <style is:global>
+      picture {
+        @apply aspect-w-2 aspect-h-1 mb-2;
+      }
+    </style>
   </body>
 </html>

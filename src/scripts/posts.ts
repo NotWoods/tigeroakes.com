@@ -1,6 +1,7 @@
 import { Temporal } from '@js-temporal/polyfill';
 import type { MarkdownInstance } from 'astro';
-import { dirname, join } from 'path';
+import { dirname, join, relative } from 'path';
+import { fileURLToPath } from 'url';
 import tagColors from '../data/tags.json';
 import { dateFromString } from './date';
 import { trailingSlash } from './path';
@@ -21,12 +22,21 @@ export interface PostFrontmatter {
   banner_alt?: string;
 }
 
-export interface Post extends Omit<MarkdownInstance<PostFrontmatter>, 'rawContent' | 'compiledContent'> {
+export interface Post
+  extends Omit<
+    MarkdownInstance<PostFrontmatter>,
+    'rawContent' | 'compiledContent'
+  > {
   date: Temporal.PlainDate;
 }
 
 export async function loadPosts(
-  input: Promise<readonly Omit<MarkdownInstance<PostFrontmatter>, 'rawContent' | 'compiledContent'>[]>
+  input: Promise<
+    readonly Omit<
+      MarkdownInstance<PostFrontmatter>,
+      'rawContent' | 'compiledContent'
+    >[]
+  >
 ) {
   const allPosts = await input;
   const formattedPosts = allPosts
@@ -76,8 +86,14 @@ export function accentStyles(accent: string | undefined) {
 export function postBanner(post: {
   file: string;
   frontmatter: { banner?: string };
-}) {
+}): Promise<{ default: ImageMetadata }> | undefined {
   return post.frontmatter.banner
-    ? join(dirname(post.file), post.frontmatter.banner)
+    ? /* @vite-ignore */
+      import(
+        relative(
+          dirname(fileURLToPath(import.meta.url)),
+          join(dirname(post.file), post.frontmatter.banner)
+        )
+      )
     : undefined;
 }

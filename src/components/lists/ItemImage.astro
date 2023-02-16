@@ -1,10 +1,9 @@
 ---
-import Image from '@11ty/eleventy-img';
-import GeneratePicture from '../eleventy-img/GeneratePicture.astro';
-import { imageOptions } from '../eleventy-img/options';
+import { Picture } from '@astrojs/image/components';
+import { OutputFormat } from '@astrojs/image/dist/loaders';
 
 export interface Props {
-  src: string;
+  src: ImageMetadata | Promise<{ default: ImageMetadata }>;
   alt?: string;
   width: number;
   sizes: string;
@@ -12,6 +11,13 @@ export interface Props {
   fit?: 'cover' | 'contain';
   loading?: 'eager' | 'lazy';
   aspect: 'half' | 'video';
+}
+
+function getDefault(src: ImageMetadata | { default: ImageMetadata }) {
+  if ('default' in src) {
+    return src.default;
+  }
+  return src;
 }
 
 const {
@@ -24,29 +30,31 @@ const {
   loading = 'lazy',
   class: className,
 } = Astro.props as Props;
-const imgClass = fit === 'contain' ? 'object-contain' : 'object-cover';
-const pictureClass = [
-  `block mb-2 shadow-md bg-slate-200`,
-  aspect === 'half' && 'aspect-w-2 aspect-h-1',
-  aspect === 'video' && 'aspect-w-16 aspect-h-9',
+const imgClass = [
+  fit === 'contain' ? 'object-contain' : 'object-cover',
+  'shadow-md bg-slate-200',
   className,
 ]
   .filter(Boolean)
   .join(' ');
+const pictureClass =
+  aspect === 'half'
+    ? 'aspect-w-2 aspect-h-1 mb-2'
+    : 'aspect-w-16 aspect-h-9 mb-2';
 
-const metadata = await Image(src, {
-  ...imageOptions,
-  widths: [width, width * 2, width * 4],
-  formats: ['avif', 'webp', null],
-  svgShortCircuit: true,
-});
-
-const attributes = {
-  alt,
-  sizes,
-  loading,
-  decoding: 'async',
-};
+const metadata = getDefault(await src);
 ---
 
-<GeneratePicture {metadata} {attributes} {pictureClass} {imgClass} />
+<Picture
+  src={metadata}
+  alt={alt}
+  loading={loading}
+  sizes={sizes}
+  formats={metadata.format === 'svg'
+    ? ['svg']
+    : ['avif', 'webp', metadata.format as OutputFormat]}
+  aspectRatio={aspect === 'half' ? '2:1' : '16:9'}
+  fit={fit}
+  widths={[width, width * 2, width * 4]}
+  class={imgClass}
+/>

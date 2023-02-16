@@ -31,6 +31,10 @@
   .selection-invert ::selection {
     @apply bg-slate-800 text-orange-500;
   }
+
+  picture {
+    display: block;
+  }
 }
 
 @layer components {

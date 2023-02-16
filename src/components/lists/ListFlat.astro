@@ -16,7 +16,7 @@ export interface Item {
   href: URL | string;
   date?: Temporal.PlainDate;
 
-  pictureSrc?: string;
+  pictureSrc?: ImageMetadata | Promise<{ default: ImageMetadata }>;
   pictureAlt?: string;
   pictureFit?: 'cover' | 'contain';
   accent?: string;

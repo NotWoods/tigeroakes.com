@@ -34,8 +34,14 @@ const posts = allPages.map((post) => ({
     <PostsHeader links={header.frontmatter.links}>
       <header.Content />
     </PostsHeader>
-    <ListGridYears items={posts} pictureAspect="aspect" />
+    <ListGridYears items={posts} pictureAspect="video" />
 
     <Footer />
+
+    <style is:global>
+      picture {
+        @apply aspect-w-16 aspect-h-9 mb-2;
+      }
+    </style>
   </body>
 </html>

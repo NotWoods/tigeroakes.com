@@ -14,7 +14,7 @@ export interface Item {
   date: Temporal.PlainDate;
   description?: string;
 
-  pictureSrc?: string;
+  pictureSrc?: ImageMetadata | Promise<{ default: ImageMetadata }>;
   pictureAlt?: string;
   pictureFit?: 'cover' | 'contain';
 
