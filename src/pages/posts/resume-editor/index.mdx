@@ -17,6 +17,7 @@ toc: true
 
 import GitHub from '../../../components/shortcodes/GitHub.astro';
 import Video from '../../../components/shortcodes/Video.astro';
+export { default as banner } from './word.png';
 
 <Video src="resume-editor.mp4" />
 
@@ -59,7 +60,10 @@ I next set out to find a way to output a PDF from the online version of my site,
 >
 > The best suggestion I can give right now is to keep your print stylesheets reasonably simple.
 
-<cite>-- [A Guide To The State of Print Stylesheets in 2018 - Smashing Magazine](https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/#browser-support)</cite>
+<cite>
+  -- [A Guide To The State of Print Stylesheets in 2018 - Smashing
+  Magazine](https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/#browser-support)
+</cite>
 
 I got stuck here for a while as I tried different layouts. Eventually I settled on a table-based layout for the resume. CSS `display: table` allows me to do that without using the `<table>` HTML tag, so on mobile devices it can switch to a single column instead.
 

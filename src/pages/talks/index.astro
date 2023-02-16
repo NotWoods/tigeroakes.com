@@ -4,7 +4,7 @@ import Footer from '../../components/Footer.astro';
 import ListGridYears from '../../components/lists/ListGridYears.astro';
 import PostsHeader from '../../components/lists/PostsHeader.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-import { loadPosts, postBanner } from '../../scripts/posts';
+import { loadPosts } from '../../scripts/posts';
 import * as header from './_index.md';
 
 const allPages = await loadPosts(Astro.glob('./*/*.mdx'));
@@ -13,7 +13,7 @@ const posts = allPages.map((post) => ({
   href: post.url,
   date: post.date,
   description: post.frontmatter.description,
-  pictureSrc: postBanner(post),
+  pictureSrc: post.banner,
   pictureAlt: post.frontmatter.banner_alt,
   tags: post.frontmatter.tags,
 }));

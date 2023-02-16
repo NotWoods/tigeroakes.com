@@ -18,7 +18,6 @@ export interface PostFrontmatter {
     source: string;
     link: string;
   };
-  banner?: string;
   banner_alt?: string;
 }
 
@@ -28,6 +27,7 @@ export interface Post
     'rawContent' | 'compiledContent'
   > {
   date: Temporal.PlainDate;
+  banner?: ImageMetadata;
 }
 
 export async function loadPosts(
@@ -81,19 +81,4 @@ export function accentStyles(accent: string | undefined) {
   } else {
     return undefined;
   }
-}
-
-export function postBanner(post: {
-  file: string;
-  frontmatter: { banner?: string };
-}): Promise<{ default: ImageMetadata }> | undefined {
-  return post.frontmatter.banner
-    ? /* @vite-ignore */
-      import(
-        relative(
-          dirname(fileURLToPath(import.meta.url)),
-          join(dirname(post.file), post.frontmatter.banner)
-        )
-      )
-    : undefined;
 }

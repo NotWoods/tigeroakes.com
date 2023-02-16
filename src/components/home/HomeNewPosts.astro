@@ -1,11 +1,6 @@
 ---
 import ListFlat from '../lists/ListFlat.astro';
-import {
-  loadPosts,
-  postAccentColor,
-  postBanner,
-  type Post,
-} from '../../scripts/posts';
+import { loadPosts, postAccentColor, type Post } from '../../scripts/posts';
 
 const allPosts = await loadPosts(Astro.glob('../../pages/posts/*/*.{md,mdx}'));
 const featured = allPosts.filter((post) =>
@@ -19,7 +14,7 @@ function formatPost(post: Post) {
     date: post.date,
     accent: postAccentColor(post.frontmatter.tags),
     href: post.url,
-    pictureSrc: postBanner(post),
+    pictureSrc: post.banner,
     pictureAlt: post.frontmatter.banner_alt,
   };
 }

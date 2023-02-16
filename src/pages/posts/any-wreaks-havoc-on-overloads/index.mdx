@@ -15,6 +15,8 @@ banner: banner.jpg
 banner_alt: Lobster trap
 ---
 
+export { default as banner } from './banner.jpg';
+
 ## What is `any`?
 
 If you're working with TypeScript, chances are you'll work with [the `any` type](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any). `any` essentially turns off typechecking, and allows the corresponding variable to be used for anything. You can call any methods on an `any` variable, and they'll all return `any` as well. It's great when you can't write types for everything in your codebase.
@@ -114,7 +116,19 @@ The first overload is always used when you pass in a variable with type `any` be
 
 In the case of `Promise.all`, the first function overload signature is an array with a hardcoded length of 10. That can create confusing bugs like this, where `any` is passed in and the resulting type becomes an array of exactly 10 `unknown`s.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ok <a href="https://twitter.com/typescript?ref_src=twsrc%5Etfw">@typescript</a> world - why is awaiting a map of `any` an array of *exactly* 10 `unknown`s? <a href="https://t.co/GeEIVqwjvD">pic.twitter.com/GeEIVqwjvD</a></p>&mdash; Evan™ (@EvanTahler) <a href="https://twitter.com/EvanTahler/status/1315782177288679424?ref_src=twsrc%5Etfw">October 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">
+    Ok{' '}
+    <a href="https://twitter.com/typescript?ref_src=twsrc%5Etfw">@typescript</a>{' '}
+    world - why is awaiting a map of `any` an array of *exactly* 10 `unknown`s?{' '}
+    <a href="https://t.co/GeEIVqwjvD">pic.twitter.com/GeEIVqwjvD</a>
+  </p>
+  &mdash; Evan™ (@EvanTahler) <a href="https://twitter.com/EvanTahler/status/1315782177288679424?ref_src=twsrc%5Etfw">October 12, 2020</a>
+</blockquote> <script
+  async
+  src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"
+></script>
 
 ## Future solutions
 

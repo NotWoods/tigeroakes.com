@@ -16,11 +16,13 @@ async function postBanner(bannerFile: string | undefined) {
   if (match && bannerFile) {
     const [, folder, slug] = match;
     console.log(Astro.url.pathname, `../pages/${folder}/${slug}/${bannerFile}`);
-    const pictureSrc = import(`../pages/${folder}/${slug}/${bannerFile}`);
+    // const pictureSrc = await import(`../pages/${folder}/${slug}/${bannerFile}`);
 
     const metadata = await getImage({
-      src: pictureSrc,
+      src: `../pages/${Astro.url.pathname}/${bannerFile}`,
       alt: '',
+      width: 1280,
+      height: 640,
     });
     return new URL(metadata.src, Astro.site).href;
   }

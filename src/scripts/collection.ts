@@ -1,12 +1,7 @@
 import type { MarkdownInstance, MDXInstance } from 'astro';
 import GithubSlugger from 'github-slugger';
 import { trailingSlash } from './path';
-import {
-  loadPosts,
-  postAccentColor,
-  postBanner,
-  PostFrontmatter,
-} from './posts';
+import { loadPosts, postAccentColor, PostFrontmatter } from './posts';
 import { loadProjects, ProjectFrontmatter } from './projects';
 
 function asArray<T>(x: T | readonly T[]): readonly T[] {
@@ -51,7 +46,7 @@ export async function getCollectionPages(
     date: post.date,
     accent: postAccentColor(post.frontmatter.tags),
     href: trailingSlash(post.url),
-    pictureSrc: postBanner(post),
+    pictureSrc: post.banner,
     pictureAlt: post.frontmatter.banner_alt,
     pictureFit: 'cover' as const,
     tags: post.frontmatter.tags,

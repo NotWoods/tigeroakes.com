@@ -22,9 +22,11 @@ tags:
   - React
 categories:
   - Planet Mozilla
-banner: banner.png
 toc: true
+banner: banner.png
 ---
+
+export { default as banner } from './banner.png';
 
 This article was originally written here, then re-edited and posted to [CSS Tricks](https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/). The original version has been left here, but you may prefer to read the more polished version at CSS Tricks.
 
@@ -105,7 +107,7 @@ One final change can be made to reduce the number of lines in our code. Rather t
 
 When an event is fired, it starts off at the element where the event originated (one of the links). However, it won't stop there. The browser goes to each parent of that link, calling any event listeners on those parents. This will continue until the **root** of the document is reached (the `<body>` tag in HTML). This process is called "bubbling", as the event rises through the document tree like a bubble.
 
-<img loading="lazy" src="event_anim.svg" alt="Animation of event bubbling" height="250" width="265">
+<img loading="lazy" src="event_anim.svg" alt="Animation of event bubbling" height="250" width="265" />
 
 By attaching an event listener to the list, the focus event will bubble from the link that was focused up to the parent list. We can also take advantage of the [`evt.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target), which contains the element that fired the event (one of the links) rather than the element that the event listener is attached to (the `<nav>` element).
 
