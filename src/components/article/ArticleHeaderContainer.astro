@@ -2,6 +2,7 @@
 import type { Metadata } from '@11ty/eleventy-img';
 import { metadataToBackgroundImage } from '../../scripts/background-image';
 import Buttons, { ButtonProps } from '../Buttons.astro';
+import Polymorphic from './Polymorphic.astro';
 
 export interface Props {
   as?: 'header' | 'article';
@@ -48,18 +49,9 @@ const props = {
 const contentClass = 'max-w-site mx-auto p-4 w-full';
 ---
 
-{as === 'article' ? (
-  <article {...props}>
-    <div class={contentClass}>
-      <slot />
-      <Buttons class={buttonsClass} {buttons} />
-    </div>
-  </article>
-) : (
-  <header {...props}>
-    <div class={contentClass}>
-      <slot />
-      <Buttons class={buttonsClass} {buttons} />
-    </div>
-  </header>
-)}
+<Polymorphic as={as} {...props}>
+  <div class={contentClass}>
+    <slot />
+    <Buttons class={buttonsClass} buttons={buttons} />
+  </div>
+</Polymorphic>

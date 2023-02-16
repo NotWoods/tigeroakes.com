@@ -1,0 +1,21 @@
+---
+export interface Props {
+  as: 'header' | 'article';
+  class?: string;
+  style?: string;
+}
+
+const { as, ...props } = Astro.props as Props;
+---
+
+{
+  as === 'article' ? (
+    <article {...props}>
+      <slot />
+    </article>
+  ) : (
+    <header {...props}>
+      <slot />
+    </header>
+  )
+}
