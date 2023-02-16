@@ -1,8 +1,6 @@
 ---
-import Image from '@11ty/eleventy-img';
-import { resolve } from 'path';
+import { getImage } from '@astrojs/image';
 import ArticleLayout from '../components/article/ArticleLayout.astro';
-import { imageOptions, parentFolder } from '../components/eleventy-img/options';
 import Article from '../components/meta/json-ld/Article.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import Social from '../components/meta/Social.astro';
@@ -17,20 +15,14 @@ async function postBanner(bannerFile: string | undefined) {
   const match = POST_PATH.exec(Astro.url.pathname);
   if (match && bannerFile) {
     const [, folder, slug] = match;
-    const pictureSrc = resolve(
-      process.cwd(),
-      `src/pages/${folder}/${slug}/${bannerFile}`
-    );
+    console.log(Astro.url.pathname, `../pages/${folder}/${slug}/${bannerFile}`);
+    const pictureSrc = import(`../pages/${folder}/${slug}/${bannerFile}`);
 
-    const metadata = await Image(pictureSrc, {
-      ...imageOptions,
-      formats: ['png'],
-      svgShortCircuit: false,
-      filenameFormat(id, src, width, format) {
-        return `${parentFolder(src)}-banner.${id}.${format}`;
-      },
+    const metadata = await getImage({
+      src: pictureSrc,
+      alt: '',
     });
-    return new URL(metadata.png[0].url, Astro.site).href;
+    return new URL(metadata.src, Astro.site).href;
   }
   return undefined;
 }
@@ -61,7 +53,7 @@ const pictureSrc = await postBanner(content.banner);
     <Social
       title={content.title}
       description={content.description}
-      {pictureSrc}
+      pictureSrc={pictureSrc}
       pictureAlt={content.banner_alt}
     />
     <Article
