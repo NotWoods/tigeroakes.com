@@ -4,7 +4,7 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx}'],
+  content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,mdx}'],
   theme: {
     colors: {
       transparent: 'transparent',

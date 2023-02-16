@@ -13,7 +13,7 @@ const allProjects = await Astro.glob('../projects/**/*.{md,mdx}');
 const allOtherGames = []; // await Astro.glob('./**/*.{md,mdx}');
 
 const allPages = allProjects
-  .filter((page) => page.frontmatter.category === 'Games')
+  .filter((page) => page.frontmatter.categories?.includes('Games'))
   .concat(allOtherGames);
 allPages.sort((a, b) => {
   const aWeight = a.frontmatter.weight || Infinity;
@@ -44,7 +44,7 @@ const projects = await Promise.all(
 
 <html lang="en">
   <head>
-    <MainHead title="Projects" />
+    <MainHead title="Games" />
   </head>
 
   <body class="bg-slate-800 text-slate-200">

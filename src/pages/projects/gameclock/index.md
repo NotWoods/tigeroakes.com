@@ -11,7 +11,8 @@ links:
     link: https://notwoods.github.io/gameclock/
   - title: Code
     github: NotWoods/gameclock
-category: Games
+categories:
+  - Games
 tech:
   - PWA
   - JavaScript

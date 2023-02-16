@@ -1,0 +1,26 @@
+---
+layout: ../../../layouts/ProjectLayout.astro
+title: Last Finger Standing
+subtitle: Pick first player for board games
+color: '#ef4444'
+fallbackcolor: '#000000'
+links:
+  - title: Details
+  - title: Open app
+    link: https://games.tigeroakes.com/last-finger-standing/
+  - title: Code
+    github: NotWoods/games/tree/main/last-finger-standing
+tech:
+  - CSS 3D
+  - Pointer API
+  - Vibration API
+categories:
+  - Games
+---
+
+import { Image } from '@astrojs/image/components';
+import screenshot from './screenshot.png';
+
+<Image src={screenshot} alt="Screenshot" class="w-64 float-right" />
+
+Need to pick someone to go first? To pay the bill? To buy milk? Just have everyone put a finger on the screen and wait. Last Finger Standing will make your choice automatically! A quick and easy app to randomly select someone from a group of people.
