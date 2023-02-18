@@ -18,6 +18,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/11ty__eleventy-img": "^2.0.1",
+    "@vite-pwa/astro": "^0.0.2",
     "astro": "^2.0.12",
     "github-slugger": "^2.0.0",
     "postcss": "^8.4.21",
@@ -25,7 +26,6 @@
     "prettier-plugin-astro": "^0.8.0",
     "rimraf": "^4.1.2",
     "tailwindcss": "^3.2.6",
-    "vite-plugin-pwa": "0.11.2",
     "workbox-recipes": "^6.5.4"
   },
   "dependencies": {

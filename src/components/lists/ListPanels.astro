@@ -31,7 +31,7 @@ const { items } = Astro.props as Props;
     items.map((item, i) => (
       <ArticleHeaderContainer
         as="article"
-        class="project-panel flex flex-col px-4 py-2"
+        class="project-panel flex flex-col px-4 py-2 max-w-full"
         buttonsClass="justify-center"
         style={`animation-delay:${i * 200}ms`}
         accent={item.accent}
