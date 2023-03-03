@@ -7,19 +7,19 @@
   "private": true,
   "devDependencies": {
     "@11ty/eleventy-img": "^3.0.0",
-    "@astrojs/image": "^0.15.0",
-    "@astrojs/mdx": "^0.17.0",
+    "@astrojs/image": "^0.15.1",
+    "@astrojs/mdx": "^0.17.2",
     "@astrojs/preact": "^2.0.3",
     "@astrojs/rss": "^2.1.1",
-    "@astrojs/sitemap": "^1.0.1",
+    "@astrojs/sitemap": "^1.1.0",
     "@astrojs/tailwind": "^3.0.1",
     "@frontendista/astro-html-minify": "^1.0.7",
     "@js-temporal/polyfill": "^0.4.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/11ty__eleventy-img": "^2.0.1",
-    "@vite-pwa/astro": "^0.0.3",
-    "astro": "^2.0.14",
+    "@vite-pwa/astro": "^0.0.4",
+    "astro": "^2.0.17",
     "github-slugger": "^2.0.0",
     "postcss": "^8.4.21",
     "prettier": "~2.8.4",
@@ -29,7 +29,7 @@
     "workbox-recipes": "^6.5.4"
   },
   "dependencies": {
-    "preact": "^10.12.1"
+    "preact": "^10.13.0"
   },
   "scripts": {
     "clean": "rimraf static/assets/images && rimraf dist",
