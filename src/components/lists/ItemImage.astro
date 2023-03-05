@@ -31,7 +31,7 @@ const {
 } = Astro.props as Props;
 const imgClass = [
   fit === 'contain' ? 'object-contain' : 'object-cover',
-  'shadow-md bg-slate-200',
+  'shadow-md bg-slate-200 h-full',
   className,
 ]
   .filter(Boolean)

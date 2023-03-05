@@ -44,7 +44,7 @@ const { href, tableOfContents, links, ...props } = Astro.props as Props;
     <slot />
   </div>
   <slot name="footer">
-    <MoreButton {href} />
+    <MoreButton href={href} />
   </slot>
 </article>
 
@@ -70,7 +70,7 @@ const { href, tableOfContents, links, ...props } = Astro.props as Props;
 
   @media screen(lg) {
     article {
-      grid-template-rows: min-content 1fr min-content;
+      grid-template-rows: min-content 1fr max(11rem, min-content);
       grid-template-areas:
         'header header header'
         '.      prose  toc   '
