@@ -8,7 +8,7 @@ import { ResumeHeader, TagList } from './Header';
 
 export const Resume = ({ jsonResume }) => {
   return (
-    <main class="resume mx-auto bg-white text-[#212121] text-[11pt] m-[2em] max-w-[8.5in] p-[0.5in]">
+    <main class="resume mx-auto bg-white text-[#212121] text-[11pt] m-[2em] print:m-0 max-w-[8.5in] p-[0.5in]">
       <ResumeHeader basics={jsonResume.basics} />
       <ResumeSectionHeader>Experience</ResumeSectionHeader>
       {jsonResume.work.map((work) => (
@@ -64,7 +64,10 @@ const ResumeSectionHeader = (props: {
   class?: string;
 }) => (
   <h2
-    class={['font-sans text-[14pt] mb-[3pt] relative font-bold accent-block--left accent-block--still', props.class]
+    class={[
+      'font-sans text-[12pt] mb-[3pt] relative font-bold accent-block--left accent-block--still',
+      props.class,
+    ]
       .filter(Boolean)
       .join(' ')}
   >

@@ -27,8 +27,8 @@ export const ResumeHeader = ({ basics }) => {
 
   return (
     <header class="border-b border-orange-500 mb-[8pt]">
-      <h1 class="font-sans text-bold uppercase text-[22pt]">{basics.name}</h1>
-      <p class="mb-[8pt]">
+      <h1 class="font-sans text-bold uppercase text-[14pt]">{basics.name}</h1>
+      <p class="mb-[4pt]">
         <TagList
           tags={[
             <a class="" href={`mailto:${basics.email}`}>
@@ -37,7 +37,7 @@ export const ResumeHeader = ({ basics }) => {
             <a class="" href={`tel:${basics.phone}`}>
               {phoneSlice.join('-')}
             </a>,
-            <a class="" href={basics.website}>
+            <a class="" href={basics.url}>
               tigeroakes.com
             </a>,
             github && (
@@ -48,9 +48,7 @@ export const ResumeHeader = ({ basics }) => {
           ]}
         />
       </p>
-      <p class="italic text-neutral-700 text-[12pt] mb-[8pt]">
-        {basics.summary}
-      </p>
+      <p class="italic text-neutral-700 mb-[4pt]">{basics.summary}</p>
     </header>
   );
 };

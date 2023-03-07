@@ -7,7 +7,7 @@
   },
   "json.schemas": [
     {
-      "fileMatch": ["/src/pages/resume/json-resume/**"],
+      "fileMatch": ["/src/pages/resume/json-resume/**/*.json"],
       "url": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
     }
   ],

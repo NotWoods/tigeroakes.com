@@ -37,17 +37,15 @@ import * as content from './_about.md';
       </div>
     </div>
 
-    <Resume {jsonResume} />
+    <Resume jsonResume={jsonResume} />
 
     <Footer class="print:hidden" />
-  </body>
+  </body><style is:global>
+    .resume {
+      page-break-before: always;
+      color: rgba(0, 0, 0, 0.9);
+      font-variant-ligatures: none;
+      line-height: normal;
+    }
+  </style>
 </html>
-
-<style is:global>
-  .resume {
-    page-break-before: always;
-    color: rgba(0, 0, 0, 0.9);
-    font-variant-ligatures: none;
-    line-height: normal;
-  }
-</style>

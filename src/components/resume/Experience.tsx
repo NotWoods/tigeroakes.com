@@ -42,7 +42,7 @@ export const ExperienceTitle = ({
   website?: string;
 }) => {
   return (
-    <h3 class="text-[12pt] font-sans font-normal">
+    <h3 class="font-sans font-normal">
       <a href={website} class="font-semibold">
         {company}
       </a>
