@@ -27,7 +27,7 @@ export const ResumeHeader = ({ basics }) => {
 
   return (
     <header class="border-b border-orange-500 mb-[8pt]">
-      <h1 class="font-sans text-bold uppercase text-[14pt]">{basics.name}</h1>
+      <h1 class="font-sans text-bold uppercase text-[20pt]">{basics.name}</h1>
       <p class="mb-[4pt]">
         <TagList
           tags={[

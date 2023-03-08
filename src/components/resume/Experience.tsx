@@ -58,8 +58,9 @@ export const ExperienceTitle = ({
 export const ExperienceHighlights = ({
   highlights,
 }: {
-  highlights: readonly string[];
+  highlights: readonly string[] | undefined;
 }) => {
+  if (!highlights) return null;
   return (
     <ul class="list-square clear-right mt-[2pt] mb-[8pt] pl-[1em]">
       {highlights.map((highlight, i) => (

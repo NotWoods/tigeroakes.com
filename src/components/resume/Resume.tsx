@@ -23,7 +23,7 @@ export const Resume = ({ jsonResume }) => {
         </Fragment>
       ))}
 
-      <ResumeSectionHeader>Community</ResumeSectionHeader>
+      <ResumeSectionHeader class="mt-[8pt]">Community</ResumeSectionHeader>
       {jsonResume.projects.map((project) => (
         <Fragment key={project.name}>
           <ExperienceTitle company={project.name} website={project.url} />
@@ -52,9 +52,14 @@ export const Resume = ({ jsonResume }) => {
       ))}
 
       <ResumeSectionHeader class="mt-[12pt]">Awards</ResumeSectionHeader>
-      <ExperienceHighlights
-        highlights={jsonResume.awards.map((award) => award.title)}
-      />
+      <p>
+        {jsonResume.awards.map((award, i, awards) => (
+          <Fragment key={i}>
+            <span class="inline-block">{award.title}</span>
+            {i < awards.length - 1 ? ', ' : null}
+          </Fragment>
+        ))}
+      </p>
     </main>
   );
 };
