@@ -30,7 +30,7 @@
     {
       "company": "Microsoft",
       "position": "Software Engineer II",
-      "website": "https://www.microsoft.com/en-us/microsoft-loop",
+      "url": "https://www.microsoft.com/en-us/microsoft-loop",
       "startDate": "2021-08-09",
       "highlights": [
         "Spearheaded UI framework migration by **coordinating designers, PMs, and engineers in 3 orgs** and multiple teams, doubling rendering performance and saving engineering time across all of Microsoft.",
@@ -42,7 +42,7 @@
     {
       "company": "Mozilla",
       "position": "Android Developer Intern & Part-Time Student Worker",
-      "website": "https://github.com/mozilla-mobile/firefox-android",
+      "url": "https://github.com/mozilla-mobile/firefox-android",
       "startDate": "2019-05-14",
       "endDate": "2020-08-30",
       "highlights": [
@@ -54,7 +54,7 @@
     {
       "company": "Google",
       "position": "Software Engineering Intern",
-      "website": "https://chrome-supersize.firebaseapp.com/",
+      "url": "https://chrome-supersize.firebaseapp.com/",
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
@@ -65,7 +65,7 @@
     {
       "company": "Vital Mechanics",
       "position": "3D Graphics & Simulation Developer Intern",
-      "website": "http://vitalmechanics.com",
+      "url": "http://vitalmechanics.com",
       "startDate": "2018-01-05",
       "endDate": "2018-04-25",
       "highlights": [
@@ -75,7 +75,7 @@
     {
       "company": "Yelp",
       "position": "Software Engineer Intern",
-      "website": "https://www.yelp.com/search?find_desc=Handyman+Services",
+      "url": "https://www.yelp.com/search?find_desc=Handyman+Services",
       "startDate": "2017-08-27",
       "endDate": "2017-12-17",
       "highlights": [
@@ -85,7 +85,7 @@
     {
       "company": "Oakes Management LLC",
       "position": "Web Developer and IT Manager",
-      "website": "https://omlhawaii.com",
+      "url": "https://omlhawaii.com",
       "startDate": "2009-10-01",
       "endDate": "2015-08-10"
     }

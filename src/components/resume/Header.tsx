@@ -19,33 +19,49 @@ export const TagList = ({ tags }: { tags: readonly ComponentChildren[] }) => {
   );
 };
 
-export const ResumeHeader = ({ basics }) => {
-  const phoneSlice = basics.phone.split('-').slice(1);
+function formatPhoneNumber(phoneNumber: string) {
+  const phoneSlice = phoneNumber.split('-').slice(1);
+  return phoneSlice.join('-');
+}
+
+const HTTPS = /^https?:\/\//;
+
+export function contactList(basics): { text: string; href: string }[] {
   const github: Profile = basics.profiles.find(
     (profile: Profile) => profile.network === 'GitHub'
   );
 
+  return [
+    {
+      text: basics.email,
+      href: `mailto:${basics.email}`,
+    },
+    {
+      text: formatPhoneNumber(basics.phone),
+      href: `tel:${basics.phone}`,
+    },
+    {
+      text: basics.url.replace(HTTPS, ''),
+      href: basics.url,
+    },
+    github && {
+      text: github.url.replace(HTTPS, ''),
+      href: github.url,
+    },
+  ].filter(Boolean);
+}
+
+export const ResumeHeader = ({ basics }) => {
   return (
     <header class="border-b border-orange-500 mb-[8pt]">
       <h1 class="font-sans text-bold uppercase text-[20pt]">{basics.name}</h1>
       <p class="mb-[4pt]">
         <TagList
-          tags={[
-            <a class="" href={`mailto:${basics.email}`}>
-              {basics.email}
-            </a>,
-            <a class="" href={`tel:${basics.phone}`}>
-              {phoneSlice.join('-')}
-            </a>,
-            <a class="" href={basics.url}>
-              tigeroakes.com
-            </a>,
-            github && (
-              <a class="" href={github.url}>
-                github.com/{github.username}
-              </a>
-            ),
-          ]}
+          tags={contactList(basics).map(({ text, href }) => (
+            <a class="" href={href}>
+              {text}
+            </a>
+          ))}
         />
       </p>
       <p class="italic text-neutral-700 mb-[4pt]">{basics.summary}</p>

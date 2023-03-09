@@ -1,9 +1,10 @@
 import rss from '@astrojs/rss';
+import { APIRoute } from 'astro';
 import { loadPosts } from '../../../scripts/posts';
 
-const postsData = import.meta.globEager('../../posts/*/*.{md,mdx}');
+const postsData = import.meta.glob('../../posts/*/*.{md,mdx}', { eager: true });
 
-export const get = async () => {
+export const get: APIRoute = async () => {
   const posts = await loadPosts(Object.values(postsData) as any);
   return rss({
     title: 'Planet Mozilla | Tiger Oakes',

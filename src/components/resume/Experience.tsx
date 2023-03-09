@@ -1,15 +1,14 @@
 import { Intl } from '@js-temporal/polyfill';
 import { ComponentChild, Fragment } from 'preact';
-import { dateFromString, formatToPartsMap } from '../../scripts/date';
+import { dateFromString } from '../../scripts/date';
 
-const resumeFormatter = new Intl.DateTimeFormat('en-CA', {
+export const resumeDateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
-  month: '2-digit',
+  month: 'short',
 });
 
 function formatResumeDate(date: string) {
-  const parts = formatToPartsMap(resumeFormatter, dateFromString(date));
-  return `${parts.get('year')}-${parts.get('month')}`;
+  return resumeDateFormatter.format(dateFromString(date));
 }
 
 function formatIsoDate(date: string | undefined) {
@@ -19,15 +18,25 @@ function formatIsoDate(date: string | undefined) {
   return dateFromString(date).toString();
 }
 
-export const ExperienceDate = ({ startDate, endDate }) => {
+export interface DateRange {
+  startDate: string;
+  endDate?: string;
+}
+
+export function formatResumeDateRange({ startDate, endDate }: DateRange) {
+  return [
+    formatResumeDate(startDate),
+    endDate ? formatResumeDate(endDate) : 'Present',
+  ].join(' — ');
+}
+
+export const ExperienceDate = ({ startDate, endDate }: DateRange) => {
   return (
     <time
       class="text-orange-500 float-right text-[0.825em] ml-4"
       dateTime={`${formatIsoDate(startDate)}/${formatIsoDate(endDate)}`}
     >
-      {formatResumeDate(startDate)}
-      {' — '}
-      {endDate ? formatResumeDate(endDate) : 'Present'}
+      {formatResumeDateRange({ startDate, endDate })}
     </time>
   );
 };
@@ -71,32 +80,42 @@ export const ExperienceHighlights = ({
 };
 
 const BOLD = /\*\*([^*]+)\*\*/g;
-const ExperienceHighlight = ({ children }: { children: string }) => {
-  const parts: ComponentChild[] = [];
+export function parseHighlight(highlight: string) {
+  const parts: { text: string; bold: boolean }[] = [];
 
-  let i = 0;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
-  while ((match = BOLD.exec(children)) !== null) {
+  while ((match = BOLD.exec(highlight)) !== null) {
     const startIndex = lastIndex;
     const endIndex = BOLD.lastIndex;
 
     // Push plain text
-    parts.push(
-      <Fragment key={i}>{children.slice(startIndex, match.index)}</Fragment>
-    );
+    parts.push({ text: highlight.slice(startIndex, match.index), bold: false });
 
     // Push bold text
-    parts.push(
-      <strong key={`bold-${i}`}>
-        {children.slice(match.index + 2, endIndex - 2)}
-      </strong>
-    );
+    parts.push({
+      text: highlight.slice(match.index + 2, endIndex - 2),
+      bold: true,
+    });
 
     lastIndex = endIndex;
-    i++;
   }
-  parts.push(children.slice(lastIndex));
+  parts.push({ text: highlight.slice(lastIndex), bold: false });
+
+  return parts;
+}
+
+const ExperienceHighlight = ({ children }: { children: string }) => {
+  let plainCount = 0;
+  let boldCount = 0;
+
+  const parts = parseHighlight(children).map(({ text, bold }) => {
+    if (bold) {
+      return <strong key={`bold-${boldCount++}`}>{text}</strong>;
+    } else {
+      return <Fragment key={plainCount++}>{text}</Fragment>;
+    }
+  });
 
   return <li>{parts}</li>;
 };

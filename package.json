@@ -29,6 +29,7 @@
     "workbox-recipes": "^6.5.4"
   },
   "dependencies": {
+    "docx": "^7.8.2",
     "preact": "^10.13.0"
   },
   "scripts": {
