@@ -7,11 +7,10 @@
       "name": "Microsoft",
       "position": "Software Engineer II",
       "highlights": [
-        "Spearheaded UI framework migration by **coordinating designers, PMs, and engineers in 3 orgs** and multiple teams, doubling rendering performance and saving engineering time across all of Microsoft.",
+        "Spearheaded UI framework migration by **coordinating designers, product managers, and engineers in 3 orgs** and multiple teams, doubling rendering performance and saving engineering time across all of Microsoft.",
         "Advised on sharing code with **React Native**, centralizing business logic between the web, **iOS**, & **Android** apps.",
-        "Served as **React/TypeScript subject matter expert**—significantly raised standards performance, accessibility, & internationalization standards through mentorship, writing automated tools, giving tech talks, writing articles.",
-        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**.",
-        "Removed 1.5 seconds from repeat loads with **IndexedDB** caching and **CSS** performance improvements."
+        "Served as **React/TypeScript subject matter expert**—significantly raised standards for performance, accessibility, and internationalization through mentorship, writing automated tools, giving tech talks, writing articles.",
+        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**."
       ]
     },
     {
@@ -20,7 +19,7 @@
       "highlights": [
         "Built and shipped brand new web browser in **Kotlin** to **over 100 million users on Google Play Store**.",
         "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
-        "Coordinated with **Google** and **Intel** developers to add maskable icon support to Firefox and Chrome.",
+        "Coordinated with **Google** and **Intel** developers to add maskable icon support to Firefox and Chrome Android.",
         "Added Trusted Web Activity support to Firefox for Android, **featured in Chrome Dev Summit 2019 keynote**."
       ]
     },
@@ -29,9 +28,8 @@
       "position": "Software Engineering Intern",
       "highlights": [
         "Wrote **Java** bytecode rewriter to insert code automatically and remove Android resume memory leaks.",
-        "Designed and built **JavaScript** internal tool to analyze millions of Java .dex files. The tool was used to **save 30 KB** in the first week after release and avoid method count limits that would have halted Google Chrome for Android updates.",
-        "Shrank app by 29 KB by migrating **Android Java bytecode** compiler tools.",
-        "Used streams and **background threads** to handle 180 MB downloads, rendering partial data **7x faster**."
+        "Designed and built **JavaScript** internal tool to analyze millions of Java .dex files. The tool was used to **save 30 KB** in the first week after release and avoid method count limits that would've halted Google Chrome for Android updates.",
+        "Shrank app by 29 KB by migrating **Android Java bytecode** compiler tools."
       ]
     },
     {
@@ -43,7 +41,7 @@
       "position": "Software Engineer Intern",
       "highlights": [
         "Built new web search page feature in **Flow**, **React**, and **Redux** displayed to **1 million users monthly**.",
-        "Ported **Android** business logic to **Python** package, later turned into independent microservice."
+        "Ported **Android** business logic to **Python API** package to serve multiple platforms, later turned into microservice."
       ]
     },
     {
@@ -57,115 +55,35 @@
   ],
   "projects": [
     {
-      "name": "Big Island Buses",
-      "url": "https://notwoods.github.io/big-island-buses",
-      "startDate": "2014-05-01",
-      "endDate": "2015-05-31",
-      "description": "Web app to replace Hawai'i paper bus schedules",
+      "name": "Open Source",
       "highlights": [
-        "Won **Grand Prize in Congressional App Challenge 2014, Hawaii’s 2nd District**.",
-        "Optimized site for mobile **offline** viewing.",
-        "Contacted and worked with the **County of Hawai’i** to integrate the app with the island’s bus system."
+        "Implemented Android icon features for Google Bubblewrap & Microsoft PWABuilder, used **2,000+ times/month**.",
+        "Built Maskable.app, go-to developer tool recommended by Google & CSS Tricks, used **11,000+ times/month**.",
+        "Programmed **Android AR** viewer in **Unity** with **C#**. Built inspector fields so junior devs could quickly update views."
       ]
     },
     {
-      "name": "Soil TopARgraphy",
-      "url": "http://eml.ubc.ca/projects/soil-topargraphy/",
-      "startDate": "2018-02-01",
-      "endDate": "2019-01-31",
-      "description": "Teaches soil topography through AR",
+      "name": "Speaking and Writing",
       "highlights": [
-        "Will be **published on Google Play** in 2019.",
-        "Programmed **Android AR** viewer in **Unity** with **C#**, exposed fields to inspector so teammates could quickly manipulate views.",
-        "Wrote script to process Mapbox heightmaps to generate Blender 3D model."
+        "Speaker at **JSConf Budapest 2022**, **CascadiaJS**, and **HalfStack** conferences with thousands of attendees.",
+        "Authored guidebook on **MockK** testing library for **Kotlin** and **Android**, with **20,000+ views/month**.",
+        "Wrote React to **Jetpack Compose** Dictionary, resource recommended by Android team to new developers.",
+        "Wrote software development articles for **CSS Tricks**, **MDN**, and **web.dev** with thousands of views.",
+        "Mentoring new software developers through volunteering at Ada Developers Academy."
       ]
-    },
-    {
-      "name": "μzm",
-      "url": "https://devpost.com/software/tag-it-gpzhuq",
-      "startDate": "2018-01-19",
-      "endDate": "2018-01-19",
-      "description": "Enhances museum immersion with gamification",
-      "highlights": [
-        "**Finalist, nwHacks 2018** out of 800+ people.",
-        "Helped write **Android** app in **Java** to scan NFC badges on exhibits and patrons.",
-        "Built backend with **Node.js**/**MongoDB**."
-      ]
-    },
-    {
-      "name": "CellWall",
-      "url": "https://github.com/NotWoods/cell-wall",
-      "startDate": "2018-02-01",
-      "endDate": "2018-10-31",
-      "description": "Interactive display made of cell phones",
-      "highlights": [
-        "Working on new **Kotlin Android** app to display data sent from **Node.js** server with **Socket.io** Android client.",
-        "Built display using many **Android** devices attached to foam panel.",
-        "Wrote **adb** script to change power state using physical Amazon Dash button remote."
-      ]
-    }
-  ],
-  "education": [
-    {
-      "institution": "University of British Columbia",
-      "area": "Computer Science",
-      "studyType": "Bachelor of Science",
-      "startDate": "2015-09-15",
-      "endDate": "2020-05-25"
-    }
-  ],
-  "awards": [
-    {
-      "title": "Finalist: nwHacks 2018 (out of 800+)",
-      "date": "2018-01-14",
-      "awarder": "StartupStorm"
-    },
-    {
-      "title": "Hardcore Top 3: Yelp Hackathon 24.0 (out of 44)",
-      "date": "2017-11-15",
-      "awarder": "Yelp"
-    },
-    {
-      "title": "UBC Work Learn International Undergraduate Reasearch Award",
-      "date": "2016-05-14",
-      "awarder": "University of British Columbia"
-    },
-    {
-      "title": "Grand Prize: Congressional App Challenge 2014, Hawaii’s 2nd Congressional District",
-      "date": "2014-05-01",
-      "awarder": "United States Congress"
     }
   ],
   "skills": [
-    {
-      "name": "TypeScript"
-    },
-    {
-      "name": "Kotlin"
-    },
-    {
-      "name": "Java"
-    },
-    {
-      "name": "Android"
-    },
-    {
-      "name": "Python"
-    },
-    {
-      "name": "C#"
-    },
-    {
-      "name": "JavaScript"
-    },
-    {
-      "name": "Node.js"
-    },
-    {
-      "name": "React"
-    },
-    {
-      "name": "Design"
-    }
+    { "name": "TypeScript" },
+    { "name": "Kotlin" },
+    { "name": "Java" },
+    { "name": "Android" },
+    { "name": "React" },
+    { "name": "Python" },
+    { "name": "C#" },
+    { "name": "JavaScript" },
+    { "name": "Node.js" },
+    { "name": "Design" },
+    { "name": "Vector Animation" }
   ]
 }

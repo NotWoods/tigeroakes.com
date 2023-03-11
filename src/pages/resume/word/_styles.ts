@@ -15,7 +15,7 @@ export const styles: IStylesOptions = {
     title: {
       run: {
         font: 'Lato Semibold',
-        size: 24 * 2,
+        size: 22 * 2,
         allCaps: true,
       },
     },
