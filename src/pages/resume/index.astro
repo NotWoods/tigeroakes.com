@@ -9,7 +9,7 @@ import { loadJsonResume } from './json-resume/_load';
 
 import * as content from './_about.md';
 
-const jsonResume = await loadJsonResume('default');
+const jsonResume = await loadJsonResume(content.frontmatter.json_resume);
 ---
 
 <html lang="en">

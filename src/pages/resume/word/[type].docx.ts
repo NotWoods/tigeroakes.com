@@ -25,15 +25,26 @@ import { ColorOrange, StyleDateRange, styles, StyleSummary } from './_styles';
 import { loadJsonResume } from '../json-resume/_load';
 
 function joinTags(
-  tags: readonly ParagraphChild[],
+  tags: readonly (string | ParagraphChild)[],
   separator = ' | '
 ): ParagraphChild[] {
   return tags.flatMap((tag, index) => {
-    if (index < tags.length - 1) {
-      return [tag, new TextRun(separator)];
+    const children: ParagraphChild[] = [];
+    if (typeof tag === 'string') {
+      children.push(
+        new TextRun({
+          text: tag,
+          break: tag.length > 50 ? 1 : undefined,
+        })
+      );
     } else {
-      return [tag];
+      children.push(tag);
     }
+
+    if (index < tags.length - 1) {
+      children.push(new TextRun(separator));
+    }
+    return children;
   });
 }
 
@@ -213,9 +224,7 @@ export const get: APIRoute = async ({ params }) => {
 
           sectionHeader('Skills'),
           new Paragraph({
-            children: joinTags(
-              jsonResume.skills.map((skill) => new TextRun(skill.name))
-            ),
+            children: joinTags(jsonResume.skills.map((skill) => skill.name)),
             style: 'skills',
           }),
 
@@ -231,15 +240,13 @@ export const get: APIRoute = async ({ params }) => {
           ),
 
           sectionHeader('Awards'),
-          ...jsonResume.awards.map(
-            (award) =>
-              new Paragraph({
-                text: award.title,
-                bullet: { level: 0 },
-                numbering: { level: 0, reference: 'SquareBullet' },
-                style: 'ListBullet',
-              })
-          ),
+          new Paragraph({
+            children: joinTags(
+              jsonResume.awards.map((award) => award.title),
+              ', '
+            ),
+            style: 'skills',
+          }),
         ],
       },
     ],

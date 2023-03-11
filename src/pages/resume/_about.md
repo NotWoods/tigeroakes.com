@@ -1,7 +1,7 @@
 ---
 title: Resume
-pdf: pdf/Tiger_Oakes_resume_-_November_2021.pdf
-json_resume: src/pages/resume/json-resume/default.json
+pdf: pdf/Tiger_Oakes_resume_-_March_2023.pdf
+json_resume: default
 ---
 
 After growing up with dead zones in Hawaii, I want to make web apps that work offline and load fast. I've worked on Progressive Web App support in [Microsoft Edge](/projects/microsoft-edge/) and [Firefox for Android](/projects/mozilla-firefox/), and I'm a maintainer for the [Rollup](/projects/rollup/) JavaScript bundler. Previously, I worked on web projects for [Google Chrome](/projects/google/) and [Yelp](/projects/yelp/).
