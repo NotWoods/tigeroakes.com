@@ -28,7 +28,7 @@
   },
   "work": [
     {
-      "company": "Microsoft",
+      "name": "Microsoft",
       "position": "Software Engineer II",
       "url": "https://www.microsoft.com/en-us/microsoft-loop",
       "startDate": "2021-08-09",
@@ -36,11 +36,11 @@
         "Spearheaded UI framework migration by **coordinating designers, PMs, and engineers in 3 orgs** and multiple teams, doubling rendering performance and saving engineering time across all of Microsoft.",
         "Served as **React/TypeScript subject matter expert**—significantly raised standards performance, accessibility, & internationalization standards through mentorship, writing automated tools, giving tech talks, writing articles.",
         "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**.",
-        "Improved performance by **10x** by inventing virtualization techniques built off modern **JavaScript/CSS** features."
+        "Removed 1.5 seconds from repeat loads with **IndexedDB** caching and **CSS** performance improvements."
       ]
     },
     {
-      "company": "Mozilla",
+      "name": "Mozilla",
       "position": "Android Developer Intern & Part-Time Student Worker",
       "url": "https://github.com/mozilla-mobile/firefox-android",
       "startDate": "2019-05-14",
@@ -48,22 +48,23 @@
       "highlights": [
         "Built and shipped brand new web browser in **Kotlin** to **over 100 million users on Google Play Store**.",
         "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
+        "Coordinated with **Google** and **Intel** developers to add maskable icon support to Firefox and Chrome.",
         "Added Trusted Web Activity support to Firefox for Android, **featured in Chrome Dev Summit 2019 keynote**."
       ]
     },
     {
-      "company": "Google",
+      "name": "Google",
       "position": "Software Engineering Intern",
       "url": "https://chrome-supersize.firebaseapp.com/",
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "highlights": [
-        "Built internal developer tool used by **entire Google Chrome for Android team** with **JavaScript** and **Python**.",
-        "Used **streams** and **background threads** to handle 180 MB downloads, rendering partial data in under 1 second."
+        "Designed and built **JavaScript** internal tool to analyze millions of files. The tool was used to **save 30 KB** in the first week after release and avoid limits that would have halted Google Chrome for Android updates.",
+        "Used streams and **background threads** to handle 180 MB downloads, rendering partial data **7x faster**."
       ]
     },
     {
-      "company": "Vital Mechanics",
+      "name": "Vital Mechanics",
       "position": "3D Graphics & Simulation Developer Intern",
       "url": "http://vitalmechanics.com",
       "startDate": "2018-01-05",
@@ -73,7 +74,7 @@
       ]
     },
     {
-      "company": "Yelp",
+      "name": "Yelp",
       "position": "Software Engineer Intern",
       "url": "https://www.yelp.com/search?find_desc=Handyman+Services",
       "startDate": "2017-08-27",
@@ -83,7 +84,7 @@
       ]
     },
     {
-      "company": "Oakes Management LLC",
+      "name": "Oakes Management LLC",
       "position": "Web Developer and IT Manager",
       "url": "https://omlhawaii.com",
       "startDate": "2009-10-01",
@@ -103,10 +104,11 @@
     {
       "name": "Speaking and Writing",
       "highlights": [
-        "Speaker at **JSConf Budapest 2022**, CascadiaJS, and HalfStack conferences with thousands of attendees.",
+        "Speaker at **JSConf Budapest 2022**, **CascadiaJS**, and **HalfStack** conferences with thousands of attendees.",
         "Wrote web development articles for **CSS Tricks**, **MDN**, and **web.dev** with thousands of views.",
         "Authored guidebook on **MockK** testing library for **Kotlin** and **Android**, with **20,000+ views/month**.",
-        "Wrote React to **Jetpack Compose** Dictionary, resource recommended by Android team to new developers."
+        "Wrote React to **Jetpack Compose** Dictionary, resource recommended by Android team to new developers.",
+        "Mentoring new software developers through volunteering at Ada Developers Academy."
       ]
     }
   ],

@@ -1,5 +1,5 @@
 import { Intl } from '@js-temporal/polyfill';
-import { ComponentChild, Fragment } from 'preact';
+import { Fragment } from 'preact';
 import { dateFromString } from '../../scripts/date';
 
 export const resumeDateFormatter = new Intl.DateTimeFormat('en-US', {
@@ -19,7 +19,7 @@ function formatIsoDate(date: string | undefined) {
 }
 
 export interface DateRange {
-  startDate: string;
+  startDate?: string;
   endDate?: string;
 }
 
@@ -51,7 +51,7 @@ export const ExperienceTitle = ({
   website?: string;
 }) => {
   return (
-    <h3 class="font-sans font-normal">
+    <h3 class="font-sans font-normal text-[11pt]">
       <a href={website} class="font-semibold">
         {company}
       </a>

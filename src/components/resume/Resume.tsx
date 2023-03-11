@@ -1,3 +1,4 @@
+import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
 import { ComponentChildren, Fragment } from 'preact';
 import {
   ExperienceDate,
@@ -6,18 +7,18 @@ import {
 } from './Experience';
 import { ResumeHeader, TagList } from './Header';
 
-export const Resume = ({ jsonResume }) => {
+export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
   return (
-    <main class="resume mx-auto bg-white text-[#212121] text-[11pt] m-[2em] print:m-0 max-w-[8.5in] p-[0.5in]">
+    <main class="resume mx-auto bg-white text-[#212121] text-[10pt] m-[2em] print:m-0 max-w-[8.5in] p-[0.5in]">
       <ResumeHeader basics={jsonResume.basics} />
       <ResumeSectionHeader>Experience</ResumeSectionHeader>
       {jsonResume.work.map((work) => (
         <Fragment key={work.startDate}>
           <ExperienceDate startDate={work.startDate} endDate={work.endDate} />
           <ExperienceTitle
-            company={work.company}
+            company={work.name}
             position={work.position}
-            website={work.website}
+            website={work.url}
           />
           <ExperienceHighlights highlights={work.highlights} />
         </Fragment>

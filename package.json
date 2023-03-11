@@ -15,6 +15,7 @@
     "@astrojs/tailwind": "^3.0.1",
     "@frontendista/astro-html-minify": "^1.0.7",
     "@js-temporal/polyfill": "^0.4.3",
+    "@kurone-kito/jsonresume-types": "^0.3.5",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/11ty__eleventy-img": "^2.0.1",

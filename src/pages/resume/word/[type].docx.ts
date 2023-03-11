@@ -1,3 +1,4 @@
+import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
 import { APIRoute, GetStaticPaths } from 'astro';
 import {
   BorderStyle,
@@ -20,6 +21,7 @@ import {
   resumeDateFormatter,
 } from '../../../components/resume/Experience';
 import { contactList } from '../../../components/resume/Header';
+import { ColorOrange, StyleDateRange, styles, StyleSummary } from './_styles';
 
 function joinTags(
   tags: readonly ParagraphChild[],
@@ -34,7 +36,7 @@ function joinTags(
   });
 }
 
-function resumeHeader({ basics }) {
+function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
   return [
     // Name
     new Paragraph({
@@ -58,12 +60,12 @@ function resumeHeader({ basics }) {
     // Summary
     new Paragraph({
       text: basics.summary,
-      style: 'Summary',
+      style: StyleSummary,
       border: {
         bottom: {
           style: BorderStyle.SINGLE,
           space: 4,
-          color: 'E67237',
+          color: ColorOrange,
         },
       },
     }),
@@ -71,14 +73,14 @@ function resumeHeader({ basics }) {
 }
 
 function experience({
-  company,
+  name,
   position,
   url,
   dateRange,
   highlights,
   first,
 }: {
-  company: string;
+  name?: string;
   position?: string;
   url?: string;
   dateRange?: DateRange;
@@ -86,7 +88,7 @@ function experience({
   first: boolean;
 }): Paragraph[] {
   const companyText = new TextRun({
-    text: company,
+    text: name,
     font: 'Lato Semibold',
   });
 
@@ -103,7 +105,7 @@ function experience({
         dateRange &&
           new TextRun({
             children: [new Tab(), formatResumeDateRange(dateRange)],
-            style: 'DateRange',
+            style: StyleDateRange,
           }),
       ].filter(Boolean),
       heading: HeadingLevel.HEADING_2,
@@ -146,7 +148,7 @@ function sectionHeader(text: string): Paragraph {
 export const get: APIRoute = async ({ params }) => {
   const { type } = params;
   const jsonResume = await import(`../json-resume/${type}.json`).then(
-    (mod) => mod.default
+    (mod) => mod.default as ResumeSchema
   );
   const margin = convertInchesToTwip(0.5);
 
@@ -177,87 +179,7 @@ export const get: APIRoute = async ({ params }) => {
         },
       ],
     },
-    styles: {
-      default: {
-        document: {
-          run: {
-            font: 'Lato',
-            size: 10 * 2,
-          },
-        },
-        title: {
-          run: {
-            font: 'Lato Semibold',
-            size: 20 * 2,
-            allCaps: true,
-          },
-        },
-        heading1: {
-          run: {
-            font: 'Lato',
-            bold: true,
-            size: 12 * 2,
-          },
-          paragraph: {
-            spacing: {
-              before: 8 * 20,
-              after: 3 * 20,
-            },
-          },
-        },
-        heading2: {
-          run: {
-            font: 'Lato',
-            size: 11 * 2,
-          },
-          paragraph: {
-            spacing: {
-              before: 6 * 20,
-              after: 2 * 20,
-            },
-          },
-        },
-        listParagraph: {
-          basedOn: 'Normal',
-          paragraph: {
-            indent: {
-              left: 0,
-              hanging: convertInchesToTwip(0.15),
-            },
-            spacing: {
-              after: 2 * 20,
-            },
-          },
-        },
-      },
-      paragraphStyles: [
-        {
-          id: 'Summary',
-          name: 'Summary',
-          run: {
-            size: 11 * 2,
-            italics: true,
-            color: '191919',
-          },
-          paragraph: {
-            spacing: {
-              before: 4 * 20,
-              after: 6 * 20,
-            },
-          },
-        },
-      ],
-      characterStyles: [
-        {
-          id: 'DateRange',
-          name: 'Date Range',
-          run: {
-            size: 9 * 2,
-            color: 'E67237',
-          },
-        },
-      ],
-    },
+    styles,
     sections: [
       {
         properties: {
@@ -285,10 +207,8 @@ export const get: APIRoute = async ({ params }) => {
           sectionHeader('Community'),
           ...jsonResume.projects.flatMap((project, i) =>
             experience({
+              ...project,
               first: i === 0,
-              company: project.name,
-              url: project.url,
-              highlights: project.highlights,
             })
           ),
 
@@ -304,7 +224,7 @@ export const get: APIRoute = async ({ params }) => {
           ...jsonResume.education.flatMap((education, i) =>
             experience({
               first: i === 0,
-              company: education.institution,
+              name: education.institution,
               position: `${education.studyType} in ${education.area}`,
               url: education.url,
               dateRange: education,
@@ -312,13 +232,15 @@ export const get: APIRoute = async ({ params }) => {
           ),
 
           sectionHeader('Awards'),
-          new Paragraph({
-            children: joinTags(
-              jsonResume.awards.map((award) => new TextRun(award.title)),
-              ', '
-            ),
-            style: 'skills',
-          }),
+          ...jsonResume.awards.map(
+            (award) =>
+              new Paragraph({
+                text: award.title,
+                bullet: { level: 0 },
+                numbering: { level: 0, reference: 'SquareBullet' },
+                style: 'ListBullet',
+              })
+          ),
         ],
       },
     ],

@@ -1,10 +1,5 @@
+import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
 import { ComponentChildren, Fragment } from 'preact';
-
-interface Profile {
-  network: string;
-  username: string;
-  url: string;
-}
 
 export const TagList = ({ tags }: { tags: readonly ComponentChildren[] }) => {
   return (
@@ -26,9 +21,11 @@ function formatPhoneNumber(phoneNumber: string) {
 
 const HTTPS = /^https?:\/\//;
 
-export function contactList(basics): { text: string; href: string }[] {
-  const github: Profile = basics.profiles.find(
-    (profile: Profile) => profile.network === 'GitHub'
+export function contactList(
+  basics: ResumeSchema['basics']
+): { text: string; href: string }[] {
+  const github = basics.profiles?.find(
+    (profile) => profile.network === 'GitHub'
   );
 
   return [
@@ -44,14 +41,14 @@ export function contactList(basics): { text: string; href: string }[] {
       text: basics.url.replace(HTTPS, ''),
       href: basics.url,
     },
-    github && {
+    github?.url && {
       text: github.url.replace(HTTPS, ''),
       href: github.url,
     },
   ].filter(Boolean);
 }
 
-export const ResumeHeader = ({ basics }) => {
+export const ResumeHeader = ({ basics }: Pick<ResumeSchema, 'basics'>) => {
   return (
     <header class="border-b border-orange-500 mb-[8pt]">
       <h1 class="font-sans text-bold uppercase text-[20pt]">{basics.name}</h1>
@@ -64,7 +61,9 @@ export const ResumeHeader = ({ basics }) => {
           ))}
         />
       </p>
-      <p class="italic text-neutral-700 mb-[4pt]">{basics.summary}</p>
+      <p class="italic text-neutral-700 mb-[4pt] text-[11pt]">
+        {basics.summary}
+      </p>
     </header>
   );
 };
