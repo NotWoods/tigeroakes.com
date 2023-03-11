@@ -1,96 +1,58 @@
 {
   "basics": {
-    "name": "Tiger Oakes",
-    "label": "Software Developer",
-    "picture": "https://tigeroakes.com/images/profile-1x.jpg",
-    "email": "contact@tigeroakes.com",
-    "phone": "1 (253) 778-6251",
-    "website": "https://tigeroakes.com",
-    "summary": "Software Developer with 7 years of experience in functional and object-oriented programming. Proven success creating custom solutions for a variety of businesses.",
-    "location": {
-      "city": "Vancouver",
-      "region": "BC",
-      "countryCode": "CA"
-    },
-    "profiles": [
-      {
-        "network": "GitHub",
-        "username": "NotWoods",
-        "url": "https://github.com/NotWoods"
-      },
-      {
-        "network": "LinkedIn",
-        "username": "tigeroakes",
-        "url": "https://linkedin.com/in/tigeroakes"
-      },
-      {
-        "network": "Twitter",
-        "username": "Not_Woods",
-        "url": "https://twitter.com/Not_Woods"
-      }
-    ]
+    "summary": "Highly skilled software developer with over 12 years of experience building 3 Android and desktop web browsers, hundreds of open source projects, performant apps, and web standards."
   },
   "work": [
     {
-      "company": "Google",
-      "position": "Chrome for Android - Software Engineering Intern",
-      "website": "https://storage.googleapis.com/chrome-supersize/index.html",
-      "startDate": "2018-05-07",
-      "endDate": "2018-07-27",
+      "name": "Microsoft",
+      "position": "Software Engineer II",
       "highlights": [
-        "Updated **Android Java bytecode** compiler tools, shrinking Google Chrome by 29 KB.",
-        "Wrote **Java** bytecode rewriter to insert code automatically.",
-        "Redesigned & added new features to \"Super Size\", **Python** tool with HTML output used to analyze millions of files contributing to Chrome's size. Tool saved 30 KB in the first week after release.",
-        "Utilized **streams** and **worker threads** to handle 180 MB of data at once. Displayed partial data in 1 second, full data in 7 seconds."
+        "Spearheaded UI framework migration by **coordinating designers, PMs, and engineers in 3 orgs** and multiple teams, doubling rendering performance and saving engineering time across all of Microsoft.",
+        "Advised on sharing code with **React Native**, centralizing business logic between the web, **iOS**, & **Android** apps.",
+        "Served as **React/TypeScript subject matter expert**—significantly raised standards performance, accessibility, & internationalization standards through mentorship, writing automated tools, giving tech talks, writing articles.",
+        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**.",
+        "Removed 1.5 seconds from repeat loads with **IndexedDB** caching and **CSS** performance improvements."
       ]
     },
     {
-      "company": "Vital Mechanics",
-      "position": "3D Graphics & Simulation Developer Intern",
-      "website": "http://vitalmechanics.com",
-      "startDate": "2018-01-05",
-      "endDate": "2018-04-25",
-      "summary": "Vancouver startup simulating skin for VFX and prototyping clothing",
+      "name": "Mozilla",
+      "position": "Android Developer Intern & Part-Time Student Worker",
       "highlights": [
-        "Built **TypeScript Electron** client that interfaces with **C++** server to display real-time 3D simulations using **WebGL**.",
-        "Migrated large program to **React**/**Redux** architecture, saving time and effort for future programmers through **reactive** design."
+        "Built and shipped brand new web browser in **Kotlin** to **over 100 million users on Google Play Store**.",
+        "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
+        "Coordinated with **Google** and **Intel** developers to add maskable icon support to Firefox and Chrome.",
+        "Added Trusted Web Activity support to Firefox for Android, **featured in Chrome Dev Summit 2019 keynote**."
       ]
     },
     {
-      "company": "Yelp",
-      "position": "Local Services - Software Engineer Intern",
-      "website": "https://yelp.com/describe_your_project?category=movers",
-      "startDate": "2017-08-27",
-      "endDate": "2017-12-17",
+      "name": "Google",
+      "position": "Software Engineering Intern",
       "highlights": [
-        "Built \"Describe Your Project\" package with **Python**, so users may easily request quotes from home services businesses.",
-        "Ported **Android** business logic to desktop website.",
-        "Implemented UI for branching question flows with **Flow**, **React** and **Redux**; wrote tree structure to track questions to ask users.",
-        "Led hackathon team to build new product for in-restaurant experience. Placed in **Top 3 of Hardcore** category out of 44 projects and was picked up by sales team afterwards."
+        "Wrote **Java** bytecode rewriter to insert code automatically and remove Android resume memory leaks.",
+        "Designed and built **JavaScript** internal tool to analyze millions of Java .dex files. The tool was used to **save 30 KB** in the first week after release and avoid method count limits that would have halted Google Chrome for Android updates.",
+        "Shrank app by 29 KB by migrating **Android Java bytecode** compiler tools.",
+        "Used streams and **background threads** to handle 180 MB downloads, rendering partial data **7x faster**."
       ]
     },
     {
-      "company": "Centre for Sustainable Food Systems at UBC Farm",
-      "position": "Software Developer",
-      "website": "https://github.com/ubc-farm",
-      "startDate": "2016-05-14",
-      "endDate": "2017-04-14",
+      "name": "Vital Mechanics",
+      "position": "3D Graphics & Simulation Developer Intern"
+    },
+    {
+      "name": "Yelp",
+      "position": "Software Engineer Intern",
       "highlights": [
-        "Developed custom **TypeScript** software with the **UBC Work Learn International Undergraduate Research Award**.",
-        "Wrote fill algorithm to classify sections of farm fields."
+        "Built new web search page feature in **Flow**, **React**, and **Redux** displayed to **1 million users monthly**.",
+        "Ported **Android** business logic to **Python** package, later turned into independent microservice."
       ]
     },
     {
-      "company": "Oakes Management LLC",
-      "position": "Web Developer and IT Manager",
-      "website": "https://omlhawaii.com",
-      "startDate": "2009-10-01",
-      "endDate": "2015-08-10",
-      "summary": "#1 custom home builder in Hawai'i, building private resort residences.",
-      "highlights": [
-        "Designed and developed web portfolio to showcase residences.",
-        "Applied GPU-accelerated parallax using CSS 3D transformations."
-      ]
+      "name": "Centre for Sustainable Food Systems at UBC Farm",
+      "position": "Software Developer"
+    },
+    {
+      "name": "Oakes Management LLC",
+      "position": "Web Developer and IT Manager"
     }
   ],
   "projects": [

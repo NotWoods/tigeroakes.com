@@ -22,6 +22,7 @@ import {
 } from '../../../components/resume/Experience';
 import { contactList } from '../../../components/resume/Header';
 import { ColorOrange, StyleDateRange, styles, StyleSummary } from './_styles';
+import { loadJsonResume } from '../json-resume/_load';
 
 function joinTags(
   tags: readonly ParagraphChild[],
@@ -147,9 +148,7 @@ function sectionHeader(text: string): Paragraph {
 
 export const get: APIRoute = async ({ params }) => {
   const { type } = params;
-  const jsonResume = await import(`../json-resume/${type}.json`).then(
-    (mod) => mod.default as ResumeSchema
-  );
+  const jsonResume = await loadJsonResume(type);
   const margin = convertInchesToTwip(0.5);
 
   const doc = new Document({

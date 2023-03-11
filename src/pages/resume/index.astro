@@ -5,9 +5,11 @@ import Footer from '../../components/Footer.astro';
 import SectionTitle from '../../components/lists/SectionTitle.astro';
 import MainHead from '../../components/meta/MainHead.astro';
 import { Resume } from '../../components/resume/Resume';
-import jsonResume from './json-resume/default.json';
+import { loadJsonResume } from './json-resume/_load';
 
 import * as content from './_about.md';
+
+const jsonResume = await loadJsonResume('default');
 ---
 
 <html lang="en">
@@ -40,12 +42,13 @@ import * as content from './_about.md';
     <Resume jsonResume={jsonResume} />
 
     <Footer class="print:hidden" />
-  </body><style is:global>
-    .resume {
-      page-break-before: always;
-      color: rgba(0, 0, 0, 0.9);
-      font-variant-ligatures: none;
-      line-height: normal;
-    }
-  </style>
+    <style is:global>
+      .resume {
+        page-break-before: always;
+        color: rgba(0, 0, 0, 0.9);
+        font-variant-ligatures: none;
+        line-height: normal;
+      }
+    </style>
+  </body>
 </html>

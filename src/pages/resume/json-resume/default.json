@@ -7,7 +7,7 @@
     "email": "contact@tigeroakes.com",
     "phone": "+1-253-778-6251",
     "url": "https://tigeroakes.com",
-    "summary": "Highly skilled software developer with over 10 years of experience building 3 web browsers, hundreds of open source projects, performant apps, and web standards.",
+    "summary": "Highly skilled software developer with over 12 years of experience building 3 web browsers, hundreds of open source projects, performant apps, and web standards.",
     "location": {
       "city": "Seattle",
       "region": "WA",
@@ -84,6 +84,13 @@
       ]
     },
     {
+      "name": "Centre for Sustainable Food Systems at UBC Farm",
+      "position": "Software Developer",
+      "website": "https://www.litefarm.org/",
+      "startDate": "2016-05-14",
+      "endDate": "2017-04-14"
+    },
+    {
       "name": "Oakes Management LLC",
       "position": "Web Developer and IT Manager",
       "url": "https://omlhawaii.com",
@@ -97,7 +104,7 @@
       "highlights": [
         "Built Maskable.app, go-to developer tool recommended by Google & CSS Tricks, used **11,000+ times/month**.",
         "Implemented icon features for Google Bubblewrap & Microsoft PWABuilder, used **2,000+ times/month**.",
-        "Maintainer for **Rollup** ES6 module bundler, adding **TypeScript typings and compiler support** to all plugins.",
+        "Maintainer for **Rollup** ES6 module bundler, adding **TypeScript types and compiler support** to all plugins.",
         "Created Big Island Buses offline web app with County of Hawai'i, won Congressional App Challenge 2014."
       ]
     },
@@ -131,6 +138,11 @@
       "title": "Hardcore Top 3: Yelp Hackathon 24.0 (out of 44)",
       "date": "2017-11-15",
       "awarder": "Yelp"
+    },
+    {
+      "title": "UBC Work Learn International Undergraduate Research Award",
+      "date": "2016-05-14",
+      "awarder": "University of British Columbia"
     },
     {
       "title": "Grand Prize: Congressional App Challenge 2014: Hawaii’s 2nd Congressional District",
