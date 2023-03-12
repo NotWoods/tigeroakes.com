@@ -44,9 +44,9 @@ export function SidebarContent(props: Props) {
 
   return (
     <div
-      class={`text-shadow overflow-x-hidden ${classes.container} ${
-        containerClass[props.animationState]
-      }`}
+      class={`text-shadow text-slate-200 overflow-x-hidden ${
+        classes.container
+      } ${containerClass[props.animationState]}`}
     >
       {props.animationState !== 'closed' && (
         <div class={classes.sidebar}>Sidebar</div>

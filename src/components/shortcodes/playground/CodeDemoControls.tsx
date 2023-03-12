@@ -37,7 +37,9 @@ export function CodeDemoControls({ controls, ...props }: ControlsProps) {
 
   return (
     <CodeDemo {...props}>
-      <div class="bg-slate-200 mx-4 relative">{props.children}</div>
+      <div class="bg-slate-200 text-slate-800 mx-4 relative">
+        {props.children}
+      </div>
       <fieldset class="px-4 py-2" disabled={!mounted}>
         {controls}
       </fieldset>

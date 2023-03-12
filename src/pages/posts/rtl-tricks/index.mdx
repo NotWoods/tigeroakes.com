@@ -1,0 +1,117 @@
+---
+layout: ../../../layouts/PostLayout.astro
+title: Tricks for easier right-to-left CSS styling
+description: Using CSS custom properties for elements without logical properties.
+date: 2023-03-12
+tags:
+  - Web
+  - CSS
+  - Internationalization
+categories:
+  - Planet Mozilla
+---
+
+import { HelloWorld, AutoMirrorIcon, SidebarWithShadow } from './RtlDemo.tsx';
+
+Did you know millions of people read and write text from [right to left](https://rtlstyling.com/posts/rtl-styling)? This is true for languages like Arabic, Hebrew, and Persian. When localizing your website or app for these languages, we need to change both the text that we display and our layout.
+
+<HelloWorld />
+
+Modern CSS actually includes [many features that make it easier to write multi-directional layouts](https://css-tricks.com/building-multi-directional-layouts/). Flexbox and grid layouts will [change their layout automatically](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) based on the writing direction. [CSS logical properties and values](https://css-tricks.com/building-multi-directional-layouts/#aa-introducing-css-logical-properties-and-values) lets us use `start` and `end` instead of `left` and `right` in many properties, and these will also automatically change based on the writing direction.
+
+However, there are still some things that we need to do manually. Images and shadows don't have multi-directional properties. How do we avoid writing two different sets of CSS?
+
+While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I introduced a [CSS custom property](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to make it easier for us to create shadows and icons that change direction in <attr title="Right to Left">RTL</attr> languages. The CSS code just looks like this:
+
+```css
+[dir='ltr'] {
+  --x-direction: 1;
+}
+
+[dir='rtl'] {
+  --x-direction: -1;
+}
+```
+
+This simply sets a custom property to `1` or `-1` depending on the [`dir` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/MathML/Global_attributes/dir). This doesn't do much on its own, but when paried with other CSS features this one property made it much easier to create multi-directional layouts.
+
+## Icons
+
+Here we have a button to open a sidebar. It shows the sidebar on the left.
+
+<svg
+  width="28"
+  height="28"
+  viewBox="0 0 28 28"
+  xmlns="http://www.w3.org/2000/svg"
+  class="mx-auto"
+>
+  <path
+    id="panel-icon"
+    d="M17.7197 11.5303C17.4268 11.2374 17.4268 10.7626 17.7197 10.4697C18.0126 10.1768 18.4874 10.1768 18.7803 10.4697L21.7803 13.4697C22.0732 13.7626 22.0732 14.2374 21.7803 14.5303L18.7803 17.5303C18.4874 17.8232 18.0126 17.8232 17.7197 17.5303C17.4268 17.2374 17.4268 16.7626 17.7197 16.4697L19.4393 14.75H13.75C13.3358 14.75 13 14.4142 13 14C13 13.5858 13.3358 13.25 13.75 13.25H19.4393L17.7197 11.5303ZM22.2505 4C24.3216 4 26.0005 5.67893 26.0005 7.75V20.2501C26.0005 22.3211 24.3216 24.0001 22.2505 24.0001H5.75391C3.68284 24.0001 2.00391 22.3211 2.00391 20.2501V7.75C2.00391 5.67893 3.68284 4 5.75391 4H22.2505ZM24.5005 7.75C24.5005 6.50736 23.4932 5.5 22.2505 5.5H11.0047V22.5001H22.2505C23.4932 22.5001 24.5005 21.4927 24.5005 20.2501V7.75Z"
+    fill="currentColor"
+  />
+</svg>
+
+However, in RTL the sidebar will show up on the right. As a result, we want to flip this icon. We can use a CSS transform. Applying `transform: scaleX(-1);` will mirror the icon and make it point in the opposite direction.
+
+<svg
+  width="28"
+  height="28"
+  viewBox="0 0 28 28"
+  xmlns="http://www.w3.org/2000/svg"
+  class="mx-auto"
+  style="transform: scaleX(-1);"
+>
+  <use href="#panel-icon" />
+</svg>
+
+If we use `transform: scaleX(1)` instead, the icon goes back to normal. The scale transform doesn't have an effect when you scale by 1, just like multiplying a number by 1 is equal to the same number.
+
+This can be generalized with the `--x-direction` CSS custom property. Since the value will always be `1` or `-1`, we can directly use it as a scaling factor.
+
+```css
+.auto-mirror-icon {
+  transform: scaleX(var(--x-direction));
+}
+```
+
+<AutoMirrorIcon client:visible />
+
+## Shadows
+
+Now that the sidebar is open, we want to give it a shadow to separate it from other content. Our designs use a shadow that's offset to the left by 4 pixels. This is done with the [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) CSS property.
+
+```css
+.shadow {
+  /*            x y blur color */
+  box-shadow: 4px 0 3px rgba(0, 0, 0, 0.5);
+}
+```
+
+But as soon as we change to a RTL layout, the shadow is no longer visible.
+
+<SidebarWithShadow dirAware={false} client:visible />
+
+In right to left layouts, we need the shadow's X offset to be `-4px` instead of `4px`. Once again we can use the `--x-direction` custom property to generalize this.
+
+We can represent this as a math formula: _4px \* x-direction_.
+
+In CSS, we represent this formula using the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) function.
+
+```css
+calc(4px * var(--x-direction))
+```
+
+The final shadow CSS looks like this:
+
+```css
+.shadow {
+  /*                                       x y blur color */
+  box-shadow: calc(4px * var(--x-direction)) 0 3px rgba(0, 0, 0, 0.5);
+}
+```
+
+<SidebarWithShadow dirAware={true} client:visible />
+
+With this simple trick, you can quickly write multi-directional layouts for your app. CSS custom properties, like regular CSS properties, will [cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade) and affect all descendant HTML elements. This means you just need to set `--x-direction` once in your root `<html>` element, and then you can use it anywhere else without setting it again.

@@ -1,4 +1,5 @@
-import type { ComponentChildren, Ref } from 'preact';
+import type { ComponentChildren, JSX, Ref } from 'preact';
+import { DEMO_CLASSES } from './Demo';
 
 export interface Props {
   title?: ComponentChildren;
@@ -6,6 +7,8 @@ export interface Props {
   formRef?: Ref<HTMLFormElement>;
   onInput?: (event: Event) => void;
   onReset?: (event: Event) => void;
+  class?: string;
+  style?: string | JSX.CSSProperties;
 }
 
 const preventDefault = (event: Event) => event.preventDefault();
@@ -13,11 +16,12 @@ const preventDefault = (event: Event) => event.preventDefault();
 export function CodeDemo(props: Props) {
   return (
     <form
-      class="not-prose bg-slate-800 text-slate-200 -mx-4 max-w-screen accent-orange-500"
+      class={DEMO_CLASSES + props.class}
       ref={props.formRef}
       onInput={props.onInput}
       onReset={props.onReset}
       onSubmit={preventDefault}
+      style={props.style}
     >
       <header class="flex px-4 items-center">
         <h4 class="flex-1">{props.title || 'Code Demo'}</h4>
