@@ -1,10 +1,10 @@
-import { convertInchesToTwip, IStylesOptions } from 'docx';
+import docx from 'docx';
 
 export const StyleSummary = 'Summary';
 export const StyleDateRange = 'DateRange';
 export const ColorOrange = 'E67237';
 
-export const styles: IStylesOptions = {
+export const styles: docx.IStylesOptions = {
   default: {
     document: {
       run: {
@@ -49,7 +49,7 @@ export const styles: IStylesOptions = {
       paragraph: {
         indent: {
           left: 0,
-          hanging: convertInchesToTwip(0.15),
+          hanging: docx.convertInchesToTwip(0.15),
         },
         spacing: {
           after: 2 * 20,
