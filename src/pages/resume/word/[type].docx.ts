@@ -1,19 +1,6 @@
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
 import { APIRoute, GetStaticPaths } from 'astro';
-import {
-  BorderStyle,
-  convertInchesToTwip,
-  Document,
-  ExternalHyperlink,
-  HeadingLevel,
-  LevelFormat,
-  Packer,
-  Paragraph,
-  ParagraphChild,
-  Tab,
-  TabStopType,
-  TextRun,
-} from 'docx';
+import docx from 'docx';
 import {
   DateRange,
   formatResumeDateRange,
@@ -25,14 +12,14 @@ import { ColorOrange, StyleDateRange, styles, StyleSummary } from './_styles';
 import { loadJsonResume } from '../json-resume/_load';
 
 function joinTags(
-  tags: readonly (string | ParagraphChild)[],
+  tags: readonly (string | docx.ParagraphChild)[],
   separator = ' | '
-): ParagraphChild[] {
+): docx.ParagraphChild[] {
   return tags.flatMap((tag, index) => {
-    const children: ParagraphChild[] = [];
+    const children: docx.ParagraphChild[] = [];
     if (typeof tag === 'string') {
       children.push(
-        new TextRun({
+        new docx.TextRun({
           text: tag,
           break: tag.length > 50 ? 1 : undefined,
         })
@@ -42,7 +29,7 @@ function joinTags(
     }
 
     if (index < tags.length - 1) {
-      children.push(new TextRun(separator));
+      children.push(new docx.TextRun(separator));
     }
     return children;
   });
@@ -51,18 +38,18 @@ function joinTags(
 function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
   return [
     // Name
-    new Paragraph({
+    new docx.Paragraph({
       text: basics.name,
-      heading: HeadingLevel.TITLE,
+      heading: docx.HeadingLevel.TITLE,
       style: 'Title',
     }),
     // Contact
-    new Paragraph({
+    new docx.Paragraph({
       children: joinTags(
         contactList(basics).map(
           ({ href, text }) =>
-            new ExternalHyperlink({
-              children: [new TextRun(text)],
+            new docx.ExternalHyperlink({
+              children: [new docx.TextRun(text)],
               link: href,
             })
         )
@@ -70,12 +57,12 @@ function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
       style: 'Skills',
     }),
     // Summary
-    new Paragraph({
+    new docx.Paragraph({
       text: basics.summary,
       style: StyleSummary,
       border: {
         bottom: {
-          style: BorderStyle.SINGLE,
+          style: docx.BorderStyle.SINGLE,
           space: 4,
           color: ColorOrange,
         },
@@ -98,34 +85,34 @@ function experience({
   dateRange?: DateRange;
   highlights?: readonly string[];
   first: boolean;
-}): Paragraph[] {
-  const companyText = new TextRun({
+}): docx.Paragraph[] {
+  const companyText = new docx.TextRun({
     text: name,
     font: 'Lato Semibold',
   });
 
   const heading = [
-    new Paragraph({
+    new docx.Paragraph({
       children: [
         url
-          ? new ExternalHyperlink({ children: [companyText], link: url })
+          ? new docx.ExternalHyperlink({ children: [companyText], link: url })
           : companyText,
-        new TextRun({
+        new docx.TextRun({
           text: position ? `, ${position}` : '',
           font: 'Lato',
         }),
         dateRange &&
-          new TextRun({
-            children: [new Tab(), formatResumeDateRange(dateRange)],
+          new docx.TextRun({
+            children: [new docx.Tab(), formatResumeDateRange(dateRange)],
             style: StyleDateRange,
           }),
       ].filter(Boolean),
-      heading: HeadingLevel.HEADING_2,
+      heading: docx.HeadingLevel.HEADING_2,
       style: 'Heading2',
       tabStops: [
         {
-          type: TabStopType.RIGHT,
-          position: convertInchesToTwip(7.5),
+          type: docx.TabStopType.RIGHT,
+          position: docx.convertInchesToTwip(7.5),
         },
       ],
       spacing: first ? { before: 0 } : undefined,
@@ -135,10 +122,14 @@ function experience({
   const bullets =
     highlights?.map(
       (highlight) =>
-        new Paragraph({
+        new docx.Paragraph({
           children: parseHighlight(highlight).map(
             ({ text, bold }) =>
-              new TextRun({ text, bold, font: bold ? 'Lato Heavy' : undefined })
+              new docx.TextRun({
+                text,
+                bold,
+                font: bold ? 'Lato Heavy' : undefined,
+              })
           ),
           bullet: { level: 0 },
           numbering: { level: 0, reference: 'SquareBullet' },
@@ -149,10 +140,10 @@ function experience({
   return [...heading, ...bullets];
 }
 
-function sectionHeader(text: string): Paragraph {
-  return new Paragraph({
+function sectionHeader(text: string): docx.Paragraph {
+  return new docx.Paragraph({
     text,
-    heading: HeadingLevel.HEADING_1,
+    heading: docx.HeadingLevel.HEADING_1,
     style: 'Heading1',
   });
 }
@@ -160,9 +151,9 @@ function sectionHeader(text: string): Paragraph {
 export const get: APIRoute = async ({ params }) => {
   const { type } = params;
   const jsonResume = await loadJsonResume(type);
-  const margin = convertInchesToTwip(0.5);
+  const margin = docx.convertInchesToTwip(0.5);
 
-  const doc = new Document({
+  const doc = new docx.Document({
     creator: 'Tiger Oakes',
     title: `${jsonResume.basics.name} Resume - ${resumeDateFormatter.format(
       new Date()
@@ -174,13 +165,13 @@ export const get: APIRoute = async ({ params }) => {
           levels: [
             {
               level: 0,
-              format: LevelFormat.BULLET,
+              format: docx.LevelFormat.BULLET,
               text: '▪',
               style: {
                 paragraph: {
                   indent: {
-                    left: convertInchesToTwip(0.15),
-                    hanging: convertInchesToTwip(0.15),
+                    left: docx.convertInchesToTwip(0.15),
+                    hanging: docx.convertInchesToTwip(0.15),
                   },
                 },
               },
@@ -223,7 +214,7 @@ export const get: APIRoute = async ({ params }) => {
           ),
 
           sectionHeader('Skills'),
-          new Paragraph({
+          new docx.Paragraph({
             children: joinTags(jsonResume.skills.map((skill) => skill.name)),
             style: 'skills',
           }),
@@ -240,7 +231,7 @@ export const get: APIRoute = async ({ params }) => {
           ),
 
           sectionHeader('Awards'),
-          new Paragraph({
+          new docx.Paragraph({
             children: joinTags(
               jsonResume.awards.map((award) => award.title),
               ', '
@@ -253,7 +244,7 @@ export const get: APIRoute = async ({ params }) => {
   });
 
   // Used to export the file into a .docx file
-  return new Response(await Packer.toBuffer(doc), {
+  return new Response(await docx.Packer.toBuffer(doc), {
     headers: {
       'Content-Type':
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
