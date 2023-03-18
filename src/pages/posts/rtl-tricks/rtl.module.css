@@ -1,13 +1,13 @@
 .rtl[dir="ltr"] {
-  --x-direction: 1;
+  --text-x-direction: 1;
 }
 .rtl[dir="rtl"] {
-  --x-direction: -1;
+  --text-x-direction: -1;
 }
 
 .sidebar {
   box-shadow: 4px 0 3px rgba(0, 0, 0, 0.5);
 }
 .sidebarDirAware {
-  box-shadow: calc(var(--x-direction) * 4px) 0 3px rgba(0, 0, 0, 0.5);
+  box-shadow: calc(var(--text-x-direction) * 4px) 0 3px rgba(0, 0, 0, 0.5);
 }

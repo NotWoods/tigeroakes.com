@@ -32,7 +32,7 @@ export function AutoMirrorIcon() {
     <CodeDemoControls
       controls={
         <CodeDemoControl
-          label={`--x-direction: ${state.xDirection}`}
+          label={`--text-x-direction: ${state.xDirection}`}
           name="xDirection"
           type="range"
           min="-1"
@@ -43,7 +43,7 @@ export function AutoMirrorIcon() {
         />
       }
       {...callbacks}
-      style={{ '--x-direction': state.xDirection }}
+      style={{ '--text-x-direction': state.xDirection }}
     >
       <svg
         width="28"
@@ -51,7 +51,7 @@ export function AutoMirrorIcon() {
         viewBox="0 0 28 28"
         xmlns="http://www.w3.org/2000/svg"
         class="mx-auto"
-        style="transform: scaleX(var(--x-direction))"
+        style="transform: scaleX(var(--text-x-direction))"
       >
         <use href="#panel-icon" />
       </svg>
@@ -74,7 +74,7 @@ export function SidebarWithShadow({ dirAware }: { dirAware: boolean }) {
     <CodeDemoControls
       title={
         dirAware
-          ? 'Sidebar with --x-direction shadow'
+          ? 'Sidebar with --text-x-direction shadow'
           : 'Sidebar with regular shadow'
       }
       controls={
@@ -101,7 +101,7 @@ export function SidebarWithShadow({ dirAware }: { dirAware: boolean }) {
           viewBox="0 0 28 28"
           xmlns="http://www.w3.org/2000/svg"
           class="m-4"
-          style="transform: scaleX(var(--x-direction))"
+          style="transform: scaleX(var(--text-x-direction))"
         >
           <use href="#panel-icon" />
         </svg>

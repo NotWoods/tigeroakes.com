@@ -25,11 +25,11 @@ While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop
 
 ```css
 [dir='ltr'] {
-  --x-direction: 1;
+  --text-x-direction: 1;
 }
 
 [dir='rtl'] {
-  --x-direction: -1;
+  --text-x-direction: -1;
 }
 ```
 
@@ -68,11 +68,11 @@ However, in RTL the sidebar will show up on the right. As a result, we want to f
 
 If we use `transform: scaleX(1)` instead, the icon goes back to normal. The scale transform doesn't have an effect when you scale by 1, just like multiplying a number by 1 is equal to the same number.
 
-This can be generalized with the `--x-direction` CSS custom property. Since the value will always be `1` or `-1`, we can directly use it as a scaling factor.
+This can be generalized with the `--text-x-direction` CSS custom property. Since the value will always be `1` or `-1`, we can directly use it as a scaling factor.
 
 ```css
 .auto-mirror-icon {
-  transform: scaleX(var(--x-direction));
+  transform: scaleX(var(--text-x-direction));
 }
 ```
 
@@ -93,14 +93,14 @@ But as soon as we change to a RTL layout, the shadow is no longer visible.
 
 <SidebarWithShadow dirAware={false} client:visible />
 
-In right to left layouts, we need the shadow's X offset to be `-4px` instead of `4px`. Once again we can use the `--x-direction` custom property to generalize this.
+In right to left layouts, we need the shadow's X offset to be `-4px` instead of `4px`. Once again we can use the `--text-x-direction` custom property to generalize this.
 
 We can represent this as a math formula: _4px \* x-direction_.
 
 In CSS, we represent this formula using the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) function.
 
 ```css
-calc(4px * var(--x-direction))
+calc(4px * var(--text-x-direction))
 ```
 
 The final shadow CSS looks like this:
@@ -108,10 +108,10 @@ The final shadow CSS looks like this:
 ```css
 .shadow {
   /*                                       x y blur color */
-  box-shadow: calc(4px * var(--x-direction)) 0 3px rgba(0, 0, 0, 0.5);
+  box-shadow: calc(4px * var(--text-x-direction)) 0 3px rgba(0, 0, 0, 0.5);
 }
 ```
 
 <SidebarWithShadow dirAware={true} client:visible />
 
-With this simple trick, you can quickly write multi-directional layouts for your app. CSS custom properties, like regular CSS properties, will [cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade) and affect all descendant HTML elements. This means you just need to set `--x-direction` once in your root `<html>` element, and then you can use it anywhere else without setting it again.
+With this simple trick, you can quickly write multi-directional layouts for your app. CSS custom properties, like regular CSS properties, will [cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade) and affect all descendant HTML elements. This means you just need to set `--text-x-direction` once in your root `<html>` element, and then you can use it anywhere else without setting it again.
