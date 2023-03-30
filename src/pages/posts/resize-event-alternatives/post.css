@@ -1,0 +1,7 @@
+article > .prose {
+  overflow-x: hidden;
+}
+
+.resize.-mx-4 {
+  max-width: calc(100% + 2rem);
+}

@@ -1,0 +1,81 @@
+---
+layout: ../../../layouts/PostLayout.astro
+title: Alternatives to the resize event with better performance
+description: Exploring other APIs that integrate closely with the browser's styling engine.
+date: 2023-03-13
+tags:
+  - Web
+  - JavaScript
+  - CSS
+---
+
+import './post.css';
+
+You want to build layouts that work at any screen size. Occasionally, that means you need to know when the user changes their tab or window size.
+
+There's a variety of reasons you might need this. You might be positioning an animation on the screen, or distributing table cells in JavaScript. In the past, developers have often reached for the [`window`'s resize event](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event). However, better and more modern APIs are available that provide better performance.
+
+## What's wrong with the resize event?
+
+The resize event fires every time the window is resized, even before a user lets go of the mouse button. For each pixel the window is changed by when dragging, an event is going to be fired. This can mean that you end up with your event listener getting called hundreds of times, which can clog up the main thread and hurt performance.
+
+<div class="resize flex overflow-hidden items-stretch -mx-4">
+  <iframe
+    class="grow h-full bg-slate-800"
+    width="800"
+    height="150"
+    src="resize-event-demo/"
+  />
+</div>
+
+What makes it worse is that you're probably going to pair the resize event with some logic to read the size of an element on the screen, such as `element.clientWidth`. When [these properties](https://gist.github.com/paulirish/5d52fb081b3570c81e3a) are read in JavaScript, it will force the browser to synchronously calculate the style and layout for the page. [Layout thrashing](https://kellegous.com/j/2013/01/26/layout-performance/) like this is a common performance bottleneck, and the resize event means you'll be hitting it hundreds of times per second.
+
+## Media queries
+
+You'll get the best performance if you can move all your logic to CSS using [media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries). Media queries let you set specific CSS rules that are only used when the window is at a certain size.
+
+You can also use media queries in JavaScript, if nessecary. The [`matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) API lets you pass in media query conditions and check if they match in JS. You can check the current value with [`.matches`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches) and listen to changes in size with the ["change" event](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/change_event).
+
+Unlike the "resize" event, the "change" event will only fire when the breakpoint is passed. In the demo below, you can see an event is only fired when the window is resized past the 400 pixel breakpoint (either becoming smaller than or equal to 400 pixels or larger than 400 pixels).
+
+```js
+const query = matchMedia('(max-width: 400px)');
+
+// is the initial window width less than 400 pixels?
+console.log(query.matches);
+
+// listen to whenever .matches changes
+query.addEventListener('change', (event) => {
+  // is the current window width less than 400 pixels?
+  console.log(event.matches);
+});
+```
+
+<div class="resize flex overflow-hidden items-stretch -mx-4">
+  <iframe
+    class="grow h-full bg-slate-800"
+    width="800"
+    height="150"
+    src="media-query-demo/"
+  />
+</div>
+
+Media queries are the best option if you need to make changes based on window size.
+
+## ResizeObserver
+
+Resize observers are the best option if you need to make changes based on the size of a paticular element.
+
+## Container queries
+
+For my team at Microsoft, [CSS container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries) are a little too new to be used in the codebase.
+
+However, if you're making an evergreen app (or reading this article in the future), container queries are a great CSS-based alternative to ResizeObserver and the window "resize" event. They have very similar syntax to media queries, but instead of matching the window size, they match the size of the element they're applied to.
+
+```css
+@container (max-width: 400px) {
+  .container {
+    background: red;
+  }
+}
+```
