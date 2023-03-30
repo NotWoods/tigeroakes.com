@@ -13,8 +13,13 @@ const { title = 'Code demo' } = Astro.props as Props;
   <body>
     <h4>{title}</h4>
     <main>
-      <p>Drag the corner of the frame to see the count increase.</p>
+      <p class="mt-0">
+        Drag the corner of the frame to see the count increase.
+      </p>
       <slot />
+      <p class="m-0">
+        iframe dimensions: <span id="windowDimensions">0x0</span>
+      </p>
     </main>
   </body>
 
@@ -32,8 +37,22 @@ const { title = 'Code demo' } = Astro.props as Props;
     main {
       @apply bg-slate-200 text-slate-800 mx-4 mb-4 grow p-4;
     }
-    p {
+    p:first-child {
       @apply mt-0;
     }
+    p:last-child {
+      @apply m-0;
+    }
   </style>
+
+  <script>
+    const windowDimensions = document.getElementById('windowDimensions');
+
+    function updateWindowDimensions() {
+      windowDimensions.textContent = `${window.innerWidth}x${window.innerHeight}`;
+    }
+
+    window.addEventListener('resize', updateWindowDimensions);
+    updateWindowDimensions();
+  </script>
 </html>

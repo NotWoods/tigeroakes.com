@@ -2,6 +2,7 @@
 _gen
 public
 dist/
+.astro/
 .cache/
 .output/
 static/assets/images

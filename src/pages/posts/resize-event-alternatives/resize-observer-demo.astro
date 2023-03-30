@@ -1,0 +1,49 @@
+---
+import IframeDemo from './IframeDemo.astro';
+---
+
+<IframeDemo title="ResizeObserver callback count">
+  <div class="box"></div>
+
+  <p>
+    ResizeObserver callback executed: <span id="resizeCount">0</span> times (<span
+      id="lastTime">1.0</span
+    >ms since previous execution)
+  </p>
+  <p class="m-0">
+    rectangle dimensions: <span id="boxDimensions">0x0</span>
+  </p>
+
+  <style>
+    p {
+      @apply m-0;
+    }
+    .box {
+      @apply bg-slate-900 mb-4 mx-auto;
+      width: 500px;
+      max-width: 100%;
+      height: 4rem;
+      max-height: 100%;
+    }
+  </style>
+  <script>
+    const resizeCount = document.getElementById('resizeCount');
+    const lastTime = document.getElementById('lastTime');
+    const boxDimensions = document.getElementById('boxDimensions');
+
+    let count = 0;
+    let lastTimeMs = performance.now();
+
+    const observer = new ResizeObserver(([entry]) => {
+      const now = performance.now();
+      count++;
+
+      resizeCount.textContent = count.toString();
+      lastTime.textContent = (now - lastTimeMs).toFixed(1);
+      boxDimensions.textContent = `${entry.contentRect.width}x${entry.contentRect.height}`;
+
+      lastTimeMs = now;
+    });
+    observer.observe(document.querySelector('.box'));
+  </script>
+</IframeDemo>

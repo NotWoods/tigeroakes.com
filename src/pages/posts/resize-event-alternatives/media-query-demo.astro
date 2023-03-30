@@ -8,7 +8,6 @@ import IframeDemo from './IframeDemo.astro';
       id="lastTime">1.0</span
     >ms since previous execution)
   </p>
-  <p>iframe dimensions: <span id="windowDimensions">0x0</span></p>
 
   <style>
     p {
@@ -18,14 +17,9 @@ import IframeDemo from './IframeDemo.astro';
   <script>
     const resizeCount = document.getElementById('resizeCount');
     const lastTime = document.getElementById('lastTime');
-    const windowDimensions = document.getElementById('windowDimensions');
 
     let count = 0;
     let lastTimeMs = performance.now();
-
-    window.addEventListener('resize', () => {
-      windowDimensions.textContent = `${window.innerWidth}x${window.innerHeight}`;
-    });
 
     const query = matchMedia('(max-width: 400px)');
     query.addEventListener('change', () => {
