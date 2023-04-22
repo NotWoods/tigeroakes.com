@@ -71,6 +71,7 @@ function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
   ];
 }
 
+let lastExperienceWasEmpty = false;
 function experience({
   name,
   position,
@@ -82,7 +83,7 @@ function experience({
   name?: string;
   position?: string;
   url?: string;
-  dateRange?: DateRange;
+  dateRange?: DateRange & { onlyYear?: boolean };
   highlights?: readonly string[];
   first: boolean;
 }): docx.Paragraph[] {
@@ -115,7 +116,7 @@ function experience({
           position: docx.convertInchesToTwip(7.5),
         },
       ],
-      spacing: first ? { before: 0 } : undefined,
+      spacing: first || lastExperienceWasEmpty ? { before: 0 } : undefined,
     }),
   ];
 
@@ -137,6 +138,7 @@ function experience({
         })
     ) ?? [];
 
+  lastExperienceWasEmpty = bullets.length === 0;
   return [...heading, ...bullets];
 }
 
@@ -151,7 +153,7 @@ function sectionHeader(text: string): docx.Paragraph {
 export const get: APIRoute = async ({ params }) => {
   const { type } = params;
   const jsonResume = await loadJsonResume(type);
-  const margin = docx.convertInchesToTwip(0.5);
+  const margin = docx.convertInchesToTwip(0.4);
 
   const doc = new docx.Document({
     creator: 'Tiger Oakes',
@@ -210,10 +212,17 @@ export const get: APIRoute = async ({ params }) => {
             experience({
               ...project,
               first: i === 0,
+              dateRange: project.startDate
+                ? {
+                    startDate: project.startDate,
+                    endDate: project.endDate,
+                    onlyYear: true,
+                  }
+                : undefined,
             })
           ),
 
-          sectionHeader('Skills'),
+          sectionHeader('Technical Proficiencies'),
           new docx.Paragraph({
             children: joinTags(jsonResume.skills.map((skill) => skill.name)),
             style: 'skills',

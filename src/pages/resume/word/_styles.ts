@@ -62,7 +62,7 @@ export const styles: docx.IStylesOptions = {
       id: StyleSummary,
       name: 'Summary',
       run: {
-        size: 11 * 2,
+        size: 10 * 2,
         italics: true,
         color: '191919',
       },

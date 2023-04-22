@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/ProjectLayout.astro
-weight: 1
+weight: 3
 title: Microsoft Edge
 subtitle: Improving PWA management
 color: '#13a689'

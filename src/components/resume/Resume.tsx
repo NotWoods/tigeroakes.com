@@ -9,7 +9,7 @@ import { ResumeHeader, TagList } from './Header';
 
 export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
   return (
-    <main class="resume mx-auto bg-white text-[#212121] text-[10pt] m-[2em] print:m-0 max-w-[8.5in] p-[0.5in]">
+    <main class="resume mx-auto bg-white text-[#212121] text-[10pt] m-[2em] print:m-0 max-w-[8.5in] p-[0.4in]">
       <ResumeHeader basics={jsonResume.basics} />
       <ResumeSectionHeader>Experience</ResumeSectionHeader>
       {jsonResume.work.map((work) => (
@@ -27,12 +27,19 @@ export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
       <ResumeSectionHeader class="mt-[8pt]">Community</ResumeSectionHeader>
       {jsonResume.projects.map((project) => (
         <Fragment key={project.name}>
+          {project.startDate && (
+            <ExperienceDate
+              startDate={project.startDate}
+              endDate={project.endDate}
+              onlyYear
+            />
+          )}
           <ExperienceTitle company={project.name} website={project.url} />
           <ExperienceHighlights highlights={project.highlights} />
         </Fragment>
       ))}
 
-      <ResumeSectionHeader>Skills</ResumeSectionHeader>
+      <ResumeSectionHeader>Technical Proficiencies</ResumeSectionHeader>
       <p class="mb-[8pt]">
         <TagList tags={jsonResume.skills.map((skill) => skill.name)} />
       </p>

@@ -7,7 +7,7 @@
     "email": "contact@tigeroakes.com",
     "phone": "+1-253-778-6251",
     "url": "https://tigeroakes.com",
-    "summary": "Highly skilled software developer with over 12 years of experience building 3 web browsers, hundreds of open source projects, performant apps, and web standards.",
+    "summary": "Seasoned software developer offering 12+ years of experience building 3 web browsers, hundreds of open source projects, performant apps, and web standards. Strong leadership qualities, with an innate ability to steer, empower, and motivate several cross-functional teams to increase overall work efficiency, while promoting technical environment and attaining collective goals. Continuously learning and staying up to date with the latest advancements in software engineering.",
     "location": {
       "city": "Seattle",
       "region": "WA",
@@ -29,38 +29,44 @@
   "work": [
     {
       "name": "Microsoft",
-      "position": "Software Engineer II",
+      "position": "Software Engineer II - Microsoft Loop",
       "url": "https://www.microsoft.com/en-us/microsoft-loop",
       "startDate": "2021-08-09",
+      "location": "Redmond, WA, USA",
       "highlights": [
-        "Spearheaded UI framework migration by **coordinating designers, product managers, and engineers in 3 orgs** and multiple teams, doubling rendering performance and saving engineering time across all of Microsoft.",
-        "Served as **React/TypeScript subject matter expert**—significantly raised standards for performance, accessibility, & internationalization through mentorship, writing automated tools, giving tech talks, writing articles.",
-        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**.",
-        "Removed 1.5 seconds from repeat loads with **IndexedDB** caching and **CSS** performance improvements."
+        "Doubled rendering performance and saved engineering time across all of Microsoft by leading UI framework migration process with designers, product managers, and engineers in 3 orgs and multiple teams, ",
+        "Played a key role as **React, TypeScript, CSS, and HTML subject matter expert** to strengthen performance, accessibility, & internationalization by coaching 50+ engineers, developing automated tools, giving tech talks, writing articles.",
+        "Proactively identified hundreds of bugs in 5,000+ files by introducing and implementing automated tooling.",
+        "Removed 1.5 seconds from repeat loads with **offline IndexedDB** caching and CSS performance improvements.",
+        "Unlocked key features by inventing novel virtualization system to support users with 1,000+ pages shared with them."
       ]
     },
     {
       "name": "Mozilla",
-      "position": "Part-Time Android Developer",
+      "position": "Part-Time Android Developer - Firefox",
       "url": "https://github.com/mozilla-mobile/firefox-android",
       "startDate": "2019-05-14",
       "endDate": "2020-08-30",
+      "location": "Toronto, ON, Canada",
       "highlights": [
-        "Built and shipped brand new web browser in **Kotlin** to **over 100 million users on Google Play Store**.",
-        "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
-        "Coordinated with **Google** and **Intel** developers to add maskable icon support to Firefox and Chrome.",
-        "Added Trusted Web Activity support to Firefox for Android, **featured in Chrome Dev Summit 2019 keynote**."
+        "Offered a native feel to thousands of web apps as a **feature lead** for Progressive Web App support.",
+        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium (W3C)**.",
+        "Bridged communication gap with Google and Intel developers to add maskable icon support to Firefox and Chrome, which made thousands of web apps on par with Android apps in the home screen and drove web app adoption.",
+        "Built and shipped brand new web browser in **Kotlin** to 100M+ users on Google Play Store.",
+        "Featured Firefox in front of hundreds at Chrome Dev Summit 2019 keynote by adding Trusted Web Activity support."
       ]
     },
     {
       "name": "Google",
-      "position": "Software Engineering Intern",
+      "position": "Software Engineering Intern - Chrome for Android",
       "url": "https://chrome-supersize.firebaseapp.com/",
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
+      "location": "Waterloo, ON, Canada",
       "highlights": [
-        "Designed and built **JavaScript** internal tool to analyze millions of files. The tool was used to **save 30 KB** in the first week after release and avoid limits that would have halted Google Chrome for Android updates.",
-        "Used streams and **background threads** to handle 180 MB downloads, rendering partial data **7x faster**."
+        "Increased new user retention and saved 100+ KB by designing and building **JavaScript** tool to analyze millions of files.",
+        "Prevented significant release schedule delays by proactively identifying **Java** resource limits that were to be exceeded.",
+        "Improved time to first render by **700%** by using streams and **background worker threads** to handle 180 MB downloads."
       ]
     },
     {
@@ -69,9 +75,7 @@
       "url": "http://vitalmechanics.com",
       "startDate": "2018-01-05",
       "endDate": "2018-04-25",
-      "highlights": [
-        "Rendered 3D **WebGL** clothing simulations by interfacing between Electron client and **C++** server."
-      ]
+      "location": "Vancouver, BC, Canada"
     },
     {
       "name": "Yelp",
@@ -79,38 +83,39 @@
       "url": "https://www.yelp.com/search?find_desc=Handyman+Services",
       "startDate": "2017-08-27",
       "endDate": "2017-12-17",
-      "highlights": [
-        "Built new web search page feature in **Flow**, **React**, **Redux**, and **Python** displayed to **1 million users monthly**.",
-        "Ported **Android** business logic to **Python API** package to serve multiple platforms, later turned into microservice."
-      ]
+      "location": "San Francisco, CA, USA"
     },
     {
       "name": "Centre for Sustainable Food Systems at UBC Farm",
       "position": "Software Developer",
       "url": "https://www.litefarm.org/",
       "startDate": "2016-05-14",
-      "endDate": "2017-04-14"
+      "endDate": "2017-04-14",
+      "location": "Vancouver, BC, Canada"
     },
     {
       "name": "Oakes Management LLC",
       "position": "Web Developer and IT Manager",
       "url": "https://omlhawaii.com",
       "startDate": "2009-10-01",
-      "endDate": "2015-08-10"
+      "endDate": "2015-08-10",
+      "location": "Kailua-Kona, HI, USA"
     }
   ],
   "projects": [
     {
       "name": "Open Source",
+      "startDate": "2013-09-05",
       "highlights": [
         "Built Maskable.app, go-to developer tool recommended by Google & CSS Tricks, used **11,000+ times/month**.",
-        "Implemented icon features for Google Bubblewrap & Microsoft PWABuilder, used **2,000+ times/month**.",
-        "Maintainer for **Rollup** ES6 module bundler, adding **TypeScript types and compiler support** to all plugins.",
-        "Created Big Island Buses offline web app with County of Hawai'i, won Congressional App Challenge 2014."
+        "Wrote new features for typescript-eslint, eslint-plugin-jest, eslint-plugin-storybook, used by **5M+ developers daily**.",
+        "Maintainer for **Rollup** ES6 module bundler, adding **TypeScript** types and compiler support to all plugins.",
+        "Produced Big Island Buses offline web app with County of Hawai'i as well as won Congressional App Challenge 2014."
       ]
     },
     {
       "name": "Speaking and Writing",
+      "startDate": "2014-06-24",
       "highlights": [
         "Speaker at **JSConf Budapest 2022**, **CascadiaJS**, and **HalfStack** conferences with thousands of attendees.",
         "Wrote web development articles for **CSS Tricks**, **MDN**, and **web.dev** with thousands of views.",

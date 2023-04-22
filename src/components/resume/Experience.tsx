@@ -6,9 +6,14 @@ export const resumeDateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
   month: 'short',
 });
+const resumeYearFormatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+});
 
-function formatResumeDate(date: string) {
-  return resumeDateFormatter.format(dateFromString(date));
+function formatResumeDate(date: string, onlyYear?: boolean) {
+  return (onlyYear ? resumeYearFormatter : resumeDateFormatter).format(
+    dateFromString(date)
+  );
 }
 
 function formatIsoDate(date: string | undefined) {
@@ -23,20 +28,28 @@ export interface DateRange {
   endDate?: string;
 }
 
-export function formatResumeDateRange({ startDate, endDate }: DateRange) {
+export function formatResumeDateRange({
+  startDate,
+  endDate,
+  onlyYear,
+}: DateRange & { onlyYear?: boolean }) {
   return [
-    formatResumeDate(startDate),
-    endDate ? formatResumeDate(endDate) : 'Present',
+    formatResumeDate(startDate, onlyYear),
+    endDate ? formatResumeDate(endDate, onlyYear) : 'Present',
   ].join(' — ');
 }
 
-export const ExperienceDate = ({ startDate, endDate }: DateRange) => {
+export const ExperienceDate = ({
+  startDate,
+  endDate,
+  onlyYear,
+}: DateRange & { onlyYear?: boolean }) => {
   return (
     <time
       class="text-orange-500 float-right text-[0.825em] ml-4"
       dateTime={`${formatIsoDate(startDate)}/${formatIsoDate(endDate)}`}
     >
-      {formatResumeDateRange({ startDate, endDate })}
+      {formatResumeDateRange({ startDate, endDate, onlyYear })}
     </time>
   );
 };

@@ -61,9 +61,7 @@ export const ResumeHeader = ({ basics }: Pick<ResumeSchema, 'basics'>) => {
           ))}
         />
       </p>
-      <p class="italic text-neutral-700 mb-[4pt] text-[11pt]">
-        {basics.summary}
-      </p>
+      <p class="italic text-neutral-700 mb-[4pt]">{basics.summary}</p>
     </header>
   );
 };
