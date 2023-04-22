@@ -1,7 +1,5 @@
 import { Temporal } from '@js-temporal/polyfill';
 import type { MarkdownInstance } from 'astro';
-import { dirname, join, relative } from 'path';
-import { fileURLToPath } from 'url';
 import tagColors from '../data/tags.json';
 import { dateFromString } from './date';
 import { trailingSlash } from './path';
