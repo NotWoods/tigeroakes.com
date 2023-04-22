@@ -36,7 +36,7 @@
       "highlights": [
         "Doubled rendering performance and saved engineering time across all of Microsoft by leading UI framework migration process with designers, product managers, and engineers in 3 orgs and multiple teams, ",
         "Played a key role as **React, TypeScript, CSS, and HTML subject matter expert** to strengthen performance, accessibility, & internationalization by coaching 50+ engineers, developing automated tools, giving tech talks, writing articles.",
-        "Proactively identified hundreds of bugs in 5,000+ files by introducing and implementing automated tooling.",
+        "Proactively identified hundreds of bugs in 5,000+ files by introducing and implementing automated **Node.js** tooling.",
         "Removed 1.5 seconds from repeat loads with **offline IndexedDB** caching and CSS performance improvements.",
         "Unlocked key features by inventing novel virtualization system to support users with 1,000+ pages shared with them."
       ]
