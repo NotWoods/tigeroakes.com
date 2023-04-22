@@ -1,5 +1,5 @@
 ---
-import IframeDemo from './IframeDemo.astro';
+import IframeDemo from './_IframeDemo.astro';
 ---
 
 <IframeDemo title="Media query event count">
@@ -8,35 +8,35 @@ import IframeDemo from './IframeDemo.astro';
       id="lastTime">1.0</span
     >ms since previous execution)
   </p>
-
-  <style>
-    p {
-      @apply m-0;
-    }
-
-    @media (max-width: 400px) {
-      body {
-        /* Use a black background when the window is less than 400 pixels wide */
-        background: #000;
-      }
-    }
-  </style>
-  <script>
-    const resizeCount = document.getElementById('resizeCount');
-    const lastTime = document.getElementById('lastTime');
-
-    let count = 0;
-    let lastTimeMs = performance.now();
-
-    const query = matchMedia('(max-width: 400px)');
-    query.addEventListener('change', () => {
-      const now = performance.now();
-      count++;
-
-      resizeCount.textContent = count.toString();
-      lastTime.textContent = (now - lastTimeMs).toFixed(1);
-
-      lastTimeMs = now;
-    });
-  </script>
 </IframeDemo>
+
+<style>
+  p {
+    @apply m-0;
+  }
+
+  @media (max-width: 400px) {
+    body {
+      /* Use a black background when the window is less than 400 pixels wide */
+      background: #000;
+    }
+  }
+</style>
+<script>
+  const resizeCount = document.getElementById('resizeCount');
+  const lastTime = document.getElementById('lastTime');
+
+  let count = 0;
+  let lastTimeMs = performance.now();
+
+  const query = matchMedia('(max-width: 400px)');
+  query.addEventListener('change', () => {
+    const now = performance.now();
+    count++;
+
+    resizeCount.textContent = count.toString();
+    lastTime.textContent = (now - lastTimeMs).toFixed(1);
+
+    lastTimeMs = now;
+  });
+</script>
