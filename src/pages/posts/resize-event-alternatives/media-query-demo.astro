@@ -13,6 +13,13 @@ import IframeDemo from './IframeDemo.astro';
     p {
       @apply m-0;
     }
+
+    @media (max-width: 400px) {
+      body {
+        /* Use a black background when the window is less than 400 pixels wide */
+        background: #000;
+      }
+    }
   </style>
   <script>
     const resizeCount = document.getElementById('resizeCount');

@@ -1,0 +1,30 @@
+<svg role="img" aria-label="Diagram of CSS box model with a margin area, wrapping a border area, wrapping a padding area, wrapping a content area. Everything inside the border area is labelled as the Border Box. Everything just inside the content area is labelled as the Content Box." viewBox="0 0 357 257" xmlns="http://www.w3.org/2000/svg" style="stroke-linecap:square;stroke-miterlimit:1.5;max-width:714px;margin:auto">
+  <style>
+    text {
+      font-family: 'CascadiaCode-Regular', 'Cascadia Code', monospace;
+      font-size: 12px;
+    }
+    .dashed {
+      fill: none;
+      stroke: #000;
+      stroke-width: 1px;
+      stroke-dasharray: 0,3,0,0
+    }
+  </style>
+  <path style="fill:#f6b26b;fill-opacity:.66" d="M0 0h357v256.5H0z"/>
+  <text x="7.2" y="15.8">margin</text>
+  <path style="fill:#ffe599;fill-opacity:.66" d="M7 23h343v226.5H7z"/>
+  <text x="24.4" y="33">border</text>
+  <path style="fill:#93c47d;fill-opacity:.55" d="M17 33h323v206.5H17z"/>
+  <text x="39.9" y="48.6">padding</text>
+  <path style="fill:#6fa8dc;fill-opacity:.66" d="M43.5 56h270v160.5h-270z"/>
+  <text x="63.4" y="72.1">content</text>
+  <path class="dashed" d="M7 23h343v226.5H7z"/>
+  <path d="m309.5 27.2-1.5-3-1.5 3h3Z"/>
+  <path d="M308 26.6v9.7" class="dashed"/>
+  <text x="275.5" y="44.1">Border Box</text>
+  <path class="dashed" d="M43.5 56h270v160.5h-270z"/>
+  <path d="m270 60.5-1.5-3-1.5 3h3Z"/>
+  <path d="M268.5 59.9v9.7" class="dashed"/>
+  <text x="234.2" y="77.3">Content Box</text>
+</svg>
