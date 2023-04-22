@@ -1,6 +1,6 @@
 ---
 title: Resume
-pdf: pdf/Tiger_Oakes_resume_-_March_2023.pdf
+pdf: pdf/Tiger_Oakes_resume_-_April_2023.pdf
 json_resume: default
 ---
 
