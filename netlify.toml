@@ -28,7 +28,7 @@ for = "/*"
   sync-xhr 'none'
   '''
   Content-Security-Policy = '''
-  frame-ancestors 'none';
+  frame-ancestors 'self';
   form-action buttondown.email;
   default-src 'none';
   style-src 'self' 'unsafe-inline';
