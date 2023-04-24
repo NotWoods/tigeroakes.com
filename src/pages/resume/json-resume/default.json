@@ -30,11 +30,11 @@
     {
       "name": "Microsoft",
       "position": "Software Engineer II - Microsoft Loop",
-      "url": "https://www.microsoft.com/en-us/microsoft-loop",
+      "url": "https://loop.microsoft.com/",
       "startDate": "2021-08-09",
       "location": "Redmond, WA, USA",
       "highlights": [
-        "Doubled rendering performance and saved engineering time across all of Microsoft by leading UI framework migration process with designers, product managers, and engineers in 3 orgs and multiple teams, ",
+        "Doubled rendering performance and saved engineering time across all of Microsoft by leading UI framework migration process with designers, product managers, and engineers in 3 orgs and multiple teams.",
         "Played a key role as **React, TypeScript, CSS, and HTML subject matter expert** to strengthen performance, accessibility, & internationalization by coaching 50+ engineers, developing automated tools, giving tech talks, writing articles.",
         "Proactively identified hundreds of bugs in 5,000+ files by introducing and implementing automated **Node.js** tooling.",
         "Removed 1.5 seconds from repeat loads with **offline IndexedDB** caching and CSS performance improvements.",

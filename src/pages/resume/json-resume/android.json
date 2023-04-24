@@ -1,35 +1,37 @@
 {
   "basics": {
-    "summary": "Highly skilled software developer with over 12 years of experience building 3 Android and desktop web browsers, hundreds of open source projects, performant apps, and web standards."
+    "summary": "Seasoned software developer offering 12+ years of experience building 3 Android and desktop web browsers, hundreds of open source projects, performant apps, and language standards. Strong leadership qualities, with an innate ability to steer, empower, and motivate several cross-functional teams to increase overall work efficiency, while promoting technical environment and attaining collective goals. Continuously learning and staying up to date with the latest advancements in software engineering."
   },
   "work": [
     {
       "name": "Microsoft",
-      "position": "Software Engineer II",
+      "position": "Software Engineer II - Microsoft Loop",
       "highlights": [
-        "Spearheaded UI framework migration by **coordinating designers, product managers, and engineers in 3 orgs** and multiple teams, doubling rendering performance and saving engineering time across all of Microsoft.",
-        "Advised on sharing code with **React Native**, centralizing business logic between the web, **iOS**, & **Android** apps.",
-        "Served as **React/TypeScript subject matter expert**—significantly raised standards for performance, accessibility, and internationalization through mentorship, writing automated tools, giving tech talks, writing articles.",
-        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium**."
+        "Doubled rendering performance and saved engineering time across all of Microsoft by leading UI framework migration process with designers, product managers, and engineers in 3 orgs and multiple teams.",
+        "Centralized business logic between the web, **iOS**, & **Android** apps by advising on code sharing with **React Native**.",
+        "Played a key role as **React, TypeScript, CSS, and HTML subject matter expert** to strengthen performance, accessibility, & internationalization by coaching 50+ engineers, developing automated tools, giving tech talks, writing articles.",
+        "Proactively identified hundreds of bugs in 5,000+ files by introducing and implementing automated **CI/CD** tooling.",
+        "Removed 1.5 seconds from repeat loads with **offline database** caching and rendering performance improvements.",
+        "Unlocked key features by inventing novel virtualization system to support users with 1,000+ pages shared with them."
       ]
     },
     {
       "name": "Mozilla",
-      "position": "Android Developer Intern & Part-Time Student Worker",
+      "position": "Part-Time Android Developer - Firefox",
       "highlights": [
-        "Built and shipped brand new web browser in **Kotlin** to **over 100 million users on Google Play Store**.",
-        "Served as a **feature lead for Progressive Web App support**, providing a native feel to **thousands of web apps**.",
-        "Coordinated with **Google** and **Intel** developers to add maskable icon support to Firefox and Chrome Android.",
-        "Added Trusted Web Activity support to Firefox for Android, **featured in Chrome Dev Summit 2019 keynote**."
+        "Built and shipped brand new Android web browser in **Kotlin** to 100M+ users on Google Play Store.",
+        "Bridged communication gap with Google and Intel developers to add maskable icon support to Firefox and Chrome Android, which made thousands of web apps on par with Android apps in the home screen and drove web app adoption.",
+        "Featured Firefox in front of hundreds at Chrome Dev Summit 2019 keynote by adding Trusted Web Activity support.",
+        "Set web and Android interaction standards by writing specifications as **World Wide Web Consortium (W3C)** member."
       ]
     },
     {
       "name": "Google",
-      "position": "Software Engineering Intern",
+      "position": "Software Engineering Intern - Chrome for Android",
       "highlights": [
-        "Wrote **Java** bytecode rewriter to insert code automatically and remove Android resume memory leaks.",
-        "Designed and built **JavaScript** internal tool to analyze millions of Java .dex files. The tool was used to **save 30 KB** in the first week after release and avoid method count limits that would've halted Google Chrome for Android updates.",
-        "Shrank app by 29 KB by migrating **Android Java bytecode** compiler tools."
+        "Increased new user retention, saved 100+ KB by designing & building internal tool to analyze millions of APK methods.",
+        "Prevented significant release schedule delays by proactively identifying **Java** resource limits that were to be exceeded.",
+        "Improved time to first render by **700%** by using streams and **background worker threads** to handle 180 MB downloads."
       ]
     },
     {
@@ -38,11 +40,7 @@
     },
     {
       "name": "Yelp",
-      "position": "Software Engineer Intern",
-      "highlights": [
-        "Built new web search page feature in **Flow**, **React**, and **Redux** displayed to **1 million users monthly**.",
-        "Ported **Android** business logic to **Python API** package to serve multiple platforms, later turned into microservice."
-      ]
+      "position": "Software Engineer Intern"
     },
     {
       "name": "Centre for Sustainable Food Systems at UBC Farm",
@@ -59,7 +57,8 @@
       "highlights": [
         "Implemented Android icon features for Google Bubblewrap & Microsoft PWABuilder, used **2,000+ times/month**.",
         "Built Maskable.app, go-to developer tool recommended by Google & CSS Tricks, used **11,000+ times/month**.",
-        "Programmed **Android AR** viewer in **Unity** with **C#**. Built inspector fields so junior devs could quickly update views."
+        "Wrote new features for various code linter packages used by **5M+ developers daily**.",
+        "Reduced hours of dev time by building editor UI in **Unity** for **Android AR** viewer, so juniors could make quick changes."
       ]
     },
     {
