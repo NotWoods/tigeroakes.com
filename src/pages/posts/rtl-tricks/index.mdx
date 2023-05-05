@@ -21,7 +21,7 @@ Modern CSS actually includes [many features that make it easier to write multi-d
 
 However, there are still some things that we need to do manually. Images and shadows don't have multi-directional properties. How do we avoid writing two different sets of CSS?
 
-While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I introduced a [CSS custom property](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to make it easier for us to create shadows and icons that change direction in <attr title="Right to Left">RTL</attr> languages. The CSS code just looks like this:
+While working on [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop), I introduced a [CSS custom property](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to make it easier for us to create shadows and icons that change direction in RTL (Right To Left) languages. The CSS code just looks like this:
 
 ```css
 [dir='ltr'] {
@@ -95,7 +95,7 @@ But as soon as we change to a RTL layout, the shadow is no longer visible.
 
 In right to left layouts, we need the shadow's X offset to be `-4px` instead of `4px`. Once again we can use the `--text-x-direction` custom property to generalize this.
 
-We can represent this as a math formula: _4px \* x-direction_.
+We can represent this as a math formula: $$4\text{px} * {x\text-direction}$$.
 
 In CSS, we represent this formula using the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) function.
 

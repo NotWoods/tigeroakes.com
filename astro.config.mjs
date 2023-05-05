@@ -6,6 +6,8 @@ import tailwind from '@astrojs/tailwind';
 import htmlMinify from '@frontendista/astro-html-minify';
 import { defineConfig } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 
 // https://astro.build/config
 export default defineConfig({
@@ -87,5 +89,7 @@ export default defineConfig({
     shikiConfig: {
       theme: 'dark-plus',
     },
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [[rehypeKatex, { output: 'mathml' }]],
   },
 });
