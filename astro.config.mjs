@@ -18,7 +18,7 @@ export default defineConfig({
   integrations: [
     image({ serviceEntryPoint: '@astrojs/image/sharp' }),
     preact(),
-    tailwind({ config: { applyBaseStyles: false } }),
+    tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap(),
     htmlMinify({

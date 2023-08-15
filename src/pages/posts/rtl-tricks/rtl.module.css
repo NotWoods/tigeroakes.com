@@ -1,7 +1,7 @@
-.rtl[dir="ltr"] {
+.rtl[dir='ltr'] {
   --text-x-direction: 1;
 }
-.rtl[dir="rtl"] {
+.rtl[dir='rtl'] {
   --text-x-direction: -1;
 }
 

@@ -1,7 +1,8 @@
 /* Fonts only loaded for articles */
 @font-face {
   font-family: 'Lato';
-  src: url('/font/lato/LatoLatin-Bold.woff2') format('woff2'),
+  src:
+    url('/font/lato/LatoLatin-Bold.woff2') format('woff2'),
     /* Modern Browsers */ url('/font/lato/LatoLatin-Bold.woff') format('woff'),
     /* Modern Browsers */ url('/font/lato/LatoLatin-Bold.ttf')
       format('truetype');
@@ -12,7 +13,8 @@
 }
 @font-face {
   font-family: 'Lato';
-  src: url('/font/lato/LatoLatin-Italic.woff2') format('woff2'),
+  src:
+    url('/font/lato/LatoLatin-Italic.woff2') format('woff2'),
     /* Modern Browsers */ url('/font/lato/LatoLatin-Italic.woff') format('woff'),
     /* Modern Browsers */ url('/font/lato/LatoLatin-Italic.ttf')
       format('truetype');
@@ -24,7 +26,8 @@
 
 @font-face {
   font-family: 'Cascadia Mono';
-  src: url('/font/cascadia-code/CascadiaMono-Regular.woff2') format('woff2'),
+  src:
+    url('/font/cascadia-code/CascadiaMono-Regular.woff2') format('woff2'),
     url('/font/cascadia-code/CascadiaMono-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;

@@ -7,12 +7,12 @@
   "private": true,
   "devDependencies": {
     "@11ty/eleventy-img": "^3.1.0",
-    "@astrojs/image": "^0.16.6",
-    "@astrojs/mdx": "^0.19.0",
-    "@astrojs/preact": "^2.1.0",
-    "@astrojs/rss": "^2.3.2",
-    "@astrojs/sitemap": "^1.2.2",
-    "@astrojs/tailwind": "^3.1.1",
+    "@astrojs/image": "^0.17.3",
+    "@astrojs/mdx": "^0.19.7",
+    "@astrojs/preact": "^2.2.2",
+    "@astrojs/rss": "^2.4.4",
+    "@astrojs/sitemap": "^2.0.1",
+    "@astrojs/tailwind": "^4.0.0",
     "@frontendista/astro-html-minify": "^1.0.7",
     "@js-temporal/polyfill": "^0.4.3",
     "@kurone-kito/jsonresume-types": "^0.3.7",
@@ -20,11 +20,11 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/11ty__eleventy-img": "^2.0.1",
     "@vite-pwa/astro": "^0.0.5",
-    "astro": "^2.3.0",
+    "astro": "^2.10.7",
     "github-slugger": "^2.0.0",
     "postcss": "^8.4.23",
-    "prettier": "~2.8.7",
-    "prettier-plugin-astro": "^0.8.0",
+    "prettier": "~3.0.1",
+    "prettier-plugin-astro": "^0.11.0",
     "rehype-katex": "^6.0.3",
     "remark-behead": "^3.1.0",
     "remark-math": "^5.1.1",
@@ -35,14 +35,14 @@
   },
   "dependencies": {
     "docx": "^8.0.3",
-    "preact": "^10.13.2"
+    "preact": "^10.17.0"
   },
   "scripts": {
     "clean": "rimraf static/assets/images && rimraf dist",
     "start": "astro dev --port 8000 --drafts",
     "build": "rimraf dist && astro build",
     "preview": "astro preview",
-    "format": "prettier --write src/**/*.{astro,md,js,json,yml,yaml,css}"
+    "format": "prettier --write src/**/*.{astro,md,js,json,yml,yaml,css} --plugin=prettier-plugin-astro"
   },
   "prettier": {
     "singleQuote": true,
