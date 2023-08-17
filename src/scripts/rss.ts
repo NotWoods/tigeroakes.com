@@ -1,4 +1,5 @@
 import { RSSOptions } from '@astrojs/rss';
+import { CollectionEntry } from 'astro:content';
 
 export const rssConfig = {
   title: 'Tiger Oakes',
@@ -20,17 +21,23 @@ export const rssConfig = {
 
 type Item<Array> = Array extends ReadonlyArray<infer T> ? T : never;
 
-export function formatPost(post: any): Item<RSSOptions['items']> {
-  const tags = post.data.tags
+export function formatPost(
+  post: CollectionEntry<'posts'>
+): Item<RSSOptions['items']> {
+  let customData = post.data.tags
     .map((tag) => `<category>${tag}</category>`)
     .join('');
 
+  if (post.data.banner) {
+    customData += mediaContentTag(post.data.banner);
+  }
+
   return {
-    link: post.data.slug,
+    link: `/posts/${post.slug}/`,
     title: post.data.title,
     description: post.data.description,
     pubDate: post.data.date,
-    customData: tags + (post.banner ? mediaContentTag(post.banner) : ''),
+    customData,
   };
 }
 

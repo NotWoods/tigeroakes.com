@@ -3,7 +3,7 @@ import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import htmlMinify from '@frontendista/astro-html-minify';
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro';
 import rehypeKatex from 'rehype-katex';
 import remarkBehead from 'remark-behead';
@@ -16,6 +16,9 @@ export default defineConfig({
   trailingSlash: 'always',
   experimental: {
     assets: true,
+  },
+  image: {
+    service: sharpImageService(),
   },
   integrations: [
     preact(),

@@ -1,12 +1,12 @@
 import rss from '@astrojs/rss';
 import { APIRoute } from 'astro';
-import { loadPosts } from '../../scripts/posts';
 import { formatPost, rssConfig } from '../../scripts/rss';
-
-const postsData = import.meta.glob('./*/*.{md,mdx}', { eager: true });
+import { getCollection } from 'astro:content';
+import { comparePosts } from '../../scripts/posts';
 
 export const get: APIRoute = async () => {
-  const posts = await loadPosts(Object.values(postsData) as any);
+  const posts = await getCollection('posts');
+  posts.sort(comparePosts);
   return rss({
     ...rssConfig,
     // list of `<item>`s in output xml
