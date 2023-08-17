@@ -5,6 +5,7 @@
     "jsxImportSource": "preact",
     // Add type definitions for our Vite runtime.
     "types": ["@astrojs/image/client", "vite/client", "vite-plugin-pwa/client"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true
   }
 }

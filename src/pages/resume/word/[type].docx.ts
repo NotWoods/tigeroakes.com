@@ -10,9 +10,11 @@ import {
 import { contactList } from '../../../components/resume/Header';
 import { ColorOrange, StyleDateRange, styles, StyleSummary } from './_styles';
 import { loadJsonResume } from '../json-resume/_load';
+import { getCollection } from 'astro:content';
+import { isDefined } from 'ts-extras';
 
 function joinTags(
-  tags: readonly (string | docx.ParagraphChild)[],
+  tags: readonly (string | docx.ParagraphChild)[] = [],
   separator = ' | '
 ): docx.ParagraphChild[] {
   return tags.flatMap((tag, index) => {
@@ -39,7 +41,7 @@ function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
   return [
     // Name
     new docx.Paragraph({
-      text: basics.name,
+      text: basics!.name,
       heading: docx.HeadingLevel.TITLE,
       style: 'Title',
     }),
@@ -58,7 +60,7 @@ function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
     }),
     // Summary
     new docx.Paragraph({
-      text: basics.summary,
+      text: basics!.summary,
       style: StyleSummary,
       border: {
         bottom: {
@@ -107,7 +109,7 @@ function experience({
             children: [new docx.Tab(), formatResumeDateRange(dateRange)],
             style: StyleDateRange,
           }),
-      ].filter(Boolean),
+      ].filter(isDefined),
       heading: docx.HeadingLevel.HEADING_2,
       style: 'Heading2',
       tabStops: [
@@ -152,12 +154,12 @@ function sectionHeader(text: string): docx.Paragraph {
 
 export const get: APIRoute = async ({ params }) => {
   const { type } = params;
-  const jsonResume = await loadJsonResume(type);
+  const jsonResume = await loadJsonResume(type!);
   const margin = docx.convertInchesToTwip(0.4);
 
   const doc = new docx.Document({
     creator: 'Tiger Oakes',
-    title: `${jsonResume.basics.name} Resume - ${resumeDateFormatter.format(
+    title: `${jsonResume.basics?.name} Resume - ${resumeDateFormatter.format(
       new Date()
     )}}`,
     numbering: {
@@ -199,7 +201,7 @@ export const get: APIRoute = async ({ params }) => {
           ...resumeHeader(jsonResume),
 
           sectionHeader('Experience'),
-          ...jsonResume.work.flatMap((work, i) =>
+          ...jsonResume.work!.flatMap((work, i) =>
             experience({
               ...work,
               first: i === 0,
@@ -208,7 +210,7 @@ export const get: APIRoute = async ({ params }) => {
           ),
 
           sectionHeader('Community'),
-          ...jsonResume.projects.flatMap((project, i) =>
+          ...jsonResume.projects!.flatMap((project, i) =>
             experience({
               ...project,
               first: i === 0,
@@ -224,12 +226,12 @@ export const get: APIRoute = async ({ params }) => {
 
           sectionHeader('Technical Proficiencies'),
           new docx.Paragraph({
-            children: joinTags(jsonResume.skills.map((skill) => skill.name)),
+            children: joinTags(jsonResume.skills?.map((skill) => skill.name!)),
             style: 'skills',
           }),
 
           sectionHeader('Education'),
-          ...jsonResume.education.flatMap((education, i) =>
+          ...jsonResume.education!.flatMap((education, i) =>
             experience({
               first: i === 0,
               name: education.institution,
@@ -242,7 +244,7 @@ export const get: APIRoute = async ({ params }) => {
           sectionHeader('Awards'),
           new docx.Paragraph({
             children: joinTags(
-              jsonResume.awards.map((award) => award.title),
+              jsonResume.awards!.map((award) => award.title!),
               ', '
             ),
             style: 'skills',
@@ -261,13 +263,11 @@ export const get: APIRoute = async ({ params }) => {
   });
 };
 
-const RESUME_ID = /resume\/(\w+).json/;
 export const getStaticPaths: GetStaticPaths = async () => {
-  const resumeData = import.meta.glob('../json-resume/*.json');
-  return Object.keys(resumeData).map((path) => {
-    const [, type] = path.match(RESUME_ID);
+  const resumeData = await getCollection('json-resume');
+  return resumeData.map((data) => {
     return {
-      params: { type },
+      params: { type: data.id },
     };
   });
 };

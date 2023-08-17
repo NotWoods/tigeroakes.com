@@ -7,12 +7,12 @@
   },
   "json.schemas": [
     {
-      "fileMatch": ["/src/pages/resume/json-resume/**/*.json"],
+      "fileMatch": ["/src/content/json-resume/*.json"],
       "url": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
     }
   ],
   "search.exclude": {
     "**/node_modules/**": true,
     "dist/**": true
-  },
+  }
 }

@@ -1,5 +1,5 @@
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
-import defaultJsonResume from './default.json';
+import { getEntry } from 'astro:content';
 
 function mergeResume(base: ResumeSchema, partial: ResumeSchema): ResumeSchema {
   return {
@@ -9,19 +9,19 @@ function mergeResume(base: ResumeSchema, partial: ResumeSchema): ResumeSchema {
       ...base.basics,
       ...partial.basics,
     },
-    work: mergeArrray(base.work, partial.work),
-    projects: mergeArrray(base.projects, partial.projects),
+    work: mergeArray(base.work, partial.work),
+    projects: mergeArray(base.projects, partial.projects),
   };
 }
 
-function mergeArrray<T extends { name?: string; position?: string }>(
-  base: readonly T[],
-  partial: readonly T[]
-): T[] {
-  if (!partial) return base.slice();
+function mergeArray<T extends { name?: string; position?: string }>(
+  base: readonly T[] | undefined,
+  partial: readonly T[] | undefined
+): T[] | undefined {
+  if (!partial) return base?.slice();
 
   return partial.map((experience) => {
-    const baseExperience = base.find(
+    const baseExperience = base?.find(
       (baseExperience) => baseExperience.name === experience.name
       // && baseExperience.position === experience.position
     );
@@ -33,7 +33,13 @@ function mergeArrray<T extends { name?: string; position?: string }>(
   });
 }
 
+const defaultJsonResume = getEntry('json-resume', 'default');
 export async function loadJsonResume(type: string) {
-  const { default: jsonResume } = await import(`../json-resume/${type}.json`);
-  return mergeResume(defaultJsonResume, jsonResume);
+  const jsonResume = await getEntry('json-resume', type);
+  const defaultResume = await defaultJsonResume;
+  if (!jsonResume) {
+    throw new Error(`Invalid json-resume name: ${type}`);
+  }
+
+  return mergeResume(defaultResume.data, jsonResume.data);
 }
