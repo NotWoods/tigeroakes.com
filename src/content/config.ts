@@ -1,10 +1,6 @@
 import { z, reference, defineCollection } from 'astro:content';
 import { jsonResumeSchema } from '../components/resume/schema';
-
-const linkButtonSchema = z.object({
-  title: z.string(),
-  link: z.string().url().or(z.string().startsWith('/')).optional(),
-});
+import { linkButtonSchema } from '../scripts/projects';
 
 const jsonResume = defineCollection({
   type: 'data',

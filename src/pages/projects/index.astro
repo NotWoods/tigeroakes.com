@@ -11,12 +11,13 @@ allPages.sort(compareProjects);
 
 const projects = await Promise.all(
   allPages.map(async (page) => {
+    const href = `./${page.slug}/`;
     return {
       title: page.data.title,
       description: page.data.subtitle,
-      href: `./${page.slug}/`,
+      href,
       accent: page.data.color,
-      buttons: projectButtons(page.data.links, page.slug),
+      buttons: projectButtons(page.data.links, href),
       tags: page.data.tech,
       logo: page.data.logo,
       backgroundImage: page.data.background,

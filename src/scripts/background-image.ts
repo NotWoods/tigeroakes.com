@@ -30,6 +30,8 @@ export async function getInlineBackgroundImage({
   width?: number;
   formats: ReadonlyArray<'avif' | 'webp' | 'png' | 'jpeg'>;
 }) {
+  return `background-image: url("${options.src}");`;
+
   const metadata = await Promise.all(
     formats.map((format) => getImage({ ...options, format }))
   );
@@ -37,6 +39,5 @@ export async function getInlineBackgroundImage({
   const src = metadata.at(-1)!.src;
   const imageSet = sourcesToImageSet(metadata);
 
-  return `background-image: url("${src}");`;
   return `background-image: url("${src}"); --image-set: ${imageSet}; background-image: -webkit-image-set(var(--image-set)); background-image: image-set(var(--image-set))`;
 }

@@ -1,13 +1,10 @@
 ---
+import { MarkdownHeading } from 'astro';
 import TableOfContentsList from './TableOfContentsList.astro';
 import type { MutableTreeNode, TreeNode } from './tree-node';
 
 export interface Props {
-  headers: readonly {
-    depth: number;
-    slug: string;
-    text: string;
-  }[];
+  headers: readonly MarkdownHeading[];
 }
 
 const { headers } = Astro.props as Props;

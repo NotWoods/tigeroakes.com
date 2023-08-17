@@ -13,7 +13,9 @@ export interface Props {
 const { project: projectId } = Astro.props as Props;
 const project = (await getEntry('projects', projectId))!;
 const { title, description, tech, color } = project.data;
-const buttons = projectButtons(project.data.links, project.slug);
+const href = `/projects/${project.slug}/`;
+
+const buttons = projectButtons(project.data.links, href);
 ---
 
 <ArticleHeaderContainer
@@ -25,7 +27,7 @@ const buttons = projectButtons(project.data.links, project.slug);
   backgroundImage={project.data.background}
 >
   <slot name="start" />
-  <ItemTitle href={project.slug}>{title}</ItemTitle>
+  <ItemTitle {href}>{title}</ItemTitle>
   <Tags tags={tech} />
   <ArticleDescription>{description}</ArticleDescription>
 </ArticleHeaderContainer>

@@ -1,10 +1,7 @@
-import type { MarkdownInstance, MDXInstance } from 'astro';
-import GithubSlugger from 'github-slugger';
-import { trailingSlash } from './path';
-import { loadPosts, postAccentColor, PostFrontmatter } from './posts';
-import { loadProjects, ProjectFrontmatter } from './projects';
 import { getCollection } from 'astro:content';
+import GithubSlugger from 'github-slugger';
 import { Item } from '../components/lists/ListFlat.astro';
+import { postAccentColor } from './posts';
 
 function asArray<T>(x: T | readonly T[]): readonly T[] {
   return Array.isArray(x) ? x : [x];

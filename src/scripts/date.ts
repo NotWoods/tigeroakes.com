@@ -13,18 +13,6 @@ export function formatToPartsMap(
   );
 }
 
-export function toPlainDate(date: Date | string): Temporal.PlainDate {
-  if (typeof date === 'string') {
-    return Temporal.PlainDate.from(date);
-  } else {
-    return new Temporal.PlainDate(
-      date.getFullYear(),
-      date.getMonth() + 1,
-      date.getDate()
-    );
-  }
-}
-
 /**
  * Convert date string into a PlainDate.
  * Handles dates in Astro's format, which adds time and timezone identifiers.

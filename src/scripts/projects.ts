@@ -1,45 +1,13 @@
-import type { MarkdownInstance, MDXInstance } from 'astro';
-import { trailingSlash } from './path';
+import { z } from 'astro:content';
 import { ButtonProps } from '../components/Buttons.astro';
 
-export interface Link {
-  title: string;
-  github?: string;
-  link?: string;
-}
+export const linkButtonSchema = z.object({
+  title: z.string(),
+  link: z.string().url().or(z.string().startsWith('/')).optional(),
+  github: z.string().includes('/').optional(),
+});
 
-export interface ProjectFrontmatter {
-  title: string;
-  subtitle: string;
-  weight?: number;
-  description?: string;
-  color: string;
-  fallbackcolor: string;
-  logo?: string;
-  links: readonly Link[];
-  tech: readonly string[];
-  categories: readonly string[];
-}
-
-export type Project =
-  | MarkdownInstance<ProjectFrontmatter>
-  | MDXInstance<ProjectFrontmatter>;
-
-export const PROJECT_PATH = /^\/projects\/([-\w]+)/;
-
-export async function loadProjects(input: Promise<readonly Project[]>) {
-  const allProjects = await input;
-  const formattedProjects = allProjects.map((project) => ({
-    ...project,
-    url: trailingSlash(project.url),
-  }));
-  formattedProjects.sort((a, b) => {
-    const aWeight = a.frontmatter.weight || Infinity;
-    const bWeight = b.frontmatter.weight || Infinity;
-    return aWeight - bWeight;
-  });
-  return formattedProjects;
-}
+export type Link = z.infer<typeof linkButtonSchema>;
 
 export function projectButtons(
   links: readonly Link[] | undefined,
@@ -55,7 +23,7 @@ function buttonLink(link: Link, pageUrl: string | URL) {
   switch (link.title) {
     case 'Details':
     case 'Case study':
-      return trailingSlash(pageUrl);
+      return pageUrl;
     default:
       if (link.github) {
         return `https://github.com/${link.github}`;
