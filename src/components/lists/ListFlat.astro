@@ -9,6 +9,7 @@ import SectionTitle from './SectionTitle.astro';
 export interface Props {
   title?: string;
   items: readonly Item[];
+  collection: 'posts' | 'projects' | 'talks';
 }
 
 export interface Item {
@@ -22,13 +23,9 @@ export interface Item {
   accent?: string;
 }
 
-const TYPE_PATH = /^\/(posts|projects|talks)\/[-\w]+/;
-
-function formatType(item: Item) {
+function formatType(collection: 'posts' | 'projects' | 'talks', item: Item) {
   const suffix = item.date ? ' | ' : '';
-  const path = typeof item.href === 'string' ? item.href : item.href.pathname;
-  const [, type] = path.match(TYPE_PATH);
-  switch (type) {
+  switch (collection) {
     case 'posts':
       return `Blog post${suffix}`;
     case 'projects':
@@ -38,7 +35,7 @@ function formatType(item: Item) {
   }
 }
 
-const { title, items } = Astro.props as Props;
+const { title, items, collection } = Astro.props as Props;
 ---
 
 {title && <SectionTitle>{title}</SectionTitle>}
@@ -59,7 +56,7 @@ const { title, items } = Astro.props as Props;
           </div>
         )}
         <p class="text-sm">
-          {formatType(item)}
+          {formatType(collection, item)}
           {item.date && <Time date={item.date} />}
         </p>
         <ItemTitle href={item.href}>{item.title}</ItemTitle>

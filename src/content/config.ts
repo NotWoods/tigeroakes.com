@@ -6,7 +6,7 @@ const jsonResume = defineCollection({
   schema: jsonResumeSchema,
 });
 
-const projectCollection = defineCollection({
+const projects = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
@@ -17,6 +17,7 @@ const projectCollection = defineCollection({
       color: z.string(),
       fallbackcolor: z.string().optional(),
       tech: z.array(z.string()),
+      categories: z.array(z.string()).default([]),
       links: z
         .array(
           z.object({
@@ -30,7 +31,38 @@ const projectCollection = defineCollection({
     }),
 });
 
-const talkCollection = defineCollection({
+const posts = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      elsewhere: z
+        .object({
+          name: z.string(),
+          source: z.string().url(),
+          link: z.string().url(),
+        })
+        .optional(),
+      title: z.string(),
+      description: z.string(),
+      date: z.date(),
+      tags: z.array(z.string()),
+      categories: z.array(z.string()).default([]),
+      projects: z.array(reference('projects')).default([]),
+      links: z
+        .array(
+          z.object({
+            title: z.string(),
+            link: z.string(),
+          })
+        )
+        .default([]),
+      banner: image().optional(),
+      banner_alt: z.string().optional(),
+      toc: z.boolean().default(false),
+    }),
+});
+
+const talks = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
@@ -53,7 +85,8 @@ const talkCollection = defineCollection({
 });
 
 export const collections = {
-  projects: projectCollection,
-  talks: talkCollection,
+  projects,
+  posts,
+  talks,
   'json-resume': jsonResume,
 };

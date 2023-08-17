@@ -1,0 +1,54 @@
+---
+layout: ../../../layouts/PostLayout.astro
+title: 'The right way to add TODO to eslint-disable comments'
+description: How to use the comment description feature in ESLint
+date: 2023-08-16
+author: tiger
+tags:
+  - TIL
+  - Web
+banner: ./preview.png
+---
+
+export { default as banner } from './preview.png';
+
+If you use ESLint, then you've had to [disable a linter rule](https://eslint.org/docs/latest/use/configure/rules#disabling-rules) at some point or another. You might be familiar with this syntax for disabling a lint rule reported on the next line:
+
+```ts
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+document.querySelector('.foo')!.textContent;
+```
+
+If you work on a big codebase, you're probably familiar with writing to-do notes for yourself or your teammates. You've probably written comments like this:
+
+```ts
+// TODO: fix this
+someObject._privateFunc();
+```
+
+However, how do you combine these two comments? I often want to write a TODO to fix a linter rule violation, but I wasn't sure what the best style was. Previously I'd write something like:
+
+```ts
+// TODO: fix this (not like this)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(window as any)._globalVar = 'foo';
+```
+
+Turns out, there's a better way. ESLint supports [comment descriptions](https://eslint.org/docs/latest/use/configure/rules#comment-descriptions) for its `eslint-disable` comments! You just write a `--` and then can put any description you want afterwards.
+
+```ts
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: fix this
+(window as any)._globalVar = 'foo';
+```
+
+This also works with multiple lines:
+
+```ts
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any --
+   TODO: fix this */
+(window as any)._globalVar = 'foo';
+```
+
+The benefit of using this format is that ESLint will automatically remove the disable comment directive and description together if they are no longer nessecary. As long as you use the [`reportUnusedDisableDirectives`](https://eslint.org/docs/latest/use/configure/rules#report-unused-eslint-disable-comments) option, the autofixer will clean them up for you.
+
+You can also require developers to add descriptions to these comments using the [eslint-comments/require-description](hhttps://mysticatea.github.io/eslint-plugin-eslint-comments/rules/require-description.html) rule. No more danging TODOs or confusing `// eslint-disable-next-line` comments!

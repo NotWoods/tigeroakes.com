@@ -1,5 +1,4 @@
 import { RSSOptions } from '@astrojs/rss';
-import type { Post } from './posts';
 
 export const rssConfig = {
   title: 'Tiger Oakes',
@@ -21,17 +20,16 @@ export const rssConfig = {
 
 type Item<Array> = Array extends ReadonlyArray<infer T> ? T : never;
 
-export function formatPost(post: Post): Item<RSSOptions['items']> {
-  const date = post.date.toZonedDateTime({ timeZone: 'America/Vancouver' });
-  const tags = post.frontmatter.tags
+export function formatPost(post: any): Item<RSSOptions['items']> {
+  const tags = post.data.tags
     .map((tag) => `<category>${tag}</category>`)
     .join('');
 
   return {
-    link: post.url,
-    title: post.frontmatter.title,
-    description: post.frontmatter.description,
-    pubDate: new Date(date.epochMilliseconds),
+    link: post.data.slug,
+    title: post.data.title,
+    description: post.data.description,
+    pubDate: post.data.date,
     customData: tags + (post.banner ? mediaContentTag(post.banner) : ''),
   };
 }
