@@ -11,7 +11,7 @@ import SectionTitle from './SectionTitle.astro';
 export interface Item {
   title: string;
   href: URL | string;
-  date: Temporal.PlainDate;
+  date: Temporal.PlainDate | Date;
   description?: string;
 
   pictureSrc?: ImageMetadata | Promise<{ default: ImageMetadata }>;

@@ -2,13 +2,27 @@ import { Intl, Temporal } from '@js-temporal/polyfill';
 
 export function formatToPartsMap(
   formatter: Intl.DateTimeFormat,
-  date: Temporal.PlainDate
+  date: Temporal.PlainDate | Date
 ): ReadonlyMap<globalThis.Intl.DateTimeFormatPartTypes, string> {
   const formattable =
-    date.toZonedDateTime('America/Vancouver').epochMilliseconds;
+    date instanceof Date
+      ? date.valueOf()
+      : date.toZonedDateTime('America/Vancouver').epochMilliseconds;
   return new Map(
     formatter.formatToParts(formattable).map(({ type, value }) => [type, value])
   );
+}
+
+export function toPlainDate(date: Date | string): Temporal.PlainDate {
+  if (typeof date === 'string') {
+    return Temporal.PlainDate.from(date);
+  } else {
+    return new Temporal.PlainDate(
+      date.getFullYear(),
+      date.getMonth() + 1,
+      date.getDate()
+    );
+  }
 }
 
 /**

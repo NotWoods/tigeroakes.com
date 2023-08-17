@@ -3,7 +3,7 @@ import { Intl, Temporal } from '@js-temporal/polyfill';
 import { formatToPartsMap } from '../../scripts/date';
 
 export interface Props {
-  date: Temporal.PlainDate;
+  date: Temporal.PlainDate | Date;
   class?: string;
 }
 

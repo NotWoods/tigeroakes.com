@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "strictNullChecks": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     // Add type definitions for our Vite runtime.

@@ -10,7 +10,7 @@ export interface Props {
 const { items, pictureAspect } = Astro.props as Props;
 
 function groupByYear(): readonly { year: number; items: readonly Item[] }[] {
-  const itemsByYear = groupBy(items, (item) => item.date.year);
+  const itemsByYear = groupBy(items, (item) => item.date instanceof Date ? item.date.getFullYear() : item.date.year);
   return Array.from(itemsByYear).map(([year, items]) => ({ year, items }));
 }
 ---
