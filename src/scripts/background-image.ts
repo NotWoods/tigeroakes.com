@@ -37,11 +37,6 @@ export async function getInlineBackgroundImage({
   const src = metadata.at(-1)!.src;
   const imageSet = sourcesToImageSet(metadata);
 
-  return [
-    `url("${src}")`,
-    `-webkit-image-set(${imageSet})`,
-    `image-set(${imageSet})`,
-  ]
-    .map((value) => `background-image: ${value}`)
-    .join('; ');
+  return `background-image: url("${src}");`;
+  return `background-image: url("${src}"); --image-set: ${imageSet}; background-image: -webkit-image-set(var(--image-set)); background-image: image-set(var(--image-set))`;
 }
