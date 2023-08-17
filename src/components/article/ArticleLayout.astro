@@ -7,13 +7,14 @@ import MailingListCallToAction from '../MailingListCallToAction.astro';
 import MoreButton from './MoreButton.astro';
 import PostHeader from './PostHeader.astro';
 import TableOfContents from './toc/TableOfContents.astro';
+import { MarkdownHeading } from 'astro';
 
 export interface Props {
   title: string;
   href: string | URL;
-  date: Temporal.PlainDate;
-  lastMod?: Temporal.PlainDate;
-  description: string;
+  date?: Temporal.PlainDate | Date;
+  lastMod?: Temporal.PlainDate | Date;
+  description?: string;
   accent?: string;
   tags?: readonly string[];
   elsewhere?: {
@@ -21,11 +22,7 @@ export interface Props {
     link: string;
   };
   links?: readonly Link[];
-  tableOfContents?: readonly {
-    depth: number;
-    slug: string;
-    text: string;
-  }[];
+  tableOfContents?: readonly MarkdownHeading[];
 }
 
 const { href, tableOfContents, links, ...props } = Astro.props as Props;

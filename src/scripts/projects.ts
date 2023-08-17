@@ -1,5 +1,6 @@
 import type { MarkdownInstance, MDXInstance } from 'astro';
 import { trailingSlash } from './path';
+import { ButtonProps } from '../components/Buttons.astro';
 
 export interface Link {
   title: string;
@@ -43,7 +44,7 @@ export async function loadProjects(input: Promise<readonly Project[]>) {
 export function projectButtons(
   links: readonly Link[] | undefined,
   pageUrl: string | URL
-) {
+): ButtonProps[] | undefined {
   return links?.map((link) => ({
     title: link.title,
     href: buttonLink(link, pageUrl),
@@ -60,7 +61,7 @@ function buttonLink(link: Link, pageUrl: string | URL) {
         return `https://github.com/${link.github}`;
       }
   }
-  return link.link;
+  return link.link!;
 }
 
 export async function projectImages(
@@ -75,4 +76,11 @@ export async function projectImages(
   ]);
 
   return { backgroundImage, logo };
+}
+
+export function compareProjects(
+  a: { data: { weight: number } },
+  b: { data: { weight: number } }
+) {
+  return a.data.weight - b.data.weight;
 }

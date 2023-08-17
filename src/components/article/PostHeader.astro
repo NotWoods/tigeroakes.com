@@ -14,8 +14,8 @@ export interface Props {
   buttons?: readonly ButtonProps[];
 
   title: string;
-  date?: Temporal.PlainDate;
-  lastMod?: Temporal.PlainDate;
+  date?: Temporal.PlainDate | Date;
+  lastMod?: Temporal.PlainDate | Date;
   description?: string;
   tags?: readonly string[];
   elsewhere?: {
@@ -29,7 +29,7 @@ const { title, description, date, lastMod, tags, elsewhere, ...props } =
 
 interface DisplayedTime {
   text: string;
-  date?: Temporal.PlainDate | undefined;
+  date?: Temporal.PlainDate | Date | undefined;
 }
 
 const displayedTimes: DisplayedTime[] = [

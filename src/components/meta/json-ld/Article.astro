@@ -6,8 +6,8 @@ export interface Props {
   type?: 'BlogPosting' | 'NewsArticle' | 'Article';
   title: string;
   images: readonly string[];
-  date?: Temporal.PlainDate;
-  lastMod?: Temporal.PlainDate;
+  date?: Temporal.PlainDate | Date;
+  lastMod?: Temporal.PlainDate | Date;
 }
 
 const {
@@ -18,9 +18,14 @@ const {
   lastMod,
 } = Astro.props as Props;
 
-function formatDate(date: Temporal.PlainDate | undefined) {
-  if (!date) return undefined;
-  return date.toPlainDateTime().toString();
+function formatDate(date: Temporal.PlainDate | Date | undefined) {
+  if (!date) {
+    return undefined;
+  } else if (date instanceof Date) {
+    return date.toISOString();
+  } else {
+    return date.toPlainDateTime().toString();
+  }
 }
 
 const article = {

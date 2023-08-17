@@ -36,10 +36,7 @@ const imgClass = [
 ]
   .filter(Boolean)
   .join(' ');
-const pictureClass =
-  aspect === 'half'
-    ? 'aspect-w-2 aspect-h-1 mb-2'
-    : 'aspect-w-16 aspect-h-9 mb-2';
+const heightClass = aspect === 'half' ? 'h-[2.9375rem]' : 'h-[3.305rem]';
 
 const metadata = getDefault(await src);
 
@@ -66,7 +63,7 @@ const sources = await Promise.all(
 );
 ---
 
-<picture class={pictureClass}>
+<picture class=`mb-2 ${heightClass}`>
   {
     sources.map(({ sourceSet, type }) => (
       <source type={type} srcset={sourceSet.join(', ')} sizes={sizes} />

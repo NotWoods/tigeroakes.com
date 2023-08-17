@@ -4,13 +4,15 @@ import Footer from '../../components/Footer.astro';
 import ListGridYears from '../../components/lists/ListGridYears.astro';
 import PostsHeader from '../../components/lists/PostsHeader.astro';
 import MainHead from '../../components/meta/MainHead.astro';
+import { comparePosts } from '../../scripts/posts';
 import * as header from './_index.md';
 import { getCollection } from 'astro:content';
 
 const talkEntries = await getCollection('talks');
+talkEntries.sort(comparePosts);
 const posts = talkEntries.map((post) => ({
   title: post.data.title,
-  href: post.slug,
+  href: `./${post.slug}/`,
   date: post.data.date,
   pictureSrc: post.data.banner,
   pictureAlt: post.data.banner_alt,

@@ -1,69 +1,80 @@
 ---
-import Image from '@11ty/eleventy-img';
-import { resolve } from 'path';
-import ArticleLayout from '../components/article/ArticleLayout.astro';
-import { imageOptions, parentFolder } from '../components/11ty-options';
+import ArticleLayout, {
+  type Props as ArticleLayoutProps,
+} from '../components/article/ArticleLayout.astro';
 import Article from '../components/meta/json-ld/Article.astro';
 import MainHead from '../components/meta/MainHead.astro';
 import Social from '../components/meta/Social.astro';
-import { dateFromString } from '../scripts/date';
 import { postAccentColor } from '../scripts/posts';
+import { Link } from '../scripts/projects';
 import '../styles/font-extra.css';
+import { MarkdownHeading } from 'astro';
+import { getImage } from 'astro:assets';
 
-const { content, headings } = Astro.props;
+interface Props {
+  headings?: MarkdownHeading[];
+  frontmatter: {
+    title: string;
+    tags?: readonly string[];
+    date: Date;
+    lastMod?: Date;
+    description?: string;
+    elsewhere?: {
+      name: string;
+      source: string;
+      link: string;
+    };
+    links?: readonly Link[];
+    banner?: ImageMetadata;
+    banner_alt?: string;
+    toc?: boolean;
+  };
+}
 
-async function postBanner(bannerFile: string | undefined) {
+const { frontmatter, headings } = Astro.props as Props;
+
+async function postBanner(bannerFile: ImageMetadata | undefined) {
   if (bannerFile) {
-    const pictureSrc = resolve(
-      process.cwd(),
-      `src/pages/${Astro.url.pathname}/${bannerFile}`
-    );
-    console.log(pictureSrc);
-
-    const metadata = await Image(pictureSrc, {
-      ...imageOptions,
-      formats: ['png'],
-      svgShortCircuit: false,
-      filenameFormat(id, src, width, format) {
-        return `${parentFolder(src)}-banner.${id}.${format}`;
-      },
+    const metadata = await getImage({
+      src: bannerFile,
+      format: 'png',
     });
-    return new URL(metadata.png[0].url, Astro.site).href;
+    return metadata.src;
   }
   return undefined;
 }
 
-const formattedProps = {
-  title: content.title,
+const formattedProps: ArticleLayoutProps = {
+  title: frontmatter.title,
   href: Astro.url,
-  accent: postAccentColor(content.tags),
-  date: content.date ? dateFromString(content.date) : undefined,
-  lastMod: content.lastMod ? dateFromString(content.lastMod) : undefined,
-  description: content.description,
-  tags: content.tags,
-  elsewhere: content.elsewhere,
-  tableOfContents: content.toc ? headings : undefined,
-  links: content.links,
+  accent: postAccentColor(frontmatter.tags),
+  date: frontmatter.date,
+  lastMod: frontmatter.lastMod,
+  description: frontmatter.description,
+  tags: frontmatter.tags,
+  elsewhere: frontmatter.elsewhere,
+  tableOfContents: frontmatter.toc ? headings : undefined,
+  links: frontmatter.links,
 };
 
-const pictureSrc = await postBanner(content.banner);
+const pictureSrc = await postBanner(frontmatter.banner);
 ---
 
 <html lang="en">
   <head>
     <MainHead
-      title={content.title}
-      description={content.description}
-      canonical={content.elsewhere?.link}
+      title={frontmatter.title}
+      description={frontmatter.description}
+      canonical={frontmatter.elsewhere?.link}
     />
     <Social
-      title={content.title}
-      description={content.description}
+      title={frontmatter.title}
+      description={frontmatter.description}
       pictureSrc={pictureSrc}
-      pictureAlt={content.banner_alt}
+      pictureAlt={frontmatter.banner_alt}
     />
     <Article
-      title={content.title}
+      title={frontmatter.title}
       date={formattedProps.date}
       lastMod={formattedProps.lastMod}
       images={pictureSrc ? [pictureSrc] : []}

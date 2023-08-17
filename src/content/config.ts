@@ -3,7 +3,7 @@ import { jsonResumeSchema } from '../components/resume/schema';
 
 const linkButtonSchema = z.object({
   title: z.string(),
-  link: z.string().url().optional(),
+  link: z.string().url().or(z.string().startsWith('/')).optional(),
 });
 
 const jsonResume = defineCollection({
@@ -60,6 +60,7 @@ const talks = defineCollection({
       title: z.string(),
       date: z.date(),
       tags: z.array(z.string()),
+      categories: z.array(z.string()).default([]),
       projects: z.array(reference('projects')).default([]),
       links: z.array(linkButtonSchema).default([]),
       color: z.string().optional(),

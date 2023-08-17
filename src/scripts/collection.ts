@@ -3,6 +3,8 @@ import GithubSlugger from 'github-slugger';
 import { trailingSlash } from './path';
 import { loadPosts, postAccentColor, PostFrontmatter } from './posts';
 import { loadProjects, ProjectFrontmatter } from './projects';
+import { getCollection } from 'astro:content';
+import { Item } from '../components/lists/ListFlat.astro';
 
 function asArray<T>(x: T | readonly T[]): readonly T[] {
   return Array.isArray(x) ? x : [x];
@@ -29,38 +31,43 @@ export function groupBy<Item, Key>(
   return groupedItems;
 }
 
-type MarkdownOrMdxInstance<T> = MarkdownInstance<T> | MDXInstance<T>;
-
-export async function getCollectionPages(
-  postInput: Promise<readonly MarkdownOrMdxInstance<PostFrontmatter>[]>,
-  projectInput: Promise<readonly MarkdownOrMdxInstance<ProjectFrontmatter>[]>,
-  key: 'tags' | 'categories'
-) {
-  const [allPages, allProjects] = await Promise.all([
-    loadPosts(postInput),
-    loadProjects(projectInput),
+export async function getCollectedPages(key: 'tags' | 'categories') {
+  const [posts, talks, projects] = await Promise.all([
+    getCollection('posts'),
+    getCollection('talks'),
+    getCollection('projects'),
   ]);
 
-  const formattedPages = allPages.map((post) => ({
-    title: post.frontmatter.title,
-    date: post.date,
-    accent: postAccentColor(post.frontmatter.tags),
-    href: trailingSlash(post.url),
-    pictureSrc: post.banner,
-    pictureAlt: post.frontmatter.banner_alt,
-    pictureFit: 'cover' as const,
-    tags: post.frontmatter.tags,
-    categories: post.frontmatter.categories,
-  }));
-  const formattedProjects = allProjects.map((project) => ({
-    title: project.frontmatter.title,
-    accent: project.frontmatter.color,
-    href: trailingSlash(project.url),
-    pictureSrc: undefined,
-    pictureFit: 'contain' as const,
-    tags: project.frontmatter.tech,
-    categories: project.frontmatter.categories,
-  }));
+  const formattedPages = [...posts, ...talks].map(
+    (
+      page
+    ): Item & { tags: readonly string[]; categories: readonly string[] } => ({
+      title: page.data.title,
+      date: page.data.date,
+      accent: postAccentColor(page.data.tags),
+      href: `/${page.collection}/${page.slug}/`,
+      pictureSrc: page.data.banner,
+      pictureAlt: page.data.banner_alt,
+      pictureFit: 'cover' as const,
+      tags: page.data.tags,
+      categories: page.data.categories,
+      collection: page.collection,
+    })
+  );
+  const formattedProjects = projects.map(
+    (
+      project
+    ): Item & { tags: readonly string[]; categories: readonly string[] } => ({
+      title: project.data.title,
+      accent: project.data.color,
+      href: `/projects/${project.slug}/`,
+      pictureSrc: undefined,
+      pictureFit: 'contain' as const,
+      tags: project.data.tech,
+      categories: project.data.categories,
+      collection: 'projects',
+    })
+  );
 
   const tagToPages = groupBy(
     [...formattedPages, ...formattedProjects],

@@ -1,9 +1,9 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content';
-import PostLayout from '../../layouts/PostLayout.astro';
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 export async function getStaticPaths() {
-  const talkEntries = await getCollection('talks');
+  const talkEntries = await getCollection('projects');
   return talkEntries.map((post) => ({
     params: {
       slug: post.slug,
@@ -15,13 +15,13 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  post: CollectionEntry<'talks'>;
+  post: CollectionEntry<'projects'>;
 }
 
 const { post } = Astro.props;
-const { Content, headings } = await post.render();
+const { Content } = await post.render();
 ---
 
-<PostLayout {headings} frontmatter={post.data}>
+<ProjectLayout frontmatter={post.data}>
   <Content />
-</PostLayout>
+</ProjectLayout>

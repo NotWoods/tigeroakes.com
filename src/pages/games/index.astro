@@ -4,7 +4,7 @@ import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
 import ListPanels from '../../components/lists/ListPanels.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-import { projectButtons } from '../../scripts/projects';
+import { compareProjects, projectButtons } from '../../scripts/projects';
 
 const allProjects = await getCollection('projects');
 const allOtherGames = []; // await Astro.glob('./**/*.{md,mdx}');
@@ -12,18 +12,14 @@ const allOtherGames = []; // await Astro.glob('./**/*.{md,mdx}');
 const allPages = allProjects
   .filter((page) => page.data.categories?.includes('Games'))
   .concat(allOtherGames);
-allPages.sort((a, b) => {
-  const aWeight = a.data.weight || Infinity;
-  const bWeight = b.data.weight || Infinity;
-  return aWeight - bWeight;
-});
+allPages.sort(compareProjects);
 
 const projects = await Promise.all(
   allPages.map(async (page) => {
     return {
       title: page.data.title,
       description: page.data.subtitle,
-      href: page.slug,
+      href: `/projects/${page.slug}/`,
       accent: page.data.color,
       buttons: projectButtons(page.data.links, page.slug),
       tags: page.data.tech,

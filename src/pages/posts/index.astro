@@ -7,11 +7,12 @@ import PostsHeader from '../../components/lists/PostsHeader.astro';
 import MainHead from '../../components/meta/MainHead.astro';
 import RSS from '../../components/meta/RSS.astro';
 import * as header from './_index.md';
+import { comparePosts } from '../../scripts/posts';
 
 const allPages = await getCollection('posts');
-const posts = allPages.map((post) => ({
+const posts = allPages.sort(comparePosts).map((post) => ({
   title: post.data.title,
-  href: post.slug,
+  href: `./${post.slug}/`,
   date: post.data.date,
   description: post.data.description,
   pictureSrc: post.data.banner,

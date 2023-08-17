@@ -80,3 +80,10 @@ export function accentStyles(accent: string | undefined) {
     return undefined;
   }
 }
+
+export function comparePosts(
+  a: { data: { date: Date } },
+  b: { data: { date: Date } }
+) {
+  return b.data.date.valueOf() - a.data.date.valueOf();
+}

@@ -1,24 +1,24 @@
 ---
-import ListFlat from '../lists/ListFlat.astro';
-import { postAccentColor } from '../../scripts/posts';
-import { getCollection } from 'astro:content';
+import ListFlat, { Item } from '../lists/ListFlat.astro';
+import { postAccentColor, comparePosts } from '../../scripts/posts';
+import { CollectionEntry, getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts');
+allPosts.sort(comparePosts);
 const featured = allPosts.filter((post) =>
   post.data.categories.includes('Feature')
 );
 
-type PostArray = typeof allPosts;
-
-function formatPost(post: PostArray[number]) {
+function formatPost(post: CollectionEntry<'posts'>): Item {
   return {
     title: post.data.title,
     description: post.data.description,
     date: post.data.date,
     accent: postAccentColor(post.data.tags),
-    href: post.slug,
+    href: `/posts/${post.slug}/`,
     pictureSrc: post.data.banner,
     pictureAlt: post.data.banner_alt,
+    collection: 'posts',
   };
 }
 ---

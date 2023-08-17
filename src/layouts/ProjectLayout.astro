@@ -2,29 +2,33 @@
 import ArticleLayout from '../components/article/ArticleLayout.astro';
 import ProjectHeader from '../components/article/ProjectHeader.astro';
 import MainHead from '../components/meta/MainHead.astro';
-import { dateFromString } from '../scripts/date';
-import {
-  projectButtons,
-  projectImages,
-  PROJECT_PATH,
-  type Link,
-} from '../scripts/projects';
+import { projectButtons, type Link } from '../scripts/projects';
 
-const { content } = Astro.props;
-const [, projectId] = Astro.url.pathname.match(PROJECT_PATH);
+interface Props {
+  frontmatter: {
+    title: string;
+    subtitle: string;
+    tech: readonly string[];
+    color: string;
+    description?: string;
+    links?: readonly Link[];
+    logo: ImageMetadata;
+    background: ImageMetadata;
+  };
+}
 
-const { backgroundImage, logo } = await projectImages(projectId, content.logo);
+const { frontmatter } = Astro.props as Props;
+
 const formattedProps = {
-  title: content.title,
+  title: frontmatter.title,
   href: Astro.url,
-  date: content.date ? dateFromString(content.date) : undefined,
-  description: content.subtitle,
-  tags: content.tech,
-  accent: content.color,
-  logo,
-  backgroundImage,
+  description: frontmatter.subtitle,
+  tags: frontmatter.tech,
+  accent: frontmatter.color,
+  logo: frontmatter.logo,
+  backgroundImage: frontmatter.background,
   buttons: projectButtons(
-    content.links?.filter(
+    frontmatter.links?.filter(
       (link: Link) => link.title !== 'Details' && link.title !== 'Case study'
     ),
     Astro.url
@@ -35,7 +39,7 @@ const formattedProps = {
 <html lang="en">
   <head>
     <MainHead
-      title={content.title}
+      title={frontmatter.title}
       description="List of projects worked on by Tiger Oakes."
       defaultSocial
     />

@@ -2,7 +2,7 @@
 import CollectionLayout from '../../components/collection/CollectionLayout.astro';
 import type { Item } from '../../components/lists/ListFlat.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-import { getCollectionPages } from '../../scripts/collection';
+import { getCollectedPages } from '../../scripts/collection';
 
 export interface Props {
   tag: string;
@@ -10,11 +10,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const { tagToPages, tagPaths } = await getCollectionPages(
-    Astro.glob('../{posts,talks}/*/*.{md,mdx}'),
-    Astro.glob('../projects/**/*.{md,mdx}'),
-    'tags'
-  );
+  const { tagToPages, tagPaths } = await getCollectedPages('tags');
 
   return Array.from(tagToPages).map(([tag, pages]) => {
     const props: Props = { tag, pages };
