@@ -8,22 +8,25 @@ const jsonResume = defineCollection({
 
 const talkCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    date: z.string().or(z.date()),
-    tags: z.array(z.string()),
-    // TODO: use reference to projects
-    projects: z.array(z.string()).default([]),
-    links: z
-      .array(
-        z.object({
-          title: z.string(),
-          link: z.string().url(),
-        })
-      )
-      .default([]),
-    color: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      date: z.date(),
+      tags: z.array(z.string()),
+      // TODO: use reference to projects
+      projects: z.array(z.string()).default([]),
+      links: z
+        .array(
+          z.object({
+            title: z.string(),
+            link: z.string().url(),
+          })
+        )
+        .default([]),
+      color: z.string().optional(),
+      banner: image(),
+      banner_alt: z.string().optional(),
+    }),
 });
 
 export const collections = {

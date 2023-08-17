@@ -1,6 +1,5 @@
 ---
-import { getPicture } from '@astrojs/image';
-import { metadataToBackgroundImage } from '../../scripts/background-image';
+import { getInlineBackgroundImage } from '../../scripts/background-image';
 import Buttons, { ButtonProps } from '../Buttons.astro';
 import Polymorphic from './Polymorphic.astro';
 
@@ -38,14 +37,11 @@ if (className) {
 const styles = [
   accent && `--accent: ${accent}`,
   backgroundImage &&
-    metadataToBackgroundImage(
-      await getPicture({
-        src: backgroundImage,
-        alt: '',
-        widths: [backgroundImage.width],
-        formats: ['avif', 'webp', 'jpeg'],
-      })
-    ),
+    (await getInlineBackgroundImage({
+      src: backgroundImage,
+      width: backgroundImage.width,
+      formats: ['avif', 'webp', 'jpeg'],
+    })),
   style,
 ].filter(Boolean);
 

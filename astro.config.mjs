@@ -1,5 +1,4 @@
 import mdx from '@astrojs/mdx';
-import image from '@astrojs/image';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -15,8 +14,10 @@ export default defineConfig({
   site: 'https://tigeroakes.com',
   publicDir: './static',
   trailingSlash: 'always',
+  experimental: {
+    assets: true,
+  },
   integrations: [
-    image({ serviceEntryPoint: '@astrojs/image/sharp' }),
     preact(),
     tailwind({ applyBaseStyles: false }),
     mdx(),

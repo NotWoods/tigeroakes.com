@@ -1,19 +1,16 @@
 ---
-import { getPicture } from '@astrojs/image';
 import contactData from '../../data/contact.json';
-import { metadataToBackgroundImage } from '../../scripts/background-image';
+import { getInlineBackgroundImage } from '../../scripts/background-image';
 import SectionTitle from '../lists/SectionTitle.astro';
+import contactBackground from './contact-background.jpg';
 
 const { email, social } = contactData;
 
-const imageSetStyle = metadataToBackgroundImage(
-  await getPicture({
-    src: import('./contact-background.jpg'),
-    alt: '',
-    widths: [1400],
-    formats: ['avif', 'webp', 'jpeg'],
-  })
-);
+const imageSetStyle = await getInlineBackgroundImage({
+  src: contactBackground,
+  width: 1400,
+  formats: ['avif', 'webp', 'jpeg'],
+});
 ---
 
 <footer

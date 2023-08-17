@@ -1,36 +1,41 @@
-import { getPicture } from '@astrojs/image';
+import { getImage } from 'astro:assets';
 
-const FIRST_SRC_SET = /^(\S*) \d+w/;
-
-function sourcesToImageSet(sources: { type: string; srcset: string }[]) {
+function sourcesToImageSet(sources: readonly GetImageResult[]) {
   return sources
     .map((source) => {
-      const match = source.srcset.match(FIRST_SRC_SET);
-      if (!match) {
-        throw new Error(`Invalid srcset: ${source}`);
-      }
-      return `url("${match[1]}") type("${source.type}")`;
+      return `url("${source.src}") type("${source.options.format}")`;
     })
     .join(', ');
 }
 
-export type GetPictureResult = Awaited<ReturnType<typeof getPicture>>;
+export type GetImageResult = Awaited<ReturnType<typeof getImage>>;
 
 /**
- * Converts the metadata returned by getPicture to a background-image CSS property.
+ * Convert an image to a background-image CSS property.
  * @example
- * metadataToBackgroundImage({
- *   image: { src: 'fallback.jpg' },
- *   sources: [{ type: 'image/webp', srcset: 'image.webp 20w' }]
+ * getInlineBackgroundImage({
+ *   src: 'fallback.jpg',
+ *   formats: ['webp', 'jpeg']
  * });
  * // ->
  * // `background-image: url("fallback.jpg");
  * // background-image: -webkit-image-set(url("image.webp") type("image/webp"));
  * // background-image: image-set(url("image.webp") type("image/webp"))`
  */
-export function metadataToBackgroundImage(metadata: GetPictureResult) {
-  const src = metadata.image.src;
-  const imageSet = sourcesToImageSet(metadata.sources);
+export async function getInlineBackgroundImage({
+  formats,
+  ...options
+}: {
+  src: ImageMetadata | string;
+  width?: number;
+  formats: ReadonlyArray<'avif' | 'webp' | 'png' | 'jpeg'>;
+}) {
+  const metadata = await Promise.all(
+    formats.map((format) => getImage({ ...options, format }))
+  );
+
+  const src = metadata.at(-1)!.src;
+  const imageSet = sourcesToImageSet(metadata);
 
   return [
     `url("${src}")`,
