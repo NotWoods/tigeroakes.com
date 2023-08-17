@@ -1,24 +1,8 @@
 ---
-import { Image, getImage } from 'astro:assets';
 import Button from '../Button.astro';
 import Logo from '../Logo.astro';
 import profileImage from './profile.jpg';
-
-const formats = ['avif', 'webp', 'jpeg'] as const;
-const widths = [160, 320, 640] as const;
-
-const sources = await Promise.all(
-  formats.map(async (format) => {
-    const sourceSet = await Promise.all(
-      widths.map(async (width) => {
-        const image = await getImage({ src: profileImage, width, format });
-        return `${image.src} ${width}w`;
-      })
-    );
-
-    return { format, sourceSet };
-  })
-);
+import Picture from '../Picture.astro';
 ---
 
 <section
@@ -37,23 +21,15 @@ const sources = await Promise.all(
       Subscribe to my newsletter
     </Button>
   </div>
-  <picture>
-    {
-      sources.map(({ format, sourceSet }) => (
-        <source
-          type={`image/${format}`}
-          srcset={sourceSet.join(', ')}
-          sizes="10rem"
-        />
-      ))
-    }
-    <Image
-      src={profileImage}
-      alt="Portrait of Tiger Oakes"
-      loading="eager"
-      class="border-4 border-slate-800 rounded-full h-40 w-40"
-    />
-  </picture>
+  <Picture
+    src={profileImage}
+    alt="Portrait of Tiger Oakes"
+    loading="eager"
+    class="border-4 border-slate-800 rounded-full h-40 w-40"
+    sizes="10rem"
+    formats={['avif', 'webp', 'jpeg']}
+    widths={[160, 320, 640]}
+  />
 </section>
 
 <style>

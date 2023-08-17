@@ -64,20 +64,6 @@ function buttonLink(link: Link, pageUrl: string | URL) {
   return link.link!;
 }
 
-export async function projectImages(
-  projectId: string,
-  logoSrc: string | undefined
-): Promise<{ backgroundImage: ImageMetadata; logo: ImageMetadata }> {
-  const [{ default: backgroundImage }, { default: logo }] = await Promise.all([
-    import(`../pages/projects/${projectId}/background.jpg`),
-    logoSrc
-      ? import(`../pages/projects/${projectId}/logo.png`)
-      : import(`../pages/projects/${projectId}/logo.svg`),
-  ]);
-
-  return { backgroundImage, logo };
-}
-
 export function compareProjects(
   a: { data: { weight: number } },
   b: { data: { weight: number } }

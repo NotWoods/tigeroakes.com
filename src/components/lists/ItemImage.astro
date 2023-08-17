@@ -1,8 +1,9 @@
 ---
-import { Image, getImage } from 'astro:assets';
+import { ImageMetadata } from 'astro';
+import Picture, { ImageFormat } from '../Picture.astro';
 
 export interface Props {
-  src: ImageMetadata | Promise<{ default: ImageMetadata }>;
+  src: ImageMetadata;
   alt?: string;
   width: number;
   sizes: string;
@@ -12,15 +13,8 @@ export interface Props {
   aspect: 'half' | 'video';
 }
 
-function getDefault(src: ImageMetadata | { default: ImageMetadata }) {
-  if ('default' in src) {
-    return src.default;
-  }
-  return src;
-}
-
 const {
-  src,
+  src: metadata,
   alt = '',
   fit,
   width,
@@ -38,36 +32,18 @@ const imgClass = [
   .join(' ');
 const heightClass = aspect === 'half' ? 'h-[2.9375rem]' : 'h-[3.305rem]';
 
-const metadata = getDefault(await src);
-
-const formats =
+const formats: ImageFormat[] =
   metadata.format === 'svg' ? ['svg'] : ['avif', 'webp', metadata.format];
 const widths = [width, width * 2, width * 4];
-
-const sources = await Promise.all(
-  formats.map(async (format) => {
-    const sourceSet = await Promise.all(
-      widths.map(async (width) => {
-        const image = await getImage({ src: metadata, width, format });
-        return `${image.src} ${width}w`;
-      })
-    );
-
-    let type = `image/${format}`;
-    if (format === 'svg') {
-      type = 'image/svg+xml';
-    }
-
-    return { format, sourceSet, type };
-  })
-);
 ---
 
-<picture class=`mb-2 ${heightClass}`>
-  {
-    sources.map(({ sourceSet, type }) => (
-      <source type={type} srcset={sourceSet.join(', ')} sizes={sizes} />
-    ))
-  }
-  <Image src={metadata} alt={alt} loading={loading} class={imgClass} />
-</picture>
+<Picture
+  src={metadata}
+  {alt}
+  {loading}
+  {sizes}
+  class={imgClass}
+  pictureClass=`mb-2 ${heightClass}`
+  {formats}
+  {widths}
+/>

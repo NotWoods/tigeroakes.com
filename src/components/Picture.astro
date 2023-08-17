@@ -1,0 +1,69 @@
+---
+import { Image, getImage } from 'astro:assets';
+
+export type ImageFormat = ImageMetadata['format'] | 'avif';
+
+export function formatToMimeType(format: ImageFormat) {
+  switch (format) {
+    case 'png':
+      return 'image/png';
+    case 'svg':
+      return 'image/svg+xml';
+    case 'jpg':
+    case 'jpeg':
+      return 'image/jpeg';
+    default:
+      return `image/${format}`;
+  }
+}
+
+export interface Props {
+  src: ImageMetadata;
+  alt: string;
+
+  formats?: readonly ImageFormat[];
+  widths: readonly number[];
+  sizes: string;
+
+  loading?: 'lazy' | 'eager';
+  class?: string;
+  pictureClass?: string;
+}
+
+const {
+  src,
+  alt,
+  formats = [],
+  widths = [],
+  sizes,
+  loading,
+  class: className,
+  pictureClass,
+} = Astro.props as Props;
+
+const sources = await Promise.all(
+  formats.map(async (format) => {
+    const sourceSet = await Promise.all(
+      widths.map(async (width) => {
+        const image = await getImage({ src, width, format });
+        return `${image.src} ${width}w`;
+      })
+    );
+
+    return { format, sourceSet };
+  })
+);
+---
+
+<picture class={pictureClass}>
+  {
+    sources.map(({ sourceSet, format }) => (
+      <source
+        type={formatToMimeType(format)}
+        srcset={sourceSet.join(', ')}
+        {sizes}
+      />
+    ))
+  }
+  <Image {src} {alt} class={className} {loading} />
+</picture>

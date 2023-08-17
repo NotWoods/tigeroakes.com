@@ -5,8 +5,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     // Add type definitions for our Vite runtime.
-    "types": ["vite/client", "vite-plugin-pwa/client"],
-    "allowSyntheticDefaultImports": true,
-    "strictNullChecks": true
+    "types": ["astro/client-image", "vite/client", "vite-plugin-pwa/client"],
+    "allowSyntheticDefaultImports": true
   }
 }

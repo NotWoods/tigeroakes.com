@@ -1,5 +1,6 @@
 import { RSSOptions } from '@astrojs/rss';
 import { CollectionEntry } from 'astro:content';
+import { formatToMimeType } from '../components/Picture.astro';
 
 export const rssConfig = {
   title: 'Tiger Oakes',
@@ -39,20 +40,6 @@ export function formatPost(
     pubDate: post.data.date,
     customData,
   };
-}
-
-function formatToMimeType(format: InputFormat) {
-  switch (format) {
-    case 'png':
-      return 'image/png';
-    case 'svg':
-      return 'image/svg+xml';
-    case 'jpg':
-    case 'jpeg':
-      return 'image/jpeg';
-    default:
-      throw new Error(`Unknown format: ${format}`);
-  }
 }
 
 function mediaContentTag(banner: ImageMetadata) {
