@@ -1,6 +1,6 @@
 import { RSSOptions } from '@astrojs/rss';
 import { CollectionEntry } from 'astro:content';
-import { formatToMimeType } from '../components/Picture.astro';
+import { formatToMimeType } from './picture';
 
 export const rssConfig = {
   title: 'Tiger Oakes',

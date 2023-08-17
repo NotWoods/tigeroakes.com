@@ -30,7 +30,8 @@ export async function getInlineBackgroundImage({
   width?: number;
   formats: ReadonlyArray<'avif' | 'webp' | 'png' | 'jpeg'>;
 }) {
-  return `background-image: url("${options.src}");`;
+  const image = await getImage({ ...options, format: formats.at(-1) });
+  return `background-image: url("${image.src}");`;
 
   const metadata = await Promise.all(
     formats.map((format) => getImage({ ...options, format }))
