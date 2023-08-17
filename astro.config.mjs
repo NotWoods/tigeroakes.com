@@ -2,7 +2,6 @@ import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import htmlMinify from '@frontendista/astro-html-minify';
 import { defineConfig, sharpImageService } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro';
 import rehypeKatex from 'rehype-katex';
@@ -20,22 +19,15 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
+  compressHTML: true,
+  build: {
+    inlineStylesheets: 'auto',
+  },
   integrations: [
     preact(),
     tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap(),
-    htmlMinify({
-      htmlTerserMinifierOptions: {
-        collapseInlineTagWhitespace: false,
-        minifyCSS: false,
-        minifyJS: false,
-        processConditionalComments: false,
-        removeTagWhitespace: false,
-        removeRedundantAttributes: false,
-        removeScriptTypeAttributes: false,
-      },
-    }),
     AstroPWA({
       mode:
         process.env.NETLIFY_CONTEXT === 'production' ||

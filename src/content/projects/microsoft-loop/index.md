@@ -15,6 +15,8 @@ tech:
   - CSS
   - Accessibility
   - CI/CD
+description: >
+  Working at Microsoft, I built up the user experience for the collaboration app Loop from the ground up. I implemented many core features like dark mode, the home page, page selection, and draft ideas. I mentored over 50 engineers and raised code quality standards across the company.
 ---
 
 I was one of the first members of the Loop Workspaces team, creating the chrome and user experience for the recently released product [Microsoft Loop](https://loop.microsoft.com/). I've been involved with every part of Loop but focused on the app, separate to the editor experience.
