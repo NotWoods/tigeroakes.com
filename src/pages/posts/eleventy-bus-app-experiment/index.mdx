@@ -13,7 +13,7 @@ categories:
   - Planet Mozilla
 projects:
   - big-island-buses
-banner: banner.png
+banner: ./banner.png
 ---
 
 import GitHub from '../../../components/shortcodes/GitHub.astro';
@@ -25,11 +25,11 @@ This weekend I’ve been tweaking [Big Island Buses](/projects/big-island-buses/
 
 Like many web apps, most of Big Island Buses’ UI was generated on the client using JavaScript. Some very minimal HTML was sent by the server, and only contained the logo and some empty `<div>`s. Once the app is loaded up, JavaScript code connects to my API and builds new HTML elements on the client to represent bus routes and other information. However, until that API data is downloaded, an empty list of routes is presented to the user.
 
-![Sidebar menu with no routes displayed](empty_menu.png)
+![Sidebar menu with no routes displayed](/posts/eleventy-bus-app-experiment/empty_menu.png)
 
 But is that really necessary? Bus schedules don’t change frequently. Why can’t the server always populate the list of bus routes in advance? I started experimenting with pre-rendering HTML in Node.js using Eleventy, and this is what I came up with.
 
-![Sidebar menu displaying routes](populated_menu.png)
+![Sidebar menu displaying routes](/posts/eleventy-bus-app-experiment/populated_menu.png)
 
 To generate the HTML on the server, I went with [Eleventy](https://www.11ty.dev/). Eleventy lets you import data from JSON files and use that in [Nunjucks](https://mozilla.github.io/nunjucks/) templates, which are then parsed to create HTML files. My first step was to expose my API inside the templates.
 

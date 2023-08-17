@@ -1,21 +1,39 @@
 ---
-import { Picture } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 
 export interface Props {
   logo: ImageMetadata;
 }
 
 const { logo } = Astro.props as Props;
+
+const formats = logo.format === 'svg' ? ['svg'] : ['avif', 'webp', logo.format];
+const widths = [128, 256, 512];
+
+const sources = await Promise.all(
+  formats.map(async (format) => {
+    const sourceSet = await Promise.all(
+      widths.map(async (width) => {
+        const image = await getImage({ src: logo, width, format });
+        return `${image.src} ${width}w`;
+      })
+    );
+
+    let type = `image/${format}`;
+    if (format === 'svg') {
+      type = 'image/svg+xml';
+    }
+
+    return { format, sourceSet, type };
+  })
+);
 ---
 
-<Picture
-  src={logo}
-  alt=""
-  class="w-32 h-32"
-  sizes="128px"
-  formats={logo.format === 'svg'
-    ? ['svg']
-    : ['avif', 'webp', logo.format as 'png' | 'jpeg' | 'jpg']}
-  aspectRatio="1:1"
-  widths={[128, 256, 512]}
-/>
+<picture>
+  {
+    sources.map(({ sourceSet, type }) => (
+      <source type={type} srcset={sourceSet.join(', ')} sizes="128px" />
+    ))
+  }
+  <Image src={logo} alt="" class="w-32 h-32" />
+</picture>

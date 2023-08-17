@@ -17,24 +17,32 @@ tags:
   - Icons
 categories:
   - Feature
-banner: banner.jpg
+banner: ./banner.jpg
 toc: true
 ---
 
 import Video from '../../../components/shortcodes/Video.astro';
 export { default as banner } from './banner.jpg';
 
-![](banner.png)
+![](./banner.png)
 
 ## What are maskable icons?
 
 If you've installed a Progressive Web App on a recent Android phone, you might notice the icon shows up with a white background. Android Oreo introduced adaptive icons, which display app icons in a variety of shapes across different device models. Icons that don't follow this new format are given white backgrounds.
 
-<img src="homescreen-any.png" alt="PWA icons in white circles on Android" max-height="100" />
+<img
+  src="homescreen-any.png"
+  alt="PWA icons in white circles on Android"
+  max-height="100"
+/>
 
 Maskable icons are a new icon format that give you more control and let your Progressive Web App use adaptive icons. If you supply a maskable icon, your icon can fill up the entire shape and look great on all Android devices. Firefox and Chrome have recently added support for this new format, and you can adopt it in your apps.
 
-<img src="homescreen-maskable.png" alt="PWA icons covering the entire circle on Android" max-height="100" />
+<img
+  src="homescreen-maskable.png"
+  alt="PWA icons covering the entire circle on Android"
+  max-height="100"
+/>
 
 ## Are my current icons ready?
 
@@ -46,7 +54,7 @@ Luckily, there's a well-defined and [standardized](https://w3c.github.io/manifes
 
 You can check which parts of your icons land within the safe zone with Chrome DevTools. With your Progressive Web App open, launch DevTools and navigate to the **Application** panel. In the **Icons** section, you can choose to **Show only the minimum safe area for maskable icons**. Your icons will be trimmed so that only the safe area is visible. If your logo is visible within this safe area, you're good to go.
 
-![Applications panel in DevTools displaying PWA icons with edges cropped](devtools.png)
+![Applications panel in DevTools displaying PWA icons with edges cropped](/posts/web-dev-maskable/devtools.png)
 
 If you want to preview your maskable icon in other shapes it may appear in on Android, I've created a tool called [Maskable.app](https://maskable.app/). Open an icon, then Maskable.app will let you try out various shapes and sizes, and you can share the preview with others on your team.
 
@@ -54,7 +62,7 @@ If you want to preview your maskable icon in other shapes it may appear in on An
 
 If you want to create a maskable icon based off your existing icon, you can use the [Maskable.app Editor](https://maskable.app/editor). Upload your icon, adjust the color and size, then export the image.
 
-![Creating icons in Maskable.app Editor](maskable-app-editor.png)
+![Creating icons in Maskable.app Editor](/posts/web-dev-maskable/maskable-app-editor.png)
 
 Once you've created a maskable icon image and tested it out in DevTools, you'll need to update your [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest) to point to the new assets. The Web App Manifest provides information about your web app in a JSON file, and includes an [`icons` array](https://developers.google.com/web/fundamentals/web-app-manifest#icons).
 

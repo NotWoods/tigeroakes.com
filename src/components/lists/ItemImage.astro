@@ -68,7 +68,7 @@ const sources = await Promise.all(
 
 <picture class={pictureClass}>
   {
-    sources.map(({ format, sourceSet, type }) => (
+    sources.map(({ sourceSet, type }) => (
       <source type={type} srcset={sourceSet.join(', ')} sizes={sizes} />
     ))
   }

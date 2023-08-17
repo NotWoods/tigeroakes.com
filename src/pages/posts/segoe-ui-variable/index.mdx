@@ -43,7 +43,7 @@ body {
 
 Segoe UI Variable isn't available, even though you can see it in the system font list. The browser will just fall back to another font like Times New Roman. The only way to use it with this name is to download a webfont, which adds to your site's download size.
 
-![Screenshot of Windows 11 font settings, showing entries for "Segoe UI" and "Segoe UI Variable"](font-settings-windows-11.png)
+![Screenshot of Windows 11 font settings, showing entries for "Segoe UI" and "Segoe UI Variable"](/posts/segoe-ui-variable/font-settings-windows-11.png)
 
 So how do you use Segoe UI Variable? I spent a few days asking around at Microsoft trying to find out. [Ian Prest](https://www.linkedin.com/in/ian-prest-5a93061/), who's working on fonts in Microsoft Edge, let me know that you need to use one of the following 3 names:
 
@@ -61,7 +61,7 @@ Segoe UI Variable has two different axes of variation: font weight and optical s
 
 | Small | Text | Display |
 | --- | --- | --- |
-| ![Preview of Segoe UI Variable Small](typography_caption.svg) | ![Preview of Segoe UI Variable Text](typography_body.svg) | ![Preview of Segoe UI Variable Display](typography_title.svg) |
+| ![Preview of Segoe UI Variable Small](/posts/segoe-ui-variable/typography_caption.svg) | ![Preview of Segoe UI Variable Text](/posts/segoe-ui-variable/typography_body.svg) | ![Preview of Segoe UI Variable Display](/posts/segoe-ui-variable/typography_title.svg) |
 
 However, the version of Segoe UI Variable that comes with Windows 11 doesn't have optical size variation (or it doesn't work in web browsers). So you have to specify the version you want separately. (Hopefully this is fixed in a future version of Windows.)
 
@@ -91,7 +91,8 @@ The [downloadable version of Segoe UI Variable](https://aka.ms/SegoeUIVariable) 
 ```css
 @font-face {
   font-family: 'Segoe UI Variable Small';
-  src: local('Segoe UI Variable Small'),
+  src:
+    local('Segoe UI Variable Small'),
     url('/fonts/SegoeUIVF-all.tff') format('truetype-variations');
   font-variation-settings: 'opsz' 1;
   font-weight: 300 700;
@@ -99,7 +100,8 @@ The [downloadable version of Segoe UI Variable](https://aka.ms/SegoeUIVariable) 
 }
 @font-face {
   font-family: 'Segoe UI Variable Text';
-  src: local('Segoe UI Variable Text'),
+  src:
+    local('Segoe UI Variable Text'),
     url('/fonts/SegoeUIVF-all.tff') format('truetype-variations');
   font-variation-settings: 'opsz' 10.5;
   font-weight: 300 700;
@@ -107,7 +109,8 @@ The [downloadable version of Segoe UI Variable](https://aka.ms/SegoeUIVariable) 
 }
 @font-face {
   font-family: 'Segoe UI Variable Display';
-  src: local('Segoe UI Variable Display'),
+  src:
+    local('Segoe UI Variable Display'),
     url('/fonts/SegoeUIVF-all.tff') format('truetype-variations');
   font-variation-settings: 'opsz' 36;
   font-weight: 300 700;

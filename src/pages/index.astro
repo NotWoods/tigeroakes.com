@@ -10,24 +10,6 @@ import MainHead from '../components/meta/MainHead.astro';
 import RSS from '../components/meta/RSS.astro';
 import { Content as AboutContent } from './_index.md';
 
-async function loadProject(
-  projectGlob: Promise<readonly { url: string; frontmatter: any }[]>
-) {
-  const [project] = await projectGlob;
-  return {
-    project: {
-      url: project.url,
-      frontmatter: project.frontmatter,
-    },
-  };
-}
-
-const projects = await Promise.all([
-  loadProject(Astro.glob('./projects/mozilla-firefox/index.mdx')),
-  loadProject(Astro.glob('./projects/google/index.md')),
-  loadProject(Astro.glob('./projects/maskable/index.md')),
-]);
-
 const description =
   "Hi! I've worked on 3 web browsers and hundreds of open source projects. See some of those projects, read my blog, or learn about me.";
 ---
@@ -52,11 +34,11 @@ const description =
     <HomeNewPosts />
 
     <section id="featured-projects" style="--block-scale: 1">
-      <ProjectFeature {...projects[0]}>
+      <ProjectFeature project="mozilla-firefox">
         <SectionTitle slot="start" class="mb-6">Featured projects</SectionTitle>
       </ProjectFeature>
-      <ProjectFeature {...projects[1]} />
-      <ProjectFeature {...projects[2]} />
+      <ProjectFeature project="google" />
+      <ProjectFeature project="maskable" />
     </section>
 
     <div class="my-6 text-center">

@@ -3,35 +3,27 @@ import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
 import ListPanels from '../../components/lists/ListPanels.astro';
 import MainHead from '../../components/meta/MainHead.astro';
-import {
-  projectButtons,
-  projectImages,
-  PROJECT_PATH,
-} from '../../scripts/projects';
+import { projectButtons } from '../../scripts/projects';
+import { getCollection } from 'astro:content';
 
-const allPages = await Astro.glob('./**/*.{md,mdx}');
+const allPages = await getCollection('projects');
 allPages.sort((a, b) => {
-  const aWeight = a.frontmatter.weight || Infinity;
-  const bWeight = b.frontmatter.weight || Infinity;
+  const aWeight = a.data.weight || Infinity;
+  const bWeight = b.data.weight || Infinity;
   return aWeight - bWeight;
 });
 
 const projects = await Promise.all(
   allPages.map(async (page) => {
-    const [, projectId] = page.url.match(PROJECT_PATH);
-    const { backgroundImage, logo } = await projectImages(
-      projectId,
-      page.frontmatter.logo
-    );
     return {
-      title: page.frontmatter.title,
-      description: page.frontmatter.subtitle,
-      href: page.url,
-      accent: page.frontmatter.color,
-      buttons: projectButtons(page.frontmatter.links, page.url),
-      tags: page.frontmatter.tech,
-      logo,
-      backgroundImage,
+      title: page.data.title,
+      description: page.data.subtitle,
+      href: page.slug,
+      accent: page.data.color,
+      buttons: projectButtons(page.data.links, page.slug),
+      tags: page.data.tech,
+      logo: page.data.logo,
+      backgroundImage: page.data.background,
     };
   })
 );

@@ -1,27 +1,19 @@
 ---
-import {
-  projectImages,
-  projectButtons,
-  PROJECT_PATH,
-} from '../../scripts/projects';
+import { projectButtons } from '../../scripts/projects';
 import ArticleDescription from '../article/ArticleDescription.astro';
 import ArticleHeaderContainer from '../article/ArticleHeaderContainer.astro';
 import Tags from '../article/Tags.astro';
 import ItemTitle from './ItemTitle.astro';
+import { getEntry } from 'astro:content';
 
 export interface Props {
-  project: {
-    url: string;
-    frontmatter: any;
-  };
+  project: string;
 }
 
-const { project } = Astro.props as Props;
-const { title, description, tech, color } = project.frontmatter;
-const [, projectId] = project.url.match(PROJECT_PATH);
-const buttons = projectButtons(project.frontmatter.links, project.url);
-
-const { backgroundImage } = await projectImages(projectId, false);
+const { project: projectId } = Astro.props as Props;
+const project = (await getEntry('projects', projectId))!;
+const { title, description, tech, color } = project.data;
+const buttons = projectButtons(project.data.links, project.slug);
 ---
 
 <ArticleHeaderContainer
@@ -30,10 +22,10 @@ const { backgroundImage } = await projectImages(projectId, false);
   buttonsClass="justify-start"
   accent={color}
   {buttons}
-  {backgroundImage}
+  backgroundImage={project.data.background}
 >
   <slot name="start" />
-  <ItemTitle href={project.url}>{title}</ItemTitle>
+  <ItemTitle href={project.slug}>{title}</ItemTitle>
   <Tags tags={tech} />
   <ArticleDescription>{description}</ArticleDescription>
 </ArticleHeaderContainer>
