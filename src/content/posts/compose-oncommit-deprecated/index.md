@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/PostLayout.astro
 title: 'How to replace onCommit, onActive, and onDispose in Jetpack Compose'
 description: These functions were deprecated in alpha and have been replaced.
 date: 2021-03-15

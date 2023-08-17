@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: 'Hele-On schedule to be available via app'
 date: 2015-04-23
 seo:
