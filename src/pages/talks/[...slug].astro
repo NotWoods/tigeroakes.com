@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const talkEntries = await getCollection('talks');
+  return talkEntries.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: {
+      post,
+    },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<PostLayout
+  content={{
+    title: post.data.title,
+    href: post.slug,
+    date: post.data.date,
+    pictureSrc: post.data.banner,
+    pictureAlt: post.data.banner_alt,
+    tags: post.data.tags,
+  }}
+>
+  <Content />
+</PostLayout>

@@ -12,6 +12,7 @@ const readableFormatter = new Intl.DateTimeFormat('en-CA', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
+  timeZone: 'UTC',
 });
 
 const parts = formatToPartsMap(readableFormatter, date);

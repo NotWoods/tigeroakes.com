@@ -8,7 +8,6 @@ import * as header from './_index.md';
 import { getCollection } from 'astro:content';
 
 const talkEntries = await getCollection('talks');
-
 const posts = talkEntries.map((post) => ({
   title: post.data.title,
   href: post.slug,
@@ -17,6 +16,7 @@ const posts = talkEntries.map((post) => ({
   pictureAlt: post.data.banner_alt,
   tags: post.data.tags,
 }));
+posts.sort((a, b) => b.date.valueOf() - a.date.valueOf());
 ---
 
 <html lang="en">
