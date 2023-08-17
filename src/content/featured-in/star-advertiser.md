@@ -2,19 +2,15 @@
 title: 'For teenager, buds of life bloom without boundaries.'
 date: 2012-07-31
 author: mtsai
-seo:
-  type: NewsArticle
-  links:
-    - http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/
+elsewhere:
+  name: Star Advertiser
+  source: https://www.staradvertiser.com/
+  link: https://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/
 links:
-  - title: Original post
+  - title: Published in Star Advertiser
     link: http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/
 description: >
   Article from Honolulu Star-Advertiser: It's generally not a problem when the IT manager/webmaster/telecommunications adviser for Oakes Management needs an afternoon off to attend to a personal project - provided, of course, the office systems are running smoothly and he's done all his homework.
----
-
-_Posted from [Honolulu Star-Advertiser](http://www.staradvertiser.com/2012/07/31/hawaii-news/for-teenager-buds-of-life-bloom-without-boundaries/)_
-
 ---
 
 It's generally not a problem when the IT manager/webmaster/telecommunications adviser for Oakes Management needs an afternoon off to attend to a personal project - provided, of course, the office systems are running smoothly and he's done all his homework.

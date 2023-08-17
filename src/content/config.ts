@@ -68,6 +68,11 @@ const talks = defineCollection({
 const featuredIn = defineCollection({
   type: 'content',
   schema: z.object({
+    elsewhere: z.object({
+      name: z.string(),
+      source: z.string().url(),
+      link: z.string().url(),
+    }),
     title: z.string(),
     description: z.string(),
     date: z.date(),

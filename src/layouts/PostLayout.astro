@@ -39,7 +39,7 @@ async function postBanner(bannerFile: ImageMetadata | undefined) {
       src: bannerFile,
       format: 'png',
     });
-    return metadata.src;
+    return new URL(metadata.src, Astro.url);
   }
   return undefined;
 }
