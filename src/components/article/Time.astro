@@ -22,7 +22,7 @@ const parts = formatToPartsMap(readableFormatter, date);
   class:list={['inline-block text-sm opacity-80', className]}
   datetime={date.toString()}
 >
-  <slot />
+  <span><slot /></span>
   {parts.get('year')}, {parts.get('month')}
   {parts.get('day')}
 </time>
