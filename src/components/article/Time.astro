@@ -16,6 +16,9 @@ const readableFormatter = new Intl.DateTimeFormat('en-CA', {
 });
 
 const parts = formatToPartsMap(readableFormatter, date);
+const formatted = `${parts.get('year')}, ${parts.get('month')} ${parts.get(
+  'day'
+)}`;
 ---
 
 <time
@@ -23,6 +26,5 @@ const parts = formatToPartsMap(readableFormatter, date);
   datetime={date.toString()}
 >
   <span><slot /></span>
-  {parts.get('year')}, {parts.get('month')}
-  {parts.get('day')}
+  {formatted}
 </time>
