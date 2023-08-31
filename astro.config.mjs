@@ -13,9 +13,6 @@ export default defineConfig({
   site: 'https://tigeroakes.com',
   publicDir: './static',
   trailingSlash: 'always',
-  experimental: {
-    assets: true,
-  },
   image: {
     service: sharpImageService(),
   },
