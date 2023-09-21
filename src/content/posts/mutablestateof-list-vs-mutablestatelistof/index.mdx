@@ -1,0 +1,50 @@
+---
+title: 'mutableStateOf(list) vs mutableStateListOf()'
+description: The best way to work with lists and state in Jetpack Compose.
+date: 2023-09-20
+tags:
+  - Android
+  - Kotlin
+  - Jetpack Compose
+---
+
+When working with [lists](https://developer.android.com/codelabs/basic-android-kotlin-training-lists) in Jetpack Compose, you'll end up seeing both [`mutableStateOf(listOf<T>())`](<https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutableStateOf(kotlin.Any,androidx.compose.runtime.SnapshotMutationPolicy)>) and [`mutableStateListOf<T>()`](<https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutableStateListOf()>). They look pretty similar, but they have different purposes. Here's a rundown on which one to use in what situation, as well what to do with other `mutableState*Of` functions.
+
+## Use `mutableStateOf` when working with immutable lists
+
+[`State`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/State?hl=en) is designed to work with a single value. It only triggers recomposition if the value changes (if `oldValue == newValue` is false). If you pass in a list, it will only trigger recomposition if the list reference changes. If you're working with a mutable list, the reference isn't going to change so you won't end up seeing your mutations reflected in the UI. Any changes to your list will need to be done by making a new copy.
+
+```kotlin
+val mutableList = remember { mutableListOf("A", "B", "C") }
+val state = remember { mutableStateOf(mutableList) }
+
+// This won't trigger recomposition
+state.value.add("D")
+// The value hasn't changed
+state.value == mutableList // true
+```
+
+However, if you're never changing the list yourself, this can be a good benefit. For example, if you're working with a [Room database](https://developer.android.com/training/data-storage/room), you don't want to change a list of items returned from the database through mutation because the database itself won't be changed. This is the same reason you would use [`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/) instead of [`MutableList`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/) - it makes it clear that the list should be treated as immutable.
+
+## Use `mutableStateListOf` when working with mutable lists
+
+On the other hand, if you do want to mutate the list, you'll want to have any mutations trigger recomposition. This is where [`mutableStateListOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/snapshots/SnapshotStateList) comes in. It's a `MutableList` that triggers recomposition when it's mutated.
+
+```kotlin
+val state = remember { mutableStateListOf("A", "B", "C") }
+
+// This will trigger recomposition
+state.add("D")
+```
+
+You can think of it as a replacement for `MutableList` rather than a replacement for `State` or `List`. Reach for `mutableStateListOf` when you want to work with a mutable list (not a regular list) and have your changes reflected in the UI.
+
+## `mutableStateMapOf` follows the same pattern, but for maps
+
+[`mutableStateMapOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/snapshots/SnapshotStateMap) is the same as `mutableStateListOf`, but for maps. It's a [`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/) that triggers recomposition when it's mutated.
+
+If you need to be able to mutate your map inside of a composable, you'll want to use `mutableStateMapOf`. Otherwise you'll want to use a regular [`Map`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/) and `mutableStateOf`.
+
+## `mutableDoubleStateOf`, `mutableFloatStateOf`, `mutableIntStateOf`, and `mutableLongStateOf` are for primitive types
+
+[`mutableDoubleStateOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutableDoubleStateOf(kotlin.Double)), [`mutableFloatStateOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutableFloatStateOf(kotlin.Float)), [`mutableIntStateOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutableIntStateOf(kotlin.Int)), and [`mutableLongStateOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutableLongStateOf(kotlin.Long)) are all equivalent to [`mutableStateOf`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#mutableStateOf(kotlin.Any,androidx.compose.runtime.SnapshotMutationPolicy)), except they avoid [autoboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) in JVM platforms (like Android). As a result, they're more memory efficient and should be preferred when working with primitive types.
