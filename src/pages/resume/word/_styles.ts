@@ -1,4 +1,4 @@
-import docx from 'docx';
+import * as docx from 'docx';
 
 export const StyleSummary = 'Summary';
 export const StyleDateRange = 'DateRange';
