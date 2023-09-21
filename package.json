@@ -6,6 +6,7 @@
   "author": "Tiger Oakes <tigeroakes@gmail.com>",
   "private": true,
   "devDependencies": {
+    "@astrojs/check": "^0.2.0",
     "@astrojs/mdx": "^1.1.0",
     "@astrojs/preact": "^3.0.0",
     "@astrojs/rss": "^3.0.0",
@@ -27,15 +28,17 @@
     "rimraf": "^5.0.0",
     "sharp": "^0.32.1",
     "tailwindcss": "^3.3.1",
+    "typescript": "^5.2.2",
     "workbox-recipes": "^6.5.4"
   },
   "dependencies": {
     "docx": "^8.0.3",
-    "preact": "^10.17.0",
+    "preact": "^10.17.1",
     "ts-extras": "^0.11.0"
   },
   "scripts": {
     "clean": "rimraf static/assets/images && rimraf dist",
+    "check": "astro check",
     "start": "astro dev --port 8000 --drafts",
     "build": "rimraf dist && astro build",
     "preview": "astro preview",

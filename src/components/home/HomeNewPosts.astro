@@ -1,7 +1,7 @@
 ---
-import ListFlat, { Item } from '../lists/ListFlat.astro';
+import ListFlat, { type Item } from '../lists/ListFlat.astro';
 import { postAccentColor, comparePosts } from '../../scripts/posts';
-import { CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts');
 allPosts.sort(comparePosts);

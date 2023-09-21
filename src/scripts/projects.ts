@@ -1,5 +1,5 @@
 import { z } from 'astro:content';
-import { ButtonProps } from '../components/Buttons.astro';
+import type { ButtonProps } from '../components/Buttons.astro';
 
 export const linkButtonSchema = z.object({
   title: z.string(),
@@ -9,6 +9,14 @@ export const linkButtonSchema = z.object({
 
 export type Link = z.infer<typeof linkButtonSchema>;
 
+export function projectButtons(
+  links: readonly Link[],
+  pageUrl: string | URL
+): ButtonProps[];
+export function projectButtons(
+  links: readonly Link[] | undefined,
+  pageUrl: string | URL
+): ButtonProps[] | undefined;
 export function projectButtons(
   links: readonly Link[] | undefined,
   pageUrl: string | URL

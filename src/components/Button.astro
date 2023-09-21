@@ -14,7 +14,9 @@ const classes = ['button relative shadow text-center whitespace-nowrap'];
 if (!props.title) {
   classes.push('px-6 py-2');
 }
-classes.push(className);
+if (className) {
+  classes.push(className);
+}
 ---
 
 {props.href
