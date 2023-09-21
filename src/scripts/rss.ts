@@ -1,5 +1,5 @@
-import { RSSOptions } from '@astrojs/rss';
-import { CollectionEntry } from 'astro:content';
+import type { RSSOptions } from '@astrojs/rss';
+import type { CollectionEntry } from 'astro:content';
 import { formatToMimeType } from './picture';
 
 export const rssConfig = {

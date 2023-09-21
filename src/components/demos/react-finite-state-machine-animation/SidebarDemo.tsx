@@ -1,11 +1,11 @@
-import { RefObject } from 'preact';
+import type { RefObject } from 'preact';
 import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
 import {
   CodeDemoControl,
   CodeDemoControls,
 } from '../../../components/shortcodes/playground/CodeDemoControls';
 import { useFormState } from '../../../components/shortcodes/playground/useFormState';
-import { AnimationState, SidebarContent } from './SidebarContent';
+import { type AnimationState, SidebarContent } from './SidebarContent';
 
 const finalAnimationState = (open: boolean) => (open ? 'open' : 'closed');
 

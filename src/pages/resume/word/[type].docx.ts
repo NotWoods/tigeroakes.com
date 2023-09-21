@@ -1,8 +1,8 @@
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
-import { APIRoute, GetStaticPaths } from 'astro';
+import type { APIRoute, GetStaticPaths } from 'astro';
 import docx from 'docx';
 import {
-  DateRange,
+  type DateRange,
   formatResumeDateRange,
   parseHighlight,
   resumeDateFormatter,

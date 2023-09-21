@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import GithubSlugger from 'github-slugger';
-import { Item } from '../components/lists/ListFlat.astro';
+import type { Item } from '../components/lists/ListFlat.astro';
 import { postAccentColor } from './posts';
 
 function asArray<T>(x: T | readonly T[]): readonly T[] {

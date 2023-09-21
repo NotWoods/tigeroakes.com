@@ -1,13 +1,12 @@
-import { RefObject } from 'preact';
-import { MutableRef, useEffect, useRef, useState } from 'preact/hooks';
-import { JSXInternal } from 'preact/src/jsx';
+import type { JSX, RefObject } from 'preact';
+import { type MutableRef, useEffect, useRef, useState } from 'preact/hooks';
 import classes from './sidebar-content.module.css';
 
 export type AnimationState = 'open' | 'opening' | 'closed' | 'closing';
 
 interface Props {
   contentRef?: MutableRef<HTMLDivElement>;
-  contentStyle?: JSXInternal.HTMLAttributes['style'];
+  contentStyle?: JSX.HTMLAttributes['style'];
   animationState: AnimationState;
 }
 

@@ -1,5 +1,5 @@
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
-import { ComponentChildren, Fragment } from 'preact';
+import { type ComponentChildren, Fragment } from 'preact';
 
 export const TagList = ({ tags }: { tags: readonly ComponentChildren[] }) => {
   return (

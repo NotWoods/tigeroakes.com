@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { formatPost, rssConfig } from '../../scripts/rss';
 import { getCollection } from 'astro:content';
 import { comparePosts } from '../../scripts/posts';

@@ -1,13 +1,12 @@
-import type { ComponentChildren } from 'preact';
-import type { JSXInternal } from 'preact/src/jsx';
-import { CodeDemo, Props } from './CodeDemo';
+import type { ComponentChildren, JSX } from 'preact';
+import { CodeDemo, type Props } from './CodeDemo';
 import { useMounted } from './useMounted';
 
 type BaseControlProps<
   Type extends string,
-  Keys extends keyof JSXInternal.HTMLAttributes
+  Keys extends keyof JSX.HTMLAttributes,
 > = { type: Type; name: string; label?: ComponentChildren } & Pick<
-  JSXInternal.HTMLAttributes<HTMLInputElement>,
+  JSX.HTMLAttributes<HTMLInputElement>,
   Keys | 'defaultValue' | 'defaultChecked' | 'id'
 >;
 
