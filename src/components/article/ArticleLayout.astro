@@ -37,7 +37,7 @@ const { href, tableOfContents, links, ...props } = Astro.props as Props;
     <PostHeader {...props} buttons={projectButtons(links, Astro.url)} />
   </slot>
   {tableOfContents && <TableOfContents headers={tableOfContents} />}
-  <div class="prose prose-lg dark:prose-invert max-w-site px-4 py-6">
+  <div class="prose prose-lg dark:prose-invert max-w-site safe-px-4 py-6">
     <slot />
   </div>
   <slot name="footer">

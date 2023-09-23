@@ -34,7 +34,7 @@ function asTree(): readonly TreeNode[] {
 ---
 
 <nav
-  class="table-of-contents lg:sticky lg:max-h-screen top-0 lg:justify-self-end self-start flex flex-col pl-1 pr-4 mt-8 lg:mt-12"
+  class="table-of-contents lg:sticky lg:max-h-screen top-0 lg:justify-self-end self-start flex flex-col mt-8 lg:mt-12"
 >
   <h2 class="border-b py-1 uppercase ml-3 mb-2">
     On this page
@@ -50,5 +50,9 @@ function asTree(): readonly TreeNode[] {
 <style>
   .table-of-contents {
     grid-area: toc;
+    padding-left: 0.25rem;
+    padding-right: 1rem;
+    padding-left: max(0.25rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
   }
 </style>
