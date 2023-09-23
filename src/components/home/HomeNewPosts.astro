@@ -1,12 +1,11 @@
 ---
 import ListFlat, { type Item } from '../lists/ListFlat.astro';
-import { postAccentColor, comparePosts } from '../../scripts/posts';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { postAccentColor, getAllPosts } from '../../scripts/posts';
+import type { CollectionEntry } from 'astro:content';
 
-const allPosts = await getCollection('posts');
-allPosts.sort(comparePosts);
+const allPosts = await getAllPosts()
 const featured = allPosts.filter((post) =>
-  post.data.categories.includes('Feature')
+  post.data.categories.includes('Feature') && !post.data.draft
 );
 
 function formatPost(post: CollectionEntry<'posts'>): Item {

@@ -3,15 +3,17 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
 
 export async function getStaticPaths() {
-  const talkEntries = await getCollection('posts');
-  return talkEntries.map((post) => ({
-    params: {
-      slug: post.slug,
-    },
-    props: {
-      post,
-    },
-  }));
+  const postEntries = await getCollection('posts');
+  return postEntries
+    .filter((post) => !post.data.draft)
+    .map((post) => ({
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    }));
 }
 
 interface Props {

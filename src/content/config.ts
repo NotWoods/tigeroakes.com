@@ -46,6 +46,7 @@ const posts = defineCollection({
       banner: image().optional(),
       banner_alt: z.string().optional(),
       toc: z.boolean().default(false),
+      draft: z.boolean().default(false),
     }),
 });
 

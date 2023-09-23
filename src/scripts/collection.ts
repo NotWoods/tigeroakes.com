@@ -35,7 +35,9 @@ export async function getCollectedPages(key: 'tags' | 'categories') {
     getCollection('projects'),
   ]);
 
-  const formattedPages = [...posts, ...talks].map(
+  const publishedPosts = posts.filter((post) => !post.data.draft);
+
+  const formattedPages = [...publishedPosts, ...talks].map(
     (
       page
     ): Item & { tags: readonly string[]; categories: readonly string[] } => ({

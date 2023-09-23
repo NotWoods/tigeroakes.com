@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
 import ListGridYears from '../../components/lists/ListGridYears.astro';
@@ -7,10 +6,10 @@ import PostsHeader from '../../components/lists/PostsHeader.astro';
 import MainHead from '../../components/meta/MainHead.astro';
 import RSS from '../../components/meta/RSS.astro';
 import * as header from './_index.md';
-import { comparePosts } from '../../scripts/posts';
+import { getAllPosts } from '../../scripts/posts';
 
-const allPages = await getCollection('posts');
-const posts = allPages.sort(comparePosts).map((post) => ({
+const allPages = await getAllPosts();
+const posts = allPages.map((post) => ({
   title: post.data.title,
   href: `./${post.slug}/`,
   date: post.data.date,

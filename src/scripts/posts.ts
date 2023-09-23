@@ -1,3 +1,4 @@
+import { getCollection } from 'astro:content';
 import tagColors from '../data/tags.json';
 
 export function postAccentColor(tags: readonly string[] = []) {
@@ -23,4 +24,9 @@ export function comparePosts(
   b: { data: { date: Date } }
 ) {
   return b.data.date.valueOf() - a.data.date.valueOf();
+}
+
+export async function getAllPosts() {
+  const allPosts = await getCollection('posts');
+  return allPosts.filter((post) => !post.data.draft).sort(comparePosts);
 }
