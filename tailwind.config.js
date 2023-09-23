@@ -1,27 +1,21 @@
 // @ts-check
 
-const colors = require('tailwindcss/colors');
+import colors from 'tailwindcss/colors';
+import themeColors from './src/data/colors.js';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,mdx}'],
   theme: {
     colors: {
+      ...themeColors,
       transparent: 'transparent',
       current: 'currentColor',
       accent: 'var(--accent)',
       black: colors.black,
       white: colors.white,
-      slate: {
-        200: '#ebeeef',
-        800: '#032030',
-        900: '#021018',
-      },
       gray: colors.gray,
       zinc: colors.zinc,
-      orange: {
-        500: '#e67237',
-      },
     },
     fontFamily: {
       sans: ['Lato', 'Trebuchet MS', 'sans-serif'],

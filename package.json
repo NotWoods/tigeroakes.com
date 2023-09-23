@@ -4,6 +4,7 @@
   "description": "My portfolio website. Designed to work offline, load quickly, and showcase some of my favorite projects.",
   "repository": "https://github.com/NotWoods/tigeroakes.com.git",
   "author": "Tiger Oakes <tigeroakes@gmail.com>",
+  "type": "module",
   "private": true,
   "devDependencies": {
     "@astrojs/check": "^0.2.0",

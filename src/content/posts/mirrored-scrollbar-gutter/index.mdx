@@ -1,0 +1,77 @@
+---
+title: How to use overlay scrollbars in any browser with minimal JavaScript
+description: Using padding and CSS functions to create dynamic gutters.
+date: 2023-08-31
+tags:
+  - Web
+  - CSS
+  - JavaScript
+categories:
+  - Planet Mozilla
+---
+
+In [Microsoft Loop](https://loop.microsoft.com/learn), we wanted to use scrollbars that don't push content to the side.
+
+...
+
+The goal is to adjust our inline padding around the scrollbar, so it stays equal on either side of the element.
+
+
+We calculate the scrollbar width once then cache the result, to minimize the performance hit to a single style calculation.
+
+```js
+let cachedWidth;
+
+/**
+ * @param {string} className CSS class name to use, in case the element has a custom scrollbar style.
+ * @param {Document} targetDocument Document to use for calculations. Defaults to the current document.
+ */
+function calculateScrollbarWidth(className) {
+  if (cachedWidth !== undefined) {
+    return cachedWidth;
+  }
+
+  // This is the element that will have a scrollbar
+  const outer = document.createElement("div");
+  outer.className = className;
+  outer.style.visibility = "hidden";
+  outer.style.overflow = "scroll";
+
+  // This is the content inside the scrollable parent
+  const inner = document.createElement("div");
+  outer.appendChild(inner);
+
+  // Calculate the size difference between the parent and the child
+  document.body.appendChild(outer);
+  const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+  outer.remove();
+
+  cachedWidth = scrollbarWidth;
+  return scrollbarWidth;
+}
+```
+
+`--default-padding-inline` is used to represent the inline padding if no scrollbar is present.
+
+The scrollbar width is saved to `--scrollbar-inline-size`.
+
+```css
+.mirrored-scrollbar-gutter {
+  scrollbar-gutter: stable;
+  /* On the left side, use the larger of the scrollbar width or the default padding */
+  padding-inline-start: max(
+    0px,
+    var(--default-padding-inline),
+    var(--scrollbar-inline-size)
+  );
+  /* On the right side, use the default padding minus the scrollbar width.
+     The minimum value is 0px, so if the scrollbar is larger than the default padding
+     content will just be pushed against the scrollbar. */
+  padding-inline-end: max(
+    0px,
+    calc(var(--default-padding-inline) - var(--scrollbar-inline-size))
+  );
+}
+```
+
+This works with styled scrollbars in Webkit/Chrome, as well as overlay scrollbars in Firefox, Safari, and Chrome.

@@ -49,7 +49,7 @@ const { items } = Astro.props as Props;
   }
 </main>
 
-<style>
+<style is:global>
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -69,7 +69,7 @@ const { items } = Astro.props as Props;
     }
   }
 
-  .project-panel :global(picture) {
+  .project-panel picture {
     @apply mx-auto w-32 h-32;
   }
 </style>
