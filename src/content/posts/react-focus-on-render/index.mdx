@@ -1,0 +1,171 @@
+---
+title: 'The easiest way to set focus on mount in React'
+description: Using callback refs to avoid useEffect issues.
+date: 2023-10-23
+tags:
+  - Web
+  - React
+categories:
+  - Planet Mozilla
+banner: ./banner.png
+---
+
+If you need to [programmatically set focus](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) on a React element, most tutorials and StackOverflow answers will tell you to use the [`useEffect` hook](https://react.dev/reference/react/useEffect) and a [ref object](https://react.dev/reference/react/useRef#manipulating-the-dom-with-a-ref) like this.
+
+```jsx
+import { useRef, useEffect } from 'react';
+
+const Component = () => {
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    buttonRef.current.focus();
+  }, []);
+
+  return (
+    <button type="button" ref={buttonRef}>
+      Auto-focused!
+    </button>
+  );
+};
+```
+
+This works for simple cases, but it falls apart as soon as you introduce conditional rendering. For example, if you don't show your button until some state has changed, you'll need to add that state to the dependency array of the `useEffect` hook. You also need to ensure that the effect doesn't run every time the state changes, so you'll need to add a condition to the effect callback. And if these conditions get out of sync, you may introduce accessibility bugs. This is a lot of boilerplate to set focus on mount!
+
+```jsx
+import { useRef, useEffect } from 'react';
+
+const ConditionallyRendered = ({ hidden }) => {
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    // need to repeat logic here
+    if (!hidden) {
+      buttonRef.current.focus();
+    }
+  }, [hidden]);
+
+  return (
+    <div>
+      {/* need to repeat logic here */}
+      {hidden && (
+        <button type="button" ref={buttonRef}>
+          Auto-focused!
+        </button>
+      )}
+    </div>
+  );
+};
+```
+
+# Callback refs to the rescue
+
+React refs very versatile, and you're not limited to the ref objects that [`useRef`](https://react.dev/reference/react/useRef) and [`createRef`](https://react.dev/reference/react/createRef) return. Instead of an object, you can pass in a [callback function ref](https://react.dev/reference/react-dom/components/common#ref-callback)! This callback will be called with the DOM element as soon as it's mounted, and again with `null` when it's unmounted.
+
+This makes it easy to set focus, with a reusable helper function.
+
+```jsx
+/**
+ * Auto-focus on this element when its mounted.
+ * @param {HTMLElement | null} element
+ * @returns {void}
+ */
+const autoFocus = (element) => element?.focus();
+
+const Component = () => {
+  return (
+    <button type="button" ref={autoFocus}>
+      Auto-focused!
+    </button>
+  );
+};
+
+const ConditionallyRendered = ({ hidden }) => {
+  return (
+    <div>
+      {hidden && (
+        <button type="button" ref={buttonRef}>
+          Auto-focused!
+        </button>
+      )}
+    </div>
+  );
+};
+```
+
+# Focus on first list element
+
+Callback refs can also be used to quickly focus on the first element in a list. Ideally, we don't want each list item to think about focus, so we'll handle it in the wrapper container.
+
+We start by writing a function that can find the first focusable item in a container. This is also handled automatically in the [Microsoft Fluent UI library](https://react.fluentui.dev/?path=/docs/utilities-focus-management-usefocusfinders--default#find-first).
+
+```js
+/**
+ * CSS selector to find focusable elements.
+ * @see https://github.com/microsoft/tabster/blob/6bfd54a45f5b20eccd17b8a05f6c86c241b992c3/src/Focusable.ts#L17-L25
+ */
+const FOCUSABLE_CSS_SELECTOR = `a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), *[tabindex], *[contenteditable]`;
+
+/**
+ * Find the first focusable element in the given container,
+ * such as the first focusable list item.
+ * @param {HTMLElement} container
+ * @returns {HTMLElement | null}
+ */
+function findFirstFocusable(container) {
+  return container.querySelector(FOCUSABLE_CSS_SELECTOR);
+}
+```
+
+This can then be used with a callback ref to focus on the first item when the list mounts.
+
+```jsx
+/**
+ * Auto-focus on the first focusable item in element when its mounted.
+ * @param {HTMLElement | null} element
+ * @returns {void}
+ */
+const autoFocusFirstFoucusable = (element) => {
+  if (element) {
+    findFirstFocusable(element)?.focus();
+  }
+}
+
+const ListItem = ({ children }) => {
+  return (
+    <li>
+      <button type="button">{children}</button>
+    </li>
+  );
+};
+
+const List = ({ data }) => {
+  return (
+    <ul ref={autoFocusFirstFoucusable}>
+      {data.map((item) => <ListItem key={item.id}>{item.value}</ListItem>)}
+    </ul>
+  );
+};
+```
+
+## Wait until list data is loaded
+
+One more feature of callback refs is that they will be invoked whenever the callback changes. If we set the callback ref conditionally, then we can easily control when focus is set.
+
+For a list of data, we wait to wait until the list renders before focusing on the first item. We can use a simple tuple to track whether the list data is ready, and only set the callback ref when it is.
+
+```jsx
+const LazyList = ({ data }) => {
+  const isLoaded = data !== undefined && data.length > 0;
+
+  // When isLoaded is false, no ref will be set and nothing will be focused.
+  // When isLoaded is true, the ref will be set on mount and the first item will be focused.
+  return (
+    <ul ref={isLoaded ? autoFocusFirstFoucusable : undefined}>
+      {data?.map((item) => <ListItem key={item.id}>{item.value}</ListItem>)}
+    </ul>
+  );
+};
+```
+
+I hope these tricks help you write more accessible React components!
