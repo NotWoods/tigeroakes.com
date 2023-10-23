@@ -1,8 +1,8 @@
 ---
+import { Picture } from 'astro:assets';
 import Button from '../Button.astro';
 import Logo from '../Logo.astro';
 import profileImage from './profile.jpg';
-import Picture from '../Picture.astro';
 ---
 
 <section
@@ -28,6 +28,7 @@ import Picture from '../Picture.astro';
     class="border-4 border-slate-800 rounded-full h-40 w-40"
     sizes="10rem"
     formats={['avif', 'webp', 'jpeg']}
+    fallbackFormat="jpeg"
     widths={[160, 320, 640]}
   />
 </section>

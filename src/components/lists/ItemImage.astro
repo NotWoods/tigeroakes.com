@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro';
-import Picture, { type ImageFormat } from '../Picture.astro';
+import { Picture } from 'astro:assets';
+import type { ImageFormat } from '../Picture.astro';
 
 export interface Props {
   src: ImageMetadata;
@@ -43,7 +44,7 @@ const widths = [width, width * 2, width * 4];
   {loading}
   {sizes}
   class={imgClass}
-  pictureClass=`mb-2 ${heightClass}`
+  pictureAttributes={{ class: `mb-2 ${heightClass}` }}
   {formats}
   {widths}
 />
