@@ -3,7 +3,7 @@ import sectionData from '../../../data/sections.json';
 import JsonLD from './JsonLD.astro';
 
 export interface Props {
-  title?: string;
+  title: string;
 }
 
 const { title } = Astro.props as Props;
@@ -27,7 +27,12 @@ if (pagePath) {
 }
 
 const itemListElement = breadcrumbs.map(({ name, url }, index) => {
-  const item = {
+  const item: {
+    '@type': 'ListItem';
+    position: number;
+    name: string;
+    item?: string;
+  } = {
     '@type': 'ListItem',
     position: index + 1,
     name,

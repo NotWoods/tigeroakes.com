@@ -57,7 +57,7 @@ const formattedProps: ArticleLayoutProps = {
   links: frontmatter.links,
 };
 
-const pictureSrc = await postBanner(frontmatter.banner);
+const pictureSrc = (await postBanner(frontmatter.banner))?.toString();
 ---
 
 <html lang="en">

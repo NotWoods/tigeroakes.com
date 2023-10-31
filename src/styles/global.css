@@ -36,7 +36,9 @@
     display: block;
   }
 
-  .safe-px-2, .safe-px-4, .safe-px-8 {
+  .safe-px-2,
+  .safe-px-4,
+  .safe-px-8 {
     padding-left: var(--padding-x);
     padding-right: var(--padding-x);
     padding-left: max(env(safe-area-inset-left), var(--padding-x));

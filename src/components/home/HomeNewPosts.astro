@@ -3,15 +3,14 @@ import ListFlat, { type Item } from '../lists/ListFlat.astro';
 import { postAccentColor, getAllPosts } from '../../scripts/posts';
 import type { CollectionEntry } from 'astro:content';
 
-const allPosts = await getAllPosts()
-const featured = allPosts.filter((post) =>
-  post.data.categories.includes('Feature') && !post.data.draft
+const allPosts = await getAllPosts();
+const featured = allPosts.filter(
+  (post) => post.data.categories.includes('Feature') && !post.data.draft
 );
 
 function formatPost(post: CollectionEntry<'posts'>): Item {
   return {
     title: post.data.title,
-    description: post.data.description,
     date: post.data.date,
     accent: postAccentColor(post.data.tags),
     href: `/posts/${post.slug}/`,

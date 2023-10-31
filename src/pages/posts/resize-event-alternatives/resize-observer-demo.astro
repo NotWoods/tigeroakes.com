@@ -29,9 +29,9 @@ import IframeDemo from './_IframeDemo.astro';
 </style>
 
 <script>
-  const resizeCount = document.getElementById('resizeCount');
-  const lastTime = document.getElementById('lastTime');
-  const boxDimensions = document.getElementById('boxDimensions');
+  const resizeCount = document.getElementById('resizeCount')!;
+  const lastTime = document.getElementById('lastTime')!;
+  const boxDimensions = document.getElementById('boxDimensions')!;
 
   let count = 0;
   let lastTimeMs = performance.now();
@@ -46,5 +46,5 @@ import IframeDemo from './_IframeDemo.astro';
 
     lastTimeMs = now;
   });
-  observer.observe(document.querySelector('.box'));
+  observer.observe(document.querySelector('.box')!);
 </script>

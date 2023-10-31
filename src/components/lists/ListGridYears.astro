@@ -1,6 +1,6 @@
 ---
 import { groupBy } from '../../scripts/collection';
-import ListGrid, { Item } from './ListGrid.astro';
+import ListGrid, { type Item } from './ListGrid.astro';
 
 export interface Props {
   items: readonly Item[];
@@ -10,7 +10,9 @@ export interface Props {
 const { items, pictureAspect } = Astro.props as Props;
 
 function groupByYear(): readonly { year: number; items: readonly Item[] }[] {
-  const itemsByYear = groupBy(items, (item) => item.date instanceof Date ? item.date.getFullYear() : item.date.year);
+  const itemsByYear = groupBy(items, (item) =>
+    item.date instanceof Date ? item.date.getFullYear() : item.date.year
+  );
   return Array.from(itemsByYear).map(([year, items]) => ({ year, items }));
 }
 ---

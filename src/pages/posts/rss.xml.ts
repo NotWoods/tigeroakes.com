@@ -1,7 +1,6 @@
 import rss from '@astrojs/rss';
 import type { APIRoute } from 'astro';
 import { formatPost, rssConfig } from '../../scripts/rss';
-import { getCollection } from 'astro:content';
 import { getAllPosts } from '../../scripts/posts';
 
 export const get: APIRoute = async () => {

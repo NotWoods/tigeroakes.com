@@ -53,7 +53,7 @@ const { title = 'Code demo' } = Astro.props as Props;
   </style>
 
   <script>
-    const windowDimensions = document.getElementById('windowDimensions');
+    const windowDimensions = document.getElementById('windowDimensions')!;
 
     function updateWindowDimensions() {
       windowDimensions.textContent = `${window.innerWidth}x${window.innerHeight}`;

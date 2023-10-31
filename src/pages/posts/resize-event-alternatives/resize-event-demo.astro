@@ -17,8 +17,8 @@ import IframeDemo from './_IframeDemo.astro';
 </style>
 
 <script>
-  const resizeCount = document.getElementById('resizeCount');
-  const lastTime = document.getElementById('lastTime');
+  const resizeCount = document.getElementById('resizeCount')!;
+  const lastTime = document.getElementById('lastTime')!;
 
   let count = 0;
   let lastTimeMs = performance.now();

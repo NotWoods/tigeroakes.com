@@ -13,7 +13,7 @@ function href(tag: string) {
 }
 
 const { tags = [], elsewhere, class: className } = Astro.props as Props;
-const projects = [];
+const projects: { url: string; name: string }[] = [];
 ---
 
 <ul class={`leading-normal opacity-80 ${className}`}>

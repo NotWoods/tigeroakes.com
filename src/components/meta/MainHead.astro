@@ -35,7 +35,10 @@ const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 <link rel="icon" type="image/png" href="/favicon_x512.png" sizes="512x512" />
 <link rel="canonical" href={new URL(canonical, Astro.site).href} />
 <link rel="manifest" href="/site.webmanifest" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
 <meta
   name="theme-color"
   content={themeColor === 'orange-500'
