@@ -84,7 +84,7 @@ const ConditionallyRendered = ({ hidden }) => {
   return (
     <div>
       {hidden && (
-        <button type="button" ref={buttonRef}>
+        <button type="button" ref={autoFocus}>
           Auto-focused!
         </button>
       )}
