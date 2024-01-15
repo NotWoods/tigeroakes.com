@@ -41,7 +41,7 @@ const displayedTime = displayedTimes.find((time) => time.date != undefined) ?? {
 };
 ---
 
-<ArticleHeaderContainer {...props} class="bg-slate-800 pt-8 md:pt-4">
+<ArticleHeaderContainer {...props} class="bg-slate-800" padding="pt-8 md:pt-4">
   {
     displayedTime.date && (
       <Time class="mb-2" date={displayedTime.date}>

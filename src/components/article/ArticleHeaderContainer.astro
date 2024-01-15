@@ -6,6 +6,7 @@ import Polymorphic from './Polymorphic.astro';
 export interface Props {
   as?: 'header' | 'article';
   class?: string;
+  padding?: string;
   buttonsClass?: string;
   style?: string;
   accent?: string;
@@ -20,42 +21,40 @@ const {
   backgroundImage,
   style = '',
   class: className,
+  padding = 'p-4',
   buttonsClass = 'text-lg justify-center',
 } = Astro.props as Props;
 
-const classes = ['text-slate-200 bg-center bg-cover bg-no-repeat shadow-md'];
-if (as === 'header') {
-  classes.push('p-4 grid-area-header');
-}
-if (backgroundImage) {
-  classes.push('text-shadow');
-}
-if (className) {
-  classes.push(className);
-}
-
-const styles = [
-  accent && `--accent: ${accent}`,
-  backgroundImage &&
-    (await getInlineBackgroundImage({
-      src: backgroundImage,
-      width: backgroundImage.width,
-      formats: ['avif', 'webp', 'jpeg'],
-    })),
-  style,
-].filter(Boolean);
-
-const props = {
-  class: classes.join(' '),
-  style: styles.length > 0 ? styles.join(';') : undefined,
-};
+const styles =
+  [
+    accent && `--accent: ${accent}`,
+    backgroundImage &&
+      (await getInlineBackgroundImage({
+        src: backgroundImage,
+        width: backgroundImage.width,
+        formats: ['avif', 'webp', 'jpeg'],
+      })),
+    style,
+  ]
+    .filter(Boolean)
+    .join(';') || undefined;
 
 const contentClass = 'max-w-site mx-auto py-4 safe-px-4 w-full';
 ---
 
-<Polymorphic as={as} {...props}>
-  <div class={contentClass}>
-    <slot />
-    <Buttons class={buttonsClass} buttons={buttons} />
+<Polymorphic
+  as={as}
+  style={styles}
+  class:list={[
+    'text-slate-200 bg-center bg-cover bg-no-repeat shadow-md',
+    { 'grid-area-header': as === 'header', 'text-shadow': backgroundImage },
+    className,
+  ]}
+>
+  <div class:list={['backdrop-blur-sm', padding]}>
+    <div class={contentClass}>
+      <slot />
+      <Buttons class={buttonsClass} buttons={buttons} />
+    </div>
   </div>
 </Polymorphic>
