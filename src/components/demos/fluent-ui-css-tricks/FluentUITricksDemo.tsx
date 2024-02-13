@@ -1,4 +1,11 @@
-import { Checkmark20Regular, Checkmark48Filled } from '@fluentui/react-icons';
+import {
+  Button,
+  FluentProvider,
+  makeStyles,
+  webLightTheme,
+  Checkmark20Regular,
+  Checkmark48Filled,
+} from '@notwoods/fluent-ui-button-demo';
 import {
   CodeDemoControl,
   CodeDemoControls,
@@ -6,15 +13,6 @@ import {
 import { useFormState } from '../../shortcodes/playground-react/useFormState';
 import logo from './logo.svg';
 import { Demo } from '../../shortcodes/playground-react/Demo';
-
-const { Button, FluentProvider, makeStyles, webLightTheme } = import.meta.env
-  .SSR
-  ? (
-      (await import('@fluentui/react-components')) as {
-        default: typeof import('@fluentui/react-components');
-      }
-    ).default
-  : await import('./fluentui');
 
 export function ButtonDemo() {
   return (

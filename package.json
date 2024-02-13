@@ -16,6 +16,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@js-temporal/polyfill": "^0.4.4",
     "@kurone-kito/jsonresume-types": "^0.4.0",
+    "@notwoods/fluent-ui-button-demo": "^0.0.1",
     "@notwoods/webish": "^0.1.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
@@ -35,8 +36,6 @@
     "workbox-recipes": "^7.0.0"
   },
   "dependencies": {
-    "@fluentui/react-components": "^9.46.4",
-    "@fluentui/react-icons": "^2.0.227",
     "docx": "^8.0.3",
     "preact": "^10.17.1",
     "ts-extras": "^0.11.0",
