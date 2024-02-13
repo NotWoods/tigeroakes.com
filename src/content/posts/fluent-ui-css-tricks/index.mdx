@@ -1,0 +1,233 @@
+---
+title: Tricks for writing CSS in Fluent UI React v9
+description: Advanced features for clean & performant CSS.
+date: 2024-02-12
+toc: true
+tags:
+  - Web
+  - CSS
+  - React
+  - Fluent UI
+categories:
+  - Planet Mozilla
+banner: ./banner.webp
+---
+
+Last year, Microsoft released the [Fluent 2 Design System](https://fluent2.microsoft.design/) which modernizes the design language. Alongside the new designs came a new code library for React, named [Fluent UI React v9](https://react.fluentui.dev/) (as there were 8 releases of the code library following the old designs). Fluent UI React v9 is significantly easier to use and more performant than previous versions, and introduces concepts that other React UI libraries should consider adopting.
+
+One of these changes is [moving from CSS-in-JS](https://github.com/microsoft/fluentui/wiki/Component-Styling) (where stylesheets are generated and reapplied as React props change) to a [more traditional CSS approach](https://react.fluentui.dev/?path=/docs/concepts-developer-styling-components--page) (where stylesheets are generated once). This change allows for significantly better performance, as the [runtime overhead of serializing styles during the lifetime of your app](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b) is removed. Some developers have had trouble adjusting to this change, as it requires a different way of thinking about CSS. In this post, I'll share some tricks for writing CSS in Fluent UI React v9.
+
+## Apply classes conditionally instead of writing if-else statements in CSS
+
+## Pass props using CSS custom properties instead of JS parameters
+
+In Fluent UI React v9, styles defined with the `makeStyles` function are turned into a string of static CSS at build time. This means that you can't pass dynamic values to the `makeStyles` function, as the styles are generated before the app is run.
+
+```jsx
+
+```
+
+## Use slots to style child elements instead of CSS tag selectors
+
+In Fluent UI React v9, [every child element of a component is represented as a "slot"](https://react.fluentui.dev/?path=/docs/concepts-developer-customizing-components-with-slots--page). Slots let you insert custom React elements into different sections of a component, but they also let you customize the slot itself.
+
+For example, let's say you want to set a custom color for icon in a [Button](https://react.fluentui.dev/?path=/docs/components-button-button--default). The Button generates HTML that looks like this:
+
+```html
+<button type="button" class="fui-Button myButton">
+  <span class="fui-Button__icon">
+    <svg fill="currentColor"><!--Icon path goes here--></svg>
+  </span>
+  Text
+</button>
+```
+
+### Using a tag selector (bad)
+
+Looking at the HTML, you might think you could style the icon with the following CSS:
+
+```js
+import { Button, makeStyles } from '@fluentui/react-components';
+
+const useStyles = makeStyles({
+  myButton: {
+    '& > span': {
+      color: 'red',
+    },
+  },
+});
+
+function MyButton() {
+  const classes = useStyles();
+  return (
+    <Button className={classes.myButton} icon={<SomeIcon />}>
+      Text
+    </Button>
+  );
+}
+```
+
+This turns into CSS that looks like this:
+
+```css
+.myButton > span {
+  color: red;
+}
+```
+
+It's not very clear from the CSS that the `span` is the icon, and it's not clear from the JSX that the `span` is the icon. This CSS [is also slow](https://blogs.windows.com/msedgedev/2023/01/17/the-truth-about-css-selector-performance/), because the browser needs to check every `span` in the entire document to see if this rule applies to it.
+
+### Using a class name (better)
+
+Rather than using a tag selector, you can use the `.fui-Button__icon` class name to style the icon. These class names are present on every element in the Fluent UI React v9 library, and they're available as constants you can import.
+
+```js
+import {
+  Button,
+  buttonClassNames,
+  makeStyles,
+} from '@fluentui/react-components';
+
+const useStyles = makeStyles({
+  myButton: {
+    [`& > .${buttonClassNames.icon}`]: {
+      color: 'red',
+    },
+  },
+});
+
+function MyButton() {
+  const classes = useStyles();
+  return (
+    <Button className={classes.myButton} icon={<SomeIcon />}>
+      Text
+    </Button>
+  );
+}
+```
+
+This turns into CSS that looks like this:
+
+```css
+.myButton > .fui-Button__icon {
+  color: red;
+}
+```
+
+Now it's clear that the CSS is applied to an icon inside of `myButton`. This CSS is also faster, because the browser only needs to check elements with the `.fui-Button__icon` class name.
+
+### Using a slot (best)
+
+The best way to style the icon is to use a slot. Slots let you apply your own classes directly, without needing to know the class names that Fluent UI React v9 uses and without needing to write any CSS child selectors.
+
+To use a slot, you need to pass an object to the `icon` prop instead of a React element. The object should have any props you want applied to the slot itself, and a `children` prop with the React element you want to insert into the slot.
+
+```js
+import { Button, makeStyles } from '@fluentui/react-components';
+
+const useStyles = makeStyles({
+  myButton: {},
+  myButtonIcon: {
+    color: 'red',
+  },
+});
+
+function MyButton() {
+  const classes = useStyles();
+  return (
+    <Button
+      className={classes.myButton}
+      // apply the `myButtonIcon` class to the icon slot
+      icon={{ className: classes.myButtonIcon, children: <SomeIcon /> }}
+    >
+      Text
+    </Button>
+  );
+}
+```
+
+This generates CSS that looks like this:
+
+```css
+.myButtonIcon {
+  color: red;
+}
+```
+
+And generates HTML that looks like this:
+
+```html
+<button type="button" class="fui-Button myButton">
+  <span class="fui-Button__icon myButtonIcon">
+    <svg fill="currentColor"><!--Icon path goes here--></svg>
+  </span>
+  Text
+</button>
+```
+
+Notice that `myButtonIcon` is applied directly to the icon, and there is no need for a child selector at all.
+
+Now it's clear from the JSX that the `myButtonIcon` class is applied to the icon. Fluent UI React v9 also has other tricks behind the scenes to make this CSS even more optimized!
+
+## Icons should be styled with `color` instead of `fill`
+
+In the above examples, I used the `color` property to style the icon. This is because all [SVG icons provided by Fluent UI React v9](https://react.fluentui.dev/?path=/docs/concepts-developer-icons-icons-catalog--page) have the attribute `fill="currentColor"`. [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword) is a special CSS keyword that resolves to the [`color` property](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the element.
+
+```jsx
+import { makeStyles } from '@fluentui/react-components';
+import { Checkmark20Regular } from '@fluentui/react-icons';
+
+const useStyles = makeStyles({
+  container: {
+    color: 'blue',
+  },
+});
+
+function MyIcon() {
+  const classes = useStyles();
+  return (
+    <div className={classes.container}>
+      {/* The checkmark will be filled with the color blue */}
+      <Checkmark20Regular />
+    </div>
+  );
+}
+```
+
+Since child elements inherit the `color` property from their parent, you can just set the `color` property on the parent element to style the icon. This also means you don't need to worry about if an icon uses `stroke` instead of `fill` or has multiple paths.
+
+## Avoid writing seperate CSS for RTL support
+
+Right-to-left (RTL) support in components is important for internationalization, as some languages are read from right to left and the UI should reflect that. Historically, we've had to pass around props like `isRTL` to components, and write separate CSS for RTL support. In Fluent UI React v9, [this is handled automatically for you](https://griffel.js.org/react/api/make-styles#rtl-support).
+
+Simply ensure that the [`<FluentProvider />`](https://react.fluentui.dev/?path=/docs/components-fluentprovider--default#dir) at the top level of your app has an `dir` prop set to `"rtl"` or `"ltr"`, and your CSS will automatically be flipped for you.
+
+```jsx
+const useStyles = makeStyles({
+  logo: {
+    textAlign: 'left',
+    marginLeft: '5px',
+  },
+});
+
+function App(props) {
+  const classes = useStyles();
+  return (
+    <FluentProvider dir={props.dir}>
+      <img src="./logo.png" className={classes.logo} />
+    </Button>
+  );
+}
+```
+
+When `dir` is set to `"rtl"`, CSS properties will be flipped using the [rtl-css-js](https://github.com/kentcdodds/rtl-css-js) library.
+
+```css
+/* When dir="rtl" */
+.logo {
+  text-align: right;
+  margin-right: 5px;
+}
+```
+
+Taking advantage of all these features in Fluent UI React v9 will make your CSS cleaner, more performant, and more maintainable. If you're interested in learning more about Fluent UI React v9, check out the [component overview](https://fluent2.microsoft.design/components/web/react/) and [official documentation](https://react.fluentui.dev/)!
