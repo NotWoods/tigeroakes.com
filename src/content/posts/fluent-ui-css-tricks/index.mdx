@@ -15,17 +15,7 @@ banner: ./banner.webp
 
 Last year, Microsoft released the [Fluent 2 Design System](https://fluent2.microsoft.design/) which modernizes the design language. Alongside the new designs came a new code library for React, named [Fluent UI React v9](https://react.fluentui.dev/) (as there were 8 releases of the code library following the old designs). Fluent UI React v9 is significantly easier to use and more performant than previous versions, and introduces concepts that other React UI libraries should consider adopting.
 
-One of these changes is [moving from CSS-in-JS](https://github.com/microsoft/fluentui/wiki/Component-Styling) (where stylesheets are generated and reapplied as React props change) to a [more traditional CSS approach](https://react.fluentui.dev/?path=/docs/concepts-developer-styling-components--page) (where stylesheets are generated once). This change allows for significantly better performance, as the [runtime overhead of serializing styles during the lifetime of your app](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b) is removed. Some developers have had trouble adjusting to this change, as it requires a different way of thinking about CSS. In this post, I'll share some tricks for writing CSS in Fluent UI React v9.
-
-## Apply classes conditionally instead of writing if-else statements in CSS
-
-## Pass props using CSS custom properties instead of JS parameters
-
-In Fluent UI React v9, styles defined with the `makeStyles` function are turned into a string of static CSS at build time. This means that you can't pass dynamic values to the `makeStyles` function, as the styles are generated before the app is run.
-
-```jsx
-
-```
+One of these changes is standadizing a more traditional CSS styling approach, which allows for significantly better performance. Some developers have had trouble adjusting to this change, as it requires a different way of thinking about CSS. In this post, I'll share some tricks for writing CSS in Fluent UI React v9.
 
 ## Use slots to style child elements instead of CSS tag selectors
 
