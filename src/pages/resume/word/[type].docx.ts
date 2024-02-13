@@ -152,7 +152,7 @@ function sectionHeader(text: string): docx.Paragraph {
   });
 }
 
-export const get: APIRoute = async ({ params }) => {
+export const GET: APIRoute = async ({ params }) => {
   const { type } = params;
   const jsonResume = await loadJsonResume(type!);
   const margin = docx.convertInchesToTwip(0.4);

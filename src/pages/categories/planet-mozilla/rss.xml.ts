@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 import { formatPost, rssConfig } from '../../../scripts/rss';
 import { getAllPosts } from '../../../scripts/posts';
 
-export const get: APIRoute = async () => {
+export const GET: APIRoute = async () => {
   const posts = await getAllPosts();
   return rss({
     ...rssConfig,
