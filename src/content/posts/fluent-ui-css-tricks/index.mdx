@@ -10,8 +10,10 @@ tags:
   - Fluent UI
 categories:
   - Planet Mozilla
-banner: ./banner.webp
+banner: ./banner.png
 ---
+
+import { AutoRTL, ButtonDemo, IconColor } from '../../../components/demos/fluent-ui-css-tricks/FluentUITricksDemo.tsx';
 
 Last year, Microsoft released the [Fluent 2 Design System](https://fluent2.microsoft.design/) which modernizes the design language. Alongside the new designs came a new code library for React, named [Fluent UI React v9](https://react.fluentui.dev/) (as there were 8 releases of the code library following the old designs). Fluent UI React v9 is significantly easier to use and more performant than previous versions, and introduces concepts that other React UI libraries should consider adopting.
 
@@ -20,6 +22,8 @@ One of these changes is standadizing a more traditional CSS styling approach, wh
 ## Use slots to style child elements instead of CSS tag selectors
 
 In Fluent UI React v9, [every child element of a component is represented as a "slot"](https://react.fluentui.dev/?path=/docs/concepts-developer-customizing-components-with-slots--page). Slots let you insert custom React elements into different sections of a component, but they also let you customize the slot itself.
+
+<ButtonDemo client:load />
 
 For example, let's say you want to set a custom color for icon in a [Button](https://react.fluentui.dev/?path=/docs/components-button-button--default). The Button generates HTML that looks like this:
 
@@ -186,6 +190,8 @@ function MyIcon() {
 
 Since child elements inherit the `color` property from their parent, you can just set the `color` property on the parent element to style the icon. This also means you don't need to worry about if an icon uses `stroke` instead of `fill` or has multiple paths.
 
+<IconColor client:visible />
+
 ## Avoid writing seperate CSS for RTL support
 
 Right-to-left (RTL) support in components is important for internationalization, as some languages are read from right to left and the UI should reflect that. Historically, we've had to pass around props like `isRTL` to components, and write separate CSS for RTL support. In Fluent UI React v9, [this is handled automatically for you](https://griffel.js.org/react/api/make-styles#rtl-support).
@@ -193,10 +199,12 @@ Right-to-left (RTL) support in components is important for internationalization,
 Simply ensure that the [`<FluentProvider />`](https://react.fluentui.dev/?path=/docs/components-fluentprovider--default#dir) at the top level of your app has an `dir` prop set to `"rtl"` or `"ltr"`, and your CSS will automatically be flipped for you.
 
 ```jsx
+import { FluentProvider, makeStyles } from '@fluentui/react-components';
+
 const useStyles = makeStyles({
   logo: {
     textAlign: 'left',
-    marginLeft: '5px',
+    marginLeft: '15px',
   },
 });
 
@@ -205,7 +213,7 @@ function App(props) {
   return (
     <FluentProvider dir={props.dir}>
       <img src="./logo.png" className={classes.logo} />
-    </Button>
+    </FluentProvider>
   );
 }
 ```
@@ -216,8 +224,10 @@ When `dir` is set to `"rtl"`, CSS properties will be flipped using the [rtl-css-
 /* When dir="rtl" */
 .logo {
   text-align: right;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 ```
+
+<AutoRTL client:visible />
 
 Taking advantage of all these features in Fluent UI React v9 will make your CSS cleaner, more performant, and more maintainable. If you're interested in learning more about Fluent UI React v9, check out the [component overview](https://fluent2.microsoft.design/components/web/react/) and [official documentation](https://react.fluentui.dev/)!

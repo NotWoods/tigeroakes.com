@@ -4,8 +4,12 @@
     "strictNullChecks": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-    // Add type definitions for our Vite runtime.
     "types": ["astro/client", "vite/client", "vite-plugin-pwa/client"],
-    "allowSyntheticDefaultImports": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true
+  },
+  "exclude": [
+    "./src/components/shortcodes/playground-react/**/*.tsx",
+    "./src/components/demos/fluent-ui-css-tricks/*.tsx"
+  ]
 }

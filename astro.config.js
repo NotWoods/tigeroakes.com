@@ -1,5 +1,7 @@
+// @ts-check
 import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig, sharpImageService } from 'astro/config';
@@ -7,6 +9,8 @@ import AstroPWA from '@vite-pwa/astro';
 import rehypeKatex from 'rehype-katex';
 import remarkBehead from 'remark-behead';
 import remarkMath from 'remark-math';
+
+import { exclude as reactFiles } from './tsconfig.json';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +25,12 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   integrations: [
-    preact(),
+    preact({
+      exclude: reactFiles,
+    }),
+    react({
+      include: reactFiles,
+    }),
     tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap(),
@@ -79,11 +88,15 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    drafts: process.env.NETLIFY_CONTEXT === 'deploy-preview',
     shikiConfig: {
       theme: 'dark-plus',
     },
     remarkPlugins: [remarkMath, [remarkBehead, { minDepth: 3 }]],
     rehypePlugins: [[rehypeKatex, { output: 'mathml' }]],
+  },
+  vite: {
+    ssr: {
+      noExternal: ['@fluentui/react-icons'],
+    },
   },
 });
