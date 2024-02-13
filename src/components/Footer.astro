@@ -16,21 +16,23 @@ const { email, social } = contactData;
     set:html={email.name}
   />
   <div class="flex">
-    {social.map((item) => (
-      <a
-        class="mx-2 my-4 relative accent-block--bottom"
-        title={item.name}
-        href={item.link}
-      >
-        <img
-          class="block"
-          width="24"
-          height="24"
-          alt={item.name}
-          src={item.icon}
-          loading="lazy"
-        />
-      </a>
-    ))}
+    {
+      social.map((item) => (
+        <a
+          class="mx-2 my-4 relative accent-block--bottom"
+          title={item.name}
+          href={item.link}
+        >
+          <img
+            class="block"
+            width="24"
+            height="24"
+            alt={item.name}
+            src={item.icon}
+            loading="lazy"
+          />
+        </a>
+      ))
+    }
   </div>
 </footer>

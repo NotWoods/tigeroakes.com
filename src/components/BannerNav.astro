@@ -29,14 +29,16 @@ function isCurrent({ url }: { url: string }) {
   {logo === 'none' && <div class="grow h-7" />}
 
   <nav class="flex flex-wrap items-stretch mx-auto gap-x-2 gap-y-6">
-    {navData.map((page) => (
-      <a
-        class="px-2 relative accent-block--bottom"
-        href={page.url}
-        aria-current={isCurrent(page) ? 'page' : undefined}
-      >
-        {page.name}
-      </a>
-    ))}
+    {
+      navData.map((page) => (
+        <a
+          class="px-2 relative accent-block--bottom"
+          href={page.url}
+          aria-current={isCurrent(page) ? 'page' : undefined}
+        >
+          {page.name}
+        </a>
+      ))
+    }
   </nav>
 </header>

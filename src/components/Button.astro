@@ -19,9 +19,17 @@ if (className) {
 }
 ---
 
-{props.href
-  ? <a {...props} class:list={classes}><slot /></a>
-  : <button type="button" {...props} class:list={classes}><slot /></button>}
+{
+  props.href ? (
+    <a {...props} class:list={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type="button" {...props} class:list={classes}>
+      <slot />
+    </button>
+  )
+}
 
 <style is:global>
   .button::after {

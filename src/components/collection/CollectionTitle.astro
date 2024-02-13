@@ -21,23 +21,25 @@ const { collection, tag, rss } = Astro.props as Props;
   </a><span class={`${articleTitleClasses} text-2xl normal-case`}>: {tag}</span>
 </h2>
 
-{rss && (
-  <Button class="ml-auto" href={rss} title="RSS">
-    <svg
-      aria-label="RSS"
-      role="img"
-      width="40"
-      height="40"
-      viewBox="0 0 512 512"
-    >
-      <rect width="512" height="512" fill="#e67237" />
-      <circle cx="145" cy="367" r="35" fill="#ebeeef" />
-      <path
-        fill="none"
-        stroke="#ebeeef"
-        stroke-width="60"
-        d="M109 241c89 0 162 73 162 162m114 0c0-152-124-276-276-276"
-      />
-    </svg>
-  </Button>
-)}
+{
+  rss && (
+    <Button class="ml-auto" href={rss} title="RSS">
+      <svg
+        aria-label="RSS"
+        role="img"
+        width="40"
+        height="40"
+        viewBox="0 0 512 512"
+      >
+        <rect width="512" height="512" fill="#e67237" />
+        <circle cx="145" cy="367" r="35" fill="#ebeeef" />
+        <path
+          fill="none"
+          stroke="#ebeeef"
+          stroke-width="60"
+          d="M109 241c89 0 162 73 162 162m114 0c0-152-124-276-276-276"
+        />
+      </svg>
+    </Button>
+  )
+}

@@ -18,13 +18,21 @@ const halfSplit = Math.ceil(tags.length / 2);
 <BaseCollectionLayout sectionClass="grid grid-cols-1 sm:grid-cols-2">
   <SectionTitle slot="header" class="mb-2">{collection}</SectionTitle>
   <ul>
-    {tags.slice(0, halfSplit).map((tag) => <li class="py-1">
-      <ItemTitle href={tag.url}>{tag.name}</ItemTitle>
-    </li>)}
+    {
+      tags.slice(0, halfSplit).map((tag) => (
+        <li class="py-1">
+          <ItemTitle href={tag.url}>{tag.name}</ItemTitle>
+        </li>
+      ))
+    }
   </ul>
   <ul>
-    {tags.slice(halfSplit).map((tag) => <li class="py-1">
-      <ItemTitle href={tag.url}>{tag.name}</ItemTitle>
-    </li>)}
+    {
+      tags.slice(halfSplit).map((tag) => (
+        <li class="py-1">
+          <ItemTitle href={tag.url}>{tag.name}</ItemTitle>
+        </li>
+      ))
+    }
   </ul>
 </BaseCollectionLayout>
