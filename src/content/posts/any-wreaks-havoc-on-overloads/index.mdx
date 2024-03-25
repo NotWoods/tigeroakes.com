@@ -18,7 +18,7 @@ banner_alt: Lobster trap
 
 If you're working with TypeScript, chances are you'll work with [the `any` type](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any). `any` essentially turns off typechecking, and allows the corresponding variable to be used for anything. You can call any methods on an `any` variable, and they'll all return `any` as well. It's great when you can't write types for everything in your codebase.
 
-```tsx
+```ts
 let obj: any = { x: 0 };
 // None of these lines of code are errors
 const foo: any = obj.foo();
@@ -30,7 +30,7 @@ obj.bar = 100;
 
 TypeScript has another [neat feature called function overloads](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads). Some JavaScript functions return different results based on the arguments you supply, and this can be represented in TypeScript by written multiple function types on top of each other. Only one function signature can match at a time. The matching overload is determined by the arguments you supply to the function. [The first applicable overload will always be chosen](https://github.com/microsoft/TypeScript/issues/1860#issuecomment-72154737).
 
-```tsx
+```ts
 function convertType(value: string): number;
 function convertType(value: number): string;
 function convertType(value: string | number): number | string {
@@ -51,7 +51,7 @@ Some functions want to transform an array in some way and return an array with t
 
 Using [generic function definitions](https://www.typescriptlang.org/docs/handbook/2/functions.html#generic-functions), you can infer the type of the array passed into `Promise.all`. However, the resulting type will be an array without positional data.
 
-```tsx
+```ts
 class Promise {
   static all<T>(array: Promise<T>[]): Promise<T[]>;
 }
@@ -67,7 +67,7 @@ Promise.all([Promise.resolve(10), Promise.resolve('hello world')]).then(
 
 TypeScript does let you infer the type of specific array items, but then you need to hardcode the length. Using overloading, you can have a couple of variations for different array lengths.
 
-```tsx
+```ts
 class Promise {
   static all<A, B, C>(
     array: [Promise<A>, Promise<B>, Promise<C>]
@@ -93,7 +93,7 @@ However, you can only write so many overloads. Eventually, you need to fallback 
 
 Remember that `any` will match with any type, and that function overloads use the first applicable overload. These two facts cause problems when you pass a variable with type `any` into a function with overloads.
 
-```tsx
+```ts
 function convertType(value: string): number;
 function convertType(value: number): string;
 function convertType(value: string | number): number | string {

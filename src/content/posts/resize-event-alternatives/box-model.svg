@@ -1,7 +1,7 @@
 <svg role="img" aria-label="Diagram of CSS box model with a margin area, wrapping a border area, wrapping a padding area, wrapping a content area. Everything inside the border area is labelled as the Border Box. Everything just inside the content area is labelled as the Content Box." viewBox="0 0 357 257" xmlns="http://www.w3.org/2000/svg" style="stroke-linecap:square;stroke-miterlimit:1.5;max-width:714px;margin:auto">
   <style>
     text {
-      font-family: 'CascadiaCode-Regular', 'Cascadia Code', monospace;
+      font-family: var(--font-family-mono, monospace);
       font-size: 12px;
     }
     .dashed {

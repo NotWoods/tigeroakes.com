@@ -4,12 +4,12 @@ import preact from '@astrojs/preact';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import { defineConfig, sharpImageService } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro';
+import expressiveCode from 'astro-expressive-code';
+import { defineConfig, sharpImageService } from 'astro/config';
 import rehypeKatex from 'rehype-katex';
 import remarkBehead from 'remark-behead';
 import remarkMath from 'remark-math';
-
 import { exclude as reactFiles } from './tsconfig.json';
 
 // https://astro.build/config
@@ -25,13 +25,35 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   integrations: [
-    preact({
-      exclude: reactFiles,
-    }),
-    react({
-      include: reactFiles,
-    }),
+    // React is used for Fluent UI blogposts so we need to instruct Astro to ignore some files
+    preact({ exclude: reactFiles }),
+    react({ include: reactFiles }),
+    // Using tailwind, with base styles in global.css
     tailwind({ applyBaseStyles: false }),
+    expressiveCode({
+      themes: ['dark-plus', 'light-plus'],
+      styleOverrides: {
+        borderRadius: '0',
+        codeFontFamily: 'var(--font-family-mono)',
+        uiFontFamily: 'var(--font-family-sans)',
+        frames: {
+          frameBoxShadowCssValue: 'var(--shadow-md)',
+          editorTabsMarginInlineStart: '0.5rem',
+        },
+      },
+      plugins: [
+        {
+          name: 'data-lang',
+          hooks: {
+            postprocessRenderedBlock({ codeBlock, renderData }) {
+              if (renderData.blockAst.properties) {
+                renderData.blockAst.properties.dataLang = codeBlock.language;
+              }
+            },
+          },
+        },
+      ],
+    }),
     mdx(),
     sitemap(),
     AstroPWA({
@@ -88,11 +110,13 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    shikiConfig: {
-      theme: 'dark-plus',
-    },
-    remarkPlugins: [remarkMath, [remarkBehead, { minDepth: 3 }]],
-    rehypePlugins: [[rehypeKatex, { output: 'mathml' }]],
+    remarkPlugins: [
+      remarkMath, // Interpret LaTeX math
+      [remarkBehead, { minDepth: 3 }], // Convert markdown headings to match site structure
+    ],
+    rehypePlugins: [
+      [rehypeKatex, { output: 'mathml' }], // Render LaTeX math as MathML
+    ],
   },
   vite: {
     ssr: {

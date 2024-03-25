@@ -20,12 +20,14 @@ const config = {
     fontFamily: {
       sans: ['Lato', 'Trebuchet MS', 'sans-serif'],
       mono: [
-        '"Cascadia Mono"',
-        '"Cascadia Code"',
-        'Menlo',
-        'Consolas',
-        'ubuntu monospace',
-        'monospace',
+        `'Cascadia Mono'`,
+        `ui-monospace`,
+        `'Cascadia Code'`,
+        `'Source Code Pro'`,
+        `Menlo`,
+        `Consolas`,
+        `'DejaVu Sans Mono'`,
+        `monospace`,
       ],
     },
     extend: {
@@ -70,13 +72,6 @@ const config = {
               },
               'code::after': {
                 content: 'none',
-              },
-              pre: {
-                fontSize: 'inherit',
-                whiteSpace: 'pre-wrap',
-                marginLeft: '-1rem',
-                marginRight: '-1rem',
-                borderRadius: '0',
               },
               img: {
                 marginLeft: 'auto',

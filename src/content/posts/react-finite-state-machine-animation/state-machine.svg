@@ -5,7 +5,7 @@
     <circle cx="107.5" cy="152.5" r="27.5" stroke-dasharray="4"/>
     <circle cx="247.5" cy="152.5" r="27.5"/>
   </g>
-  <g font-family="'Cascadia Mono', 'Cascadia Code', monospace" fill="#ebeeef" text-anchor="middle">
+  <g font-family="var(--font-family-mono, monospace)" fill="#ebeeef" text-anchor="middle">
     <text x="37.5" y="35.6" font-size="12">Open</text>
     <text x="177.5" y="35.6" font-size="12">Opening</text>
     <text x="107.5" y="155.6" font-size="12">Closing</text>

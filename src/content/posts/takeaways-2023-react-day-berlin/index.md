@@ -78,17 +78,19 @@ Tobias Koppers talked about improvements coming to Turbopack (and I think Webpac
 If you import from a barrel file like this:
 
 ```jsx
+// folder/some-file.js
 import { helper } from '../index.js';
 ```
 
 and that barrel file has multiple named sub-exports:
 
 ```jsx
+// index.js
 export { helper } from './helper.js';
 export { SomeClass } from './some-class.js';
 ```
 
-then tree-shaking will be performed early, and the unused file ('some-class.js') will get skipped entirely. This only works if the exports are named, star exports (`export * from ‘…'`) can't be skipped.
+then tree-shaking will be performed early, and the unused file ('some-class.js') will get skipped entirely. This only works if the exports are named, star exports (`export * from '…'`) can't be skipped.
 
 ## Network caching
 

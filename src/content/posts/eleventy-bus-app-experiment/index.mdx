@@ -33,7 +33,7 @@ To generate the HTML on the server, I went with [Eleventy](https://www.11ty.dev/
 
 For Big Island Buses, the API is just a JSON file representing bus schedule data. Exposing it to Eleventy is as simple as moving the file inside a `_data` folder. However, this also results in no extra JSON files being generate for the client, which wouldn’t work for my use case. Luckily you can create a simple template file that spits out all the data as JSON again:
 
-```handlebars
+```handlebars title="_data/api.json.njk"
 ---
 permalink: /api.json
 ---
@@ -57,7 +57,7 @@ Now that I have the API data on both the server and client, I can start using it
 
 Just like that, the list of routes is now pre-rendered on the server. Users never need to look at an empty menu again. Now all that’s left is updating the client code so that it doesn’t make a second copy of the list on screen. One naive solution is to just clear out the list when the JavaScript is ready, then run the same code as before.
 
-```js {hl_lines=[2]}
+```js title="render.js" {2}
 const otherRoutes = document.getElementById('other');
 otherRoutes.innerHTML = ''; // new code
 populateList(otherRoutes, api.routes);
@@ -65,7 +65,7 @@ populateList(otherRoutes, api.routes);
 
 But that just repeats what the server has already done. It makes more sense to just remove this code entirely, and send less JavaScript to the client.
 
-```js
+```js title="render.js"
 // intentionally left blank
 ```
 

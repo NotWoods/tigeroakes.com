@@ -16,9 +16,10 @@ toc: true
 When I first started working with our existing tests in [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop)’s codebase, I saw this require pattern that confused me.
 
 ```tsx
-function getMocksForTest(): typeof import('./module-to-test') {
+// module-to-test1.test.ts
+function getMocksForTest(): typeof import('./module-to-test1') {
   // We can't simply import this at the top level of the module since the necessary jest mocks won't have been applied yet.
-  return require('./module-to-test');
+  return require('./module-to-test1');
 }
 
 it('passes simple test', () => {
@@ -30,7 +31,8 @@ it('passes simple test', () => {
 I’ve never had to switch to require statements before when using Jest, so I was surprised to see this. Normally I would just import the module directly.
 
 ```tsx
-import { functionToTest } from './module-to-test';
+// module-to-test1.test.ts
+import { functionToTest } from './module-to-test1';
 
 it('passes simple test', () => {
   expect(functionToTest()).toEqual('foo');
@@ -44,6 +46,7 @@ Using import statements is much more succinct. So why was a different pattern us
 The first thing that threw me off is the name `getMocksForTest`. There’s no mocking involved, so the name didn’t seem appropriate. But I later found test files with a more complicated setup.
 
 ```tsx
+// module-to-test2.test.ts
 function getMocksForTest() {
   const mockCreatePage = jest.fn();
 
@@ -54,7 +57,7 @@ function getMocksForTest() {
 
   // We can't simply import this at the top level of the module since the necessary jest mocks won't have been applied yet.
   const { functionToTest } =
-    require('./module-to-test') as typeof import('./module-to-test');
+    require('./module-to-test2') as typeof import('./module-to-test2');
 
   return {
     functionToTest,
@@ -74,7 +77,8 @@ Here, we use [`jest.mock()`](https://jestjs.io/docs/jest-object#jestmockmodulena
 If we had imported the module to test prior to running `jest.mock()`, then our mock would not have been set up in time. Instead, the original version of `../pages.ts` would have been imported.
 
 ```tsx
-import { functionToTest } from './module-to-test';
+// module-to-test2.test.ts
+import { functionToTest } from './module-to-test2';
 
 function getMocksForTest() {
   const mockCreatePage = jest.fn();
@@ -124,7 +128,7 @@ it('passes complex test', () => {
 
 will get transformed into a Node.js-compatible file like below:
 
-```jsx
+```jsx {2-3,5,12-13}
 // compliled.test.js
 // hoisted to top of file
 jest.mock('../pages', () => {

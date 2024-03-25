@@ -129,9 +129,8 @@ Android has tools to create an animation like this with just XML, without Java o
 
 First of all we start with a Vector Drawable, which contains the icons and the paths we designed before. This goes inside the Android project’s `drawables` folder.
 
-`res/drawables/ic_protection_enabled.xml`
-
 ```xml
+<!--res/drawables/ic_protection_enabled.xml-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
         android:width="24dp"
         android:height="24dp"
@@ -165,9 +164,8 @@ First of all we start with a Vector Drawable, which contains the icons and the p
 
 We also create a second Vector Drawable to represent the icon with a line through it.
 
-`res/drawables/ic_protection_disabled.xml`
-
 ```xml
+<!--res/drawables/ic_protection_disabled.xml-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
         android:width="24dp"
         android:height="24dp"
@@ -207,9 +205,8 @@ Now that we have the base icon resource, we create a [property animator](https:/
 
 #### Changing the color of the icon
 
-`res/animator/icon_enabled_to_disabled.xml`
-
 ```xml
+<!--res/animator/icon_enabled_to_disabled.xml-->
 <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
         android:propertyName="fillColor"
         android:duration="500"
@@ -218,9 +215,8 @@ Now that we have the base icon resource, we create a [property animator](https:/
         android:valueType="colorType" />
 ```
 
-`res/animator/icon_disabled_to_enabled.xml`
-
 ```xml
+<!--res/animator/icon_disabled_to_enabled.xml-->
 <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
         android:propertyName="fillColor"
         android:duration="500"
@@ -235,9 +231,8 @@ We create two [ObjectAnimators](https://developer.android.com/reference/android/
 
 To change the shape of the clip path, create another ObjectAnimator like before. Instead of animating between two colors, we now animate between two paths.
 
-`res/animator/strike_thru_gap_​enabled_to_disabled.xml`
-
 ```xml
+<!--res/animator/strike_thru_gap_enabled_to_disabled.xml-->
 <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
     android:propertyName="pathData"
     android:duration="500"
@@ -252,9 +247,8 @@ The `valueType` is now `"pathType"` as the values represent shape paths rather t
 
 Finally we create animators for the color and shape of the line. Since there are two values to animate, we use a [AnimatorSet](https://developer.android.com/reference/android/animation/AnimatorSet.html). The set is just a simple container for other animation elements.
 
-`res/animator/strike_thru_path_​enabled_to_disabled.xml`
-
 ```xml
+<!--res/animator/strike_thru_path_enabled_to_disabled.xml-->
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <objectAnimator
         android:propertyName="pathData"
@@ -281,9 +275,8 @@ At this point we’ve created the icon, and created animators for each part of t
 
 We create two [Animated&#x200B;Vector&#x200B;Drawables](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable) to represent the enable → disable animation and disable → enable animation.
 
-`res/drawable/ic_protection_​enabled_to_disabled.xml`
-
 ```xml
+<!--res/drawable/ic_protection_enabled_to_disabled.xml-->
 <animated-vector
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:drawable="@drawable/ic_protection_enabled">
@@ -293,9 +286,8 @@ We create two [Animated&#x200B;Vector&#x200B;Drawables](https://developer.androi
 </animated-vector>
 ```
 
-`res/drawable/ic_protection_​disabled_to_enabled.xml`
-
 ```xml
+<!--res/drawable/ic_protection_disabled_to_enabled.xml-->
 <animated-vector
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:drawable="@drawable/ic_protection_disabled">
@@ -333,9 +325,8 @@ The `android:state_enabled` attribute specifies which drawable corresponds to th
 
 While this will change the displayed icon, there’s no animation when switching between the two. For that, we need to use an [Animated​State​List​Drawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedStateListDrawable). This drawable enhances the StateListDrawable by allowing you to specify transitions between states.
 
-`res/drawable/ic_protection.xml`
-
 ```xml
+<!--res/drawable/ic_protection.xml-->
 <animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/enabled"

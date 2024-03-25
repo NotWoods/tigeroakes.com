@@ -75,7 +75,7 @@ It's not very clear from the CSS that the `span` is the icon, and it's not clear
 
 Rather than using a tag selector, you can use the `.fui-Button__icon` class name to style the icon. These class names are present on every element in the Fluent UI React v9 library, and they're available as constants you can import.
 
-```js
+```js {9}
 import {
   Button,
   buttonClassNames,
@@ -116,7 +116,7 @@ The best way to style the icon is to use a slot. Slots let you apply your own cl
 
 To use a slot, you need to pass an object to the `icon` prop instead of a React element. The object should have any props you want applied to the slot itself, and a `children` prop with the React element you want to insert into the slot.
 
-```js
+```js {15-16}
 import { Button, makeStyles } from '@fluentui/react-components';
 
 const useStyles = makeStyles({
@@ -143,6 +143,7 @@ function MyButton() {
 This generates CSS that looks like this:
 
 ```css
+.myButton {}
 .myButtonIcon {
   color: red;
 }

@@ -5,6 +5,9 @@
 @layer base {
   :root {
     --accent: theme('colors.orange.500');
+    --font-family-sans: theme('fontFamily.sans');
+    --font-family-mono: theme('fontFamily.mono');
+    --shadow-md: theme('boxShadow.md');
     scroll-behavior: smooth;
   }
 
@@ -110,4 +113,17 @@
   .grid-area-header {
     grid-area: header;
   }
+}
+
+.expressive-code {
+  margin-block: 2em;
+  margin-inline: -1rem;
+  max-width: 100vw;
+}
+.expressive-code .frame::after {
+  content: attr(data-lang);
+  position: absolute;
+  font-family: var(--font-family-mono);
+  text-shadow: 0 -1px 1px var(--code-background);
+  @apply inline-block text-xs right-4 bottom-3 opacity-70;
 }

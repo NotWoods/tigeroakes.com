@@ -36,6 +36,7 @@
     "workbox-recipes": "^7.0.0"
   },
   "dependencies": {
+    "astro-expressive-code": "^0.33.5",
     "docx": "^8.0.3",
     "preact": "^10.17.1",
     "ts-extras": "^0.11.0",
