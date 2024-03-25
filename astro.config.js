@@ -7,6 +7,7 @@ import tailwind from '@astrojs/tailwind';
 import AstroPWA from '@vite-pwa/astro';
 import expressiveCode from 'astro-expressive-code';
 import { defineConfig, sharpImageService } from 'astro/config';
+import { pluginDataLang } from 'expressive-code-plugin-data-lang';
 import rehypeKatex from 'rehype-katex';
 import remarkBehead from 'remark-behead';
 import remarkMath from 'remark-math';
@@ -41,18 +42,7 @@ export default defineConfig({
           editorTabsMarginInlineStart: '0.5rem',
         },
       },
-      plugins: [
-        {
-          name: 'data-lang',
-          hooks: {
-            postprocessRenderedBlock({ codeBlock, renderData }) {
-              if (renderData.blockAst.properties) {
-                renderData.blockAst.properties.dataLang = codeBlock.language;
-              }
-            },
-          },
-        },
-      ],
+      plugins: [pluginDataLang()],
     }),
     mdx(),
     sitemap(),
