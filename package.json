@@ -22,6 +22,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@vite-pwa/astro": "^0.2.0",
     "astro": "^4.3.6",
+    "expressive-code-plugin-data-lang": "^0.1.0",
     "github-slugger": "^2.0.0",
     "postcss": "^8.4.33",
     "prettier": "~3.2.5",
