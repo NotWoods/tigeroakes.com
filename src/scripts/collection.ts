@@ -27,14 +27,12 @@ export function groupBy<Item, Key>(
 
 export async function getCollectedPages(key: 'tags' | 'categories') {
   const [posts, talks, projects] = await Promise.all([
-    getCollection('posts'),
+    getCollection('posts', (post) => !post.data.draft),
     getCollection('talks'),
     getCollection('projects'),
   ]);
 
-  const publishedPosts = posts.filter((post) => !post.data.draft);
-
-  const formattedPages = [...publishedPosts, ...talks].map(
+  const formattedPages = [...posts, ...talks].map(
     (
       page
     ): Item & { tags: readonly string[]; categories: readonly string[] } => ({

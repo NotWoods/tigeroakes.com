@@ -27,6 +27,6 @@ export function comparePosts(
 }
 
 export async function getAllPosts() {
-  const allPosts = await getCollection('posts');
-  return allPosts.filter((post) => !post.data.draft).sort(comparePosts);
+  const allPosts = await getCollection('posts', (post) => !post.data.draft);
+  return allPosts.sort(comparePosts);
 }
