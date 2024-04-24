@@ -13,6 +13,7 @@
     "@astrojs/react": "^3.0.10",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/svelte": "^5.4.0",
     "@astrojs/tailwind": "^5.1.0",
     "@js-temporal/polyfill": "^0.4.4",
     "@kurone-kito/jsonresume-types": "^0.4.0",
@@ -33,13 +34,15 @@
     "rimraf": "^5.0.5",
     "sharp": "^0.32.6",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.5",
     "workbox-recipes": "^7.0.0"
   },
   "dependencies": {
+    "@notwoods/logo": "^1.0.1",
     "astro-expressive-code": "^0.33.5",
     "docx": "^8.0.3",
     "preact": "^10.17.1",
+    "svelte": "^4.2.15",
     "ts-extras": "^0.11.0",
     "tslib": "^2.6.2"
   },

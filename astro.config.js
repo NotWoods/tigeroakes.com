@@ -13,6 +13,8 @@ import remarkBehead from 'remark-behead';
 import remarkMath from 'remark-math';
 import { exclude as reactFiles } from './tsconfig.json';
 
+import svelte from '@astrojs/svelte';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://tigeroakes.com',
@@ -26,11 +28,18 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   integrations: [
+    svelte(),
     // React is used for Fluent UI blogposts so we need to instruct Astro to ignore some files
-    preact({ exclude: reactFiles }),
-    react({ include: reactFiles }),
+    preact({
+      exclude: reactFiles,
+    }),
+    react({
+      include: reactFiles,
+    }),
     // Using tailwind, with base styles in global.css
-    tailwind({ applyBaseStyles: false }),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     expressiveCode({
       themes: ['dark-plus', 'light-plus'],
       styleOverrides: {
@@ -66,7 +75,9 @@ export default defineConfig({
             options: {
               networkTimeoutSeconds: 3,
               cacheName: 'pages',
-              cacheableResponse: { statuses: [0, 200] },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
             },
           },
           {
@@ -77,7 +88,9 @@ export default defineConfig({
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'static-resources',
-              cacheableResponse: { statuses: [0, 200] },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
             },
           },
           {
@@ -88,7 +101,9 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'images',
-              cacheableResponse: { statuses: [0, 200] },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
               expiration: {
                 maxEntries: 60,
                 maxAgeSeconds: 30 * 24 * 60 * 60,
@@ -101,11 +116,22 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      remarkMath, // Interpret LaTeX math
-      [remarkBehead, { minDepth: 3 }], // Convert markdown headings to match site structure
+      remarkMath,
+      // Interpret LaTeX math
+      [
+        remarkBehead,
+        {
+          minDepth: 3,
+        },
+      ], // Convert markdown headings to match site structure
     ],
     rehypePlugins: [
-      [rehypeKatex, { output: 'mathml' }], // Render LaTeX math as MathML
+      [
+        rehypeKatex,
+        {
+          output: 'mathml',
+        },
+      ], // Render LaTeX math as MathML
     ],
   },
   vite: {

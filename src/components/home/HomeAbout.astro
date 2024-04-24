@@ -1,7 +1,7 @@
 ---
+import Logo from '@notwoods/logo/Logo.svelte';
 import { Picture } from 'astro:assets';
 import Button from '../Button.astro';
-import Logo from '../Logo.astro';
 import profileImage from './profile2023.jpg';
 ---
 
@@ -10,7 +10,7 @@ import profileImage from './profile2023.jpg';
   class="max-w-site mx-auto safe-px-4 flex flex-wrap gap-x-20 gap-y-8 items-center"
 >
   <div class="text-lg flex-1">
-    <Logo outline width={320} height={64} />
+    <Logo monochrome height={64} />
     <div class="about-content">
       <slot />
     </div>
@@ -34,6 +34,9 @@ import profileImage from './profile2023.jpg';
 </section>
 
 <style>
+  :global(.logo) :global(.outline) {
+    outline: none;
+  }
   .about-content > :global(p) {
     @apply decoration-slate-200 my-4;
   }
