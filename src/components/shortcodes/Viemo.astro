@@ -1,0 +1,11 @@
+---
+import VideoIFrame from './_VideoIFrame.astro';
+
+export interface Props {
+  id: string;
+}
+
+const { id } = Astro.props as Props;
+---
+
+<VideoIFrame src={`https://player.vimeo.com/video/${id}`} />
