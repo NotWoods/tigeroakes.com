@@ -1,0 +1,114 @@
+---
+elsewhere:
+  name: Foulplay Games
+  source: https://www.foulplayco.com/
+  link: https://www.foulplayco.com/blog/featured-murder-mystery-party-a-whodunnit-party-meets-tech-innovation
+title: A Whodunnit Party Meets Tech Innovation
+description: How we put together a murder mystery with the Internet of Things.
+date: 2024-03-15
+author: tiger
+editor: daphne
+tags:
+  - Smart home
+  - IoT
+  - JavaScript
+  - Svelte
+  - Raspberry Pi
+categories:
+  - Planet Mozilla
+links:
+  - title: Featured on Foulplay Games
+    link: https://www.foulplayco.com/blog/featured-murder-mystery-party-a-whodunnit-party-meets-tech-innovation
+banner: ./dead-tiger.jpg
+---
+
+import { Image } from 'astro:assets';
+
+> We are always impressed by the creativity and ingenuity of our Foulplay murder mystery party hosts, but occasionally there is a party that leaves us truly speechless. That was the case meeting Tiger, our featured Foulplay party host! We met Tiger out and about in the Seattle theater community and learned that not only has he hosted [Murder at Menlo Park](https://www.foulplayco.com/murder-at-menlo-park) 5 times, he used his skills as a software engineer and merged them with his party hosting chops to create a mind-blowing technical marvel for his games! As he was showing us pictures, we were blown away by the automation and tech theatrics he added on top of the already killer party.
+>
+> Read on for his take on Murder at Menlo Park!
+
+## Why did you decide to host a murder mystery party? Was it your first time? Why did you decide to use Foulplay Games?
+
+My wife and I like to throw together fun tech projects. Last year, we got sick of our chores. Instead of doing them, we decided to throw home automation at our problems. We turned our projects into a conference talk called “[How We Automated Our Relationship](https://www.youtube.com/watch?v=Zxe7bDZweoI&list=PLrF7wZ1Ze5uH1xudf--exufrlgCVCE3n6&index=1)”. We were itching to tinker with other projects and settled on murder mysteries! We had played a couple murder mysteries before but hadn’t hosted any ourselves. After running into [Foulplay’s booth at Emerald City Comic Con](https://www.foulplayco.com/blog/pop-up-murder-mystery-games-at-emerald-city-comic-con-our-recap) and participating in their games, we knew we had a clear path forward.
+
+We decided to go with Foulplay Games because they were local to us and we had a blast at their pop up game at Emerald City. There were sub-stories and sub-connections within the game, but we didn’t have to understand everything that was going on all at once. We could focus on our small group of characters and branch out from there. We knew Foulplay’s stories would let us become the best party hosts!
+
+<Image
+  src={import('./dead-body.jpg')}
+  alt="Tiger Oakes lying on the floor, with red X's on his eyes. A crowd is gathered around in shock. Everyone is dressed in 1920s costumes."
+  height={500}
+/>
+
+## How did the game go overall?
+
+The game was so popular, we hosted it 5 times with different groups! (and really got our money’s worth!) We ran with a Great Gatsby theme, decorated our place with gems from Goodwill, and even drove 30 miles to pick up an antique treasure chest from Craigslist!
+
+Our guests came dressed up in feathers and flapper dresses and immersed themselves in their characters. Here are some of our wildest highlights:
+
+- We choreographed a [death scene](https://www.youtube.com/watch?v=0tIsMIf8bTQ) with automated lights and sound effects.
+- Two people ran into the bathroom to conduct a private transaction, while others shoved each other as they attempted to eavesdrop. [The sheriff arrived and kicked open our bathroom door](https://www.instagram.com/reel/C3cHT64OEgm/).
+- [One person yanked out some papers before hiding on the balcony](https://www.instagram.com/reel/C3b5AWeM_J8/).
+- The award for “best performer” is still attached to our friend’s refrigerator.
+- A friend’s Valentine's Day Instagram post was “To my Mayor of Menlo Park”.
+
+Our guests were blown away by how immersive the technical projects were. They meshed well with the steampunk story of Murder at Menlo Park. People quickly split into different factions to learn secrets and protect their own. We were all in full-blown costumes head-to-toe, which made the post-game bar visit interesting! Our game was so memorable that our friends still talk about it to this day.
+
+> We love how Tiger’s friends still refer to each other as their characters. We have had our own memorable stories over the years where people still use each other’s character names or even ask us, “the person at your game who played Kaelen Longherst, what was their real name?” It really shows how interactive and fun murder mystery games can be!
+
+## Were there any extra touches you added or fun memories or stories to share?
+
+We put together so many extra touches with home automation!
+
+Like any good murder mystery, we wanted to start with a dramatic death - so we rigged up special effects with smart home technologies. We programmed the lights in the house to turn off in waves, starting in the furthest away room, so it looks like the darkness is closing in on the players. As the players are enveloped in darkness, the victim is “electrocuted” and we hear an electric buzzing sound from the speakers to accompany the victim’s screams.
+
+In the past, with a room full of unfamiliar characters, we struggled to find other characters that matched the relationships on our character sheets. Instead of walking around reading everyone’s name tags, we alleviated this by digitizing everyone’s names and photographs. As people walked in dressed in costume, we took their photos and auto-uploaded them. We set up tablets around the house where their photos would pop up in real time, and become an easy reference for people. We also included a few settings like hiding guests who came in later in the party and crossing out the victim’s name as they were killed off.
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 justify-center">
+  <Image
+    class="col-span-2"
+    src={import('./guest-list.jpg')}
+    alt="Screenshot of guest list app, where many players are shown with character names and old timey profile images. One person's name is crossed out and faded."
+    width={530}
+  />
+  <Image
+    src={import('./solving-check.jpg')}
+    alt="Person next to a tablet displaying the guest list app, with the person putting together a ripped check"
+    width={260}
+  />
+</div>
+
+We also used a similar system for collecting votes. In our previous games, we felt that guests had to wait a long time for paper votes to get tallied. We designed an app on our phone where everyone could vote for “whodunit” and we would receive the votes in real time.
+
+In Murder at Menlo Park, players have to figure out the code to a safe with secrets inside. We decided to turn this into the centerpiece of the room, creating a large decorative chest from an old steamer trunk on Craigslist. Taking a cue from how locked doors work in escape rooms, we built [an electromagnetic lock inside that only opens when people punch in the right code](https://www.youtube.com/shorts/ERMIYKDRYEo). To match the vintage atmosphere of the party, we picked out an old looking [banana phone](https://en.wikipedia.org/wiki/Nokia_8110_4G) where players needed to type in the code.
+
+<div class="grid grid-cols-2 gap-2">
+  <Image
+    src={import('./banana-phone.jpg')}
+    alt='Old yellow Nokia phone that shows a screen reading "Trunk is locked" and a password getting typed in'
+    width={392}
+    height={392}
+  />
+  <Image
+    src={import('./treasure-chest.jpg')}
+    alt="Antique steamer trunk treasure chest open, with an electromagnet visible near the latch. A Raspberry Pi computer is wired into the electromagnet"
+    width={392}
+    height={392}
+  />
+</div>
+
+> Murder at Menlo Park does have a safe mechanic with a locked code. This was a lot of fun for us to create and fit the party theme, but even we struggled to figure out how folks could enter the code (and potentially be wrong) or how the host could play without knowing whodunnit. Tiger figured out a genius way to include this into the party by utilizing tech. We wish we had his skills and will definitely be considering how to use elements like this in the future to expand our creative puzzle problems!
+
+## Any suggestions, recommendations, or tips for folks wanting to host their own murder mystery game?
+
+Find ways to tweak the story to add in your own personal flair! We like building hardware and software projects in our house, so this is how we decided to tweak the game for fun.
+
+<Image
+  src={import('./paper.jpg')}
+  alt="Printed envelope, character sheet, ripped check, nametag, and money"
+  width={800}
+/>
+
+> A great tip, and it doesn’t even need to be tech! While Tiger has a professional engineering background, we’ve seen folks [use their skills in law](https://www.foulplayco.com/blog/featured-murder-mystery-party-this-curious-case-is-closed) and [even baking](https://www.instagram.com/p/CzJsyjVL8ZE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==) to add their own special touch.
+>
+> We couldn’t be more impressed with Tiger’s murder mystery party. You can get in touch with Tiger for ideas or to purchase his murder mystery automation systems at [contact@tigeroakes.com](mailto:contact@tigeroakes.com) or on Twitter: [@Not_Woods](https://twitter.com/Not_Woods) & [@thebetterdaphne](https://twitter.com/thebetterdaphne), as well as follow his personal blog (https://tigeroakes.com/posts/) where he covers the technical details of how everything works!
