@@ -30,18 +30,15 @@ export default defineConfig({
   integrations: [
     svelte(),
     // React is used for Fluent UI blogposts so we need to instruct Astro to ignore some files
-    preact({
-      exclude: reactFiles,
-    }),
-    react({
-      include: reactFiles,
-    }),
+    preact({ exclude: reactFiles }),
+    react({ include: reactFiles }),
     // Using tailwind, with base styles in global.css
-    tailwind({
-      applyBaseStyles: false,
-    }),
+    tailwind({ applyBaseStyles: false }),
     expressiveCode({
       themes: ['dark-plus', 'light-plus'],
+      frames: {
+        showCopyToClipboardButton: false,
+      },
       styleOverrides: {
         borderRadius: '0',
         codeFontFamily: 'var(--font-family-mono)',
@@ -116,22 +113,14 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      remarkMath,
       // Interpret LaTeX math
-      [
-        remarkBehead,
-        {
-          minDepth: 3,
-        },
-      ], // Convert markdown headings to match site structure
+      remarkMath,
+      // Convert markdown headings to match site structure
+      [remarkBehead, { minDepth: 3 }],
     ],
     rehypePlugins: [
-      [
-        rehypeKatex,
-        {
-          output: 'mathml',
-        },
-      ], // Render LaTeX math as MathML
+      // Render LaTeX math as MathML
+      [rehypeKatex, { output: 'mathml' }],
     ],
   },
   vite: {

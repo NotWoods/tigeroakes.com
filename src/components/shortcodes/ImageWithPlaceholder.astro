@@ -1,0 +1,32 @@
+---
+import {
+  getImage,
+  Image,
+  type LocalImageProps,
+  type RemoteImageProps,
+} from 'astro:assets';
+
+type Props = LocalImageProps | RemoteImageProps;
+
+const { ...props } = Astro.props;
+
+const placeholderImage = await getImage({
+  src: props.src,
+  width: 16,
+  quality: 20,
+});
+---
+
+<Image
+  {...props as any}
+  class:list={[props.class, 'image-with-placeholder']}
+  style={{ '--placeholder': `url(${placeholderImage.src})` }}
+/>
+
+<style>
+  .image-with-placeholder {
+    background-image: var(--placeholder);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
