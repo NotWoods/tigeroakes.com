@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
+import { getConferenceName } from '../../scripts/talks';
 
 export async function getStaticPaths() {
   const talkEntries = await getCollection('talks');
@@ -20,8 +21,51 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content, headings } = await post.render();
+
+async function getConferenceTalkBacklinks() {
+  const conferences = await getCollection(
+    'conferences',
+    (conf) => conf.data.talk?.ref?.slug === post.slug
+  );
+  return conferences
+    .map((conf) => ({
+      conference: conf.id,
+      name: getConferenceName(conf),
+      date: conf.data.date,
+      link: conf.data.link,
+    }))
+    .sort((a, b) => b.date.valueOf() - a.date.valueOf());
+}
+
+const backlinks = await getConferenceTalkBacklinks();
+const frontmatter = {
+  ...post.data,
+  lastMod: backlinks[0]?.date ?? post.data.date,
+};
 ---
 
-<PostLayout {headings} frontmatter={post.data}>
+<PostLayout {headings} frontmatter={frontmatter}>
+  <h3>Presented at</h3>
+  <ul>
+    {
+      backlinks.map((conf) => (
+        <li>
+          {conf.link ? (
+            <a href={conf.link}>{conf.name}</a>
+          ) : (
+            <span class="text-[color:var(--tw-prose-links)]">{conf.name}</span>
+          )}
+          {' on '}
+          {conf.date.toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+          })}
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3>Description</h3>
   <Content />
 </PostLayout>

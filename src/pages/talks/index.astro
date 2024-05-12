@@ -1,31 +1,47 @@
 ---
+import { DefaultMap } from '@notwoods/default-map';
+import {
+  getCollection,
+  getEntry,
+  type ValidContentEntrySlug,
+} from 'astro:content';
 import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
+import Tags from '../../components/article/Tags.astro';
+import ItemImage from '../../components/lists/ItemImage.astro';
+import ItemTitle from '../../components/lists/ItemTitle.astro';
+import ListConferences, {
+  type Conference,
+} from '../../components/lists/ListConferences.astro';
 import PostsHeader from '../../components/lists/PostsHeader.astro';
-import MainHead from '../../components/meta/MainHead.astro';
-import { comparePosts } from '../../scripts/posts';
-import * as header from './_index.md';
-import { getCollection } from 'astro:content';
-import { getEntry } from 'astro:content';
-import ListConferences from '../../components/lists/ListConferences.astro';
 import SectionTitle from '../../components/lists/SectionTitle.astro';
-import ListGrid from '../../components/lists/ListGrid.astro';
+import MainHead from '../../components/meta/MainHead.astro';
+import {
+  accentStyles,
+  comparePosts,
+  postAccentColor,
+} from '../../scripts/posts';
+import { getConferenceName, type TalkBacklink } from '../../scripts/talks';
+import * as header from './_index.md';
 
-async function getConferences() {
+async function getConferences(): Promise<{
+  future: readonly Conference[];
+  past: readonly Conference[];
+  talkBacklinks: ReadonlyMap<
+    ValidContentEntrySlug<'talks'>,
+    readonly TalkBacklink[]
+  >;
+}> {
+  const talkBacklinks = new DefaultMap<
+    ValidContentEntrySlug<'talks'>,
+    TalkBacklink[]
+  >(() => []);
+
   const confEntries = await getCollection('conferences');
   confEntries.sort(comparePosts);
   const conferences = await Promise.all(
     confEntries.map(async (conf) => {
-      let name = conf.data.name;
-      switch (conf.data.type) {
-        case 'conference':
-        case 'workshop':
-          name += ` ${conf.data.date.toLocaleString('en-US', { year: 'numeric' })}`;
-          break;
-        case 'meetup':
-          name += ` ${conf.data.date.toLocaleString('en-US', { month: 'long', year: 'numeric' })}`;
-          break;
-      }
+      const name = getConferenceName(conf);
 
       let location = conf.data.location;
       if (!location) {
@@ -44,6 +60,11 @@ async function getConferences() {
           const talkEntry = await getEntry(conf.data.talk.ref);
           title ||= talkEntry.data.title;
           href = `./${talkEntry.slug}/`;
+
+          talkBacklinks.get(talkEntry.slug).push({
+            conference: conf.id,
+            name,
+          });
         }
 
         if (!title) {
@@ -54,6 +75,7 @@ async function getConferences() {
       }
 
       return {
+        id: conf.id,
         future: conf.data.date.valueOf() > Date.now(),
         type: conf.data.type,
         name,
@@ -69,6 +91,7 @@ async function getConferences() {
   return {
     future: conferences.filter((conf) => conf.future),
     past: conferences.filter((conf) => !conf.future),
+    talkBacklinks,
   };
 }
 
@@ -76,7 +99,8 @@ const conferences = await getConferences();
 
 const talkEntries = await getCollection('talks');
 talkEntries.sort(comparePosts);
-const posts = talkEntries.map((post) => ({
+const talks = talkEntries.map((post) => ({
+  id: post.slug,
   title: post.data.title,
   href: `./${post.slug}/`,
   date: post.data.date,
@@ -84,7 +108,6 @@ const posts = talkEntries.map((post) => ({
   pictureAlt: post.data.banner_alt,
   tags: post.data.tags,
 }));
-posts.sort((a, b) => b.date.valueOf() - a.date.valueOf());
 ---
 
 <html lang="en">
@@ -111,8 +134,50 @@ posts.sort((a, b) => b.date.valueOf() - a.date.valueOf());
       <ListConferences future={conferences.future} past={conferences.past} />
     </section>
 
-    <section>
-      <ListGrid title="Talks I've given" items={posts} pictureAspect="video" />
+    <section class="max-w-site mx-auto safe-px-4">
+      <SectionTitle class="mb-4" id="talks-ive-given"
+        >Talks I've given</SectionTitle
+      >
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-8"
+        style="--block-scale: 0.5"
+      >
+        {
+          talks.map((item) => {
+            const backlinks = conferences.talkBacklinks.get(item.id) ?? [];
+            return (
+              <article
+                class="flex flex-col"
+                style={accentStyles(postAccentColor(item.tags))}
+              >
+                {item.pictureSrc && (
+                  <ItemImage
+                    src={item.pictureSrc}
+                    alt={item.pictureAlt}
+                    width={376}
+                    aspect="video"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 95vw, 376px"
+                  />
+                )}
+                {backlinks.length > 0 && (
+                  <p class="text-sm opacity-80">
+                    First presented at{' '}
+                    <a
+                      class="hover:underline"
+                      href={`#${backlinks[0].conference}`}
+                    >
+                      {backlinks[0].name}
+                    </a>
+                  </p>
+                )}
+                <ItemTitle href={item.href}>{item.title}</ItemTitle>
+                <Tags class="mt-auto text-sm" tags={item.tags} />
+              </article>
+            );
+          })
+        }
+      </div>
     </section>
 
     <Footer />

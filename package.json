@@ -38,6 +38,7 @@
     "workbox-recipes": "^7.1.0"
   },
   "dependencies": {
+    "@notwoods/default-map": "^1.0.0",
     "@notwoods/logo": "^1.0.2",
     "astro-expressive-code": "^0.35.2",
     "docx": "^8.0.3",

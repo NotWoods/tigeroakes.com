@@ -1,5 +1,6 @@
 ---
-interface Conference {
+export interface Conference {
+  id: string;
   type: 'conference' | 'meetup' | 'workshop' | 'podcast';
   name: string;
   link?: string;
@@ -30,7 +31,7 @@ function toISODate(date: Date) {
   future.length > 0 ? (
     <ul class="grid grid-cols-1 gap-4 mb-8">
       {future.toReversed().map((conference) => (
-        <li>
+        <li id={conference.id}>
           <a class="text-xl" href={conference.link}>
             {conference.name}
           </a>
@@ -64,7 +65,7 @@ function toISODate(date: Date) {
 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
   {
     past.map((conference) => (
-      <li>
+      <li id={conference.id}>
         <a class="text-lg" href={conference.link}>
           {conference.name}
         </a>
