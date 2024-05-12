@@ -71,6 +71,7 @@ const conferences = defineCollection({
   schema: z.object({
     name: z.string(),
     type: z.enum(['conference', 'meetup', 'workshop', 'podcast']),
+    date: z.date(),
     link: z.string().url().optional(),
     location: z.string().optional(),
     remote: z.boolean().default(false),

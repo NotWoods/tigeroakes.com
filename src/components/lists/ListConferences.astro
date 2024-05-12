@@ -1,0 +1,90 @@
+---
+interface Conference {
+  type: 'conference' | 'meetup' | 'workshop' | 'podcast';
+  name: string;
+  link?: string;
+  date: Date;
+  location: string;
+  talk?: {
+    title: string;
+    href?: string;
+  };
+}
+
+interface Props {
+  future: readonly Conference[];
+  past: readonly Conference[];
+}
+
+const { future, past } = Astro.props;
+
+function toISODate(date: Date) {
+  return date.toISOString().split('T')[0];
+}
+---
+
+<h3 class="relative accent-block--left accent-block--still text-2xl mb-1">
+  In the future
+</h3>
+{
+  future.length > 0 ? (
+    <ul class="grid grid-cols-1 gap-4 mb-8">
+      {future.toReversed().map((conference) => (
+        <li>
+          <a class="text-xl" href={conference.link}>
+            {conference.name}
+          </a>
+
+          <p class="text-sm opacity-80">
+            <time datetime={toISODate(conference.date)}>
+              {conference.date.toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            {' — '}
+            {conference.location}
+          </p>
+          {conference.talk && (
+            <a class="block" href={conference.talk.href}>
+              {conference.talk.title}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <span class="mb-8">To be annouced!</span>
+  )
+}
+
+<h3 class="relative accent-block--left accent-block--still text-2xl mb-1">
+  In the past
+</h3>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+  {
+    past.map((conference) => (
+      <li>
+        <a class="text-lg" href={conference.link}>
+          {conference.name}
+        </a>
+        <span class="text-sm opacity-80">
+          {' — '}
+          {conference.location}
+        </span>
+        {conference.talk && (
+          <a class="block text-pretty" href={conference.talk.href}>
+            {conference.talk.title}
+          </a>
+        )}
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  a:link:hover {
+    @apply underline;
+    text-decoration-color: rgba(0, 0, 0, 0.8);
+  }
+</style>

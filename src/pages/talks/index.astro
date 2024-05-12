@@ -1,12 +1,78 @@
 ---
 import BannerNav from '../../components/BannerNav.astro';
 import Footer from '../../components/Footer.astro';
-import ListGridYears from '../../components/lists/ListGridYears.astro';
 import PostsHeader from '../../components/lists/PostsHeader.astro';
 import MainHead from '../../components/meta/MainHead.astro';
 import { comparePosts } from '../../scripts/posts';
 import * as header from './_index.md';
 import { getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
+import ListConferences from '../../components/lists/ListConferences.astro';
+import SectionTitle from '../../components/lists/SectionTitle.astro';
+import ListGrid from '../../components/lists/ListGrid.astro';
+
+async function getConferences() {
+  const confEntries = await getCollection('conferences');
+  confEntries.sort(comparePosts);
+  const conferences = await Promise.all(
+    confEntries.map(async (conf) => {
+      let name = conf.data.name;
+      switch (conf.data.type) {
+        case 'conference':
+        case 'workshop':
+          name += ` ${conf.data.date.toLocaleString('en-US', { year: 'numeric' })}`;
+          break;
+        case 'meetup':
+          name += ` ${conf.data.date.toLocaleString('en-US', { month: 'long', year: 'numeric' })}`;
+          break;
+      }
+
+      let location = conf.data.location;
+      if (!location) {
+        if (conf.data.remote) {
+          location = 'Online';
+        } else {
+          throw new Error(`Missing location for conference ${conf.id}`);
+        }
+      }
+
+      let talk: { title: string; href?: string } | undefined;
+      if (conf.data.talk) {
+        let title = conf.data.talk.title;
+        let href: string | undefined;
+        if (conf.data.talk.ref) {
+          const talkEntry = await getEntry(conf.data.talk.ref);
+          title ||= talkEntry.data.title;
+          href = `./${talkEntry.slug}/`;
+        }
+
+        if (!title) {
+          throw new Error(`Missing title for talk in conference ${conf.id}`);
+        }
+
+        talk = { title, href };
+      }
+
+      return {
+        future: conf.data.date.valueOf() > Date.now(),
+        type: conf.data.type,
+        name,
+        link: conf.data.link,
+        date: conf.data.date,
+        remote: conf.data.remote,
+        location,
+        talk,
+      };
+    })
+  );
+
+  return {
+    future: conferences.filter((conf) => conf.future),
+    past: conferences.filter((conf) => !conf.future),
+  };
+}
+
+const conferences = await getConferences();
 
 const talkEntries = await getCollection('talks');
 talkEntries.sort(comparePosts);
@@ -36,7 +102,18 @@ posts.sort((a, b) => b.date.valueOf() - a.date.valueOf());
     <PostsHeader links={header.frontmatter.links}>
       <header.Content />
     </PostsHeader>
-    <ListGridYears items={posts} pictureAspect="video" />
+
+    <section class="max-w-site mx-auto safe-px-4">
+      <SectionTitle class="mb-4" id="where-ive-presented"
+        >Where I've presented</SectionTitle
+      >
+
+      <ListConferences future={conferences.future} past={conferences.past} />
+    </section>
+
+    <section>
+      <ListGrid title="Talks I've given" items={posts} pictureAspect="video" />
+    </section>
 
     <Footer />
 
