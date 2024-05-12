@@ -1,0 +1,7 @@
+type: conference
+name: JSConf Budapest
+link: https://2022.jsconfbp.com/speakers/tiger-oakes
+date: 2022-06-02
+location: Budapest, Hungary
+talk:
+  ref: build-cell-wal

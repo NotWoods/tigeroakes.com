@@ -1,0 +1,7 @@
+type: conference
+name: CascadiaJS
+link: https://2020.cascadiajs.com/speakers/tiger-oakes
+date: 2020-09-01
+remote: true
+talk:
+  ref: past-present-future-favicons

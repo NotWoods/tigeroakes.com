@@ -1,0 +1,7 @@
+type: conference
+name: CascadiaJS
+link: https://2022.cascadiajs.com/speakers/tiger-oakes
+date: 2022-09-01
+location: Bend, OR USA
+talk:
+  ref: automate-relationship

@@ -1,0 +1,9 @@
+type: conference
+name: React Day Berlin
+link: https://portal.gitnation.org/contents/hacking-an-e-reader-to-show-my-tea-menu-with-jsx
+date: 2023-12-08
+location: Berlin, Germany
+remote: true
+talk:
+  ref: e-reader-tea-menu
+  title: Hacking an e-Reader to Show My Tea Menu With JSX

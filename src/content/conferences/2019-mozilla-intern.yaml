@@ -1,0 +1,6 @@
+type: conference
+name: Mozilla Intern Presentation
+date: 2019-08-18
+location: Toronto, ON Canada
+talk:
+  ref: pwa-in-firefox-preview

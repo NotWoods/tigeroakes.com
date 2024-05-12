@@ -1,0 +1,7 @@
+type: meetup
+name: SeattleJS
+link: https://seattlejs.com/
+date: 2023-05-10
+location: Seattle, WA USA
+talk:
+  ref: e-reader-tea-menu

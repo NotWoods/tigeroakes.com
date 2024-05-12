@@ -66,6 +66,23 @@ const talks = defineCollection({
     }),
 });
 
+const conferences = defineCollection({
+  type: 'data',
+  schema: z.object({
+    name: z.string(),
+    type: z.enum(['conference', 'meetup', 'workshop', 'podcast']),
+    link: z.string().url().optional(),
+    location: z.string().optional(),
+    remote: z.boolean().default(false),
+    talk: z
+      .object({
+        ref: reference('talks').optional(),
+        title: z.string().optional(),
+      })
+      .optional(),
+  }),
+});
+
 const featuredIn = defineCollection({
   type: 'content',
   schema: z.object({
@@ -85,6 +102,7 @@ export const collections = {
   projects,
   posts,
   talks,
+  conferences,
   'json-resume': jsonResume,
   'featured-in': featuredIn,
 };

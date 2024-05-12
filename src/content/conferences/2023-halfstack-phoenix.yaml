@@ -1,0 +1,7 @@
+type: conference
+name: HalfStack Phoenix
+link: https://halfstackconf.com/phoenix/2023
+date: 2023-02-03
+location: Phoenix, AZ USA
+talk:
+  ref: automate-relationship

@@ -1,0 +1,8 @@
+type: conference
+name: React Summit
+link: https://portal.gitnation.org/contents/the-art-of-ignoring-best-practices-for-react-performance
+date: 2024-06-18
+location: Amsterdam, Netherlands
+remote: true
+talk:
+  ref: ignoring-react-best-practices-for-performance

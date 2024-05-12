@@ -1,0 +1,9 @@
+type: conference
+name: React Advanced Conference
+link: https://portal.gitnation.org/contents/hacking-an-e-reader-with-react
+date: 2023-10-23
+location: London, UK
+remote: true
+talk:
+  ref: e-reader-tea-menu
+  title: Hacking an e-Reader with React

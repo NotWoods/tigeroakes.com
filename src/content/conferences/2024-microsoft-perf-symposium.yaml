@@ -1,0 +1,6 @@
+type: conference
+name: Microsoft Web & Apps Performance Symposium
+date: 2024-05-14
+remote: true
+talk:
+  ref: ignoring-react-best-practices-for-performance
