@@ -60,7 +60,7 @@ const ConditionallyRendered = ({ hidden }) => {
 
 # Callback refs to the rescue
 
-React refs very versatile, and you're not limited to the ref objects that [`useRef`](https://react.dev/reference/react/useRef) and [`createRef`](https://react.dev/reference/react/createRef) return. Instead of an object, you can pass in a [callback function ref](https://react.dev/reference/react-dom/components/common#ref-callback)! This callback will be called with the DOM element as soon as it's mounted, and again with `null` when it's unmounted.
+React refs are very versatile, and you're not limited to the ref objects that [`useRef`](https://react.dev/reference/react/useRef) and [`createRef`](https://react.dev/reference/react/createRef) return. Instead of an object, you can pass in a [callback function ref](https://react.dev/reference/react-dom/components/common#ref-callback)! This callback will be called with the DOM element as soon as it's mounted, and again with `null` when it's unmounted.
 
 This makes it easy to set focus, with a reusable helper function.
 
