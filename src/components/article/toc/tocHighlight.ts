@@ -9,7 +9,7 @@ function setupToc() {
   /**
    * Update the highlighted link in the table of contents.
    */
-  function setHighlightedHeaderId(id: string) {
+  const setHighlightedHeaderId = (id: string) => {
     if (lastHighlightedHeaderLink) {
       lastHighlightedHeaderLink.removeAttribute('aria-current');
     }
@@ -24,7 +24,7 @@ function setupToc() {
     } else {
       lastHighlightedHeaderLink = undefined;
     }
-  }
+  };
 
   const headingsObserver = new IntersectionObserver(
     (entries) => {

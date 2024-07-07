@@ -28,11 +28,11 @@ function useElementWidth(elementRef: RefObject<HTMLElement>) {
     return () => resizeObserver.disconnect();
   }, [elementRef]);
 
-  return Math.floor(width);
+  return width !== undefined ? Math.floor(width) : undefined;
 }
 
 export function SidebarContent(props: Props) {
-  const { contentRef = useRef() } = props;
+  const { contentRef = useRef(null) } = props;
   const width = useElementWidth(contentRef);
   const containerClass = {
     opening: classes.animating,
@@ -53,7 +53,7 @@ export function SidebarContent(props: Props) {
       <div ref={contentRef} class={classes.content} style={props.contentStyle}>
         Main content
       </div>
-      {width != undefined && (
+      {width !== undefined && (
         <span class="absolute bottom-0 right-0 px-2 bg-gray-900/50">
           width: {width}px
         </span>
