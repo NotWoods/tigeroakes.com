@@ -2,6 +2,7 @@
 title: 'The easiest way to set focus on mount in React'
 description: Using callback refs to avoid useEffect issues.
 date: 2023-10-23
+lastMod: 2024-07-07
 tags:
   - Web
   - React
@@ -125,7 +126,7 @@ This can then be used with a callback ref to focus on the first item when the li
  * @param {HTMLElement | null} element
  * @returns {void}
  */
-const autoFocusFirstFoucusable = (element) => {
+const autoFocusFirstFocusable = (element) => {
   if (element) {
     findFirstFocusable(element)?.focus();
   }
@@ -141,7 +142,7 @@ const ListItem = ({ children }) => {
 
 const List = ({ data }) => {
   return (
-    <ul ref={autoFocusFirstFoucusable}>
+    <ul ref={autoFocusFirstFocusable}>
       {data.map((item) => <ListItem key={item.id}>{item.value}</ListItem>)}
     </ul>
   );
@@ -161,7 +162,7 @@ const LazyList = ({ data }) => {
   // When isLoaded is false, no ref will be set and nothing will be focused.
   // When isLoaded is true, the ref will be set on mount and the first item will be focused.
   return (
-    <ul ref={isLoaded ? autoFocusFirstFoucusable : undefined}>
+    <ul ref={isLoaded ? autoFocusFirstFocusable : undefined}>
       {data?.map((item) => <ListItem key={item.id}>{item.value}</ListItem>)}
     </ul>
   );

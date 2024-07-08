@@ -2,6 +2,7 @@
 title: 'When is it safe to use import statements in Jest tests?'
 description: Slightly confusing conditions around Jest module mocks.
 date: 2022-12-27
+lastMod: 2024-07-07
 tags:
   - Web
   - Jest
@@ -129,7 +130,7 @@ it('passes complex test', () => {
 will get transformed into a Node.js-compatible file like below:
 
 ```jsx {2-3,5,12-13}
-// compliled.test.js
+// compiled.test.js
 // hoisted to top of file
 jest.mock('../pages', () => {
   // TypeScript types removed

@@ -2,7 +2,7 @@
 title: 'React to Jetpack Compose Dictionary'
 description: Two libraries with similar concepts. What's the equivalent Jetpack Compose terms for React terms?
 date: 2020-07-20
-lastMod: 2024-05-16
+lastMod: 2024-07-07
 tags:
   - Android
   - React
@@ -403,7 +403,7 @@ const ExpensiveComponent = React.memo(function ExpensiveComponent(props) {
 
 In Jetpack Compose, this is done automatically. Compose will automatically try to mark a function as ["skippable"](https://developer.android.com/develop/ui/compose/performance/stability#mutable-objects), which will prevent the composable from re-composing. If all the parameters of a composable are [stable](https://medium.com/androiddevelopers/jetpack-compose-stability-explained-79c10db270c8), then the compiler will mark the composable as skippable.
 
-Primitive data types and classes marked with `@Stable` or `@Immutable` are stable. Collection classes list `List` need to be wrapped with by a class or replaced with [KotlinX immuntable collections](https://github.com/Kotlin/kotlinx.collections.immutable).
+Primitive data types and classes marked with `@Stable` or `@Immutable` are stable. Collection classes list `List` need to be wrapped with by a class or replaced with [KotlinX immutable collections](https://github.com/Kotlin/kotlinx.collections.immutable).
 
 ```kotlin
 @Composable

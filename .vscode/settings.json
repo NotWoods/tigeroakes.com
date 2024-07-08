@@ -14,5 +14,23 @@
   "search.exclude": {
     "**/node_modules/**": true,
     "dist/**": true
-  }
+  },
+  "cSpell.enableFiletypes": ["mdx"],
+  "cSpell.words": [
+    "Astro",
+    "Composables",
+    "drawables",
+    "FLIK",
+    "Foulplay",
+    "HeleOn",
+    "JetBrains",
+    "Jetpack",
+    "MathML",
+    "Oakes",
+    "rehype",
+    "shortcodes",
+    "skippable",
+    "webm"
+  ],
+  "cSpell.language": "en,en-GB"
 }

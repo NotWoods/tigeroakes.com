@@ -33,7 +33,7 @@ You’ve created a Progressive Web App (<abbr>PWA</abbr>), designed an icon to r
 
 But, if you have a recent Android phone, your icons will show up like this:
 
-![Homescreen with icons inside white circles](/posts/maskable-icons/launcher_screenshot.png)
+![Home screen with icons inside white circles](/posts/maskable-icons/launcher_screenshot.png)
 
 What happened? Well, Android Oreo introduced [adaptive icons](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive), a new icon format that enforces the same shape for all icons on the home screen. Icons that don’t follow the new format are given a white background.
 
@@ -49,7 +49,7 @@ Until a few years ago, Android app icons were freeform and could be any shape. T
 
 However, manufacturers, like Samsung, wanted to make all icons on a device the same shape to keep things consistent. Some manufacturers even wanted different shapes. To deal with the variety of requirements from manufacturers and devices, Android introduced “adaptive icons.” You supply an image with extra space around the edges, and Android will crop it to the correct shape.
 
-![Icons restricted to different shapes](/posts/maskable-icons/manufactuers.png)
+![Icons restricted to different shapes](/posts/maskable-icons/manufacturers.png)
 
 But web apps are designed to work on any platform, so they don’t have APIs to create these special Android icons. Instead, icons would get squished into white boxes like this:
 

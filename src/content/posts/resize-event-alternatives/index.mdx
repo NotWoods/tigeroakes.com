@@ -2,6 +2,7 @@
 title: Alternatives to the resize event with better performance
 description: Exploring other APIs that integrate closely with the browser's styling engine.
 date: 2023-04-23
+lastMod: 2024-07-07
 tags:
   - Web
   - JavaScript
@@ -77,7 +78,7 @@ body {
 }
 ```
 
-You can also use media queries in JavaScript, if nessecary. The [`matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) API lets you pass in media query conditions and check if they match in JS. You can check the current value with [`query.matches`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches) and listen to changes in size with the ["change" event](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/change_event).
+You can also use media queries in JavaScript, if necessary. The [`matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) API lets you pass in media query conditions and check if they match in JS. You can check the current value with [`query.matches`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches) and listen to changes in size with the ["change" event](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/change_event).
 
 Unlike the "resize" event, the "change" event will only fire when the breakpoint is passed. In the demo below, you can see an event is only fired when the window is resized past the 400 pixel breakpoint (either becoming smaller than or equal to 400 pixels or larger than 400 pixels).
 
@@ -146,7 +147,7 @@ resizeObserver.observe(element);
 
 <Fragment set:html={boxModel} />
 
-Resize observers are the best option if you need to make changes based on the size of a paticular element.
+Resize observers are the best option if you need to make changes based on the size of a particular element.
 
 ## 3. Container queries
 

@@ -2,6 +2,7 @@
 title: Tricks for writing CSS in Fluent UI React v9
 description: Advanced features for clean & performant CSS.
 date: 2024-02-12
+lastMod: 2024-07-07
 toc: true
 tags:
   - Web
@@ -17,7 +18,7 @@ import { AutoRTL, ButtonDemo, IconColor } from '../../../components/demos/fluent
 
 Last year, Microsoft released the [Fluent 2 Design System](https://fluent2.microsoft.design/) which modernizes the design language. Alongside the new designs came a new code library for React, named [Fluent UI React v9](https://react.fluentui.dev/) (as there were 8 releases of the code library following the old designs). Fluent UI React v9 is significantly easier to use and more performant than previous versions, and introduces concepts that other React UI libraries should consider adopting.
 
-One of these changes is standadizing a more traditional CSS styling approach, which allows for significantly better performance. Some developers have had trouble adjusting to this change, as it requires a different way of thinking about CSS. In this post, I'll share some tricks for writing CSS in Fluent UI React v9.
+One of these changes is standardizing a more traditional CSS styling approach, which allows for significantly better performance. Some developers have had trouble adjusting to this change, as it requires a different way of thinking about CSS. In this post, I'll share some tricks for writing CSS in Fluent UI React v9.
 
 ## Use slots to style child elements instead of CSS tag selectors
 
@@ -193,7 +194,7 @@ Since child elements inherit the `color` property from their parent, you can jus
 
 <IconColor client:visible />
 
-## Avoid writing seperate CSS for RTL support
+## Avoid writing separate CSS for RTL support
 
 Right-to-left (RTL) support in components is important for internationalization, as some languages are read from right to left and the UI should reflect that. Historically, we've had to pass around props like `isRTL` to components, and write separate CSS for RTL support. In Fluent UI React v9, [this is handled automatically for you](https://griffel.js.org/react/api/make-styles#rtl-support).
 

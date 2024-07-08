@@ -2,6 +2,7 @@
 title: 'The right way to add TODO to eslint-disable comments'
 description: How to use the comment description feature in ESLint.
 date: 2023-08-16
+lastMod: 2024-07-07
 author: tiger
 tags:
   - TIL
@@ -47,6 +48,6 @@ This also works with multiple lines:
 (window as any)._globalVar = 'foo';
 ```
 
-The benefit of using this format is that ESLint will automatically remove the disable comment directive and description together if they are no longer nessecary. As long as you use the [`reportUnusedDisableDirectives`](https://eslint.org/docs/latest/use/configure/rules#report-unused-eslint-disable-comments) option, the autofixer will clean them up for you.
+The benefit of using this format is that ESLint will automatically remove the disable comment directive and description together if they are no longer necessary. As long as you use the [`reportUnusedDisableDirectives`](https://eslint.org/docs/latest/use/configure/rules#report-unused-eslint-disable-comments) option, the autofixer will clean them up for you.
 
 You can also require developers to add descriptions to these comments using the [eslint-comments/require-description](hhttps://mysticatea.github.io/eslint-plugin-eslint-comments/rules/require-description.html) rule. No more danging TODOs or confusing `// eslint-disable-next-line` comments!
