@@ -130,7 +130,7 @@ const autoFocusFirstFocusable = (element) => {
   if (element) {
     findFirstFocusable(element)?.focus();
   }
-}
+};
 
 const ListItem = ({ children }) => {
   return (
@@ -143,7 +143,9 @@ const ListItem = ({ children }) => {
 const List = ({ data }) => {
   return (
     <ul ref={autoFocusFirstFocusable}>
-      {data.map((item) => <ListItem key={item.id}>{item.value}</ListItem>)}
+      {data.map((item) => (
+        <ListItem key={item.id}>{item.value}</ListItem>
+      ))}
     </ul>
   );
 };
@@ -163,7 +165,9 @@ const LazyList = ({ data }) => {
   // When isLoaded is true, the ref will be set on mount and the first item will be focused.
   return (
     <ul ref={isLoaded ? autoFocusFirstFocusable : undefined}>
-      {data?.map((item) => <ListItem key={item.id}>{item.value}</ListItem>)}
+      {data?.map((item) => (
+        <ListItem key={item.id}>{item.value}</ListItem>
+      ))}
     </ul>
   );
 };

@@ -19,7 +19,7 @@ const resizeObserver = new ResizeObserver((entries) => {
   width = entry.target.offsetWidth; // also safe and fast to read!
 });
 
-resizeObserver.observe(document.querySelector("div"));
+resizeObserver.observe(document.querySelector('div'));
 ```
 
 This is a useful alternative to other ways to avoid forced synchronous layout, such as [using `requestAnimationFrame`](https://developer.chrome.com/blog/using-requestidlecallback#using_requestidlecallback_to_make_dom_changes).

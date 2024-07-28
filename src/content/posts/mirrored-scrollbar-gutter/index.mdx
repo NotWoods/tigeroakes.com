@@ -17,7 +17,6 @@ In [Microsoft Loop](https://loop.microsoft.com/learn), we wanted to use scrollba
 
 The goal is to adjust our inline padding around the scrollbar, so it stays equal on either side of the element.
 
-
 We calculate the scrollbar width once then cache the result, to minimize the performance hit to a single style calculation.
 
 ```js
@@ -33,13 +32,13 @@ function calculateScrollbarWidth(className) {
   }
 
   // This is the element that will have a scrollbar
-  const outer = document.createElement("div");
+  const outer = document.createElement('div');
   outer.className = className;
-  outer.style.visibility = "hidden";
-  outer.style.overflow = "scroll";
+  outer.style.visibility = 'hidden';
+  outer.style.overflow = 'scroll';
 
   // This is the content inside the scrollable parent
-  const inner = document.createElement("div");
+  const inner = document.createElement('div');
   outer.appendChild(inner);
 
   // Calculate the size difference between the parent and the child

@@ -14,7 +14,11 @@ categories:
 banner: ./banner.png
 ---
 
-import { AutoRTL, ButtonDemo, IconColor } from '../../../components/demos/fluent-ui-css-tricks/FluentUITricksDemo.tsx';
+import {
+  AutoRTL,
+  ButtonDemo,
+  IconColor,
+} from '../../../components/demos/fluent-ui-css-tricks/FluentUITricksDemo.tsx';
 
 Last year, Microsoft released the [Fluent 2 Design System](https://fluent2.microsoft.design/) which modernizes the design language. Alongside the new designs came a new code library for React, named [Fluent UI React v9](https://react.fluentui.dev/) (as there were 8 releases of the code library following the old designs). Fluent UI React v9 is significantly easier to use and more performant than previous versions, and introduces concepts that other React UI libraries should consider adopting.
 
@@ -144,7 +148,8 @@ function MyButton() {
 This generates CSS that looks like this:
 
 ```css
-.myButton {}
+.myButton {
+}
 .myButtonIcon {
   color: red;
 }
