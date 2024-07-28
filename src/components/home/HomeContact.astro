@@ -16,25 +16,25 @@ const imageSetStyle = await getInlineBackgroundImage({
 <footer
   id="contact"
   style={`--block-scale: 0.2; ${imageSetStyle}`}
-  class="bg-center bg-cover bg-no-repeat text-shadow text-lg text-center"
+  class="text-shadow bg-cover bg-center bg-no-repeat text-center text-lg"
 >
-  <div class="backdrop-blur-sm py-8 safe-px-8">
-    <SectionTitle class="inline-block mb-4">Contact</SectionTitle>
+  <div class="safe-px-8 py-8 backdrop-blur-sm">
+    <SectionTitle class="mb-4 inline-block">Contact</SectionTitle>
 
     <p class="mb-2">You can send an email to</p>
     <a
-      class="inline-block mx-4 text-2xl relative accent-block--bottom"
+      class="accent-block--bottom relative mx-4 inline-block text-2xl"
       href="mailto:{email.link}"
       set:html={email.text}
     />
 
-    <p class="mt-12 mb-2">You can find me at</p>
+    <p class="mb-2 mt-12">You can find me at</p>
     <ul class="text-xl">
       {
         social.map((item) => (
           <li class="mx-4 mb-6">
             <a
-              class="relative inline-block accent-block--bottom"
+              class="accent-block--bottom relative inline-block"
               title={item.name}
               href={item.link}
               rel={item.name === 'Mastodon' ? 'me' : undefined}

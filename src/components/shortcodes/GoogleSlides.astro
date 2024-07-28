@@ -6,15 +6,13 @@ export interface Props {
 const { src } = Astro.props as Props;
 ---
 
-<div class="w-full aspect-w-8 aspect-h-5">
-  <iframe
-    {src}
-    frameborder="0"
-    width="800"
-    height="486"
-    allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
-    allowfullscreen
-    allow="fullscreen"
-    class="block"
-    loading="lazy"></iframe>
-</div>
+<iframe
+  {src}
+  frameborder="0"
+  width="800"
+  height="486"
+  allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
+  allowfullscreen
+  allow="fullscreen"
+  class="block w-full"
+  loading="lazy"></iframe>

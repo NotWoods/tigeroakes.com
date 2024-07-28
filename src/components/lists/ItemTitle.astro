@@ -10,7 +10,7 @@ const props = Astro.props as Props;
 ---
 
 <h3 class:list={['text-2xl', classes, props.class]}>
-  <a class="relative accent-block--left" href={props.href}>
+  <a class="accent-block--left relative" href={props.href}>
     <slot />
   </a>
 </h3>

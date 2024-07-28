@@ -29,20 +29,20 @@ const { title = 'Code demo' } = Astro.props as Props;
       @apply h-full;
     }
     body {
-      @apply m-0 bg-slate-800 text-slate-200 font-sans flex flex-col relative;
+      @apply relative m-0 flex flex-col bg-slate-800 font-sans text-slate-200;
     }
     body::after {
       content: '';
       display: block;
-      @apply absolute bottom-0 right-0 border-8 border-orange-500 border-solid;
+      @apply absolute bottom-0 right-0 border-8 border-solid border-orange-500;
       border-top-color: transparent;
       border-left-color: transparent;
     }
     h4 {
-      @apply m-0 px-4 font-mono font-semibold text-lg leading-8;
+      @apply m-0 px-4 font-mono text-lg font-semibold leading-8;
     }
     main {
-      @apply bg-slate-200 text-slate-800 mx-4 mb-4 grow p-4;
+      @apply mx-4 mb-4 grow bg-slate-200 p-4 text-slate-800;
     }
     p:first-child {
       @apply mt-0;

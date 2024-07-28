@@ -30,15 +30,30 @@ const config = {
         `monospace`,
       ],
     },
+    keyframes: {
+      fadeIn: {
+        from: { opacity: '0' },
+        to: { opacity: '1' },
+      },
+    },
+    animation: {
+      'fade-in': 'fadeIn 1s both',
+    },
+    listStyleType: {
+      square: 'square',
+    },
     extend: {
+      flexGrow: {
+        2: '2',
+      },
       maxWidth: {
         site: '52rem',
       },
       minWidth: {
         44: '11rem',
       },
-      listStyleType: {
-        square: 'square',
+      aspectRatio: {
+        half: '2 / 1',
       },
       // @ts-ignore
       typography({ theme }) {
@@ -147,10 +162,7 @@ const config = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 };
 
 module.exports = config;

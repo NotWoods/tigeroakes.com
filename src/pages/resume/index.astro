@@ -23,18 +23,18 @@ const jsonResume = await loadJsonResume(content.frontmatter.json_resume);
   <body class="bg-slate-800 text-slate-200">
     <BannerNav current={Astro.url} class="print:hidden" />
 
-    <section id="about" class="mt-4 max-w-site mx-auto safe-px-4 print:hidden">
+    <section id="about" class="safe-px-4 mx-auto mt-4 max-w-site print:hidden">
       <SectionTitle>About Me</SectionTitle>
       <div class="prose prose-invert">
         <content.Content />
       </div>
     </section>
 
-    <div class="max-w-site mt-8 mx-auto safe-px-4 print:hidden">
+    <div class="safe-px-4 mx-auto mt-8 max-w-site print:hidden">
       <SectionTitle class="mb-4">Resume</SectionTitle>
       <div class="text-center">
         <Button
-          class="inline-block text-xl bg-[#cd372d]"
+          class="inline-block bg-[#cd372d] text-xl"
           href={content.frontmatter.pdf}
         >
           PDF

@@ -24,12 +24,12 @@ function toISODate(date: Date) {
 }
 ---
 
-<h3 class="relative accent-block--left accent-block--still text-2xl mb-1">
+<h3 class="accent-block--left accent-block--still relative mb-1 text-2xl">
   In the future
 </h3>
 {
   future.length > 0 ? (
-    <ul class="grid grid-cols-1 gap-4 mb-8">
+    <ul class="mb-8 grid grid-cols-1 gap-4">
       {future.toReversed().map((conference) => (
         <li id={conference.id}>
           <a class="text-xl" href={conference.link}>
@@ -59,10 +59,10 @@ function toISODate(date: Date) {
   )
 }
 
-<h3 class="relative accent-block--left accent-block--still text-2xl mb-1">
+<h3 class="accent-block--left accent-block--still relative mb-1 text-2xl">
   In the past
 </h3>
-<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<ul class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
   {
     past.map((conference) => (
       <li id={conference.id}>

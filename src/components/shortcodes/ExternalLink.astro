@@ -7,7 +7,7 @@ const { href } = Astro.props as Props;
 ---
 
 <div class="not-prose -mx-4">
-  <a class="button block border border-current p-4 relative" {href}>
+  <a class="button relative block border border-current p-4" {href}>
     <slot name="icon">
       <img class="float-right" loading="lazy" width="20" height="20" />
     </slot>

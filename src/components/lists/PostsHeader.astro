@@ -9,12 +9,12 @@ export interface Props {
 const { links } = Astro.props as Props;
 ---
 
-<aside class="max-w-site mx-auto py-4 safe-px-4 text-lg">
+<aside class="safe-px-4 mx-auto max-w-site py-4 text-lg">
   <div class="prose prose-lg prose-invert py-8">
     <slot />
   </div>
   <Buttons
-    class="selection-invert text-slate-800 justify-center mb-4"
+    class="selection-invert mb-4 justify-center text-slate-800"
     buttons={projectButtons(links, Astro.url)}
   />
 </aside>

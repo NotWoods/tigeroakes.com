@@ -62,13 +62,13 @@
   .accent-block--left::before,
   .accent-block--bottom::before {
     content: '';
-    @apply block absolute bg-accent;
+    @apply absolute block bg-accent;
   }
 
   .accent-block--left::before {
     width: 0.5em;
     left: -1em;
-    @apply inset-y-0 origin-right max-h-7;
+    @apply inset-y-0 max-h-7 origin-right;
   }
   .accent-block--left::before {
     transform: scaleX(var(--block-scale, 0));
@@ -125,5 +125,5 @@
   position: absolute;
   font-family: var(--font-family-mono);
   text-shadow: 0 -1px 1px var(--code-background);
-  @apply inline-block text-xs right-4 bottom-3 opacity-70;
+  @apply bottom-3 right-4 inline-block text-xs opacity-70;
 }

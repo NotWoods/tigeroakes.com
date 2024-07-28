@@ -21,7 +21,7 @@ function formatPost(post: CollectionEntry<'posts'>): Item {
 }
 ---
 
-<section id="previews" class="max-w-site mx-auto safe-px-4 py-8">
+<section id="previews" class="safe-px-4 mx-auto max-w-site py-8">
   <ListFlat title="Latest posts" items={allPosts.slice(0, 3).map(formatPost)} />
   <ListFlat
     title="Popular content"

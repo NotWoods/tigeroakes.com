@@ -26,12 +26,12 @@ interface Item {
 const { items } = Astro.props as Props;
 ---
 
-<main class="flex flex-wrap py-2 safe-px-2 gap-4" style="--block-scale: 1">
+<main class="safe-px-2 flex flex-wrap gap-4 py-2" style="--block-scale: 1">
   {
     items.map((item, i) => (
       <ArticleHeaderContainer
         as="article"
-        class="project-panel flex flex-col max-w-full"
+        class="project-panel motion-safe:animate-fade-in grow-2 flex max-w-full shrink-0 flex-col"
         padding="px-4 py-2"
         buttonsClass="justify-center"
         style={`animation-delay:${i * 200}ms`}
@@ -49,28 +49,3 @@ const { items } = Astro.props as Props;
     ))
   }
 </main>
-
-<style is:global>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  .project-panel {
-    flex: 2 0 auto;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .project-panel {
-      animation: fadeIn 1s both;
-    }
-  }
-
-  .project-panel picture {
-    @apply mx-auto w-32 h-32;
-  }
-</style>

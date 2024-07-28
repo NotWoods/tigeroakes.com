@@ -9,6 +9,8 @@ export interface Props {
 
 const { logo } = Astro.props as Props;
 
+const width = 128;
+
 const formats: ImageFormat[] =
   logo.format === 'svg' ? ['svg'] : ['avif', 'webp', logo.format];
 ---
@@ -16,9 +18,12 @@ const formats: ImageFormat[] =
 <Picture
   src={logo}
   alt=""
-  class="w-32 h-32"
+  class="h-32 w-32"
+  pictureAttributes={{ class: `w-32 h-32 mx-auto grow-0 shrink-0` }}
   {formats}
   fallbackFormat={logo.format}
-  widths={[128, 256, 512]}
-  sizes="128px"
+  {width}
+  height={width}
+  widths={[width, width * 2, width * 4]}
+  sizes={`${width}px`}
 />

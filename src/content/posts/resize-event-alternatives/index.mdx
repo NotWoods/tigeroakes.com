@@ -32,9 +32,9 @@ window.addEventListener('resize', () => {
 });
 ```
 
-<div class="resize flex overflow-hidden items-stretch -mx-4">
+<div class="-mx-4 flex resize items-stretch overflow-hidden">
   <iframe
-    class="grow h-full bg-slate-800"
+    class="h-full grow bg-slate-800"
     width="800"
     height="150"
     src="resize-event-demo/"
@@ -95,9 +95,9 @@ query.addEventListener('change', (event) => {
 });
 ```
 
-<div class="resize flex overflow-hidden items-stretch -mx-4">
+<div class="-mx-4 flex resize items-stretch overflow-hidden">
   <iframe
-    class="grow h-full bg-slate-800"
+    class="h-full grow bg-slate-800"
     width="800"
     height="150"
     src="media-query-demo/"
@@ -115,11 +115,11 @@ Additionally, elements can change their size without the user resizing the windo
 Happily, there's a useful API called [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API) you can use. It reacts to changes in the size of any observed element, no matter what made it change.
 
 <div
-  class="resize flex overflow-hidden items-stretch -mx-4"
+  class="-mx-4 flex resize items-stretch overflow-hidden"
   style="height: 250px"
 >
   <iframe
-    class="grow h-full bg-slate-800"
+    class="h-full grow bg-slate-800"
     width="800"
     height="250"
     src="resize-observer-demo/"

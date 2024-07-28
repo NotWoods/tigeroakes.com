@@ -21,18 +21,18 @@ function isCurrent({ url }: { url: string }) {
 
 <header
   class:list={[
-    'flex flex-wrap items-stretch max-w-site mx-auto justify-between py-4 safe-px-4 gap-y-4',
+    'safe-px-4 mx-auto flex max-w-site flex-wrap items-stretch justify-between gap-y-4 py-4',
     className,
   ]}
 >
   {logo !== 'none' && <Logo outline={logo === 'outline'} />}
-  {logo === 'none' && <div class="grow h-7" />}
+  {logo === 'none' && <div class="h-7 grow" />}
 
-  <nav class="flex flex-wrap items-stretch mx-auto gap-x-2 gap-y-6">
+  <nav class="mx-auto flex flex-wrap items-stretch gap-x-2 gap-y-6">
     {
       navData.map((page) => (
         <a
-          class="px-2 relative accent-block--bottom"
+          class="accent-block--bottom relative px-2"
           href={page.url}
           aria-current={isCurrent(page) ? 'page' : undefined}
         >

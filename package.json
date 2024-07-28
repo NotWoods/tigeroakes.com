@@ -19,7 +19,6 @@
     "@kurone-kito/jsonresume-types": "^0.4.0",
     "@notwoods/fluent-ui-button-demo": "^0.0.1",
     "@notwoods/webish": "^0.2.1",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.13",
     "@vite-pwa/astro": "^0.4.0",
     "astro": "^4.12.2",
@@ -28,6 +27,7 @@
     "postcss": "^8.4.40",
     "prettier": "~3.3.3",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "rehype-katex": "^7.0.0",
     "remark-behead": "^3.1.0",
     "remark-math": "^6.0.0",
@@ -53,11 +53,15 @@
     "start": "astro dev --port 8000 --drafts",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write src/**/*.{astro,md,mdx,js,json,yml,yaml,css} --plugin=prettier-plugin-astro"
+    "format": "prettier --write src/**/*.{astro,md,mdx,js,json,yml,yaml,css}"
   },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5",
-    "proseWrap": "never"
+    "proseWrap": "never",
+    "plugins": [
+      "prettier-plugin-astro",
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }

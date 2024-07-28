@@ -13,7 +13,7 @@ const { tree } = Astro.props as Props;
     tree.map((node) => (
       <li class="leading-5">
         <a
-          class="block mb-1 relative accent-block--left"
+          class="accent-block--left relative mb-1 block"
           href={`#${node.slug}`}
         >
           {node.text}

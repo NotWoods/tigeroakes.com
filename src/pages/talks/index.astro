@@ -126,7 +126,7 @@ const talks = talkEntries.map((post) => ({
       <header.Content />
     </PostsHeader>
 
-    <section class="max-w-site mx-auto safe-px-4">
+    <section class="safe-px-4 mx-auto max-w-site">
       <SectionTitle class="mb-4" id="where-ive-presented"
         >Where I've presented</SectionTitle
       >
@@ -134,12 +134,12 @@ const talks = talkEntries.map((post) => ({
       <ListConferences future={conferences.future} past={conferences.past} />
     </section>
 
-    <section class="max-w-site mx-auto safe-px-4">
+    <section class="safe-px-4 mx-auto max-w-site">
       <SectionTitle class="mb-4" id="talks-ive-given"
         >Talks I've given</SectionTitle
       >
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-8"
+        class="mb-8 grid grid-cols-1 gap-12 sm:grid-cols-2"
         style="--block-scale: 0.5"
       >
         {
@@ -181,11 +181,5 @@ const talks = talkEntries.map((post) => ({
     </section>
 
     <Footer />
-
-    <style is:global>
-      picture {
-        @apply aspect-w-16 aspect-h-9 mb-2;
-      }
-    </style>
   </body>
 </html>

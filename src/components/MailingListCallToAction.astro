@@ -2,9 +2,9 @@
 import Button from './Button.astro';
 ---
 
-<aside class="max-w-site mx-auto safe-px-4 py-8">
-  <h2 class="text-2xl mx-4">Want to read more?</h2>
-  <p class="text-lg m-4">
+<aside class="safe-px-4 mx-auto max-w-site py-8">
+  <h2 class="mx-4 text-2xl">Want to read more?</h2>
+  <p class="m-4 text-lg">
     On this site I try to write about interesting and weird projects, and my
     newsletter is no different! It includes <strong>early access</strong> to upcoming
     posts and access to special bonus content. No spam, unsubscribe at any time.
@@ -15,9 +15,9 @@ import Button from './Button.astro';
     method="post"
     target="popupwindow"
     onsubmit="window.open('https://buttondown.email/tiger', 'popupwindow')"
-    class="subscribe flex flex-wrap mx-4 gap-4"
+    class="subscribe mx-4 flex flex-wrap gap-4"
   >
-    <div class="flex flex-col flex-1">
+    <div class="flex flex-1 flex-col">
       <input
         class="peer bg-transparent py-1"
         type="email"
@@ -30,13 +30,13 @@ import Button from './Button.astro';
         >Email
       </label>
       <hr
-        class="border-t-4 peer-focus:border-orange-500 peer-focus:translate-y-1.5 motion-safe:transition"
+        class="border-t-4 peer-focus:translate-y-1.5 peer-focus:border-orange-500 motion-safe:transition"
       />
     </div>
     <input type="hidden" value="1" name="embed" />
     <Button
       type="submit"
-      class="text-xl bg-orange-500 text-slate-800 selection-invert ml-auto"
+      class="selection-invert ml-auto bg-orange-500 text-xl text-slate-800"
     >
       Subscribe
     </Button>

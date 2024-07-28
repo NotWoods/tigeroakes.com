@@ -20,31 +20,26 @@ const {
   fit,
   width,
   aspect,
-  sizes,
-  loading = 'lazy',
   class: className,
+  ...props
 } = Astro.props as Props;
-const imgClass = [
-  fit === 'contain' ? 'object-contain' : 'object-cover',
-  'shadow-md bg-slate-200 h-full',
-  className,
-]
-  .filter(Boolean)
-  .join(' ');
-const heightClass = aspect === 'half' ? 'h-[2.9375rem]' : 'h-[3.305rem]';
+
+const fitClass = fit === 'contain' ? 'object-contain' : 'object-cover';
+const aspectClass = aspect === 'half' ? 'aspect-half' : 'aspect-video';
+const height = aspect === 'half' ? width / 2 : (width * 9) / 16;
 
 const formats: ImageFormat[] =
   metadata.format === 'svg' ? ['svg'] : ['avif', 'webp', metadata.format];
-const widths = [width, width * 2, width * 4];
 ---
 
 <Picture
+  {...props}
+  {width}
+  {height}
   src={metadata}
   {alt}
-  {loading}
-  {sizes}
-  class={imgClass}
-  pictureAttributes={{ class: `mb-2 ${heightClass}` }}
+  class:list={[fitClass, 'h-full w-full bg-slate-200 shadow-md', className]}
+  pictureAttributes={{ class: `w-full mb-2 ${aspectClass}` }}
   {formats}
-  {widths}
+  widths={[width, width * 2, width * 4]}
 />

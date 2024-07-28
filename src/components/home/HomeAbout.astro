@@ -7,9 +7,9 @@ import profileImage from './profile2023.jpg';
 
 <section
   id="about"
-  class="max-w-site mx-auto safe-px-4 flex flex-wrap gap-x-20 gap-y-8 items-center"
+  class="safe-px-4 mx-auto flex max-w-site flex-wrap items-center gap-x-20 gap-y-8"
 >
-  <div class="text-lg flex-1">
+  <div class="flex-1 text-lg">
     <Logo monochrome height={64} />
     <div class="about-content">
       <slot />
@@ -25,7 +25,7 @@ import profileImage from './profile2023.jpg';
     src={profileImage}
     alt="Portrait of Tiger Oakes"
     loading="eager"
-    class="border-4 border-slate-800 rounded-full h-40 w-40"
+    class="h-40 w-40 rounded-full border-4 border-slate-800"
     sizes="10rem"
     formats={['avif', 'webp', 'jpeg']}
     fallbackFormat="jpeg"
@@ -34,16 +34,18 @@ import profileImage from './profile2023.jpg';
 </section>
 
 <style>
+  /* Disable tailwind outline class */
   :global(.logo) :global(.outline) {
     outline: none;
   }
+
   .about-content > :global(p) {
-    @apply decoration-slate-200 my-4;
+    @apply my-4 decoration-slate-200;
   }
   .about-content :global(a) {
     @apply underline;
   }
   #about :global(picture) {
-    @apply grow-0 shrink-0 mx-auto;
+    @apply mx-auto shrink-0 grow-0;
   }
 </style>
