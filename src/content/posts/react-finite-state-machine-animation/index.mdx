@@ -41,6 +41,7 @@ A finite state machine abstractly represents all the possible states of a system
 
 The sidebar animation has two clear states: the sidebar is open and the sidebar is closed. We also want to include a state for when the sidebar is animating. The sidebar animation is different when its opening vs when its closing, so we need two different states to represent this.
 
+{/* stroke-on-surface -- here for tailwind pickup for SVG */}
 <Fragment set:html={stateMachine} />
 
 The diagram makes it pretty clear how many states we need to represent the animation and the possible paths. All the animation logic will be driven by the current state of the state machine. Setting up the animation in this way makes it easier to keep React rendering in sync, since the state can be accessed synchronously.

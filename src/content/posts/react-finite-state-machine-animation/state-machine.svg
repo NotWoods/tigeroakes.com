@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 285 185">
-  <g fill="#032030" class="stroke-zinc-800 dark:stroke-slate-200">
+  <g fill="#032030" class="stroke-on-surface">
     <circle cx="37.5" cy="32.5" r="27.5"/>
     <circle cx="177.5" cy="32.5" r="27.5" stroke-dasharray="4"/>
     <circle cx="107.5" cy="152.5" r="27.5" stroke-dasharray="4"/>

@@ -30,9 +30,7 @@ const { href, tableOfContents, links, ...props } = Astro.props as Props;
 
 <BannerNav current={href} />
 
-<article
-  class="grid bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:text-slate-200"
->
+<article class="bg-surface text-on-surface grid">
   <slot name="header">
     <PostHeader {...props} buttons={projectButtons(links, Astro.url)} />
   </slot>

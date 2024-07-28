@@ -12,6 +12,8 @@ const config = {
       transparent: 'transparent',
       current: 'currentColor',
       accent: 'var(--accent)',
+      surface: 'var(--color-surface)',
+      'on-surface': 'var(--color-on-surface)',
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
@@ -55,7 +57,6 @@ const config = {
       aspectRatio: {
         half: '2 / 1',
       },
-      // @ts-ignore
       typography({ theme }) {
         return {
           DEFAULT: {

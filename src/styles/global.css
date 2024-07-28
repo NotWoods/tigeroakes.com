@@ -9,6 +9,15 @@
     --font-family-mono: theme('fontFamily.mono');
     --shadow-md: theme('boxShadow.md');
     scroll-behavior: smooth;
+
+    --color-surface: theme('colors.slate.200');
+    --color-on-surface: theme('colors.slate.800');
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-surface: theme('colors.zinc.800');
+      --color-on-surface: theme('colors.slate.200');
+    }
   }
 
   h1,
