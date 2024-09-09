@@ -30,12 +30,12 @@ const { href, tableOfContents, links, ...props } = Astro.props as Props;
 
 <BannerNav current={href} />
 
-<article class="bg-surface text-on-surface grid">
+<article class="grid bg-surface text-on-surface">
   <slot name="header">
     <PostHeader {...props} buttons={projectButtons(links, Astro.url)} />
   </slot>
   {tableOfContents && <TableOfContents headers={tableOfContents} />}
-  <div class="safe-px-4 prose prose-lg max-w-site py-6 dark:prose-invert">
+  <div class="safe-px-4 prose max-w-site py-6 md:prose-lg dark:prose-invert">
     <slot />
   </div>
   <slot name="footer">

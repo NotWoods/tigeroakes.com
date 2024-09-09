@@ -20,7 +20,7 @@ const config = {
       zinc: colors.zinc,
     },
     fontFamily: {
-      sans: ['Lato', 'Trebuchet MS', 'sans-serif'],
+      sans: ['Rubik', 'system-ui', 'sans-serif'],
       mono: [
         `'Cascadia Mono'`,
         `ui-monospace`,

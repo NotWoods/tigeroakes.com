@@ -26,7 +26,7 @@
   h4,
   h5,
   h6 {
-    @apply font-mono font-semibold;
+    @apply font-mono font-semibold tracking-tight;
   }
 
   a {
