@@ -116,7 +116,7 @@ export default defineConfig({
       // Interpret LaTeX math
       remarkMath,
       // Convert markdown headings to match site structure
-      [remarkBehead, { minDepth: 3 }],
+      [remarkBehead, { minDepth: 2 }],
     ],
     rehypePlugins: [
       // Render LaTeX math as MathML

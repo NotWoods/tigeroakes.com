@@ -3,21 +3,14 @@ import { Image } from 'astro:assets';
 import logoSvg from '@notwoods/logo/svg/logo-on-dark.svg';
 ---
 
-<h1 class="grow pr-2">
-  <a class="logo__container block" href="/">
+<div class="flex grow pr-2">
+  <a class="logo__container" href="/">
     <Image
-      class="logo"
+      class="-mt-[4px] block"
       src={logoSvg}
       alt="Tiger Oakes"
       height={32}
       width={160}
     />
   </a>
-</h1>
-
-<style>
-  .logo__container .logo {
-    display: block;
-    margin-top: -4px;
-  }
-</style>
+</div>

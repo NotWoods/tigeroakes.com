@@ -1,5 +1,6 @@
 ---
 import navData from '../data/nav.json';
+import BannerNavItem from './BannerNavItem.astro';
 import Logo from './Logo.astro';
 
 // Banner displayed at the top of the site.
@@ -7,9 +8,15 @@ export interface Props {
   logo?: 'default' | 'outline' | 'none';
   current?: string | URL;
   class?: string;
+  currentIsH1?: boolean;
 }
 
-const { logo = 'default', current, class: className } = Astro.props as Props;
+const {
+  logo = 'default',
+  current,
+  class: className,
+  currentIsH1,
+} = Astro.props as Props;
 
 function isCurrent({ url }: { url: string }) {
   if (!current) return undefined;
@@ -30,15 +37,21 @@ function isCurrent({ url }: { url: string }) {
 
   <nav class="mx-auto flex flex-wrap items-stretch gap-x-2 gap-y-6">
     {
-      navData.map((page) => (
-        <a
-          class="accent-block--bottom relative px-2"
-          href={page.url}
-          aria-current={isCurrent(page) ? 'page' : undefined}
-        >
-          {page.name}
-        </a>
-      ))
+      navData.map((page) => {
+        const current = isCurrent(page);
+        const content = (
+          <BannerNavItem name={page.name} url={page.url} current={current} />
+        );
+        if (current && currentIsH1) {
+          return (
+            <h1 class="contents font-sans font-normal tracking-normal">
+              {content}
+            </h1>
+          );
+        } else {
+          return content;
+        }
+      })
     }
   </nav>
 </header>

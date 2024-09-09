@@ -21,7 +21,7 @@ const jsonResume = await loadJsonResume(content.frontmatter.json_resume);
   </head>
 
   <body class="bg-slate-800 text-slate-200">
-    <BannerNav current={Astro.url} class="print:hidden" />
+    <BannerNav current={Astro.url} class="print:hidden" currentIsH1 />
 
     <section id="about" class="safe-px-4 mx-auto mt-4 max-w-site print:hidden">
       <SectionTitle>About Me</SectionTitle>

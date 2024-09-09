@@ -10,7 +10,9 @@ import profileImage from './profile2023.jpg';
   class="safe-px-4 mx-auto flex max-w-site flex-wrap items-center gap-x-20 gap-y-8"
 >
   <div class="flex-1 text-lg">
-    <Logo monochrome height={64} />
+    <h1>
+      <Logo monochrome height={64} />
+    </h1>
     <div class="about-content">
       <slot />
     </div>
@@ -36,6 +38,9 @@ import profileImage from './profile2023.jpg';
 </section>
 
 <style>
+  :global(.logo) {
+    max-width: 100%;
+  }
   /* Disable tailwind outline class */
   :global(.logo) :global(.outline) {
     outline: none;
