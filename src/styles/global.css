@@ -29,6 +29,13 @@
     @apply font-mono font-semibold tracking-tight;
   }
 
+  :is(h1, h2, h3, h4, h5, h6) code {
+    /* override tailwind */
+    font-size: 1em !important;
+    font-weight: 350 !important;
+    letter-spacing: 0;
+  }
+
   a {
     text-decoration-skip-ink: auto;
     text-underline-offset: 3px;
@@ -135,4 +142,9 @@
   font-family: var(--font-family-mono);
   text-shadow: 0 -1px 1px var(--code-background);
   @apply bottom-3 right-4 inline-block text-xs opacity-70;
+}
+@media screen(md) {
+  .expressive-code {
+    --ec-codeFontSize: 1em;
+  }
 }

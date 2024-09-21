@@ -68,9 +68,8 @@ const config = {
                 fontWeight: 'inherit',
               },
               code: {
-                fontSize: '0.9em',
+                fontWeight: 'inherit',
                 overflowWrap: 'anywhere',
-                padding: '0.1em 0.3em',
                 backgroundColor: 'var(--tw-prose-code-bg)',
                 borderRadius: '0',
               },
@@ -84,10 +83,10 @@ const config = {
               h5: { fontWeight: '600' },
               h6: { fontWeight: '600' },
               'code::before': {
-                content: 'none',
+                marginInlineEnd: '-.3ch',
               },
               'code::after': {
-                content: 'none',
+                marginInlineStart: '-.3ch',
               },
               img: {
                 marginLeft: 'auto',
@@ -106,9 +105,7 @@ const config = {
                 textDecorationThickness: '2px',
                 fontWeight: 'inherit',
               },
-              code: {
-                fontSize: '0.9em',
-              },
+              code: {},
               pre: {
                 marginLeft: theme('-spacing.4'),
                 marginRight: theme('-spacing.4'),
@@ -127,7 +124,7 @@ const config = {
               '--tw-prose-bullets': theme('colors.current'),
               '--tw-prose-hr': theme('colors.gray[400]'),
               '--tw-prose-quotes': theme('colors.gray[600]'),
-              '--tw-prose-quote-borders': theme('colors.gray[300]'),
+              '--tw-prose-quote-borders': theme('colors.orange[500]'),
               '--tw-prose-captions': theme('colors.gray[500]'),
               '--tw-prose-code': theme('colors.current'),
               '--tw-prose-code-bg': theme('colors.gray[300]'),
