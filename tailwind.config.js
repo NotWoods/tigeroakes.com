@@ -86,7 +86,7 @@ const config = {
                 marginInlineEnd: '-.3ch',
               },
               'code::after': {
-                marginInlineStart: '-.3ch',
+                marginInlineStart: '-.2ch',
               },
               img: {
                 marginLeft: 'auto',
