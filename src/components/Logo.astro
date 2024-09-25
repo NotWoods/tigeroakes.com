@@ -1,13 +1,20 @@
 ---
 import { Image } from 'astro:assets';
-import logoSvg from '@notwoods/logo/svg/logo-on-dark.svg';
+import logoLightSvg from '@notwoods/logo/svg/logo.svg';
+import logoDarkSvg from '@notwoods/logo/svg/logo-on-dark.svg';
+
+interface Props {
+  type: 'light' | 'dark';
+}
+
+const { type } = Astro.props as Props;
 ---
 
 <div class="flex grow pr-2">
   <a class="logo__container" href="/">
     <Image
       class="-mt-[4px] block"
-      src={logoSvg}
+      src={type === 'light' ? logoLightSvg : logoDarkSvg}
       alt="Tiger Oakes"
       height={32}
       width={160}

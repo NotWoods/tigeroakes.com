@@ -5,14 +5,14 @@ import Logo from './Logo.astro';
 
 // Banner displayed at the top of the site.
 export interface Props {
-  logo?: 'default' | 'outline' | 'none';
+  logo?: 'dark' | 'light' | 'none';
   current?: string | URL;
   class?: string;
   currentIsH1?: boolean;
 }
 
 const {
-  logo = 'default',
+  logo = 'dark',
   current,
   class: className,
   currentIsH1,
@@ -32,7 +32,7 @@ function isCurrent({ url }: { url: string }) {
     className,
   ]}
 >
-  {logo !== 'none' && <Logo outline={logo === 'outline'} />}
+  {logo !== 'none' && <Logo type={logo} />}
   {logo === 'none' && <div class="h-7 grow" />}
 
   <nav class="mx-auto flex flex-wrap items-stretch gap-x-2 gap-y-6">
