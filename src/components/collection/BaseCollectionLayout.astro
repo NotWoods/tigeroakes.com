@@ -16,7 +16,7 @@ const { headerClass, sectionClass } = Astro.props as Props;
 <header class:list={['mx-auto max-w-site px-4 py-8', headerClass]}>
   <slot name="header" />
 </header>
-<div class="bg-surface text-on-surface py-8">
+<div class="bg-surface py-8 text-on-surface">
   <section class:list={['mx-auto max-w-site px-4', sectionClass]}>
     <slot />
   </section>

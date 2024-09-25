@@ -31,7 +31,7 @@ const { items } = Astro.props as Props;
     items.map((item, i) => (
       <ArticleHeaderContainer
         as="article"
-        class="project-panel motion-safe:animate-fade-in grow-2 flex max-w-full shrink-0 flex-col"
+        class="project-panel flex max-w-full shrink-0 grow-2 flex-col motion-safe:animate-fade-in"
         padding="px-4 py-2"
         buttonsClass="justify-center"
         style={`animation-delay:${i * 200}ms`}
