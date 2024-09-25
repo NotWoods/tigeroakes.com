@@ -1,6 +1,9 @@
-import type { RSSOptions } from '@astrojs/rss';
+import type { RSSFeedItem } from '@astrojs/rss';
+import { experimental_AstroContainer } from 'astro/container';
 import type { CollectionEntry } from 'astro:content';
 import { formatToMimeType } from './picture';
+import { getContainerRenderer as preactContainerRenderer } from '@astrojs/preact';
+import { loadRenderers } from 'astro:container';
 
 export const rssConfig = {
   title: 'Tiger Oakes',
@@ -20,11 +23,13 @@ export const rssConfig = {
     `<language>en-ca</language>`,
 };
 
-type Item<Array> = Array extends ReadonlyArray<infer T> ? T : never;
+const container = await experimental_AstroContainer.create({
+  renderers: await loadRenderers([preactContainerRenderer()]),
+});
 
-export function formatPost(
+export async function formatPost(
   post: CollectionEntry<'posts'>
-): Item<RSSOptions['items']> {
+): Promise<RSSFeedItem> {
   let customData = post.data.tags
     .map((tag) => `<category>${tag}</category>`)
     .join('');
@@ -33,12 +38,16 @@ export function formatPost(
     customData += mediaContentTag(post.data.banner);
   }
 
+  const { Content } = await post.render();
+  const content = await container.renderToString(Content);
+
   return {
     link: `/posts/${post.slug}/`,
     title: post.data.title,
     description: post.data.description,
     pubDate: post.data.date,
     customData,
+    content,
   };
 }
 
