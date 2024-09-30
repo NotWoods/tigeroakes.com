@@ -20,7 +20,7 @@
     "@notwoods/fluent-ui-button-demo": "^0.0.1",
     "@notwoods/webish": "^0.2.1",
     "@tailwindcss/typography": "^0.5.15",
-    "@vite-pwa/astro": "^0.4.0",
+    "@vite-pwa/astro": "^0.4.3",
     "astro": "^4.15.9",
     "crossrm": "^1.0.0",
     "expressive-code-plugin-data-lang": "^0.1.0",

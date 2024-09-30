@@ -1,0 +1,35 @@
+/*
+  Feature-Policy: document-domain 'none'
+  Feature-Policy: layout-animations 'none'
+  Feature-Policy: legacy-image-formats 'none'
+  Feature-Policy: sync-xhr 'none'
+
+  Content-Security-Policy: frame-ancestors 'self';
+  Content-Security-Policy: form-action buttondown.email;
+  Content-Security-Policy: default-src 'none';
+  Content-Security-Policy: style-src 'self' 'unsafe-inline';
+  Content-Security-Policy: script-src 'self' 'unsafe-inline' data: https://platform.twitter.com https://cdn.usefathom.com;
+  Content-Security-Policy: font-src 'self';
+  Content-Security-Policy: img-src 'self' https://cdn.usefathom.com;
+  Content-Security-Policy: media-src 'self';
+  Content-Security-Policy: worker-src 'self';
+  Content-Security-Policy: frame-src 'self' https://www.youtube-nocookie.com https://docs.google.com https://platform.twitter.com https://anchor.fm https://speakerdeck.com https://player.vimeo.com;
+  Content-Security-Policy: connect-src *;
+  Content-Security-Policy: manifest-src 'self';
+  Content-Security-Policy: base-uri 'none';
+
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+
+posts/rss.xml
+  Content-Type: application/rss+xml
+
+/categories/:category/rss.xml
+  Content-Type: application/rss+xml
+
+/site.webmanifest
+  Content-Type: application/manifest+json
+
+/_astro/*
+  Cache-Control: max-age=31536000, immutable
