@@ -10,6 +10,7 @@
   },
   "exclude": [
     "./src/components/shortcodes/playground-react/**/*.tsx",
-    "./src/components/demos/fluent-ui-css-tricks/*.tsx"
+    "./src/components/demos/fluent-ui-css-tricks/*.tsx",
+    "./functions/**/*"
   ]
 }
