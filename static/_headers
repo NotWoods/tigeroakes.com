@@ -22,7 +22,7 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
 
-posts/rss.xml
+/posts/rss.xml
   Content-Type: application/rss+xml
 
 /categories/:category/rss.xml
