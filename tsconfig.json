@@ -8,9 +8,5 @@
     "allowSyntheticDefaultImports": true,
     "importHelpers": true
   },
-  "exclude": [
-    "./src/components/shortcodes/playground-react/**/*.tsx",
-    "./src/components/demos/fluent-ui-css-tricks/*.tsx",
-    "./functions/**/*"
-  ]
+  "exclude": ["./functions/**/*"]
 }

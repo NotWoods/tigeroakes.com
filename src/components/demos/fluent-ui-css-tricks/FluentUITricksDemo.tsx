@@ -9,17 +9,17 @@ import {
 import {
   CodeDemoControl,
   CodeDemoControls,
-} from '../../shortcodes/playground-react/CodeDemoControls';
-import { useFormState } from '../../shortcodes/playground-react/useFormState';
+} from '../../shortcodes/playground/CodeDemoControls';
+import { useFormState } from '../../shortcodes/playground/useFormState';
 import logo from './logo.svg';
-import { Demo } from '../../shortcodes/playground-react/Demo';
+import { Demo } from '../../shortcodes/playground/Demo';
 
 export function ButtonDemo() {
   return (
-    <Demo title="Fluent UI Button" className="pb-4">
+    <Demo title="Fluent UI Button" class="pb-4">
       <FluentProvider
         theme={webLightTheme}
-        className="mx-4 flex justify-center items-center p-2"
+        className="mx-4 flex items-center justify-center p-2"
       >
         <Button icon={<Checkmark20Regular />}>Text</Button>
       </FluentProvider>

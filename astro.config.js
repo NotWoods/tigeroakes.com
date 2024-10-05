@@ -1,7 +1,6 @@
 // @ts-check
 import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import AstroPWA from '@vite-pwa/astro';
@@ -11,7 +10,6 @@ import { pluginDataLang } from 'expressive-code-plugin-data-lang';
 import rehypeKatex from 'rehype-katex';
 import remarkBehead from 'remark-behead';
 import remarkMath from 'remark-math';
-import { exclude as reactFiles } from './tsconfig.json';
 
 import svelte from '@astrojs/svelte';
 
@@ -30,8 +28,7 @@ export default defineConfig({
   integrations: [
     svelte(),
     // React is used for Fluent UI blogposts so we need to instruct Astro to ignore some files
-    preact({ exclude: reactFiles }),
-    react({ include: reactFiles }),
+    preact({ compat: true }),
     // Using tailwind, with base styles in global.css
     tailwind({ applyBaseStyles: false }),
     expressiveCode({

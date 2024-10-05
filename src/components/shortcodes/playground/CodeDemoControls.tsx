@@ -12,7 +12,7 @@ type BaseControlProps<
 
 export type ControlProps =
   | BaseControlProps<'range', 'list' | 'max' | 'min' | 'step'>
-  | BaseControlProps<'checkbox' | 'radio', 'value'>;
+  | BaseControlProps<'checkbox' | 'radio' | 'color', 'value'>;
 
 export function CodeDemoControl({
   label,
