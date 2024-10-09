@@ -11,8 +11,10 @@ export const GET: APIRoute = async () => {
     // list of `<item>`s in output xml
     // simple example: generate items for every md file in /src/pages
     // see "Generating items" section for required frontmatter and advanced use cases
-    items: posts
-      .filter((post) => post.data.categories.includes('Planet Mozilla'))
-      .map(formatPost),
+    items: await Promise.all(
+      posts
+        .filter((post) => post.data.categories.includes('Planet Mozilla'))
+        .map(formatPost)
+    ),
   });
 };
