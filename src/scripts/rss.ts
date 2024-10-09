@@ -1,9 +1,10 @@
+import { getContainerRenderer as mdxContainerRenderer } from '@astrojs/mdx';
+import { getContainerRenderer as preactContainerRenderer } from '@astrojs/preact';
 import type { RSSFeedItem } from '@astrojs/rss';
 import { experimental_AstroContainer } from 'astro/container';
+import { loadRenderers } from 'astro:container';
 import type { CollectionEntry } from 'astro:content';
 import { formatToMimeType } from './picture';
-import { getContainerRenderer as preactContainerRenderer } from '@astrojs/preact';
-import { loadRenderers } from 'astro:container';
 
 export const rssConfig = {
   title: 'Tiger Oakes',
@@ -24,7 +25,14 @@ export const rssConfig = {
 };
 
 const container = await experimental_AstroContainer.create({
-  renderers: await loadRenderers([preactContainerRenderer()]),
+  renderers: await loadRenderers([
+    preactContainerRenderer(),
+    mdxContainerRenderer(),
+  ]),
+});
+container.addClientRenderer({
+  name: '@astrojs/preact',
+  entrypoint: '@astrojs/preact/client.js',
 });
 
 export async function formatPost(
@@ -40,6 +48,7 @@ export async function formatPost(
 
   const { Content } = await post.render();
   const content = await container.renderToString(Content);
+  console.log(content);
 
   return {
     link: `/posts/${post.slug}/`,
