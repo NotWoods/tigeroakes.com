@@ -62,6 +62,7 @@ export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
             position={`${education.studyType} in ${education.area}`}
             website={education.url}
           />
+          <ExperienceHighlights highlights={education.courses} />
         </Fragment>
       ))}
     </main>

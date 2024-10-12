@@ -124,7 +124,10 @@ function experience({
         }),
         dateRange &&
           new docx.TextRun({
-            children: [new docx.Tab(), formatResumeDateRange(dateRange)],
+            children: [
+              new docx.Tab(),
+              formatResumeDateRange({ ...dateRange, onlyYear: 'auto' }),
+            ],
             style: StyleDateRange,
           }),
       ].filter(isDefined),
@@ -154,7 +157,7 @@ function sectionHeader(text: string): docx.Paragraph {
     border: {
       bottom: {
         style: docx.BorderStyle.SINGLE,
-        size: 1.5 * 2,
+        size: 1.5 * 6,
         // space: 4,
         color: ColorOrange,
       },
@@ -248,6 +251,7 @@ export const GET: APIRoute = async ({ params }) => {
               position: `${education.studyType} in ${education.area}`,
               url: education.url,
               dateRange: education,
+              highlights: education.courses,
             })
           ),
         ],
