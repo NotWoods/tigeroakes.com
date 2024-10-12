@@ -48,7 +48,6 @@ export async function formatPost(
 
   const { Content } = await post.render();
   const content = await container.renderToString(Content);
-  console.log(content);
 
   return {
     link: `/posts/${post.slug}/`,

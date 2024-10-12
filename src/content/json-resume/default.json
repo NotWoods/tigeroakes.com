@@ -72,7 +72,7 @@
         "Built and shipped brand new web browser in Kotlin to 100M+ users on Google Play Store.",
         "Partnered with engineers at Google, Intel, and Apple to add maskable icon support to Firefox, Chrome, and Safari.",
         "Featured Firefox in front of hundreds at Chrome Dev Summit 2019 keynote by adding Trusted Web Activity support.",
-        "Set web, Android, and iOS interaction standards by writing specifications as World Wide Web Consortium (W3C) member.",
+        "Set web, Android, and iOS interaction standards as World Wide Web Consortium (W3C) Invited Expert.",
         "Onboarded 5K+ developers onto Compose UI by writing React to Compose dictionary docs."
       ]
     },
@@ -84,8 +84,8 @@
       "endDate": "2018-07-27",
       "location": "Waterloo, ON, Canada",
       "highlights": [
-        "Increased new user retention & saved 100+ KB by building internal tool to analyze millions of Java & Kotlin APK methods.",
-        "Prevented significant release schedule delays by proactively identifying **Java** resource limits that were to be exceeded."
+        "Increased new user retention and saved 100+ KB by building internal tool to analyze millions of Java APK methods.",
+        "Prevented significant release schedule delays by proactively identifying nearly exceeded Java resource limits."
       ]
     },
     {

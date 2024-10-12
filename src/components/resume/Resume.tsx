@@ -64,16 +64,6 @@ export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
           />
         </Fragment>
       ))}
-
-      <ResumeSectionHeader>Awards</ResumeSectionHeader>
-      <p>
-        {jsonResume.awards!.map((award, i, awards) => (
-          <Fragment key={i}>
-            <span class="inline-block">{award.title}</span>
-            {i < awards.length - 1 ? ', ' : null}
-          </Fragment>
-        ))}
-      </p>
     </main>
   );
 };

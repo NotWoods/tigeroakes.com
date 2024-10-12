@@ -8,34 +8,34 @@ export const styles: docx.IStylesOptions = {
   default: {
     document: {
       run: {
-        font: 'Lato',
-        size: 10 * 2,
+        font: 'Calibri',
+        size: 11 * 2,
       },
     },
     title: {
       run: {
-        font: 'Lato Semibold',
-        size: 22 * 2,
-        allCaps: true,
+        font: 'Aptos Serif',
+        bold: true,
+        size: 14 * 2,
       },
     },
     heading1: {
       run: {
-        font: 'Lato',
+        font: 'Aptos Serif',
         bold: true,
         size: 12 * 2,
       },
       paragraph: {
         spacing: {
-          before: 8 * 20,
-          after: 3 * 20,
+          before: 6 * 20,
+          after: 4 * 20,
         },
       },
     },
     heading2: {
       run: {
-        font: 'Lato',
-        size: 11 * 2,
+        font: 'Calibri',
+        size: 12 * 2,
       },
       paragraph: {
         spacing: {
@@ -51,9 +51,6 @@ export const styles: docx.IStylesOptions = {
           left: 0,
           hanging: docx.convertInchesToTwip(0.15),
         },
-        spacing: {
-          after: 2 * 20,
-        },
       },
     },
   },
@@ -62,14 +59,13 @@ export const styles: docx.IStylesOptions = {
       id: StyleSummary,
       name: 'Summary',
       run: {
-        size: 10 * 2,
+        size: 11 * 2,
         italics: true,
         color: '191919',
       },
       paragraph: {
         spacing: {
-          before: 6 * 20,
-          after: 6 * 20,
+          before: 4 * 20,
         },
       },
     },
@@ -79,8 +75,8 @@ export const styles: docx.IStylesOptions = {
       id: StyleDateRange,
       name: 'Date Range',
       run: {
-        size: 9 * 2,
-        color: ColorOrange,
+        size: 11 * 2,
+        bold: true,
       },
     },
   ],

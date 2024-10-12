@@ -4,6 +4,7 @@ import * as docx from 'docx';
 import {
   type DateRange,
   formatResumeDateRange,
+  formatSkills,
   parseHighlight,
   resumeDateFormatter,
 } from '../../../components/resume/Experience';
@@ -37,18 +38,19 @@ function joinTags(
   });
 }
 
-function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
+function resumeHeader(options: Pick<ResumeSchema, 'basics'>) {
+  const basics = options.basics!;
   return [
     // Name
     new docx.Paragraph({
-      text: basics!.name,
+      text: basics.name,
       heading: docx.HeadingLevel.TITLE,
       style: 'Title',
     }),
     // Contact
     new docx.Paragraph({
       children: joinTags(
-        contactList(basics!).map(({ href, text }) => {
+        contactList(basics).map(({ href, text }) => {
           const textRun = new docx.TextRun(text);
           if (href) {
             return new docx.ExternalHyperlink({
@@ -64,17 +66,30 @@ function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
     }),
     // Summary
     new docx.Paragraph({
-      text: basics!.summary,
+      text: basics.summary,
       style: StyleSummary,
-      border: {
-        bottom: {
-          style: docx.BorderStyle.SINGLE,
-          space: 4,
-          color: ColorOrange,
-        },
-      },
     }),
   ];
+}
+
+function experienceHighlights(highlights?: readonly string[]) {
+  return (
+    highlights?.map(
+      (highlight) =>
+        new docx.Paragraph({
+          children: parseHighlight(highlight).map(
+            ({ text, bold }) =>
+              new docx.TextRun({
+                text,
+                bold,
+              })
+          ),
+          bullet: { level: 0 },
+          numbering: { level: 0, reference: 'SquareBullet' },
+          style: 'ListBullet',
+        })
+    ) ?? []
+  );
 }
 
 let lastExperienceWasEmpty = false;
@@ -95,7 +110,7 @@ function experience({
 }): docx.Paragraph[] {
   const companyText = new docx.TextRun({
     text: name,
-    font: 'Lato Semibold',
+    bold: true,
   });
 
   const heading = [
@@ -106,7 +121,6 @@ function experience({
           : companyText,
         new docx.TextRun({
           text: position ? `, ${position}` : '',
-          font: 'Lato',
         }),
         dateRange &&
           new docx.TextRun({
@@ -126,23 +140,7 @@ function experience({
     }),
   ];
 
-  const bullets =
-    highlights?.map(
-      (highlight) =>
-        new docx.Paragraph({
-          children: parseHighlight(highlight).map(
-            ({ text, bold }) =>
-              new docx.TextRun({
-                text,
-                bold,
-                font: bold ? 'Lato Heavy' : undefined,
-              })
-          ),
-          bullet: { level: 0 },
-          numbering: { level: 0, reference: 'SquareBullet' },
-          style: 'ListBullet',
-        })
-    ) ?? [];
+  const bullets = experienceHighlights(highlights);
 
   lastExperienceWasEmpty = bullets.length === 0;
   return [...heading, ...bullets];
@@ -153,6 +151,14 @@ function sectionHeader(text: string): docx.Paragraph {
     text,
     heading: docx.HeadingLevel.HEADING_1,
     style: 'Heading1',
+    border: {
+      bottom: {
+        style: docx.BorderStyle.SINGLE,
+        size: 1.5 * 2,
+        // space: 4,
+        color: ColorOrange,
+      },
+    },
   });
 }
 
@@ -174,13 +180,16 @@ export const GET: APIRoute = async ({ params }) => {
             {
               level: 0,
               format: docx.LevelFormat.BULLET,
-              text: '▪',
+              text: '§', // wingdings square4
               style: {
                 paragraph: {
                   indent: {
                     left: docx.convertInchesToTwip(0.15),
                     hanging: docx.convertInchesToTwip(0.15),
                   },
+                },
+                run: {
+                  font: 'Wingdings',
                 },
               },
             },
@@ -204,6 +213,9 @@ export const GET: APIRoute = async ({ params }) => {
         children: [
           ...resumeHeader(jsonResume),
 
+          sectionHeader('Technologies and Languages'),
+          ...experienceHighlights(formatSkills(jsonResume.skills)),
+
           sectionHeader('Experience'),
           ...jsonResume.work!.flatMap((work, i) =>
             experience({
@@ -213,7 +225,7 @@ export const GET: APIRoute = async ({ params }) => {
             })
           ),
 
-          sectionHeader('Community'),
+          sectionHeader('Community Projects'),
           ...jsonResume.projects!.flatMap((project, i) =>
             experience({
               ...project,
@@ -228,12 +240,6 @@ export const GET: APIRoute = async ({ params }) => {
             })
           ),
 
-          sectionHeader('Technical Proficiencies'),
-          new docx.Paragraph({
-            children: joinTags(jsonResume.skills?.map((skill) => skill.name!)),
-            style: 'skills',
-          }),
-
           sectionHeader('Education'),
           ...jsonResume.education!.flatMap((education, i) =>
             experience({
@@ -244,15 +250,6 @@ export const GET: APIRoute = async ({ params }) => {
               dateRange: education,
             })
           ),
-
-          sectionHeader('Awards'),
-          new docx.Paragraph({
-            children: joinTags(
-              jsonResume.awards!.map((award) => award.title!),
-              ', '
-            ),
-            style: 'skills',
-          }),
         ],
       },
     ],
