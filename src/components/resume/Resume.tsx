@@ -34,7 +34,7 @@ export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
         </Fragment>
       ))}
 
-      <ResumeSectionHeader>Community</ResumeSectionHeader>
+      <ResumeSectionHeader>Community Projects</ResumeSectionHeader>
       {jsonResume.projects!.map((project) => (
         <Fragment key={project.name}>
           {project.startDate && (

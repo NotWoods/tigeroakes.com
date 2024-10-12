@@ -58,6 +58,7 @@ export const ResumeHeader = (props: Pick<ResumeSchema, 'basics'>) => {
           </li>
         ))}
       </ul>
+      <p class={`${styles.summary} italic`}>{basics.summary}</p>
     </header>
   );
 };

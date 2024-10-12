@@ -30,12 +30,17 @@
   content: '';
 }
 
+.summary {
+  margin-top: 4pt;
+}
+
 .sectionHeader {
   font-family: var(--font-resume-serif);
   font-size: 12pt;
   border-bottom-width: 1.5pt;
   margin-top: 6pt;
   margin-bottom: 4pt;
+  line-height: 1.4em;
 }
 
 .experienceTitle {

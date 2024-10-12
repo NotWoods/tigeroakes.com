@@ -7,7 +7,7 @@
     "email": "contact@tigeroakes.com",
     "phone": "+1-253-778-6251",
     "url": "https://tigeroakes.com",
-    "summary": "Seasoned software developer offering 12+ years of experience building 3 web browsers, hundreds of open source projects, performant apps, and web standards. Strong leadership qualities, with an innate ability to steer, empower, and motivate several cross-functional teams to increase overall work efficiency, while promoting technical environment and attaining collective goals. Continuously learning and staying up to date with the latest advancements in software engineering.",
+    "summary": "Client-side performance focused software engineer offering 12+ years of experience leading multiple product launches, building 3 web browsers, hundreds of open-source projects, and cross-browser compatible W3C standards.",
     "location": {
       "city": "Seattle",
       "region": "WA",
@@ -29,98 +29,91 @@
   "work": [
     {
       "name": "Microsoft",
-      "position": "Software Engineer II - Microsoft Loop",
+      "position": "Senior Software Engineer - Microsoft Loop",
       "url": "https://loop.microsoft.com/",
-      "startDate": "2021-08-09",
+      "startDate": "2023-08-09",
       "location": "Redmond, WA, USA",
       "highlights": [
-        "Doubled rendering performance and saved engineering time across all of Microsoft by leading UI framework migration process with designers, product managers, and engineers in 3 orgs and multiple teams.",
-        "Played a key role as **React, TypeScript, CSS, and HTML subject matter expert** to strengthen performance, accessibility, & internationalization by coaching 50+ engineers, developing automated tools, giving tech talks, writing articles.",
-        "Proactively identified hundreds of bugs in 5,000+ files by introducing and implementing automated **Node.js** tooling.",
-        "Removed 1.5 seconds from repeat loads with **offline IndexedDB** caching and CSS performance improvements.",
-        "Unlocked key features by inventing novel virtualization system to support users with 1,000+ pages shared with them."
+        "Coached 80+ engineers, wrote documentation, gave tech talks to significantly raise quality of testing, performance, & accessibility in high-traffic, high-scale web application.",
+        "Reduced thousands of developer man-hours by writing detailed tech specs and clear designs ahead of time.",
+        "Shipped multiple AI apps in just 2 months and saved significant back-and-forth work.",
+        "Leaned on by the entire org as subject matter expert in Web, JavaScript, React, CSS."
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "position": "Software Engineer II",
+      "startDate": "2022-09-09",
+      "endDate": "2023-08-09",
+      "location": "Redmond, WA, USA",
+      "highlights": [
+        "Created stronger testing culture by building better testing tools, documentation, and improving peer review processes.",
+        "Improved performance and code maintainability by inventing virtualization system for thousands of pages."
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "position": "Software Engineer",
+      "startDate": "2021-08-09",
+      "endDate": "2022-09-09",
+      "location": "Redmond, WA, USA",
+      "highlights": [
+        "Doubled rendering performance and saved engineering time across all of Microsoft by leading design language & UI framework migration process with design, product, and engineering partners in 3 orgs and multiple teams. Resulted in an improved reusable components library getting promoted across the company."
       ]
     },
     {
       "name": "Mozilla",
-      "position": "Part-Time Android Developer - Firefox",
+      "position": "Android Engineer - Firefox",
       "url": "https://github.com/mozilla-mobile/firefox-android",
       "startDate": "2019-05-14",
       "endDate": "2020-08-30",
       "location": "Toronto, ON, Canada",
       "highlights": [
-        "Offered a native feel to thousands of web apps as a **feature lead** for Progressive Web App support.",
-        "Wrote specifications for new Web App Manifest features as member of the **World Wide Web Consortium (W3C)**.",
-        "Bridged communication gap with Google and Intel developers to add maskable icon support to Firefox and Chrome, which made thousands of web apps on par with Android apps in the home screen and drove web app adoption.",
-        "Built and shipped brand new web browser in **Kotlin** to 100M+ users on Google Play Store.",
-        "Featured Firefox in front of hundreds at Chrome Dev Summit 2019 keynote by adding Trusted Web Activity support."
+        "Built and shipped brand new web browser in Kotlin to 100M+ users on Google Play Store.",
+        "Partnered with engineers at Google, Intel, and Apple to add maskable icon support to Firefox, Chrome, and Safari.",
+        "Featured Firefox in front of hundreds at Chrome Dev Summit 2019 keynote by adding Trusted Web Activity support.",
+        "Set web, Android, and iOS interaction standards by writing specifications as World Wide Web Consortium (W3C) member.",
+        "Onboarded 5K+ developers onto Compose UI by writing React to Compose dictionary docs."
       ]
     },
     {
       "name": "Google",
-      "position": "Software Engineering Intern - Chrome for Android",
+      "position": "Android Engineering Intern - Chrome for Android",
       "url": "https://chrome-supersize.firebaseapp.com/",
       "startDate": "2018-05-07",
       "endDate": "2018-07-27",
       "location": "Waterloo, ON, Canada",
       "highlights": [
-        "Increased new user retention and saved 100+ KB by designing and building **JavaScript** tool to analyze millions of files.",
-        "Prevented significant release schedule delays by proactively identifying **Java** resource limits that were to be exceeded.",
-        "Improved time to first render by **700%** by using streams and **background worker threads** to handle 180 MB downloads."
+        "Increased new user retention & saved 100+ KB by building internal tool to analyze millions of Java & Kotlin APK methods.",
+        "Prevented significant release schedule delays by proactively identifying **Java** resource limits that were to be exceeded."
       ]
     },
     {
-      "name": "Vital Mechanics",
-      "position": "3D Graphics & Simulation Developer Intern",
-      "url": "http://vitalmechanics.com",
-      "startDate": "2018-01-05",
-      "endDate": "2018-04-25",
-      "location": "Vancouver, BC, Canada"
-    },
-    {
       "name": "Yelp",
-      "position": "Software Engineer Intern",
+      "position": "Fullstack Engineer Intern",
       "url": "https://www.yelp.com/search?find_desc=Handyman+Services",
       "startDate": "2017-08-27",
       "endDate": "2017-12-17",
       "location": "San Francisco, CA, USA"
-    },
-    {
-      "name": "Centre for Sustainable Food Systems at UBC Farm",
-      "position": "Software Developer",
-      "url": "https://www.litefarm.org/",
-      "startDate": "2016-05-14",
-      "endDate": "2017-04-14",
-      "location": "Vancouver, BC, Canada"
-    },
-    {
-      "name": "Oakes Management LLC",
-      "position": "Web Developer and IT Manager",
-      "url": "https://omlhawaii.com",
-      "startDate": "2009-10-01",
-      "endDate": "2015-08-10",
-      "location": "Kailua-Kona, HI, USA"
     }
   ],
   "projects": [
     {
       "name": "Open Source",
-      "startDate": "2013-09-05",
       "highlights": [
-        "Built Maskable.app, go-to developer tool recommended by Google & CSS Tricks, used **11,000+ times/month**.",
-        "Wrote new features for typescript-eslint, eslint-plugin-jest, eslint-plugin-storybook, used by **5M+ developers daily**.",
-        "Maintainer for **Rollup** ES6 module bundler, adding **TypeScript** types and compiler support to all plugins.",
-        "Produced Big Island Buses offline web app with County of Hawai'i as well as won Congressional App Challenge 2014."
+        "Built Maskable.app, industry standard developer tool recommended by Google & CSS Tricks, used 11,000+ times/month.",
+        "Automatically prevented common bugs for 32M+ engineers/week by writing linter rules, such as in typescript-eslint.",
+        "Made it easier to ship Android apps in Google Bubblewrap & Microsoft PWABuilder, used 2,000+ times/month.",
+        "Produced Big Island Buses offline web app with County of Hawai'i, which won Congressional App Challenge 2014."
       ]
     },
     {
       "name": "Speaking and Writing",
-      "startDate": "2014-06-24",
       "highlights": [
-        "Speaker at **JSConf Budapest 2022**, **CascadiaJS**, and **HalfStack** conferences with thousands of attendees.",
-        "Wrote web development articles for **CSS Tricks**, **MDN**, and **web.dev** with thousands of views.",
-        "Authored guidebook on **MockK** testing library for **Kotlin** and **Android**, with **20,000+ views/month**.",
-        "Wrote React to **Jetpack Compose** Dictionary, resource recommended by Android team to new developers.",
+        "Speaker at JSConf Budapest, React Summit, CascadiaJS, and HalfStack conferences with thousands of attendees.",
+        "Wrote articles for MDN, Google web.dev, & CSS Tricks, some of the biggest frontend resources with audience of 10,000+.",
+        "Authored guidebook on MockK testing library for Kotlin and Android, with 20,000+ views/month.",
+        "Wrote React to Jetpack Compose Dictionary, resource recommended by Android team to new developers.",
         "Mentoring new software developers through volunteering at Ada Developers Academy."
       ]
     }
@@ -157,18 +150,23 @@
     }
   ],
   "skills": [
-    { "name": "TypeScript" },
-    { "name": "JavaScript" },
-    { "name": "React" },
-    { "name": "HTML5" },
-    { "name": "Kotlin" },
-    { "name": "Java" },
-    { "name": "Android" },
-    { "name": "Python" },
-    { "name": "C#" },
-    { "name": "Node.js" },
-    { "name": "Deno" },
-    { "name": "Design" },
-    { "name": "Animation" }
+    { "name": "TypeScript", "keywords": ["language"] },
+    { "name": "JavaScript", "keywords": ["language"] },
+    { "name": "HTML", "keywords": ["language"] },
+    { "name": "CSS", "keywords": ["language"] },
+    { "name": "Kotlin", "keywords": ["language"] },
+    { "name": "Java", "keywords": ["language"] },
+    { "name": "C#", "keywords": ["language"] },
+    { "name": "Python", "keywords": ["language"] },
+    { "name": "React", "keywords": ["tech"] },
+    { "name": "Node.js", "keywords": ["tech"] },
+    { "name": "Android", "keywords": ["tech"] },
+    { "name": "AWS", "keywords": ["tech"] },
+    { "name": "SQL", "keywords": ["tech"] },
+    { "name": "Deno", "keywords": ["tech"] },
+    { "name": "Data structures and algorithms" },
+    { "name": "API design" },
+    { "name": "engineering best practices" },
+    { "name": "unit testing" }
   ]
 }
