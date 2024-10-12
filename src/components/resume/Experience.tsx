@@ -1,6 +1,9 @@
-import { Intl } from '@js-temporal/polyfill';
+import { Intl, Temporal } from '@js-temporal/polyfill';
+import { DefaultMap } from '@notwoods/default-map';
 import { Fragment } from 'preact';
 import { dateFromString } from '../../scripts/date';
+import styles from './resume.module.css';
+import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
 
 export const resumeDateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
@@ -11,8 +14,10 @@ const resumeYearFormatter = new Intl.DateTimeFormat('en-US', {
 });
 
 function formatResumeDate(date: string, onlyYear?: boolean) {
+  const plainDate = dateFromString(date);
+
   return (onlyYear ? resumeYearFormatter : resumeDateFormatter).format(
-    dateFromString(date)
+    plainDate
   );
 }
 
@@ -28,11 +33,31 @@ export interface DateRange {
   endDate?: string;
 }
 
+interface FormatDateRangeOptions extends DateRange {
+  onlyYear?: boolean | 'auto';
+}
+
 export function formatResumeDateRange({
   startDate,
   endDate,
   onlyYear,
-}: DateRange & { onlyYear?: boolean }) {
+}: FormatDateRangeOptions) {
+  if (!startDate) {
+    return '';
+  }
+
+  if (onlyYear === 'auto') {
+    if (endDate) {
+      const twoYearsAgo = Temporal.Now.plainDateISO().subtract({ years: 2 });
+
+      onlyYear =
+        Temporal.PlainDate.compare(twoYearsAgo, startDate) > 0 &&
+        Temporal.PlainDate.compare(twoYearsAgo, endDate) > 0;
+    } else {
+      onlyYear = false;
+    }
+  }
+
   return [
     formatResumeDate(startDate, onlyYear),
     endDate ? formatResumeDate(endDate, onlyYear) : 'Present',
@@ -43,10 +68,10 @@ export const ExperienceDate = ({
   startDate,
   endDate,
   onlyYear,
-}: DateRange & { onlyYear?: boolean }) => {
+}: FormatDateRangeOptions) => {
   return (
     <time
-      class="text-orange-500 float-right text-[0.825em] ml-4"
+      class="float-right ml-4 font-bold"
       dateTime={`${formatIsoDate(startDate)}/${formatIsoDate(endDate)}`}
     >
       {formatResumeDateRange({ startDate, endDate, onlyYear })}
@@ -64,8 +89,8 @@ export const ExperienceTitle = ({
   website?: string;
 }) => {
   return (
-    <h3 class="font-sans font-normal text-[11pt]">
-      <a href={website} class="font-semibold">
+    <h3 class={styles.experienceTitle}>
+      <a href={website} class="font-bold">
         {company}
       </a>
       {position && (
@@ -84,7 +109,7 @@ export const ExperienceHighlights = ({
 }) => {
   if (!highlights) return null;
   return (
-    <ul class="list-square clear-right mt-[2pt] mb-[8pt] pl-[1em]">
+    <ul class={`${styles.experienceHighlights} clear-right list-square`}>
       {highlights.map((highlight, i) => (
         <ExperienceHighlight key={i}>{highlight}</ExperienceHighlight>
       ))}
@@ -132,3 +157,26 @@ const ExperienceHighlight = ({ children }: { children: string }) => {
 
   return <li>{parts}</li>;
 };
+
+export function bucketSkills(
+  skills: ResumeSchema['skills'] = [],
+  fallback = 'other'
+) {
+  const buckets = new DefaultMap<string, string[]>(() => []);
+  for (const skill of skills) {
+    if (skill.name) {
+      for (const keyword of skill.keywords ?? [fallback]) {
+        buckets.get(keyword).push(skill.name);
+      }
+    }
+  }
+  return buckets;
+}
+
+export function formatSkills(skills: ResumeSchema['skills']) {
+  const buckets = bucketSkills(skills);
+  return ['language', 'tech', 'other']
+    .map((keyword) => buckets.get(keyword))
+    .filter((x) => x.length > 0)
+    .map((skills) => skills.join(', '));
+}

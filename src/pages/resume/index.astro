@@ -45,13 +45,5 @@ const jsonResume = await loadJsonResume(content.frontmatter.json_resume);
     <Resume jsonResume={jsonResume} />
 
     <Footer class="print:hidden" />
-    <style is:global>
-      .resume {
-        page-break-before: always;
-        color: rgba(0, 0, 0, 0.9);
-        font-variant-ligatures: none;
-        line-height: normal;
-      }
-    </style>
   </body>
 </html>

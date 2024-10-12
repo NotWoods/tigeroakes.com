@@ -1,0 +1,51 @@
+.resume {
+  page-break-before: always;
+  color: #212121;
+  font-variant-ligatures: none;
+  line-height: normal;
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  --font-resume-serif: 'Aptos Serif', Cambria, Georgia, serif;
+  margin: 2em auto;
+  max-width: 8.5in;
+  padding: 0.4in;
+  font-size: 11pt;
+}
+
+@media print {
+  .resume {
+    margin: 0;
+  }
+}
+
+.title {
+  font-size: 14pt;
+  font-weight: bold;
+  font-family: var(--font-resume-serif);
+}
+
+.contactItem::after {
+  content: ' | '
+}
+.contactItem:last-child::after {
+  content: '';
+}
+
+.sectionHeader {
+  font-family: var(--font-resume-serif);
+  font-size: 12pt;
+  border-bottom-width: 1.5pt;
+  margin-top: 6pt;
+  margin-bottom: 4pt;
+}
+
+.experienceTitle {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 12pt;
+}
+
+.experienceHighlights {
+  margin-bottom: 4pt;
+  margin-top: 2pt;
+  padding-left: 1em;
+}

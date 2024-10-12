@@ -1,18 +1,5 @@
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
-import { type ComponentChildren, Fragment } from 'preact';
-
-export const TagList = ({ tags }: { tags: readonly ComponentChildren[] }) => {
-  return (
-    <>
-      {tags.filter(Boolean).map((tag, i) => (
-        <Fragment key={i}>
-          {tag}
-          {i < tags.length - 1 ? ' | ' : null}
-        </Fragment>
-      ))}
-    </>
-  );
-};
+import styles from './resume.module.css';
 
 function formatPhoneNumber(phoneNumber: string) {
   const phoneSlice = phoneNumber.split('-').slice(1);
@@ -22,46 +9,55 @@ function formatPhoneNumber(phoneNumber: string) {
 const HTTPS = /^https?:\/\//;
 
 export function contactList(
-  basics: ResumeSchema['basics']
-): { text: string; href: string }[] {
+  basics: NonNullable<ResumeSchema['basics']>
+): { text: string; href?: string }[] {
   const github = basics.profiles?.find(
     (profile) => profile.network === 'GitHub'
   );
 
-  return [
-    {
+  const list: { text: string; href?: string }[] = [];
+  if (basics.location) {
+    list.push({
+      text: `${basics.location.city}, ${basics.location.region} (${basics.location.countryCode} Citizen)`,
+    });
+  }
+
+  if (github && github.username) {
+    list.push({
+      text: `github.com/${github.username}`,
+      href: github.url,
+    });
+  }
+
+  if (basics.email) {
+    list.push({
       text: basics.email,
       href: `mailto:${basics.email}`,
-    },
-    {
+    });
+  }
+
+  if (basics.phone) {
+    list.push({
       text: formatPhoneNumber(basics.phone),
       href: `tel:${basics.phone}`,
-    },
-    {
-      text: basics.url.replace(HTTPS, ''),
-      href: basics.url,
-    },
-    github?.url && {
-      text: github.url.replace(HTTPS, ''),
-      href: github.url,
-    },
-  ].filter(Boolean);
+    });
+  }
+
+  return list;
 }
 
-export const ResumeHeader = ({ basics }: Pick<ResumeSchema, 'basics'>) => {
+export const ResumeHeader = (props: Pick<ResumeSchema, 'basics'>) => {
+  const basics = props.basics!;
   return (
-    <header class="border-b border-orange-500 mb-[8pt]">
-      <h1 class="font-sans text-bold uppercase text-[22pt]">{basics.name}</h1>
-      <p class="mb-[4pt]">
-        <TagList
-          tags={contactList(basics).map(({ text, href }) => (
-            <a class="" href={href}>
-              {text}
-            </a>
-          ))}
-        />
-      </p>
-      <p class="italic text-neutral-700 mb-[4pt]">{basics.summary}</p>
+    <header>
+      <h1 class={styles.title}>{basics.name}</h1>
+      <ul>
+        {contactList(basics).map(({ text, href }) => (
+          <li class={`${styles.contactItem} inline`}>
+            <a href={href}>{text}</a>
+          </li>
+        ))}
+      </ul>
     </header>
   );
 };

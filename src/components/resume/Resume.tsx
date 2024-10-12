@@ -4,19 +4,29 @@ import {
   ExperienceDate,
   ExperienceHighlights,
   ExperienceTitle,
+  formatSkills,
 } from './Experience';
-import { ResumeHeader, TagList } from './Header';
+import { ResumeHeader } from './Header';
+import styles from './resume.module.css';
 
 export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
   return (
-    <main class="resume mx-auto bg-white text-[#212121] text-[10pt] m-[2em] print:m-0 max-w-[8.5in] p-[0.4in]">
+    <main class={`${styles.resume} resume mx-auto bg-white`}>
       <ResumeHeader basics={jsonResume.basics} />
+
+      <ResumeSectionHeader>Technologies and Languages</ResumeSectionHeader>
+      <ExperienceHighlights highlights={formatSkills(jsonResume.skills)} />
+
       <ResumeSectionHeader>Experience</ResumeSectionHeader>
-      {jsonResume.work.map((work) => (
+      {jsonResume.work!.map((work) => (
         <Fragment key={work.startDate}>
-          <ExperienceDate startDate={work.startDate} endDate={work.endDate} />
+          <ExperienceDate
+            startDate={work.startDate}
+            endDate={work.endDate}
+            onlyYear="auto"
+          />
           <ExperienceTitle
-            company={work.name}
+            company={work.name!}
             position={work.position}
             website={work.url}
           />
@@ -24,8 +34,8 @@ export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
         </Fragment>
       ))}
 
-      <ResumeSectionHeader class="mt-[8pt]">Community</ResumeSectionHeader>
-      {jsonResume.projects.map((project) => (
+      <ResumeSectionHeader>Community</ResumeSectionHeader>
+      {jsonResume.projects!.map((project) => (
         <Fragment key={project.name}>
           {project.startDate && (
             <ExperienceDate
@@ -34,34 +44,30 @@ export const Resume = ({ jsonResume }: { jsonResume: ResumeSchema }) => {
               onlyYear
             />
           )}
-          <ExperienceTitle company={project.name} website={project.url} />
+          <ExperienceTitle company={project.name!} website={project.url} />
           <ExperienceHighlights highlights={project.highlights} />
         </Fragment>
       ))}
 
-      <ResumeSectionHeader>Technical Proficiencies</ResumeSectionHeader>
-      <p class="mb-[8pt]">
-        <TagList tags={jsonResume.skills.map((skill) => skill.name)} />
-      </p>
-
       <ResumeSectionHeader>Education</ResumeSectionHeader>
-      {jsonResume.education.map((education) => (
+      {jsonResume.education!.map((education) => (
         <Fragment key={education.startDate}>
           <ExperienceDate
             startDate={education.startDate}
             endDate={education.endDate}
+            onlyYear
           />
           <ExperienceTitle
-            company={education.institution}
+            company={education.institution!}
             position={`${education.studyType} in ${education.area}`}
             website={education.url}
           />
         </Fragment>
       ))}
 
-      <ResumeSectionHeader class="mt-[12pt]">Awards</ResumeSectionHeader>
+      <ResumeSectionHeader>Awards</ResumeSectionHeader>
       <p>
-        {jsonResume.awards.map((award, i, awards) => (
+        {jsonResume.awards!.map((award, i, awards) => (
           <Fragment key={i}>
             <span class="inline-block">{award.title}</span>
             {i < awards.length - 1 ? ', ' : null}
@@ -78,7 +84,8 @@ const ResumeSectionHeader = (props: {
 }) => (
   <h2
     class={[
-      'font-sans text-[12pt] mb-[3pt] relative font-bold accent-block--left accent-block--still',
+      styles.sectionHeader,
+      'border-b border-orange-500 font-bold',
       props.class,
     ]
       .filter(Boolean)

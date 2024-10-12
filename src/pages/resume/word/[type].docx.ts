@@ -48,13 +48,17 @@ function resumeHeader({ basics }: Pick<ResumeSchema, 'basics'>) {
     // Contact
     new docx.Paragraph({
       children: joinTags(
-        contactList(basics).map(
-          ({ href, text }) =>
-            new docx.ExternalHyperlink({
-              children: [new docx.TextRun(text)],
+        contactList(basics!).map(({ href, text }) => {
+          const textRun = new docx.TextRun(text);
+          if (href) {
+            return new docx.ExternalHyperlink({
+              children: [textRun],
               link: href,
-            })
-        )
+            });
+          } else {
+            return textRun;
+          }
+        })
       ),
       style: 'Skills',
     }),
