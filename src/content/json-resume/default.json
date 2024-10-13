@@ -104,7 +104,7 @@
       "name": "Open Source",
       "highlights": [
         "Built Maskable.app, industry standard tool recommended by Google & CSS Tricks, used 11,000+ times/month.",
-        "Automatically prevented common bugs for 32M+ engineers/week by writing linter rules, such as in typescript-eslint.",
+        "Automatically stopped common bugs for 32M+ engineers/week by writing linter rules, such as in typescript-eslint.",
         "Made it easier to ship Android apps in Google Bubblewrap & Microsoft PWABuilder, used 2,000+ times/month.",
         "Produced Big Island Buses offline web app with County of Hawai'i, which won Congressional App Challenge 2014."
       ]
