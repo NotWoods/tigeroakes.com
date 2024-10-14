@@ -1,5 +1,87 @@
 {
   "basics": {
-    "summary": "Highly skilled software developer with over 12 years of experience building 3 web browsers, hundreds of open source projects, performant apps, and web standards."
-  }
+    "summary": "Highly skilled senior web engineer with over 12 years of experience leading multiple product launches, building 3 web browsers, hundreds of open source projects, performant React apps, and web standards."
+  },
+  "work": [
+    {
+      "name": "Microsoft",
+      "position": "Senior Software Engineer - Microsoft Loop",
+      "startDate": "2023-08-09",
+      "highlights": [
+        "Led team of 6 to re-architect consumer and business facing web product experience, resulting in 3x user engagement.",
+        "Mentored 80+ team members, wrote documentation, gave tech talks to significantly raise quality of testing, performance, and accessibility in high-traffic, high-scale web application.",
+        "Reduced thousands of developer man-hours by writing detailed tech specs and clear designs ahead of time.",
+        "Shipped multiple Copilot AI apps in just 2 months by rapidly prototyping and guiding peers on JS, React, CSS needs.",
+        "Quadrupled React performance by using deep understanding of React and web internals to alter rendering frequencies."
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "position": "Software Engineer II",
+      "startDate": "2022-09-09",
+      "endDate": "2023-08-09",
+      "highlights": [
+        "Unblocked features for millions of users by keeping up-to-date with new technologies to invent virtualizer for 1K+ pages.",
+        "Established best practices for writing reliable, maintainable, and testable React code used by hundreds of engineers.",
+        "Reduced bugs in design to engineering handoff by creating new Figma token libraries and internal tools for designers."
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "position": "Software Engineer",
+      "startDate": "2021-08-09",
+      "endDate": "2022-09-09"
+    },
+    {
+      "name": "Mozilla",
+      "position": "Software Engineer - Firefox",
+      "startDate": "2019-05-14",
+      "endDate": "2020-08-30",
+      "highlights": [
+        "Built and shipped brand new consumer facing web browser in Kotlin to 100M+ users on [Google Play Store](https://play.google.com/store/apps/details?id=org.mozilla.firefox).",
+        "Partnered with engineers at Google, Intel, and Apple to add maskable icon support to Firefox, Chrome, and Safari.",
+        "Set desktop web & mobile web (Android/iOS) interaction standards as World Wide Web Consortium (W3C) Invited Expert.",
+        "Onboarded 5K+ developers onto Compose UI by writing React to Compose dictionary docs.",
+        "Successfully coordinated the inclusion of Firefox in the Google Chrome Dev Summit keynote in front of hundreds, by suggesting then implementing new Trusted Web Activity product feature."
+      ]
+    },
+    {
+      "name": "Google",
+      "position": "Software Engineering Intern - Chrome",
+      "startDate": "2018-05-07",
+      "endDate": "2018-07-27",
+      "highlights": [
+        "Increased new user retention & saved 100+ KB by building internal desktop web tool to analyze millions of Java methods.",
+        "Prevented months of release schedule delays by identifying Java resource limits that were nearly exceeded."
+      ]
+    },
+    {
+      "name": "Yelp",
+      "position": "Fullstack Engineer Intern",
+      "startDate": "2017-08-27",
+      "endDate": "2017-12-17"
+    }
+  ],
+  "skills": [
+    { "name": "TypeScript", "keywords": ["language"] },
+    { "name": "JavaScript", "keywords": ["language"] },
+    { "name": "HTML", "keywords": ["language"] },
+    { "name": "CSS", "keywords": ["language"] },
+    { "name": "Kotlin", "keywords": ["language"] },
+    { "name": "Java", "keywords": ["language"] },
+    { "name": "C#", "keywords": ["language"] },
+    { "name": "Python", "keywords": ["language"] },
+    { "name": "React", "keywords": ["tech"] },
+    { "name": "Redux", "keywords": ["tech"] },
+    { "name": "Node.js", "keywords": ["tech"] },
+    { "name": "Android", "keywords": ["tech"] },
+    { "name": "AWS", "keywords": ["tech"] },
+    { "name": "SQL", "keywords": ["tech"] },
+    { "name": "Deno", "keywords": ["tech"] },
+    { "name": "API design" },
+    { "name": "A/B testing" },
+    { "name": "engineering best practices" },
+    { "name": "unit testing" },
+    { "name": "collaboration and communication" }
+  ]
 }

@@ -14,7 +14,7 @@ function mergeResume(base: ResumeSchema, partial: ResumeSchema): ResumeSchema {
   };
 }
 
-function mergeArray<T extends { name?: string; position?: string }>(
+function mergeArray<T extends { name?: string; startDate?: string }>(
   base: readonly T[] | undefined,
   partial: readonly T[] | undefined
 ): T[] | undefined {
@@ -22,8 +22,9 @@ function mergeArray<T extends { name?: string; position?: string }>(
 
   return partial.map((experience) => {
     const baseExperience = base?.find(
-      (baseExperience) => baseExperience.name === experience.name
-      // && baseExperience.position === experience.position
+      (baseExperience) =>
+        baseExperience.name === experience.name &&
+        baseExperience.startDate === experience.startDate
     );
 
     return {

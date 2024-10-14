@@ -1,9 +1,10 @@
 import { Intl, Temporal } from '@js-temporal/polyfill';
 import { DefaultMap } from '@notwoods/default-map';
-import { Fragment } from 'preact';
+import { Fragment, type ComponentChild, type FunctionComponent } from 'preact';
 import { dateFromString } from '../../scripts/date';
 import styles from './resume.module.css';
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
+import { parseHighlight, type TextSpan } from './markdownish';
 
 export const resumeDateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
@@ -117,45 +118,27 @@ export const ExperienceHighlights = ({
   );
 };
 
-const BOLD = /\*\*([^*]+)\*\*/g;
-export function parseHighlight(highlight: string) {
-  const parts: { text: string; bold: boolean }[] = [];
-
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  while ((match = BOLD.exec(highlight)) !== null) {
-    const startIndex = lastIndex;
-    const endIndex = BOLD.lastIndex;
-
-    // Push plain text
-    parts.push({ text: highlight.slice(startIndex, match.index), bold: false });
-
-    // Push bold text
-    parts.push({
-      text: highlight.slice(match.index + 2, endIndex - 2),
-      bold: true,
-    });
-
-    lastIndex = endIndex;
-  }
-  parts.push({ text: highlight.slice(lastIndex), bold: false });
-
-  return parts;
-}
-
 const ExperienceHighlight = ({ children }: { children: string }) => {
-  let plainCount = 0;
-  let boldCount = 0;
-
-  const parts = parseHighlight(children).map(({ text, bold }) => {
-    if (bold) {
-      return <strong key={`bold-${boldCount++}`}>{text}</strong>;
-    } else {
-      return <Fragment key={plainCount++}>{text}</Fragment>;
-    }
-  });
+  const parts = parseHighlight(children).map((textSpan, index) => (
+    <FormattedSpan key={index} {...textSpan} />
+  ));
 
   return <li>{parts}</li>;
+};
+
+export const FormattedSpan: FunctionComponent<TextSpan> = ({
+  text,
+  bold,
+  href,
+}) => {
+  let span: ComponentChild = text;
+  if (bold) {
+    span = <strong>{text}</strong>;
+  }
+  if (href) {
+    span = <a href={href}>{span}</a>;
+  }
+  return <>{span}</>;
 };
 
 export function bucketSkills(

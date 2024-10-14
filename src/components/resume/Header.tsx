@@ -1,21 +1,21 @@
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
 import styles from './resume.module.css';
+import type { TextSpan } from './markdownish';
+import { FormattedSpan } from './Experience';
 
 function formatPhoneNumber(phoneNumber: string) {
   const phoneSlice = phoneNumber.split('-').slice(1);
   return phoneSlice.join('-');
 }
 
-const HTTPS = /^https?:\/\//;
-
 export function contactList(
   basics: NonNullable<ResumeSchema['basics']>
-): { text: string; href?: string }[] {
+): TextSpan[] {
   const github = basics.profiles?.find(
     (profile) => profile.network === 'GitHub'
   );
 
-  const list: { text: string; href?: string }[] = [];
+  const list: TextSpan[] = [];
   if (basics.location) {
     list.push({
       text: `${basics.location.city}, ${basics.location.region} (${basics.location.countryCode} Citizen)`,
@@ -52,9 +52,9 @@ export const ResumeHeader = (props: Pick<ResumeSchema, 'basics'>) => {
     <header>
       <h1 class={styles.title}>{basics.name}</h1>
       <ul>
-        {contactList(basics).map(({ text, href }) => (
-          <li class={`${styles.contactItem} inline`}>
-            <a href={href}>{text}</a>
+        {contactList(basics).map((textSpan) => (
+          <li key={textSpan.href} class={`${styles.contactItem} inline`}>
+            <FormattedSpan {...textSpan} />
           </li>
         ))}
       </ul>

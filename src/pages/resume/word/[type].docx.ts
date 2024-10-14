@@ -5,7 +5,6 @@ import {
   type DateRange,
   formatResumeDateRange,
   formatSkills,
-  parseHighlight,
   resumeDateFormatter,
 } from '../../../components/resume/Experience';
 import { contactList } from '../../../components/resume/Header';
@@ -13,6 +12,10 @@ import { ColorOrange, StyleDateRange, styles, StyleSummary } from './_styles';
 import { loadJsonResume } from '../json-resume/_load';
 import { getCollection } from 'astro:content';
 import { isDefined } from 'ts-extras';
+import {
+  parseHighlight,
+  type TextSpan,
+} from '../../../components/resume/markdownish';
 
 function joinTags(
   tags: readonly (string | docx.ParagraphChild)[] = [],
@@ -38,6 +41,18 @@ function joinTags(
   });
 }
 
+function formatTextSpan({ text, bold, href }: TextSpan): docx.ParagraphChild {
+  const textRun = new docx.TextRun({ text, bold });
+  if (href) {
+    return new docx.ExternalHyperlink({
+      children: [textRun],
+      link: href,
+    });
+  } else {
+    return textRun;
+  }
+}
+
 function resumeHeader(options: Pick<ResumeSchema, 'basics'>) {
   const basics = options.basics!;
   return [
@@ -49,19 +64,7 @@ function resumeHeader(options: Pick<ResumeSchema, 'basics'>) {
     }),
     // Contact
     new docx.Paragraph({
-      children: joinTags(
-        contactList(basics).map(({ href, text }) => {
-          const textRun = new docx.TextRun(text);
-          if (href) {
-            return new docx.ExternalHyperlink({
-              children: [textRun],
-              link: href,
-            });
-          } else {
-            return textRun;
-          }
-        })
-      ),
+      children: joinTags(contactList(basics).map(formatTextSpan)),
       style: 'Skills',
     }),
     // Summary
@@ -77,13 +80,7 @@ function experienceHighlights(highlights?: readonly string[]) {
     highlights?.map(
       (highlight) =>
         new docx.Paragraph({
-          children: parseHighlight(highlight).map(
-            ({ text, bold }) =>
-              new docx.TextRun({
-                text,
-                bold,
-              })
-          ),
+          children: parseHighlight(highlight).map(formatTextSpan),
           bullet: { level: 0 },
           numbering: { level: 0, reference: 'SquareBullet' },
           style: 'ListBullet',

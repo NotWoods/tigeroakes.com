@@ -7,7 +7,7 @@
     "email": "contact@tigeroakes.com",
     "phone": "+1-253-778-6251",
     "url": "https://tigeroakes.com",
-    "summary": "Client-side performance focused software engineer offering 12+ years of experience leading multiple product launches, building 3 web browsers, hundreds of open-source projects, and cross-browser compatible W3C standards.",
+    "summary": "Client-side performance focused software engineer offering 12+ years of experience leading multiple product launches, building 3 web browsers, hundreds of open source projects, and cross-browser compatible W3C standards.",
     "location": {
       "city": "Seattle",
       "region": "WA",
@@ -37,7 +37,7 @@
         "Led team of 6 to re-architect web product experience, resulting in tripled user engagement.",
         "Coached 80+ engineers, wrote documentation, gave tech talks to significantly raise quality of testing, performance, & accessibility in high-traffic, high-scale web application.",
         "Reduced thousands of developer man-hours by writing detailed tech specs and clear designs ahead of time.",
-        "Shipped multiple Copilot AI apps in just 2 months by guiding team on Web, JavaScript, React, CSS needs."
+        "Shipped multiple Copilot AI apps in just 2 months by rapidly prototyping and guiding peers on JS, React, CSS needs."
       ]
     },
     {
@@ -48,7 +48,7 @@
       "location": "Redmond, WA, USA",
       "highlights": [
         "Unblocked 5 features now used by millions of users by inventing virtualization system for thousands of pages.",
-        "Created stronger testing culture by building better testing tools, documentation, & improving peer review processes.",
+        "Created stronger automated testing culture by building better testing tools, documentation, & improving peer review processes.",
         "Reduced bugs in design to engineering handoff by creating new Figma token libraries and internal tools for designers."
       ]
     },
@@ -71,7 +71,7 @@
       "endDate": "2020-08-30",
       "location": "Toronto, ON, Canada",
       "highlights": [
-        "Built and shipped brand new web browser in Kotlin to 100M+ users on Google Play Store.",
+        "Built and shipped brand new web browser in Kotlin to 100M+ users on [Google Play Store](https://play.google.com/store/apps/details?id=org.mozilla.firefox).",
         "Partnered with engineers at Google, Intel, and Apple to add maskable icon support to Firefox, Chrome, and Safari.",
         "Featured Firefox in front of hundreds at Chrome Dev Summit 2019 keynote by adding Trusted Web Activity support.",
         "Set web, Android, and iOS interaction standards as World Wide Web Consortium (W3C) Invited Expert.",
@@ -103,19 +103,19 @@
     {
       "name": "Open Source",
       "highlights": [
-        "Built Maskable.app, industry standard tool recommended by Google & CSS Tricks, used 11,000+ times/month.",
-        "Automatically stopped common bugs for 32M+ engineers/week by writing linter rules, such as in typescript-eslint.",
-        "Made it easier to ship Android apps in Google Bubblewrap & Microsoft PWABuilder, used 2,000+ times/month.",
-        "Produced Big Island Buses offline web app with County of Hawai'i, which won Congressional App Challenge 2014."
+        "Built [Maskable.app](https://maskable.app), industry standard tool recommended by Google & CSS Tricks, used 11,000+ times/month.",
+        "Automatically stopped common bugs for 32M+ engineers/week by writing linter rules, such as in [typescript-eslint](https://typescript-eslint.io/).",
+        "Made it easier to ship Android apps in [Google Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) & [Microsoft PWABuilder](https://www.pwabuilder.com/), used 2,000+ times/month.",
+        "Produced [Big Island Buses](https://hawaiibusplus.com/) offline web app with County of Hawai'i, which won Congressional App Challenge 2014."
       ]
     },
     {
       "name": "Speaking and Writing",
       "highlights": [
-        "Speaker at JSConf Budapest, React Summit, CascadiaJS, and HalfStack conferences with thousands of attendees.",
-        "Wrote articles for MDN, Google web.dev, and CSS Tricks – the biggest frontend resources with audience of 10,000+.",
-        "Authored guidebook on MockK testing library for Kotlin and Android, with 20,000+ views/month.",
-        "Wrote React to Jetpack Compose Dictionary, resource recommended by Android team to new developers.",
+        "Speaker at [JSConf Budapest](https://2022.jsconfbp.com/speakers/tiger-oakes/), [React Summit](https://gitnation.com/contents/the-art-of-ignoring-best-practices-for-react-performance), [CascadiaJS](https://2022.cascadiajs.com/speakers/tiger-oakes), and HalfStack conferences with thousands of attendees.",
+        "Wrote articles for MDN, [Google web.dev](https://web.dev/articles/maskable-icon), and [CSS Tricks](https://css-tricks.com/the-thinking-behind-simplifying-event-handlers/) – the biggest frontend resources with audience of 10,000+.",
+        "Authored [guidebook on MockK testing library](https://notwoods.github.io/mockk-guidebook/) for Kotlin and Android, with 20,000+ views/month.",
+        "Wrote [React to Jetpack Compose Dictionary](https://tigeroakes.com/posts/react-to-compose-dictionary/), resource recommended by Android team to new developers.",
         "Mentoring new software developers through volunteering at Ada Developers Academy."
       ]
     }
@@ -128,7 +128,7 @@
       "startDate": "2015-09-15",
       "endDate": "2021-05-25",
       "courses": [
-        "Worked at 5 software engineering internships through Canada co-op program"
+        "Worked at 5 software engineering internships through Canada co-op program."
       ]
     }
   ],
