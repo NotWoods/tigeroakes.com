@@ -1,0 +1,7 @@
+type: conference
+name: JSConf JP
+link: https://jsconf.jp/2024/talk/tiger-daphne-oakes/
+date: 2024-11-23
+location: Tokyo, Japan
+talk:
+  ref: automate-murder-mystery

@@ -145,6 +145,7 @@ const talks = talkEntries.map((post) => ({
         {
           talks.map((item) => {
             const backlinks = conferences.talkBacklinks.get(item.id) ?? [];
+            const oldestBacklink = backlinks.at(-1);
             return (
               <article
                 class="flex flex-col"
@@ -160,14 +161,14 @@ const talks = talkEntries.map((post) => ({
                     sizes="(max-width: 640px) 95vw, 376px"
                   />
                 )}
-                {backlinks.length > 0 && (
+                {oldestBacklink && (
                   <p class="text-sm opacity-80">
                     First presented at{' '}
                     <a
                       class="hover:underline"
-                      href={`#${backlinks[0].conference}`}
+                      href={`#${oldestBacklink.conference}`}
                     >
-                      {backlinks[0].name}
+                      {oldestBacklink.name}
                     </a>
                   </p>
                 )}
