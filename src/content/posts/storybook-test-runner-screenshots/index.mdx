@@ -1,0 +1,147 @@
+---
+title: How to fix Storybook screenshot testing
+description: Reduce flakiness in Playwright screenshots
+date: 2024-12-04
+tags:
+  - Web
+  - Storybook
+toc: true
+categories:
+  - Planet Mozilla
+---
+
+As an alternative to Chromatic, I've been using [Storybook's Test Runner](https://storybook.js.org/docs/writing-tests/test-runner) to power screenshot tests for Microsoft Loop. We configure the test runner to run in CI and take a screenshot of every story. However, the initial implementation based on the official Storybook docs was very flaky due to inconsistent screenshots of the same story. Here are some tips to reduce flakiness in your Storybook screenshot tests.
+
+## The Storybook Test Runner configuration
+
+```js
+// .storybook/test-runner.js
+import * as path from 'node:path';
+import { getStoryContext, waitForPageReady } from '@storybook/test-runner';
+
+/**
+ * @type {import('@storybook/test-runner').TestRunnerConfig}
+ */
+const config = {
+  async preVisit(page) {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+  },
+  async postVisit(page, context) {
+    const { tags, title, name } = await getStoryContext(page, context);
+    if (!tags.includes('no-screenshot')) {
+      // Wait for page idle
+      await waitForPageReady(page);
+      await page.evaluate(
+        () => new Promise((resolve) => window.requestIdleCallback(resolve))
+      );
+      // Wait for images to load
+      await page.waitForFunction(() =>
+        Array.from(document.images).every((i) => i.complete)
+      );
+
+      // INFO: '/' or "\\" in screenshot name creates a folder in screenshot location.
+      // Replacing with '-'
+      const ssNamePrefix = `${title}.${name}`
+        .replaceAll(path.posix.sep, '-')
+        .replaceAll(path.win32.sep, '-');
+
+      await page.screenshot({
+        path: path.join(
+          process.cwd(),
+          'dist/screenshots',
+          `${ssNamePrefix}.png`
+        ),
+        animations: 'disabled',
+        caret: 'hide',
+        mask: [
+          page.locator('css=img[src^="https://res.cdn.office.net/files"]'),
+        ],
+      });
+    }
+  },
+};
+
+export default config;
+```
+
+This configuration essentially tells Storybook to run [`page.screenshot`](https://playwright.dev/docs/api/class-page#page-screenshot) after each story loads, using the `postVisit` hook. As the Test Runner is based on Playwright, we can use [Playwright's screenshot function](https://playwright.dev/docs/screenshots) to to take pictures and save them to disk.
+
+## Disable animations
+
+One source of inconsistency in screenshot tests is animation, as the screenshot will be taken at slightly different times. Luckily, Playwright has a built-in [option to disable animations](https://playwright.dev/docs/api/class-page#page-screenshot-option-animations).
+
+```js
+await page.screenshot({
+  animations: 'disabled',
+  caret: 'hide',
+});
+```
+
+Additionally, we can use the [`prefers-reduced-motion` media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) to use CSS designed for no motion. (You are writing CSS for reduced motion, right?) [This can be configured](https://playwright.dev/docs/api/class-page#page-emulate-media) when the page is loaded in the `preVisit` hook.
+
+```js
+async function preVisit(page) {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+}
+```
+
+## Wait for images to load
+
+Since images are a separate network request, they might not be loaded when the screenshot is taken. We can get a list of all the [image elements on the page](https://developer.mozilla.org/en-US/docs/Web/API/Document/images) and wait for them to [complete](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/complete).
+
+```js
+// waitForFunction waits for the function to return a truthy value
+await page.waitForFunction(() =>
+  // Get list of images on the page
+  Array.from(document.images)
+    // return true if .complete is true for all images
+    .every((i) => i.complete)
+);
+```
+
+However, we still ended up with some issues for images that load over the internet instead of from the disk. To fix this, we can mask out specific elements from the screenshot using the [`mask` option](https://playwright.dev/docs/api/class-page#page-screenshot-option-mask). I wrote a CSS selector for images loaded from the Office CDN.
+
+```js
+await page.screenshot({
+  mask: [page.locator('css=img[src^="https://res.cdn.office.net/files"]')],
+});
+```
+
+## Try to figure out if the page is idle
+
+Storybook Test Runner includes a helper `waitForPageReady` function that waits for the page to be loaded. We also wait for the browser to be in an idle state using [`requestIdleCallback`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback).
+
+```js
+import { waitForPageReady } from '@storybook/test-runner';
+
+await waitForPageReady(page);
+await page.evaluate(
+  () => new Promise((resolve) => window.requestIdleCallback(resolve))
+);
+```
+
+Both of these feel more like vibes than guarantees, but they can help reduce flakiness.
+
+## Custom assertions in stories
+
+The above configuration gives a good baseline, but you'll likely end up with one-off issues in specific stories (especially if React Suspense or lazy loading is involved). In these cases, you can add custom assertions to the story itself! Storybook Test Runner waits until the [`play` function](https://storybook.js.org/docs/writing-stories/play-function) in the story is resolved, so you can add assertions there.
+
+```js
+// Component.stories.js
+import { expect, within } from '@storybook/test';
+
+export const SomeStory = {
+  async play({ canvasElement }) {
+    const canvas = within(canvasElement);
+    await expect(await canvas.findByText('Lazy loaded string')).toBeInTheDocument();
+  },
+};
+```
+
+## Future Vitest support
+
+Storybook is coming out with a brand-new [Test addon based on Vitest](https://storybook.js.org/docs/writing-tests/test-addon). This isn't supported by Webpack loaders so we can't use it for Microsoft Loop yet, but it's something to keep an eye on. Vitest will run in [browser mode](https://vitest.dev/guide/browser/) on top of Playwright, so the `page` object will still be available.
+
+```js
+import { page } from '@vitest/browser/context'
+```
