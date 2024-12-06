@@ -133,7 +133,9 @@ import { expect, within } from '@storybook/test';
 export const SomeStory = {
   async play({ canvasElement }) {
     const canvas = within(canvasElement);
-    await expect(await canvas.findByText('Lazy loaded string')).toBeInTheDocument();
+    await expect(
+      await canvas.findByText('Lazy loaded string')
+    ).toBeInTheDocument();
   },
 };
 ```
@@ -143,5 +145,5 @@ export const SomeStory = {
 Storybook is coming out with a brand-new [Test addon based on Vitest](https://storybook.js.org/docs/writing-tests/test-addon). This isn't supported by Webpack loaders so we can't use it for Microsoft Loop yet, but it's something to keep an eye on. Vitest will run in [browser mode](https://vitest.dev/guide/browser/) on top of Playwright, so the `page` object will still be available.
 
 ```js
-import { page } from '@vitest/browser/context'
+import { page } from '@vitest/browser/context';
 ```
