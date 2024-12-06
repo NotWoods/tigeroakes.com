@@ -63,5 +63,11 @@
       "prettier-plugin-astro",
       "prettier-plugin-tailwindcss"
     ]
+  },
+  "overrides": {
+    "@preact/preset-vite": "^2.9.2",
+    "@vite-pwa/astro": {
+      "astro": "^5"
+    }
   }
 }
