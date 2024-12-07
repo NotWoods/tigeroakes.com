@@ -4,9 +4,9 @@ import { useMounted } from './useMounted';
 
 type BaseControlProps<
   Type extends string,
-  Keys extends keyof JSX.HTMLAttributes,
+  Keys extends keyof JSX.InputHTMLAttributes<HTMLInputElement>,
 > = { type: Type; name: string; label?: ComponentChildren } & Pick<
-  JSX.HTMLAttributes<HTMLInputElement>,
+  JSX.InputHTMLAttributes<HTMLInputElement>,
   Keys | 'defaultValue' | 'defaultChecked' | 'id'
 >;
 
@@ -20,7 +20,7 @@ export function CodeDemoControl({
 }: BaseControlProps<string, 'value' | 'checked' | 'onInput' | 'onChange'> &
   ControlProps) {
   return (
-    <label class="flex flex-wrap gap-x-4 items-center">
+    <label class="flex flex-wrap items-center gap-x-4">
       <input autocomplete="off" {...props} />
       <span>{label || props.name}</span>
     </label>
@@ -36,7 +36,7 @@ export function CodeDemoControls({ controls, ...props }: ControlsProps) {
 
   return (
     <CodeDemo {...props}>
-      <div class="bg-slate-200 text-slate-800 mx-4 relative">
+      <div class="relative mx-4 bg-slate-200 text-slate-800">
         {props.children}
       </div>
       <fieldset class="px-4 py-2" disabled={!mounted}>

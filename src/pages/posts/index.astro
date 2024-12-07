@@ -11,7 +11,7 @@ import { getAllPosts } from '../../scripts/posts';
 const allPages = await getAllPosts();
 const posts = allPages.map((post) => ({
   title: post.data.title,
-  href: `./${post.slug}/`,
+  href: `./${post.id}/`,
   date: post.data.date,
   description: post.data.description,
   pictureSrc: post.data.banner,

@@ -13,7 +13,7 @@ export interface Props {
 const { project: projectId } = Astro.props as Props;
 const project = (await getEntry('projects', projectId))!;
 const { title, description, tech, color } = project.data;
-const href = `/projects/${project.slug}/`;
+const href = `/projects/${project.id}/`;
 
 const buttons = projectButtons(project.data.links, href);
 ---

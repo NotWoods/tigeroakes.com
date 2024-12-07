@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
 import { getConferenceName } from '../../scripts/talks';
 
@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const talkEntries = await getCollection('talks');
   return talkEntries.map((post) => ({
     params: {
-      slug: post.slug,
+      slug: post.id,
     },
     props: {
       post,
@@ -20,12 +20,12 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 
 async function getConferenceTalkBacklinks() {
   const conferences = await getCollection(
     'conferences',
-    (conf) => conf.data.talk?.ref?.slug === post.slug
+    (conf) => conf.data.talk?.ref?.id === post.id
   );
   return conferences
     .map((conf) => ({

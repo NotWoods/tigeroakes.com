@@ -16,7 +16,7 @@ allPages.sort(compareProjects);
 
 const projects = await Promise.all(
   allPages.map(async (page) => {
-    const href = `/projects/${page.slug}/`;
+    const href = `/projects/${page.id}/`;
     return {
       title: page.data.title,
       description: page.data.subtitle,

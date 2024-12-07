@@ -5,7 +5,7 @@ import classes from './sidebar-content.module.css';
 export type AnimationState = 'open' | 'opening' | 'closed' | 'closing';
 
 interface Props {
-  contentRef?: MutableRef<HTMLDivElement>;
+  contentRef?: MutableRef<HTMLDivElement | null>;
   contentStyle?: JSX.HTMLAttributes['style'];
   animationState: AnimationState;
 }
@@ -43,7 +43,7 @@ export function SidebarContent(props: Props) {
 
   return (
     <div
-      class={`text-shadow text-slate-200 overflow-x-hidden ${
+      class={`text-shadow overflow-x-hidden text-slate-200 ${
         classes.container
       } ${containerClass[props.animationState]}`}
     >
@@ -54,7 +54,7 @@ export function SidebarContent(props: Props) {
         Main content
       </div>
       {width !== undefined && (
-        <span class="absolute bottom-0 right-0 px-2 bg-gray-900/50">
+        <span class="absolute bottom-0 right-0 bg-gray-900/50 px-2">
           width: {width}px
         </span>
       )}

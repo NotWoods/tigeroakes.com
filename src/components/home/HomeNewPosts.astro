@@ -13,7 +13,7 @@ function formatPost(post: CollectionEntry<'posts'>): Item {
     title: post.data.title,
     date: post.data.date,
     accent: postAccentColor(post.data.tags),
-    href: `/posts/${post.slug}/`,
+    href: `/posts/${post.id}/`,
     pictureSrc: post.data.banner,
     pictureAlt: post.data.banner_alt,
     collection: 'posts',

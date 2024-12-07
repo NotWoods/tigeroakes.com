@@ -1,6 +1,6 @@
 import { Intl, Temporal } from '@js-temporal/polyfill';
 import { DefaultMap } from '@notwoods/default-map';
-import { Fragment, type ComponentChild, type FunctionComponent } from 'preact';
+import type { ComponentChild, FunctionComponent } from 'preact';
 import { dateFromString } from '../../scripts/date';
 import styles from './resume.module.css';
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types';
