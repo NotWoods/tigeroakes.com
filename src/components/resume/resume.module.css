@@ -24,7 +24,7 @@
 }
 
 .contactItem::after {
-  content: ' | '
+  content: ' | ';
 }
 .contactItem:last-child::after {
   content: '';

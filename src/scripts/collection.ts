@@ -39,7 +39,7 @@ export async function getCollectedPages(key: 'tags' | 'categories') {
       title: page.data.title,
       date: page.data.date,
       accent: postAccentColor(page.data.tags),
-      href: `/${page.collection}/${page.slug}/`,
+      href: `/${page.collection}/${page.id}/`,
       pictureSrc: page.data.banner,
       pictureAlt: page.data.banner_alt,
       pictureFit: 'cover' as const,
@@ -54,7 +54,7 @@ export async function getCollectedPages(key: 'tags' | 'categories') {
     ): Item & { tags: readonly string[]; categories: readonly string[] } => ({
       title: project.data.title,
       accent: project.data.color,
-      href: `/projects/${project.slug}/`,
+      href: `/projects/${project.id}/`,
       pictureSrc: undefined,
       pictureFit: 'contain' as const,
       tags: project.data.tech,

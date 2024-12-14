@@ -77,12 +77,12 @@ const pictureSrc = (await postBanner(frontmatter.banner))?.toString();
   <head>
     <MainHead
       title={frontmatter.title}
-      description={frontmatter.description}
+      description={frontmatter.description!}
       canonical={frontmatter.elsewhere?.link}
     />
     <Social
       title={frontmatter.title}
-      description={frontmatter.description}
+      description={frontmatter.description!}
       pictureSrc={pictureSrc}
       pictureAlt={frontmatter.banner_alt}
     />

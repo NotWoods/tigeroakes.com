@@ -8,5 +8,9 @@
     "allowSyntheticDefaultImports": true,
     "importHelpers": true
   },
-  "exclude": ["./functions/**/*"]
+  "exclude": [
+    "./functions/**/*",
+    "./netlify/edge-functions/**/*",
+    "./dist/**/*"
+  ]
 }

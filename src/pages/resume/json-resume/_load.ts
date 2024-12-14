@@ -42,5 +42,5 @@ export async function loadJsonResume(type: string) {
     throw new Error(`Invalid json-resume name: ${type}`);
   }
 
-  return mergeResume(defaultResume.data, jsonResume.data);
+  return mergeResume(defaultResume!.data, jsonResume.data);
 }

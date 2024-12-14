@@ -1,14 +1,15 @@
 import { z, reference, defineCollection } from 'astro:content';
-import { jsonResumeSchema } from '../components/resume/schema';
-import { linkButtonSchema } from '../scripts/projects';
+import { glob } from 'astro/loaders';
+import { jsonResumeSchema } from './components/resume/schema';
+import { linkButtonSchema } from './scripts/projects';
 
 const jsonResume = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.json', base: './src/content/json-resume' }),
   schema: jsonResumeSchema,
 });
 
 const projects = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '*/index.{md,mdx}', base: './src/content/projects' }),
   schema: ({ image }) =>
     z.object({
       weight: z.number().default(Infinity),
@@ -26,7 +27,7 @@ const projects = defineCollection({
 });
 
 const posts = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '*/index.mdx', base: './src/content/posts' }),
   schema: ({ image }) =>
     z.object({
       elsewhere: z
@@ -51,7 +52,7 @@ const posts = defineCollection({
 });
 
 const talks = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '*.mdx', base: './src/content/talks' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -67,7 +68,7 @@ const talks = defineCollection({
 });
 
 const conferences = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.yaml', base: './src/content/conferences' }),
   schema: z.object({
     name: z.string(),
     type: z.enum(['conference', 'meetup', 'workshop', 'podcast']),
@@ -85,7 +86,7 @@ const conferences = defineCollection({
 });
 
 const featuredIn = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '*.md', base: './src/content/featured-in' }),
   schema: z.object({
     elsewhere: z.object({
       name: z.string(),

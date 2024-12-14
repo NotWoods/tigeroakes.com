@@ -27,15 +27,9 @@ import * as header from './_index.md';
 async function getConferences(): Promise<{
   future: readonly Conference[];
   past: readonly Conference[];
-  talkBacklinks: ReadonlyMap<
-    ValidContentEntrySlug<'talks'>,
-    readonly TalkBacklink[]
-  >;
+  talkBacklinks: ReadonlyMap<string, readonly TalkBacklink[]>;
 }> {
-  const talkBacklinks = new DefaultMap<
-    ValidContentEntrySlug<'talks'>,
-    TalkBacklink[]
-  >(() => []);
+  const talkBacklinks = new DefaultMap<string, TalkBacklink[]>(() => []);
 
   const confEntries = await getCollection('conferences');
   confEntries.sort(comparePosts);
@@ -59,9 +53,9 @@ async function getConferences(): Promise<{
         if (conf.data.talk.ref) {
           const talkEntry = await getEntry(conf.data.talk.ref);
           title ||= talkEntry.data.title;
-          href = `./${talkEntry.slug}/`;
+          href = `./${talkEntry.id}/`;
 
-          talkBacklinks.get(talkEntry.slug).push({
+          talkBacklinks.get(talkEntry.id).push({
             conference: conf.id,
             name,
           });
@@ -100,9 +94,9 @@ const conferences = await getConferences();
 const talkEntries = await getCollection('talks');
 talkEntries.sort(comparePosts);
 const talks = talkEntries.map((post) => ({
-  id: post.slug,
+  id: post.id,
   title: post.data.title,
-  href: `./${post.slug}/`,
+  href: `./${post.id}/`,
   date: post.data.date,
   pictureSrc: post.data.banner,
   pictureAlt: post.data.banner_alt,

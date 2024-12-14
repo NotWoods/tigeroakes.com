@@ -3,7 +3,7 @@ import { getContainerRenderer as preactContainerRenderer } from '@astrojs/preact
 import type { RSSFeedItem } from '@astrojs/rss';
 import { experimental_AstroContainer } from 'astro/container';
 import { loadRenderers } from 'astro:container';
-import type { CollectionEntry } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
 import { formatToMimeType } from './picture';
 
 export const rssConfig = {
@@ -46,11 +46,11 @@ export async function formatPost(
     customData += mediaContentTag(post.data.banner);
   }
 
-  const { Content } = await post.render();
+  const { Content } = await render(post);
   const content = await container.renderToString(Content);
 
   return {
-    link: `/posts/${post.slug}/`,
+    link: `/posts/${post.id}/`,
     title: post.data.title,
     description: post.data.description,
     pubDate: post.data.date,

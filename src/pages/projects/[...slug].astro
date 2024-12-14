@@ -1,12 +1,12 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 export async function getStaticPaths() {
   const talkEntries = await getCollection('projects');
   return talkEntries.map((post) => ({
     params: {
-      slug: post.slug,
+      slug: post.id,
     },
     props: {
       post,
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <ProjectLayout frontmatter={post.data}>
